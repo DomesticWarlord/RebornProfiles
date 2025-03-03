@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Little Ladies' Day 2025
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Little Ladies' Day 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- A Princely Persona -->
+    <If Condition="not IsQuestCompleted(70773)">
+      <If Condition="not HasQuest(70773)">
+        <GetTo ZoneId="130" XYZ="-36.723694, 5, -132.14409" />
+        <If Condition="IsQuestAcceptQualified(70773)">
+          <PickupQuest QuestId="70773" NpcId="1051884" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70773) == 1">
+        <GetTo ZoneId="131" XYZ="-48.868652, 17.999998, 58.90736" />
+        <TalkTo NpcId="1051889" XYZ="-51.499268, 18, 60.471436" QuestId="70773" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70773) == 2">
+        <If Condition="GetQuestStep(70773) == 2 and GetQuestById(70773).QuestI8A == 0">
+          <GetTo ZoneId="131" XYZ="126.95018, 7.992011, 76.549515" />
+          <TalkTo NpcId="1051892" XYZ="130.05261, 7.992012, 75.94409" QuestId="70773" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70773) == 2 and GetQuestById(70773).QuestI8A == 1">
+          <GetTo ZoneId="131" XYZ="146.48967, 4, -14.984104" />
+          <TalkTo NpcId="1051891" XYZ="148.39392, 4, -12.222534" QuestId="70773" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70773) == 2 and GetQuestById(70773).QuestI8A == 2">
+          <GetTo ZoneId="131" XYZ="105.77036, 4, -108.83087" />
+          <TalkTo NpcId="1051893" XYZ="107.59131, 4, -111.436646" QuestId="70773" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70773) == 255">
+        <GetTo ZoneId="131" XYZ="3.2922678, 14.000016, -20.101517" />
+        <TurnIn QuestId="70773" NpcId="1051894" XYZ="0.869751, 14.000016, -21.591614" />
+      </If>
+    </If>
+
+    <!-- A Princely Debut -->
+    <If Condition="IsQuestCompleted(70773) and not IsQuestCompleted(70774)">
+      <If Condition="not HasQuest(70774)">
+        <GetTo ZoneId="131" XYZ="3.2922678, 14.000016, -20.101517" />
+        <If Condition="IsQuestAcceptQualified(70774)">
+          <PickupQuest QuestId="70774" NpcId="1051894" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70774) == 1">
+        <GetTo ZoneId="130" XYZ="-24.865574, 6.000001, -125.61808" />
+        <UserDialog QuestId="70774" StepId="1" IsBotContinueAllowed="False" DialogText="Please complete the Point Menu on your own." />
+      </If>
+      <If Condition="GetQuestStep(70774) == 2">
+        <GetTo ZoneId="131" XYZ="-49.284397, 17.999998, 59.67372" />
+        <TalkTo NpcId="1051899" XYZ="-53.421875, 18, 60.16626" QuestId="70774" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70774) == 3">
+        <GetTo ZoneId="130" XYZ="-34.85803, 5, -132.42569" />
+        <TalkTo NpcId="1051884" XYZ="-35.111023, 5.000001, -130.35785" QuestId="70774" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70774) == 255">
+        <GetTo ZoneId="130" XYZ="-34.85803, 5, -132.42569" />
+        <TurnIn QuestId="70774" NpcId="1051901" XYZ="-33.859802, 5.0000005, -130.6325" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
