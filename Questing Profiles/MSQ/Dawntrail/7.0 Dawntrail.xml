@@ -3635,16 +3635,15 @@
     </CodeChunk>
     <CodeChunk Name="LoadLastProfile">
       <![CDATA[
-        if (CharacterSettings.Instance.LastNeoProfile == null)
+        if (ff14bot.Settings.CharacterSettings.Instance.LastNeoProfile == null)
         {
-            Log.Error("Last profile not found. Exiting");
-            _isDone = true;
+            Logging.WriteDiagnostic("Last profile not found. Exiting");
         }
-        Log.Information($"Reloading profile to make sure all quests are done.");
-        NeoProfileManager.Load(CharacterSettings.Instance.LastNeoProfile, false);
+        Logging.WriteDiagnostic($"Reloading profile to make sure all quests are done.");
+        NeoProfileManager.Load(ff14bot.Settings.CharacterSettings.Instance.LastNeoProfile, false);
         NeoProfileManager.UpdateCurrentProfileBehavior();
-
-        _isDone = true;      ]]>
+     
+        ]]>
     </CodeChunk>
     <CodeChunk Name="Knowing the Hanuhanuu">
       <![CDATA[		
