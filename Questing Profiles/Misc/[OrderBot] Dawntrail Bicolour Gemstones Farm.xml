@@ -64,6 +64,7 @@
 					<Log Message="Starting Urqopacha FATE grind." />
 					<If condition="not IsOnMap(1187)">
 						<TeleportTo AetheryteId="200" /> <!-- Wachunpelo -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1187) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
@@ -78,6 +79,7 @@
 					<Log Message="Starting Kozama'uka FATE grind." />
 					<If condition="not IsOnMap(1188)">
 						<TeleportTo AetheryteId="202" /> <!-- Ok'hanu -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1188) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
@@ -92,6 +94,7 @@
 					<Log Message="Starting Yak'Tel FATE grind." />
 					<If condition="not IsOnMap(1189)">
 						<TeleportTo AetheryteId="205" /> <!-- Iq Br'aax -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1189) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
@@ -106,6 +109,7 @@
 					<Log Message="Starting Shaaloani FATE grind." />
 					<If condition="not IsOnMap(1190)">
 						<TeleportTo AetheryteId="207" /> <!-- Hhusatahwi -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1190) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
@@ -120,6 +124,7 @@
 					<Log Message="Starting Heritage Found FATE grind." />
 					<If condition="not IsOnMap(1191)">
 						<TeleportTo AetheryteId="212" /> <!-- Electrope Strike -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1191) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
@@ -134,6 +139,7 @@
 					<Log Message="Starting Living Memory FATE grind." />
 					<If condition="not IsOnMap(1192)">
 						<TeleportTo AetheryteId="213" /> <!-- Reah Tahra -->
+						 <WaitTimer WaitTime="5" />
 					</If>
 					<If condition="&Teleport; == True">
 						<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="10" while="(IsOnMap(1192) and ItemCount(26807) &lt; &GemStones;) and (IsAnyFateActive() or (Core.Me.HasAura(&TwistofFate;) or Core.Me.HasAura(&TwistofFate2;)))" />
