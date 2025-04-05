@@ -1200,8 +1200,7 @@
         <TalkTo NpcId="1046884" XYZ="536.82764, 105.12397, 660.05945" QuestId="70429" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70429) == 2">
-        <MoveTo XYZ="566.14484, 98.513535, 566.57104" />
-        <TalkTo NpcId="1046885" XYZ="566.1762, 98.513535, 564.2549" QuestId="70429" StepId="2" />
+        <FollowNPC NpcId="1046885" QuestId="70429" StepId="2"/>
       </If>
       <If Condition="GetQuestStep(70429) == 3">
         <GetTo ZoneId="1187" XYZ="585.7892, 98.697914, 548.91327" />
@@ -1212,8 +1211,7 @@
         <TalkTo NpcId="1046887" XYZ="565.88074, 98.513535, 566.4606" QuestId="70429" StepId="4" />
       </If>
       <If Condition="GetQuestStep(70429) == 5">
-        <GetTo ZoneId="1187" XYZ="475.37878, 109.08196, 418.18994" />
-        <TalkTo NpcId="1046889" XYZ="474.66235, 109.059296, 417.68518" QuestId="70429" StepId="5" />
+        <FollowNPC NpcId="1046886" QuestId="70429" StepId="5"/>
       </If>
       <If Condition="GetQuestStep(70429) == 6">
         <GetTo ZoneId="1187" XYZ="471.4786, 109.37209, 394.62106" />
@@ -1225,6 +1223,7 @@
       </If>
       <If Condition="GetQuestStep(70429) == 8">
         <GetTo ZoneId="1187" XYZ="564.46185, 118.16203, 363.17813" />
+        <FollowNPC NpcId="1046889" Condition="GetQuestStep(70429) == 8" />
         <TalkTo NpcId="1046889" XYZ="570.6724, 119.33488, 359.8228" QuestId="70429" StepId="8" />
       </If>
       <If Condition="GetQuestStep(70429) == 255">
