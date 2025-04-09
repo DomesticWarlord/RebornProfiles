@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Hatching Tide 2025
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Hatching Tide 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- In Pursuit of Eggcellence -->
+    <If Condition="not IsQuestCompleted(70778) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70778)">
+        <GetTo ZoneId="133" XYZ="-49.811653, 6.499981, -92.955925" />
+        <If Condition="IsQuestAcceptQualified(70778)">
+          <PickupQuest QuestId="70778" NpcId="1052063" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70778) == 1">
+        <GetTo ZoneId="133" XYZ="169.16585, 15.500002, -111.15287" />
+        <TalkTo NpcId="1052065" XYZ="172.86938, 15.699935, -113.11517" QuestId="70778" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70778) == 2">
+        <GetTo ZoneId="133" XYZ="69.60498, 7.999999, -165.57726" />
+        <TalkTo NpcId="1000691" XYZ="71.97681, 8, -166.52173" QuestId="70778" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70778) == 3">
+        <GetTo ZoneId="132" XYZ="-46.020195, -1.2500381, 59.229748" />
+        <HandOver ItemId="2003731" NpcId="1000153" XYZ="-44.87683, -1.2500024, 56.839844" QuestId="70778" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70778) == 4">
+        <GetTo ZoneId="132" XYZ="9.856702, -0.07757932, 4.909411" />
+        <TalkTo NpcId="1052068" XYZ="11.36792, 0.106995195, 2.7618408" QuestId="70778" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70778) == 255">
+        <GetTo ZoneId="133" XYZ="-49.385967, 6.33753, -94.700905" />
+        <TurnIn QuestId="70778" NpcId="1052063" XYZ="-49.973328, 6.4999995, -89.829956" />
+      </If>
+    </If>
+
+    <!-- Eggceeding Expectations -->
+    <If Condition="IsQuestCompleted(70778) and not IsQuestCompleted(70779) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70779)">
+        <GetTo ZoneId="133" XYZ="-48.61942, 6.499998, -93.63127" />
+        <If Condition="IsQuestAcceptQualified(70779)">
+          <PickupQuest QuestId="70779" NpcId="1052063" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70779) == 1">
+        <GetTo ZoneId="133" XYZ="-50.244923, 6.499981, -92.48471" />
+        <TalkTo NpcId="1052069" XYZ="-49.973328, 6.4999995, -89.89093" QuestId="70779" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70779) == 2">
+        <If Condition="GetQuestStep(70779) == 2 and GetQuestById(70779).QuestI8A == 0">
+          <GetTo ZoneId="133" XYZ="166.23448, 15.5, -93.31729" />
+          <TalkTo NpcId="1052070" XYZ="169.02417, 15.5, -93.492065" QuestId="70779" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70779) == 2 and GetQuestById(70779).QuestI8A == 1">
+          <GetTo ZoneId="133" XYZ="160.33731, 15.5, -123.18509" />
+          <TalkTo NpcId="1052071" XYZ="157.15259, 15.699948, -124.16266" QuestId="70779" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70779) == 2 and GetQuestById(70779).QuestI8A == 2">
+          <GetTo ZoneId="133" XYZ="147.48538, 13.492091, -155.82446" />
+          <TalkTo NpcId="1052072" XYZ="145.37268, 13.599698, -156.4508" QuestId="70779" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70779) == 3">
+        <GetTo ZoneId="133" XYZ="152.00105, 15.494978, -95.11631" />
+        <TalkTo NpcId="1052069" XYZ="153.98723, 15.494952, -96.010056" QuestId="70779" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70779) == 255">
+        <GetTo ZoneId="133" XYZ="-49.535645, 6.499976, -94.33106" />
+        <TurnIn QuestId="70779" NpcId="1052063" XYZ="-49.973328, 6.4999995, -89.829956" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
