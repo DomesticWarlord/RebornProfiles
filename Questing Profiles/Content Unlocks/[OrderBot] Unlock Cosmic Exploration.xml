@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Unlock Cosmic Exploration
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>[OrderBot] Unlock Cosmic Exploration</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If condition="Core.Me.IsDOW">
+      <RunCode name="SwitchDoHJob" />
+    </If>
+
+    <!-- A Cosmic Homecoming -->
+    <If Condition="IsQuestCompleted(70000) and not IsQuestCompleted(70789) and Core.Player.ClassLevel &gt; 9">
+      <If Condition="not HasQuest(70789)">
+        <GetTo ZoneId="962" XYZ="70.19823, -16.247, 119.153984" />
+        <If Condition="IsQuestAcceptQualified(70789)">
+          <PickupQuest QuestId="70789" NpcId="1052591" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70789) == 1">
+        <If condition="not IsOnMap(959)">
+          <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="-647.6495, 129.85973, 715.0585" Land="True" /> <!-- ZoneId="959" -->
+        <UseObject NpcId="2014652" XYZ="-648.73737, 130.0221, 717.3723" QuestId="70789" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70789) == 2">
+        <GetTo ZoneId="959" XYZ="32.601578, -137.4167, -413.1333" />
+        <TalkTo NpcId="1052592" XYZ="25.680908, -137.41669, -411.30695" QuestId="70789" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70789) == 3">
+        <GetTo ZoneId="1237" XYZ="-51.45857, -3.33786E-06, -67.40281" />
+        <WaitWhile Condition="GetQuestStep(70789) == 3" />
+      </If>
+      <If Condition="GetQuestStep(70789) == 255">
+        <!-- Get back to the moon WKSHud-->
+        <If condition="not IsOnMap(1237)">
+          <GetTo ZoneId="959" XYZ="28.506262, -137.4167, -412.20316"/>  
+          <UseTransport NpcId="1052592" InteractDistance="3.0" XYZ="25.680908, -137.41669, -411.30695" QuestId="70789"/>
+        </If>
+        <UserDialog DialogText="Please turn in the quest manually and accept the terms." QuestId="70789" StepId="255"/>
+        <TurnIn QuestId="70789" NpcId="1052595" XYZ="-53.177734, -3.33786E-06, -72.129456" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Name="SwitchDoHJob">
+      <![CDATA[
+               var DoH = Enumerable.Range(8, 7);
+var gearSets = GearsetManager.GearSets.Where(i => i.InUse && DoH.Contains((int)i.Class) && Core.Player.Levels[i.Class] > 69).ToList().OrderBy(y => Core.Player.Levels[y.Class]);
+if (gearSets.Any())
+{
+gearSets.First().Activate();
+await Coroutine.Sleep(2000);
+}
+]]>
+</CodeChunk>
+  </CodeChunks>
+</Profile> 
