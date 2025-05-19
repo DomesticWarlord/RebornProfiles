@@ -12,7 +12,7 @@
   <Order>
 
     <!-- Royal Rumblings -->
-    <If Condition="IsQuestCompleted(66082) and not IsQuestCompleted(70858) and Core.Player.ClassLevel &gt; 14">
+    <If Condition="not IsQuestCompleted(70858) and Core.Player.ClassLevel &gt; 14">
       <If Condition="not HasQuest(70858)">
         <GetTo ZoneId="130" XYZ="-88.43096, 4, -107.03431" />
         <If Condition="IsQuestAcceptQualified(70858)">
