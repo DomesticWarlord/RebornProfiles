@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Make It Rain 2025
+  Authors: DomesticWarlord
+
+-->
+
+
+<Profile>
+  <Name>Make It Rain 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Royal Rumblings -->
+    <If Condition="IsQuestCompleted(66082) and not IsQuestCompleted(70858) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70858)">
+        <GetTo ZoneId="130" XYZ="-88.43096, 4, -107.03431" />
+        <If Condition="IsQuestAcceptQualified(70858)">
+          <PickupQuest QuestId="70858" NpcId="1049020" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70858) == 1">
+        <GetTo ZoneId="144" XYZ="-76.89556, 3.8146973E-06, 46.2561" />
+        <TalkTo NpcId="1049021" XYZ="-80.91864, -1.2629791E-05, 46.463623" QuestId="70858" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 2">
+        <If Condition="GetQuestStep(70858) == 2 and GetQuestById(70858).QuestI8A == 0">
+          <GetTo ZoneId="144" XYZ="6.8724546, 3.9997303, 75.73651" />
+          <TalkTo NpcId="1049027" XYZ="7.003784, 3.9997306, 78.20239" QuestId="70858" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70858) == 2 and GetQuestById(70858).QuestI8A == 1">
+          <GetTo ZoneId="144" XYZ="53.35874, 3.999716, 43.293064" />
+          <TalkTo NpcId="1049028" XYZ="55.77173, 3.9997194, 42.313232" QuestId="70858" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70858) == 2 and GetQuestById(70858).QuestI8A == 2">
+          <GetTo ZoneId="144" XYZ="12.646994, 20.99973, 36.134644" />
+          <TalkTo NpcId="1049029" XYZ="10.452393, 20.99973, 39.597046" QuestId="70858" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70858) == 3">
+        <GetTo ZoneId="144" XYZ="-9.325018, 0.43982518, -4.035574" />
+        <TalkTo NpcId="1049023" XYZ="-12.863403, -1.1376108E-16, -7.9804688" QuestId="70858" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 4">
+        <GetTo ZoneId="144" XYZ="108.80516, 12.999999, -42.091454" />
+        <UseObject NpcId="2014700" XYZ="107.7439, 12.985352, -45.212524" QuestId="70858" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 5">
+        <GetTo ZoneId="144" XYZ="98.36575, 12.999999, -6.7215843" />
+        <UseObject NpcId="2014702" XYZ="94.346436, 13.01593, -5.935791" QuestId="70858" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 6">
+        <GetTo ZoneId="144" XYZ="35.580807, -5.000001, -55.13468" />
+        <HandOver ItemId="2003750" NpcId="1049025" XYZ="33.49353, -5, -58.54895" QuestId="70858" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 7">
+        <GetTo ZoneId="144" XYZ="-69.17716, 3.8146973E-06, 38.767113" />
+        <UseObject NpcId="2014703" XYZ="-67.00244, -0.015319824, 39.230957" QuestId="70858" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(70858) == 255">
+        <GetTo ZoneId="144" XYZ="-33.26036, 0.04427987, 14.13926" />
+        <TurnIn QuestId="70858" NpcId="1049026" XYZ="-31.937195, 0.044279926, 18.32605" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
