@@ -19,7 +19,7 @@
       <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
     </If>
 
-    <If condition="not IsOnMap(1269)">
+    <If condition="IsOnMap(1269)">
       <RunCode name="EnterOccultCrescent" />
     </If>
 
