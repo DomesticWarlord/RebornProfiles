@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Queue Occult Crescent
+  Authors: DomesticWarlord
+
+-->
+<Profile>
+  <Name>Queue Occult Crescent</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If Condition="not IsQuestCompleted(70847)">
+      <UserDialog DialogText="Please run the Occult Crescent unlock profile first." />
+    </If>
+
+    <!-- Get back to the Phantom Village-->
+    <If condition="not IsOnMap(1269)">
+      <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+      <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+    </If>
+
+    <If condition="not IsOnMap(1269)">
+      <RunCode name="EnterOccultCrescent" />
+    </If>
+
+  </Order>
+  <CodeChunks>
+    <CodeChunk Name="EnterOccultCrescent">
+			<![CDATA[
+        LlamaLibrary.Helpers.NPC.Npc jeffroy = new(1053611, 1269, new Vector3(-77.958374f, 5f, -15.396423f)); // Jeffroy
+        if (!await LlamaLibrary.Helpers.Navigation.GetToInteractNpcSelectString(jeffroy))
+        {
+            Logging.WriteDiagnostic($"Failed to get to {DataManager.GetLocalizedNPCName(1053611)}");
+            return;
+        }
+        
+        if (ff14bot.RemoteWindows.SelectString.IsOpen)
+        {
+            Logging.WriteDiagnostic("Clicking Journey to the Occult Crescent: south horn");
+            ff14bot.RemoteWindows.SelectString.ClickLineContains("south horn");
+            await Coroutine.Wait(5000, () => !SelectString.IsOpen);
+            await Coroutine.Wait(5000, () => SelectString.IsOpen);
+        }
+        
+        if (ff14bot.RemoteWindows.SelectString.IsOpen)
+        {
+            Logging.WriteDiagnostic("Clicking Yes");
+            ff14bot.RemoteWindows.SelectString.ClickLineContains("Yes");
+            await Coroutine.Wait(5000, () => ContentsFinderConfirm.IsOpen);
+        }
+        
+        if (ff14bot.RemoteWindows.ContentsFinderConfirm.IsOpen)						
+        {
+            Logging.WriteDiagnostic("Commencing Duty.");
+            ff14bot.RemoteWindows.ContentsFinderConfirm.Commence();
+            await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading);
+            if (CommonBehaviors.IsLoading)
+            {
+                await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+            }									
+        }
+			]]>			
+		</CodeChunk>
+  </CodeChunks>
+</Profile>	

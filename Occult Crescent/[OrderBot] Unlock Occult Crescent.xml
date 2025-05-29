@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Unlock Occult Crescent
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Unlock Occult Crescent</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If Condition="not IsQuestCompleted(70495)">
+      <UserDialog DialogText="Please complete all the 7.0 Dawntrail MSQ content before starting this profile!" />
+    </If>
+
+    <If condition="IsCraftingClass() or IsGatheringClass()">
+      <RunCode name="SwitchDoWMJob" />
+    </If>
+
+    <If Condition="Core.Player.ClassLevel &lt; 100">
+      <UserDialog DialogText="You must be level 100 to run this profile!" />
+    </If>
+
+    <!-- One Last Hurrah -->
+    <If Condition="IsQuestCompleted(70495) and not IsQuestCompleted(70845) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70845)">
+        <GetTo ZoneId="1185" XYZ="185.03448, -17.9643, 42.445576" />
+        <If Condition="IsQuestAcceptQualified(70845)">
+          <PickupQuest QuestId="70845" NpcId="1038915" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70845) == 1">
+        <GetTo ZoneId="1185" XYZ="206.66763, -17.964502, 61.04986" />
+        <TalkTo NpcId="1038967" XYZ="206.68335, -17.9645, 62.607666" QuestId="70845" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 2">
+        <GetTo ZoneId="1185" XYZ="206.66763, -17.964502, 61.04986" />
+        <TalkTo NpcId="1038967" XYZ="206.68335, -17.9645, 62.607666" QuestId="70845" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 3">
+        <WaitWhile Condition="GetQuestStep(70845) == 3" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 4">
+        <!-- Get back to the ship -->
+        <If condition="not IsOnMap(1277)">
+          <GetTo ZoneId="1185" XYZ="206.30022, -17.9645, 62.49891" />
+          <UseTransport NpcId="1052325" InteractDistance="3.0" XYZ="206.43921, -17.9645, 64.4082" />
+        </If>
+        <TalkTo NpcId="1042454" XYZ="33.554565, 18.511625, 6.362976" QuestId="70845" StepId="4" />
+        <TalkTo NpcId="1042894" XYZ="16.281311, 16.35219, -10.666138" QuestId="70845" StepId="4" />
+        <TalkTo NpcId="1046341" XYZ="0.38146973, 16.34722, -6.4240723" QuestId="70845" StepId="4" />
+        <TalkTo NpcId="1046350" XYZ="-18.509216, 16.352419, 3.40271" QuestId="70845" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 5">
+        <!-- Get back to the ship -->
+        <If condition="not IsOnMap(1277)">
+          <GetTo ZoneId="1185" XYZ="206.30022, -17.9645, 62.49891" />
+          <UseTransport NpcId="1052325" InteractDistance="3.0" XYZ="206.43921, -17.9645, 64.4082" />
+        </If>
+        <MoveTo XYZ="31.026852, 18.35515, -4.1877694" />
+        <TalkTo NpcId="1039720" XYZ="32.822144, 18.355127, -3.402832" QuestId="70845" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 6">
+        <WaitWhile Condition="GetQuestStep(70845) == 6" />
+      </If>
+      <If Condition="GetQuestStep(70845) == 255">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <TurnIn QuestId="70845" NpcId="1052330" XYZ="46.066895, 0, -0.13739014" />
+      </If>
+    </If>
+
+    <!-- The Phantom Village -->
+    <If Condition="IsQuestCompleted(70845) and not IsQuestCompleted(70846) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70846)">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(70846)">
+          <PickupQuest QuestId="70846" NpcId="1052330" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70846) == 1">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <If Condition="GetQuestStep(70846) == 1 and GetQuestById(70846).QuestI8A == 0">
+          <UseObject NpcId="2014647" XYZ="34.01233, 3.0975342, 32.394775" condition="GetQuestById(70846).QuestI8A == 0" />
+        </If>
+        <If Condition="GetQuestStep(70846) == 1 and GetQuestById(70846).QuestI8A == 17">
+          <UseObject NpcId="2014645" XYZ="-37.70508, 1.3274536, -35.965576" condition="GetQuestById(70846).QuestI8A == 17" />
+        </If>
+        <If Condition="GetQuestStep(70846) == 1 and GetQuestById(70846).QuestI8A == 33">
+          <UseObject NpcId="2014646" XYZ="10.391357, 30.869019, -69.04712" condition="GetQuestById(70846).QuestI8A == 33" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70846) == 255">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <TurnIn QuestId="70846" NpcId="1052452" XYZ="-1.9074707, 0.90001047, 15.8845825" />
+      </If>
+    </If>
+
+    <!-- Unfamiliar Territory -->
+    <If Condition="IsQuestCompleted(70846) and not IsQuestCompleted(70847) and Core.Player.ClassLevel &gt; 99">
+      <Hook Name="CloseTutorial" Operation="A" Location="TreeStart" />
+      <If Condition="not HasQuest(70847)">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="0.42447522, 0.02990641, -16.34058" />
+        <If Condition="IsQuestAcceptQualified(70847)">
+          <PickupQuest QuestId="70847" NpcId="1053794" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70847) == 255">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="-74.350945, 5, -15.275206" />
+        <TurnIn QuestId="70847" NpcId="1053797" XYZ="-77.592224, 5, -15.396423" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Name="SwitchDoWMJob">
+      <![CDATA[
+        var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
+        var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
+        if (gearSets.Any())
+        {
+          gearSets.First().Activate();
+          await Coroutine.Sleep(2000);
+        }
+            ]]>
+    </CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseTutorial">
+			<![CDATA[
+        if (!LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.IsOpen) return false;
+
+        if (LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.IsOpen)
+        {
+            LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.Close();
+        }
+        
+        return false;
+			]]>
+		</CodeChunk>
+
+  </CodeChunks>
+</Profile> 
