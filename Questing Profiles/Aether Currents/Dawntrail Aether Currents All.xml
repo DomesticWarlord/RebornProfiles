@@ -28,18 +28,18 @@ Author: Angles24, Manta, DomesticWarlord
 						<PickupQuest QuestId="70587" NpcId="1051195" />
 					</If>
 				</If>
-			</If>
-			<If Condition="GetQuestStep(70587) == 1">
-				<GetTo ZoneId="1187" XYZ="382.2453, -154.52353, -419.87537" />
-				<TalkTo NpcId="1051195" XYZ="383.29138, -154.50243, -420.49292" QuestId="70587" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(70587) == 2">
-				<GetTo ZoneId="1187" XYZ="297.20786, -172.57524, -485.95627" />
-				<TalkTo NpcId="1051196" XYZ="297.19995, -172.65335, -488.57864" QuestId="70587" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70587) == 255">
-				<GetTo ZoneId="1187" XYZ="381.93646, -154.52348, -420.02838" />
-				<TurnIn QuestId="70587" NpcId="1051195" XYZ="383.29138, -154.50243, -420.49292" />
+				<If Condition="GetQuestStep(70587) == 1">
+					<GetTo ZoneId="1187" XYZ="382.2453, -154.52353, -419.87537" />
+					<TalkTo NpcId="1051195" XYZ="383.29138, -154.50243, -420.49292" QuestId="70587" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(70587) == 2">
+					<GetTo ZoneId="1187" XYZ="297.20786, -172.57524, -485.95627" />
+					<TalkTo NpcId="1051196" XYZ="297.19995, -172.65335, -488.57864" QuestId="70587" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70587) == 255">
+					<GetTo ZoneId="1187" XYZ="381.93646, -154.52348, -420.02838" />
+					<TurnIn QuestId="70587" NpcId="1051195" XYZ="383.29138, -154.50243, -420.49292" />
+				</If>
 			</If>
 
 			<!--  A Traveler to the Rescue -->
@@ -189,22 +189,22 @@ Author: Angles24, Manta, DomesticWarlord
 						<PickupQuest QuestId="70617" NpcId="1051237" />
 					</If>
 				</If>
-			</If>
-			<If Condition="GetQuestStep(70617) == 1">
-				<GetTo ZoneId="1188" XYZ="-311.55075, 6.492697, -722.2178" />
-				<TalkTo NpcId="1051238" XYZ="-312.36743, 6.5262628, -723.3234" QuestId="70617" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(70617) == 2">
-				<GetTo ZoneId="1188" XYZ="-250.8449, 5.56726, -555.9826" />
-				<TalkTo NpcId="1051237" XYZ="-251.20929, 5.5572896, -554.89435" QuestId="70617" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70617) == 3">
-				<GetTo ZoneId="1188" XYZ="-202.78519, 6.375242, -512.2039" />
-				<TalkTo NpcId="2014316" XYZ="-201.0987, 6.362976, -511.03995" QuestId="70617" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(70617) == 255">
-				<GetTo ZoneId="1188" XYZ="-128.25476, 9.84216, -422.5972" />
-				<TurnIn QuestId="70617" NpcId="1051242" XYZ="-127.45862, 9.842161, -419.6994" />
+				<If Condition="GetQuestStep(70617) == 1">
+					<GetTo ZoneId="1188" XYZ="-311.55075, 6.492697, -722.2178" />
+					<TalkTo NpcId="1051238" XYZ="-312.36743, 6.5262628, -723.3234" QuestId="70617" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(70617) == 2">
+					<GetTo ZoneId="1188" XYZ="-250.8449, 5.56726, -555.9826" />
+					<TalkTo NpcId="1051237" XYZ="-251.20929, 5.5572896, -554.89435" QuestId="70617" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70617) == 3">
+					<GetTo ZoneId="1188" XYZ="-202.78519, 6.375242, -512.2039" />
+					<TalkTo NpcId="2014316" XYZ="-201.0987, 6.362976, -511.03995" QuestId="70617" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(70617) == 255">
+					<GetTo ZoneId="1188" XYZ="-128.25476, 9.84216, -422.5972" />
+					<TurnIn QuestId="70617" NpcId="1051242" XYZ="-127.45862, 9.842161, -419.6994" />
+				</If>
 			</If>
 
 			<!--  Ripe for the Offering -->
@@ -215,26 +215,26 @@ Author: Angles24, Manta, DomesticWarlord
 						<PickupQuest QuestId="70600" NpcId="1048782" />
 					</If>
 				</If>
-			</If>
-			<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 0">
-				<GetTo ZoneId="1188" XYZ="-240.17067, 6.073989, -356.70364" />
-				<UseObject NpcId="2014167" XYZ="-241.56561, 6.0578003, -356.40503" Condition="GetQuestById(70600).QuestI8A == 0" />
-			</If>
-			<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 1">
-				<GetTo ZoneId="1188" XYZ="-262.03845, 5.000002, -319.88812" />
-				<UseObject NpcId="2014168" XYZ="-262.50098, 4.989685, -318.25745" Condition="GetQuestById(70600).QuestI8A == 1" />
-			</If>
-			<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 2">
-				<GetTo ZoneId="1188" XYZ="-278.93356, 5.000002, -321.15604" />
-				<UseObject NpcId="2014169" XYZ="-280.81183, 4.989685, -320.8515" Condition="GetQuestById(70600).QuestI8A == 2" />
-			</If>
-			<If Condition="GetQuestStep(70600) == 2">
-				<GetTo ZoneId="1188" XYZ="670.8898, 41.6385, -526.72003" />
-				<HandOver ItemId="2003629" NpcId="1048826" XYZ="672.4802, 41.63828, -527.36707" QuestId="70600" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70600) == 255">
-				<GetTo ZoneId="1188" XYZ="-71.226166, 6.5367393, -484.40707" />
-				<TurnIn QuestId="70600" ItemId="2003630" NpcId="1048782" XYZ="-68.52832, 6.536739, -486.53394" />
+				<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 0">
+					<GetTo ZoneId="1188" XYZ="-240.17067, 6.073989, -356.70364" />
+					<UseObject NpcId="2014167" XYZ="-241.56561, 6.0578003, -356.40503" Condition="GetQuestById(70600).QuestI8A == 0" />
+				</If>
+				<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 1">
+					<GetTo ZoneId="1188" XYZ="-262.03845, 5.000002, -319.88812" />
+					<UseObject NpcId="2014168" XYZ="-262.50098, 4.989685, -318.25745" Condition="GetQuestById(70600).QuestI8A == 1" />
+				</If>
+				<If Condition="GetQuestStep(70600) == 1 and GetQuestById(70600).QuestI8A == 2">
+					<GetTo ZoneId="1188" XYZ="-278.93356, 5.000002, -321.15604" />
+					<UseObject NpcId="2014169" XYZ="-280.81183, 4.989685, -320.8515" Condition="GetQuestById(70600).QuestI8A == 2" />
+				</If>
+				<If Condition="GetQuestStep(70600) == 2">
+					<GetTo ZoneId="1188" XYZ="670.8898, 41.6385, -526.72003" />
+					<HandOver ItemId="2003629" NpcId="1048826" XYZ="672.4802, 41.63828, -527.36707" QuestId="70600" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70600) == 255">
+					<GetTo ZoneId="1188" XYZ="-71.226166, 6.5367393, -484.40707" />
+					<TurnIn QuestId="70600" ItemId="2003630" NpcId="1048782" XYZ="-68.52832, 6.536739, -486.53394" />
+				</If>
 			</If>
 
 			<!--  All Good Potpacts Must Come to an End -->
@@ -245,26 +245,26 @@ Author: Angles24, Manta, DomesticWarlord
 						<PickupQuest QuestId="70621" NpcId="1051263" />
 					</If>
 				</If>
-			</If>
-			<If Condition="GetQuestStep(70621) == 1">
-				<GetTo ZoneId="1188" XYZ="-446.1499, 122.93498, 343.1729" />
-				<TalkTo NpcId="1051264" XYZ="-444.78522, 122.890236, 342.85498" QuestId="70621" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 0">
-				<GetTo ZoneId="1188" XYZ="-483.9347, 121.633, 330.15894" />
-				<TalkTo NpcId="1048892" XYZ="-485.55737, 121.633, 329.9762" QuestId="70621" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 1">
-				<GetTo ZoneId="1188" XYZ="-429.08298, 121.63345, 320.44492" />
-				<TalkTo NpcId="1048858" XYZ="-426.87115, 121.63345, 320.88184" QuestId="70621" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 2">
-				<GetTo ZoneId="1188" XYZ="-463.16934, 121.63344, 279.74808" />
-				<TalkTo NpcId="1048850" XYZ="-472.5567, 121.77377, 271.229" QuestId="70621" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70621) == 255">
-				<GetTo ZoneId="1188" XYZ="-459.67145, 122.89102, 341.57748" />
-				<TurnIn QuestId="70621" NpcId="1051264" XYZ="-444.78522, 122.890236, 342.85498" />
+				<If Condition="GetQuestStep(70621) == 1">
+					<GetTo ZoneId="1188" XYZ="-446.1499, 122.93498, 343.1729" />
+					<TalkTo NpcId="1051264" XYZ="-444.78522, 122.890236, 342.85498" QuestId="70621" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 0">
+					<GetTo ZoneId="1188" XYZ="-483.9347, 121.633, 330.15894" />
+					<TalkTo NpcId="1048892" XYZ="-485.55737, 121.633, 329.9762" QuestId="70621" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 1">
+					<GetTo ZoneId="1188" XYZ="-429.08298, 121.63345, 320.44492" />
+					<TalkTo NpcId="1048858" XYZ="-426.87115, 121.63345, 320.88184" QuestId="70621" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70621) == 2 and GetQuestById(70621).QuestI8A == 2">
+					<GetTo ZoneId="1188" XYZ="-463.16934, 121.63344, 279.74808" />
+					<TalkTo NpcId="1048850" XYZ="-472.5567, 121.77377, 271.229" QuestId="70621" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70621) == 255">
+					<GetTo ZoneId="1188" XYZ="-459.67145, 122.89102, 341.57748" />
+					<TurnIn QuestId="70621" NpcId="1051264" XYZ="-444.78522, 122.890236, 342.85498" />
+				</If>
 			</If>
 
 			<!--  Divine Inspiration -->
@@ -275,26 +275,26 @@ Author: Angles24, Manta, DomesticWarlord
 						<PickupQuest QuestId="70610" NpcId="1048855" />
 					</If>
 				</If>
-			</If>
-			<If Condition="GetQuestStep(70610) == 1">
-				<GetTo ZoneId="1188" XYZ="-473.41937, 127.653404, 99.94068" />
-				<TalkTo NpcId="1050709" XYZ="-474.2962, 127.79511, 98.89368" QuestId="70610" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(70610) == 2">
-				<GetTo ZoneId="1188" XYZ="-598.9784, 142.85992, 35.817295" />
-				<TalkTo NpcId="1050710" XYZ="-599.7864, 142.85991, 35.934937" QuestId="70610" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(70610) == 3">
-				<GetTo ZoneId="1188" XYZ="-547.1174, 139.2539, -60.47515" />
-				<TalkTo NpcId="1050711" XYZ="-541.64954, 139.2539, -66.5141" QuestId="70610" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(70610) == 4">
-				<GetTo ZoneId="1188" XYZ="-542.3374, 139.2539, -65.14776" />
-				<TalkTo NpcId="1050711" XYZ="-541.64954, 139.2539, -66.5141" QuestId="70610" StepId="4" />
-			</If>
-			<If Condition="GetQuestStep(70610) == 255">
-				<GetTo ZoneId="1188" XYZ="-490.13126, 121.633, 289.4687" />
-				<TurnIn QuestId="70610" NpcId="1048855" XYZ="-491.63043, 121.63846, 271.50366" />
+				<If Condition="GetQuestStep(70610) == 1">
+					<GetTo ZoneId="1188" XYZ="-473.41937, 127.653404, 99.94068" />
+					<TalkTo NpcId="1050709" XYZ="-474.2962, 127.79511, 98.89368" QuestId="70610" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(70610) == 2">
+					<GetTo ZoneId="1188" XYZ="-598.9784, 142.85992, 35.817295" />
+					<TalkTo NpcId="1050710" XYZ="-599.7864, 142.85991, 35.934937" QuestId="70610" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70610) == 3">
+					<GetTo ZoneId="1188" XYZ="-547.1174, 139.2539, -60.47515" />
+					<TalkTo NpcId="1050711" XYZ="-541.64954, 139.2539, -66.5141" QuestId="70610" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(70610) == 4">
+					<GetTo ZoneId="1188" XYZ="-542.3374, 139.2539, -65.14776" />
+					<TalkTo NpcId="1050711" XYZ="-541.64954, 139.2539, -66.5141" QuestId="70610" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(70610) == 255">
+					<GetTo ZoneId="1188" XYZ="-490.13126, 121.633, 289.4687" />
+					<TurnIn QuestId="70610" NpcId="1048855" XYZ="-491.63043, 121.63846, 271.50366" />
+				</If>
 			</If>
 
 			<If Condition="not IsAetherCurrentCompleted(1188, 14)">
