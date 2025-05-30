@@ -2709,6 +2709,12 @@
       </If>
       <If Condition="GetQuestStep(70472) == 4">
         <FollowNPC NpcId="1048078" QuestId="70472" StepId="4"/>
+        <!-- Commented out per Mastahg's suggestion. Haven't tested
+        <GetTo ZoneId="1186" XYZ="345.29196, 55.219276, 102.56142" />
+        <TalkTo NpcId="1048078" XYZ="345.4292, 57.814163, 97.37196" QuestId="70472" StepId="4" />
+        <GetTo ZoneId="1186" XYZ="291.01135, 51.254463, 196.55968" />
+        <TalkTo NpcId="1048079" XYZ="290.3639, 51.39998, 199.20642" QuestId="70472" StepId="4" />
+      -->
       </If>
       <If Condition="GetQuestStep(70472) == 255">
         <GetTo ZoneId="1186" XYZ="299.99, 51.199978, 200.30557" />
@@ -2744,6 +2750,7 @@
       </If>
       <If Condition="GetQuestStep(70473) == 4">
         <GetTo ZoneId="1186" XYZ="364.43948, 50.75, 221.26459" />
+        <MoveTo XYZ="364.06042, 50.75, 221.32578" Distance="1" UseMesh="False"/>
         <RunCode name="Gives You Teeth" />
         <WaitWhile Condition="GetQuestStep(70473) == 4" />
       </If>
