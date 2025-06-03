@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Dawntrail Relics
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+
+  <!-- Fate Farming Settings -->
+  <!ENTITY UseLisbethFlightNav "True"> <!-- True to use Lisbeth, False to use RB nav-->
+
+  <!-- FATE Blacklist, if the bot cannot guarantee the success -->
+  <!ENTITY BlackList "1871,1922,1905,1931,1936,1937,1865,1869,1949,1957,1906,1913,1917,1878">
+
+  <!-- Minimum progress that we wait for before joining a fate? -->
+  <!ENTITY MinProgress "10">
+
+  <!-- Should we spend Gemstones? -->
+  <!ENTITY SpendGemstones "True">
+  <!-- What quantity should we get to before cashing in gemstnoes? -->
+  <!ENTITY GemStones "1000">
+
+
+  <!-- Tomestone farm settings -->
+  <!ENTITY DungeonChoice "Underkeep"> <!-- What dungeon do we run for Helimotry? -->
+
+  <!ENTITY RelicToPurchase "47869"> <!-- Set the ID for the relic you wish to purchase here -->
+  <!-- PLD Item Name: Phantom Sword Penumbrae, Item ID: 47869 -->
+  <!-- MNK Item Name: Phantom Knuckles Penumbrae, Item ID: 47870 -->
+  <!-- WAR Item Name: Phantom Bardiche Penumbrae, Item ID: 47871 -->
+  <!-- DRG Item Name: Phantom Spear Penumbrae, Item ID: 47872 -->
+  <!-- BRD Item Name: Phantom Harp Bow Penumbrae, Item ID: 47873 -->
+  <!-- BLM Item Name: Phantom Crook Penumbrae, Item ID: 47874 -->
+  <!-- WHM Item Name: Phantom Staff Penumbrae, Item ID: 47875 -->
+  <!-- SMN Item Name: Phantom Index Penumbrae, Item ID: 47876 -->
+  <!-- SCH Item Name: Phantom Codex Penumbrae, Item ID: 47877 -->
+  <!-- NIN Item Name: Phantom Cleavers Penumbrae, Item ID: 47878 -->
+  <!-- DRK Item Name: Phantom Guillotine Penumbrae, Item ID: 47879 -->
+  <!-- MCH Item Name: Phantom Arquebus Penumbrae, Item ID: 47880 -->
+  <!-- AST Item Name: Phantom Star Globe Penumbrae, Item ID: 47881 -->
+  <!-- SAM Item Name: Phantom Blade Penumbrae, Item ID: 47882 -->
+  <!-- RDM Item Name: Phantom Rapier Penumbrae, Item ID: 47883 -->
+  <!-- GNB Item Name: Phantom Bayonet Penumbrae, Item ID: 47884 -->
+  <!-- DNC Item Name: Phantom Terpna Penumbrae, Item ID: 47885 -->
+  <!-- RPR Item Name: Phantom War Scythe Penumbrae, Item ID: 47886 -->
+  <!-- SGE Item Name: Phantom Pendulums Penumbrae, Item ID: 47887 -->
+  <!-- VPR Item Name: Phantom Twinfangs Penumbraw, Item ID: 47888 -->
+  <!-- PCT Item Name: Phantom Flat Brush Penumbraw, Item ID: 47889 -->
+
+
+  <!-- Constants, don't change anything below this line -->
+  <!ENTITY AzuriteDemiatma "47744">
+  <!ENTITY VerdigrisDemiatma "47745">
+  <!ENTITY MalachiteDemiatma "47746">
+  <!ENTITY RealgarDemiatma "47747">
+  <!ENTITY CaputMortuumDemiatma "47748">
+  <!ENTITY OrpimentDemiatma "47749">
+  <!ENTITY Arcanite "47750">
+  <!ENTITY TomestoneofHeliometry "47">
+]>
+
+
+<Profile>
+  <Name>Dawntrail Relics</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <While condition="DutyManager.InInstance and not IsDutyEnded()">
+      <RunCode name="LoadProfile" />
+    </While>
+    <While condition="DutyManager.InInstance and IsDutyEnded()">
+      <LLLeaveDuty />
+    </While>
+
+    <!-- Arcane Artistry -->
+    <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70855)">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="25.971828, 0, 11.212592" />
+        <If Condition="IsQuestAcceptQualified(70855)">
+          <PickupQuest QuestId="70855" NpcId="1053906" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70855) == 1">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="-47.274254, 4.9999704, 32.892643" />
+        <TalkTo NpcId="1053907" XYZ="-49.485046, 4.999985, 33.12732" QuestId="70855" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70855) == 2">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="25.03054, 0, 10.574368" />
+        <TalkTo NpcId="1053906" XYZ="25.802979, 0, 13.38208" QuestId="70855" StepId="2" />
+      </If>
+      <While Condition="GetQuestStep(70855) == 255">
+
+        <!-- After we have obtained all the Demiatmas -->
+        <If condition="HasAtLeast(&AzuriteDemiatma;, 3) and HasAtLeast(&VerdigrisDemiatma;, 3) and HasAtLeast(&MalachiteDemiatma;, 3) and HasAtLeast(&RealgarDemiatma;, 3) and HasAtLeast(&CaputMortuumDemiatma;, 3) and HasAtLeast(&OrpimentDemiatma;, 3)">
+          <!-- Get back to the Phantom Village-->
+          <If condition="not IsOnMap(1269)">
+            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+          </If>
+          <TurnIn QuestId="70840" NpcId="1053908" XYZ="28.854736, 0, 13.351624" />
+        </If>
+
+        <If Condition="not HasItem(4868)">
+          <Lisbeth Json="[{'Group':1,'Item':4868,'Amount':999,'Enabled':true,'Type':'Purchase'}]" />
+        </If>
+
+        <If condition="&SpendGemstones; == True">
+          <If condition="ItemCount(26807) &gt; &GemStones; or ItemCount(26807) == &GemStones;">
+            <GetTo ZoneId="962" XYZ="75.72826, 5.15, -36.62057" />
+            <BuyShopExchangeCurrency Dialog="True" NpcId="1037055" ItemId="35833" Count="10" />
+          </If>
+        </If>
+
+        <!-- Azurite Demiatma x3	Urqopacha -->
+        <While Condition="not HasAtLeast(&AzuriteDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Urqopacha FATEs for Azurite Demiatma x3." />
+          <If condition="not IsOnMap(1187)">
+            <TeleportTo AetheryteId="200" /> <!-- Wachunpelo -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1187) and not HasAtLeast(&AzuriteDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+        <!-- Verdigris Demiatma x3	Kozama'uka -->
+        <While Condition="not HasAtLeast(&VerdigrisDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Kozama'uka FATEs for Verdigris Demiatma x3." />
+          <If condition="not IsOnMap(1188)">
+            <TeleportTo AetheryteId="202" /> <!-- Ok'hanu -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1188) and not HasAtLeast(&VerdigrisDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+        <!-- Malachite Demiatma x3	Yak T'el -->
+        <While Condition="not HasAtLeast(&MalachiteDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Yak'Tel FATEs for Malachite Demiatma x3." />
+          <If condition="not IsOnMap(1189)">
+            <TeleportTo AetheryteId="205" /> <!-- Iq Br'aax -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1189) and not HasAtLeast(&MalachiteDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+        <!-- Realgar Demiatma x3	Shaaloani -->
+        <While Condition="not HasAtLeast(&RealgarDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Shaaloani FATEs for Realgar Demiatma x3." />
+          <If condition="not IsOnMap(1190)">
+            <TeleportTo AetheryteId="207" /> <!-- Hhusatahwi -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1190) and not HasAtLeast(&RealgarDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+        <!-- Caput Mortuum Demiatma x3	Heritage Found -->
+        <While Condition="not HasAtLeast(&CaputMortuumDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Heritage Found FATEs for Caput Mortuum Demiatma x3." />
+          <If condition="not IsOnMap(1191)">
+            <TeleportTo AetheryteId="212" /> <!-- Electrope Strike -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1191) and not HasAtLeast(&CaputMortuumDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+        <!-- Orpiment Demiatma x3	Living Memory -->
+        <While Condition="not HasAtLeast(&OrpimentDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;">
+          <LLToast Message="Grinding Living Memory FATEs for Orpiment Demiatma x3." />
+          <If condition="not IsOnMap(1192)">
+            <TeleportTo AetheryteId="213" /> <!-- Reah Tahra -->
+            <WaitTimer WaitTime="5" />
+          </If>
+          <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1192) and not HasAtLeast(&OrpimentDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
+        </While>
+
+      </While>
+
+    </If>
+
+    <!--  Forging the Phantasmal -->
+    <If Condition="IsQuestCompleted(70855) and not IsQuestCompleted(70856) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70856)">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="25.955828, 0, 10.62652" />
+        <If Condition="IsQuestAcceptQualified(70856)">
+          <PickupQuest SelectStringSlot="1" QuestId="70856" NpcId="1053906" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70856) == 255">
+
+        <!-- Obtain Arcanite -->
+        <If condition="not HasAtLeast(&Arcanite;, 3)">
+
+          <!-- Farm Dungeon if we don't have enough Heliomtry -->
+          <If condition="not HasAtLeast(&TomestoneofHeliometry;, 1500)">
+            <LoadPFDungeon GoToBarracks="False" ProfileName="&DungeonChoice;" QueueType="2" />
+          </If>
+
+          <!-- Buy Arcanite if we do -->
+          <If condition="HasAtLeast(&TomestoneofHeliometry;, 1500)">
+            <!-- Get back to the Phantom Village-->
+            <If condition="not IsOnMap(1269)">
+              <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+              <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+            </If>
+            <MoveTo XYZ="37.75831,0,20.118107" />
+            <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&Arcanite;" Count="3" />
+          </If>
+        </If>
+
+        <!-- Turn in quest once we get enough Arcanite -->
+        <If condition="HasAtLeast(&Arcanite;, 3)">
+          <!-- Get back to the Phantom Village-->
+          <If condition="not IsOnMap(1269)">
+            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+          </If>
+          <TurnIn QuestId="70856" NpcId="1053909" XYZ="29.55664, 0, 10.788086" />
+        </If>
+
+      </If>
+    </If>
+
+    <If Condition="IsQuestCompleted(70856) and not HasItem(&RelicToPurchase;)">
+
+      <!-- Obtain Arcanite -->
+      <If condition="not HasAtLeast(&Arcanite;, 3)">
+
+        <!-- Farm Dungeon if we don't have enough Heliomtry -->
+        <If condition="not HasAtLeast(&TomestoneofHeliometry;, 1500)">
+          <LoadPFDungeon GoToBarracks="False" ProfileName="&DungeonChoice;" QueueType="2" />
+        </If>
+
+        <!-- Buy Arcanite if we do -->
+        <If condition="HasAtLeast(&TomestoneofHeliometry;, 1500)">
+          <!-- Get back to the Phantom Village-->
+          <If condition="not IsOnMap(1269)">
+            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+          </If>
+          <MoveTo XYZ="37.75831,0,20.118107" />
+          <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&Arcanite;" Count="3" />
+        </If>
+      </If>
+
+      <!-- Turn in quest once we get enough Arcanite -->
+      <If condition="HasAtLeast(&Arcanite;, 3)">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(1269)">
+          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="27.301353,0,9.82415" />
+        <BuyShopExchangeItem NpcId="1053905 " ItemId="&RelicToPurchase;" Count=" 1" />
+        <LLSmallTalk />
+      </If>
+
+    </If>
+
+    <If Condition="HasItem(&RelicToPurchase;)">
+      <UserDialog DialogText="Congratualtions! You have the selected relic. Please change the relic you wish to purchase and start the profile again." />
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Name="LoadProfile">
+  <![CDATA[
+
+    await LlamaLibrary.Helpers.LoadServerProfile.LoadProfileByZone(WorldManager.ZoneId);
+
+]]>
+</CodeChunk>
+  </CodeChunks>
+</Profile> 
