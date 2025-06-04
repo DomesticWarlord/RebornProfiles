@@ -19,12 +19,14 @@
   <!ENTITY SpendGemstones "True">
   <!-- What quantity should we get to before cashing in gemstnoes? -->
   <!ENTITY GemStones "1000">
+  <!-- Which Gemstone vendor should we up to show? 'EW' for Endwalker, 'DT' for Dawntrail -->
+  <!ENTITY GemstoneVendor "DT">
 
 
   <!-- Tomestone farm settings -->
   <!ENTITY DungeonChoice "Underkeep"> <!-- What dungeon do we run for Helimotry? -->
 
-  <!ENTITY RelicToPurchase "47869"> <!-- Set the ID for the relic you wish to purchase here -->
+  <!ENTITY RelicToPurchase "47875"> <!-- Set the ID for the relic you wish to purchase here -->
   <!-- PLD Item Name: Phantom Sword Penumbrae, Item ID: 47869 -->
   <!-- MNK Item Name: Phantom Knuckles Penumbrae, Item ID: 47870 -->
   <!-- WAR Item Name: Phantom Bardiche Penumbrae, Item ID: 47871 -->
@@ -121,8 +123,14 @@
 
         <If condition="&SpendGemstones; == True">
           <If condition="ItemCount(26807) &gt; &GemStones; or ItemCount(26807) == &GemStones;">
-            <GetTo ZoneId="962" XYZ="75.72826, 5.15, -36.62057" />
-            <BuyShopExchangeCurrency Dialog="True" NpcId="1037055" ItemId="35833" Count="10" />
+            <If condition="&GemstoneVendor; == EW">
+              <GetTo ZoneId="962" XYZ="75.72826, 5.15, -36.62057" />
+              <BuyShopExchangeCurrency Dialog="True" NpcId="1037055" ItemId="35833" Count="10" />
+            </If>
+            <If condition="&GemstoneVendor; == DT">
+              <GetTo ZoneId="1185" XYZ="-25.918114, -10.00001, 101.99045" />
+              <BuyShopExchangeCurrency Dialog="True" NpcId="1048383" ItemId="43961" Count="10" />
+            </If>
           </If>
         </If>
 
@@ -269,12 +277,12 @@
         </If>
         <MoveTo XYZ="27.301353,0,9.82415" />
         <BuyShopExchangeItem NpcId="1053905 " ItemId="&RelicToPurchase;" Count=" 1" />
-        <LLSmallTalk />
       </If>
 
     </If>
 
     <If Condition="HasItem(&RelicToPurchase;)">
+      <RunCode name="CloseWindow" />
       <UserDialog DialogText="Congratualtions! You have the selected relic. Please change the relic you wish to purchase and start the profile again." />
     </If>
 
@@ -286,6 +294,17 @@
   <![CDATA[
 
     await LlamaLibrary.Helpers.LoadServerProfile.LoadProfileByZone(WorldManager.ZoneId);
+
+]]>
+</CodeChunk>
+    <CodeChunk Name="CloseWindow">
+  <![CDATA[
+
+    if (LlamaLibrary.RemoteWindows.ShopExchangeItem.Instance.IsOpen)
+    {
+        LlamaLibrary.RemoteWindows.ShopExchangeItem.Instance.Close();
+    }
+
 
 ]]>
 </CodeChunk>
