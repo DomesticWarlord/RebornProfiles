@@ -19,14 +19,14 @@
   <!ENTITY SpendGemstones "True">
   <!-- What quantity should we get to before cashing in gemstnoes? -->
   <!ENTITY GemStones "1000">
-  <!-- Which Gemstone vendor should we up to show? 'EW' for Endwalker, 'DT' for Dawntrail -->
-  <!ENTITY GemstoneVendor "DT">
+  <!-- Which Gemstone vendor should we up to show? '2' for Endwalker, '1' for Dawntrail -->
+  <!ENTITY GemstoneVendor "1">
 
 
   <!-- Tomestone farm settings -->
   <!ENTITY DungeonChoice "Underkeep"> <!-- What dungeon do we run for Helimotry? -->
 
-  <!ENTITY RelicToPurchase "47875"> <!-- Set the ID for the relic you wish to purchase here -->
+  <!ENTITY RelicToPurchase "47869"> <!-- Set the ID for the relic you wish to purchase here -->
   <!-- PLD Item Name: Phantom Sword Penumbrae, Item ID: 47869 -->
   <!-- MNK Item Name: Phantom Knuckles Penumbrae, Item ID: 47870 -->
   <!-- WAR Item Name: Phantom Bardiche Penumbrae, Item ID: 47871 -->
@@ -123,11 +123,11 @@
 
         <If condition="&SpendGemstones; == True">
           <If condition="ItemCount(26807) &gt; &GemStones; or ItemCount(26807) == &GemStones;">
-            <If condition="&GemstoneVendor; == EW">
+            <If condition="&GemstoneVendor; == 2">
               <GetTo ZoneId="962" XYZ="75.72826, 5.15, -36.62057" />
               <BuyShopExchangeCurrency Dialog="True" NpcId="1037055" ItemId="35833" Count="10" />
             </If>
-            <If condition="&GemstoneVendor; == DT">
+            <If condition="&GemstoneVendor; == 1">
               <GetTo ZoneId="1185" XYZ="-25.918114, -10.00001, 101.99045" />
               <BuyShopExchangeCurrency Dialog="True" NpcId="1048383" ItemId="43961" Count="10" />
             </If>
@@ -277,6 +277,7 @@
         </If>
         <MoveTo XYZ="27.301353,0,9.82415" />
         <BuyShopExchangeItem NpcId="1053905 " ItemId="&RelicToPurchase;" Count=" 1" />
+        <LLSmallTalk/>
       </If>
 
     </If>
