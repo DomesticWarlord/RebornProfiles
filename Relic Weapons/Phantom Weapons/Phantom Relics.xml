@@ -16,9 +16,9 @@
   <!ENTITY MinProgress "10">
 
   <!-- Should we spend Gemstones? -->
-  <!ENTITY SpendGemstones "True">
-  <!-- What quantity should we get to before cashing in gemstnoes? -->
-  <!ENTITY GemStones "1000">
+  <!ENTITY SpendGemstones "False">
+  <!-- What quantity should we get to before cashing in gemstnoes? If you want it to spend gemstones, make sure to set this lower than 1500 -->
+  <!ENTITY GemStones "1501">
   <!-- Which Gemstone vendor should we up to show? '2' for Endwalker, '1' for Dawntrail -->
   <!ENTITY GemstoneVendor "1">
 
@@ -74,6 +74,10 @@
       <LLLeaveDuty />
     </While>
 
+    <If Condition="not IsQuestCompleted(70847)">
+      <UserDialog DialogText="Please complete the quest chain that ends with 'Unfamiliar Territory' to unlock Phantom Relics before running this profile.\nThe profile in '\Questing Profiles\Content Unlocks\Unlock Occult Crescent' will do that quest chain for you." QuestId="70847" />
+    </If>
+
     <!-- Arcane Artistry -->
     <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855) and Core.Player.ClassLevel &gt; 99">
       <If Condition="not HasQuest(70855)">
@@ -107,18 +111,8 @@
       </If>
       <While Condition="GetQuestStep(70855) == 255">
 
-        <!-- After we have obtained all the Demiatmas -->
-        <If condition="HasAtLeast(&AzuriteDemiatma;, 3) and HasAtLeast(&VerdigrisDemiatma;, 3) and HasAtLeast(&MalachiteDemiatma;, 3) and HasAtLeast(&RealgarDemiatma;, 3) and HasAtLeast(&CaputMortuumDemiatma;, 3) and HasAtLeast(&OrpimentDemiatma;, 3)">
-          <!-- Get back to the Phantom Village-->
-          <If condition="not IsOnMap(1269)">
-            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-          </If>
-          <TurnIn QuestId="70840" NpcId="1053908" XYZ="28.854736, 0, 13.351624" />
-        </If>
-
-        <If Condition="not HasItem(4868)">
-          <Lisbeth Json="[{'Group':1,'Item':4868,'Amount':999,'Enabled':true,'Type':'Purchase'}]" />
+        <If condition="&SpendGemstones; == False and ItemCount(26807) &gt; &GemStones;">
+          <UserDialog DialogText="Spending Gemstones is turned off but you're carrying more than the specified limit. Either spend some gemstones or increase the limit. Set the limit to more than you can carry to turn off dealing with Gemstones (Like 1501). " />
         </If>
 
         <If condition="&SpendGemstones; == True">
@@ -132,6 +126,11 @@
               <BuyShopExchangeCurrency Dialog="True" NpcId="1048383" ItemId="43961" Count="10" />
             </If>
           </If>
+        </If>
+
+        <If Condition="not HasItem(4868)">
+          <LLToast Message="Going to buy Greens so that we can use our chocobo while fate farming"/>
+          <Lisbeth Json="[{'Group':1,'Item':4868,'Amount':999,'Enabled':true,'Type':'Purchase'}]" />
         </If>
 
         <!-- Azurite Demiatma x3	Urqopacha -->
@@ -194,6 +193,16 @@
           <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1192) and not HasAtLeast(&OrpimentDemiatma;, 3) and ItemCount(26807) &lt; &GemStones;" />
         </While>
 
+        <!-- After we have obtained all the Demiatmas -->
+        <If condition="HasAtLeast(&AzuriteDemiatma;, 3) and HasAtLeast(&VerdigrisDemiatma;, 3) and HasAtLeast(&MalachiteDemiatma;, 3) and HasAtLeast(&RealgarDemiatma;, 3) and HasAtLeast(&CaputMortuumDemiatma;, 3) and HasAtLeast(&OrpimentDemiatma;, 3)">
+          <!-- Get back to the Phantom Village-->
+          <If condition="not IsOnMap(1269)">
+            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
+            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+          </If>
+          <TurnIn QuestId="70840" NpcId="1053908" XYZ="28.854736, 0, 13.351624" />
+        </If>
+
       </While>
 
     </If>
@@ -253,7 +262,7 @@
 
         <!-- Farm Dungeon if we don't have enough Heliomtry -->
         <If condition="not HasAtLeast(&TomestoneofHeliometry;, 1500)">
-          <LoadPFDungeon GoToBarracks="False" ProfileName="&DungeonChoice;" QueueType="2" />
+          <LoadPFDungeon GoToBarracks="True" ProfileName="&DungeonChoice;" QueueType="2" />
         </If>
 
         <!-- Buy Arcanite if we do -->
@@ -277,7 +286,7 @@
         </If>
         <MoveTo XYZ="27.301353,0,9.82415" />
         <BuyShopExchangeItem NpcId="1053905 " ItemId="&RelicToPurchase;" Count=" 1" />
-        <LLSmallTalk/>
+        <LLSmallTalk />
       </If>
 
     </If>
