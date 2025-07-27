@@ -1,4 +1,4 @@
-# Zodiac Relic Weapons
+# Phantom Relic Weapons
 
 This profile will obtain the first tier of the level 100 Dawntrail relics, the Phantom Weapons.
 
