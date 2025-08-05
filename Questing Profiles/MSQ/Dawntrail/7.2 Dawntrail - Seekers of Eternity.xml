@@ -219,6 +219,9 @@
       <If Condition="GetQuestStep(70840) == 4">
         <UserDialog DialogText="Please complete the 8-Player trial Recollection manually." QuestId="70840" StepId="4" />
       </If>
+      <If Condition="GetQuestStep(70840) == 5">
+        <WaitWhile Condition="GetQuestStep(70840) == 5" />
+      </If>
       <If Condition="GetQuestStep(70840) == 255">
         <If Condition="not IsOnMap(1274)">
           <GetTo ZoneId="1186" XYZ="-70.78668, 42.8066, -543.20593" />
