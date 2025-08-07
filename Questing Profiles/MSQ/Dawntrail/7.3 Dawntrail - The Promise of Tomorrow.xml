@@ -355,6 +355,99 @@
       <If Condition="GetQuestStep(70907) == 2">
         <UserDialog DialogText="Please manually complete the 4-player dungeon The Meso Terminal" QuestId="70907" StepId="2" />
       </If>
+      <If Condition="GetQuestStep(70907) == 3">
+        <WaitWhile Condition="GetQuestStep(70907) == 3" />
+      </If>
+      <If Condition="GetQuestStep(70907) == 4">
+        <UserDialog DialogText="Please manually complete the 8-player trial The Ageless Necropolis" QuestId="70907" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70907) == 5">
+        <WaitWhile Condition="GetQuestStep(70907) == 5" />
+      </If>
+      <If Condition="GetQuestStep(70907) == 6">
+        <If condition="not IsOnMap(1192)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="2.6339731, 50.12495, 368.1912" Land="True" /> <!-- ZoneId="1192" -->
+        <TalkTo NpcId="1054597" XYZ="5.8136597, 50.12495, 369.80237" QuestId="70907" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70907) == 255">
+        <If condition="not IsOnMap(1191)">
+          <TeleportTo Name="The Outskirts" AetheryteId="211" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="-146.80261, 25.971823, -498.1846" Land="True" /> <!-- ZoneId="1191" -->
+        <TurnIn QuestId="70907" NpcId="1054604" XYZ="-145.06763, 25.971825, -495.38416" />
+      </If>
+    </If>
+
+    <!-- Blades in Waiting -->
+    <If Condition="IsQuestCompleted(70907) and not IsQuestCompleted(70908) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="GetQuestStep(70908) &lt; 255">
+        <If condition="not IsOnMap(1191)">
+          <TeleportTo Name="The Outskirts" AetheryteId="211" />
+        </If>
+      </If>
+      <If Condition="not HasQuest(70908)">
+        <FlyTo AllowedVariance="1" XYZ="-147.0245, 25.971823, -498.40262" Land="True" /> <!-- ZoneId="1191" -->
+        <If Condition="IsQuestAcceptQualified(70908)">
+          <PickupQuest QuestId="70908" NpcId="1054604" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70908) == 1">
+        <FlyTo AllowedVariance="1" XYZ="-116.95736, 28.993984, -348.48688" Land="True" /> <!-- ZoneId="1191" -->
+        <TalkTo NpcId="1055852" XYZ="-117.906494, 28.995459, -353.1701" QuestId="70908" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70908) == 2">
+        <FlyTo AllowedVariance="1" XYZ="-601.24896, -2.1692808, -485.2122" Land="True" /> <!-- ZoneId="1191" -->
+        <TalkTo NpcId="1048099" XYZ="-606.5919, -2.203068, -486.6255" QuestId="70908" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70908) == 3">
+        <FlyTo AllowedVariance="1" XYZ="-670.97736, 52.598618, -206.48256" Land="True" /> <!-- ZoneId="1191" -->
+        <TalkTo NpcId="1054612" XYZ="-670.95447, 52.96887, -203.35706" QuestId="70908" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70908) == 4">
+        <FlyTo AllowedVariance="1" XYZ="-557.0585, 44.216457, -157.9854" Land="True" /> <!-- ZoneId="1191" -->
+        <TalkTo NpcId="1054614" XYZ="-554.4366, 44.324562, -159.5636" QuestId="70908" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70908) == 255">
+        <If Condition="not IsOnMap(&TheBackroom;)">
+          <GetTo ZoneId="1186" XYZ="302.05237, 51.199978, 205.0354" />
+          <UseTransport NpcId="1048083" InteractDistance="3.5" XYZ="302.05237, 51.199978, 205.0354" />
+        </If>
+        <TurnIn QuestId="70908" NpcId="1054616" XYZ="-0.6256714, -4.656613E-08, 6.8512573" />
+      </If>
+    </If>
+
+    <!-- The Promise of Tomorrow -->
+    <If Condition="IsQuestCompleted(70908) and not IsQuestCompleted(70909) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70909)">
+        <If Condition="not IsOnMap(&TheBackroom;)">
+          <GetTo ZoneId="1186" XYZ="302.05237, 51.199978, 205.0354" />
+          <UseTransport NpcId="1048083" InteractDistance="3.5" XYZ="302.05237, 51.199978, 205.0354" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(70909)">
+          <PickupQuest QuestId="70909" NpcId="1054616" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70909) == 1">
+        <If Condition="not IsOnMap(&TheBackroom;)">
+          <GetTo ZoneId="1186" XYZ="302.05237, 51.199978, 205.0354" />
+          <UseTransport NpcId="1048083" InteractDistance="3.5" XYZ="302.05237, 51.199978, 205.0354" />
+        </If>
+        <TalkTo NpcId="1054616" XYZ="-0.6256714, -4.656613E-08, 6.8512573" QuestId="70909" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70909) == 2">
+        <GetTo ZoneId="1192" XYZ="-0.00010895729, 50.124985, 700.1593" />
+        <TalkTo NpcId="1054618" XYZ="1.296936, 50.12499, 704.7378" QuestId="70909" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70909) == 3">
+        <GetTo ZoneId="1185" XYZ="-104.40781, 100.04266, -205.11472" />
+        <TalkTo NpcId="1054624" XYZ="-105.638245, 100.04267, -202.47198" QuestId="70909" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70909) == 255">
+        <GetTo ZoneId="1186" XYZ="-24.300238, 38.056595, -384.28583" />
+        <TurnIn QuestId="70909" NpcId="1054628" XYZ="-23.941406, 38.0566, -389.0288" />
+      </If>
     </If>
 
   </Order>
