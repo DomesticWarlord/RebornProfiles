@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Moonfire Faire 2025
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+
+  <!ENTITY Guise "2579">
+]>
+
+<Profile>
+  <Name>Moonfire Faire 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Dressed to Protect -->
+    <If Condition="not IsQuestCompleted(70857) and Core.Player.ClassLevel &gt; 29">
+      <If Condition="not HasQuest(70857)">
+        <GetTo ZoneId="128" XYZ="13.630972, 45.65599, 129.45995" />
+        <If Condition="IsQuestAcceptQualified(70857)">
+          <PickupQuest QuestId="70857" NpcId="1053941" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70857) == 1">
+        <If condition="not IsOnMap(137)">
+          <TeleportTo Name="Costa del Sol" AetheryteId="11" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="695.7155, 9.228476, 482.00644" Land="True" /> <!-- ZoneId="137" -->
+        <TalkTo NpcId="1053942" XYZ="705.989, 9.4453125, 483.14636" QuestId="70857" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70857) == 2">
+        <GetTo ZoneId="137" XYZ="774.56165, 38.999973, 403.7137" />
+        <TalkTo NpcId="1053943" XYZ="777.4929, 38.999973, 400.9308" QuestId="70857" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70857) == 3">
+        <GetTo ZoneId="137" XYZ="774.31305, 38.999973, 405.5585" />
+        <TalkTo NpcId="1053944" XYZ="772.91516, 38.99997, 396.90234" QuestId="70857" StepId="3" />
+        <WaitWhile condition="not Core.Me.HasAura(&Guise;)"/>
+      </If>
+      <If Condition="GetQuestStep(70857) == 4">
+        <If Condition="not Core.Me.HasAura(&Guise;)">
+          <GetTo ZoneId="137" XYZ="772.31055, 38.999973, 402.683" />
+          <TalkTo NpcId="1053944" XYZ="772.91516, 38.99997, 396.90234" />
+        </If>
+        <If Condition="GetQuestStep(70857) == 4 and GetQuestById(70857).QuestI8A == 0">
+          <GetTo ZoneId="137" XYZ="738.6486, 36.17486, 477.79437" />
+          <TalkTo NpcId="1053949" XYZ="738.4298, 36.23682, 482.0172" QuestId="70857" StepId="4" />
+        </If>
+        <If Condition="GetQuestStep(70857) == 4 and GetQuestById(70857).QuestI8A == 16">
+          <GetTo ZoneId="137" XYZ="698.5484, 8.4, 444.81427" />
+          <TalkTo NpcId="1053947" XYZ="695.9181, 8.4, 442.31323" QuestId="70857" StepId="4" />
+        </If>
+        <If Condition="GetQuestStep(70857) == 4 and GetQuestById(70857).QuestI8A == 32">
+          <GetTo ZoneId="137" XYZ="845.8716, 8.4, 462.64526" />
+          <TalkTo NpcId="1053946" XYZ="849.2407, 8.4, 461.17346" QuestId="70857" StepId="4" />
+        </If>
+        <If Condition="GetQuestStep(70857) == 4 and GetQuestById(70857).QuestI8A == 49">
+          <GetTo ZoneId="137" XYZ="870.59406, 8.4, 403.84732" />
+          <TalkTo NpcId="1053945" XYZ="872.0989, 8.4, 402.8534" QuestId="70857" StepId="4" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70857) == 5">
+        <GetTo ZoneId="137" XYZ="777.064, 38.999973, 403.93997" />
+        <TalkTo NpcId="1053943" XYZ="777.4929, 38.999973, 400.9308" QuestId="70857" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70857) == 6">
+        <If Condition="not Core.Me.HasAura(&Guise;)">
+          <GetTo ZoneId="137" XYZ="772.31055, 38.999973, 402.683" />
+          <TalkTo NpcId="1053944" XYZ="772.91516, 38.99997, 396.90234" />
+        </If>
+        <GetTo ZoneId="137" XYZ="792.50525, 37.199966, 396.67325" />
+        <Snipe NpcId="2014686" XYZ="794.4304, 37.247192, 394.3694" QuestId="70857" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70857) == 255">
+        <GetTo ZoneId="137"  XYZ="772.41614, 38.999973, 404.14423" />
+        <TurnIn QuestId="70857" NpcId="1051599" XYZ="775.0209, 38.999977, 398.2146" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
