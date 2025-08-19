@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Occult Crescent Quests
+  Authors: DomesticWarlord
+
+  Zone Name: South Horn | Zone Id: 1252 | Raw Zone Id: 1252 | Subzone Id: 4944◘
+
+  Base Camp
+  Occult Aetheryte 0x253B0A23F60 NpcId:2014664 Type:EventObject
+  <MoveTo XYZ="830.7468,72.98389,-695.97925" />
+
+  Eldergrowth
+  Aetheryte Shard 0x253B0A23F60 NpcId:2014667 Type:EventObject
+  <MoveTo XYZ="306.93518,105.18042,305.65344" />
+
+  Stonemarsh
+  Aetheryte Shard 0x253B0A24110 NpcId:2014744 Type:EventObject
+  <MoveTo XYZ="-384.11542,99.19885,281.42212" />
+
+  Crystallized Caverns
+  Aetheryte Shard 0x253B0A23F60 NpcId:2014666 Type:EventObject
+  <MoveTo XYZ="-358.14453,101.97595,-120.95831" />
+
+  Wanderer's Haven
+  Aetheryte Shard 0x253B0A23F60 NpcId:2014665 Type:EventObject
+  <MoveTo XYZ="-173.02203,8.194031,-611.1391" />
+
+  //Jump Point
+	new OffMapStorage2("300.59946, 102.13416, 324.8668","305.441, 80.98751, 346.26843",OffMeshConnectionDirection.StartToEnd,AreaType.Ground, AbilityFlags.All),
+
+  //Cliff Below Eldergrowth
+  JumpLinkDescription.S2E("310.61545, 102.96495, 311.75317","326.52475, 71.591995, 323.3394"),
+  JumpLinkDescription.S2E("309.82312, 102.87357, 315.72427","321.1774, 73.232765, 324.05682"),
+  JumpLinkDescription.S2E("315.37692, 102.893906, 306.67917","329.31738, 68.596405, 314.50534"),
+
+  // Jump points near Rough Waters
+  JumpLinkDescription.S2E("-428.1555, 3.8000004, -597.82776","-437.9488, -0.30000007, -597.1212"),
+  JumpLinkDescription.S2E("-492.9703, 3.497761, -587.6451","-499.51062, -0.30000007, -590.3048"),
+  JumpLinkDescription.S2E("-489.01135, 3.4138825, -604.0298","-496.3854, -0.29999995, -607.0134"),
+  JumpLinkDescription.S2E("-498.2705, 3.4977572, -558.37885","-505.5826, -0.30000007, -557.3099"),
+
+    JumpLinkDescription.S2E("-498.2705, 3.4977572, -558.37885","-505.5826, -0.30000007, -557.3099"),
+
+  // FATE list
+  ID: 1962 Type: Rough Waters Fate: Boss Radius: 40 Location: <162, 56, 676.0001>
+    (13701) Nammu, Dist: 1.67f, Loc: <162, 56, 676>,  FateId: 1962, IsTargetable: False, IsVisible: True, Target: None
+  ID: 1963 Type: The Golden Guardian Fate: Boss Radius: 40 Location: <373.2, 70, 486>
+
+  ID: 1964 Type: King of the Crescent Fate: Boss Radius: 40 Location: <-226.1, 116.3825, 254>
+    (13740) Ropross, Dist: 15.23f, Loc: <-241.10785, 113.036125, 268.9707>,  FateId: 1964, IsTargetable: True, IsVisible: True, Target: Lv. 100 Paladin
+  ID: 1965 Type: The Winged Terror Fate: Boss Radius: 40 Location: <-548.5, 3, -595>
+    (13739) Giant Bird, Dist: 1.54f, Loc: <-536.7361, 3, -596.9177>,  FateId: 1965, IsTargetable: True, IsVisible: True, Target: Lv. 100 Warrior
+  ID: 1966 Type: An Unending Duty Fate: Boss Radius: 40 Location: <-223.1, 107, 36>
+  ID: 1967 Type: Brain Drain Fate: Boss Radius: 40 Location: <-48.09998, 111.761, -320>
+    (13704) Advanced Aevis, Dist: 1.78f, Loc: <-48.09998, 111.76102, -320>,  FateId: 1967, IsTargetable: False, IsVisible: True, Target: None
+  ID: 1968 Type: A Delicate Balance Fate: Boss Radius: 30 Location: <-370, 75, 650>
+    (13819) Dehumidifier, Dist: 9.62f, Loc: <-370, 75, 650>,  FateId: 1968, IsTargetable: False, IsVisible: True, Target: Lv. 100 Warrior
+  ID: 1969 Type: Sworn to Soil Fate: Boss Radius: 33 Location: <-589.1, 96.5, 333>
+    (13816) Mad Mudarch, Dist: 34.16f, Loc: <-589.1, 96.2, 322.9998>,  FateId: 1969, IsTargetable: True, IsVisible: True, Target: Lv. 100 Paladin
+  ID: 1970 Type: A Prying Eye Fate: Boss Radius: 50 Location: <-71, 71.31213, 557>
+    (13853) Observer, Dist: 2.03f, Loc: <-74.38776, 70.44342, 557>,  FateId: 1970, IsTargetable: True, IsVisible: True, Target: Lv. 100 Warrior
+    (13854) Observer's Eye, Dist: 4.56f, Loc: <-70.51196, 70.437355, 554.00916>,  FateId: 1970, IsTargetable: False, IsVisible: True, Target: Lv. 100 DarkKnight
+  ID: 1971 Type: Fatal Allure Fate: Boss Radius: 40 Location: <79, 97.85933, 278>
+    (13855) Execrator, Dist: 1.54f, Loc: <78.99597, 96.9968, 277.9735>, IsTargetable: True, IsVisible: True, Target: Lv. 100 Paladin
+  ID: 1972 Type: Serving Darkness Fate: Boss Radius: 40 Location: <413, 96, -13>
+    (13741) Lifereaper, Dist: 1.69f, Loc: <412.98547, 95.999985, -13.01593>, IsTargetable: True, IsVisible: True, Target: Lv. 100 DarkKnight
+  ID: 1976 Type: Persistent Pots Fate: Eureka Radius: 40 Location: <200, 111.7266, -215>
+  ID: 1977 Type: Pleading Pots Fate: Eureka Radius: 40 Location: <-481, 75, 528>
+    (13748) Havoc, Dist: 5.85f, Loc: <-478.41614, 75, 531.7311>,  FateId: 1977, IsTargetable: True, IsVisible: True, Target: Lv. 100 Paladin
+
+
+  Persistent Pot 0x2135A58C4D0 NpcId:13742 Type:BattleNpc
+
+LoreEntry: { Name: Ketenramm Blaufystsyn, Unlocked: True, Id: 1, UnlockLink: 521, Icon: 70615, LayoutId: 0, NamePtr: 0x207097CB662, Flags: 179 }
+LoreEntry: { Name: The Phantom Village, Unlocked: True, Id: 2, UnlockLink: 507, Icon: 70601, LayoutId: 11606900, NamePtr: 0x207097CB75A, Flags: 71 }
+LoreEntry: { Name: The Archive, Unlocked: True, Id: 3, UnlockLink: 522, Icon: 70616, LayoutId: 0, NamePtr: 0x207097CB852, Flags: 75 }
+LoreEntry: { Name: Iris, Unlocked: True, Id: 4, UnlockLink: 523, Icon: 70617, LayoutId: 0, NamePtr: 0x207097CB94A, Flags: 23 }
+LoreEntry: { Name: The Expedition Base Camp, Unlocked: True, Id: 5, UnlockLink: 508, Icon: 70602, LayoutId: 11606902, NamePtr: 0x207097CBA42, Flags: 243 }
+LoreEntry: { Name: Phantom Jobs, Unlocked: True, Id: 6, UnlockLink: 536, Icon: 70630, LayoutId: 0, NamePtr: 0x207097CBB3A, Flags: 127 }
+LoreEntry: { Name: The Lost Citadel, Id: 7, UnlockLink: 509, Icon: 70603, LayoutId: 11606904, NamePtr: 0x207097CBC32, Flags: 144 }
+LoreEntry: { Name: Trade Tortoise, Id: 8, UnlockLink: 530, Icon: 70624, LayoutId: 0, NamePtr: 0x207097CBD2A, Flags: 52 }
+LoreEntry: { Name: The Vanishing Slope, Id: 9, UnlockLink: 510, Icon: 70604, LayoutId: 11606906, NamePtr: 0x207097CBE22, Flags: 60 }
+LoreEntry: { Name: Nymian Petalodus, Id: 10, UnlockLink: 529, Icon: 70623, LayoutId: 0, NamePtr: 0x207097CBF1A, Flags: 32 }
+LoreEntry: { Name: Persistent Pot, Id: 11, UnlockLink: 531, Icon: 70625, LayoutId: 0, NamePtr: 0x207097CC012, Flags: 96 }
+LoreEntry: { Name: Heathcliff, Id: 12, UnlockLink: 514, Icon: 70608, LayoutId: 11606915, NamePtr: 0x207097CC10A, Flags: 132 }
+LoreEntry: { Name: The Fell Warren, Id: 13, UnlockLink: 511, Icon: 70605, LayoutId: 11606909, NamePtr: 0x207097CC202, Flags: 100 }
+LoreEntry: { Name: Mythic Idol, Id: 14, UnlockLink: 528, Icon: 70622, LayoutId: 0, NamePtr: 0x207097CC2FA, Flags: 196 }
+LoreEntry: { Name: The Shadowed City, Id: 15, UnlockLink: 512, Icon: 70606, LayoutId: 11606912, NamePtr: 0x207097CC3F2, Flags: 156 }
+LoreEntry: { Name: Black Chocobo, Id: 16, UnlockLink: 525, Icon: 70619, LayoutId: 0, NamePtr: 0x207097CC4EA, Flags: 140 }
+LoreEntry: { Name: Crescent Berserker, Id: 17, UnlockLink: 526, Icon: 70620, LayoutId: 0, NamePtr: 0x207097CC5E2, Flags: 32 }
+LoreEntry: { Name: Eldergrowth, Id: 18, UnlockLink: 515, Icon: 70609, LayoutId: 11606922, NamePtr: 0x207097CC6DA, Flags: 120 }
+LoreEntry: { Name: The Abandoned Ascent, Id: 19, UnlockLink: 513, Icon: 70607, LayoutId: 11606914, NamePtr: 0x207097CC7D2, Flags: 44 }
+LoreEntry: { Name: Cloister Demon, Id: 20, UnlockLink: 527, Icon: 70621, LayoutId: 0, NamePtr: 0x207097CC8CA, Flags: 76 }
+LoreEntry: { Name: The Silent Streets, Id: 21, UnlockLink: 518, Icon: 70612, LayoutId: 11606925, NamePtr: 0x207097CC9C2, Flags: 128 }
+LoreEntry: { Name: The Ancient Stoneworks, Id: 22, UnlockLink: 519, Icon: 70613, LayoutId: 11606926, NamePtr: 0x207097CCABA, Flags: 252 }
+LoreEntry: { Name: The Wanderer's Haven, Id: 23, UnlockLink: 517, Icon: 70611, LayoutId: 11606924, NamePtr: 0x207097CCBB2, Flags: 12 }
+LoreEntry: { Name: The Brazier, Id: 24, UnlockLink: 516, Icon: 70610, LayoutId: 11606923, NamePtr: 0x207097CCCAA, Flags: 192 }
+LoreEntry: { Name: The Island's Architect, Id: 25, UnlockLink: 524, Icon: 70618, LayoutId: 0, NamePtr: 0x207097CCDA2, Flags: 244 }
+LoreEntry: { Name: Demon Tablet, Id: 26, UnlockLink: 532, Icon: 70626, LayoutId: 0, NamePtr: 0x207097CCE9A, Flags: 220 }
+LoreEntry: { Name: Dead Stars, Id: 27, UnlockLink: 533, Icon: 70627, LayoutId: 0, NamePtr: 0x207097CCF92, Flags: 120 }
+LoreEntry: { Name: Marble Dragon, Id: 28, UnlockLink: 534, Icon: 70628, LayoutId: 0, NamePtr: 0x207097CD08A, Flags: 100 }
+LoreEntry: { Name: Magitaur, Id: 29, UnlockLink: 535, Icon: 70629, LayoutId: 0, NamePtr: 0x207097CD182, Flags: 40 }
+LoreEntry: { Name: The Secluded Stacks, Id: 30, UnlockLink: 520, Icon: 70614, LayoutId: 11606928, NamePtr: 0x207097CD27A, Flags: 92 }
+
+Dynamic Events
+ID: 48, Name: The Forked Tower: Blood, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7634835
+ID: 33, Name: Scourge of the Mind, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7643561
+ID: 34, Name: The Black Regiment, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7648726
+ID: 35, Name: The Unbridled, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7653726
+ID: 36, Name: Crawling Death, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7659104
+ID: 37, Name: Calamity Bound, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7663970
+ID: 38, Name: Trial by Claw, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7721445
+ID: 39, Name: From Times Bygone, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7732541
+ID: 40, Name: Company of Stone, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7743897
+ID: 41, Name: Shark Attack, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7756210
+ID: 42, Name: On the Hunt, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7767732
+ID: 43, Name: With Extreme Prejudice, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7778758
+ID: 44, Name: Noise Complaint, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7800586
+ID: 45, Name: Cursed Concern, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7814413
+ID: 46, Name: Eternal Watch, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7847738
+ID: 47, Name: Flame of Dusk, State: Inactive, Progress: 0, IsActive: False, TimeLeft: -20315.15:07:08.7861414
+
+
+-->
+<!DOCTYPE Profile [
+
+  <!ENTITY ClassChoice "Paladin">
+
+  <!ENTITY FatesToDo "1962,1964,1965,1966,1967,1968,1969,1970,1971,1972,1977">
+  <!ENTITY FateBlackList "1963"> <!-- Golden Guardian really sucks. Too many face aways that we can't properly handle -->
+
+  <!ENTITY MinimumFateProgress "0">
+  <!ENTITY MinimumFateProgressWhenCEIsActive "1">
+
+  <!-- Constants. Don't change anything below this line -->
+  <!-- Quests -->
+  <!ENTITY Dawntrail "70495">
+  <!ENTITY OneLastHurrah "70845">
+  <!ENTITY ThePhantomVillageQuest "70846">
+  <!ENTITY UnfamiliarTerritory "70847">
+  <!ENTITY NewJobOldTricks "70848">
+  <!ENTITY TheAncientArtsofWar "70849">
+  <!ENTITY CreaturesoftheCrescent "70850">
+  <!ENTITY ARuinedLand "70851">
+  <!ENTITY ACommonThread "70852">
+  <!ENTITY PastandCrescent "70853">
+
+  <!-- ZoneID -->
+  <!ENTITY SouthHorn "1252">
+  <!ENTITY PhantomVillage "1269">
+
+  <!-- Occult Record Unlock IDs -->
+  <!ENTITY KetenrammBlaufystsyn "521">
+  <!ENTITY ThePhantomVillage "507">
+  <!ENTITY TheArchive "522">
+  <!ENTITY Iris "523">
+  <!ENTITY TheExpeditionBaseCamp "508">
+  <!ENTITY PhantomJobs "536">
+  <!ENTITY TheLostCitadel "509">
+  <!ENTITY TradeTortoise "530">
+  <!ENTITY TheVanishingSlope "510">
+  <!ENTITY NymianPetalodus "529">
+  <!ENTITY PersistentPot "531">
+  <!ENTITY Heathcliff "514">
+  <!ENTITY TheFellWarren "511">
+  <!ENTITY MythicIdol "528">
+  <!ENTITY TheShadowedCity "512">
+  <!ENTITY BlackChocobo "525">
+  <!ENTITY CrescentBerserker "526">
+  <!ENTITY Eldergrowth "515">
+  <!ENTITY TheAbandonedAscent "513">
+  <!ENTITY CloisterDemon "527">
+  <!ENTITY TheSilentStreets "518">
+  <!ENTITY TheAncientStoneworks "519">
+  <!ENTITY TheWanderersHaven "517">
+  <!ENTITY TheBrazier "516">
+  <!ENTITY TheIslandsArchitect "524">
+  <!ENTITY DemonTablet "532">
+  <!ENTITY DeadStars "533">
+  <!ENTITY MarbleDragon "534">
+  <!ENTITY Magitaur "535">
+  <!ENTITY TheSecludedStacks "520">
+
+
+  <!-- Aethernet Nodes -->
+  <!ENTITY BaseCampAethernetShard "2014664">
+  <!ENTITY EldergrowthAethernetShard "2014667">
+  <!ENTITY StonemarshAethernetShard "2014744">
+  <!ENTITY CrystallizedCavernsAethernetShard "2014666">
+  <!ENTITY WanderersHavenAethernetShard "2014665">
+]>
+<Profile>
+  <Name>Occult Crescent</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If Condition="not IsQuestCompleted(&Dawntrail;)">
+      <UserDialog DialogText="Please complete all the 7.0 Dawntrail MSQ content before starting this profile!" />
+    </If>
+
+    <If condition="IsCraftingClass() or IsGatheringClass()">
+      <RunCode name="SwitchDoWMJob" />
+    </If>
+
+    <If Condition="Core.Player.ClassLevel &lt; 100">
+      <UserDialog DialogText="You must be level 100 to run this profile!" />
+    </If>
+
+    <!-- Unlock quests -->
+    <If condition="not IsQuestCompleted(&UnfamiliarTerritory;)">
+      <!-- One Last Hurrah -->
+      <If Condition="IsQuestCompleted(&Dawntrail;) and not IsQuestCompleted(&OneLastHurrah;) and Core.Player.ClassLevel &gt; 99">
+        <If Condition="not HasQuest(&OneLastHurrah;)">
+          <GetTo ZoneId="1185" XYZ="185.03448, -17.9643, 42.445576" />
+          <If Condition="IsQuestAcceptQualified(&OneLastHurrah;)">
+            <PickupQuest QuestId="&OneLastHurrah;" NpcId="1038915" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 1">
+          <GetTo ZoneId="1185" XYZ="206.66763, -17.964502, 61.04986" />
+          <TalkTo NpcId="1038967" XYZ="206.68335, -17.9645, 62.607666" QuestId="&OneLastHurrah;" StepId="1" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 2">
+          <GetTo ZoneId="1185" XYZ="206.66763, -17.964502, 61.04986" />
+          <TalkTo NpcId="1038967" XYZ="206.68335, -17.9645, 62.607666" QuestId="&OneLastHurrah;" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 3">
+          <WaitWhile Condition="GetQuestStep(&OneLastHurrah;) == 3" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 4">
+          <!-- Get back to the ship -->
+          <If condition="not IsOnMap(1277)">
+            <GetTo ZoneId="1185" XYZ="206.30022, -17.9645, 62.49891" />
+            <UseTransport NpcId="1052325" InteractDistance="3.0" XYZ="206.43921, -17.9645, 64.4082" />
+          </If>
+          <TalkTo NpcId="1042454" XYZ="33.554565, 18.511625, 6.362976" QuestId="&OneLastHurrah;" StepId="4" />
+          <TalkTo NpcId="1042894" XYZ="16.281311, 16.35219, -10.666138" QuestId="&OneLastHurrah;" StepId="4" />
+          <TalkTo NpcId="1046341" XYZ="0.38146973, 16.34722, -6.4240723" QuestId="&OneLastHurrah;" StepId="4" />
+          <TalkTo NpcId="1046350" XYZ="-18.509216, 16.352419, 3.40271" QuestId="&OneLastHurrah;" StepId="4" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 5">
+          <!-- Get back to the ship -->
+          <If condition="not IsOnMap(1277)">
+            <GetTo ZoneId="1185" XYZ="206.30022, -17.9645, 62.49891" />
+            <UseTransport NpcId="1052325" InteractDistance="3.0" XYZ="206.43921, -17.9645, 64.4082" />
+          </If>
+          <MoveTo XYZ="31.026852, 18.35515, -4.1877694" />
+          <TalkTo NpcId="1039720" XYZ="32.822144, 18.355127, -3.402832" QuestId="&OneLastHurrah;" StepId="5" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 6">
+          <WaitWhile Condition="GetQuestStep(&OneLastHurrah;) == 6" />
+        </If>
+        <If Condition="GetQuestStep(&OneLastHurrah;) == 255">
+          <!-- Get back to the Phantom Village-->
+          <If condition="not IsOnMap(&PhantomVillage;)">
+            <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+          </If>
+          <TurnIn QuestId="&OneLastHurrah;" NpcId="1052330" XYZ="46.066895, 0, -0.13739014" />
+        </If>
+      </If>
+
+      <!-- The Phantom Village -->
+      <If Condition="IsQuestCompleted(70845) and not IsQuestCompleted(&ThePhantomVillageQuest;) and Core.Player.ClassLevel &gt; 99">
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(&PhantomVillage;)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <If Condition="not HasQuest(&ThePhantomVillageQuest;)">
+          <If Condition="IsQuestAcceptQualified(&ThePhantomVillageQuest;)">
+            <PickupQuest QuestId="&ThePhantomVillageQuest;" NpcId="1052330" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(&ThePhantomVillageQuest;) == 1">
+          <If Condition="GetQuestStep(&ThePhantomVillageQuest;) == 1 and GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 0">
+            <UseObject NpcId="2014647" XYZ="34.01233, 3.0975342, 32.394775" condition="GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 0" />
+          </If>
+          <If Condition="GetQuestStep(&ThePhantomVillageQuest;) == 1 and GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 17">
+            <UseObject NpcId="2014645" XYZ="-37.70508, 1.3274536, -35.965576" condition="GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 17" />
+          </If>
+          <If Condition="GetQuestStep(&ThePhantomVillageQuest;) == 1 and GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 33">
+            <UseObject NpcId="2014646" XYZ="10.391357, 30.869019, -69.04712" condition="GetQuestById(&ThePhantomVillageQuest;).QuestI8A == 33" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(&ThePhantomVillageQuest;) == 255">
+          <TurnIn QuestId="&ThePhantomVillageQuest;" NpcId="1052452" XYZ="-1.9074707, 0.90001047, 15.8845825" />
+        </If>
+      </If>
+
+      <!-- Occult Record 2: The Phantom Village -->
+      <If condition="not IsLoreEntryUnlocked(&ThePhantomVillage;)">
+        <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 2: The Phantom Village." Duration="10000" />
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(&PhantomVillage;)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <MoveTo XYZ="-1.689809, 30.02, -102.455635" />
+        <UseObject NpcId="2014695" XYZ="-1.689809,30.02,-102.455635" condition="not IsLoreEntryUnlocked(&ThePhantomVillage;)" />
+      </If>
+
+      <!-- Unfamiliar Territory -->
+      <If Condition="IsQuestCompleted(70846) and not IsQuestCompleted(&UnfamiliarTerritory;) and Core.Player.ClassLevel &gt; 99">
+        <Hook Name="CloseTutorial" Operation="A" Location="TreeStart" />
+        <!-- Get back to the Phantom Village-->
+        <If condition="not IsOnMap(&PhantomVillage;)">
+          <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+          <UseTransport NpcId="2014669" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+        </If>
+        <If Condition="not HasQuest(&UnfamiliarTerritory;)">
+          <MoveTo XYZ="0.42447522, 0.02990641, -16.34058" />
+          <If Condition="IsQuestAcceptQualified(&UnfamiliarTerritory;)">
+            <PickupQuest QuestId="&UnfamiliarTerritory;" NpcId="1053794" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(&UnfamiliarTerritory;) == 255">
+          <MoveTo XYZ="-74.350945, 5, -15.275206" />
+          <TurnIn QuestId="&UnfamiliarTerritory;" NpcId="1053797" XYZ="-77.592224, 5, -15.396423" />
+        </If>
+      </If>
+
+    </If>
+
+    <!-- Occult Record 2: The Phantom Village -->
+    <If condition="not IsLoreEntryUnlocked(&ThePhantomVillage;)">
+      <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 2: The Phantom Village." Duration="10000" />
+      <If condition="IsOnMap(&SouthHorn;)">
+        <LLLeaveDuty />
+      </If>
+      <!-- Get back to the Phantom Village-->
+      <If condition="not IsOnMap(&PhantomVillage;)">
+        <GetTo ZoneId="1185" XYZ="206.47595, -17.9645, 60.587646" />
+        <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
+      </If>
+      <MoveTo XYZ="-1.689809, 30.02, -102.455635" />
+      <UseObject NpcId="2014695" XYZ="-1.689809,30.02,-102.455635" condition="not IsLoreEntryUnlocked(&ThePhantomVillage;)" />
+      <If condition="IsLoreEntryUnlocked(&ThePhantomVillage;)">
+        <EnterSouthHorn />
+      </If>
+    </If>
+
+    <While condition="True">
+
+      <!--       <If condition="not ClassName == ((ClassJobType.&ClassChoice;))">
+        <ChangeClass Job="&ClassChoice;" />
+      </If> -->
+
+
+      <If condition="IsQuestCompleted(&UnfamiliarTerritory;) and not IsOnMap(&SouthHorn;)">
+        <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Entering South Horn." Duration="10000" />
+        <EnterSouthHorn />
+        <WaitTimer WaitTime="3" />
+      </If>
+
+      <If condition="IsOnMap(&SouthHorn;)">
+
+        <!-- New Job, Old Tricks -->
+        <If Condition="IsQuestCompleted(&UnfamiliarTerritory;) and not IsQuestCompleted(&NewJobOldTricks;)">
+          <If Condition="not HasQuest(&NewJobOldTricks;)">
+            <GetTo ZoneId="&SouthHorn;" XYZ="845.43396, 72.74085, -703.4289" />
+            <If Condition="IsQuestAcceptQualified(&NewJobOldTricks;)">
+              <PickupQuest QuestId="&NewJobOldTricks;" NpcId="1053798" />
+            </If>
+          </If>
+          <If Condition="GetQuestStep(&NewJobOldTricks;) == 255">
+            <GetTo ZoneId="&SouthHorn;" XYZ="864.9205, 72.6915, -680.4945" />
+            <TurnIn QuestId="&NewJobOldTricks;" NpcId="1053799" XYZ="867.9177, 72.7133, -677.48535" />
+          </If>
+        </If>
+
+        <If Condition="not IsQuestCompleted(&TheAncientArtsofWar;) and not IsQuestAcceptQualified(&TheAncientArtsofWar;)">
+          <UserDialog IsBotContinueAllowed="True" DialogText="Please manually select a Phantom class from the window and hit continue. It doesn't matter which class." />
+        </If>
+
+        <!-- The Ancient Arts of War -->
+        <If Condition="IsQuestCompleted(70848) and not IsQuestCompleted(&TheAncientArtsofWar;)">
+          <If Condition="not HasQuest(&TheAncientArtsofWar;)">
+            <If Condition="IsQuestAcceptQualified(&TheAncientArtsofWar;)">
+              <PickupQuest QuestId="&TheAncientArtsofWar;" NpcId="1053796" />
+            </If>
+          </If>
+          <If Condition="GetQuestStep(&TheAncientArtsofWar;) == 255">
+            <GetTo ZoneId="&SouthHorn;" XYZ="825.7426, 72.66427, -679.3088" />
+            <TurnIn QuestId="&TheAncientArtsofWar;" NpcId="1053800" XYZ="822.8733, 72.673935, -678.7671" />
+          </If>
+        </If>
+
+        <!-- Creatures of the Crescent -->
+        <If Condition="IsQuestCompleted(70849) and not IsQuestCompleted(&CreaturesoftheCrescent;)">
+          <If Condition="not HasQuest(&CreaturesoftheCrescent;)">
+            <GetTo ZoneId="&SouthHorn;" XYZ="825.7426, 72.66427, -679.3088" />
+            <If Condition="IsQuestAcceptQualified(&CreaturesoftheCrescent;)">
+              <PickupQuest QuestId="&CreaturesoftheCrescent;" NpcId="1053801" />
+            </If>
+          </If>
+          <If Condition="GetQuestStep(&CreaturesoftheCrescent;) == 1">
+            <If Condition="not IsTodoChecked(&CreaturesoftheCrescent;,1,0)">
+              <Grind grindRef="70850_1" while="not IsTodoChecked(&CreaturesoftheCrescent;,1,0)" />
+            </If>
+            <If Condition="not IsTodoChecked(&CreaturesoftheCrescent;,1,1)">
+              <Grind grindRef="70850_2" while="not IsTodoChecked(&CreaturesoftheCrescent;,1,1)" />
+            </If>
+            <If Condition="not IsTodoChecked(&CreaturesoftheCrescent;,1,2)">
+              <Grind grindRef="70850_3" while="not IsTodoChecked(&CreaturesoftheCrescent;,1,2)" />
+            </If>
+          </If>
+          <If Condition="GetQuestStep(&CreaturesoftheCrescent;) == 255">
+            <GetTo ZoneId="&SouthHorn;" XYZ="823.30774, 72.67326, -678.8885" />
+            <TurnIn QuestId="&CreaturesoftheCrescent;" NpcId="1053802" XYZ="825.43665, 72.67853, -676.5393" />
+          </If>
+        </If>
+
+        <If condition="IsQuestCompleted(&CreaturesoftheCrescent;)">
+
+          <!-- Base Camp -->
+          <If condition="not IsTerritoryAetheryteKnown(&BaseCampAethernetShard;)">
+            <LLToast Message="Going to learn Base Camp Aethernet Shard" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="830.7468,72.98389,-695.97925" />
+            <UseObject NpcId="&BaseCampAethernetShard;" XYZ="830.7468,72.98389,-695.97925" condition="not IsTerritoryAetheryteKnown(&BaseCampAethernetShard;)" />
+          </If>
+
+          <!-- Eldergrowth -->
+          <If condition="not IsTerritoryAetheryteKnown(&EldergrowthAethernetShard;)">
+            <LLToast Message="Going to learn Eldergrowth Aethernet Shard" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="302.69934,103.01092,305.41806" />
+            <UseObject NpcId="&EldergrowthAethernetShard;" XYZ="302.69934,103.01092,305.41806" condition="not IsTerritoryAetheryteKnown(&EldergrowthAethernetShard;)" />
+          </If>
+
+          <!-- Stonemarsh -->
+          <If condition="not IsTerritoryAetheryteKnown(&StonemarshAethernetShard;)">
+            <LLToast Message="Going to learn Stonemarsh Aethernet Shard" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-384.42102,97.30864,277.66058" />
+            <UseObject NpcId="&StonemarshAethernetShard;" XYZ="-384.42102,97.30864,277.66058" condition="not IsTerritoryAetheryteKnown(&StonemarshAethernetShard;)" />
+          </If>
+
+          <!-- Crystallized Caverns -->
+          <If condition="not IsTerritoryAetheryteKnown(&CrystallizedCavernsAethernetShard;)">
+            <LLToast Message="Going to learn Crystallized Caverns Aethernet Shard" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-355.38177,99.99562,-119.8762" />
+            <UseObject NpcId="&CrystallizedCavernsAethernetShard;" XYZ="-355.38177,99.99562,-119.8762" condition="not IsTerritoryAetheryteKnown(&CrystallizedCavernsAethernetShard;)" />
+          </If>
+
+          <!-- Wanderer's Haven -->
+          <If condition="not IsTerritoryAetheryteKnown(&WanderersHavenAethernetShard;)">
+            <LLToast Message="Going to learn Wanderer's Haven Aethernet Shard" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-170.3822,6.5,-609.2083" />
+            <UseObject NpcId="&WanderersHavenAethernetShard;" XYZ="-170.3822,6.5,-609.2083" condition="not IsTerritoryAetheryteKnown(&WanderersHavenAethernetShard;)" />
+          </If>
+
+          <!-- Occult Record 5: The Expedition Base Camp -->
+          <If condition="not IsLoreEntryUnlocked(&TheExpeditionBaseCamp;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 5: The Expedition Base Camp." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="854.8034,73.111824,-692.6828" />
+            <UseObject NpcId="2014695" XYZ="854.8034,73.111824,-692.6828" condition="not IsLoreEntryUnlocked(&TheExpeditionBaseCamp;)" />
+          </If>
+
+          <!-- Occult Record 7: The Lost Citadel -->
+          <If condition="not IsLoreEntryUnlocked(&TheLostCitadel;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 7: The Lost Citadel." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="490.1952,96,-225.4147" />
+            <UseObject NpcId="2014695" XYZ="490.1952,96,-225.4147" condition="not IsLoreEntryUnlocked(&TheLostCitadel;)" />
+          </If>
+
+          <!-- A Ruined Land -->
+          <If Condition="IsLoreEntryUnlocked(&TheLostCitadel;) and IsQuestCompleted(&CreaturesoftheCrescent;) and not IsQuestCompleted(&ARuinedLand;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to do quest 'A Ruined Land'." Duration="10000" />
+            <If Condition="not HasQuest(&ARuinedLand;)">
+              <GetTo ZoneId="1252" XYZ="826.6227, 72.66102, -679.3361" />
+              <If Condition="IsQuestAcceptQualified(&ARuinedLand;)">
+                <PickupQuest QuestId="&ARuinedLand;" NpcId="1053802" />
+              </If>
+            </If>
+            <If Condition="GetQuestStep(&ARuinedLand;) == 1">
+              <GetTo ZoneId="1252" XYZ="883.4462, 108.271255, -148.03587" />
+              <UseObject NpcId="2014648" XYZ="888.1207, 108.07959, -150.56079" QuestId="&ARuinedLand;" StepId="1" />
+            </If>
+            <If Condition="GetQuestStep(&ARuinedLand;) == 255">
+              <GetTo ZoneId="1252" XYZ="828.62604, 72.652756, -679.53845" />
+              <TurnIn ItemId="2003734" QuestId="&ARuinedLand;" NpcId="1053802" XYZ="825.43665, 72.67853, -676.5393" />
+            </If>
+          </If>
+
+          <!-- Occult Record 8: Trade Tortoise -->
+          <!-- This one comes from Critical Engagement 'Cursed Concern' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&TradeTortoise;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 8: Trade Tortoise." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Occult Record 9: The Vanishing Slope -->
+          <If condition="not IsLoreEntryUnlocked(&TheVanishingSlope;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 9: The Vanishing Slope." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-54.71351,25.470129,-466.61975" />
+            <UseObject NpcId="2014695" XYZ="-54.71351,25.470129,-466.61975" condition="not IsLoreEntryUnlocked(&TheVanishingSlope;)" />
+          </If>
+
+          <!-- Occult Record 10: Nymian Petalodus -->
+          <!-- This one comes from Critical Engagement 'Shark Attack' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&NymianPetalodus;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 10: Nymian Petalodus." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Occult Record 11: Persistent Pot -->
+          <!-- This one comes from Random FATE 'Persisten Pots' or 'Pleading Pots'
+          <If condition="not IsLoreEntryUnlocked(&PersistentPot;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 11: Persistent Pot." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Occult Record 12: Heathcliff -->
+          <If condition="Core.Me.ElementalLevel &gt; 10 and not IsLoreEntryUnlocked(&Heathcliff;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 12: Heathcliff." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="85.25827,125.11741,3.354617" />
+            <UseObject NpcId="2014695" XYZ="85.25827,125.11741,3.354617" condition="not IsLoreEntryUnlocked(&Heathcliff;)" />
+          </If>
+
+          <!-- Occult Record 13: The Fell Warren -->
+          <If condition="Core.Me.ElementalLevel &gt; 10 and not IsLoreEntryUnlocked(&TheFellWarren;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 13: The Fell Warren." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-562.8859,121.17596,54.69229" />
+            <UseObject NpcId="2014695" XYZ="-562.8859,121.17596,54.69229" condition="not IsLoreEntryUnlocked(&TheFellWarren;)" />
+          </If>
+
+          <!-- Occult Record 14: Mythic Idol -->
+          <!-- This one comes from Critical Engagement 'Mythic Idol' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&MythicIdol;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 14: Mythic Idol." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Occult Record 15: The Shadowed City -->
+          <If condition="Core.Me.ElementalLevel &gt; 10 and not IsLoreEntryUnlocked(&TheShadowedCity;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 15: The Shadowed City." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="139.47005,66.85496,567.4652" />
+            <UseObject NpcId="2014695" XYZ="139.47005,66.85496,567.4652" condition="not IsLoreEntryUnlocked(&TheShadowedCity;)" />
+          </If>
+
+          <!-- Occult Record 16: Black Chocobo -->
+          <!-- This one comes from Critical Engagement 'The Black Regiment' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&BlackChocobo;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 16: Black Chocobo." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Occult Record 17: Crescent Berserker -->
+          <!-- This one comes from Critical Engagement 'The Unbridled' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&CrescentBerserker;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 17: Crescent Berserker." Duration="10000" />
+          </If>
+          -->
+
+          <!-- A Common Thread -->
+          <If Condition="all(IsLoreEntryUnlocked(x) for x in [&TheVanishingSlope;,&TheFellWarren;,&TheShadowedCity;]) and IsQuestCompleted(&ARuinedLand;) and not IsQuestCompleted(&ACommonThread;) ">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to do quest 'A Common Thread'." Duration="10000" />
+            <If Condition="not HasQuest(&ACommonThread;)">
+              <GetTo ZoneId="1252" XYZ="827.7584, 72.655945, -679.2808" />
+              <If Condition="IsQuestAcceptQualified(&ACommonThread;)">
+                <PickupQuest QuestId="&ACommonThread;" NpcId="1053802" />
+              </If>
+            </If>
+            <If Condition="GetQuestStep(70852) == 1">
+              <If Condition="not IsTodoChecked(70852,1,0)">
+                <GetTo ZoneId="1252" XYZ="-302.45966, 4.7125053, -775.5554" />
+                <UseObject NpcId="2014649" XYZ="-302.26605, 4.989685, -778.28644" Condition="not IsTodoChecked(70852,1,0)" />
+              </If>
+              <If Condition="not IsTodoChecked(70852,1,1)">
+                <GetTo ZoneId="1252" XYZ="-812.48, 46.999977, 187.46927" />
+                <UseObject NpcId="2014650" XYZ="-812.6497, 46.98242, 184.1001" Condition="not IsTodoChecked(70852,1,1)" />
+              </If>
+              <If Condition="not IsTodoChecked(70852,1,2)">
+                <GetTo ZoneId="1252" XYZ="413.0125, 70, 788.4114" />
+                <UseObject NpcId="2014651" XYZ="415.6709, 70.11511, 785.7937" Condition="not IsTodoChecked(70852,1,2)" />
+              </If>
+            </If>
+            <If Condition="GetQuestStep(70852) == 255">
+              <GetTo ZoneId="1252" XYZ="827.7748, 72.65466, -680.0047" />
+              <TurnIn QuestId="70852" NpcId="1053802" XYZ="825.43665, 72.67853, -676.5393" />
+            </If>
+          </If>
+
+          <!-- Occult Record 18: Eldergrowth -->
+          <If condition="Core.Me.ElementalLevel &gt; 15 and not IsLoreEntryUnlocked(&Eldergrowth;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 18: Eldergrowth." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-138.3446,73.71811,618.1419" />
+            <UseObject NpcId="2014695" XYZ="-138.3446,73.71811,618.1419" condition="not IsLoreEntryUnlocked(&Eldergrowth;)" />
+          </If>
+
+          <!-- Occult Record 19: The Abandoned Ascent -->
+          <If condition="Core.Me.ElementalLevel &gt; 15 and not IsLoreEntryUnlocked(&TheAbandonedAscent;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 19: The Abandoned Ascent." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-290.55377,95.85174,400.28424" />
+            <UseObject NpcId="2014695" XYZ="-290.55377,95.85174,400.28424" condition="not IsLoreEntryUnlocked(&TheAbandonedAscent;)" />
+          </If>
+
+          <!-- Occult Record 20: Cloister Demon -->
+          <!-- This one comes from Critical Engagement 'Calamity Bound' which we don't currently support
+          <If condition="not IsLoreEntryUnlocked(&CloisterDemon;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 20: Cloister Demon." Duration="10000" />
+          </If>
+          -->
+
+          <!-- Past and Crescent -->
+          <If Condition="IsLoreEntryUnlocked(&TheAbandonedAscent;) and IsQuestCompleted(&ACommonThread;) and not IsQuestCompleted(&PastandCrescent;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to do quest 'Past and Crescent'." Duration="10000" />
+            <If Condition="not HasQuest(&PastandCrescent;)">
+              <GetTo ZoneId="1252" XYZ="827.8495, 72.65638, -678.7703" />
+              <If Condition="IsQuestAcceptQualified(&PastandCrescent;)">
+                <PickupQuest QuestId="&PastandCrescent;" NpcId="1053802" />
+              </If>
+            </If>
+            <If Condition="GetQuestStep(&PastandCrescent;) == 255">
+              <!-- <Hook Name="CalamityBound" Operation="A" Location="TreeStart" /> -->
+              <If Condition="not IsTodoChecked(&PastandCrescent;,255,0)">
+                <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Please manually complete the Critical Engagement 'Calamity Bound'." Duration="10000" />
+              </If>
+              <If Condition="IsTodoChecked(&PastandCrescent;,255,0)">
+                <GetTo ZoneId="1252" XYZ="827.8495, 72.65638, -678.7703" />
+                <TurnIn QuestId="70853" NpcId="1053802" XYZ="825.43665, 72.67853, -676.5393" />
+              </If>
+            </If>
+          </If>
+
+          <!-- Occult Record 21: The Silent Streets -->
+          <If condition="Core.Me.ElementalLevel &gt; 19 and not IsLoreEntryUnlocked(&TheSilentStreets;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 21: The Silent Streets." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="752.5524,70.3,614.8543" />
+            <UseObject NpcId="2014695" XYZ="752.5524,70.3,614.8543" condition="not IsLoreEntryUnlocked(&TheSilentStreets;)" />
+          </If>
+
+          <!-- Occult Record 22: The Ancient Stoneworks -->
+          <If condition="Core.Me.ElementalLevel &gt; 19 and not IsLoreEntryUnlocked(&TheAncientStoneworks;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 22: The Ancient Stoneworks." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="728.0544,120,62.59892" />
+            <UseObject NpcId="2014695" XYZ="728.0544,120,62.59892" condition="not IsLoreEntryUnlocked(&TheAncientStoneworks;)" />
+          </If>
+
+          <!-- Occult Record 23: The Wanderer's Haven -->
+          <If condition="Core.Me.ElementalLevel &gt; 19 and not IsLoreEntryUnlocked(&TheWanderersHaven;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 23: The Wanderer's Haven." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-882.2107,3.0000002,-781.5334" />
+            <UseObject NpcId="2014695" XYZ="-882.2107,3.0000002,-781.5334" condition="not IsLoreEntryUnlocked(&TheWanderersHaven;)" />
+          </If>
+
+          <!-- Occult Record 24: The Brazier -->
+          <If condition="Core.Me.ElementalLevel &gt; 19 and not IsLoreEntryUnlocked(&TheBrazier;)">
+            <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Going to unlock Occult Record 24: The Brazier." Duration="10000" />
+            <GetTo ZoneId="&SouthHorn;" XYZ="-636.93304,203,718.94403" />
+            <UseObject NpcId="2014695" XYZ="-636.93304,203,718.94403" condition="not IsLoreEntryUnlocked(&TheBrazier;)" />
+          </If>
+
+          <While Condition="Core.Me.ElementalLevel &lt; 99 and IsOnMap(&SouthHorn;)">
+
+            <!-- Go back to HQ while waiting on new fate -->
+            <If condition="not IsAnyFateActive() and IsOnMap(&SouthHorn;)">
+              <If condition="not IsOnSubMap(4944)">
+                <GetTo ZoneId="&SouthHorn;" XYZ="849.3847, 72.863205, -705.34515" />
+                <MoveToSafe XYZ="833.63214,73,-696.5342" Radius="15"/>
+              </If>
+              <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] Waiting for more FATEs to spawn." Duration="10000" />
+              <WaitWhile condition="not IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
+            </If>
+
+            <If condition="not LlamaLibrary.ScriptConditions.Helpers.IsAnyDynamicEventActive()">
+              <LLFate UseGetTo="True" MinProgress="&MinimumFateProgress;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
+            </If>
+            <If condition="LlamaLibrary.ScriptConditions.Helpers.IsAnyDynamicEventActive()">
+              <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] CE active. Waiting for minimum FATE progress before joining." Duration="10000" />
+              <LLFate UseGetTo="True" MinProgress="&MinimumFateProgressWhenCEIsActive;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
+            </If>
+
+          </While>
+
+        </If>
+
+      </If>
+
+    </While>
+
+  </Order>
+  <GrindAreas>
+    <GrindArea name="70850_1">
+      <Hotspots>
+        <Hotspot Radius="200" XYZ="599.0175, 63.160053, -656.8001" name="Name" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="13884" Weight="1" /> <!-- Crescent Garula -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="70850_2">
+      <Hotspots>
+        <Hotspot Radius="200" XYZ="759.6476, 76.174934, -623.7971" name="Name" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="13882" Weight="1" /> <!-- Crescent Flying Lizard -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="70850_3">
+      <Hotspots>
+        <Hotspot Radius="200" XYZ="745.6931,66.84287,-705.8061" name="Name" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="13877" Weight="1" /> <!-- Crescent Bandersnatch -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="Level2">
+      <Hotspots>
+        <Hotspot Radius="200" XYZ="686.1471, 82.39666, -464.61673" name="Name" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="13931" Weight="1" /> <!-- Crescent Chaochu -->
+      </TargetMobs>
+    </GrindArea>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("Occult Crescent", Colors.DeepPink);
+
+    ]]>
+    </CodeChunk>
+    <CodeChunk Name="SwitchDoWMJob">
+      <![CDATA[
+        var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
+        var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
+        if (gearSets.Any())
+        {
+            Log.Information($"We are currently on {Core.Me.CurrentJob}. We must be on a combat class to enter South Horn.");
+            Log.Information($"Equipping best gear for {gearSets.First().Class}.");
+            gearSets.First().Activate();
+            await Coroutine.Sleep(2000);
+        }
+      ]]>
+    </CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseTutorial">
+			<![CDATA[
+        if (!LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.IsOpen) return false;
+
+        if (LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.IsOpen)
+        {
+            LlamaLibrary.RemoteWindows.ContentsTutorial.Instance.Close();
+        }
+
+        return false;
+			]]>
+		</CodeChunk>
+    <CodeChunk Type="Hook" Name="CalamityBound">
+			<![CDATA[
+            if (!QuestLogManager.HasQuest(70853) || QuestLogManager.GetQuestStep(70853) != 255)
+            {
+                return true;
+            }
+            if (DynamicEventManager.Events == null)
+            {
+                return false;
+            }
+
+            if (DynamicEventManager.Events.Any(e => e.MapMarkerData.DataId == 37 && e.DynamicEventState == DynamicEventState.Register))
+            {
+                Core.OverlayManager.AddToast(() => $"[Occult Crescent] Calamity Bound is accepting applications", TimeSpan.FromMilliseconds(500), System.Windows.Media.Color.FromRgb((byte)255, (byte)20, (byte)147), System.Windows.Media.Color.FromRgb(13, 106, 175), new System.Windows.Media.FontFamily());
+            }
+
+            return false;
+			]]>
+		</CodeChunk>
+  </CodeChunks>
+</Profile> 
