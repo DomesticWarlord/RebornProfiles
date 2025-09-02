@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: The Rising 2025
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>The Rising 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- An Adventurous Ambition -->
+    <If Condition="not IsQuestCompleted(70833) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70833)">
+        <GetTo ZoneId="128" XYZ="1.261641, 44.499992, 124.00944" />
+        <If Condition="IsQuestAcceptQualified(70833)">
+          <PickupQuest QuestId="70833" NpcId="1053660" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70833) == 1">
+        <GetTo ZoneId="128" XYZ="27.625137, 44.499977, 173.27112" />
+        <TalkTo NpcId="1001024" XYZ="28.519043, 44.499977, 176.3789" QuestId="70833" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70833) == 2">
+        <GetTo ZoneId="135" XYZ="-34.615845, 71.41054, 131.41287" />
+        <TalkTo NpcId="1053662" XYZ="-32.425476, 71.50164, 135.91211" QuestId="70833" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70833) == 255">
+        <GetTo ZoneId="135" XYZ="-34.615845, 71.41054, 131.41287" />
+        <TurnIn QuestId="70833" NpcId="1053663" XYZ="-34.01245, 71.548134, 135.63745" />
+      </If>
+    </If>
+
+    <!-- A Light That Ever Burns -->
+    <If Condition="IsQuestCompleted(70833) and not IsQuestCompleted(70834) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70834)">
+        <GetTo ZoneId="135" XYZ="-35.267574, 71.39682, 130.90027" />
+        <If Condition="IsQuestAcceptQualified(70834)">
+          <PickupQuest QuestId="70834" NpcId="1053663" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70834) == 1">
+        <If condition="not IsOnMap(135)">
+          <TeleportTo Name="Moraby Drydocks" AetheryteId="10" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="181.6724, 32.671143, 115.16472" Land="True" /> <!-- ZoneId="135" -->
+        <TalkTo NpcId="1053666" XYZ="184.40515, 32.156242, 112.962524" QuestId="70834" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 2">
+        <If condition="not IsOnMap(135)">
+          <TeleportTo Name="Moraby Drydocks" AetheryteId="10" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="75.2711, 71.29128, 363.32214" Land="True" /> <!-- ZoneId="135" -->
+        <TalkTo NpcId="1053667" XYZ="76.24927, 71.28403, 366.3844" QuestId="70834" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 3">
+        <If condition="not IsOnMap(135)">
+          <TeleportTo Name="Moraby Drydocks" AetheryteId="10" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="-40.459995, 55.54664, 485.34314" Land="True" /> <!-- ZoneId="135" -->
+        <TalkTo NpcId="1053669" XYZ="-43.47296, 55.10932, 488.1819" QuestId="70834" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 4">
+        <If condition="not IsOnMap(135)">
+          <TeleportTo Name="Moraby Drydocks" AetheryteId="10" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="5.1746054, 44.298996, 793.5647" Land="True" /> <!-- ZoneId="135" -->
+        <TalkTo NpcId="1053671" XYZ="6.6071167, 44.311028, 797.3906" QuestId="70834" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 5">
+        <GetTo ZoneId="135" XYZ="134.59082, 59.582893, 931.1903"  />
+        <TalkTo NpcId="1002445" XYZ="136.82764, 58.937588, 937.43787" QuestId="70834" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 6">
+        <GetTo ZoneId="128" XYZ="24.135891, 44.5, 167.9946" />
+        <TalkTo NpcId="1053676" XYZ="24.39917, 44.499973, 163.07312" QuestId="70834" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70834) == 255">
+        <GetTo ZoneId="128" XYZ="-175.31113, 41, 184.62665" />
+        <TurnIn QuestId="70834" NpcId="1053677" XYZ="-178.4848, 40.99994, 185.44287" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
