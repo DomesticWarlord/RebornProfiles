@@ -81,32 +81,17 @@
     <!-- Arcane Artistry -->
     <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855) and Core.Player.ClassLevel &gt; 99">
       <If Condition="not HasQuest(70855)">
-        <!-- Get back to the Phantom Village-->
-        <If condition="not IsOnMap(1269)">
-          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-        </If>
-        <MoveTo XYZ="25.971828, 0, 11.212592" />
+        <GetTo ZoneId="1269" XYZ="25.971828, 0, 11.212592" />
         <If Condition="IsQuestAcceptQualified(70855)">
           <PickupQuest QuestId="70855" NpcId="1053906" />
         </If>
       </If>
       <If Condition="GetQuestStep(70855) == 1">
-        <!-- Get back to the Phantom Village-->
-        <If condition="not IsOnMap(1269)">
-          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-        </If>
-        <MoveTo XYZ="-47.274254, 4.9999704, 32.892643" />
+        <GetTo ZoneId="1269" XYZ="-47.274254, 4.9999704, 32.892643" />
         <TalkTo NpcId="1053907" XYZ="-49.485046, 4.999985, 33.12732" QuestId="70855" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70855) == 2">
-        <!-- Get back to the Phantom Village-->
-        <If condition="not IsOnMap(1269)">
-          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-        </If>
-        <MoveTo XYZ="25.03054, 0, 10.574368" />
+        <GetTo ZoneId="1269" XYZ="25.03054, 0, 10.574368" />
         <TalkTo NpcId="1053906" XYZ="25.802979, 0, 13.38208" QuestId="70855" StepId="2" />
       </If>
       <While Condition="GetQuestStep(70855) == 255">
@@ -129,7 +114,7 @@
         </If>
 
         <If Condition="not HasItem(4868)">
-          <LLToast Message="Going to buy Greens so that we can use our chocobo while fate farming"/>
+          <LLToast Message="Going to buy Greens so that we can use our chocobo while fate farming" />
           <Lisbeth Json="[{'Group':1,'Item':4868,'Amount':999,'Enabled':true,'Type':'Purchase'}]" />
         </If>
 
@@ -195,11 +180,7 @@
 
         <!-- After we have obtained all the Demiatmas -->
         <If condition="HasAtLeast(&AzuriteDemiatma;, 3) and HasAtLeast(&VerdigrisDemiatma;, 3) and HasAtLeast(&MalachiteDemiatma;, 3) and HasAtLeast(&RealgarDemiatma;, 3) and HasAtLeast(&CaputMortuumDemiatma;, 3) and HasAtLeast(&OrpimentDemiatma;, 3)">
-          <!-- Get back to the Phantom Village-->
-          <If condition="not IsOnMap(1269)">
-            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-          </If>
+          <GetTo ZoneId="1269" XYZ="28.854736, 0, 13.351624" />
           <TurnIn QuestId="70840" NpcId="1053908" XYZ="28.854736, 0, 13.351624" />
         </If>
 
@@ -210,12 +191,7 @@
     <!--  Forging the Phantasmal -->
     <If Condition="IsQuestCompleted(70855) and not IsQuestCompleted(70856) and Core.Player.ClassLevel &gt; 99">
       <If Condition="not HasQuest(70856)">
-        <!-- Get back to the Phantom Village-->
-        <If condition="not IsOnMap(1269)">
-          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-        </If>
-        <MoveTo XYZ="25.955828, 0, 10.62652" />
+        <GetTo ZoneId="1269" XYZ="25.955828, 0, 10.62652" />
         <If Condition="IsQuestAcceptQualified(70856)">
           <PickupQuest SelectStringSlot="1" QuestId="70856" NpcId="1053906" />
         </If>
@@ -232,23 +208,14 @@
 
           <!-- Buy Arcanite if we do -->
           <If condition="HasAtLeast(&TomestoneofHeliometry;, 1500)">
-            <!-- Get back to the Phantom Village-->
-            <If condition="not IsOnMap(1269)">
-              <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-              <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-            </If>
-            <MoveTo XYZ="37.75831,0,20.118107" />
+            <GetTo ZoneId="1269" XYZ="37.75831,0,20.118107" />
             <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&Arcanite;" Count="3" />
           </If>
         </If>
 
         <!-- Turn in quest once we get enough Arcanite -->
         <If condition="HasAtLeast(&Arcanite;, 3)">
-          <!-- Get back to the Phantom Village-->
-          <If condition="not IsOnMap(1269)">
-            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-          </If>
+          <GetTo ZoneId="1269" XYZ="29.55664, 0, 10.788086" />
           <TurnIn QuestId="70856" NpcId="1053909" XYZ="29.55664, 0, 10.788086" />
         </If>
 
@@ -267,34 +234,38 @@
 
         <!-- Buy Arcanite if we do -->
         <If condition="HasAtLeast(&TomestoneofHeliometry;, 1500)">
-          <!-- Get back to the Phantom Village-->
-          <If condition="not IsOnMap(1269)">
-            <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-            <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-          </If>
-          <MoveTo XYZ="37.75831,0,20.118107" />
+          <GetTo ZoneId="1269" XYZ="37.75831,0,20.118107" />
           <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&Arcanite;" Count="3" />
         </If>
+
       </If>
 
       <!-- Turn in quest once we get enough Arcanite -->
       <If condition="HasAtLeast(&Arcanite;, 3)">
-        <!-- Get back to the Phantom Village-->
-        <If condition="not IsOnMap(1269)">
-          <GetTo ZoneId="1185" XYZ="206.35208, -17.9645, 58.799324" />
-          <UseTransport NpcId="2014671" InteractDistance="3.0" XYZ="206.31714, -17.990417, 63.309692" />
-        </If>
-        <MoveTo XYZ="27.301353,0,9.82415" />
+
+        <GetTo ZoneId="1269" XYZ="27.301353,0,9.82415" />
         <BuyShopExchangeItem NpcId="1053905 " ItemId="&RelicToPurchase;" Count=" 1" />
         <LLSmallTalk />
+
       </If>
 
     </If>
 
-    <If Condition="HasItem(&RelicToPurchase;)">
-      <RunCode name="CloseWindow" />
-      <UserDialog DialogText="Congratualtions! You have the selected relic. Please change the relic you wish to purchase and start the profile again." />
+    <If condition="not IsVersionGreater(7.31)">
+
+      <If Condition="HasItem(&RelicToPurchase;)">
+        <RunCode name="CloseWindow" />
+        <UserDialog DialogText="Congratualtions! You have the selected relic. Please change the relic you wish to purchase and start the profile again." />
+      </If>
+
     </If>
+
+    <If condition="IsVersionGreater(7.31)">
+      <GetTo ZoneId="1269" XYZ="27.301353,0,9.82415" />
+
+
+    </If>
+
 
   </Order>
   <GrindAreas>
