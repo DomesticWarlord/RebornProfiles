@@ -51,13 +51,26 @@
 
 
   <!-- Constants, don't change anything below this line -->
+
+  <!-- Arcane Artistry -->
   <!ENTITY AzuriteDemiatma "47744">
   <!ENTITY VerdigrisDemiatma "47745">
   <!ENTITY MalachiteDemiatma "47746">
   <!ENTITY RealgarDemiatma "47747">
   <!ENTITY CaputMortuumDemiatma "47748">
   <!ENTITY OrpimentDemiatma "47749">
+
   <!ENTITY Arcanite "47750">
+  <!ENTITY TomestoneofHeliometry "47">
+
+  <!-- Keeping the Old Ways Alive -->
+  <!ENTITY UtohmuSiderite "46852">
+  <!ENTITY RroneekGlue "46854">
+  <!ENTITY SyntheticDarkMatterAlpha "46855">
+  <!ENTITY SyntheticDarkMatterBeta "46856">
+  <!ENTITY SyntheticDarkMatterGamma "46857">
+
+  <!ENTITY WaxingArcanite "46850">
   <!ENTITY TomestoneofHeliometry "47">
 ]>
 
@@ -261,8 +274,86 @@
     </If>
 
     <If condition="IsVersionGreater(7.31)">
-      <GetTo ZoneId="1269" XYZ="27.301353,0,9.82415" />
 
+      <!-- Keeping the Old Ways Alive -->
+      <If Condition="IsQuestCompleted(70856) and not IsQuestCompleted(70916)">
+        <If Condition="not HasQuest(70916)">
+          <GetTo ZoneId="1269" XYZ="27.313608, 0, 11.364788" />
+          <If Condition="IsQuestAcceptQualified(70916)">
+            <PickupQuest QuestId="70916" NpcId="1039457" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(70916) == 1">
+          <GetTo ZoneId="1269" XYZ="27.462173, 0, 11.490151" />
+          <RunCode name="Keeping_the_Old_Ways_Alive" />
+        </If>
+        <If Condition="GetQuestStep(70916) == 2">
+
+          <If condition="not HasItem(&RroneekGlue;)">
+            <LLToast Message="Obtaining Rroneek Glue" />
+            <GetTo ZoneId="1185" XYZ="-12.087382, -10.0000105, 88.781815" />
+            <BuyItem ItemIds="&RroneekGlue;" ItemCounts="1" DialogOption="0" NpcId="1048382" XYZ="-12.087382, -10.0000105, 88.781815" />
+          </If>
+
+          <If condition="not HasItem(&UtohmuSiderite;)">
+
+            <LLToast Message="Obtaining Utohmu Siderite" />
+
+            <While Condition="ItemCount(26807) &lt; 600">
+              <LLToast Message="Grinding Yak T'el FATEs for Gemstones" />
+              <If condition="not IsOnMap(1189)">
+                <TeleportTo AetheryteId="205" /> <!-- Iq Br'aax -->
+                <WaitTimer WaitTime="5" />
+              </If>
+              <LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="101" BlacklistIds="&BlackList;" MinProgress="&MinProgress;" while="IsOnMap(1189) and ItemCount(26807) &lt; 600" />
+            </While>
+
+            <If Condition="ItemCount(26807) &gt; 599">
+              <LLToast Message="Buying Utohmu Siderite" />
+              <GetTo ZoneId="1189" XYZ="-384.06134, 23.535583, -437.17697" />
+              <BuyShopExchangeCurrency Dialog="True" NpcId="1048933" ItemId="&UtohmuSiderite;" Count="1" />
+            </If>
+
+          </If>
+
+          <If condition="not HasItem(&SyntheticDarkMatterAlpha;) or not HasItem(&SyntheticDarkMatterBeta;) or not HasItem(&SyntheticDarkMatterGamma;)">
+            <UserDialog IsBotContinueAllowed="True" DialogText="This step requires you obtain multiple items that require max level crafting but can also be purchased from the marketboard.\nIf you have the required Master books and job levels, press continue to have Lisbeth craft the items.\nOtherwise press Stop and purchase them from the Marketboard." />
+            <Lisbeth Json="[{'Group':1,'Item':46856,'Amount':1,'Enabled':true,'Type':'Carpenter','AmountMode':'Restock'},{'Id':1,'Group':1,'Item':46855,'Amount':1,'Enabled':true,'Type':'Blacksmith','AmountMode':'Restock'},{'Id':2,'Group':1,'Item':46857,'Amount':1,'Enabled':true,'Type':'Culinarian','AmountMode':'Restock'}]" />
+          </If>
+
+          <If condition="HasItem(&SyntheticDarkMatterAlpha;) and HasItem(&SyntheticDarkMatterBeta;) and HasItem(&SyntheticDarkMatterGamma;) and HasItem(&UtohmuSiderite;) and HasItem(&RroneekGlue;)">
+            <GetTo ZoneId="1269" XYZ="27.462173, 0, 11.490151" />
+            <If condition="not QuestLogManager.GetQuestById(70916).AcceptedClass == Core.Me.CurrentJob">
+              <RunCode name="ChangeJob70916" />
+            </If>
+            <HandOver ItemIds="46854,46855,46856,46857,46852" NpcId="1053908" XYZ="28.854736, 0, 13.351624" QuestId="70916" StepId="2" />
+          </If>
+
+        </If>
+        <If Condition="GetQuestStep(70916) == 255">
+          <GetTo ZoneId="1269" XYZ="28.736393, 0, 10.084939" />
+          <TurnIn QuestId="70916" NpcId="2014937" XYZ="27.60829, 0, 11.74576" />
+        </If>
+      </If>
+
+      <!-- Aether, Aether, Everywhere -->
+      <If Condition="IsQuestCompleted(70916) and not IsQuestCompleted(70917) and Core.Player.ClassLevel &gt; 99">
+        <If Condition="not HasQuest(70917)">
+          <GetTo ZoneId="1269" XYZ="27.6449, 0, 11.293327" />
+          <If Condition="IsQuestAcceptQualified(70917)">
+            <PickupQuest QuestId="70917" NpcId="1053906" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(70917) == 255">
+          <If Condition="GetQuestById(70917).GetTodoArgs(1, 0).Item1 &lt; 4">
+            <UserDialog IsBotContinueAllowed="True" DialogText="This step requires you to fill the Aetherwells by running Duty Roulette with actual players. This step only has to be done once.\n\nWe cannot bot this. Please complete it manually.\nThe duties can be done on any job." />
+          </If>
+          <If Condition="GetQuestById(70917).GetTodoArgs(1, 0).Item1 == 4">
+            <GetTo ZoneId="1269" XYZ="27.6449, 0, 11.293327" />
+            <TurnIn QuestId="70917" NpcId="1053908" XYZ="28.854736, 0, 13.351624" />
+          </If>
+        </If>
+      </If>
 
     </If>
 
@@ -271,10 +362,62 @@
   <GrindAreas>
   </GrindAreas>
   <CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("Phantom Relics", Colors.DeepPink);
+
+        public static async Task<bool> ChangeJobBackToAccepted(int questId)
+        {
+            var QuestJob = QuestLogManager.GetQuestById(questId).AcceptedClass.ToString();
+            var gearSets = GearsetManager.GearSets.Where(i => i.InUse);
+            var foundJob = Enum.TryParse(QuestJob.Trim(), true, out ClassJobType newjob);
+
+            if (Core.Me.CurrentJob == newjob)
+            {
+                return true;
+            }
+
+            Log.Information("Started");
+            Log.Information($"Found job: {foundJob} Job:{newjob}");
+            if (foundJob && gearSets.Any(gs => gs.Class == newjob))
+            {
+                Log.Information($"Found GearSet");
+                gearSets.First(gs => gs.Class == newjob).Activate();
+
+                await Coroutine.Wait(3000, () => SelectYesno.IsOpen);
+                if (SelectYesno.IsOpen)
+                {
+                    SelectYesno.Yes();
+                    await Coroutine.Sleep(3000);
+                }
+
+                // await Coroutine.Sleep(1000);
+            }
+
+            return true;
+
+        }
+
+    ]]>
+    </CodeChunk>
     <CodeChunk Name="LoadProfile">
   <![CDATA[
 
     await LlamaLibrary.Helpers.LoadServerProfile.LoadProfileByZone(WorldManager.ZoneId);
+
+]]>
+</CodeChunk>
+    <CodeChunk Name="ChangeJob70916">
+  <![CDATA[
+
+  await ChangeJobBackToAccepted(70916);
+
+]]>
+</CodeChunk>
+    <CodeChunk Name="ChangeJob70917">
+  <![CDATA[
+
+  await ChangeJobBackToAccepted(70917);
 
 ]]>
 </CodeChunk>
@@ -288,6 +431,53 @@
 
 
 ]]>
+</CodeChunk>
+    <CodeChunk Name="Keeping_the_Old_Ways_Alive">
+	<![CDATA[
+        uint[] questNpcIds = { 1039456 };
+        var npcId = GameObjectManager.GameObjects.Where(r => r.IsTargetable && questNpcIds.Contains(r.NpcId)).OrderBy(r => r.Distance()).FirstOrDefault();
+        var currentQuestStep = QuestLogManager.GetQuestById(70916).Step;
+
+        if (npcId != null)
+        {
+            npcId.Target();
+						await Coroutine.Wait(5000, () => Core.Me.CurrentTarget == npcId);
+        }
+
+#if !RB_CN
+        ChatManager.SendChat("/doubt");
+#endif
+#if RB_CN
+        ChatManager.SendChat("/doubt");
+#endif
+        await Coroutine.Wait(10000, () => Talk.DialogOpen);
+        await Buddy.Coroutines.Coroutine.Sleep(500);
+        while (QuestLogManager.GetQuestById(70916).Step == currentQuestStep)
+        {
+            Talk.Next();
+            await Coroutine.Wait(1000, () => !Talk.DialogOpen);
+            await Coroutine.Wait(1000, () => Talk.DialogOpen);
+            if (QuestLogManager.InCutscene)
+            {
+                if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+                {
+                    ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                    await Coroutine.Wait(2000, () => SelectString.IsOpen || SelectYesno.IsOpen);
+
+                    if (SelectString.IsOpen)
+                    {
+                        SelectString.ClickSlot(0);
+                    }
+
+                    if (SelectYesno.IsOpen)
+                    {
+                        SelectYesno.Yes();
+                    }
+                }
+            }
+            await Coroutine.Yield();
+        }
+	]]>
 </CodeChunk>
   </CodeChunks>
 </Profile> 
