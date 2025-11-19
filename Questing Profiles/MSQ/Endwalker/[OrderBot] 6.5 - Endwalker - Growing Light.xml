@@ -98,7 +98,7 @@
         <If condition="IsChineseClient()">
           <UserDialog DialogText="Please complete this step manually." QuestRequirementInLog="InLog" IsBotContinueAllowed="True" QuestId="70282" StepId="2" />
         </If>
-        <If condition="not IsChineseClient()">
+        <If condition="IsGlobalClient()">
           <RunCode name="70282" />
         </If>
       </If>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Unlock Tender Valley
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Unlock Tender Valley</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- It Belongs in a Museum -->
+    <If Condition="not IsQuestCompleted(70549)">
+      <If Condition="not HasQuest(70549)">
+        <GetTo ZoneId="1185" XYZ="30.401995, -14, 77.072044" />
+        <If Condition="IsQuestAcceptQualified(70549)">
+          <PickupQuest QuestId="70549" NpcId="1051434" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70549) == 1">
+        <If condition="not IsOnMap(1190)">
+          <TeleportTo Name="Mehwahhetsoan" AetheryteId="209" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="384.5085, -17.7, -767.71326" Land="True" /> <!-- ZoneId="1190" -->
+        <TalkTo NpcId="1051435" XYZ="383.1692, -17.700003, -771.3283" QuestId="70549" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70549) == 2">
+        <UserDialog IsBotContinueAllowed="False" DialogText="Please manually complete Tender Valley" QuestId="70549" StepId="2" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 

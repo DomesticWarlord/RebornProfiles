@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: VPR Class Quests
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+  <!ENTITY Necrologos "649">
+]>
+
+<Profile>
+  <Name>VPR Class Quests</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Fangs of the Viper -->
+    <If Condition="not IsQuestCompleted(70385)">
+
+      <If Condition="Core.Me.Levels[ClassJobType.Viper] &lt; 80">
+        <UserDialog DialogText="You must be level 80 to take on the VPR quest 'Fangs of the Viper'" />
+      </If>
+
+      <If Condition="not HasQuest(70385)">
+        <GetTo ZoneId="131" XYZ="89.234245, 12, 49.561222" />
+        <If Condition="IsQuestAcceptQualified(70385)">
+          <PickupQuest QuestId="70385" NpcId="1046337" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70385) == 1">
+        <GetTo ZoneId="130" XYZ="15.138807, 3.9999993, -136.9114" />
+        <TalkTo NpcId="1046338" XYZ="11.428955, 3.9999998, -135.69855" QuestId="70385" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 2">
+        <GetTo ZoneId="130" XYZ="25.735535, 3.9999998, -137.10152" />
+        <TalkTo NpcId="1046339" XYZ="28.335938, 3.9999995, -136.36993" QuestId="70385" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 3">
+        <LisbethTravel ZoneId="141" XYZ="85.21274, 4.3022585, 431.69595" />
+        <TalkTo NpcId="1046344" XYZ="90.22656, 4.0718365, 434.531" QuestId="70385" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 4">
+        <LisbethTravel ZoneId="141" XYZ="85.21274, 4.302259, 431.69595" />
+        <UserDialog DialogText="Please complete the solo duty manually. Talk to the NPC and follow his directions." QuestId="70385" StepId="4" />
+        <TalkTo NpcId="1046344" XYZ="90.22656, 4.0718365, 434.531" QuestId="70385" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 5">
+        <WaitWhile Condition="GetQuestStep(70385) == 5" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 6">
+        <GetTo ZoneId="130" XYZ="-93.46398, 4, -101.786095" />
+        <TalkTo NpcId="1046345" XYZ="-92.30188, 4, -99.77875" QuestId="70385" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 7">
+        <GetTo ZoneId="130" XYZ="-101.174255, 3.9999998, -98.680084" />
+        <TalkTo NpcId="1004332" XYZ="-103.92926, 4, -97.88666" QuestId="70385" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 8">
+        <GetTo ZoneId="130" XYZ="-150.85902, 12, 13.845115" />
+        <TalkTo NpcId="1001288" XYZ="-151.59845, 12, 16.220276" QuestId="70385" StepId="8" />
+      </If>
+      <If Condition="GetQuestStep(70385) == 255">
+        <GetTo ZoneId="130" XYZ="-150.85902, 12, 13.845115" />
+        <TurnIn QuestId="70385" NpcId="1046346" XYZ="-152.17828, 12, 11.734131" />
+      </If>
+    </If>
+
+    <!-- Viper in the Vidraal's Shadow -->
+    <If Condition="IsQuestCompleted(70385) and not IsQuestCompleted(70386)">
+
+      <If Condition="Core.Me.Levels[ClassJobType.Viper] &lt; 83">
+        <UserDialog DialogText="You must be level 83 to take on the VPR quest 'Viper in the Vidraal's Shadow'" />
+      </If>
+
+      <If Condition="not HasQuest(70386)">
+        <GetTo ZoneId="130" XYZ="-150.85902, 12, 13.845115" />
+        <If Condition="IsQuestAcceptQualified(70386)">
+          <PickupQuest QuestId="70386" NpcId="1046346" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70386) == 1">
+        <GetTo ZoneId="132" XYZ="-56.088173, -1.8738977, 10.04196" />
+        <TalkTo NpcId="1000193" XYZ="-56.77887, -1.7171853, 7.888855" QuestId="70386" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 2">
+        <GetTo ZoneId="153" XYZ="201.72382, 8.382444, -71.11442" />
+        <TalkTo NpcId="1046347" XYZ="205.79846, 8.794112, -72.15991" QuestId="70386" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 3">
+        <GetTo ZoneId="153" XYZ="-192.78159, 14.885784, 442.88196" />
+        <TalkTo NpcId="1046351" XYZ="-192.40106, 15.001892, 447.2876" QuestId="70386" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 4">
+        <If Condition="GetQuestStep(70386) == 4 and GetQuestById(70386).QuestI8A == 0">
+          <LisbethTravel ZoneId="153" XYZ="-163.58939, 0.6836767, 477.89526" />
+          <UseObject NpcId="2013569" XYZ="-161.36414, 1.083313, 480.12512" condition="GetQuestById(70386).QuestI8A == 0" />
+        </If>
+        <If Condition="GetQuestStep(70386) == 4 and GetQuestById(70386).QuestI8A == 1">
+          <LisbethTravel ZoneId="153" XYZ="-112.61162, 0.3155502, 358.7472" />
+          <UseObject NpcId="2013570" XYZ="-111.77234, 0.503479, 356.2218" condition="GetQuestById(70386).QuestI8A == 1" />
+        </If>
+        <If Condition="GetQuestStep(70386) == 4 and GetQuestById(70386).QuestI8A == 2">
+          <LisbethTravel ZoneId="153" XYZ="-132.34602, 0.7452425, 310.42267" />
+          <UseObject NpcId="2013571" XYZ="-130.84619, 1.1138916, 308.58313" condition="GetQuestById(70386).QuestI8A == 2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70386) == 5">
+        <LisbethTravel ZoneId="153" XYZ="-49.452652, 0.9210359, 449.7179" />
+        <TalkTo NpcId="1046356" XYZ="-48.233826, 1.0262487, 452.59778" QuestId="70386" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 6">
+        <LisbethTravel ZoneId="153" XYZ="-237.37093, 0.78495884, 504.97937" />
+        <UseObject NpcId="2013572" XYZ="-237.1405, 0.59503174, 502.79993" QuestId="70386" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 7">
+        <LisbethTravel ZoneId="153" XYZ="26.52045, 19.966316, 197.83777" />
+        <TalkTo NpcId="1046362" XYZ="22.934265, 19.877338, 195.91052" QuestId="70386" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(70386) == 255">
+        <GetTo ZoneId="153" XYZ="201.85632, 8.436088, -71.800285" />
+        <TurnIn QuestId="70386" NpcId="1046368" XYZ="205.06592, 8.722662, -74.08258" />
+      </If>
+    </If>
+
+    <!-- Vipers on the Hunt -->
+    <If Condition="IsQuestCompleted(70386) and not IsQuestCompleted(70387)">
+
+      <If Condition="Core.Me.Levels[ClassJobType.Viper] &lt; 85">
+        <UserDialog DialogText="You must be level 85 to take on the VPR quest 'Vipers on the Hunt'" />
+      </If>
+
+      <If Condition="not HasQuest(70387)">
+        <GetTo ZoneId="153" XYZ="201.22926, 8.315068, -70.24205" />
+        <If Condition="IsQuestAcceptQualified(70387)">
+          <PickupQuest QuestId="70387" NpcId="1046371" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70387) == 1">
+        <GetTo ZoneId="154" XYZ="-87.03345, -46.54438, 213.9359" />
+        <TalkTo NpcId="1046372" XYZ="-90.04352, -46.544575, 212.02405" QuestId="70387" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 2">
+        <If Condition="GetQuestStep(70387) == 2 and GetQuestById(70387).QuestI8A == 0">
+          <GetTo ZoneId="154" XYZ="-40.94568, -40.94998, 190.81725" />
+          <TalkTo NpcId="1046374" XYZ="-43.90027, -40.94998, 190.875" QuestId="70387" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70387) == 2 and GetQuestById(70387).QuestI8A == 1">
+          <GetTo ZoneId="154" XYZ="-16.358967, -38.972046, 189.12717" />
+          <TalkTo NpcId="1046375" XYZ="-13.748474, -38.971447, 190.11206" QuestId="70387" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70387) == 2 and GetQuestById(70387).QuestI8A == 2">
+          <GetTo ZoneId="154" XYZ="-23.828012, -34.657253, 170.92413" />
+          <TalkTo NpcId="1046376" XYZ="-25.345276, -34.650696, 172.96094" QuestId="70387" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70387) == 3">
+        <GetTo ZoneId="154" XYZ="-50.75808, -40.873875, 234.94012" />
+        <TalkTo NpcId="1046377" XYZ="-54.76471, -40.876083, 239.36829" QuestId="70387" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 4">
+        <GetTo ZoneId="154" XYZ="-59.7224, -45.560196, 269.6012" />
+        <TalkTo NpcId="1046379" XYZ="-62.60785, -45.560196, 269.4895" QuestId="70387" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 5">
+        <GetTo ZoneId="154" XYZ="-87.684105, -46.544353, 214.37367" />
+        <TalkTo NpcId="1046372" XYZ="-90.04352, -46.544575, 212.02405" QuestId="70387" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 6">
+        <LisbethTravel ZoneId="612" XYZ="-304.32214, 58.392757, -276.59378" />
+        <UseObject NpcIds="2013573,2013575,2013574" XYZ="-304.32214, 58.392757, -276.59378" QuestId="70387" StepId="6" Radius="200" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 7">
+        <LisbethTravel ZoneId="612" XYZ="-279.33453, 59.402065, -331.37717" />
+        <TalkTo NpcId="1046381" XYZ="-278.21777, 59.704876, -333.547" QuestId="70387" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(70387) == 255">
+        <GetTo ZoneId="153" XYZ="202.7348, 8.417292, -70.740906" />
+        <TurnIn QuestId="70387" NpcId="1046347" XYZ="205.79846, 8.794112, -72.15991" />
+      </If>
+    </If>
+
+    <!-- Into the Viper Pit -->
+    <If Condition="IsQuestCompleted(70387) and not IsQuestCompleted(70388)">
+
+      <If Condition="Core.Me.Levels[ClassJobType.Viper] &lt; 88">
+        <UserDialog DialogText="You must be level 88 to take on the VPR quest 'Into the Viper Pit'" />
+      </If>
+
+      <If Condition="not HasQuest(70388)">
+        <GetTo ZoneId="153" XYZ="202.35536, 8.39272, -71.26598" />
+        <If Condition="IsQuestAcceptQualified(70388)">
+          <PickupQuest QuestId="70388" NpcId="1046371" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70388) == 1">
+        <GetTo ZoneId="399" XYZ="-185.4761, 100.832886, -544.53827" />
+        <TalkTo NpcId="1046382" XYZ="-183.18463, 100.88573, -541.4359" QuestId="70388" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70388) == 2">
+        <If Condition="GetQuestStep(70388) == 2 and GetQuestById(70388).QuestI8A == 0">
+          <LisbethTravel ZoneId="399" XYZ="-172.08507, 110.3374, -343.36768" />
+          <UseObject NpcId="2013576" XYZ="-173.87659, 110.27698, -343.64844" condition="GetQuestById(70388).QuestI8A == 0" />
+        </If>
+        <If Condition="GetQuestStep(70388) == 2 and GetQuestById(70388).QuestI8A == 1">
+          <LisbethTravel ZoneId="399" XYZ="-65.22735, 100.93808, -332.51202" />
+          <UseObject NpcId="2013577" XYZ="-69.29126, 100.938354, -336.47675" condition="GetQuestById(70388).QuestI8A == 1" />
+        </If>
+        <If Condition="GetQuestStep(70388) == 2 and GetQuestById(70388).QuestI8A == 2">
+          <LisbethTravel ZoneId="399" XYZ="-137.3047, 111.0409, -271.70322" />
+          <UseObject NpcId="2013578" XYZ="-139.97101, 111.039795, -270.58832" condition="GetQuestById(70388).QuestI8A == 2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70388) == 3">
+        <LisbethTravel ZoneId="399" XYZ="-0.54338527, 103.49289, -278.3614" />
+        <TalkTo NpcId="1046383" XYZ="1.8463135, 103.4929, -280.14038" QuestId="70388" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70388) == 4">
+        <LisbethTravel ZoneId="397" XYZ="287.82315, 163.77168, 290.6876" />
+        <TalkTo NpcId="1046384" XYZ="289.08203, 163.68987, 288.19702" QuestId="70388" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70388) == 5">
+        <LisbethTravel ZoneId="397" XYZ="258.7108, 179.59006, -44.57055" />
+        <WaitWhile Condition="GetQuestStep(70388) == 5" />
+      </If>
+      <If Condition="GetQuestStep(70388) == 6">
+        <LisbethTravel ZoneId="397" XYZ="249.72382, 180.42548, -42.401714" />
+        <TalkTo NpcId="1046385" XYZ="246.20422, 180.63304, -41.61145" QuestId="70388" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70388) == 255">
+        <GetTo ZoneId="153" XYZ="201.46178, 8.3664255, -70.9022" />
+        <TurnIn QuestId="70388" NpcId="1046371" XYZ="205.06592, 8.660461, -71.70221" />
+      </If>
+    </If>
+
+    <!-- Vengeance of the Viper -->
+    <If Condition="IsQuestCompleted(70388) and not IsQuestCompleted(70389)">
+
+      <If Condition="Core.Me.Levels[ClassJobType.Viper] &lt; 90">
+        <UserDialog DialogText="You must be level 90 to take on the VPR quest 'Vengeance of the Viper'" />
+      </If>
+
+      <If Condition="not HasQuest(70389)">
+        <GetTo ZoneId="153" XYZ="199.69986, 8.313172, -70.167046" />
+        <If Condition="IsQuestAcceptQualified(70389)">
+          <PickupQuest QuestId="70389" NpcId="1046371" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70389) == 1">
+        <GetTo ZoneId="132" XYZ="-60.53666, -0.90585744, 9.702941" />
+        <UseObject NpcId="2014381" XYZ="-64.59149, -0.5036011, 7.7667847" QuestId="70389" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70389) == 2">
+        <If condition="not GameObjectManager.GetObjectByNPCId(12829)">
+          <LisbethTravel ZoneId="146" XYZ="-275.22067, 26.710363, 635.48816" />
+        </If>
+        <LLToast Message="For some reason Magitek has problems engaging this boss, you may need to step forward manually." />
+        <SimpleDuty InteractNpcId="1046388" XYZ="-275.01337, 27.017544, 636.8047" QuestId="70389" StepId="2">
+          <HotSpots>
+            <HotSpot Radius="10" XYZ="-404.71375, 0.14494014, 743.8048" name="Name" />
+          </HotSpots>
+          <TargetMobs>
+            <TargetMob Id="12829" Weight="1" /> <!-- Iq Soq Xmajun -->
+          </TargetMobs>
+        </SimpleDuty>
+        <TalkTo NpcId="1046388" XYZ="-275.01337, 27.017544, 636.8047" QuestId="70389" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70389) == 3">
+        <WaitWhile Condition="GetQuestStep(70389) == 3" />
+      </If>
+      <If Condition="GetQuestStep(70389) == 4">
+        <LisbethTravel ZoneId="146" XYZ="-410.07288, -0.16214287, 746.2047" />
+        <TalkTo NpcId="1046391" XYZ="-414.87756, -0.4116819, 747.7378" QuestId="70389" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70389) == 255">
+        <GetTo ZoneId="153" XYZ="200.95148, 8.341865, -70.573204" />
+        <TurnIn QuestId="70389" NpcId="1046393" XYZ="204.48608, 8.565186, -71.488525" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
