@@ -95,7 +95,7 @@
       </If>
       <If Condition="GetQuestStep(70282) == 2">
         <GetTo ZoneId="817" XYZ="-90.12936, -19.11096, 296.756" />
-        <If condition="IsChineseClient()">
+        <If condition="IsChineseClient() or IsTCClient()">
           <UserDialog DialogText="Please complete this step manually." QuestRequirementInLog="InLog" IsBotContinueAllowed="True" QuestId="70282" StepId="2" />
         </If>
         <If condition="IsGlobalClient()">
