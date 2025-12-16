@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: 7.4 - Into The Mist
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+  <!ENTITY PromiseofTomorrow "70909">
+  <!ENTITY WiththeWinds "70962">
+  <!ENTITY ThroughtheThunder "70963">
+  <!ENTITY BeyondtheMountains "70964">
+  <!ENTITY AroundtheCity "70965">
+  <!ENTITY ToWork "70966">
+  <!ENTITY InHerHeart "70967">
+  <!ENTITY TowardTrouble "70968">
+  <!ENTITY WhereWeCallHome "70969">
+  <!ENTITY IntotheMist "70970">
+
+  <!ENTITY TheBackroom "1207">
+  <!ENTITY AlexandriaCrater "1334">
+  <!ENTITY Treno "1328">
+]>
+<Profile>
+  <Name>7.4 - Into The Mist</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Check if 7.3 Is complete -->
+    <If Condition="not IsQuestCompleted(&PromiseofTomorrow;)">
+      <UserDialog DialogText="Please complete 7.3 MSQ before loading 7.4" />
+    </If>
+
+    <!-- With the Winds -->
+    <If Condition="IsQuestCompleted(&PromiseofTomorrow;) and not IsQuestCompleted(&WiththeWinds;) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70962)">
+        <GetTo ZoneId="1186" XYZ="-22.511745, 38.056595, -388.03583" />
+        <If Condition="IsQuestAcceptQualified(70962)">
+          <PickupQuest QuestId="70962" NpcId="1056011" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70962) == 1">
+        <If Condition="not IsOnMap(&TheBackroom;)">
+          <GetTo ZoneId="1186" XYZ="302.05237, 51.199978, 205.0354" />
+          <UseTransport NpcId="1048083" InteractDistance="3.5" XYZ="302.05237, 51.199978, 205.0354" />
+        </If>
+        <TalkTo NpcId="1048161" XYZ="-5.874817, -3.6188258E-08, 6.8512573" QuestId="70962" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70962) == 2">
+        <GetTo ZoneId="1185" XYZ="129.00586, -16.560854, 164.02577" />
+        <TalkTo NpcId="1056119" XYZ="130.41882, -16.560858, 165.85034" QuestId="70962" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70962) == 3">
+        <GetTo ZoneId="1185" XYZ="128.29305, -16.560852, 162.90144" />
+        <UseObject NpcId="2014993" XYZ="129.9068, -16.56085, 163.5934" QuestId="70962" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70962) == 255">
+        <GetTo ZoneId="1185" XYZ="133.60437, -15.89986, 174.17847" />
+        <TurnIn QuestId="70962" NpcId="1056126" XYZ="132.6466, -15.89986, 176.01282" />
+      </If>
+    </If>
+
+    <!-- Through the Thunder -->
+    <If Condition="IsQuestCompleted(&WiththeWinds;) and not IsQuestCompleted(&ThroughtheThunder;) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70963)">
+        <GetTo ZoneId="1185" XYZ="133.60437, -15.89986, 174.17847" />
+        <If Condition="IsQuestAcceptQualified(70963)">
+          <PickupQuest QuestId="70963" NpcId="1056126" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70963) == 1">
+        <GetTo ZoneId="1185" XYZ="12.8623495, -19.503468, 193.5168" />
+        <TalkTo NpcId="1056131" XYZ="14.663879, -19.587986, 195.11707" QuestId="70963" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70963) == 2">
+        <GetTo ZoneId="1192" XYZ="6.001082, 50.700012, 727.9509" />
+        <TalkTo NpcId="1056136" XYZ="6.3324585, 50.700012, 725.6428" QuestId="70963" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70963) == 3">
+        <GetTo ZoneId="1192" XYZ="6.001082, 50.700012, 727.9509" />
+        <TalkTo NpcId="1056140" XYZ="7.7057495, 50.700012, 723.781" QuestId="70963" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70963) == 4">
+        <WaitWhile Condition="GetQuestStep(70963) == 4" />
+      </If>
+      <If Condition="GetQuestStep(70963) == 255">
+        <GetTo ZoneId="1334" XYZ="-4.62351, -3.1188628E-12, -10.39621" />
+        <TurnIn QuestId="70963" NpcId="1056141" XYZ="-7.5532227, -0.003462526, -7.950012" />
+      </If>
+    </If>
+
+    <!-- Beyond the Mountains -->
+    <If Condition="IsQuestCompleted(&WiththeWinds;) and not IsQuestCompleted(&BeyondtheMountains;) and Core.Player.ClassLevel &gt; 99">
+      <If Condition="not HasQuest(70964)">
+        <GetTo ZoneId="1334" XYZ="-4.62351, -3.1188628E-12, -10.39621" />
+        <If Condition="IsQuestAcceptQualified(70964)">
+          <PickupQuest QuestId="70964" NpcId="1056141" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70964) == 1">
+        <GetTo ZoneId="1334" XYZ="-2.1210327, 4.3585896E-07, -43.808716" />
+        <TalkTo NpcId="1056145" XYZ="-2.1210327, 4.3585896E-07, -43.808716" QuestId="70964" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70964) == 2">
+        <UserDialog DialogText="Please manually complete the 4-player dungeon Mistwake" QuestId="70964" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70964) == 3">
+        <WaitWhile Condition="GetQuestStep(70964) == 3" />
+      </If>
+      <If condition="HasQuest(70964) and GetQuestStep(70964) &gt; 3">
+        <If condition="not IsOnMap(&Treno;)">
+          <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+          <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70964) == 4">
+        <TalkTo NpcId="1056149" XYZ="274.6471, -115.97899, -460.83777" QuestId="70964" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70964) == 5">
+        <MoveTo XYZ="275.10696, -115.97899, -457.77234" />
+        <!-- I'm not sure if this will work. I manually progressed the quest before I could test it -->
+        <UseInventoryItem ItemId="2003793" />
+      </If>
+      <If Condition="GetQuestStep(70964) == 255">
+        <TurnIn QuestId="70964" NpcId="1056149" XYZ="274.6471, -115.97899, -460.83777" />
+      </If>
+    </If>
+
+    <!-- Around the City -->
+    <If Condition="IsQuestCompleted(&BeyondtheMountains;) and not IsQuestCompleted(&AroundtheCity;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not IsOnMap(&Treno;)">
+        <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+        <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+      </If>
+      <If Condition="not HasQuest(70965)">
+        <MoveTo XYZ="275.10696, -115.97899, -457.77234" />
+        <If Condition="IsQuestAcceptQualified(70965)">
+          <PickupQuest QuestId="70965" NpcId="1056149" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70965) == 1">
+        <TalkTo NpcId="1056159" XYZ="273.67053, -115.97899, -458.3963" QuestId="70965" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70965) == 2">
+        <If Condition="GetQuestStep(70965) == 2 and GetQuestById(70965).QuestI8A == 0">
+          <HandOver ItemId="2003794" NpcId="1056152" XYZ="246.3263, -115.9987, -389.57812" QuestId="70965" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70965) == 2 and GetQuestById(70965).QuestI8A == 1">
+          <HandOver ItemId="2003794" NpcId="1056153" XYZ="219.25684, -115.53908, -402.7619" QuestId="70965" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70965) == 2 and GetQuestById(70965).QuestI8A == 2">
+          <HandOver ItemId="2003794" NpcId="1056154" XYZ="193.86584, -115.92868, -388.99823" QuestId="70965" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70965) == 255">
+        <TurnIn QuestId="70965" NpcId="1056159" XYZ="273.67053, -115.97899, -458.3963" />
+      </If>
+    </If>
+
+    <!-- To Work -->
+    <If Condition="IsQuestCompleted(&AroundtheCity;) and not IsQuestCompleted(&ToWork;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not IsOnMap(&Treno;)">
+        <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+        <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+      </If>
+      <If Condition="not HasQuest(70966)">
+        <If Condition="IsQuestAcceptQualified(70966)">
+          <MoveTo XYZ="273.67053, -115.97899, -458.3963"></MoveTo>
+          <PickupQuest QuestId="70966" NpcId="1056149" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70966) == 1">
+        <TalkTo NpcId="1056165" XYZ="245.89917, -116.025, -533.71484" QuestId="70966" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70966) == 2">
+        <TalkTo NpcId="1056165" XYZ="245.89917, -116.025, -533.71484" QuestId="70966" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70966) == 3">
+        <UseObject NpcId="2015170" XYZ="246.3972, -118.5233, -455.0817" QuestId="70966" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70966) == 4">
+        <UseObject NpcId="2015171" XYZ="275.1151, -115.979, -433.4405" QuestId="70966" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70966) == 5">
+        <UseObject NpcId="2015172" XYZ="267.0141, -116.05, -394.9687" QuestId="70966" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70966) == 6">
+        <If Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 0">
+          <UseItem ItemId="2003804" NpcId="1056483" XYZ="236.04175, -113.757126, -352.92596" QuestId="70966" StepId="6" Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 0" BlacklistDuration="8" BlackListAfter="true" />
+        </If>
+        <If Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 16">
+          <UseItem ItemId="2003804" NpcId="1056482" XYZ="209.09436, -115.990005, -411.64264" QuestId="70966" StepId="6" Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 16" BlacklistDuration="8" BlackListAfter="true" />
+        </If>
+        <If Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 33">
+          <UseItem ItemId="2003804" NpcId="1056481" XYZ="194.23206, -115.99002, -415.76257" QuestId="70966" StepId="6" BlacklistDuration="8" BlackListAfter="true" Condition="GetQuestStep(70966) == 6 and GetQuestById(70966).QuestI8A == 33" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70966) == 255">
+        <TurnIn QuestId="70966" NpcId="1056165" XYZ="245.89917, -116.025, -533.71484" />
+      </If>
+    </If>
+
+    <!-- To Work -->
+    <If Condition="IsQuestCompleted(&ToWork;) and not IsQuestCompleted(&InHerHeart;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not IsOnMap(&Treno;)">
+        <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+        <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+      </If>
+      <If Condition="not HasQuest(70967)">
+        <If Condition="IsQuestAcceptQualified(70967)">
+          <PickupQuest QuestId="70967" NpcId="1056165" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70967) == 1">
+        <UseObject NpcId="2014994" XYZ="281.166, -115.979, -530.4824" QuestId="70967" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70967) == 2">
+        <TalkTo NpcId="1056166" XYZ="272.5719, -115.979004, -551.0491" QuestId="70967" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70967) == 3">
+        <TalkTo NpcId="1056167" XYZ="323.84216, -117.47925, -489.37213" QuestId="70967" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70967) == 4">
+        <TalkTo NpcId="1056267" XYZ="325.18494, -117.5, -489.28055" QuestId="70967" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70967) == 255">
+        <TurnIn QuestId="70967" NpcId="1056165" XYZ="245.89917, -116.025, -533.71484" />
+      </If>
+    </If>
+
+    <!-- Toward Trouble -->
+    <If Condition="IsQuestCompleted(&InHerHeart;) and not IsQuestCompleted(&TowardTrouble;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not IsOnMap(&Treno;)">
+        <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+        <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+      </If>
+      <If Condition="not HasQuest(70968)">
+        <MoveTo XYZ="249.11407, -116.02501, -532.5458" />
+        <If Condition="IsQuestAcceptQualified(70968)">
+          <PickupQuest QuestId="70968" NpcId="1056168" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70968) == 1">
+        <UseObject NpcId="2014995" XYZ="247.3097, -116.025, -532.7819" QuestId="70968" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70968) == 2">
+        <TalkTo NpcId="1056194" XYZ="245.16663, -116.02501, -532.00586" QuestId="70968" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70968) == 255">
+        <TurnIn QuestId="70968" NpcId="1056172" XYZ="292.1034, -98, -283.25323" />
+      </If>
+    </If>
+
+    <!-- Where We Call Home -->
+    <If Condition="IsQuestCompleted(&TowardTrouble;) and not IsQuestCompleted(&WhereWeCallHome;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not IsOnMap(&Treno;)">
+        <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+        <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+      </If>
+      <If Condition="not HasQuest(70969)">
+        <If Condition="IsQuestAcceptQualified(70969)">
+          <MoveTo XYZ="288.8372, -98, -284.95892" />
+          <PickupQuest QuestId="70969" NpcId="1056172" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70969) == 1">
+        <TalkTo NpcId="1056173" XYZ="293.96497, -98, -281.6358" QuestId="70969" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 2">
+        <WaitWhile Condition="GetQuestStep(70969) == 2" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 3">
+        <UserDialog DialogText="Please manually complete the 8-player trail Hell on Rails" QuestId="70969" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 4">
+        <WaitWhile Condition="GetQuestStep(70969) == 4" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 5">
+        <MoveTo XYZ="264.7898, -115, -630.7317" />
+        <UserDialog DialogText="Please manually complete the RP Solo Duty" QuestId="70969" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 6">
+        <WaitWhile Condition="GetQuestStep(70969) == 6" />
+      </If>
+      <If Condition="GetQuestStep(70969) == 255">
+        <TurnIn QuestId="70969" NpcId="1056175" XYZ="280.59814, -115.97899, -422.78174" />
+      </If>
+    </If>
+
+    <!-- Into the Mist -->
+    <If Condition="IsQuestCompleted(&WhereWeCallHome;) and not IsQuestCompleted(&IntotheMist;) and Core.Player.ClassLevel &gt; 99">
+      <If condition="not HasQuest(70970) or GetQuestStep(70970) &lt; 3">
+        <If condition="not IsOnMap(&Treno;)">
+          <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
+          <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
+        </If>
+      </If>
+      <If Condition="not HasQuest(70970)">
+        <MoveTo XYZ="279.01553, -115.97899, -419.76865" />
+        <If Condition="IsQuestAcceptQualified(70970)">
+          <PickupQuest QuestId="70970" NpcId="1056175" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70970) == 1">
+        <TalkTo NpcId="1056179" XYZ="281.17798, -115, -643.061" QuestId="70970" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70970) == 2">
+        <UseObject NpcId="2014998" XYZ="281.0471, -98, -277.821" QuestId="70970" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70970) == 3">
+        <GetTo ZoneId="1192" XYZ="-0.15176289, 53.200012, 763.68896" />
+        <TalkTo NpcId="1056190" XYZ="-1.8158569, 53.200012, 768.24585" QuestId="70970" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70970) == 255">
+        <GetTo ZoneId="1186" XYZ="14.023318, 38.80659, -409.817" />
+        <TurnIn QuestId="70970" NpcId="1056199" XYZ="17.31897, 38.80659, -410.5135" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
