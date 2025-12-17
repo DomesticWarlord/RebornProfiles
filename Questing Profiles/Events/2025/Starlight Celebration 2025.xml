@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Starlight Celebration 2025
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+]>
+
+<Profile>
+  <Name>Starlight Celebration 2025</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- We Three Kinderpunsch -->
+    <If Condition="not IsQuestCompleted(70767) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70767)">
+        <GetTo ZoneId="133" XYZ="-50.246517, 6.4999995, -92.160164" />
+        <If Condition="IsQuestAcceptQualified(70767)">
+          <PickupQuest QuestId="70767" NpcId="1054361" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70767) == 1">
+        <GetTo ZoneId="133" XYZ="-52.091152, 5.65637, -99.88116" />
+        <TalkTo NpcId="1054363" XYZ="-53.97119, 5.798081, -100.93848" QuestId="70767" StepId="1" />
+        <WaitWhile condition="not IsOnMap(1247)"/>
+      </If>
+      <If Condition="GetQuestStep(70767) == 2">
+        <!-- Get back to Starlight Stalls -->
+        <If condition="not IsOnMap(1247)">
+          <GetTo ZoneId="133" XYZ="-52.091152, 5.65637, -99.88116" />
+          <UseTransport NpcId="1054364" InteractDistance="3.0" XYZ="-53.97119, 5.798081, -100.93848" />
+        </If>
+        <TalkTo NpcId="1054362" XYZ="15.182739, 0.0017376093, -24.643372" QuestId="70767" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70767) == 3">
+        <If Condition="GetQuestStep(70767) == 3 and GetQuestById(70767).QuestI8A == 0">
+          <GetTo ZoneId="133" XYZ="87.83628, 5.9899273, -94.56185" />
+          <TalkTo NpcId="1054367" XYZ="86.045654, 5.995377, -91.844055" QuestId="70767" StepId="3" />
+        </If>
+        <If Condition="GetQuestStep(70767) == 3 and GetQuestById(70767).QuestI8A == 1">
+          <GetTo ZoneId="133" XYZ="160.82697, 15.699917, -116.76993" />
+          <TalkTo NpcId="1054366" XYZ="159.2279, 15.699927, -117.93707" QuestId="70767" StepId="3" />
+        </If>
+        <If Condition="GetQuestStep(70767) == 3 and GetQuestById(70767).QuestI8A == 2">
+          <GetTo ZoneId="133" XYZ="161.96265, 15.499998, -64.23979" />
+          <TalkTo NpcId="1054365" XYZ="161.6388, 15.499999, -61.997437" QuestId="70767" StepId="3" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70767) == 4">
+        <GetTo ZoneId="133" XYZ="-49.684177, 6.499999, -93.91748" />
+        <TalkTo NpcId="1054361" XYZ="-50.06488, 6.4999995, -89.58569" QuestId="70767" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70767) == 5">
+        <!-- Get back to Starlight Stalls -->
+        <If condition="not IsOnMap(1247)">
+          <GetTo ZoneId="133" XYZ="-52.035503, 5.8152533, -101.75113" />
+          <UseTransport NpcId="1054364" InteractDistance="3.0" XYZ="-53.97119, 5.798081, -100.93848" />
+        </If>
+        <If Condition="GetQuestStep(70767) == 5 and GetQuestById(70767).QuestI8A == 0">
+          <TalkTo NpcId="1054370" XYZ="-13.01593, 0.0015269257, 24.429688" QuestId="70767" StepId="5" />
+        </If>
+        <If Condition="GetQuestStep(70767) == 5 and GetQuestById(70767).QuestI8A == 1">
+          <TalkTo NpcId="1054369" XYZ="7.7973022, 0.0028544795, -15.701599" QuestId="70767" StepId="5" />
+        </If>
+        <If Condition="GetQuestStep(70767) == 5 and GetQuestById(70767).QuestI8A == 2">
+          <TalkTo NpcId="1054371" XYZ="18.661804, 2.0028546, -93.0343" QuestId="70767" StepId="5" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70767) == 6">
+        <!-- Get back to Starlight Stalls -->
+        <If condition="not IsOnMap(1247)">
+          <GetTo ZoneId="133" XYZ="-52.035503, 5.8152533, -101.75113" />
+          <UseTransport NpcId="1054364" InteractDistance="3.0" XYZ="-53.97119, 5.798081, -100.93848" />
+        </If>
+        <TalkTo NpcId="1054374" XYZ="11.48999, 0.0028544795, -12.64978" QuestId="70767" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70767) == 255">
+        <GetTo ZoneId="133" XYZ="-49.66425, 6.499999, -93.895096" />
+        <TurnIn QuestId="70767" NpcId="1054361" XYZ="-50.06488, 6.4999995, -89.58569" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
