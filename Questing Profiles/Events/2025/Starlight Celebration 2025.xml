@@ -23,7 +23,7 @@
       <If Condition="GetQuestStep(70767) == 1">
         <GetTo ZoneId="133" XYZ="-52.091152, 5.65637, -99.88116" />
         <TalkTo NpcId="1054363" XYZ="-53.97119, 5.798081, -100.93848" QuestId="70767" StepId="1" />
-        <WaitWhile condition="not IsOnMap(1247)"/>
+        <WaitWhile condition="not IsOnMap(1247)" />
       </If>
       <If Condition="GetQuestStep(70767) == 2">
         <!-- Get back to Starlight Stalls -->
@@ -76,6 +76,9 @@
         <TalkTo NpcId="1054374" XYZ="11.48999, 0.0028544795, -12.64978" QuestId="70767" StepId="6" />
       </If>
       <If Condition="GetQuestStep(70767) == 255">
+        <If condition="IsOnMap(1247)">
+          <UseTransport NpcId="2014535" InteractDistance="3.0" XYZ="67.88733, -0.77819824, 51.224487" />
+        </If>
         <GetTo ZoneId="133" XYZ="-49.66425, 6.499999, -93.895096" />
         <TurnIn QuestId="70767" NpcId="1054361" XYZ="-50.06488, 6.4999995, -89.58569" />
       </If>
