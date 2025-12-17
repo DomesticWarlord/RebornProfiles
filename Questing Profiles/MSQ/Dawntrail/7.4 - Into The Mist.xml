@@ -108,6 +108,9 @@
       </If>
       <If condition="HasQuest(70964) and GetQuestStep(70964) &gt; 3">
         <If condition="not IsOnMap(&Treno;)">
+          <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+            <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+          </If>
           <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
           <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
         </If>
@@ -128,6 +131,9 @@
     <!-- Around the City -->
     <If Condition="IsQuestCompleted(&BeyondtheMountains;) and not IsQuestCompleted(&AroundtheCity;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not IsOnMap(&Treno;)">
+        <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
         <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
         <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
       </If>
@@ -159,6 +165,9 @@
     <!-- To Work -->
     <If Condition="IsQuestCompleted(&AroundtheCity;) and not IsQuestCompleted(&ToWork;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not IsOnMap(&Treno;)">
+        <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
         <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
         <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
       </If>
@@ -202,6 +211,9 @@
     <!-- To Work -->
     <If Condition="IsQuestCompleted(&ToWork;) and not IsQuestCompleted(&InHerHeart;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not IsOnMap(&Treno;)">
+        <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
         <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
         <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
       </If>
@@ -230,6 +242,9 @@
     <!-- Toward Trouble -->
     <If Condition="IsQuestCompleted(&InHerHeart;) and not IsQuestCompleted(&TowardTrouble;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not IsOnMap(&Treno;)">
+        <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
         <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
         <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
       </If>
@@ -253,6 +268,9 @@
     <!-- Where We Call Home -->
     <If Condition="IsQuestCompleted(&TowardTrouble;) and not IsQuestCompleted(&WhereWeCallHome;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not IsOnMap(&Treno;)">
+        <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+          <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+        </If>
         <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
         <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
       </If>
@@ -290,6 +308,9 @@
     <If Condition="IsQuestCompleted(&WhereWeCallHome;) and not IsQuestCompleted(&IntotheMist;) and Core.Player.ClassLevel &gt; 99">
       <If condition="not HasQuest(70970) or GetQuestStep(70970) &lt; 3">
         <If condition="not IsOnMap(&Treno;)">
+          <If condition="not IsOnMap(1192) and not IsOnMap(&AlexandriaCrater;)">
+            <TeleportTo Name="Leynode Mnemo" AetheryteId="213" />
+          </If>
           <GetTo ZoneId="1334" XYZ="1.1485769, -0.15079504, -52.907845" />
           <UseTransport NpcId="2014999" InteractDistance="3.0" XYZ="1.124277, 0.9640547, -56.99698" />
         </If>
