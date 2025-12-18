@@ -82,6 +82,9 @@
         <GetTo ZoneId="133" XYZ="-49.66425, 6.499999, -93.895096" />
         <TurnIn QuestId="70767" NpcId="1054361" XYZ="-50.06488, 6.4999995, -89.58569" />
       </If>
+      <If condition="HasItem(46792)">
+        <UseInventoryItem ItemId="46792"/>
+      </If>
     </If>
 
   </Order>
