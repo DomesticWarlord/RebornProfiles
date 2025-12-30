@@ -574,8 +574,6 @@
 
 		<LLSellItem ItemIds="18266,18256,12862,12867,12864,12868,27864,27865,14139,28720,28721" />
 
-		<If condition="LlamaLibrary.Memory.OffsetManager.Is7_15">
-
 			<If Condition="not IsQuestCompleted(&TheWarmthofFamily;) and not IsQuestCompleted(70775)">
 				<UserDialog IsBotContinueAllowed="False" DialogText="The Main Story Quest 'The Warmth of Family' must be complete to unlock Nitowikwe deliveries." />
 			</If>
@@ -648,8 +646,6 @@
 				</If>
 			</If>
 
-		</If>
-
 	</Order>
 	<GrindAreas>
 		<GrindArea name="Purbol">
@@ -685,4 +681,5 @@
             ]]>
     </CodeChunk>
 	</CodeChunks>
+
 </Profile>  
