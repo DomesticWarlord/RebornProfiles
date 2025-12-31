@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Heavensturn 2026
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+  <!ENTITY Plugins "SeleCR,Custom Game Titlebar,SideStep,Osiris,Extractor">
+]>
+
+<Profile>
+  <Name>Heavensturn 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Seize the Neigh -->
+    <If Condition="not IsQuestCompleted(70765) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(70765)">
+        <GetTo ZoneId="128" XYZ="15.698907, 45.656, 132.32268" />
+        <If Condition="IsQuestAcceptQualified(70765)">
+          <PickupQuest QuestId="70765" NpcId="1051493" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70765) == 1">
+        <GetTo ZoneId="128" XYZ="20.362196, 40, 35.821632" />
+        <TalkTo NpcId="1052388" XYZ="21.22528, 39.99996, 32.913696" QuestId="70765" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70765) == 2">
+        <GetTo ZoneId="128" XYZ="20.362196, 40, 35.821632" />
+        <TalkTo NpcId="1052387" XYZ="22.690125, 39.999985, 30.71643" QuestId="70765" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70765) == 3">
+        <GetTo ZoneId="128" XYZ="-8.986467, 40.00054, 12.591739" />
+        <TalkTo NpcId="1003598" XYZ="-12.069946, 40.00053, 11.459534" QuestId="70765" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70765) == 4">
+        <If Condition="GetQuestStep(70765) == 4 and GetQuestById(70765).QuestI8A == 0">
+          <GetTo ZoneId="128" XYZ="77.49376, 40.246704, 74.12727" />
+          <TalkTo NpcId="1003550" XYZ="76.85962, 39.99632, 78.99597" QuestId="70765" StepId="4" />
+        </If>
+        <If Condition="GetQuestStep(70765) == 4 and GetQuestById(70765).QuestI8A == 1">
+          <GetTo ZoneId="128" XYZ="-91.38456, 40.999992, -153.33794" />
+          <TalkTo NpcId="1052297" XYZ="-94.40759, 40.999977, -152.78864" QuestId="70765" StepId="4" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70765) == 255">
+        <GetTo ZoneId="128" XYZ="14.328487, 45.666, 131.39961" />
+        <TurnIn QuestId="70765" NpcId="1051493" XYZ="17.166382, 45.656, 133.92847" />
+      </If>
+    </If>
+
+    <!-- Majesty in Motion -->
+    <If Condition="IsQuestCompleted(70765) and not IsQuestCompleted(70766)">
+      <If Condition="not HasQuest(70766)">
+        <GetTo ZoneId="128" XYZ="14.62408, 45.666, 131.17004" />
+        <If Condition="IsQuestAcceptQualified(70766)">
+          <PickupQuest QuestId="70766" NpcId="1051493" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70766) == 1">
+        <GetTo ZoneId="134" XYZ="-1.917251, 41.522316, 140.86401" />
+        <TalkTo NpcId="1052295" XYZ="0.41192627, 41.71661, 140.33716" QuestId="70766" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70766) == 2">
+        <If condition="GameObjectManager.GetObjectByNPCId(1051866) and GameObjectManager.GetObjectByNPCId(1051866).IsVisible">
+          <GetTo ZoneId="134" XYZ="-1.917251, 41.522316, 140.86401" />
+          <TalkTo NpcId="1051866" XYZ="1.5411377, 41.880928, 140.67285" />
+          <FollowNPC NpcId="1051866" QuestId="70766" StepId="2" />
+          <WaitWhile condition="not ObjectExistsWithId(1051873)" />
+        </If>
+        <If condition="GameObjectManager.GetObjectByNPCId(1051873) and GameObjectManager.GetObjectByNPCId(1051873).IsVisible">
+          <GetTo ZoneId="134" XYZ="53.58093, 47.175385, 63.64351" />
+          <TalkTo NpcId="1051873" XYZ="55.588623, 47.3197, 59.830566" QuestId="70766" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70766) == 3">
+        <If condition="GameObjectManager.GetObjectByNPCId(1051873) and GameObjectManager.GetObjectByNPCId(1051873).IsVisible">
+          <GetTo ZoneId="134" XYZ="53.58093, 47.175385, 63.64351" />
+          <TalkTo NpcId="1051873" XYZ="55.588623, 47.3197, 59.830566" />
+          <FollowNPC NpcId="1051873" QuestId="70766" StepId="3" />
+          <WaitWhile condition="not ObjectExistsWithId(1051874)" />
+        </If>
+        <If condition="GameObjectManager.GetObjectByNPCId(1051874) and GameObjectManager.GetObjectByNPCId(1051874).IsVisible">
+          <GetTo ZoneId="134" XYZ="144.15659, 46.88782, 152.11903" />
+          <TalkTo NpcId="1051874" XYZ="144.15659, 46.88782, 152.11903" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70766) == 4">
+        <If condition="GameObjectManager.GetObjectByNPCId(1051874) and GameObjectManager.GetObjectByNPCId(1051874).IsVisible">
+          <GetTo ZoneId="134" XYZ="144.15659, 46.88782, 152.11903" />
+          <!-- <TalkTo NpcId="1051874" XYZ="145.73889, 47.20847, 156.11499" BlacklistAfter="True" /> -->
+          <FollowNPC NpcId="1051874" Condition="GameObjectManager.GetObjectByNPCId(1051874).Distance(GameObjectManager.GetObjectByNPCId(1051875)) &gt; 5" />
+          <WaitWhile condition="GameObjectManager.GetObjectByNPCId(1051875) and not GameObjectManager.GetObjectByNPCId(1051875).IsVisible" />
+        </If>
+        <If condition="GameObjectManager.GetObjectByNPCId(1051875) and GameObjectManager.GetObjectByNPCId(1051875).IsVisible">
+          <GetTo ZoneId="134" XYZ="171.03993, 60.70839, 259.4942" />
+          <TalkTo NpcId="1051875" XYZ="171.25195, 60.953327, 261.31067" QuestId="70766" StepId="4" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70766) == 5">
+        <WaitWhile condition="GetQuestStep(70766) == 5" />
+      </If>
+      <If Condition="GetQuestStep(70766) == 255">
+        <GetTo ZoneId="128" XYZ="11.094939, 45.655994, 134.16739" />
+        <TurnIn QuestId="70766" NpcId="1051493" XYZ="17.166382, 45.656, 133.92847" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
