@@ -2,7 +2,6 @@
 
 [![Download][1]][2]
 [![Discord][3]][4]
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/domesticwarlord86)
 [![Donate][5]][6]
 
 
@@ -13,25 +12,15 @@
 ### Prerequisites
 
 - [RebornBuddy][7] with active license (paid)
-- [ExBuddy][8] (free)
 - [Lisbeth][9] with active license (paid)
 - [LlamaLibrary][10] (free)
 - Better combat routine, such as [Magitek][11] (free)
 
 ### Automatic Setup (recommended)
 
-The easiest way to install LlamaLibrary is to install the [updateBuddy](https://loader.updatebuddy.net/UpdateBuddy.zip) plugin. It would be installed in the **/plugins** folder of your rebornBuddy folder as such:
-```
-RebornBuddy
-└── Plugins
-    └── updateBuddy
-        ├── git2-a2bde63.dll
-        ├── LibGit2Sharp.dll
-        ├── Loader.cs
-        └── UpdateBuddy.dll
-```
-
-It will automatically install the files into the correct folders and keep them up to date.
+1. `updateBuddy` now comes pre-installed with RebornBuddy.
+2. Once you have the bot up and running, select the `Plugins` tab across the top and find `updateBuddy` on the list of Plugins. Select it, and then hit the `Settings` button on the right side panel.
+3. On the `Repos` tab across the top. Make sure the prerequisites and `RebornProfiles` are selected and `updateBuddy` will download/install/ and update those repos for you.
 
 ### Manual Setup
 
