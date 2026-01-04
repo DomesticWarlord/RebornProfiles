@@ -89,7 +89,7 @@
         <If condition="GameObjectManager.GetObjectByNPCId(1051874) and GameObjectManager.GetObjectByNPCId(1051874).IsVisible">
           <GetTo ZoneId="134" XYZ="144.15659, 46.88782, 152.11903" />
           <!-- <TalkTo NpcId="1051874" XYZ="145.73889, 47.20847, 156.11499" BlacklistAfter="True" /> -->
-          <FollowNPC NpcId="1051874" Condition="GameObjectManager.GetObjectByNPCId(1051874).Distance(GameObjectManager.GetObjectByNPCId(1051875)) &gt; 5" />
+          <FollowNPC NpcId="1051874" Condition="GetQuestStep(70766) == 4" />
           <WaitWhile condition="GameObjectManager.GetObjectByNPCId(1051875) and not GameObjectManager.GetObjectByNPCId(1051875).IsVisible" />
         </If>
         <If condition="GameObjectManager.GetObjectByNPCId(1051875) and GameObjectManager.GetObjectByNPCId(1051875).IsVisible">
