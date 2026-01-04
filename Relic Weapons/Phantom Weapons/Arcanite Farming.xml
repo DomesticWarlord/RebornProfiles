@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Dawntrail Relics
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+
+  <!-- How many Arcanite and Waxing Arcanite do you want to farm? -->
+  <!-- 3 per job. 21 jobs. 63 total needed -->
+  <!ENTITY ArcaniteQty "63">
+  <!ENTITY WaxingArcaniteQty "63">
+
+  <!ENTITY GoToBarracks "False">
+
+  <!-- Tomestone farm settings -->
+  <!ENTITY DungeonChoice "Mistwake"> <!-- What dungeon do we run for Helimotry? -->
+
+  <!-- Constants, don't change anything below this line -->
+  <!ENTITY Arcanite "47750">
+  <!ENTITY TomestoneofHeliometry "47">
+  <!ENTITY TomestoneofMathematics "48">
+  <!ENTITY WaxingArcanite "46850">
+]>
+
+
+<Profile>
+  <Name>Arcanite Farming</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <While condition="DutyManager.InInstance and not IsDutyEnded()">
+      <RunCode name="LoadProfile" />
+    </While>
+    <While condition="DutyManager.InInstance and IsDutyEnded()">
+      <LLLeaveDuty />
+    </While>
+
+    <While condition="not HasAtLeast(&Arcanite;,&ArcaniteQty;) or not HasAtLeast(&WaxingArcanite;,&WaxingArcaniteQty;)">
+
+      <!-- Farm Dungeon if we don't have enough Mathematics -->
+      <If condition="not HasAtLeast(&TomestoneofMathematics;, 500)">
+        <LoadPFDungeon GoToBarracks="&GoToBarracks;" ProfileName="&DungeonChoice;" QueueType="2" />
+      </If>
+
+      <!-- Buy Arcanite if we need more -->
+      <If condition="not HasAtLeast(&Arcanite;,&ArcaniteQty;) and HasAtLeast(&TomestoneofMathematics;, 500)">
+        <GetTo ZoneId="1269" XYZ="37.75831,0,20.118107" />
+        <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&Arcanite;" Count="1" />
+      </If>
+
+      <!-- Buy Waxing Arcanite if we need more -->
+      <If condition="not HasAtLeast(&WaxingArcanite;,&WaxingArcaniteQty;) and HasAtLeast(&TomestoneofMathematics;, 500)">
+        <GetTo ZoneId="1269" XYZ="37.75831,0,20.118107" />
+        <BuyShopExchangeCurrency Dialog="False" NpcId="1053904" ItemId="&WaxingArcanite;" Count="1" />
+      </If>
+
+    </While>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("Phantom Relics", Colors.DeepPink);
+    ]]>
+    </CodeChunk>
+    <CodeChunk Name="LoadProfile">
+  <![CDATA[
+
+    await LlamaLibrary.Helpers.LoadServerProfile.LoadProfileByZone(WorldManager.ZoneId);
+
+  ]]>
+  </CodeChunk>
+  </CodeChunks>
+</Profile> 
