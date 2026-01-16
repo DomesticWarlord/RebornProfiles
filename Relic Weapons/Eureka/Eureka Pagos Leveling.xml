@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Eureka Pagos Leveling
-  Authors: DomesticWarlord86
+  Authors: DomesticWarlord86, 0xAlbertLin
 -->
 
 <!DOCTYPE Profile [
@@ -20,84 +20,86 @@
 		<RunCode name="EnterPagos"/>
 	</While>
  	<While Condition="IsOnMap(763)">
+		<!-- Exit loop immediately if not in Eureka Pagos (e.g., timeout) -->
+		
 		<While Condition="Core.Me.ElementalLevel &lt; 20">
 			<NoCombatMoveTo XYZ="-578.9044, -700.8606, 86.51808" />
-			<Grind GrindRef="Under20" while="Core.Me.ElementalLevel &lt; 20"/>
+			<Grind GrindRef="Under20" while="Core.Me.ElementalLevel &lt; 20 and IsOnMap(763)"/>
 		</While>
 		<While Condition="Core.Me.ElementalLevel &lt; 22">
 			<MoveTo XYZ="-472.8371, -704.0522, 252.6677" />
-			<Grind GrindRef="20to21" while="Core.Me.ElementalLevel &lt; 22"/>
+			<Grind GrindRef="20to21" while="Core.Me.ElementalLevel &lt; 22 and IsOnMap(763)"/>
 		</While>
 		<While Condition="Core.Me.ElementalLevel &lt; 23">
 			<MoveTo XYZ="-324.5545, -674.0774, 167.9012" />
-			<Grind GrindRef="21to22" while="Core.Me.ElementalLevel &lt; 23"/>
+			<Grind GrindRef="21to22" while="Core.Me.ElementalLevel &lt; 23 and IsOnMap(763)"/>
 		</While>
 		<While Condition="Core.Me.ElementalLevel &lt; 25">
 			<NoCombatMoveTo XYZ="-215.3304, -726.7948, 398.8835" />
-			<Grind GrindRef="23to24" while="Core.Me.ElementalLevel &lt; 25"/>		
+			<Grind GrindRef="23to24" while="Core.Me.ElementalLevel &lt; 25 and IsOnMap(763)"/>		
 		</While>
 		<While Condition="Core.Me.ElementalLevel &lt; 26">
 			<NoCombatMoveTo XYZ="53.07406, -737.6741, 324.4169" />
-			<Grind GrindRef="Level25" while="Core.Me.ElementalLevel &lt; 26"/>		
+			<Grind GrindRef="Level25" while="Core.Me.ElementalLevel &lt; 26 and IsOnMap(763)"/>		
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 27">
 			<NoCombatMoveTo XYZ="447.303, -740.0225, 435.4175" />
 			<If Condition="&DoFates; == 1">
-				<Grind GrindRef="25to27" while="Core.Me.ElementalLevel &lt; 27 and not IsFateActive(1353)"/>
+				<Grind GrindRef="25to27" while="Core.Me.ElementalLevel &lt; 27 and not IsFateActive(1353) and IsOnMap(763)"/>
 				<RunCode name="LevelSync"/>
-				<LLFate FateId="1353" MinLevel="1" MaxLevel="80" while="IsFateActive(1353)"/>
+				<LLFate FateId="1353" MinLevel="1" MaxLevel="80" while="IsFateActive(1353) and IsOnMap(763)"/>
 			</If>
 			<If Condition="&DoFates; == 0">
-				<Grind GrindRef="25to27" while="Core.Me.ElementalLevel &lt; 27"/>
+				<Grind GrindRef="25to27" while="Core.Me.ElementalLevel &lt; 27 and IsOnMap(763)"/>
 			</If>				
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 28">
 			<NoCombatMoveTo XYZ="586.6545, -728.2477, 294.0709" />
 			<If Condition="&DoFates; == 1">
-				<Grind GrindRef="27to28" while="Core.Me.ElementalLevel &lt; 28 and not IsFateActive(1354)"/>
+				<Grind GrindRef="27to28" while="Core.Me.ElementalLevel &lt; 28 and not IsFateActive(1354) and IsOnMap(763)"/>
 				<RunCode name="LevelSync"/>
-				<LLFate FateId="1354" MinLevel="1" MaxLevel="80" while="IsFateActive(1354)"/>	
+				<LLFate FateId="1354" MinLevel="1" MaxLevel="80" while="IsFateActive(1354) and IsOnMap(763)"/>	
 			</If>
 			<If Condition="&DoFates; == 0">
-				<Grind GrindRef="27to28" while="Core.Me.ElementalLevel &lt; 28"/>
+				<Grind GrindRef="27to28" while="Core.Me.ElementalLevel &lt; 28 and IsOnMap(763)"/>
 			</If>			
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 30">
 			<NoCombatMoveTo XYZ="374.9399, -681.7018, 21.94587" />
 			<If Condition="&DoFates; == 1">				
-				<Grind GrindRef="28to31" while="not IsFateActive(1366) and Core.Me.ElementalLevel &lt; 30"/>
+				<Grind GrindRef="28to31" while="not IsFateActive(1366) and Core.Me.ElementalLevel &lt; 30 and IsOnMap(763)"/>
 				<RunCode name="LevelSync"/>
-				<LLFate FateId="1366" MinLevel="1" MaxLevel="80" while="IsFateActive(1366)"/>					
+				<LLFate FateId="1366" MinLevel="1" MaxLevel="80" while="IsFateActive(1366) and IsOnMap(763)"/>					
 			</If>
 			<If Condition="&DoFates; == 0">
-				<Grind GrindRef="28to31" while="Core.Me.ElementalLevel &lt; 30"/>
+				<Grind GrindRef="28to31" while="Core.Me.ElementalLevel &lt; 30 and IsOnMap(763)"/>
 			</If>			
 		</While>	
 		<While condition="Core.Me.ElementalLevel &lt; 31">
 			<NoCombatMoveTo XYZ="-572.523, -607.4022, -527.281" />
 			<If Condition="&DoFates; == 1">				
-				<Grind GrindRef="31to32" while="not IsFateActive(1356) and Core.Me.ElementalLevel &lt; 31"/>
+				<Grind GrindRef="31to32" while="not IsFateActive(1356) and Core.Me.ElementalLevel &lt; 31 and IsOnMap(763)"/>
 				<RunCode name="LevelSync"/>
-				<LLFate FateId="1356" MinLevel="1" MaxLevel="80" while="IsFateActive(1356)"/>							
+				<LLFate FateId="1356" MinLevel="1" MaxLevel="80" while="IsFateActive(1356) and IsOnMap(763)"/>							
 			</If>
 			<If Condition="&DoFates; == 0">
-				<Grind GrindRef="31to32" while="Core.Me.ElementalLevel &lt; 31"/>
+				<Grind GrindRef="31to32" while="Core.Me.ElementalLevel &lt; 31 and IsOnMap(763)"/>
 			</If>			
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 33">
 			<NoCombatMoveTo XYZ="-583.2302, -615.7835, -110.5662" />
 			<If Condition="&DoFates; == 1">				
-				<Grind GrindRef="32to35" while="not IsFateActive(1352) and Core.Me.ElementalLevel &lt; 33"/>
+				<Grind GrindRef="32to35" while="not IsFateActive(1352) and Core.Me.ElementalLevel &lt; 33 and IsOnMap(763)"/>
 				<RunCode name="LevelSync"/>
-				<LLFate FateId="1352" MinLevel="1" MaxLevel="80" while="IsFateActive(1352)"/>						
+				<LLFate FateId="1352" MinLevel="1" MaxLevel="80" while="IsFateActive(1352) and IsOnMap(763)"/>						
 			</If>
 			<If Condition="&DoFates; == 0">
-				<Grind GrindRef="32to35" while="Core.Me.ElementalLevel &lt; 33"/>
+				<Grind GrindRef="32to35" while="Core.Me.ElementalLevel &lt; 33 and IsOnMap(763)"/>
 			</If>			
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 36">
 			<NoCombatMoveTo XYZ="-668.0698, -619.3779, -158.808" />
-			<Grind GrindRef="33to35" while="Core.Me.ElementalLevel &lt; 36"/>		
+			<Grind GrindRef="33to35" while="Core.Me.ElementalLevel &lt; 36 and IsOnMap(763)"/>		
 		</While>		
 	</While>
 	
@@ -231,7 +233,6 @@
 					await Coroutine.Wait(10000, () => SelectString.IsOpen);
 					await Buddy.Coroutines.Coroutine.Sleep(500);
 					{
-						Logging.WriteDiagnostic("Choosing Eureka Pagos.");
 						Logging.WriteDiagnostic("Choosing Eureka Pagos.");
     
 						// 優先嘗試英文 "Pagos"
