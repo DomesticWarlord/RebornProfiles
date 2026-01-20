@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Eureka Pagos Leveling
-  Authors: DomesticWarlord86
+  Authors: DomesticWarlord86, 0xAlbertLin
 -->
 
 <!DOCTYPE Profile [
@@ -33,8 +33,12 @@
 			<Grind GrindRef="21to22" while="Core.Me.ElementalLevel &lt; 23"/>
 		</While>
 		<While Condition="Core.Me.ElementalLevel &lt; 25">
+			<NoCombatMoveTo XYZ="-215.3304, -726.7948, 398.8835" />
+			<Grind GrindRef="23to24" while="Core.Me.ElementalLevel &lt; 25"/>		
+		</While>
+		<While Condition="Core.Me.ElementalLevel &lt; 26">
 			<NoCombatMoveTo XYZ="53.07406, -737.6741, 324.4169" />
-			<Grind GrindRef="23to25" while="Core.Me.ElementalLevel &lt; 25"/>		
+			<Grind GrindRef="Level25" while="Core.Me.ElementalLevel &lt; 26"/>		
 		</While>
 		<While condition="Core.Me.ElementalLevel &lt; 27">
 			<NoCombatMoveTo XYZ="447.303, -740.0225, 435.4175" />
@@ -127,32 +131,42 @@
         <TargetMob Id="7415" Weight="1"/> <!-- Val Roselet -->
       </TargetMobs>
     </GrindArea>
-		<GrindArea name="23to25">
-					<Hotspots>
-				<Hotspot Radius="200" XYZ="53.07406, -737.6741, 324.4169" />
-					</Hotspots>
-					<TargetMobs>
-				<TargetMob Id="7413" Weight="1" /> <!-- Yukinko -->
-					</TargetMobs>
-		</GrindArea>		
-		<GrindArea name="25to27">
-					<Hotspots>
-				<Hotspot Radius="200" XYZ="448.0505,-736.2757,391.8059" />
-				<Hotspot Radius="200" XYZ="371.8877,-737.534,446.8703" />
-					</Hotspots>
-					<TargetMobs>
-				<TargetMob Id="7434" Weight="1" /> <!-- Blood Demon -->
-					</TargetMobs>
-		</GrindArea>	
-		<GrindArea name="27to28">
-					<Hotspots>
-				<Hotspot Radius="200" XYZ="567.0404,-723.0895,247.6082" />
-				<Hotspot Radius="200" XYZ="548.2413,-726.4501,329.7932" />
-					</Hotspots>
-					<TargetMobs>
-				<TargetMob Id="7453" Weight="1" /> <!-- Val Worm -->
-					</TargetMobs>
-		</GrindArea>
+	<GrindArea name="23to24">
+		<Hotspots>
+			<Hotspot Radius="200" XYZ="-215.3304, -726.7948, 398.8835" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="7407" Weight="1" /> <!-- 雪地海月水母 -->
+			<TargetMob Id="7469" Weight="1" /> <!-- 雪暴元精 -->
+			<TargetMob Id="7464" Weight="1" /> <!-- Zombie Brobinyak -->
+		</TargetMobs>
+	</GrindArea>
+	<GrindArea name="Level25">
+		<Hotspots>
+			<Hotspot Radius="200" XYZ="53.07406, -737.6741, 324.4169" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="7413" Weight="1" /> <!-- Yukinko -->
+		</TargetMobs>
+	</GrindArea>		
+	<GrindArea name="25to27">
+		<Hotspots>
+			<Hotspot Radius="200" XYZ="448.0505,-736.2757,391.8059" />
+			<Hotspot Radius="200" XYZ="371.8877,-737.534,446.8703" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="7434" Weight="1" /> <!-- Blood Demon -->
+		</TargetMobs>
+	</GrindArea>	
+	<GrindArea name="27to28">
+		<Hotspots>
+			<Hotspot Radius="200" XYZ="567.0404,-723.0895,247.6082" />
+			<Hotspot Radius="200" XYZ="548.2413,-726.4501,329.7932" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="7453" Weight="1" /> <!-- Val Worm -->
+		</TargetMobs>
+	</GrindArea>
  	<GrindArea name="28to31">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="359.3042,-680.7711,13.50421" />
@@ -199,55 +213,82 @@
 			<![CDATA[
 				var npcId = GameObjectManager.GetObjectByNPCId(1024517);
 
-					if (!npcId.IsWithinInteractRange)
-
-						{
-							var _target = npcId.Location;
-							Navigator.PlayerMover.MoveTowards(_target);
-							while (_target.Distance2D(Core.Me.Location) >= 4)
-								{
-									Navigator.PlayerMover.MoveTowards(_target);
-									await Coroutine.Sleep(100);
-								}
-									Navigator.PlayerMover.MoveStop();
-								}
-
-					npcId.Interact();
-
-					await Coroutine.Wait(10000, () => SelectString.IsOpen);
-					await Buddy.Coroutines.Coroutine.Sleep(500);
+				if (!npcId.IsWithinInteractRange)
+				{
+					var _target = npcId.Location;
+					Navigator.PlayerMover.MoveTowards(_target);
+					while (_target.Distance2D(Core.Me.Location) >= 4)
 					{
-						Logging.WriteDiagnostic("Choosing Eureka Pagos.");
-						SelectString.ClickLineContains("Pagos");;
-					}					
-							
-					await Coroutine.Wait(5000, () => SelectYesno.IsOpen);
-					await Buddy.Coroutines.Coroutine.Sleep(500);
-					if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
-						{
-							Logging.WriteDiagnostic("Selecting Yes.");
-							ff14bot.RemoteWindows.SelectYesno.ClickYes();	
-						}
+						Navigator.PlayerMover.MoveTowards(_target);
+						await Coroutine.Sleep(100);
+					}
+					Navigator.PlayerMover.MoveStop();
+				}
 
-					await Coroutine.Wait(5000, () => ContentsFinderConfirm.IsOpen);
-					await Buddy.Coroutines.Coroutine.Sleep(500);
-				   
-					if (ff14bot.RemoteWindows.ContentsFinderConfirm.IsOpen)						
-						{
-							Logging.WriteDiagnostic("Commencing Duty.");
-							ff14bot.RemoteWindows.ContentsFinderConfirm.Commence();
-							await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading);
-							   if (CommonBehaviors.IsLoading)
-							   {
-								   await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-							   }									
-						}			
+				npcId.Interact();
+
+				await Coroutine.Wait(10000, () => SelectString.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+				
+				if (SelectString.IsOpen)
+				{
+					Logging.WriteDiagnostic("Choosing Eureka Pagos.");
+					
+					// Try English first
+					if (SelectString.ClickLineContains("Pagos"))
+					{
+						Logging.WriteDiagnostic("Selected using 'Pagos'.");
+					}
+					// Try Traditional Chinese
+					else if (SelectString.ClickLineContains("禁地優雷卡 恆冰之地"))
+					{
+						Logging.WriteDiagnostic("Selected using '禁地優雷卡 恆冰之地'.");
+					}
+					// Try Simplified Chinese
+					else if (SelectString.ClickLineContains("禁地优雷卡 恒冰之地"))
+					{
+						Logging.WriteDiagnostic("Selected using '禁地优雷卡 恒冰之地'.");
+					}
+					// Try partial match for Traditional Chinese
+					else if (SelectString.ClickLineContains("恆冰之地"))
+					{
+						Logging.WriteDiagnostic("Selected using '恆冰之地'.");
+					}
+					// Try partial match for Simplified Chinese
+					else if (SelectString.ClickLineContains("恒冰之地"))
+					{
+						Logging.WriteDiagnostic("Selected using '恒冰之地'.");
+					}
+					// Fallback to first option
+					else
+					{
+						Logging.WriteDiagnostic("Could not find matching text, trying first option.");
+						SelectString.ClickSlot(0);
+					}
+				}					
+						
+				await Coroutine.Wait(5000, () => SelectYesno.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+				if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+				{
+					Logging.WriteDiagnostic("Selecting Yes.");
+					ff14bot.RemoteWindows.SelectYesno.ClickYes();	
+				}
+
+				await Coroutine.Wait(5000, () => ContentsFinderConfirm.IsOpen);
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+			   
+				if (ff14bot.RemoteWindows.ContentsFinderConfirm.IsOpen)						
+				{
+					Logging.WriteDiagnostic("Commencing Duty.");
+					ff14bot.RemoteWindows.ContentsFinderConfirm.Commence();
+					await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading);
+					if (CommonBehaviors.IsLoading)
+					{
+						await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+					}									
+				}			
 			]]>			
 		</CodeChunk>		
-		<CodeChunk Name="LevelSync">
-			<![CDATA[
-				ff14bot.RemoteWindows.ToDoList.LevelSync();
-			]]>			
-		</CodeChunk>
 	</CodeChunks>  
 </Profile>  
