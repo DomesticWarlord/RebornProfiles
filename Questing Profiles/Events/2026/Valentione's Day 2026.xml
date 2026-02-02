@@ -47,9 +47,46 @@
       </If>
     </If>
 
-    <If Condition="IsQuestCompleted(70861)">
-      <LLToast message="Be sure to buy the Vday gear from the House Valentione Maid at the front of the amphitheatre"/>
+    <!-- Cozy Valentione Beret -->
+    <If condition="not HasItemAnywhere(47263)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47263" Count="1" />
     </If>
+    <!-- Cozy Valentione Cardigan -->
+    <If condition="not HasItemAnywhere(47264)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47264" Count="1" />
+    </If>
+    <!-- Cozy Valentione Slacks -->
+    <If condition="not HasItemAnywhere(47265)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47265" Count="1" />
+    </If>
+    <!-- Cozy Valentione Shoes -->
+    <If condition="not HasItemAnywhere(47266)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47266" Count="1" />
+    </If>
+    <!-- Comfy Valentione Shoes -->
+    <If condition="not HasItemAnywhere(47267)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47267" Count="1" />
+    </If>
+    <!-- Comfy Valentione Cardigan -->
+    <If condition="not HasItemAnywhere(47268)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47268" Count="1" />
+    </If>
+    <!-- Comfy Valentione Cardigan -->
+    <If condition="not HasItemAnywhere(47269)">
+      <GetTo ZoneId="133" XYZ="-31.642464, 7.25, -122.501564" />
+      <BuyShopExchangeItem NpcId="1054056" ItemId="47269" Count="1" />
+    </If>
+
+    <If Condition="IsQuestCompleted(70861)">
+      <LLToast message="Be sure to buy anything else you want from the House Valentione Maid at the front of the amphitheatre" />
+    </If>
+
 
   </Order>
   <CodeChunks>
