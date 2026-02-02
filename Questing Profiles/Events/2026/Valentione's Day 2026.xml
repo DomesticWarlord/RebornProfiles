@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Valentione's Day 2026
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Valentione's Day 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If condition="not (IsQuestCompleted(65781) and Core.Player.ClassLevel &gt; 14)">
+      <UserDialog IsBotContinueAllowed="False" DialogText="You must have completed the MSQ 'It's Probably Pirates' and be at least level 15 to do this event." />
+    </If>
+
+    <!-- The Icing on the Cake -->
+    <If Condition="not IsQuestCompleted(70861)">
+      <If Condition="not HasQuest(70861)">
+        <GetTo ZoneId="133" XYZ="-50.054085, 6.4999995, -92.74349" />
+        <If Condition="IsQuestAcceptQualified(70861)">
+          <PickupQuest QuestId="70861" NpcId="1054046" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70861) == 1">
+        <GetTo ZoneId="133" XYZ="-46.96965, 6.7975264, -126.001144" />
+        <UseObject NpcId="2014714" XYZ="-45.212524, 6.7596436, -127.42816" QuestId="70861" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70861) == 2">
+        <UserDialog IsBotContinueAllowed="True" QuestId="70861" StepId="2" DialogText="Please manually complete the cake dungeon. Build cakes!" />
+      </If>
+      <If Condition="GetQuestStep(70861) == 3">
+        <GetTo ZoneId="133" XYZ="-45.983253, 6.79265, -126.10402" />
+        <TalkTo NpcId="1054048" XYZ="-47.196167, 6.7986083, -124.80359" QuestId="70861" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70861) == 4">
+        <GetTo ZoneId="133" XYZ="-45.983253, 6.79265, -126.10402" />
+        <TalkTo NpcId="1054050" XYZ="-45.15149, 6.8105283, -125.352905" QuestId="70861" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70861) == 5">
+        <GetTo ZoneId="133" XYZ="92.19907, 11.820048, -245.31233" />
+        <TalkTo NpcId="1054052" XYZ="92.729004, 12.160356, -247.88281" QuestId="70861" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70861) == 255">
+        <GetTo ZoneId="133" XYZ="-52.144695, 6.5, -92.25017" />
+        <TurnIn QuestId="70861" NpcId="1054137" XYZ="-52.811523, 6.5, -88.39557" />
+      </If>
+    </If>
+
+    <If Condition="IsQuestCompleted(70861)">
+      <LLToast message="Be sure to buy the Vday gear from the House Valentione Maid at the front of the amphitheatre"/>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
