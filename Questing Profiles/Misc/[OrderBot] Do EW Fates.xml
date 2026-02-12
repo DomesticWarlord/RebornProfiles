@@ -13,6 +13,7 @@
 <!ENTITY Elpis "0">
 <!ENTITY UltimaThule "0">
 
+<!ENTITY UseLisbethFlightNav "True"> <!-- True to use Lisbeth, False to use RB nav-->
 ]>
 
 
@@ -34,7 +35,7 @@
 			</If>		
 			<Log Message="Starting Thavnair Fates without flight support." /> 
 			<While condition="IsOnMap(957)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="84" MinProgress="10" BlacklistIds="1764,1772,1773,1774,1775,1776,1777,1778,1779" while="IsOnMap(957)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="84" MinProgress="10" BlacklistIds="1764,1772,1773,1774,1775,1776,1777,1778,1779" while="IsOnMap(957)"/>
 			</While>
 		</If>
 		<If condition="AetherCurrentManager.IsZoneComplete(957)">
@@ -43,7 +44,7 @@
 			</If>			
 			<Log Message="Starting Thavnair Fates with flight support." /> 
 			<While condition="IsOnMap(957)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" MinProgress="10" BlacklistIds="1764" while="IsOnMap(957)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="91" MinProgress="10" BlacklistIds="1764" while="IsOnMap(957)"/>
 			</While>
 		</If>		
 	</While>
@@ -75,7 +76,7 @@
 			</If>	
 			<Log Message="Starting Thavnair Fates without flight support." /> 
 			<While condition="IsOnMap(956)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="84" BlacklistIds="1751,1752,1753,1754,1755,1756,1757" while="IsOnMap(956)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="84" BlacklistIds="1751,1752,1753,1754,1755,1756,1757" while="IsOnMap(956)"/>
 			</While>
 		</If>
 		<If condition="AetherCurrentManager.IsZoneComplete(956)">
@@ -84,7 +85,7 @@
 			</If>		
 			<Log Message="Starting Thavnair Fates with flight support." /> 
 			<While condition="IsOnMap(956)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1754" while="IsOnMap(956)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="91" BlacklistIds="1754" while="IsOnMap(956)"/>
 			</While>
 		</If>		
 	</While>
@@ -121,7 +122,7 @@
 			</If>
 			<Log Message="Starting Garlemald Fates without flight support." /> 	
 			<While condition="IsOnMap(958)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="86" BlacklistIds="1798" while="IsOnMap(958)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="86" BlacklistIds="1798" while="IsOnMap(958)"/>
 			</While>
 		</If>
 		<If condition="AetherCurrentManager.IsZoneComplete(958)">
@@ -130,7 +131,7 @@
 			</If>
 			<Log Message="Starting Garlemald Fates with flight support." /> 	
 			<While condition="IsOnMap(958)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1798" while="IsOnMap(958)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="91" BlacklistIds="1798" while="IsOnMap(958)"/>
 			</While>
 		</If>	
 	</While>
@@ -164,7 +165,7 @@
 			</If>
 			<Log Message="Starting Mare Lamentorum Fates without flight support." /> 	
 			<While condition="IsOnMap(959)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>
 			</While>	
 		</If>
 		<If condition="AetherCurrentManager.IsZoneComplete(959)">
@@ -173,7 +174,7 @@
 			</If>
 			<Log Message="Starting Mare Lamentorum Fates with flight support." /> 	
 			<While condition="IsOnMap(959)">
-				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>
 			</While>	
 		</If>	
 	</While>
@@ -195,7 +196,7 @@
 			</If>
 			<Log Message="Starting Elpis Fates without flight support." /> 	
 			<While condition="IsOnMap(961)">
-				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1831,1832,1833,1834,1835,1836,1837,1838" while="IsOnMap(961)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1831,1832,1833,1834,1835,1836,1837,1838" while="IsOnMap(961)"/>
 			</While>
 		</If>
 		<If condition="AetherCurrentManager.IsZoneComplete(961)">
@@ -204,7 +205,7 @@
 			</If>
 			<Log Message="Starting Elpis Fates with flight support." /> 	
 			<While condition="IsOnMap(961)">
-				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1838,1835" while="IsOnMap(961)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1838,1835" while="IsOnMap(961)"/>
 			</While>
 		</If>		
 	</While>
@@ -240,7 +241,7 @@ ID: 1838 Type: KillHandIn Fate: So Sorry, Sokles
 			<!-- </If>
 			<Log Message="Starting Ultima Thule Fates without flight support." /> 	
 			<While condition="IsOnMap(961)">
-				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(961)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(961)"/>
 			</While>
 		</If>-->
 		<If condition="AetherCurrentManager.IsZoneComplete(960)">
@@ -249,7 +250,7 @@ ID: 1838 Type: KillHandIn Fate: So Sorry, Sokles
 			</If>
 			<Log Message="Starting Ultima THule Fates with flight support." /> 	
 			<While condition="IsOnMap(960)">
-				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(960)"/>	
+				<LLFate UseFlight="&UseLisbethFlightNav;" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(960)"/>
 			</While>
 		</If>		
 	</While>
