@@ -72,8 +72,7 @@ Picot 0x28394B663B0 NpcId:10253
       </If>
       <If Condition="GetQuestStep(70980) == 7">
         <If Condition="not Core.Me.HasAura(1494)">
-          <GetTo ZoneId="130" XYZ="-38.321136, 5, -132.08347" />
-          <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" />
+          <RunCode name="Face in the Crowd" />
         </If>
         <If condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
           <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
@@ -92,8 +91,8 @@ Picot 0x28394B663B0 NpcId:10253
 
     <While condition="IsQuestCompleted(70980)">
       <If Condition="not Core.Me.HasAura(1494)">
-        <GetTo ZoneId="130" XYZ="-38.321136, 5, -132.08347" />
-        <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" />
+        <RunCode name="Face in the Crowd" />
+        <!-- <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" /> -->
       </If>
       <If condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
         <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
@@ -126,6 +125,8 @@ Picot 0x28394B663B0 NpcId:10253
 
          public static GameObject npcId => GameObjectManager.GetObjectsOfType<GameObject>(true, false).Where(obj => obj.IsVisible && obj.IsTargetable && questNpcIds.Contains((int)obj.NpcId)).OrderBy(obj => obj.DistanceSqr(Core.Me.Location)).FirstOrDefault();
 
+        public static LlamaLibrary.Helpers.NPC.Npc royalHandmaiden = new(1055771, 130, new Vector3(-37.369385f, 5.0000005f, -130.14423f));
+
       ]]>
       </CodeChunk>
     <CodeChunk Name="Live from Ul'dah">
@@ -149,10 +150,50 @@ Picot 0x28394B663B0 NpcId:10253
             {
                 Log.Information($"Using {Spell.Name} on {npcId.Name}");
                 ActionManager.DoAction(Spell, npcId);
-                await Coroutine.Wait(5000, () => Spell.Cooldown.TotalSeconds == 0);
+                await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
             }
 
             await Coroutine.Sleep(500);
+        }
+        ]]>
+      </CodeChunk>
+    <CodeChunk Name="Face in the Crowd">
+        <![CDATA[
+
+        if (!await LlamaLibrary.Helpers.Navigation.GetToInteractNpcSelectString(royalHandmaiden))
+        {
+            Log.Information($"Failed to get to {DataManager.GetLocalizedNPCName((int)royalHandmaiden.NpcId)}");
+            return;
+        }
+
+        while (!Core.Me.HasAura(1494))
+        {
+
+            if (SelectString.IsOpen)
+            {
+                SelectString.ClickSlot(0);
+                await Coroutine.Wait(500, () => !SelectString.IsOpen);
+                await Coroutine.Wait(1000, () => LlamaLibrary.RemoteWindows.Conversation.IsOpen || Talk.DialogOpen || SelectYesno.IsOpen);
+            }
+
+            if (ff14bot.RemoteWindows.Talk.DialogOpen)
+            {
+                while (ff14bot.RemoteWindows.Talk.DialogOpen)
+                {
+                    ff14bot.RemoteWindows.Talk.Next();
+                    await Coroutine.Wait(100, () => !ff14bot.RemoteWindows.Talk.DialogOpen);
+                    await Coroutine.Wait(100, () => ff14bot.RemoteWindows.Talk.DialogOpen);
+                    await Coroutine.Yield();
+                }
+
+                await Coroutine.Wait(5000, () => LlamaLibrary.RemoteWindows.Conversation.IsOpen || Core.Me.HasAura(1494));
+            }
+
+            if (SelectYesno.IsOpen)
+            {
+                SelectYesno.Yes();
+                await Coroutine.Wait(500, () => Talk.DialogOpen);
+            }
         }
         ]]>
       </CodeChunk>
