@@ -81,7 +81,7 @@ Picot 0x28394B663B0 NpcId:10253
         </If>
         <If condition="any(IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
           <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
-          <LLUseSpell UseDistance="19" SpellId="44504" WaitTime="100" XYZ="-37.420185, 4, -138.45863" NpcId="7075,7076,7077,10253" condition="IsFateActive(2042) or IsFateActive(2043) or IsFateActive(2044) or IsFateActive(2045)" />
+          <RunCode name="Live from Ul'dah" />
         </If>
       </If>
       <If Condition="GetQuestStep(70980) == 255">
@@ -90,22 +90,71 @@ Picot 0x28394B663B0 NpcId:10253
       </If>
     </If>
 
-    <While condition="True">
+    <While condition="IsQuestCompleted(70980)">
       <If Condition="not Core.Me.HasAura(1494)">
         <GetTo ZoneId="130" XYZ="-38.321136, 5, -132.08347" />
         <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" />
       </If>
       <If condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
         <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
-        <WaitWhile condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045])" />
+        <WaitWhile condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)" />
       </If>
       <If condition="any(IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
         <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
-        <LLUseSpell UseDistance="19" SpellId="44504" WaitTime="100" XYZ="-37.420185, 4, -138.45863" NpcId="7075,7076,7077,10253" condition="IsFateActive(2042) or IsFateActive(2043) or IsFateActive(2044) or IsFateActive(2045)" />
+        <RunCode name="Live from Ul'dah" />
       </If>
     </While>
 
   </Order>
   <CodeChunks>
+    <CodeChunk Type="Definition" Name=" Logger">
+        <![CDATA[
+
+          public static readonly LlamaLibrary.Logging.LLogger Log = new("Little Ladies' Day", Colors.DeepPink);
+
+          public static readonly int[] questNpcIds =
+          {
+              7075, // Ulala
+              7076, // Narumi
+              7077, //Masha Mhakaracca
+              10253, // Picot
+          };
+
+          public static readonly uint[] fateIds = { 2042, 2043, 2044, 2045 };
+
+         public static readonly SpellData Spell = DataManager.GetSpellData(44504);
+
+         public static GameObject npcId => GameObjectManager.GetObjectsOfType<GameObject>(true, false).Where(obj => obj.IsVisible && obj.IsTargetable && questNpcIds.Contains((int)obj.NpcId)).OrderBy(obj => obj.DistanceSqr(Core.Me.Location)).FirstOrDefault();
+
+      ]]>
+      </CodeChunk>
+    <CodeChunk Name="Live from Ul'dah">
+        <![CDATA[
+
+        while (FateManager.ActiveFates.Any(i => fateIds.Contains(i.Id)) && Core.Me.HasAura(1494))
+        {
+            if (npcId == null)
+            {
+                Log.Information("Waiting for NPC to be targetable.");
+                await Coroutine.Wait(-1, () => npcId != null);
+            }
+
+            if (Spell.Cooldown.TotalSeconds < 0)
+            {
+                Log.Information($"Waiting for {Spell.Name} to be available.");
+                await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+            }
+
+            if (ActionManager.CanCast(Spell, npcId) && npcId.IsTargetable)
+            {
+                Log.Information($"Using {Spell.Name} on {npcId.Name}");
+                ActionManager.DoAction(Spell, npcId);
+                await Coroutine.Wait(5000, () => Spell.Cooldown.TotalSeconds == 0);
+            }
+
+            await Coroutine.Sleep(500);
+        }
+        ]]>
+      </CodeChunk>
   </CodeChunks>
 </Profile>
