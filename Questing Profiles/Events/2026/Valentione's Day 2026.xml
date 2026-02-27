@@ -27,6 +27,7 @@
         <UseObject NpcId="2014714" XYZ="-45.212524, 6.7596436, -127.42816" QuestId="70861" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70861) == 2">
+        <GetTo ZoneId="133" XYZ="-46.96965, 6.7975264, -126.001144" />
         <UserDialog IsBotContinueAllowed="True" QuestId="70861" StepId="2" DialogText="Please manually complete the cake dungeon. Build cakes!" />
       </If>
       <If Condition="GetQuestStep(70861) == 3">

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Little Ladies' Day 2026
+  Authors: DomesticWarlord
+
+  ID: 2042 Type: Live from Ul'dah Fate: ProtectNPC2 Radius: 40 Location: <-39.55781, 4, -148.4801>
+  ID: 2043 Type: Live from Ul'dah Fate: ProtectNPC2 Radius: 40 Location: <-39.55781, 4, -148.4801>
+  ID: 2044 Type: Live from Ul'dah Fate: ProtectNPC2 Radius: 40 Location: <-39.55781, 4, -148.4801>
+  ID: 2045 Type: Live from Ul'dah Fate: ProtectNPC2 Radius: 40 Location: <-39.55781, 4, -148.4801>
+
+  Royal Handmaiden 0x28394E2A5F0 NpcId:1055771 Type:EventNpc Location:<-37.369385, 5.0000005, -130.14423>
+<MoveTo XYZ="-39.8359,5,-130.91922
+Magnitude: 135.49535, MagnitudeSqr: 18358.99
+Distance: 2.5854032
+
+Aura Name: Face in the Crowd, Aura Id: 1494
+
+Ulala 0x28394B82430 NpcId:7075
+Narumi 0x28394B51350 NpcId:7076
+Masha Mhakaracca 0x28394B93C80 NpcId:7077
+Picot 0x28394B663B0 NpcId:10253
+-->
+
+<Profile>
+  <Name>Little Ladies' Day 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- What Can Eye Do for You -->
+    <If Condition="not IsQuestCompleted(70980)">
+      <If Condition="not HasQuest(70980)">
+        <GetTo ZoneId="130" XYZ="-36.86288, 4.8442755, -132.84793" />
+        <If Condition="IsQuestAcceptQualified(70980)">
+          <PickupQuest QuestId="70980" NpcId="1056476" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70980) == 1">
+        <GetTo ZoneId="130" XYZ="-36.86288, 4.8442755, -132.84793" />
+        <TalkTo NpcId="1057901" XYZ="-33.951355, 5.0000005, -130.87665" QuestId="70980" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70980) == 2">
+        <If Condition="GetQuestStep(70980) == 2 and GetQuestById(70980).QuestI8A == 0">
+          <GetTo ZoneId="130" XYZ="28.153267, 3.9999993, -149.92964" />
+          <TalkTo NpcId="1057909" XYZ="29.984009, 4.0999947, -152.63605" QuestId="70980" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70980) == 2 and GetQuestById(70980).QuestI8A == 17">
+          <GetTo ZoneId="130" XYZ="31.441616, 4, -142.79941" />
+          <TalkTo NpcId="1057906" XYZ="33.6156, 3.9999995, -140.91711" QuestId="70980" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70980) == 3">
+        <If Condition="GetQuestStep(70980) == 3 and GetQuestById(70980).QuestI8A == 0">
+          <GetTo ZoneId="130" XYZ="12.604067, 7.9999886, -107.77129" />
+          <TalkTo NpcId="1057911" XYZ="10.36084, 7.9999804, -109.26984" QuestId="70980" StepId="3" />
+        </If>
+        <If Condition="GetQuestStep(70980) == 3 and GetQuestById(70980).QuestI8A == 16">
+          <GetTo ZoneId="130" XYZ="15.917366, 6.999997, -85.5124" />
+          <TalkTo NpcId="1057912" XYZ="15.396301, 6.999997, -82.993835" QuestId="70980" StepId="3" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70980) == 4">
+        <GetTo ZoneId="130" XYZ="-14.735407, 7.999998, -110.4425" />
+        <TalkTo NpcId="1058069" XYZ="-15.121765, 7.999998, -112.81" QuestId="70980" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70980) == 5">
+        <GetTo ZoneId="130" XYZ="-14.735407, 7.999998, -110.4425" />
+        <TalkTo NpcId="1057902" XYZ="-12.100403, 7.999999, -110.76526" QuestId="70980" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70980) == 6">
+        <GetTo ZoneId="130" XYZ="-34.980255, 4.999999, -132.50539" />
+        <TalkTo NpcId="1056476" XYZ="-35.1416, 5.000001, -130.38837" QuestId="70980" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70980) == 7">
+        <If Condition="not Core.Me.HasAura(1494)">
+          <GetTo ZoneId="130" XYZ="-38.321136, 5, -132.08347" />
+          <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" />
+        </If>
+        <If condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
+          <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
+          <WaitWhile condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045])" />
+        </If>
+        <If condition="any(IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
+          <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
+          <LLUseSpell UseDistance="19" SpellId="44504" WaitTime="100" XYZ="-37.420185, 4, -138.45863" NpcId="7075,7076,7077,10253" condition="IsFateActive(2042) or IsFateActive(2043) or IsFateActive(2044) or IsFateActive(2045)" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70980) == 255">
+        <GetTo ZoneId="130" XYZ="-36.677803, 4.781226, -133.01125" />
+        <TurnIn QuestId="70980" NpcId="1056476" XYZ="-35.1416, 5.000001, -130.38837" />
+      </If>
+    </If>
+
+    <While condition="True">
+      <If Condition="not Core.Me.HasAura(1494)">
+        <GetTo ZoneId="130" XYZ="-38.321136, 5, -132.08347" />
+        <TalkTo NpcId="1055771" XYZ="-37.369385, 5.0000005, -130.14423" />
+      </If>
+      <If condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
+        <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
+        <WaitWhile condition="all(not IsFateActive(x) for x in [2042,2043,2044,2045])" />
+      </If>
+      <If condition="any(IsFateActive(x) for x in [2042,2043,2044,2045]) and Core.Me.HasAura(1494)">
+        <MoveToSafe XYZ="-37.420185, 4, -138.45863" />
+        <LLUseSpell UseDistance="19" SpellId="44504" WaitTime="100" XYZ="-37.420185, 4, -138.45863" NpcId="7075,7076,7077,10253" condition="IsFateActive(2042) or IsFateActive(2043) or IsFateActive(2044) or IsFateActive(2045)" />
+      </If>
+    </While>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
