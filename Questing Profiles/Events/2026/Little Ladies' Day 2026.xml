@@ -121,9 +121,14 @@ Picot 0x28394B663B0 NpcId:10253
 
           public static readonly uint[] fateIds = { 2042, 2043, 2044, 2045 };
 
-         public static readonly SpellData Spell = DataManager.GetSpellData(44504);
+        public SpellData Spell;
 
-         public static GameObject npcId => GameObjectManager.GetObjectsOfType<GameObject>(true, false).Where(obj => obj.IsVisible && obj.IsTargetable && questNpcIds.Contains((int)obj.NpcId)).OrderBy(obj => obj.DistanceSqr(Core.Me.Location)).FirstOrDefault();
+        public uint CheerRhythmRed = 44501;
+        public uint CheerLightYellow = 44502;
+        public uint CheerLightBlue = 44503;
+        public uint CheerRhythmViolet = 44504;
+
+         public static GameObject activeNpc => GameObjectManager.GetObjectsOfType<GameObject>(true, false).Where(obj => obj.IsVisible && obj.IsTargetable && questNpcIds.Contains((int)obj.NpcId)).OrderBy(obj => obj.DistanceSqr(Core.Me.Location)).FirstOrDefault();
 
         public static LlamaLibrary.Helpers.NPC.Npc royalHandmaiden = new(1055771, 130, new Vector3(-37.369385f, 5.0000005f, -130.14423f));
 
@@ -134,33 +139,55 @@ Picot 0x28394B663B0 NpcId:10253
 
             while (FateManager.ActiveFates.Any(i => fateIds.Contains(i.Id)) && Core.Me.HasAura(1494))
             {
-                if (npcId == null)
+                if (activeNpc == null)
                 {
                     var message = $"Waiting for NPC to be targetable.";
                     Log.Verbose(message);
                     TreeRoot.StatusText = message;
-                    await Coroutine.Wait(-1, () => npcId != null);
+                    await Coroutine.Wait(-1, () => activeNpc != null);
                 }
 
-                if (Spell.Cooldown.TotalSeconds < 0)
+                if (activeNpc != null)
                 {
-                    var message = $"Waiting for {Spell.Name} to be available.";
-                    Log.Verbose(message);
-                    TreeRoot.StatusText = message;
-                    await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
-                }
+                    switch (activeNpc.NpcId)
+                    {
+                        case 10253: // Picot
+                            Spell = DataManager.GetSpellData(CheerRhythmViolet);
 
-                if (ActionManager.CanCast(Spell, npcId) && npcId.IsTargetable)
-                {
-                    var message = $"Using {Spell.Name} on {npcId.Name}";
-                    Log.Verbose(message);
-                    TreeRoot.StatusText = message;
-                    ActionManager.DoAction(Spell, npcId);
-                    await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+                            break;
+                        case 7077: // Masha
+                            Spell = DataManager.GetSpellData(CheerLightBlue);
+
+                            break;
+                        case 7076: // Narumi
+                            Spell = DataManager.GetSpellData(CheerLightYellow);
+                            break;
+                        case 7075: // Ulala
+                            Spell = DataManager.GetSpellData(CheerRhythmRed);
+                            break;
+                    }
+
+                    if (Spell.Cooldown.TotalSeconds < 0)
+                    {
+                        var message = $"Waiting for {Spell.Name} to be available.";
+                        Log.Verbose(message);
+                        TreeRoot.StatusText = message;
+                        await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+                    }
+
+                    if (ActionManager.CanCast(Spell, activeNpc) && activeNpc.IsTargetable)
+                    {
+                        var message = $"Using {Spell.Name} on {activeNpc.Name}";
+                        Log.Verbose(message);
+                        TreeRoot.StatusText = message;
+                        ActionManager.DoAction(Spell, activeNpc);
+                        await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+                    }
                 }
 
                 await Coroutine.Sleep(500);
             }
+
         ]]>
       </CodeChunk>
     <CodeChunk Name="Face in the Crowd">
