@@ -132,29 +132,35 @@ Picot 0x28394B663B0 NpcId:10253
     <CodeChunk Name="Live from Ul'dah">
         <![CDATA[
 
-        while (FateManager.ActiveFates.Any(i => fateIds.Contains(i.Id)) && Core.Me.HasAura(1494))
-        {
-            if (npcId == null)
+            while (FateManager.ActiveFates.Any(i => fateIds.Contains(i.Id)) && Core.Me.HasAura(1494))
             {
-                Log.Information("Waiting for NPC to be targetable.");
-                await Coroutine.Wait(-1, () => npcId != null);
-            }
+                if (npcId == null)
+                {
+                    var message = $"Waiting for NPC to be targetable.";
+                    Log.Verbose(message);
+                    TreeRoot.StatusText = message;
+                    await Coroutine.Wait(-1, () => npcId != null);
+                }
 
-            if (Spell.Cooldown.TotalSeconds < 0)
-            {
-                Log.Information($"Waiting for {Spell.Name} to be available.");
-                await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
-            }
+                if (Spell.Cooldown.TotalSeconds < 0)
+                {
+                    var message = $"Waiting for {Spell.Name} to be available.";
+                    Log.Verbose(message);
+                    TreeRoot.StatusText = message;
+                    await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+                }
 
-            if (ActionManager.CanCast(Spell, npcId) && npcId.IsTargetable)
-            {
-                Log.Information($"Using {Spell.Name} on {npcId.Name}");
-                ActionManager.DoAction(Spell, npcId);
-                await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
-            }
+                if (ActionManager.CanCast(Spell, npcId) && npcId.IsTargetable)
+                {
+                    var message = $"Using {Spell.Name} on {npcId.Name}";
+                    Log.Verbose(message);
+                    TreeRoot.StatusText = message;
+                    ActionManager.DoAction(Spell, npcId);
+                    await Coroutine.Wait(8000, () => Spell.Cooldown.TotalSeconds == 0);
+                }
 
-            await Coroutine.Sleep(500);
-        }
+                await Coroutine.Sleep(500);
+            }
         ]]>
       </CodeChunk>
     <CodeChunk Name="Face in the Crowd">
