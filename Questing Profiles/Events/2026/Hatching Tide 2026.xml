@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Hatching Tide 2026
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Hatching Tide 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Of Weeds and Whimsy -->
+    <If Condition="not IsQuestCompleted(70961)">
+      <If Condition="not HasQuest(70961)">
+        <GetTo ZoneId="133" XYZ="-50.13579, 6.4999995, -92.98302" />
+        <If Condition="IsQuestAcceptQualified(70961)">
+          <PickupQuest QuestId="70961" NpcId="1056053" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70961) == 1">
+        <GetTo ZoneId="132" XYZ="25.852577, -1.2562913, 57.16252" />
+        <TalkTo NpcId="1056054" XYZ="24.64331, -1.0772418, 58.121582" QuestId="70961" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 2">
+        <If Condition="GetQuestStep(70961) == 2 and GetQuestById(70961).QuestI8A == 0">
+          <GetTo ZoneId="132" XYZ="29.116459, -8, 104.831635" />
+          <HandOver ItemId="2003788" NpcId="1056057" XYZ="25.497803, -8, 104.93628" QuestId="70961" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70961) == 2 and GetQuestById(70961).QuestI8A == 1">
+          <GetTo ZoneId="132" XYZ="25.730677, -8, 117.98248" />
+          <HandOver ItemId="2003788" NpcId="1056059" XYZ="24.093994, -8, 119.40173" QuestId="70961" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(70961) == 2 and GetQuestById(70961).QuestI8A == 2">
+          <GetTo ZoneId="132" XYZ="31.982748, -8.20001, 126.725464" />
+          <HandOver ItemId="2003788" NpcId="1056058" XYZ="33.920776, -8.20001, 125.56641" QuestId="70961" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70961) == 3">
+        <GetTo ZoneId="132" XYZ="26.854551, -1.2405667, 59.932533" />
+        <TalkTo NpcId="1056060" XYZ="24.673828, -1.0534565, 58.701416" QuestId="70961" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 4">
+        <GetTo ZoneId="133" XYZ="-43.69487, 10.760016, -231.90012" />
+        <HandOver ItemId="2003788" NpcId="1056061" XYZ="-41.21466, 10.918522, -232.25757" QuestId="70961" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 5">
+        <GetTo ZoneId="133" XYZ="124.03117, 12.582745, -95.92005" />
+        <TalkTo NpcId="1056063" XYZ="126.51245, 12.991126, -92.484924" QuestId="70961" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 6">
+        <GetTo ZoneId="133" XYZ="-51.565548, 6.9221, -112.51483" />
+        <TalkTo NpcId="1056065" XYZ="-52.262207, 6.774475, -110.307495" QuestId="70961" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 7">
+        <GetTo ZoneId="133" XYZ="-51.565548, 6.9221, -112.51483" />
+        <UserDialog IsBotContinueAllowed="True" DialogText="Please do the instance duty manually" QuestId="70961" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 8">
+        <GetTo ZoneId="133" XYZ="-50.302937, 6.8425426, -111.35737" />
+        <TalkTo NpcId="1056065" XYZ="-52.262207, 6.774475, -110.307495" QuestId="70961" StepId="8" />
+      </If>
+      <If Condition="GetQuestStep(70961) == 255">
+        <GetTo ZoneId="133" XYZ="-49.671436, 6.499999, -92.94535" />
+        <TurnIn QuestId="70961" NpcId="1056056" XYZ="-50.003845, 6.5, -89.7384" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
