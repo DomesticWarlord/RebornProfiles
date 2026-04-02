@@ -16,113 +16,193 @@ namespace Kupo.Rotations
 {
     public class BlueMage : KupoRoutine
     {
-        //DEVELOPERS REPLACE GetType().Name WITH YOUR CR'S NAME.
-        public override string Name
+        public override string Name => "Kupo [" + GetType().Name + "]";
+        public override float PullRange => 25f;
+        public override ClassJobType[] Class => new[] { ClassJobType.BlueMage };
+
+        private static BattleCharacter Target => Core.Player.CurrentTarget as BattleCharacter;
+
+        private static int EnemyCount =>
+            GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .Count(u => !u.IsDead && u.CanAttack && u.InCombat && u.Distance2D(Core.Me) <= 8f);
+
+        private static bool IsAoE => EnemyCount >= 3;
+
+        private static bool IsReady(string spellName)
         {
-            get { return "Kupo [" + GetType().Name + "]"; }
+            if (!ActionManager.HasSpell(spellName)) return false;
+            var data = DataManager.GetSpellData(spellName);
+            return data != null && data.Cooldown.TotalMilliseconds < 100;
         }
 
-        public override float PullRange
+        private static bool HasBuff(string aura) => Core.Me.HasAura(aura);
+        private static bool TargetHasDebuff(string aura) => Target?.HasAura(aura) ?? false;
+
+        private bool ShouldInterrupt =>
+            Target != null &&
+            Target.SpellCastInfo.IsCasting &&
+            Target.SpellCastInfo.Interruptible &&
+            Target.SpellCastInfo.CurrentCastTime.TotalMilliseconds >= 500;
+
+        [Behavior(BehaviorType.PreCombatBuffs)]
+        public Composite CreatePreCombatBuffs()
         {
-            get { return 25f; }
+            return new PrioritySelector(
+                Spell.Cast("Aetherial Mimicry",
+                    r => ActionManager.HasSpell("Aetherial Mimicry") && !HasBuff("Aetheric Mimicry: DPS")),
+                Spell.Cast("Toad Oil",
+                    r => ActionManager.HasSpell("Toad Oil") && !HasBuff("Toad Oil"))
+            );
         }
 
-        public override ClassJobType[] Class
-        {
-            get { return new [] {ClassJobType.BlueMage}; }
-        }
         [Behavior(BehaviorType.CombatBuffs)]
-        public Composite CreateBasicCombatBuffs()
+        public Composite CreateCombatBuffs()
         {
             return new PrioritySelector(SummonChocobo());
         }
-				/*
-        [Behavior(BehaviorType.PreCombatBuffs)]
-        public Composite CreateBasicPreCombatBuffs()
-        {
-            return new PrioritySelector(
-				Spell.Cast("Toad Oil", r=> !Core.Me.HasAura("Toad Oil")),
-				//Spell.Cast("Bristle", r=> !Core.Me.HasAura("Boost")),
-				Spell.Cast("Ice Spikes", r => !Core.Me.HasAura("Ice Spikes"))
-			);
-        }*/
 
         [Behavior(BehaviorType.Rest)]
-        public Composite CreateBasicRest()
+        public Composite CreateRest()
         {
             return DefaultRestBehavior(r => Core.Player.CurrentManaPercent);
         }
 
         [Behavior(BehaviorType.Pull)]
-        public Composite CreateBasicPull()
+        public Composite CreatePull()
         {
-                        return new PrioritySelector(ctx => Core.Player.CurrentTarget as BattleCharacter,
-                new Decorator(ctx => ctx != null,new PrioritySelector(
-                    new Decorator(ctx => !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement), new PrioritySelector(
-                        CommonBehaviors.MoveToLos(ctx => ctx as GameObject),
-                        CommonBehaviors.MoveAndStop(ctx => (ctx as GameObject).Location, ctx => Core.Player.CombatReach + PullRange + (ctx as GameObject).CombatReach, true, "Moving to unit")
-                    )),
-										Spell.PullCast(r => "Sticky Tongue", r => ActionManager.LastSpell.Name != "Sticky Tongue" && Core.Target.Distance2D(Core.Me) >= 5f),
-                    Spell.PullCast(r => "Water Cannon", r => ActionManager.LastSpell.Name != "Water Cannon" && !ActionManager.HasSpell("Sticky Tongue"))
+            return new PrioritySelector(ctx => Core.Player.CurrentTarget as BattleCharacter,
+                new Decorator(ctx => ctx != null, new PrioritySelector(
+                    new Decorator(ctx => !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement),
+                        new PrioritySelector(
+                            CommonBehaviors.MoveToLos(ctx => ctx as GameObject),
+                            CommonBehaviors.MoveAndStop(
+                                ctx => (ctx as GameObject).Location,
+                                ctx => Core.Player.CombatReach + PullRange + (ctx as GameObject).CombatReach,
+                                true, "Moving to unit")
+                        )),
+                    Spell.PullCast(r => "Sticky Tongue",
+                        r => ActionManager.HasSpell("Sticky Tongue")
+                          && ActionManager.LastSpell.Name != "Sticky Tongue"
+                          && Core.Target.Distance2D(Core.Me) >= 5f),
+                    Spell.PullCast(r => "Water Cannon",
+                        r => !ActionManager.HasSpell("Sticky Tongue"))
                 )));
         }
 
         [Behavior(BehaviorType.Heal)]
-        public Composite CreateBasicHeal()
+        public Composite CreateHeal()
         {
             return new PrioritySelector(
-                Spell.Cast("White Wind", r => Core.Me.CurrentHealthPercent <= 60),
-								Spell.Cast("Exuviation", r => Core.Me.HasAura("Paralysis"))
-                );
+                Spell.Cast("White Wind",
+                    r => ActionManager.HasSpell("White Wind") && Core.Me.CurrentHealthPercent <= 50),
+                Spell.Cast("Exuviation",
+                    r => ActionManager.HasSpell("Exuviation")
+                      && (HasBuff("Paralysis") || HasBuff("Poison") || HasBuff("Blind"))),
+                Spell.Cast("Gobskin",
+                    r => ActionManager.HasSpell("Gobskin") && IsReady("Gobskin")
+                      && Core.Me.CurrentHealthPercent <= 75)
+            );
         }
-				
-        protected bool shouldFishSlap
-        {
-            get
-            {
-                var target = Core.Target as BattleCharacter;
-                if (target != null)
-                {
-                    if (target.SpellCastInfo.IsCasting && target.SpellCastInfo.Interruptible &&
-                        //Don't kick as soon as possible, kick with the reaction speed of a fast human
-                        target.SpellCastInfo.CurrentCastTime.TotalMilliseconds >= 500)
-                        return true;
-                }
-
-                return false;
-            }
-        }				
 
         [Behavior(BehaviorType.Combat)]
-        public Composite CreateBasicCombat()
+        public Composite CreateCombat()
         {
             return new PrioritySelector(ctx => Core.Player.CurrentTarget as BattleCharacter,
                 new Decorator(ctx => ctx != null,
-                    new PrioritySelector(								
-													new Decorator(ctx => !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement), new PrioritySelector(
-													CommonBehaviors.MoveToLos(ctx => ctx as GameObject),
-													CommonBehaviors.MoveAndStop(ctx => (ctx as GameObject).Location, ctx => Core.Player.CombatReach + PullRange, true, "Moving to unit")
-													)),
-						//CombatBuffs							
-						Spell.Cast("Toad Oil", r=> !Core.Me.HasAura("Toad Oil")),						
-						
-						//Interrupt
-						Spell.Cast("Flying Sardine", r => shouldFishSlap),
-						
-						//Basic Combat
-						Spell.Cast("Triple Trident", r => Core.Me.HasAura("Tingling") && Core.Me.HasAura("Harmonized")),						
-						Spell.Cast("Whistle", r=> ActionManager.LastSpell.Name == "Tingle"),						
-						Spell.Cast("Tingle", r => DataManager.GetSpellData(23264).Cooldown.TotalMilliseconds == 0 && Core.Me.CurrentTarget.CurrentHealthPercent > 30 && Core.Target.Distance2D(Core.Me) <= 6f),
-						Spell.Cast("Lucid Dreaming", r => ActionManager.HasSpell("Lucid Dreaming") && Core.Player.CurrentManaPercent < 50),						
-						Spell.Cast("Blood Drain", r => Core.Player.CurrentManaPercent < 20),						
-						Spell.Cast("Off-guard", r => Core.Me.CurrentTarget.CurrentHealthPercent < 50),
-						Spell.Cast("Bad Breath", r=> ActionManager.LastSpell.Name != "Bad Breath" && Core.Me.IsFacing(Core.Target) && Core.Target.Distance2D(Core.Me) <= 8f && !Core.Target.HasAura("Poison") && Core.Me.CurrentTarget.CurrentHealthPercent > 40),
-						Spell.Cast("Plaincracker", r => GameObjectManager.NumberOfAttackers >= 2 && Core.Target.Distance2D(Core.Me) <= 4f),
-						Spell.Cast("Whistle", r=> !Core.Me.HasAura("Boost") && !Core.Me.HasAura("Harmonized") && !Core.Target.HasAura("Off-guard") && ActionManager.HasSpell("Abyssal Transfixion")),											
-						Spell.Cast("Abyssal Transfixion", r => true),
-						Spell.Cast("1000 Needles", r => Core.Me.CurrentTarget.CurrentHealthPercent > 75 && ActionManager.LastSpell.Name != "1000 Needles"),					
-            Spell.Cast("Water Cannon", r => true)
-                        )));
+                    new PrioritySelector(
+
+                        new Decorator(ctx => !RoutineManager.IsAnyDisallowed(CapabilityFlags.Movement),
+                            new PrioritySelector(
+                                CommonBehaviors.MoveToLos(ctx => ctx as GameObject),
+                                CommonBehaviors.MoveAndStop(
+                                    ctx => (ctx as GameObject).Location,
+                                    ctx => Core.Player.CombatReach + 4f,
+                                    true, "Moving to unit")
+                            )),
+
+                        Spell.Cast("Flying Sardine", r => ShouldInterrupt),
+
+                        Spell.Cast("Lucid Dreaming",
+                            r => ActionManager.HasSpell("Lucid Dreaming") && Core.Player.CurrentManaPercent < 70),
+                        Spell.Cast("Blood Drain",
+                            r => ActionManager.HasSpell("Blood Drain") && IsReady("Blood Drain")
+                              && Core.Player.CurrentManaPercent < 25),
+
+                        Spell.Cast("Toad Oil",
+                            r => ActionManager.HasSpell("Toad Oil") && !HasBuff("Toad Oil")),
+
+                        new Decorator(r => IsAoE,
+                            new PrioritySelector(
+                                Spell.Cast("Whistle",
+                                    r => ActionManager.HasSpell("Whistle") && IsReady("Whistle")
+                                      && !HasBuff("Boost") && !HasBuff("Harmonized")),
+                                Spell.Cast("Surpanakha",
+                                    r => ActionManager.HasSpell("Surpanakha") && IsReady("Surpanakha")
+                                      && Core.Me.IsFacing(Core.Target) && Core.Target.Distance2D(Core.Me) <= 10f),
+                                Spell.Cast("Tingle",
+                                    r => ActionManager.HasSpell("Tingle") && IsReady("Tingle")
+                                      && !HasBuff("Tingling") && Core.Target.Distance2D(Core.Me) <= 6f),
+                                Spell.Cast("Whistle",
+                                    r => ActionManager.HasSpell("Whistle") && HasBuff("Tingling") && !HasBuff("Boost")),
+                                Spell.Cast("Triple Trident",
+                                    r => HasBuff("Tingling") && HasBuff("Harmonized") && Core.Target.Distance2D(Core.Me) <= 6f),
+                                Spell.Cast("Ram's Voice",
+                                    r => ActionManager.HasSpell("Ram's Voice") && IsReady("Ram's Voice")
+                                      && Core.Target.Distance2D(Core.Me) <= 8f && !TargetHasDebuff("Deep Freeze")),
+                                Spell.Cast("Ultravibration",
+                                    r => ActionManager.HasSpell("Ultravibration") && IsReady("Ultravibration")
+                                      && TargetHasDebuff("Deep Freeze")),
+                                Spell.Cast("Bad Breath",
+                                    r => ActionManager.HasSpell("Bad Breath")
+                                      && ActionManager.LastSpell.Name != "Bad Breath"
+                                      && Core.Me.IsFacing(Core.Target) && Core.Target.Distance2D(Core.Me) <= 8f
+                                      && !TargetHasDebuff("Poison")),
+                                Spell.Cast("Plaincracker",
+                                    r => ActionManager.HasSpell("Plaincracker") && Core.Target.Distance2D(Core.Me) <= 4f),
+                                Spell.Cast("1000 Needles",
+                                    r => ActionManager.HasSpell("1000 Needles") && IsReady("1000 Needles")
+                                      && ActionManager.LastSpell.Name != "1000 Needles"
+                                      && Target.CurrentHealthPercent > 20),
+                                Spell.Cast("Water Cannon", r => true)
+                            )),
+
+                        Spell.Cast("Off-guard",
+                            r => ActionManager.HasSpell("Off-guard") && IsReady("Off-guard")
+                              && !TargetHasDebuff("Off-guard") && Target.CurrentHealthPercent > 5),
+
+                        Spell.Cast("Bad Breath",
+                            r => ActionManager.HasSpell("Bad Breath")
+                              && ActionManager.LastSpell.Name != "Bad Breath"
+                              && Core.Me.IsFacing(Core.Target) && Core.Target.Distance2D(Core.Me) <= 8f
+                              && !TargetHasDebuff("Poison") && Target.CurrentHealthPercent > 10),
+
+                        Spell.Cast("Tingle",
+                            r => ActionManager.HasSpell("Tingle") && IsReady("Tingle")
+                              && !HasBuff("Tingling") && Core.Target.Distance2D(Core.Me) <= 6f
+                              && Target.CurrentHealthPercent > 15),
+
+                        Spell.Cast("Whistle",
+                            r => ActionManager.HasSpell("Whistle") && HasBuff("Tingling")
+                              && !HasBuff("Boost") && IsReady("Whistle")),
+
+                        Spell.Cast("Triple Trident",
+                            r => HasBuff("Tingling") && HasBuff("Harmonized") && Core.Target.Distance2D(Core.Me) <= 6f),
+
+                        Spell.Cast("Surpanakha",
+                            r => ActionManager.HasSpell("Surpanakha") && IsReady("Surpanakha")
+                              && Core.Me.IsFacing(Core.Target) && Core.Target.Distance2D(Core.Me) <= 10f),
+
+                        Spell.Cast("Abyssal Transfixion",
+                            r => ActionManager.HasSpell("Abyssal Transfixion") && IsReady("Abyssal Transfixion")
+                              && !TargetHasDebuff("Deep Freeze")),
+
+                        Spell.Cast("1000 Needles",
+                            r => ActionManager.HasSpell("1000 Needles") && IsReady("1000 Needles")
+                              && ActionManager.LastSpell.Name != "1000 Needles"
+                              && Target.CurrentHealthPercent > 20),
+
+                        Spell.Cast("Water Cannon", r => true)
+                    )));
         }
     }
 }
