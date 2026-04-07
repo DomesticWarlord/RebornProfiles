@@ -86,28 +86,40 @@
 			<!-- Open Swiftmake Checkgates 0/2 -->
 			<If Condition="GetInstanceTodo(4) == 0">			
 				<Log Message="Open Swiftmake Checkgates 0/2" />
-				<NoCombatMoveTo XYZ="-82.54991, 14.92233, -129.3664"/> <!-- Move to Tiny Key 2 -->
-				<UseObject NpcIds="2002642" radius="200" XYZ="-88.23793,13.14307,-122.5465" condition="GetInstanceTodo(0) == 0"/>
-				<NoCombatMoveTo XYZ="-95.26472,12.88843,-122.5933"/> <!-- Move to Swiftmake Checkgate 1 -->			
+				<While condition="GetInstanceTodo(0) == 0 and GetInstanceTodo(4) == 0">
+					<Grind GrindRef="TinyKeyFarm2" While="not GameObjectManager.GetObjectByNPCId(2002642) and GetInstanceTodo(4) == 0" />
+					<WaitWhile condition="GameObjectManager.GetObjectByNPCId(2002642) and not GameObjectManager.GetObjectByNPCId(2002642).IsVisible" />
+					<While condition="GameObjectManager.GetObjectByNPCId(2002642) and GameObjectManager.GetObjectByNPCId(2002642).IsVisible">
+						<UseObject NpcIds="2002642" radius="200" XYZ="-88.23793,13.14307,-122.5465" condition="GetInstanceTodo(0) == 0" UseTimes="1" />
+						<WaitTimer WaitTime="1" />
+					</While>
+				</While>
 				<While condition="GameObjectManager.GetObjectByNPCId(2002184).IsTargetable">
-					<MoveTo XYZ="-95.26472,12.88843,-122.5933" distance="2"/> <!-- Move to Swiftmake Checkgate 1 -->
-					<UseTransport NpcId="2002184" InteractDistance="3.5" XYZ="-95.26472,12.88843,-122.5933" />						
-				</While>	
+					<UseTransport NpcId="2002184" InteractDistance="2.0" XYZ="-95.26472, 12.88843, -122.5933" />
+				</While>
 			</If>	
 				
 			<!-- Open Swiftmake Checkgates 1/2 -->
 			<If Condition="GetInstanceTodo(4) == 1">			
 				<Log Message="Open Swiftmake Checkgates 1/2" />
-				<MoveTo XYZ="-106.2929, 13.08915, -127.7986" offmesh="false"/> <!-- Move to other side of gate -->
-				<MoveTo XYZ="-111.197, 14.417, -138.6074"/>
-				<MoveTo XYZ="-97.07648, 20.52424, -170.3631"/>
-				<MoveTo XYZ="-101.2143, 20.73654, -179.9232"/> <!-- Move to Tiny Key 3 -->
-				<UseObject InCombat="true" NpcIds="2002644" radius="200" XYZ="-93.87576,20.48067,-173.7249" condition="GetInstanceTodo(0) == 0"/>
-				<MoveTo XYZ="-101.1448, 21.29802, -189.0635" /> <!-- Move to Swiftmake Checkgate 2 -->
+				<While condition="GetInstanceTodo(4) == 1 and GetInstanceTodo(0) == 0">
+					<!-- Move to key area if key doesn't exist yet -->
+					<If condition="not GameObjectManager.GetObjectByNPCId(2002644)">
+						<Grind GrindRef="TinyKeyFarm3" While="not GameObjectManager.GetObjectByNPCId(2002644) and GetInstanceTodo(4) == 1" />
+					</If>
+					<!-- If key already exists, move to it -->
+					<If condition="GameObjectManager.GetObjectByNPCId(2002644)">
+						<MoveTo XYZ="-93.87576,20.48067,-173.7249" />
+					</If>
+					<WaitWhile condition="GameObjectManager.GetObjectByNPCId(2002644) and not GameObjectManager.GetObjectByNPCId(2002644).IsVisible" />
+					<While condition="GameObjectManager.GetObjectByNPCId(2002644) and GameObjectManager.GetObjectByNPCId(2002644).IsVisible">
+						<UseObject InCombat="true" NpcIds="2002644" radius="200" XYZ="-93.87576,20.48067,-173.7249" condition="GetInstanceTodo(0) == 0" UseTimes="1" />
+						<WaitTimer WaitTime="1" />
+					</While>
+				</While>
 				<While condition="GameObjectManager.GetObjectByNPCId(2002884).IsTargetable">
-					<MoveTo XYZ="-101.1448, 21.29802, -189.0635" distance="2"/> <!-- Move to Swiftmake Checkgate 2 -->
-					<UseTransport NpcId="2002884" InteractDistance="3.5" XYZ="-101.1448, 21.29802, -189.0635" />	
-				</While>		
+					<UseTransport NpcId="2002884" InteractDistance="2.0" XYZ="-102.6475, 21.0116, -187.3655" />
+				</While>
 			</If>			
 
 			<!-- Defeat the gobmachine G-VI 0/1 -->
@@ -162,6 +174,23 @@
         <TargetMobs>
 			<TargetMob Id="2549" Weight="1" />			
         </TargetMobs>
+	</GrindArea>
+	<GrindArea name="TinyKeyFarm2">
+		<Hotspots>
+			<Hotspot Radius="30" XYZ="-85.80434, 13.88431, -125.8757" name="Name" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="2661" Weight="1" /> <!-- Illuminati Marksman -->
+		</TargetMobs>
+	</GrindArea>
+	<GrindArea name="TinyKeyFarm3">
+		<Hotspots>
+			<Hotspot Radius="30" XYZ="-100.709, 20.73654, -178.6892" name="Name" />
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob Id="2661" Weight="1" /> <!-- Illuminati Marksman -->
+			<TargetMob Id="2660" Weight="1" /> <!-- Illuminati Soldier -->
+		</TargetMobs>
 	</GrindArea>
     <GrindArea name="CapturedGoblins">
       <Hotspots>
