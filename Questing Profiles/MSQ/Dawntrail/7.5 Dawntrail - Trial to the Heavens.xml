@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: 7.5 Dawntrail - Trial to the Heavens
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>7.5 Dawntrail - Trial to the Heavens</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Check if 7.4 Is complete -->
+    <If Condition="not IsQuestCompleted(70970)">
+      <UserDialog DialogText="Please complete 7.4 MSQ before loading 7.5" />
+    </If>
+
+    <!-- In Fate's Footsteps -->
+    <If Condition="not IsQuestCompleted(71006)">
+      <If Condition="not HasQuest(71006)">
+        <GetTo ZoneId="1186" XYZ="13.111576, 38.806587, -406.5891" />
+        <If Condition="IsQuestAcceptQualified(71006)">
+          <PickupQuest QuestId="71006" NpcId="1056202" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71006) == 1">
+        <If Condition="not IsOnMap(1299)">
+          <GetTo ZoneId="1186" XYZ="-58.4892, 42.806595, -543.4637" />
+          <UseTransport NpcId="1054936" InteractDistance="3.0" XYZ="-57.41974, 42.8066, -546.7765" />
+        </If>
+        <TalkTo NpcId="1058782" XYZ="4.043579, 1.1999818, 41.61133" QuestId="71006" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71006) == 2">
+        <GetTo ZoneId="962" XYZ="-100.107956, 3.933468, 3.384361" />
+        <TalkTo NpcId="1038588" XYZ="-101.76245, 4.357501, 0.7476196" QuestId="71006" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71006) == 3">
+        <If Condition="not IsOnMap(987)">
+          <GetTo ZoneId="962" XYZ="-106.10514, 3.8989394, 5.6938686" />
+          <UseTransport NpcId="2011936" InteractDistance="3.0" XYZ="-108.56799, 5.0201416, 4.5318604" />
+        </If>
+        <UseObject NpcId="2015337" XYZ="0.008126731, 1.907349E-06, -8.997082" QuestId="71006" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(71006) == 255">
+        <If Condition="not IsOnMap(987)">
+          <GetTo ZoneId="962" XYZ="-106.10514, 3.8989394, 5.6938686" />
+          <UseTransport NpcId="2011936" InteractDistance="3.0" XYZ="-108.56799, 5.0201416, 4.5318604" />
+        </If>
+        <TurnIn QuestId="71006" NpcId="1058789" XYZ="-0.045776367, 1.9073486E-06, 1.3884888" />
+      </If>
+    </If>
+
+    <!-- Two Worlds Entwined -->
+    <If Condition="IsQuestCompleted(71006) and not IsQuestCompleted(71007)">
+      <If Condition="not HasQuest(71007)">
+        <If Condition="not IsOnMap(987)">
+          <GetTo ZoneId="962" XYZ="-106.10514, 3.8989394, 5.6938686" />
+          <UseTransport NpcId="2011936" InteractDistance="3.0" XYZ="-108.56799, 5.0201416, 4.5318604" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(71007)">
+          <PickupQuest QuestId="71007" NpcId="1058790" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71007) == 1">
+        <GetTo ZoneId="958" XYZ="531.1545, -36.650005, -228.1974" />
+        <TalkTo NpcId="1058791" XYZ="531.6395, -36.65, -231.49463" QuestId="71007" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71007) == 2">
+        <UserDialog DialogText="Please manually complete the 4-player dungeon Clyteum" QuestId="71007" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71007) == 3">
+        <WaitWhile Condition="GetQuestStep(71007) == 3" />
+      </If>
+      <If Condition="GetQuestStep(71007) == 255">
+        <GetTo ZoneId="958" XYZ="533.2538, -36.650005, -231.2844" />
+        <TurnIn QuestId="71007" NpcId="1058801" XYZ="533.4706, -36.65, -228.56494" />
+      </If>
+    </If>
+
+    <!-- A Grave Presentiment -->
+    <If Condition="IsQuestCompleted(71007) and not IsQuestCompleted(71008)">
+      <If Condition="not HasQuest(71008)">
+        <GetTo ZoneId="958" XYZ="533.2538, -36.650005, -231.2844" />
+        <If Condition="IsQuestAcceptQualified(71008)">
+          <PickupQuest QuestId="71008" NpcId="1058804" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71008) == 1">
+        <!-- <GetTo ZoneId="959" XYZ="-20.030323, 57.4028, 87.004654" /> -->
+        <If condition="not IsOnMap(959)">
+          <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="-20.030323, 57.4028, 87.004654" Land="True" /> <!-- ZoneId="959" -->
+        <WaitWhile Condition="GetQuestStep(71008) == 1" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 2">
+        <GetTo ZoneId="959" XYZ="-20.132868, 57.238213, 89.353584" />
+        <TalkTo NpcId="1058809" XYZ="-19.821533, 57.32972, 88.0293" QuestId="71008" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 3">
+        <!-- <GetTo ZoneId="959" XYZ="-186.51898, 57.06998, 410.66476" /> -->
+        <If condition="not IsOnMap(959)">
+          <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+        </If>
+        <FlyTo AllowedVariance="1" XYZ="-186.51898, 57.06998, 410.66476" Land="True" /> <!-- ZoneId="959" -->
+        <WaitWhile Condition="GetQuestStep(71008) == 3" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 4">
+        <GetTo ZoneId="959" XYZ="-185.9971, 57.088116, 411.7188" />
+        <TalkTo NpcId="1058812" XYZ="-187.36554, 57.16567, 411.24585" QuestId="71008" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 5">
+        <WaitWhile Condition="GetQuestStep(71008) == 5" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 6">
+        <UserDialog DialogText="Please manually complete the 4-player dungeon Clyteum" QuestId="71008" StepId="6" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
