@@ -115,6 +115,122 @@
       <If Condition="GetQuestStep(71008) == 6">
         <UserDialog DialogText="Please manually complete the 4-player dungeon Clyteum" QuestId="71008" StepId="6" />
       </If>
+      <If Condition="GetQuestStep(71008) == 7">
+        <WaitWhile Condition="GetQuestStep(71008) == 7" />
+      </If>
+      <If Condition="GetQuestStep(71008) == 255">
+        <If Condition="not IsOnMap(1162)">  <!-- Get to Red Moon -->
+          <!-- <GetTo ZoneId="959" XYZ="-173.6962, 56.090057, 407.67148" /> -->
+          <If condition="not IsOnMap(959)">
+            <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+          </If>
+          <FlyTo AllowedVariance="1" XYZ="-173.6962, 56.090057, 407.67148" Land="True" />
+          <UseTransport NpcId="2015318" InteractDistance="3.0" XYZ="-171.6111, 57.674, 405.8053" />
+        </If>
+        <TurnIn QuestId="71008" NpcId="1058818" XYZ="28.122314, 56.632263, 481.4984" />
+      </If>
+    </If>
+
+    <!-- A Beacon from Beyond -->
+    <If Condition="IsQuestCompleted(71008) and not IsQuestCompleted(71009)">
+      <If Condition="not HasQuest(71009)">
+        <If Condition="not IsOnMap(1162)">  <!-- Get to Red Moon -->
+          <!-- <GetTo ZoneId="959" XYZ="-173.6962, 56.090057, 407.67148" /> -->
+          <If condition="not IsOnMap(959)">
+            <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+          </If>
+          <FlyTo AllowedVariance="1" XYZ="-173.6962, 56.090057, 407.67148" Land="True" />
+          <UseTransport NpcId="2015318" InteractDistance="3.0" XYZ="-171.6111, 57.674, 405.8053" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(71009)">
+          <PickupQuest QuestId="71009" NpcId="1058818" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71009) == 1">
+        <If Condition="not IsOnMap(1162)">  <!-- Get to Red Moon -->
+          <!-- <GetTo ZoneId="959" XYZ="-173.6962, 56.090057, 407.67148" /> -->
+          <If condition="not IsOnMap(959)">
+            <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+          </If>
+          <FlyTo AllowedVariance="1" XYZ="-173.6962, 56.090057, 407.67148" Land="True" />
+          <UseTransport NpcId="2015318" InteractDistance="3.0" XYZ="-171.6111, 57.674, 405.8053" />
+        </If>
+        <TalkTo NpcId="1058821" XYZ="7.9804688, 57.865685, 429.22095" QuestId="71009" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71009) &gt; 1 and GetQuestStep(71009) &lt; 255">
+        <If condition="not IsOnMap(1077)"> <!-- Get to Zero's Domain -->
+          <If Condition="not IsOnMap(1162)"> <!-- Get to Red Moon -->
+            <!-- <GetTo ZoneId="959" XYZ="-173.6962, 56.090057, 407.67148" /> -->
+            <If condition="not IsOnMap(959)">
+              <TeleportTo Name="Sinus Lacrimarum" AetheryteId="174" />
+            </If>
+            <FlyTo AllowedVariance="1" XYZ="-173.6962, 56.090057, 407.67148" Land="True" />
+            <UseTransport NpcId="2015318" InteractDistance="3.0" XYZ="-171.6111, 57.674, 405.8053" />
+          </If>
+          <UseTransport NpcId="2015308" InteractDistance="3.0" XYZ="4.514196, 59.75, 423.6393" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71009) == 2">
+        <TalkTo NpcId="1058824" XYZ="-1.3275757, -0.40000772, -59.494934" QuestId="71009" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 3">
+        <TalkTo NpcId="1058827" XYZ="-35.996094, -0.21963452, 52.353638" QuestId="71009" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 4">
+        <UseObject NpcId="2015319" XYZ="-35.29428, 0.2805768, 53.37022" QuestId="71009" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 5">
+        <UseItem ItemId="2003823" NpcId="2015321" XYZ="128.8068, 24.30001, 60.58372" QuestId="71009" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 6">
+        <TalkTo NpcId="1058830" XYZ="132.06677, 24.30001, 59.830566" QuestId="71009" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 7">
+        <WaitWhile Condition="GetQuestStep(71009) == 7" />
+      </If>
+      <If Condition="GetQuestStep(71009) == 255">
+        <GetTo ZoneId="959" XYZ="-22.88224, -47.54233, -488.94067" />
+        <TurnIn QuestId="71009" NpcId="1059789" XYZ="-21.164307, -47.543007, -490.95905" />
+      </If>
+    </If>
+
+    <!-- Trail to the Heavens -->
+    <If Condition="IsQuestCompleted(71009) and not IsQuestCompleted(71010)">
+      <If Condition="not HasQuest(71010)">
+        <GetTo ZoneId="959" XYZ="-22.88224, -47.54233, -488.94067" />
+        <If Condition="IsQuestAcceptQualified(71010)">
+          <PickupQuest QuestId="71010" NpcId="1058834" />
+        </If>
+      </If>
+      <If Condition="HasQuest(71010)">
+        <If Condition="not IsOnMap(351)">
+          <GetTo ZoneId="156" XYZ="22.21502, 21.252728, -633.3345" />
+          <UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.133728, 22.323914, -631.281"/>
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71010) == 1">
+        <TalkTo NpcId="1058854" XYZ="-0.16790771, 0, -8.346741" QuestId="71010" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71010) == 2">
+        <If Condition="GetQuestStep(71010) == 2 and GetQuestById(71010).QuestI8A == 0">
+          <TalkTo NpcId="1058844" XYZ="-6.240967, 0.009977883, -4.867676" QuestId="71010" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(71010) == 2 and GetQuestById(71010).QuestI8A == 1">
+          <TalkTo NpcId="1058841" XYZ="-3.0975952, 0.018040119, -10.086243" QuestId="71010" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(71010) == 2 and GetQuestById(71010).QuestI8A == 2">
+          <TalkTo NpcId="1058843" XYZ="3.40271, 0, -8.590881" QuestId="71010" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(71010) == 2 and GetQuestById(71010).QuestI8A == 3">
+          <TalkTo NpcId="1058842" XYZ="4.135132, 0.009977884, -4.287842" QuestId="71010" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(71010) == 2 and GetQuestById(71010).QuestI8A == 4">
+          <TalkTo NpcId="1058850" XYZ="9.47583, 0.009977883, -4.5625" QuestId="71010" StepId="2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71010) == 255">
+        <TurnIn QuestId="71010" NpcId="1058861" XYZ="-0.015319824, 0, -7.2175903" />
+      </If>
     </If>
 
   </Order>
