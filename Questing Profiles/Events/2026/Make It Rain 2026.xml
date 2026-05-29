@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Make It Rain 2026
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Make It Rain 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- You Otter Be There -->
+    <If Condition="not IsQuestCompleted(70979)">
+      <If Condition="not HasQuest(70979)">
+        <GetTo ZoneId="130" XYZ="-89.59719, 4, -103.9118" />
+        <If Condition="IsQuestAcceptQualified(70979)">
+          <PickupQuest QuestId="70979" NpcId="1056358" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70979) == 1">
+        <GetTo ZoneId="131" XYZ="-16.010292, 14.000011, -11.312807" />
+        <TalkTo NpcId="1056359" XYZ="-13.809448, 14.00001, -10.940796" QuestId="70979" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70979) == 2">
+        <GetTo ZoneId="131" XYZ="-16.010292, 14.000011, -11.312807" />
+        <TalkTo NpcId="1056359" XYZ="-13.809448, 14.00001, -10.940796" QuestId="70979" StepId="2" />
+        <WaitWhile Condition="not Core.Me.HasAura(565)" />
+      </If>
+      <If Condition="GetQuestStep(70979) &gt; 2 and GetQuestStep(70979) &lt; 6">
+        <If Condition="not Core.Me.HasAura(565)">
+          <GetTo ZoneId="131" XYZ="-16.010292, 14.000011, -11.312807" />
+          <TalkTo NpcId="1056359" XYZ="-13.809448, 14.00001, -10.940796" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70979) == 3">
+        <TalkTo NpcId="1056373" XYZ="125.10864, 4.100009, -32.303406" QuestId="70979" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70979) == 4">
+        <TalkTo NpcId="1056377" XYZ="128.58777, 7.992012, 75.791504" QuestId="70979" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70979) == 5">
+        <TalkTo NpcId="1056381" XYZ="-14.816589, 14.04987, 55.191895" QuestId="70979" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(70979) == 6">
+        <GetTo ZoneId="131" XYZ="-15.808272, 14.000011, -12.502608" />
+        <TalkTo NpcId="1056385" XYZ="-13.626343, 14.000009, -12.40564" QuestId="70979" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(70979) == 255">
+        <GetTo ZoneId="144" XYZ="-51.020443, 0.025072575, 101.89446" />
+        <TurnIn QuestId="70979" NpcId="1056390" XYZ="-53.391357, -1.706183E-06, 102.67798" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
