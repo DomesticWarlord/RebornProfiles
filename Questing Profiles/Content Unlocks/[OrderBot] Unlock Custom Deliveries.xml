@@ -574,77 +574,115 @@
 
 		<LLSellItem ItemIds="18266,18256,12862,12867,12864,12868,27864,27865,14139,28720,28721" />
 
-			<If Condition="not IsQuestCompleted(&TheWarmthofFamily;) and not IsQuestCompleted(70775)">
-				<UserDialog IsBotContinueAllowed="False" DialogText="The Main Story Quest 'The Warmth of Family' must be complete to unlock Nitowikwe deliveries." />
+		<If Condition="not IsQuestCompleted(&TheWarmthofFamily;) and not IsQuestCompleted(70775)">
+			<UserDialog IsBotContinueAllowed="False" DialogText="The Main Story Quest 'The Warmth of Family' must be complete to unlock Nitowikwe deliveries." />
+		</If>
+
+		<If Condition="not IsCraftingClass() and not IsGatheringClass()">
+			<LogMessage Message="Not already on a crafter class, swapping." />
+			<RunCode Name="SwitchDoHJob" />
+		</If>
+
+		<If Condition="Core.Player.ClassLevel &lt; 90">
+			<UserDialog IsBotContinueAllowed="False" DialogText="You must be level 90 to unlock Nitowikwe deliveries." />
+		</If>
+
+		<!-- Laying New Tracks -->
+		<If Condition="IsQuestCompleted(&TheWarmthofFamily;) and not IsQuestCompleted(70775) and Core.Player.ClassLevel &gt; 89">
+			<If Condition="not HasQuest(70775)">
+				<GetTo ZoneId="1185" XYZ="36.468475, -13.993944, 59.341286" />
+				<If Condition="IsQuestAcceptQualified(70775)">
+					<PickupQuest QuestId="70775" NpcId="1048604" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(70775) == 1">
+				<If condition="not IsOnMap(1190)">
+					<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
+				</If>
+				<FlyTo AllowedVariance="1" XYZ="-84.07133, 15.678719, -246.3397" Land="True" /> <!-- ZoneId="1190" -->
+				<TalkTo NpcId="1051496" XYZ="-84.42822, 15.678356, -242.17596" QuestId="70775" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(70775) == 2">
+				<If condition="not IsOnMap(1190)">
+					<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
+				</If>
+				<FlyTo AllowedVariance="1" XYZ="-353.9331, 19.246649, -101.68413" Land="True" /> <!-- ZoneId="1190" -->
+				<TalkTo NpcId="1051495" XYZ="-365.28577, 20.14268, -88.51758" QuestId="70775" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(70775) == 255">
+				<GetTo ZoneId="1190" XYZ="-356.22513, 19.631376, -103.7614" />
+				<TurnIn QuestId="70775" NpcId="1048605" XYZ="-358.38867, 19.728025, -105.02789" />
+			</If>
+		</If>
+
+		<!-- The Weight of a Train -->
+		<If Condition="IsQuestCompleted(70775) and not IsQuestCompleted(70776)">
+			<If Condition="not HasQuest(70776)">
+				<GetTo ZoneId="1190" XYZ="-356.83313, 19.652786, -105.161896" />
+				<If Condition="IsQuestAcceptQualified(70776)">
+					<PickupQuest QuestId="70776" NpcId="1048605" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(70776) == 1">
+				<If condition="not IsOnMap(1190)">
+					<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
+				</If>
+				<FlyTo AllowedVariance="1" XYZ="-130.85432, 16.344357, -290.87656" Land="True" /> <!-- ZoneId="1190" -->
+				<UseObject NpcId="2014456" XYZ="-128.64886, 16.311829, -290.69965" QuestId="70776" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(70776) == 2">
+				<If condition="not IsOnMap(1190)">
+					<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
+				</If>
+				<FlyTo AllowedVariance="1" XYZ="-131.115, 15.67948, -366.97952" Land="True" /> <!-- ZoneId="1190" -->
+				<TalkTo NpcId="1048608" XYZ="-126.57361, 15.67948, -369.46674" QuestId="70776" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(70776) == 255">
+				<If condition="not IsOnMap(1190)">
+					<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
+				</If>
+				<FlyTo AllowedVariance="1" XYZ="-355.44073, 19.533201, -107.88508" Land="True" /> <!-- ZoneId="1190" -->
+				<TurnIn QuestId="70776" NpcId="1048605" XYZ="-358.38867, 19.728025, -105.02789" />
+			</If>
+		</If>
+
+		<!-- 7.51 introduced Tiisol Ja -->
+		<!-- Unlock Tiisol Ja -->
+		<If condition="IsVersionGreater(7.51)">
+
+			<!-- Taco Time -->
+			<If Condition="not IsQuestCompleted(70996)">
+
+				<If Condition="not IsCraftingClass() and not IsGatheringClass()">
+					<LogMessage Message="Not already on a crafter class, swapping." />
+					<RunCode Name="SwitchDoHJob" />
+				</If>
+
+				<If Condition="not IsQuestCompleted(70909) or not IsQuestCompleted(67631)">
+					<UserDialog DialogText="To unlocked Tiisol Ja both the MSQ 'The Promise of Tomorrow' and the side quest 'Inscrutable Tastes' must be completed." />
+				</If>
+
+				<If Condition="not HasQuest(70996)">
+					<GetTo ZoneId="1185" XYZ="15.935649, -10.00001, 56.426403" />
+					<If Condition="IsQuestAcceptQualified(70996)">
+						<PickupQuest QuestId="70996" NpcId="1058166" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(70996) == 1">
+					<GetTo ZoneId="1185" XYZ="90.42998, -14, 55.024437" />
+					<TalkTo NpcId="1048431" XYZ="88.48706, -14, 56.687256" QuestId="70996" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(70996) == 2">
+					<GetTo ZoneId="1185" XYZ="83.75137, -3.740592, 28.454798" />
+					<UseObject NpcId="2015254" XYZ="83.68304, -3.740592, 30.85402" QuestId="70996" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(70996) == 255">
+					<GetTo ZoneId="1185" XYZ="91.50459, -14, 52.46239" />
+					<TurnIn QuestId="70996" NpcId="1048431" XYZ="88.48706, -14, 56.687256" />
+				</If>
 			</If>
 
-			<If Condition="not IsCraftingClass() and not IsGatheringClass()">
-				<LogMessage Message="Not already on a crafter class, swapping." />
-				<RunCode Name="SwitchDoHJob" />
-			</If>
-
-			<If Condition="Core.Player.ClassLevel &lt; 90">
-				<UserDialog IsBotContinueAllowed="False" DialogText="You must be level 90 to unlock Nitowikwe deliveries." />
-			</If>
-
-			<!-- Laying New Tracks -->
-			<If Condition="IsQuestCompleted(&TheWarmthofFamily;) and not IsQuestCompleted(70775) and Core.Player.ClassLevel &gt; 89">
-				<If Condition="not HasQuest(70775)">
-					<GetTo ZoneId="1185" XYZ="36.468475, -13.993944, 59.341286" />
-					<If Condition="IsQuestAcceptQualified(70775)">
-						<PickupQuest QuestId="70775" NpcId="1048604" />
-					</If>
-				</If>
-				<If Condition="GetQuestStep(70775) == 1">
-					<If condition="not IsOnMap(1190)">
-						<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
-					</If>
-					<FlyTo AllowedVariance="1" XYZ="-84.07133, 15.678719, -246.3397" Land="True" /> <!-- ZoneId="1190" -->
-					<TalkTo NpcId="1051496" XYZ="-84.42822, 15.678356, -242.17596" QuestId="70775" StepId="1" />
-				</If>
-				<If Condition="GetQuestStep(70775) == 2">
-					<If condition="not IsOnMap(1190)">
-						<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
-					</If>
-					<FlyTo AllowedVariance="1" XYZ="-353.9331, 19.246649, -101.68413" Land="True" /> <!-- ZoneId="1190" -->
-					<TalkTo NpcId="1051495" XYZ="-365.28577, 20.14268, -88.51758" QuestId="70775" StepId="2" />
-				</If>
-				<If Condition="GetQuestStep(70775) == 255">
-					<GetTo ZoneId="1190" XYZ="-356.22513, 19.631376, -103.7614" />
-					<TurnIn QuestId="70775" NpcId="1048605" XYZ="-358.38867, 19.728025, -105.02789" />
-				</If>
-			</If>
-
-			<!-- The Weight of a Train -->
-			<If Condition="IsQuestCompleted(70775) and not IsQuestCompleted(70776)">
-				<If Condition="not HasQuest(70776)">
-					<GetTo ZoneId="1190" XYZ="-356.83313, 19.652786, -105.161896" />
-					<If Condition="IsQuestAcceptQualified(70776)">
-						<PickupQuest QuestId="70776" NpcId="1048605" />
-					</If>
-				</If>
-				<If Condition="GetQuestStep(70776) == 1">
-					<If condition="not IsOnMap(1190)">
-						<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
-					</If>
-					<FlyTo AllowedVariance="1" XYZ="-130.85432, 16.344357, -290.87656" Land="True" /> <!-- ZoneId="1190" -->
-					<UseObject NpcId="2014456" XYZ="-128.64886, 16.311829, -290.69965" QuestId="70776" StepId="1" />
-				</If>
-				<If Condition="GetQuestStep(70776) == 2">
-					<If condition="not IsOnMap(1190)">
-						<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
-					</If>
-					<FlyTo AllowedVariance="1" XYZ="-131.115, 15.67948, -366.97952" Land="True" /> <!-- ZoneId="1190" -->
-					<TalkTo NpcId="1048608" XYZ="-126.57361, 15.67948, -369.46674" QuestId="70776" StepId="2" />
-				</If>
-				<If Condition="GetQuestStep(70776) == 255">
-					<If condition="not IsOnMap(1190)">
-						<TeleportTo Name="Sheshenewezi Springs" AetheryteId="208" />
-					</If>
-					<FlyTo AllowedVariance="1" XYZ="-355.44073, 19.533201, -107.88508" Land="True" /> <!-- ZoneId="1190" -->
-					<TurnIn QuestId="70776" NpcId="1048605" XYZ="-358.38867, 19.728025, -105.02789" />
-				</If>
-			</If>
+		</If>
 
 	</Order>
 	<GrindAreas>
@@ -682,4 +720,4 @@
     </CodeChunk>
 	</CodeChunks>
 
-</Profile>  
+</Profile>
