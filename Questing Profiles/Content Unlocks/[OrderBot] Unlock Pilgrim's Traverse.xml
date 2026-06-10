@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Unlock Pilgrim's Traverse
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Unlock Pilgrim's Traverse</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <If condition="not IsQuestCompleted(70000)">
+      <UserDialog IsBotContinueAllowed="False" DialogText="In order to unlock Pilgrim's Traverse you need to have finished MSQ Endwalker" />
+    </If>
+
+    <!-- Pilgrimage of Light -->
+    <If Condition="not IsQuestCompleted(70941)">
+      <If Condition="not HasQuest(70941)">
+        <GetTo ZoneId="819" XYZ="-46.69578, 2.8244843, -21.730774" />
+        <If Condition="not IsQuestAcceptQualified(70941)">
+          <UserDialog IsBotContinueAllowed="False" DialogText="In order to unlock Pilgrim's Traverse you need to have completed floor 50 in Palace of the Dead" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(70941)">
+          <PickupQuest QuestId="70941" NpcId="1054946" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70941) == 1">
+        <GetTo ZoneId="819" XYZ="-105.42791, -47.52163, -139.04729" />
+        <TalkTo NpcId="1054948" XYZ="-106.126526, -47.55987, -136.0647" QuestId="70941" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70941) == 2">
+        <GetTo ZoneId="816" XYZ="402.46054, 85.51876, -697.43915" />
+        <TalkTo NpcId="1054949" XYZ="404.65393, 85.387535, -699.54987" QuestId="70941" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70941) == 3">
+        <GetTo ZoneId="816" XYZ="541.07465, 109.069756, -868.9017" />
+        <TalkTo NpcId="1054950" XYZ="543.2975, 109.2974, -869.4133" QuestId="70941" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70941) == 4">
+        <GetTo ZoneId="816" XYZ="421.56113, 89.4803, -778.78033" />
+        <TalkTo NpcId="1054999" XYZ="418.44812, 89.44323, -777.0962" QuestId="70941" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70941) == 255">
+        <GetTo ZoneId="816" XYZ="418.6513, 89.314095, -772.22015" />
+        <TurnIn QuestId="70941" NpcId="1054942" XYZ="424.09387, 89.42931, -772.27435" />
+      </If>
+    </If>
+
+  </Order>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
