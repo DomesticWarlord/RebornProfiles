@@ -92,9 +92,14 @@
     </If>
 
     <!-- Arcane Artistry -->
-    <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855) and Core.Player.ClassLevel &gt; 99">
-      <Log Message="Working on Arcane Artistry quest"/>
-      <If Condition="not HasQuest(70855)">
+    <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855)">
+
+      <Log Message="Working on Arcane Artistry quest" />
+
+      <If Condition="not HasQuest(70855) and not Core.Player.ClassLevel &gt; 99">
+        <UserDialog DialogText="Starting 'Arcane Artistry' requires you current job to be level 100" />
+      </If>
+      <If Condition="not HasQuest(70855) and Core.Player.ClassLevel &gt; 99">
         <GetTo ZoneId="1269" XYZ="25.971828, 0, 11.212592" />
         <If Condition="IsQuestAcceptQualified(70855)">
           <PickupQuest QuestId="70855" NpcId="1053906" />
@@ -110,7 +115,7 @@
       </If>
       <While Condition="GetQuestStep(70855) == 255">
 
-        <Log Message="Starting Demiatma farm"/>
+        <Log Message="Starting Demiatma farm" />
 
         <If condition="&SpendGemstones; == False and ItemCount(26807) &gt; &GemStones;">
           <UserDialog DialogText="Spending Gemstones is turned off but you're carrying more than the specified limit. Either spend some gemstones or increase the limit. Set the limit to more than you can carry to turn off dealing with Gemstones (Like 1501). " />
@@ -207,6 +212,8 @@
 
     <!--  Forging the Phantasmal -->
     <If Condition="IsQuestCompleted(70855) and not IsQuestCompleted(70856) and Core.Player.ClassLevel &gt; 99">
+      <Log Message="Beginning quest 'Forging the Phantasmal'" />
+
       <If Condition="not HasQuest(70856)">
         <GetTo ZoneId="1269" XYZ="25.955828, 0, 10.62652" />
         <If Condition="IsQuestAcceptQualified(70856)">
@@ -243,6 +250,8 @@
 
       <!-- Obtain Arcanite -->
       <If condition="not HasAtLeast(&Arcanite;, 3)">
+
+        <Log Message="Beginning quest 'Farming Arcanite'" />
 
         <!-- Farm Dungeon if we don't have enough Heliomtry -->
         <If condition="not HasAtLeast(&TomestoneofHeliometry;, 1500)">
