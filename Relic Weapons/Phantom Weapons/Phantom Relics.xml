@@ -93,6 +93,7 @@
 
     <!-- Arcane Artistry -->
     <If Condition="IsQuestCompleted(70847) and not IsQuestCompleted(70855) and Core.Player.ClassLevel &gt; 99">
+      <Log Message="Working on Arcane Artistry quest"/>
       <If Condition="not HasQuest(70855)">
         <GetTo ZoneId="1269" XYZ="25.971828, 0, 11.212592" />
         <If Condition="IsQuestAcceptQualified(70855)">
@@ -108,6 +109,8 @@
         <TalkTo NpcId="1053906" XYZ="25.802979, 0, 13.38208" QuestId="70855" StepId="2" />
       </If>
       <While Condition="GetQuestStep(70855) == 255">
+
+        <Log Message="Starting Demiatma farm"/>
 
         <If condition="&SpendGemstones; == False and ItemCount(26807) &gt; &GemStones;">
           <UserDialog DialogText="Spending Gemstones is turned off but you're carrying more than the specified limit. Either spend some gemstones or increase the limit. Set the limit to more than you can carry to turn off dealing with Gemstones (Like 1501). " />
@@ -128,7 +131,8 @@
 
         <If Condition="not HasItem(4868)">
           <LLToast Message="Going to buy Greens so that we can use our chocobo while fate farming" />
-          <Lisbeth Json="[{'Group':1,'Item':4868,'Amount':999,'Enabled':true,'Type':'Purchase'}]" />
+          <GetTo ZoneId="129" XYZ="-63.884315,18.000334,7.596299" />
+          <BuyItem ItemIds="4868" DialogOption="0" ItemCount="99" NpcId="1001787" XYZ="-62.119568, 18.000334, 9.414734" />
         </If>
 
         <!-- Azurite Demiatma x3	Urqopacha -->
