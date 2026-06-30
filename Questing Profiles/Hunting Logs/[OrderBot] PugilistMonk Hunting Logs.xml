@@ -744,7 +744,10 @@
                     </Grind>
                 </If>
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 1, 0)">
-                    <GetTo ZoneId="138" xyz="-284.1149, -41.42301, 691.4664" />
+                    <If condition="not IsOnSubMap(230) and not IsOnSubMap(173) and not IsOnSubMap(461) and not IsOnSubMap(228)">
+                        <GetTo ZoneId="138" XYZ="317.4333, -36.325, 352.8649" />
+                        <UseTransport NpcId="1003584" DialogOption="2" />
+                    </If>
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_5_1">
                             <Hotspots>

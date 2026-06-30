@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: ARR FATE Farming
+  Authors: DomesticWarlord
+
+-->
+<!DOCTYPE Profile [
+  <!ENTITY OuterLaNoscea "False">
+  <!ENTITY UpperLaNoscea "False">
+  <!ENTITY MiddleLaNoscea "False">
+  <!ENTITY WesternLaNoscea "False">
+  <!ENTITY LowerLaNoscea "False">
+
+  <!ENTITY EasternThanalan "False">
+  <!ENTITY CentralThanalan "False">
+  <!ENTITY WesternThanalan "False">
+  <!ENTITY SouthernThanalan "False">
+
+  <!ENTITY NorthShroud "False">
+  <!ENTITY EasternShroud "False">
+  <!ENTITY CentralShroud "False">
+]>
+
+<Profile>
+  <Name>ARR FATEs</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Outer La Noscea -->
+    <While Condition="&OuterLaNoscea;">
+      <Log Message="Farming FATEs in Outer La Noscea..." />
+      <If Condition="not IsOnMap(180)">
+        <TeleportTo Name="Camp Overlook" AetheryteId="16" />
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" />
+    </While>
+
+    <!-- Upper La Noscea -->
+    <While Condition="&UpperLaNoscea;">
+      <Log Message="Farming FATEs in Upper La Noscea..." />
+      <If Condition="not IsOnMap(139)">
+        <TeleportTo Name="Camp Bronze Lake" AetheryteId="15" />
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" />
+    </While>
+
+    <!-- Middle La Noscea -->
+    <While Condition="&MiddleLaNoscea;">
+      <Log Message="Atma of the Ram in Middle La Noscea..." />
+      <If Condition="not IsOnMap(134)">
+        <TeleportTo Name="Summerford Farms" AetheryteId="52" /> <!-- Summerford Farms -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" />
+    </While>
+
+    <!-- Western La Noscea -->
+    <While Condition="&WesternLaNoscea;">
+      <Log Message="Farming FATEs in Western La Noscea..." />
+      <If Condition="not IsOnMap(138)">
+        <TeleportTo Name="Aleport" AetheryteId="14" /> <!-- Aleport -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" />
+    </While>
+
+    <!-- Lower La Noscea -->
+    <While Condition="&LowerLaNoscea;">
+      <Log Message="Farming FATEs in Lower La Noscea..." />
+      <If Condition="not IsOnMap(135)">
+        <TeleportTo Name="Moraby Drydocks" AetheryteId="10" /> <!-- Moraby Drydocks -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" />
+    </While>
+
+    <!-- Eastern Thanalan -->
+    <While Condition="&EasternThanalan;">
+      <Log Message="Farming FATEs Eastern Thanalan..." />
+      <If Condition="not IsOnMap(145)">
+        <TeleportTo Name="Camp Drybone" AetheryteId="18" /> <!-- Camp Drybone -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="413" />
+    </While>
+
+    <!-- Central Thanalan -->
+    <While Condition="&CentralThanalan;">
+      <Log Message="Farming FATEs in Central Thanalan..." />
+      <If Condition="not IsOnMap(141)">
+        <TeleportTo Name="Black Brush Station" AetheryteId="53" /> <!-- Black Brush Station -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="381" />
+    </While>
+
+    <!-- Western Thanalan -->
+    <While Condition="&WesternThanalan;">
+      <Log Message="Farming FATEs in Western Thanalan..." />
+      <If Condition="not IsOnMap(140)">
+        <TeleportTo Name="Horizon" AetheryteId="17" /> <!-- Horizon -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="346" />
+    </While>
+
+    <!-- Southern Thanalan -->
+    <While Condition="&SouthernThanalan;">
+      <Log Message="Farming FATEs in Southern Thanalan..." />
+      <If Condition="not IsOnMap(146)">
+        <TeleportTo Name="Little Ala Mhigo" AetheryteId="19" /> <!-- Little Ala Mhigo -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="421" />
+    </While>
+
+    <!-- North Shroud -->
+    <While Condition="&NorthShroud;">
+      <Log Message="Farming FATEs in North Shroud..." />
+      <If Condition="not IsOnMap(154)">
+        <TeleportTo Name="Fallgourd Float" AetheryteId="7" /> <!-- Fallgourd Float -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="180" />
+    </While>
+
+    <!-- East Shroud -->
+    <While Condition="&EasternShroud;">
+      <Log Message="Farming FATEs in East Shroud..." />
+      <If Condition="not IsOnMap(152)">
+        <TeleportTo Name="The Hawthorne Hut" AetheryteId="4" /> <!-- The Hawthorne Hut -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistId="218" />
+    </While>
+
+    <!-- Central Shroud -->
+    <While Condition="&CentralShroud;">
+      <Log Message="Farming FATEs in Central Shroud..." />
+      <If Condition="not IsOnMap(148)">
+        <TeleportTo Name="Bentbranch Meadows" AetheryteId="3" /> <!-- Bentbranch Meadows -->
+      </If>
+      <LLFate MinLevel="1" MaxLevel="50" BlacklistIds="128,131,124" />
+    </While>
+
+
+  </Order>
+  <GrindAreas>
+
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile> 
