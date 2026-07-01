@@ -26,10 +26,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         the bot can toss these to help keep your inventory clean -->
   <!ENTITY DiscardInventoryClutter "True">
 
-  <!-- Select which Grand Company you'd like to join by change that to True and the rest to False -->
-  <!ENTITY Mealstrom "False">
-  <!ENTITY OrderOfTheTwinAdder "False">
-  <!ENTITY ImmortalFlames "True">
+  <!-- Select which Grand Company you'd like to join -->
+  <!-- 0 = Twin Adder -->
+  <!-- 1 = Maelstrom -->
+  <!-- 2 = Immortal Flames -->
+  <!ENTITY GrandCompanyChoice "1">
 ]>
 
 <Profile>
@@ -3752,11 +3753,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <!-- Time to choose a Grand Company -->
       <If Condition="(not IsQuestCompleted(66219) and not IsQuestCompleted(66220) and not IsQuestCompleted(66221)) and IsQuestCompleted(66047)">
 
-        <If condition="not &OrderOfTheTwinAdder; and not &Mealstrom; and not &ImmortalFlames;">
-          <UserDialog IsBotContinueAllowed="False" DialogText="Please open the profile with an editor and change one of the Grand Companies to True." />
-        </If>
-
-        <If condition="&OrderOfTheTwinAdder;">
+        <If condition="&GrandCompanyChoice; == 0">
 
           <If Condition="not IsQuestCompleted(66216)">
             <!-- The Company You Keep (Twin Adder) -->
@@ -3797,7 +3794,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
         </If>
 
-        <If condition="&Mealstrom;">
+        <If condition="&GrandCompanyChoice; == 1">
 
           <!-- The Company You Keep (Maelstrom) (Level 20) -->
           <If Condition="not IsQuestCompleted(66217)">
@@ -3838,7 +3835,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
         </If>
 
-        <If condition="&ImmortalFlames;">
+        <If condition="&GrandCompanyChoice; == 2">
 
           <!-- The Company You Keep (Immortal Flames) -->
           <If Condition="not IsQuestCompleted(66218)">
@@ -8569,7 +8566,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <WaitWhile Condition="not IsOnSubMap(374)" />
         </If>
         <If Condition="GetQuestStep(66728) == 2">
-          <GetTo ZoneId="212" XYZ="-458.952, 23.1922, -369.333"/>
+          <GetTo ZoneId="212" XYZ="-458.952, 23.1922, -369.333" />
           <WaitWhile Condition="not GetQuestStep(66728) == 3" />
         </If>
         <If Condition="GetQuestStep(66728) == 3">
