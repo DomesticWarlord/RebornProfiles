@@ -8763,6 +8763,39 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
+      <!-- Promises to Keep (Level 50) 5.3 -->
+      <If Condition="IsQuestCompleted(66883) and not IsQuestCompleted(69416) and Core.Player.ClassLevel &gt; 49">
+        <If Condition="not HasQuest(69416)">
+          <GetTo ZoneId="131" XYZ="-18.26508, 36.0139, 57.93848" />
+          <If Condition="IsQuestAcceptQualified(69416)">
+            <PickUpQuest NpcId="1008616" QuestId="69416" XYZ="-18.26508, 36.0139, 57.93848" />
+          </If>
+        </If>
+        <If Condition="GetQuestStep(69416) == 1">
+          <GetTo ZoneId="130" XYZ="-132.5247, 4.1, -111.9249" />
+          <TalkTo NpcId="1008700" XYZ="-132.5247, 4.1, -111.9249" QuestId="69416" StepId="1" />
+        </If>
+        <If Condition="GetQuestStep(69416) == 2">
+          <GetTo ZoneId="130" XYZ="24.88745, 6.999997, -80.03363" />
+          <TalkTo NpcId="1008623" XYZ="24.88745, 6.999997, -80.03363" QuestId="69416" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(69416) == 255">
+          <GetTo ZoneId="130" XYZ="24.88745, 6.999997, -80.03363" />
+          <If Condition="IsFendingClass()">
+            <TurnIn QuestId="69416" NpcId="1008623" XYZ="24.88745, 6.999997, -80.03363" RewardSlot="0" />
+          </If>
+          <If Condition="IsSlayingClass()">
+            <TurnIn QuestId="69416" NpcId="1008623" XYZ="24.88745, 6.999997, -80.03363" RewardSlot="1" />
+          </If>
+          <If Condition="IsAimingClass()">
+            <TurnIn QuestId="69416" NpcId="1008623" XYZ="24.88745, 6.999997, -80.03363" RewardSlot="2" />
+          </If>
+          <If Condition="GetQuestStep(69416) == 255">
+            <TurnIn QuestId="69416" NpcId="1008623" XYZ="24.88745, 6.999997, -80.03363" RewardSlot="3" />
+          </If>
+        </If>
+      </If>
+
     </While>
 
 
