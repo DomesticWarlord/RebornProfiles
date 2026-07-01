@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Panda Farmer - Dancer Class Quests
+  Authors: DomesticWarlord
+  Code Credit: nt53133
+
+-->
+<Profile>
+  <Name>Panda Farmer - Dancer Class Quests - Dancer</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+
+
+<!-- Shall We Dance -->
+<If Condition="not IsQuestCompleted(68785)">
+    <If Condition="Core.Player.ClassLevel &lt; 60">
+        <RunCode Name="SwitchCombatJob" />
+        <If Condition="Core.Player.ClassLevel &lt; 60">
+		    <UserDialog IsBotContinueAllowed="True" DialogText="Please switch to a level 60 or higher combat class and press continue." />
+        </If>
+    </If>
+	<If Condition="not HasQuest(68785)">
+		<GetTo ZoneId="129" XYZ="-70.89236, 20.00033, 41.06253"/>
+		<If Condition="IsQuestAcceptQualified(68785)">
+			<PickupQuest QuestId="68785" NpcId="1028721" XYZ="-70.54254, 20.00033, 42.16064"/>
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68785) == 1">
+		<GetTo ZoneId="129" XYZ="-112.0576, 5.999999, 188.3807"/>
+		<TalkTo NpcId="1028723" XYZ="-112.1386, 6, 189.6848" QuestId="68785" StepId="1"/>
+	</If>
+	<If Condition="GetQuestStep(68785) == 2">
+		<GetTo ZoneId="129" XYZ="-112.1142, 5.999999, 185.6542"/>
+		<UseObject NpcId="2009763" XYZ="-112.0165, 6.027222, 184.863" QuestId="68785" StepId="2"/>
+	</If>
+	<If Condition="GetQuestStep(68785) == 255">
+		<GetTo ZoneId="129" XYZ="-105.5038, 5.999999, 194.248"/>
+		<TurnIn QuestId="68785" NpcId="1028724" XYZ="-104.3259, 5.999999, 195.941"/>
+		<UseInventoryItem ItemId="27267"/>
+	    <While Condition="ClassName != ClassJobType.Dancer">
+		    <EquipWeapon ItemId="27358"/>
+            <AutoEquip/>
+	    </While>
+		<RunCode name="GearsetSave"/>
+	</If>
+</If>
+
+<!-- Gamboling for Gil -->
+<If Condition="not IsQuestCompleted(68786) and IsQuestCompleted(68785) and Core.Me.Levels[ClassJobType.Dancer] &gt; 59">
+	<While Condition="ClassName != ClassJobType.Dancer">
+		<ChangeClass Job="Dancer" />
+	</While>
+	<If Condition="not HasQuest(68786)">
+		<GetTo ZoneId="129" XYZ="-106.2923, 5.999999, 195.818" />
+		<If Condition="IsQuestAcceptQualified(68786)">
+			<PickupQuest QuestId="68786" NpcId="1028724" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68786) == 1">
+		<GetTo ZoneId="137" XYZ="595.5464, 23.93624, 456.6103" />
+		<TalkTo NpcId="1028730" XYZ="594.3236, 23.96858, 457.6943" QuestId="68786" StepId="1" />
+	</If>
+	<While Condition="GetQuestStep(68786) == 2">
+		<If Condition="not DutyManager.InInstance and GetQuestStep(68786) == 2">
+			<GetTo ZoneId="137" XYZ="481.6509, 16.41491, 447.959" />
+			<WaitTimer WaitTime="2" />
+			<RunCode Name="DutyCommence" />
+			<WaitWhile Condition="not DutyManager.InInstance" />
+		</If>
+		<If Condition="DutyManager.InInstance and GetQuestStep(68786) == 2">
+			<WaitTimer WaitTime="35" />
+			<RunCode Name="ClosedPosition" />
+			<While Condition="not Core.Me.InCombat and DutyManager.InInstance">
+				<WaitTimer WaitTime="15" InCombat="True" />
+				<RunCode Name="Standard4Step" InCombat="True" />
+				<WaitTimer WaitTime="15" InCombat="True" />
+			</While>
+			<Grind while="Core.Me.IsAlive and DutyManager.InInstance" >
+				<GrindArea name="Gamboling_for_Gil">
+				  <Hotspots>
+				    <Hotspot Radius="90" XYZ="525.7047, 9.243596, 130.2911"/>
+				  </Hotspots>
+				  <TargetMobs>
+				    <TargetMob Id="8490" Weight="1"/> <!-- Falsiam Warrior -->
+					<TargetMob Id="8491" Weight="1"/> <!-- Falsiam Mage -->
+					<TargetMob Id="8489" Weight="1"/> <!-- Ranaa Mihgo -->
+				  </TargetMobs>
+				</GrindArea>
+			</Grind>
+		</If>
+	</While>
+	<If Condition="GetQuestStep(68786) == 3">
+		<WaitWhile Condition="not GetQuestStep(68786) == 255" />
+	</If>
+	<If Condition="GetQuestStep(68786) == 255">
+		<GetTo ZoneId="137" XYZ="469.8203, 16.36164, 452.3756" />
+		<TurnIn QuestId="68786" NpcId="1028735" XYZ="480.186, 16.4324, 447.8064" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- A Soirée in the Sultanate -->
+<If Condition="IsQuestCompleted(68786) and not IsQuestCompleted(68787) and Core.Me.Levels[ClassJobType.Dancer] &gt; 62">
+	<While Condition="ClassName != ClassJobType.Dancer">
+		<ChangeClass Job="Dancer" />
+	</While>
+	<If Condition="not HasQuest(68787)">
+		<GetTo ZoneId="137" XYZ="479.6821, 16.42535, 450.3646" />
+		<If Condition="IsQuestAcceptQualified(68787)">
+			<PickupQuest QuestId="68787" NpcId="1028735" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68787) == 1">
+		<GetTo ZoneId="137" XYZ="620.3729, 23.93624, 454.5799" />
+		<TalkTo NpcId="1006273" XYZ="619.0126, 23.93624, 455.1002" QuestId="68787" StepId="1" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 2">
+		<GetTo ZoneId="130" XYZ="47.92604, 8.000001, -120.7946" />
+		<TalkTo NpcId="1028741" XYZ="47.62329, 8, -118.6695" QuestId="68787" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 3">
+		<GetTo ZoneId="141" XYZ="-147.1637, 15.22316, 286.8198" />
+		<TalkTo NpcId="1028746" XYZ="-148.394, 15.2938, 286.8239" QuestId="68787" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 4 and GetQuestById(68787).QuestI8A == 0">
+		<GetTo ZoneId="141" XYZ="-72.19173, 15.78877, 323.6257" />
+		<TalkTo NpcId="1028747" XYZ="-73.47223, 15.82569, 323.3539" QuestId="68787" StepId="4" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 4 and GetQuestById(68787).QuestI8A == 1">
+		<GetTo ZoneId="141" XYZ="-54.60709, 15.42466, 332.3558" />
+		<TalkTo NpcId="1028748" XYZ="-52.41479, 15.30059, 332.967" QuestId="68787" StepId="4" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 5">
+		<GetTo ZoneId="141" XYZ="-150.3458, 15.73015, 290.102" />
+		<UseObject NpcId="2009765" XYZ="-151.6899, 15.67102, 289.6619" QuestId="68787" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 6">
+		<GetTo ZoneId="141" XYZ="-73.8661, -1.60613, 106.9061" />
+		<WaitWhile Condition="not GetQuestStep(68787) == 7" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 7">
+		<GetTo ZoneId="141" XYZ="-73.10326, -1.485219, 104.6433" />
+		<TalkTo NpcId="1028752" XYZ="-73.25861, -1.51718, 105.2415" QuestId="68787" StepId="7" />
+	</If>
+	<If Condition="GetQuestStep(68787) == 255">
+		<GetTo ZoneId="130" XYZ="48.02044, 8.000001, -120.1668" />
+		<TurnIn QuestId="68787" NpcId="1028741" XYZ="47.62329, 8, -118.6695" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- Dances with Duskwights -->
+<If Condition="not IsQuestCompleted(68788) and IsQuestCompleted(68787) and Core.Me.Levels[ClassJobType.Dancer] &gt; 64">
+	<While Condition="ClassName != ClassJobType.Dancer">
+		<ChangeClass Job="Dancer" />
+	</While>
+	<If Condition="not HasQuest(68788)">
+		<GetTo ZoneId="130" XYZ="49.77449, 7.880336, -120.6686" />
+		<If Condition="IsQuestAcceptQualified(68788)">
+			<PickupQuest QuestId="68788" NpcId="1028741" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68788) == 1">
+		<GetTo ZoneId="132" XYZ="-56.27964, -2.809487, 26.97263" />
+		<TalkTo NpcId="1028756" XYZ="-57.3587, -2.824915, 28.42749" QuestId="68788" StepId="1" />
+	</If>
+	<If Condition="GetQuestStep(68788) == 2">
+		<GetTo ZoneId="153" XYZ="-184.8465, 9.125101, -36.44383" />
+		<TalkTo NpcId="1028762" XYZ="-184.4969, 9.204633, -34.95844" QuestId="68788" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(68788) == 3">
+		<GetTo ZoneId="153" XYZ="-128.6912, 9.965291, -113.1042" />
+		<UseObject NpcId="2009767" XYZ="-128.8015, 9.964111, -114.3054" QuestId="68788" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(68788) == 4">
+		<GetTo ZoneId="153" XYZ="-90.25562, 1.179778, -113.2908" />
+		<WaitWhile Condition="not GetQuestStep(68788) == 5" />
+	</If>
+	<If Condition="GetQuestStep(68788) == 5">
+		<GetTo ZoneId="153" XYZ="-92.2215, 0.9643569, -120.2409" />
+		<TalkTo NpcId="1028769" XYZ="-91.17267, 0.9290184, -121.3856" QuestId="68788" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(68788) == 255">
+		<GetTo ZoneId="132" XYZ="-54.78313, -2.639702, 11.62975" />
+		<TurnIn QuestId="68788" NpcId="1000193" XYZ="-56.77887, -1.717185, 7.888855" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- High-steppin' in the Holy See -->
+<If Condition="not IsQuestCompleted(68789) and IsQuestCompleted(68788) and Core.Me.Levels[ClassJobType.Dancer] &gt; 67">
+	<While Condition="ClassName != ClassJobType.Dancer">
+		<ChangeClass Job="Dancer" />
+	</While>
+	<If Condition="not HasQuest(68789)">
+		<GetTo ZoneId="132" XYZ="-57.26612, -3.05184, 22.70028" />
+		<If Condition="IsQuestAcceptQualified(68789)">
+			<PickupQuest QuestId="68789" NpcId="1028756" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68789) == 1">
+		<GetTo ZoneId="418" XYZ="-10.67096, 5.504703, 47.78038" />
+		<TalkTo NpcId="1028773" XYZ="-6.759766, 5.475666, 47.53174" QuestId="68789" StepId="1" />
+	</If>
+	<If Condition="GetQuestStep(68789) == 2">
+		<GetTo ZoneId="418" XYZ="127.8614, 24.45884, -1.540593" />
+		<TalkTo NpcId="1012163" XYZ="128.252, 24.45883, -0.6867676" QuestId="68789" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(68789) == 3">
+		<GetTo ZoneId="155" XYZ="-53.89111, 298.9, -228.375" />
+		<TalkTo NpcId="1028774" XYZ="-53.05566, 298.9, -229.5109" QuestId="68789" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(68789) == 4">
+		<GetTo ZoneId="155" XYZ="-47.83239, 298.9, -234.6815" />
+		<WaitWhile Condition="not GetQuestStep(68789) == 5" />
+	</If>
+	<If Condition="GetQuestStep(68789) == 5">
+		<GetTo ZoneId="155" XYZ="-52.19261, 298.9, -229.8616" />
+		<TalkTo NpcId="1028774" XYZ="-53.05566, 298.9, -229.5109" QuestId="68789" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(68789) == 255">
+		<GetTo ZoneId="132" XYZ="-57.95184, -2.932434, 24.98701" />
+		<TurnIn QuestId="68789" NpcId="1028757" XYZ="-58.2132, -2.844746, 28.91589" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- Save the Last Dance for Me -->
+<If Condition="not IsQuestCompleted(68790) and IsQuestCompleted(68789) and Core.Me.Levels[ClassJobType.Dancer] &gt; 69">
+	<While Condition="ClassName != ClassJobType.Dancer">
+		<ChangeClass Job="Dancer" />
+	</While>
+	<If Condition="not HasQuest(68790)">
+		<GetTo ZoneId="132" XYZ="-56.58385, -2.883529, 24.31434" />
+		<If Condition="IsQuestAcceptQualified(68790)">
+			<PickupQuest QuestId="68790" NpcId="1028757" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(68790) == 1">
+		<GetTo ZoneId="620" XYZ="51.71931, 118.274, -759.6572" />
+		<TalkTo NpcId="1028782" XYZ="50.49207, 118.3093, -760.1587" QuestId="68790" StepId="1" />
+	</If>
+	<While Condition="GetQuestStep(68790) == 2">
+		<GetTo ZoneId="620" XYZ="51.71931, 118.274, -759.6572" />
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty />
+		</If>
+		<LLSimpleDuty InteractNpcId="1028782" XYZ="50.49207, 118.3093, -760.1587" QuestId="68790" StepId="2">
+			<HotSpots>
+				<Hotspot Radius="90" XYZ="76.51625, 118.169, -734.9532" name="Name" />
+			</HotSpots>
+			<TargetMobs>
+				<TargetMob Id="8493" Weight="1000" /> <!-- Aetheric Shadow -->
+				<TargetMob Id="8494" Weight="1000" /> <!-- Shadowy Spume -->
+				<TTargetMob Id="8495" Weight="1" /> <!-- Shadowy Shade -->
+			</TargetMobs>
+		</LLSimpleDuty>
+	</While>
+	<If Condition="GetQuestStep(68790) == 3">
+		<WaitWhile Condition="not GetQuestStep(68790) == 4" />
+	</If>
+	<If Condition="GetQuestStep(68790) == 4">
+		<GetTo ZoneId="620" XYZ="93.91928, 118.1558, -739.6392" />
+		<TalkTo NpcId="1028787" XYZ="91.08105, 118.1558, -739.9252" QuestId="68790" StepId="4" />
+	</If>
+	<If Condition="GetQuestStep(68790) == 255">
+		<GetTo ZoneId="129" XYZ="-106.7822, 5.999999, 195.6313" />
+		<TurnIn QuestId="68790" NpcId="1028792" XYZ="-104.6312, 5.999999, 197.4364" />
+	</If>
+</If>
+
+    <LastProfile/>
+  </Order>
+	<GrindAreas>
+	</GrindAreas>
+	<CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
+        {
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+        };
+
+      ]]>
+    </CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+    <CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
+
+            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
+            {
+                return false;
+            }
+
+            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
+
+            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
+            {
+                Log.Information($"Found Target {mobsToKill.EnglishName}");
+                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
+            }
+	        return false;
+			]]>
+		</CodeChunk>
+<CodeChunk Name="GearsetSave">
+  <![CDATA[
+	await CommonTasks.StopAndDismount();
+	ChatManager.SendChat("/gs save");
+  ]]>
+</CodeChunk>
+ <CodeChunk Name="SwitchCombatJob">
+    <![CDATA[
+    var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
+    var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
+
+    if (gearSets.Any())
+    {
+        gearSets.First().Activate();
+        await Coroutine.Sleep(2000);
+    }
+    ]]>
+</CodeChunk>
+<CodeChunk Name="DutyCommence">
+<![CDATA[
+	Logging.Write("Commencing duty.");
+	uint[] npcIds = { 1021261, 2006316 };
+	var dutyNpc = GameObjectManager.GameObjects.Where(r => r.IsTargetable && npcIds.Contains(r.NpcId)).OrderBy(r => r.Distance()).FirstOrDefault();
+
+	while (Core.Me.Location.Distance2D(dutyNpc.Location) > 1.5f)
+	{
+		await Coroutine.Yield();
+		Navigator.PlayerMover.MoveTowards(dutyNpc.Location);
+	}
+
+	Navigator.PlayerMover.MoveStop();
+	dutyNpc.Interact();
+	await Coroutine.Wait(5000, () => Talk.DialogOpen || DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+
+	while (!(DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen))
+	{
+		Talk.Next();
+		await Coroutine.Yield();
+	}
+
+	await Coroutine.Wait(5000, () => DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+
+	if (DifficultySelectYesNo.IsOpen)
+	{
+		DifficultySelectYesNo.Proceed(2);
+	}
+	else if (SelectYesno.IsOpen)
+	{
+		SelectYesno.Yes();
+	}
+	else
+	{
+		Logging.Write("Duty window didn't open.");
+		TreeRoot.Stop();
+	}
+
+	await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+	await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+
+	while (ff14bot.Managers.QuestLogManager.InCutscene)
+	{
+		ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+		if (ff14bot.RemoteAgents.AgentCutScene.Instance.CanSkip && SelectString.IsOpen) { SelectString.ClickSlot(0); }
+		if (Talk.DialogOpen) { Talk.Next(); }
+		await Coroutine.Yield();
+	}
+
+	await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+	await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+	await Coroutine.Wait(10000, () => !Core.Me.HasAura(1268));
+	Logging.Write("Duty commenced.");
+	await Coroutine.Sleep(1500);
+]]>
+</CodeChunk>
+		<CodeChunk Name="Standard4Step">
+			<![CDATA[
+				var _target = GameObjectManager.GetObjectByNPCId(8488);
+				_target.Target();
+				await Coroutine.Sleep(1000);
+				ActionManager.DoAction(15997, Core.Target);
+				await Coroutine.Sleep(2000);
+				ActionManager.DoAction(16000, Core.Target);
+				await Coroutine.Sleep(2000);
+				ActionManager.DoAction(15999, Core.Target);
+				await Coroutine.Sleep(2000);
+				ActionManager.DoAction(16001, Core.Target);
+				await Coroutine.Sleep(2000);
+				ActionManager.DoAction(16002, Core.Target);
+				await Coroutine.Sleep(2000);
+				ActionManager.DoAction(16192, Core.Target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="ClosedPosition">
+			<![CDATA[
+				var _target = GameObjectManager.GetObjectByNPCId(8488);
+				_target.Target();
+				await Coroutine.Sleep(1000);
+				ActionManager.DoAction(16006, Core.Target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+
+
+        <!-- Arcanist 1-15 Codechunks -->
+		<CodeChunk Name="DutyCommence">
+			<![CDATA[
+				Logging.Write("Commencing duty.");
+				uint[] npcIds = { 1021917 };
+				var dutyNpc = GameObjectManager.GameObjects.Where(r => r.IsTargetable && npcIds.Contains(r.NpcId)).OrderBy(r => r.Distance()).FirstOrDefault();
+				while (Core.Me.Location.Distance2D(dutyNpc.Location) > 1.5f)
+				{
+					await Coroutine.Yield();
+					Navigator.PlayerMover.MoveTowards(dutyNpc.Location);
+				}
+				Navigator.PlayerMover.MoveStop();
+				dutyNpc.Interact();
+				await Coroutine.Wait(5000, () => Talk.DialogOpen || DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+				while (!(DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen))
+				{
+					Talk.Next();
+					await Coroutine.Yield();
+				}
+				await Coroutine.Wait(5000, () => DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+				if (DifficultySelectYesNo.IsOpen) { DifficultySelectYesNo.Proceed(2); }
+				else if (SelectYesno.IsOpen) { SelectYesno.Yes(); }
+				else
+				{
+					Logging.Write("Duty window didn't open.");
+					TreeRoot.Stop();
+				}
+				await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+				while (QuestLogManager.InCutscene)
+				{
+					ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+					if (ff14bot.RemoteAgents.AgentCutScene.Instance.CanSkip && SelectString.IsOpen) { SelectString.ClickSlot(0); }
+					if (Talk.DialogOpen) { Talk.Next(); }
+					await Coroutine.Yield();
+				}
+				await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+				await Coroutine.Wait(10000, () => !Core.Me.HasAura(1268));
+				Logging.Write("Duty commenced.");
+				await Coroutine.Sleep(1500);
+			]]>
+		</CodeChunk>
+
+
+
+
+
+
+
+
+
+
+
+
+	</CodeChunks>
+</Profile>

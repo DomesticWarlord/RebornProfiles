@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Panda Farmer - Paladin Class Quests
+  Authors: DomesticWarlord
+  Code Credit: nt53133
+
+-->
+<Profile>
+  <Name>Panda Farmer - Paladin Class Quests - Paladin</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+
+
+<!-- Way of the Gladiator -->
+<If Condition="not IsQuestCompleted(65821) and Core.Me.Levels[ClassJobType.Gladiator] == 0">
+	<If Condition="not HasQuest(65821)">
+		<GetTo ZoneId="131" XYZ="-95.37389, 6.599854, 25.39494"/>
+		<TalkTo NpcId="1002277" XYZ="-95.37389, 6.599854, 25.39494"/>
+		<If Condition="IsQuestAcceptQualified(65821)">
+			<PickupQuest NpcId="1002277" QuestId="65821" XYZ="-95.37389, 6.599854, 25.39494"/>
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65821) == 255">
+		<GetTo ZoneId="131" XYZ="-95.20937, 6.500001, 38.19135"/>
+		<TurnIn QuestId="65821" StepId="255" NpcId="1001739" InteractDistance="1.0" XYZ="-95.20937, 6.500001, 38.19135"/>
+	    <While Condition="ClassName != ClassJobType.Gladiator">
+		    <EquipWeapon ItemId="1601"/>
+	    </While>
+		<RunCode name="GearsetSave"/>
+	</If>
+</If>
+
+<!-- My First Gladius -->
+<If Condition="not IsQuestCompleted(65822) and IsQuestCompleted(65821)">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65822)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<If Condition="IsQuestAcceptQualified(65822)">
+			<PickupQuest NpcId="1001739" QuestId="65822" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65822) == 1">
+		<If Condition="not IsTodoChecked(65822, 1, 0)">
+			<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" /> <!-- Grinding Area -->
+			<Grind while="not IsTodoChecked(65822, 1, 0)" >
+			    <GrindArea name="My_First_Gladius">
+			    			<Hotspots>
+			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Star Marmots" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="262" /> <!-- Star Marmot -->
+			    			</TargetMobs>
+
+
+			    		</GrindArea>
+			</Grind>
+		</If>
+		<If Condition="not IsTodoChecked(65822, 1, 1)">
+			<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" /> <!-- Grinding Area -->
+			<Grind while="not IsTodoChecked(65822, 1, 1)" >
+			    <GrindArea name="My_First_Gladius2">
+			    			<Hotspots>
+			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Huge Hornets" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="632" /> <!-- Huge Hornet -->
+			    			</TargetMobs>
+
+
+			    		</GrindArea>
+			</Grind>
+		</If>
+		<If Condition="not IsTodoChecked(65822, 1, 2)">
+			<GetTo ZoneId="141" XYZ="47.62748, 2.513385, 317.5547" /> <!-- Grinding Area -->
+			<Grind while="not IsTodoChecked(65822, 1, 2)" >
+			    <GrindArea name="My_First_Gladius3">
+			    			<Hotspots>
+			    				<Hotspot Radius="90" XYZ="47.62748, 2.513385, 317.5547" name="Snapping Shrews" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="318" /> <!-- Snapping Shrew -->
+			    			</TargetMobs>
+
+
+			    		</GrindArea>
+			</Grind>
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65822) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<TurnIn QuestId="65822" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- Kicking the Hornet's Nest -->
+<If Condition="not IsQuestCompleted(65792) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 4">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65792)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<If Condition="IsQuestAcceptQualified(65792)">
+			<PickupQuest NpcId="1001739" QuestId="65792" XYZ="-94.52972, 6.500001, 39.81079" />
+</If>
+	</If>
+	<While Condition="GetQuestStep(65792) == 1">
+		<GetTo ZoneId="130" XYZ="13.30538, 4, -142.9779" /> <!-- Keen-eyed Marauder -->
+		<EmoteNPC NpcId="1003992" Emote="me" XYZ="12.19196, 4.099995, -155.5353" Radius="10" UseTimes="1" QuestId="65792" StepId="1" />
+		<EmoteNPC NpcId="1003994" Emote="me" XYZ="15.97614, 8, -124.0711" Radius="10" UseTimes="1" QuestId="65792" StepId="1" />
+		<EmoteNPC NpcId="1003984" Emote="me" XYZ="45.0293, 4, -128.1606" Radius="10" UseTimes="1" QuestId="65792" StepId="1" />
+		<EmoteNPC NpcId="1003990" Emote="me" XYZ="77.25635, 4.099995, -138.6282" Radius="10" UseTimes="1" QuestId="65792" StepId="1" />
+	</While>
+	<If Condition="GetQuestStep(65792) == 2">
+		<GetTo ZoneId="130" XYZ="21.92719, 7.199997, -97.39838" /> <!-- Pfarmurl -->
+		<EmoteNPC NpcId="1004222" Emote="me" XYZ="21.92719, 7.199997, -97.39838" Radius="10" QuestId="65792" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(65792) == 3">
+		<GetTo ZoneId="130" XYZ="21.56526, 6.999996, -80.60032" /> <!-- Momodi -->
+		<TalkTo NpcId="1001353" XYZ="21.07263, 7.45, -78.78235" QuestId="65792" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(65792) == 4">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65792" StepId="4" />
+	</If>
+	<If Condition="GetQuestStep(65792) == 5">
+		<GetTo ZoneId="140" XYZ="201.5259, 52.03812, 149.4011" /> <!-- Nervous Merchant -->
+		<TalkTo NpcId="1003985" XYZ="201.5259, 52.03812, 149.4011" QuestId="65792" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(65792) == 6">
+		<GetTo ZoneId="140" XYZ="154.3755, 52.53674, 200.9155" /> <!-- Caravan Sack -->
+		<UseObject NpcIds="2001408,2001409" QuestId="65792" StepId="6">
+			<HotSpots>
+				<HotSpot XYZ="154.3755, 52.53674, 200.9155" Radius="10" />
+				<HotSpot XYZ="141.8325, 52.99451, 221.5457" Radius="10" />
+			</HotSpots>
+		</UseObject>
+	</If>
+	<If Condition="GetQuestStep(65792) == 7">
+		<GetTo ZoneId="140" XYZ="201.5259, 52.03812, 149.4011" /> <!-- Nervous Merchant -->
+		<HandOver ItemId="2000524" QuestId="65792" StepId="7" NpcId="1003985" XYZ="201.5259, 52.03812, 149.4011" />
+	</If>
+	<If Condition="GetQuestStep(65792) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<TurnIn QuestId="65792" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- Ul'dah's Most Wanted (Primary) -->
+<If Condition="not IsQuestCompleted(65797) and not IsQuestCompleted(65822) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 9">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65797)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(65797)">
+			<PickupQuest NpcId="1001739" QuestId="65797" XYZ="-94.52972, 6.500001, 39.81079" />
+</If>
+	</If>
+	<If Condition="HasQuest(65797)">
+		<If Condition="GetQuestStep(65797) == 1">
+			<!-- Gutless Gladiator -->
+			<GetTo ZoneId="141" XYZ="-139.4218, 4.019726, 205.0354" />
+			<TalkTo NpcId="1002296" XYZ="-139.4218, 4.019726, 205.0354" QuestId="65797" StepId="1" />
+			<Grind while="HasQuest(65797) and GetQuestStep(65797) == 1" >
+			    <GrindArea name="Uldahs_Most_Wanted">
+			    			<Hotspots>
+			    				<Hotspot Radius="90" XYZ="-139.4218, 4.019726, 205.0354" name="Duskwight Freelancers" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="923" /> <!-- Duskwight Freelancer -->
+			    			</TargetMobs>
+
+
+			    		</GrindArea>
+			</Grind>
+		</If>
+		<If Condition="GetQuestStep(65797) == 2">
+			<!-- Gutless Gladiator -->
+			<GetTo ZoneId="141" XYZ="-139.4218, 4.019726, 205.0354" />
+			<TalkTo NpcId="1002296" XYZ="-139.4218, 4.019726, 205.0354" QuestId="65797" StepId="2" />
+		</If>
+		<If Condition="GetQuestStep(65797) == 3">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65797" StepId="3" />
+		</If>
+		<If Condition="GetQuestStep(65797) == 4">
+			<GetTo ZoneId="141" XYZ="27.20679, 12.98535, 51.83484" />
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<LeaveParty />
+			</If>
+			<LLSimpleDuty InteractNpcId="2001426" XYZ="27.20679, 12.98535, 51.83484" GuardianNPCId="924" QuestId="65797" StepId="4">
+				<HotSpots>
+					<HotSpot XYZ="27.20679, 12.98535, 51.83484" Radius="90" />
+				</HotSpots>
+				<TargetMobs>
+					<!-- Duskwight Freelancer -->
+					<TargetMob Id="923" Weight="2000" />
+					<!-- Duskwight Freelancer Captain -->
+					<TargetMob Id="944" Weight="1000" />
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(65797) == 5">
+			<!-- Bruce the Big -->
+			<GetTo ZoneId="141" XYZ="24.91797, 13, 50.15637" />
+			<TalkTo NpcId="1003945" XYZ="24.91797, 13, 50.15637" QuestId="65797" StepId="5" />
+		</If>
+		<If Condition="GetQuestStep(65797) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="65797" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+<!-- Ul'dah's Most Wanted (Secondary) -->
+<If Condition="not IsQuestCompleted(65824) and not IsQuestCompleted(65797) and IsQuestCompleted(65822) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 9">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65824)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<If Condition="IsQuestAcceptQualified(65824)">
+			<PickupQuest NpcId="1001739" QuestId="65824" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65824) == 1">
+		<GetTo ZoneId="141" XYZ="-139.4218, 4.019726, 205.0354" /> <!-- Gutless Gladiator -->
+		<TalkTo NpcId="1002296" XYZ="-139.4218, 4.019726, 205.0354" QuestId="65824" StepId="1" />
+		<Grind while="HasQuest(65824) and GetQuestStep(65824) == 1" >
+		    <GrindArea name="Uldahs_Most_Wanted">
+		    			<Hotspots>
+		    				<Hotspot Radius="90" XYZ="-139.4218, 4.019726, 205.0354" name="Duskwight Freelancers" />
+		    			</Hotspots>
+		    			<TargetMobs>
+		    				<TargetMob Id="923" /> <!-- Duskwight Freelancer -->
+		    			</TargetMobs>
+
+
+		    		</GrindArea>
+		</Grind>
+	</If>
+	<If Condition="GetQuestStep(65824) == 2">
+		<GetTo ZoneId="141" XYZ="-139.4218, 4.019726, 205.0354" /> <!-- Gutless Gladiator -->
+		<TalkTo NpcId="1002296" XYZ="-139.4218, 4.019726, 205.0354" QuestId="65824" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(65824) == 3">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65824" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(65824) == 4">
+		<GetTo ZoneId="141" XYZ="27.20679, 12.98535, 51.83484" /> <!-- Destination -->
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty/>
+		</If>
+		<LLSimpleDuty InteractNpcId="2001756" XYZ="27.20679, 12.98535, 51.83484" GuardianNPCId="924" QuestId="65824" StepId="4">
+			<HotSpots>
+				<HotSpot XYZ="27.20679, 12.98535, 51.83484" Radius="90" />
+			</HotSpots>
+			<TargetMobs>
+				<TargetMob Id="923" Weight="2000" /> <!-- Duskwight Freelancer -->
+				<TargetMob Id="944" Weight="1000" /> <!-- Duskwight Freelancer Captain -->
+			</TargetMobs>
+		</LLSimpleDuty>
+	</If>
+	<If Condition="GetQuestStep(65824) == 5">
+		<GetTo ZoneId="141" XYZ="24.91797, 13, 50.15637" /> <!-- Bruce the Big -->
+		<TalkTo NpcId="1003945" XYZ="24.91797, 13, 50.15637" QuestId="65824" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(65824) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" /> <!-- Mylla -->
+		<TurnIn QuestId="65824" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- That Old Familiar Feeling -->
+<If Condition="(IsQuestCompleted(65797) or IsQuestCompleted(65824)) and not IsQuestCompleted(65798) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 14">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65798)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(65798)">
+			<PickupQuest NpcId="1001739" QuestId="65798" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65798) == 1">
+		<!-- Injured Gladiator -->
+		<GetTo ZoneId="145" XYZ="-220.9354, -38.40747, 63.91992" />
+		<TalkTo NpcId="1004224" XYZ="-220.9354, -38.40747, 63.91992" QuestId="65798" StepId="1" />
+		<Grind while="HasQuest(65798) and GetQuestStep(65798) == 1" >
+		    <GrindArea name="That_Old_Familiar_Feeling">
+		    			<Hotspots>
+		    				<Hotspot Radius="90" XYZ="-220.9354, -38.40747, 63.91992" name="Amalj'aa Ravagers" />
+		    			</Hotspots>
+		    			<TargetMobs>
+		    				<TargetMob Id="1177" /> <!-- Amalj'aa Ravager -->
+		    			</TargetMobs>
+
+
+		    		</GrindArea>
+		</Grind>
+	</If>
+	<If Condition="GetQuestStep(65798) == 2">
+		<!-- Injured Gladiator -->
+		<GetTo ZoneId="145" XYZ="-220.9354, -38.40747, 63.91992" />
+		<TalkTo NpcId="1004224" XYZ="-220.9354, -38.40747, 63.91992" QuestId="65798" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(65798) == 3">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65798" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(65798) == 4">
+		<!-- Aldis -->
+		<GetTo ZoneId="130" XYZ="24.12439, 7.199998, -102.7695" />
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty/>
+		</If>
+		<LLSimpleDuty InteractNpcId="1004091" XYZ="24.12439, 7.199998, -102.7695" GuardianNPCId="690" QuestId="65798" StepId="4">
+			<HotSpots>
+				<HotSpot XYZ="28.63875, 7.209999, -100.7327" Radius="90" />
+			</HotSpots>
+			<TargetMobs>
+				<!-- Amalj'aa Ravager -->
+				<TargetMob Id="1220" Weight="3000" />
+				<!-- Nameless Attacker -->
+				<TargetMob Id="925" Weight="2000" />
+				<!-- Stout Ambusher -->
+				<TargetMob Id="943" Weight="1000" />
+			</TargetMobs>
+		</LLSimpleDuty>
+	</If>
+	<If Condition="GetQuestStep(65798) == 255">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TurnIn QuestId="65798" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- The Face of Thal -->
+<If Condition="IsQuestCompleted(65798) and not IsQuestCompleted(65799) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 19">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65799)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(65799)">
+			<PickupQuest NpcId="1001739" QuestId="65799" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65799) == 1">
+		<GetTo ZoneId="141" XYZ="-72.34308, -12.37296, -69.13867" />
+		<HandOver ItemId="2000402" QuestId="65799" StepId="1" NpcId="1004140" XYZ="-72.34308, -12.37296, -69.13867" />
+	</If>
+	<If Condition="GetQuestStep(65799) == 2">
+		<While Condition="not IsTodoChecked(65799, 2, 0)">
+			<NoCombatMoveTo Name="Roundelph" XYZ="-93.33948, -11.36798, -41.39777" />
+			<TalkTo NpcId="1001462" XYZ="-93.33948, -11.36798, -41.39777" QuestId="65799" StepId="2" />
+			<TalkTo NpcId="1001438" XYZ="-30.83856, -1.033258, -145.6779" QuestId="65799" StepId="2" />
+		</While>
+		<If Condition="not IsTodoChecked(65799, 2, 1)">
+			<GetTo ZoneId="141" XYZ="-115.7703, 0.01519775, -149.2485" />
+			<UseObject NpcId="2001434" XYZ="-115.7703, 0.01519775, -149.2485" Radius="10" QuestId="65799" StepId="2" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65799) == 3">
+		<GetTo ZoneId="141" XYZ="-72.34308, -12.37296, -69.13867" />
+		<HandOver ItemId="2000403" QuestId="65799" StepId="3" NpcId="1004140" XYZ="-72.34308, -12.37296, -69.13867" />
+	</If>
+	<If Condition="GetQuestStep(65799) == 4">
+		<GetTo ZoneId="130" XYZ="-68.77246, 4.041112, -126.5126" />
+		<HandOver ItemId="2000403" QuestId="65799" StepId="4" NpcId="1001285" XYZ="-68.77246, 4.041112, -126.5126" />
+	</If>
+	<If Condition="GetQuestStep(65799) == 5">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65799" StepId="5" />
+	</If>
+	<If Condition="GetQuestStep(65799) == 6">
+		<GetTo ZoneId="140" XYZ="-241.1688, 32.47634, 398.9165" />
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty/>
+		</If>
+		<LLSimpleDuty InteractNpcId="1004092" XYZ="-241.1688, 32.47634, 398.9165" GuardianNPCId="689" QuestId="65799" StepId="6">
+			<HotSpots>
+				<HotSpot XYZ="-223.3089, 31.50228, 379.9307" Radius="90" />
+			</HotSpots>
+			<TargetMobs>
+				<!-- Kindness of the Alacran -->
+				<TargetMob Id="928" Weight="5000" />
+				<!-- Humility of the Alacran -->
+				<TargetMob Id="1307" Weight="4000" />
+				<!-- Diligence of the Alacran -->
+				<TargetMob Id="1306" Weight="3000" />
+				<!-- Temperance of the Alacran -->
+				<TargetMob Id="929" Weight="2000" />
+				<!-- Charity of the Alacran -->
+				<TargetMob Id="1304" Weight="1000" />
+			</TargetMobs>
+		</LLSimpleDuty>
+	</If>
+	<If Condition="GetQuestStep(65799) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TurnIn QuestId="65799" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- On Holy Ground -->
+<If Condition="IsQuestCompleted(65799) and not IsQuestCompleted(65800) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 24">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65800)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(65800)">
+			<PickupQuest NpcId="1001739" QuestId="65800" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65800) == 1">
+		<GetTo ZoneId="140" XYZ="62.974, 54.60642, 284.9011" />
+		<TalkTo NpcId="1004225" XYZ="62.974, 54.60642, 284.9011" QuestId="65800" StepId="1" />
+		<Grind while="HasQuest(65800) and GetQuestStep(65800) == 1" >
+		    <GrindArea name="On_Holy_Ground">
+		    			<Hotspots>
+		    				<Hotspot Radius="90" XYZ="62.974, 54.60642, 284.9011" name="Alacran Mobs" />
+		    			</Hotspots>
+		    			<TargetMobs>
+		    				<TargetMob Id="1305" /> <!-- Chastity of the Alacran -->
+		    			</TargetMobs>
+		    </GrindArea>
+		</Grind>
+	</If>
+	<If Condition="GetQuestStep(65800) == 2">
+		<GetTo ZoneId="140" XYZ="62.974, 54.60642, 284.9011" />
+		<TalkTo NpcId="1004225" XYZ="62.974, 54.60642, 284.9011" QuestId="65800" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(65800) == 3">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="65800" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(65800) == 4">
+        <GetTo ZoneId="131" XYZ="-96.276985, 6.5999603, 25.841223"/>
+        <TalkTo NpcId="1002277" XYZ="-97.550964, 7.05, 23.605652" QuestId="65800" StepId="4"/>
+	</If>
+	<If Condition="GetQuestStep(65800) == 5">
+		<GetTo ZoneId="145" XYZ="-520.5005, -21.46029, 123.4607" />
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty/>
+		</If>
+		<LLSimpleDuty InteractNpcId="1004141" XYZ="-520.5005, -21.46029, 123.4607" QuestId="65800" StepId="5">
+			<HotSpots>
+				<HotSpot XYZ="-520.5005, -21.46029, 123.4607" Radius="10" />
+			</HotSpots>
+			<TargetMobs>
+				<!-- Zana Lyehga -->
+				<TargetMob Id="698" />
+			</TargetMobs>
+		</LLSimpleDuty>
+	</If>
+	<If Condition="GetQuestStep(65800) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TurnIn QuestId="65800" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- The Rematch -->
+<If Condition="IsQuestCompleted(65800) and not IsQuestCompleted(65801) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 29">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(65801)">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(65801)">
+			<PickupQuest NpcId="1001739" QuestId="65801" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65801) == 1">
+		<GetTo ZoneId="130" XYZ="-68.77246, 4.041112, -126.5126" />
+		<TalkTo NpcId="1001285" XYZ="-68.77246, 4.041112, -126.5126" QuestId="65801" StepId="1" />
+	</If>
+	<If Condition="GetQuestStep(65801) == 2">
+		<If Condition="not IsTodoChecked(65801, 2, 0)">
+			<GetTo ZoneId="146" XYZ="121.3693, 7.833855, -533.2205" />
+			<UseObject NpcId="2001435" XYZ="101.8234, 7.248047, -534.5693" Radius="10" UseTimes="1" QuestId="65801" StepId="2" />
+		</If>
+		<If Condition="not IsTodoChecked(65801, 2, 1)">
+			<GetTo ZoneId="146" XYZ="54.08635, 7.283093, -621.6172" />
+			<UseObject NpcId="2001455" XYZ="28.0918, 6.973328, -611.2917" Radius="10" UseTimes="1" QuestId="65801" StepId="2" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(65801) == 3">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<HandOver ItemIds="2000404,2000411" QuestId="65801" StepId="3" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+	</If>
+	<If Condition="GetQuestStep(65801) == 4">
+		<GetTo ZoneId="145" XYZ="-19.97406, -30.99998, -33.95135" />
+		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+			<LeaveParty/>
+		</If>
+		<LLSimpleDuty InteractNpcId="1004142" ItemIds="2000404,2000411" XYZ="-19.97406, -30.99998, -33.95135" GuardianNPCId="689" QuestId="65801" StepId="4">
+			<HotSpots>
+				<HotSpot XYZ="25.42356, -6.015169, -16.08721" Radius="90" />
+			</HotSpots>
+			<TargetMobs>
+				<!-- Kindness of the Alacran -->
+				<TargetMob Id="928" Weight="8000" />
+				<!-- Humility of the Alacran -->
+				<TargetMob Id="1307" Weight="7000" />
+				<!-- Diligence of the Alacran -->
+				<TargetMob Id="1306" Weight="6000" />
+				<!-- Gotwin Halehex -->
+				<TargetMob Id="708" Weight="5000" />
+				<!-- Chastity of the Alacran -->
+				<TargetMob Id="1305" Weight="4000" />
+				<!-- Void Slave -->
+				<TargetMob Id="709" Weight="3000" />
+				<!-- Temperance of the Alacran -->
+				<TargetMob Id="929" Weight="2000" />
+				<!-- Gigirya the Guarded -->
+				<TargetMob Id="1301" Weight="1000" />
+			</TargetMobs>
+		</LLSimpleDuty>
+	</If>
+	<If Condition="GetQuestStep(65801) == 255">
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<TurnIn QuestId="65801" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+		<AutoInventoryEquip />
+	</If>
+</If>
+
+<!-- Paladin's Pledge -->
+<If Condition="IsQuestCompleted(65801) and not IsQuestCompleted(66591) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 29">
+	<While Condition="ClassName != ClassJobType.Gladiator">
+		<ChangeClass Job="Gladiator" />
+	</While>
+	<If Condition="not HasQuest(66591)">
+		<GetTo ZoneId="131" XYZ="-97.25396, 6.599999, 26.230307" />
+		<If Condition="IsQuestAcceptQualified(66591)">
+			<PickupQuest NpcId="1002277" QuestId="66591" XYZ="-97.55096, 7.050001, 23.60565" />
+		</If>
+	</If>
+	<If Condition="GetQuestStep(66591) == 1">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208" />
+		<TalkTo NpcId="1006747" XYZ="-20.82861, 29.99996, -2.426208" QuestId="66591" StepId="1" />
+	</If>
+	<If Condition="GetQuestStep(66591) == 2">
+		<GetTo ZoneId="146" XYZ="-97.39838, 14.84698, -188.2201" />
+		<UseObject NpcId="2002344" XYZ="-97.39838, 14.84698, -188.2201" Radius="10" QuestId="66591" StepId="2" />
+	</If>
+	<If Condition="GetQuestStep(66591) == 3">
+		<GetTo ZoneId="146" XYZ="-97.39838, 14.84698, -188.2201" />
+		<UseItem UseDistance="2.5" NpcId="2002345" ItemId="2000821" XYZ="-97.39838, 14.84698, -188.2201" Radius="10" QuestId="66591" StepId="3" />
+	</If>
+	<If Condition="GetQuestStep(66591) == 4">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208" />
+		<HandOver ItemId="2000948" QuestId="66591" StepId="4" NpcId="1006747" XYZ="-20.82861, 29.99996, -2.426208" />
+	</If>
+	<If Condition="GetQuestStep(66591) == 255">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208" />
+		<TurnIn QuestId="66591" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208" />
+	    <While Condition="ClassName != ClassJobType.Paladin">
+		    <EquipWeapon ItemId="4542"/>
+            <AutoInventoryEquip/>
+	    </While>
+	</If>
+</If>
+
+<!-- Honor Lost -->
+<If Condition="IsQuestCompleted(66591) and not IsQuestCompleted(66592) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 34">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(66592)">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+		<If Condition="IsQuestAcceptQualified(66592)">
+			<PickUpQuest NpcId="1006747" QuestId="66592" XYZ="-20.82861, 29.99996, -2.426208"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(66592)">
+		<If Condition="GetQuestStep(66592) == 1">
+			<GetTo ZoneId="180" XYZ="-312.2759, 32.54749, -444.9989"/>
+			<UseObject NpcId="2002346" XYZ="-312.2759, 32.54749, -444.9989" Radius="10" QuestId="66592" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66592) == 255">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<TurnIn QuestId="66592" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- Power Struggles -->
+<If Condition="IsQuestCompleted(66592) and not IsQuestCompleted(66593) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 39">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(66593)">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+		<If Condition="IsQuestAcceptQualified(66593)">
+			<PickUpQuest NpcId="1006747" QuestId="66593" XYZ="-20.82861, 29.99996, -2.426208"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(66593)">
+		<If Condition="GetQuestStep(66593) == 1">
+			<GetTo ZoneId="145" XYZ="175.8297, -10.45245, 84.91638"/>
+			<UseObject NpcId="2002347" XYZ="175.8297, -10.45245, 84.91638" Radius="10" QuestId="66593" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66593) == 255">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<TurnIn QuestId="66593" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- Poisoned Hearts -->
+<If Condition="IsQuestCompleted(66593) and not IsQuestCompleted(66594) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 44">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+		<If Condition="not HasQuest(66594)">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<If Condition="IsQuestAcceptQualified(66594)">
+				<PickUpQuest NpcId="1006747" QuestId="66594" XYZ="-20.82861, 29.99996, -2.426208"/>
+			</If>
+		</If>
+		<If Condition="HasQuest(66594)">
+			<If Condition="GetQuestStep(66594) == 1">
+				<If Condition="GetQuestById(66594).QuestI8AH == 0">
+					<GetTo ZoneId="146" XYZ="-111.3028, 14.63189, -201.8138"/>
+					<Dismount/>
+					<UseObject NpcId="2002349" XYZ="-97.39838, 14.84698, -188.2201" QuestId="66594" StepId="1" Condition="GetQuestById(66594).QuestI8AH == 0"/>
+				</If>
+				<If Condition="GetQuestById(66594).QuestI8AH == 1">
+					<GetTo ZoneId="146" XYZ="105.7473, 11.12103, -472.7807"/>
+					<Dismount/>
+					<UseObject NpcId="2002350" XYZ="115.9838, 11.18481, -482.7802" QuestId="66594" StepId="1" Condition="GetQuestById(66594).QuestI8AH == 1"/>
+				</If>
+				<If Condition="GetQuestById(66594).QuestI8AH == 2">
+					<GetTo ZoneId="146" XYZ="142.4079, 10.35114, -435.0294"/>
+					<Dismount/>
+					<UseObject NpcId="2002351" XYZ="137.743, 10.60498, -420.5539" QuestId="66594" StepId="1" Condition="GetQuestById(66594).QuestI8AH == 2"/>
+				</If>
+				<If Condition="GetQuestById(66594).QuestI8AH == 3">
+					<GetTo ZoneId="146" XYZ="-83.41811, -14.74468, -172.4061"/>
+					<Dismount/>
+					<UseObject NpcId="2002348" XYZ="-99.4126, -14.4198, -179.4614" QuestId="66594" StepId="1" Condition="GetQuestById(66594).QuestI8AH == 3"/>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66594) == 255">
+				<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+				<TurnIn QuestId="66594" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208"/>
+				<AutoInventoryEquip/>
+			</If>
+	</If>
+</If>
+
+<!-- Parley in the Sagolii -->
+<If Condition="IsQuestCompleted(66594) and not IsQuestCompleted(66595) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 44">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(66595)">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+		<If Condition="IsQuestAcceptQualified(66595)">
+			<PickUpQuest NpcId="1006747" QuestId="66595" XYZ="-20.82861, 29.99996, -2.426208"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(66595)">
+		<If Condition="GetQuestStep(66595) == 1">
+			<GetTo ZoneId="146" XYZ="-407.4312, 7.156433, 525.6886"/>
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<RunCode name="LeaveParty"/>
+			</If>
+			<LLSimpleDuty InteractNpcId="2002356" XYZ="-407.4312, 7.156433, 525.6886" QuestId="66595" StepId="1">
+				<HotSpots>
+					<HotSpot XYZ="-407.4312, 7.156433, 525.6886" Radius="90"/>
+				</HotSpots>
+				<!-- Sultansworn Elite -->
+				<TargetMobs>
+					<TargetMob Id="1911" Weight="3000"/>
+					<!-- Sultansworn Squire -->
+					<TargetMob Id="1912" Weight="2000"/>
+					<!-- Jenlyns Straightblade -->
+					<TargetMob Id="1421" Weight="1000"/>
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(66595) == 255">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<TurnIn QuestId="66595" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- Keeping the Oath -->
+<If Condition="IsQuestCompleted(66595) and not IsQuestCompleted(66596) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 49">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(66596)">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+		<If Condition="IsQuestAcceptQualified(66596)">
+			<PickUpQuest NpcId="1006747" QuestId="66596" XYZ="-20.82861, 29.99996, -2.426208"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(66596)">
+		<If Condition="GetQuestStep(66596) == 1">
+			<GetTo ZoneId="141" XYZ="26.93213, 13, 44.41895"/>
+			<TalkTo NpcId="1007829" XYZ="26.93213, 13, 44.41895" QuestId="66596" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66596) == 2">
+			<GetTo ZoneId="155" XYZ="-756.1141, 225.7498, 16.35813"/>
+			<Dismount/>
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<LeaveParty/>
+			</If>
+			<GetTo ZoneId="155" XYZ="-768.3433, 225.5517, 24.00064"/>
+			<LLSimpleDuty XYZ="-770.8876, 225.3577, 25.59108" QuestId="66596" StepId="2">
+				<HotSpots>
+					<HotSpot XYZ="-775.9493, 224.9029, 29.37635" Radius="90"/>
+					<HotSpot XYZ="-893.0953, 229.5414, -11.88684" Radius="90"/>
+				</HotSpots>
+				<InteractObjects>
+					<InteractObject Name="Glowing Grimoire" NpcId="2002296"/>
+				</InteractObjects>
+				<TargetMobs>
+					<!-- Manipulated Ogre -->
+					<TargetMob Id="1892" Weight="7000"/>
+					<!-- Manipulated Eye -->
+					<TargetMob Id="1897" Weight="6000"/>
+					<!-- Unholy Grimoire -->
+					<TargetMob Id="2145" Weight="5000"/>
+					<!-- Death's Embrace Assassin -->
+					<TargetMob Id="1895" Weight="4000"/>
+					<!-- Death's Embrace Executioner -->
+					<TargetMob Id="1893" Weight="3000"/>
+					<!-- Vyraal -->
+					<TargetMob Id="2144" Weight="2000"/>
+					<!-- Death's Embrace Master -->
+					<TargetMob Id="1894" Weight="1000"/>
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(66596) == 255">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<TurnIn QuestId="66596" NpcId="1006747" ItemId="2000822" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<UseInventoryItem ItemId="20642"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- An Exemplary Example -->
+<If Condition="IsQuestCompleted(66596) and not IsQuestCompleted(67568) and IsQuestCompleted(65964) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 49">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67568)">
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+		<If Condition="IsQuestAcceptQualified(67568)">
+			<PickUpQuest NpcId="1006747" QuestId="67568" XYZ="-20.82861, 29.99996, -2.426208"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(67568)">
+		<If Condition="GetQuestStep(67568) == 1">
+			<GetTo ZoneId="147" XYZ="38.22375, 5.000002, 404.2878"/>
+			<TalkTo NpcId="1014046" XYZ="38.22375, 5.000002, 404.2878" QuestId="67568" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(67568) == 2">
+			<GetTo ZoneId="147" XYZ="47.10461, 14.24741, 197.9247"/>
+			<TalkTo NpcId="1014121" XYZ="47.10461, 14.24741, 197.9247" QuestId="67568" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(67568) == 3">
+			<GetTo ZoneId="147" XYZ="1.571594, 21.31677, 181.8722"/>
+			<UseObject NpcId="2005978" XYZ="1.571594, 21.31677, 181.8722" Radius="10" QuestId="67568" StepId="3"/>
+		</If>
+		<If Condition="GetQuestStep(67568) == 4">
+			<GetTo ZoneId="147" XYZ="47.10461, 14.24741, 197.9247"/>
+			<TalkTo NpcId="1014121" XYZ="47.10461, 14.24741, 197.9247" QuestId="67568" StepId="4"/>
+		</If>
+		<If Condition="GetQuestStep(67568) == 5">
+			<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208"/>
+			<TalkTo NpcId="1006747" XYZ="-20.82861, 29.99996, -2.426208" QuestId="67568" StepId="5"/>
+		</If>
+		<If Condition="GetQuestStep(67568) == 255">
+			<GetTo ZoneId="141" XYZ="75.33374, 2.135708, 316.3347"/>
+			<TurnIn QuestId="67568" NpcId="1003995" XYZ="75.33374, 2.135708, 316.3347"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- The Paladin Who Cried Wolf -->
+<If Condition="IsQuestCompleted(67568) and not IsQuestCompleted(67569) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 51">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67569)">
+		<GetTo ZoneId="141" XYZ="75.33374, 2.135708, 316.3347"/>
+		<If Condition="IsQuestAcceptQualified(67569)">
+			<PickUpQuest NpcId="1003995" QuestId="67569" XYZ="75.33374, 2.135708, 316.3347"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(67569)">
+		<While Condition="GetQuestStep(67569) == 1">
+			<GetTo ZoneId="397" XYZ="447.3181, 212.5398, 725.0018"/>
+			<TalkTo NpcId="1011237" XYZ="447.3181, 212.5398, 725.0018" QuestId="67569" StepId="1"/>
+			<TalkTo NpcId="1011233" XYZ="518.9136, 217.9515, 769.9243" QuestId="67569" StepId="1"/>
+			<TalkTo NpcId="1011235" XYZ="522.5452, 228.3512, 723.5675" QuestId="67569" StepId="1"/>
+		</While>
+		<If Condition="GetQuestStep(67569) == 2">
+			<GetTo ZoneId="397" XYZ="458.1216, 200.2377, 658.0757"/>
+			<TalkTo NpcId="1014052" XYZ="458.1216, 200.2377, 658.0757" QuestId="67569" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(67569) == 3">
+			<GetTo ZoneId="397" XYZ="48.96619, 124.3468, 175.7382"/>
+			<TalkTo NpcId="1014053" XYZ="48.96619, 124.3468, 175.7382" QuestId="67569" StepId="3"/>
+		</If>
+		<If Condition="GetQuestStep(67569) == 255">
+			<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796"/>
+			<TurnIn QuestId="67569" NpcId="1014054" XYZ="509.1782, 212.5399, 695.796"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- Big Sollerets to Fill -->
+<If Condition="IsQuestCompleted(67569) and not IsQuestCompleted(67570) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 53">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67570)">
+		<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796"/>
+		<If Condition="IsQuestAcceptQualified(67570)">
+			<PickUpQuest NpcId="1014054" QuestId="67570" XYZ="509.1782, 212.5399, 695.796"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(67570)">
+		<If Condition="GetQuestStep(67570) == 1">
+			<GetTo ZoneId="397" XYZ="173.6934, 133.3892, -413.4738"/>
+			<TalkTo NpcId="1014055" XYZ="173.6934, 133.3892, -413.4738" QuestId="67570" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(67570) == 2">
+			<GetTo ZoneId="397" XYZ="108.0796, 129.4117, -403.5248"/>
+			<UseObject NpcIds="2005983,2005980" QuestId="67570" StepId="2">
+				<HotSpots>
+					<HotSpot XYZ="108.0796, 129.4117, -403.5248" Radius="10"/>
+					<HotSpot XYZ="64.68298, 128.6183, -397.4213" Radius="10"/>
+				</HotSpots>
+			</UseObject>
+		</If>
+		<If Condition="GetQuestStep(67570) == 3">
+			<GetTo ZoneId="397" XYZ="173.6934, 133.3892, -413.4738"/>
+			<HandOver ItemId="2001731" QuestId="67570" StepId="3" NpcId="1014055" XYZ="173.6934, 133.3892, -413.4738"/>
+		</If>
+		<While Condition="GetQuestStep(67570) == 4">
+			<If Condition="not IsQuestCompleted(66060)">
+				<GetTo ZoneId="397" XYZ="21.18927, 108.6684, -411.3372"/>
+				<NoCombatMoveTo Name="Jump Spot" XYZ="21.18927, 108.6684, -411.3372"/>
+				<NoCombatMoveTo Name="Jump" UseMesh="False" XYZ="13.53723, 105.5331, -415.0441"/>
+				<NoCombatMoveTo Name="Frozen Blood" XYZ="15.48785, 106.0959, -419.3027"/>
+			</If>
+			<GetTo ZoneId="397" XYZ="15.48785, 106.0959, -419.3027"/>
+			<UseObject NpcId="2005981" XYZ="15.48785, 106.0959, -419.3027" Radius="10" QuestId="67570" StepId="4"/>
+			<If Condition="not IsQuestCompleted(66060)">
+				<NoCombatMoveTo Name="Jump Spot" XYZ="18.69503, 104.3797, -442.1294"/>
+				<NoCombatMoveTo Name="Jump" UseMesh="False" XYZ="15.11331, 99.32458, -454.0952"/>
+			</If>
+		</While>
+		<If Condition="GetQuestStep(67570) == 5">
+			<GetTo ZoneId="397" XYZ="-4.68457, 94.13281, -506.157"/>
+			<UseObject NpcId="2005982" XYZ="-4.68457, 94.13281, -506.157" Radius="10" QuestId="67570" StepId="5"/>
+		</If>
+		<If Condition="GetQuestStep(67570) == 6">
+			<GetTo ZoneId="397" XYZ="-138.3536, 88.59643, -577.0504"/>
+			<TalkTo NpcId="1014058" XYZ="-138.3536, 88.59643, -577.0504" QuestId="67570" StepId="6"/>
+		</If>
+		<If Condition="GetQuestStep(67570) == 7">
+			<GetTo ZoneId="397" XYZ="-788.0217, 113.1513, -589.807"/>
+			<LLSimpleDuty InteractNpcId="1014059" XYZ="-788.0217, 113.1513, -589.807" QuestId="67570" StepId="7">
+				<HotSpots>
+					<HotSpot XYZ="-795.9286, 114.8638, -615.1248" Radius="90"/>
+				</HotSpots>
+				<TargetMobs>
+					<!-- Unholy Grimoire -->
+					<TargetMob Id="2145" Weight="5000"/>
+					<!-- Manipulated Gaze -->
+					<TargetMob Id="4099" Weight="4000"/>
+					<!-- Death's Embrace Assassin -->
+					<TargetMob Id="1895" Weight="3000"/>
+					<!-- Death's Embrace Executioner -->
+					<TargetMob Id="1893" Weight="2000"/>
+					<!-- Death's Embrace Controller -->
+					<TargetMob Id="4232" Weight="1000"/>
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(67570) == 8">
+			<GetTo ZoneId="397" XYZ="-788.0217, 113.1513, -589.807"/>
+			<TalkTo NpcId="1014064" XYZ="-788.0217, 113.1513, -589.807" QuestId="67570" StepId="8"/>
+		</If>
+		<If Condition="GetQuestStep(67570) == 255">
+			<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796"/>
+			<TurnIn QuestId="67570" NpcId="1014065" XYZ="509.1782, 212.5399, 695.796"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- Hey Soul Crystal -->
+<If Condition="IsQuestCompleted(67570) and not IsQuestCompleted(67571) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 55">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67571)">
+		<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796"/>
+		<If Condition="IsQuestAcceptQualified(67571)">
+			<PickUpQuest NpcId="1014065" QuestId="67571" XYZ="509.1782, 212.5399, 695.796"/>
+		</If>
+	</If>
+	<If Condition="HasQuest(67571)">
+		<If Condition="GetQuestStep(67571) == 1">
+			<GetTo ZoneId="398" XYZ="448.5693, -51.1414, 108.9341"/>
+			<TalkTo NpcId="1011922" XYZ="448.5693, -51.1414, 108.9341" QuestId="67571" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(67571) == 2">
+			<GetTo ZoneId="398" XYZ="451.3466, -24.97842, -496.3913"/>
+			<TalkTo NpcId="1014067" XYZ="451.3466, -24.97842, -496.3913" QuestId="67571" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(67571) == 3">
+			<GetTo ZoneId="398" XYZ="507.8658, -21.92731, -524.4374"/>
+			<UseObject NpcId="2005986" XYZ="507.8658, -21.92731, -524.4374" Radius="10" QuestId="67571" StepId="3"/>
+		</If>
+		<If Condition="GetQuestStep(67571) == 255">
+			<GetTo ZoneId="397" XYZ="51.13293, 124.9563, 178.6984"/>
+			<TurnIn QuestId="67571" NpcId="1014068" XYZ="51.13293, 124.9563, 178.6984"/>
+			<AutoInventoryEquip/>
+		</If>
+	</If>
+</If>
+
+<!-- All According to Plan -->
+<If Condition="IsQuestCompleted(67571) and not IsQuestCompleted(67572) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 57">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67572)">
+		<GetTo ZoneId="397" XYZ="51.13293, 124.9563, 178.6984" />
+		<If Condition="IsQuestAcceptQualified(67572)">
+			<PickUpQuest NpcId="1014068" QuestId="67572" XYZ="51.13293, 124.9563, 178.6984" />
+		</If>
+	</If>
+	<If Condition="HasQuest(67572)">
+		<If Condition="GetQuestStep(67572) == 1">
+			<GetTo ZoneId="397" XYZ="460.5935, 200.2377, 658.564" />
+			<TalkTo NpcId="1014069" XYZ="460.5935, 200.2377, 658.564" QuestId="67572" StepId="1" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 2">
+			<GetTo ZoneId="397" XYZ="518.9136, 217.9515, 769.9243" />
+			<TalkTo NpcId="1011233" XYZ="518.9136, 217.9515, 769.9243" QuestId="67572" StepId="2" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 3">
+			<GetTo ZoneId="401" XYZ="-693.8125, -109.8353, 490.959" />
+			<TalkTo NpcId="1014073" XYZ="-693.8125, -109.8353, 490.959" QuestId="67572" StepId="3" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 4">
+			<GetTo ZoneId="401" XYZ="-272.1752, -184.2003, 736.0493" />
+			<TalkTo NpcId="1014075" XYZ="-272.1752, -184.2003, 736.0493" QuestId="67572" StepId="4" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 5">
+			<GetTo ZoneId="401" XYZ="-45.69584, -176.8011, 753.654" />
+			<Grind while="HasQuest(67572) and GetQuestStep(67572) == 5" >
+			    <GrindArea Name="All_According_to_Plan">
+			    			<Hotspots>
+			    				<Hotspot XYZ="-45.69584, -176.8011, 753.654" Name="Death's Embrace Mobs" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="4097" Weight="2000" /> <!-- Death's Embrace Poisoner -->
+			    				<TargetMob Id="1893" Weight="1000" /> <!-- Death's Embrace Executioner -->
+			    			</TargetMobs>
+			    </GrindArea>
+			</Grind>
+		</If>
+		<If Condition="GetQuestStep(67572) == 6">
+			<GetTo ZoneId="401" XYZ="205.7752, -176.3989, 722.2908" />
+			<Grind while="HasQuest(67572) and GetQuestStep(67572) == 6" >
+			    <GrindArea Name="All_According_to_Plan2">
+			    			<Hotspots>
+			    				<Hotspot XYZ="205.7752, -176.3989, 722.2908" Name="Death's Embrace Torturer and Manipulated Gaze" />
+			    			</Hotspots>
+			    			<TargetMobs>
+			    				<TargetMob Id="4098" Weight="2000" /> <!-- Death's Embrace Torturer -->
+			    				<TargetMob Id="4099" Weight="1000" /> <!-- Manipulated Gaze -->
+			    			</TargetMobs>
+			    </GrindArea>
+			</Grind>
+		</If>
+		<If Condition="GetQuestStep(67572) == 7">
+			<GetTo ZoneId="401" XYZ="200.4271, -176.6295, 737.0565" />
+			<TalkTo NpcId="1014088" XYZ="200.4271, -176.6295, 737.0565" QuestId="67572" StepId="7" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 8">
+			<GetTo ZoneId="401" XYZ="205.9814, -176.6976, 739.5284" />
+			<HandOver ItemId="2001733" QuestId="67572" StepId="8" NpcId="1014089" XYZ="205.9814, -176.6976, 739.5284" />
+		</If>
+		<If Condition="GetQuestStep(67572) == 255">
+			<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796" />
+			<TurnIn QuestId="67572" NpcId="1015055" XYZ="509.1782, 212.5399, 695.796" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- This Little Sword of Mine -->
+<If Condition="IsQuestCompleted(67572) and not IsQuestCompleted(67573) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 59">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(67573)">
+		<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796" />
+		<If Condition="IsQuestAcceptQualified(67573)">
+			<PickUpQuest NpcId="1014092" QuestId="67573" XYZ="509.1782, 212.5399, 695.796" />
+		</If>
+	</If>
+	<If Condition="HasQuest(67573)">
+		<If Condition="GetQuestStep(67573) == 1">
+			<GetTo ZoneId="397" XYZ="457.5112, 200.2377, 660.8834" />
+			<TalkTo NpcId="1014094" XYZ="457.5112, 200.2377, 660.8834" QuestId="67573" StepId="1" />
+		</If>
+		<If Condition="GetQuestStep(67573) == 2">
+			<GetTo ZoneId="397" XYZ="51.86536, 125.2612, 179.858" />
+			<UseObject NpcId="2005990" XYZ="51.86536, 125.2612, 179.858" Radius="10" QuestId="67573" StepId="2" />
+		</If>
+		<If Condition="GetQuestStep(67573) == 3">
+			<GetTo ZoneId="397" XYZ="458.6403, 200.2377, 659.7848" />
+			<TalkTo NpcId="1014096" XYZ="458.6403, 200.2377, 659.7848" QuestId="67573" StepId="3" />
+		</If>
+		<If Condition="GetQuestStep(67573) == 4">
+			<GetTo ZoneId="397" XYZ="452.903, 130.7996, -850.1869" />
+			<TalkTo NpcId="1014097" XYZ="452.903, 130.7996, -850.1869" QuestId="67573" StepId="4" />
+		</If>
+		<While Condition="GetQuestStep(67573) == 5">
+			<GetTo ZoneId="397" XYZ="457.2061, 130.7996, -848.6" />
+			<RunCode Name="This_Little_Sword_of_Mine" />
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<LeaveParty />
+			</If>
+			<LLSimpleDuty InteractNpcId="1014099" XYZ="457.2061, 130.7996, -848.6" QuestId="67573" StepId="5">
+				<HotSpots>
+					<HotSpot XYZ="451.9409, 130.7996, -838.3819" Radius="90" />
+				</HotSpots>
+				<TargetMobs>
+					<!-- Sworn Shield -->
+					<TargetMob Id="4234" Weight="4000" />
+					<!-- Solkzagyl The Loyal -->
+					<TargetMob Id="1808" Weight="2000" />
+					<!-- Constaint Solidblade -->
+					<TargetMob Id="4233" Weight="1000" />
+				</TargetMobs>
+			</LLSimpleDuty>
+		</While>
+		<If Condition="GetQuestStep(67573) == 6">
+			<GetTo ZoneId="397" XYZ="454.5204, 130.7996, -850.2479" />
+			<TalkTo NpcId="1014102" XYZ="454.5204, 130.7996, -850.2479" QuestId="67573" StepId="6" />
+		</If>
+		<If Condition="GetQuestStep(67573) == 255">
+			<GetTo ZoneId="397" XYZ="509.1782, 212.5399, 695.796" />
+			<TurnIn QuestId="67573" NpcId="1014103" XYZ="509.1782, 212.5399, 695.796" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- Tournament of the Century -->
+<If Condition="IsQuestCompleted(67573) and not IsQuestCompleted(68107) and IsQuestCompleted(67895) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 59">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(68107)">
+		<!-- Jenlyns -->
+		<GetTo ZoneId="131" XYZ="-20.82861, 29.99996, -2.426208" />
+		<If Condition="IsQuestAcceptQualified(68107)">
+			<PickUpQuest NpcId="1006747" QuestId="68107" XYZ="-20.82861, 29.99996, -2.426208" />
+		</If>
+	</If>
+	<If Condition="HasQuest(68107)">
+		<If Condition="GetQuestStep(68107) == 1">
+			<!-- Tournament Registrar -->
+			<GetTo ZoneId="131" XYZ="-25.5589, 38.01001, 82.6886" />
+			<HandOver ItemId="2002237" QuestId="68107" StepId="1" NpcId="1021342" XYZ="-25.5589, 38.01001, 82.6886" />
+		</If>
+		<While Condition="GetQuestStep(68107) == 2">
+			<!-- Constaint -->
+			<GetTo ZoneId="131" XYZ="-75.60846, 6.984571, 6.210388" />
+			<TalkTo NpcId="1021343" XYZ="-75.60846, 6.984571, 6.210388" QuestId="68107" StepId="2" />
+			<TalkTo NpcId="1021345" XYZ="-69.96271, 7.074061, -10.69659" QuestId="68107" StepId="2" />
+			<TalkTo NpcId="1021346" XYZ="-96.69641, 6.98457, -9.506409" QuestId="68107" StepId="2" />
+			<TalkTo NpcId="1021347" XYZ="-105.6382, 6.98399, 3.005981" QuestId="68107" StepId="2" />
+			<TalkTo NpcId="1021344" XYZ="-96.9101, 6.984566, 15.09113" QuestId="68107" StepId="2" />
+		</While>
+		<If Condition="GetQuestStep(68107) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="68107" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- In Thal's Name -->
+<If Condition="IsQuestCompleted(68107) and not IsQuestCompleted(68108) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 62">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(68108)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(68108)">
+			<PickUpQuest NpcId="1001739" QuestId="68108" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="HasQuest(68108)">
+		<If Condition="GetQuestStep(68108) == 1">
+			<GetTo ZoneId="131" XYZ="-82.44458, 1.937866, 60.77661" />
+			<UseObject NpcId="2008101" XYZ="-82.44458, 1.937866, 60.77661" Radius="10" QuestId="68108" StepId="1" />
+		</If>
+		<If Condition="GetQuestStep(68108) == 2">
+			<!-- Tournament Registrar -->
+			<GetTo ZoneId="131" XYZ="-87.17487, 1.949965, 57.35864" />
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<LeaveParty />
+			</If>
+			<LLSimpleDuty InteractNpcId="1021271" XYZ="-87.17487, 1.949965, 57.35864" QuestId="68108" StepId="2">
+				<HotSpots>
+					<HotSpot XYZ="-89.40569, -13.12956, 0.000111495" Radius="90" />
+				</HotSpots>
+				<TargetMobs>
+					<!-- Gosdsphere -->
+					<TargetMob Id="6310" Weight="4000" />
+					<!-- Ser Handeloup of the One Heart -->
+					<TargetMob Id="6309" Weight="3000" />
+					<!-- The Bronze Bull -->
+					<TargetMob Id="6308" Weight="2000" />
+					<!-- Bartholomew of the Silver Sallet -->
+					<TargetMob Id="6307" Weight="1000" />
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(68108) == 3">
+			<WaitWhile Condition="GetQuestStep(68108) == 3" />
+		</If>
+		<If Condition="GetQuestStep(68108) == 4">
+			<!-- Handeloup -->
+			<GetTo ZoneId="131" XYZ="-84.67236, 1.950004, 60.86816" />
+			<TalkTo NpcId="1021275" XYZ="-84.67236, 1.950004, 60.86816" QuestId="68108" StepId="4" />
+		</If>
+		<If Condition="GetQuestStep(68108) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="68108" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- In Nald's Name -->
+<If Condition="IsQuestCompleted(68108) and not IsQuestCompleted(68109) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 64">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(68109)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(68109)">
+			<PickUpQuest NpcId="1001739" QuestId="68109" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="HasQuest(68109)">
+		<If Condition="GetQuestStep(68109) == 1">
+			<!-- Tournament Usher -->
+			<GetTo ZoneId="131" XYZ="-84.36719, 6.984568, 11.27637" />
+			<TalkTo NpcId="1021364" XYZ="-84.36719, 6.984568, 11.27637" QuestId="68109" StepId="1" />
+		</If>
+		<While Condition="GetQuestStep(68109) == 2">
+			<If Condition="not IsTodoChecked(68109, 2, 0)">
+				<!-- Franz -->
+				<GetTo ZoneId="131" XYZ="-94.01086, 6.984568, 15.54889" />
+				<TalkTo NpcId="1021365" XYZ="-94.01086, 6.984568, 15.54889" QuestId="68109" StepId="2" />
+			</If>
+			<If Condition="not IsTodoChecked(68109, 2, 1)">
+				<!-- Constaint -->
+				<GetTo ZoneId="131" XYZ="-99.83978, 6.984566, 14.29761" />
+				<TalkTo NpcId="1021366" XYZ="-99.83978, 6.984566, 14.29761" QuestId="68109" StepId="2" />
+			</If>
+		</While>
+		<If Condition="GetQuestStep(68109) == 3">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="68109" StepId="3" />
+		</If>
+		<If Condition="GetQuestStep(68109) == 4">
+			<GetTo ZoneId="130" XYZ="22.2323, 7.186951, -101.2436" />
+			<UseObject NpcId="2008187" XYZ="22.2323, 7.186951, -101.2436" Radius="10" QuestId="68109" StepId="4" />
+		</If>
+		<If Condition="GetQuestStep(68109) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="68109" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- Fade to Black Lotus -->
+<If Condition="IsQuestCompleted(68109) and not IsQuestCompleted(68110) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 67">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(68110)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(68110)">
+			<PickUpQuest NpcId="1001739" QuestId="68110" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="HasQuest(68110)">
+		<If Condition="GetQuestStep(68110) == 1">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TalkTo NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" QuestId="68110" StepId="1" />
+		</If>
+		<If Condition="GetQuestStep(68110) == 2">
+			<!-- Tournament Registrar -->
+			<GetTo ZoneId="131" XYZ="-87.17487, 1.949965, 57.35864" />
+			<TalkTo NpcId="1021271" XYZ="-87.17487, 1.949965, 57.35864" QuestId="68110" StepId="2" />
+		</If>
+		<If Condition="GetQuestStep(68110) == 3">
+			<!-- Destitute Citizen -->
+			<GetTo ZoneId="131" XYZ="65.4369, 7.920917, -37.89106" />
+			<WaitWhile Condition="GetQuestStep(68110) == 3" />
+		</If>
+		<While Condition="GetQuestStep(68110) == 4">
+			<!-- Destitute Citizen -->
+			<GetTo ZoneId="131" XYZ="97.45935, 8, -11.94781" />
+			<TalkTo NpcId="1021378" XYZ="97.45935, 8, -11.94781" QuestId="68110" StepId="4" />
+			<TalkTo NpcId="1021380" XYZ="105.6687, 8, 4.714966" QuestId="68110" StepId="4" />
+			<TalkTo NpcId="1021379" XYZ="81.01013, 8, -73.62476" QuestId="68110" StepId="4" />
+		</While>
+		<If Condition="GetQuestStep(68110) == 5">
+			<!-- Suspicious Fellow -->
+			<GetTo ZoneId="131" XYZ="138.5366, 4, 51.37708" />
+			<If condition="IsChineseClient()">
+				<LLSendChat Say="可恩·久付" QuestId="68110" StepId="5" />
+			</If>
+	        <If condition="IsTCClient()">
+	          <LogMessage Message="No Traditional Chinese information for this quest yet."/>
+	          <LLToast message="No Traditional Chinese information for this quest yet."/>
+	          <StopBot/>
+	        </If>
+			<If condition="IsGlobalClient()">
+				<LLSendChat Say="Doubt the truth" QuestId="68110" StepId="5" />
+			</If>
+		</If>
+		<If Condition="GetQuestStep(68110) == 6">
+			<!-- Burly Bloke -->
+			<GetTo ZoneId="141" XYZ="282.3987, 15.41418, 513.1456" />
+			<TalkTo NpcId="1021382" XYZ="282.3987, 15.41418, 513.1456" QuestId="68110" StepId="6" />
+			<WaitWhile Condition="GetQuestStep(68110) == 6" />
+		</If>
+		<If Condition="GetQuestStep(68110) == 7">
+			<!-- Scrubby Stripling -->
+			<GetTo ZoneId="141" XYZ="284.718, 15.77084, 512.5658" />
+			<TalkTo NpcId="1021383" XYZ="284.718, 15.77084, 512.5658" QuestId="68110" StepId="7" />
+		</If>
+		<If Condition="GetQuestStep(68110) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="68110" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+<!-- Raising the Sword -->
+<If Condition="IsQuestCompleted(68110) and not IsQuestCompleted(68111) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 69">
+	<While Condition="ClassName != ClassJobType.Paladin">
+		<ChangeClass Job="Paladin" />
+	</While>
+	<If Condition="not HasQuest(68111)">
+		<!-- Mylla -->
+		<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+		<If Condition="IsQuestAcceptQualified(68111)">
+			<PickUpQuest NpcId="1001739" QuestId="68111" XYZ="-94.52972, 6.500001, 39.81079" />
+		</If>
+	</If>
+	<If Condition="HasQuest(68111)">
+		<If Condition="GetQuestStep(68111) == 1">
+			<!-- Tournament Registrar -->
+			<GetTo ZoneId="131" XYZ="-87.17487, 1.949965, 57.35864" />
+			<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+				<LeaveParty />
+			</If>
+			<LLSimpleDuty InteractNpcId="1021271" XYZ="-87.17487, 1.949965, 57.35864" QuestId="68111" StepId="1">
+				<HotSpots>
+					<HotSpot XYZ="-89.40569, -13.12956, 0.000111495" Radius="90" />
+				</HotSpots>
+				<TargetMobs>
+					<!-- Aldis -->
+					<TargetMob Id="668" Weight="1000" />
+				</TargetMobs>
+			</LLSimpleDuty>
+		</If>
+		<If Condition="GetQuestStep(68111) == 2">
+			<WaitWhile Condition="not GetQuestStep(68111) == 255" />
+		</If>
+		<If Condition="GetQuestStep(68111) == 255">
+			<!-- Mylla -->
+			<GetTo ZoneId="131" XYZ="-94.52972, 6.500001, 39.81079" />
+			<TurnIn QuestId="68111" NpcId="1001739" XYZ="-94.52972, 6.500001, 39.81079" />
+			<AutoInventoryEquip />
+		</If>
+	</If>
+</If>
+
+    <LastProfile/>
+  </Order>
+	<GrindAreas>
+	</GrindAreas>
+	<CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
+        {
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+        };
+
+      ]]>
+    </CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+    <CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
+
+            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
+            {
+                return false;
+            }
+
+            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
+
+            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
+            {
+                Log.Information($"Found Target {mobsToKill.EnglishName}");
+                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
+            }
+	        return false;
+			]]>
+		</CodeChunk>
+<CodeChunk Name="GearsetSave">
+  <![CDATA[
+	await CommonTasks.StopAndDismount();
+	ChatManager.SendChat("/gs save");
+  ]]>
+</CodeChunk>
+
+
+        <!-- Arcanist 1-15 Codechunks -->
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+
+
+			<CodeChunk Name="This_Little_Sword_of_Mine">
+			<![CDATA[
+				SpellData data;
+				if (!Core.Me.HasAura(79) && ActionManager.CurrentActions.TryGetValue(28, out data) && ActionManager.CanCast(data, Core.Me)) ActionManager.DoAction(28, Core.Me);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+
+
+			<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="LeaveParty">
+			<![CDATA[
+				ChatManager.SendChat("/pcmd leave");
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+
+
+
+
+
+
+
+
+
+
+
+
+	</CodeChunks>
+</Profile>

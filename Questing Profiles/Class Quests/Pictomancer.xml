@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: PCT Class Quests
+  Profile: Panda Farmer - Pictomancer Class Quests
   Authors: DomesticWarlord
+  Code Credit: nt53133
 
 -->
-<!DOCTYPE Profile [
-  <!ENTITY Necrologos "649">
-]>
-
 <Profile>
-  <Name>PCT Class Quests</Name>
+  <Name>Panda Farmer - Pictomancer Class Quests - Pictomancer</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 
+    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+
+
     <!-- Mind over Manor -->
-    <If Condition="not IsQuestCompleted(70391)">
-
-      <If Condition="Core.Me.Levels[ClassJobType.Pictomancer] &lt; 80">
-        <UserDialog DialogText="You must be level 80 to take on the PCT quest 'Mind over Manor'" />
-      </If>
-
+    <If Condition="not IsQuestCompleted(70391) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 79">
       <If Condition="not HasQuest(70391)">
         <GetTo ZoneId="132" XYZ="56.802406, -8.008161, 94.6082" />
         <If Condition="IsQuestAcceptQualified(70391)">
@@ -41,12 +37,7 @@
     </If>
 
     <!-- Perspectives in Pursuit -->
-    <If Condition="IsQuestCompleted(70391) and not IsQuestCompleted(70392)">
-
-      <If Condition="Core.Me.Levels[ClassJobType.Pictomancer] &lt; 83">
-        <UserDialog DialogText="You must be level 83 to take on the PCT quest 'Perspectives in Pursuit'" />
-      </If>
-
+    <If Condition="IsQuestCompleted(70391) and not IsQuestCompleted(70392) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 82">
       <If Condition="not HasQuest(70392)">
         <GetTo ZoneId="133" XYZ="28.392187, 16.198997, -337.23294" />
         <If Condition="IsQuestAcceptQualified(70392)">
@@ -62,26 +53,21 @@
         <TalkTo NpcId="1049798" XYZ="229.84656, 302.04782, -289.2348" QuestId="70392" StepId="2" />
       </If>
       <If Condition="GetQuestStep(70392) == 3">
-        <LisbethTravel ZoneId="155" XYZ="299.567, 358.6431, -574.131" /> <!--  -->
+        <GetTo ZoneId="155" XYZ="299.567, 358.6431, -574.131" /> <!--  -->
         <UseObject NpcId="2013740" XYZ="301.13672, 358.90735, -575.8297" QuestId="70392" StepId="3" />
       </If>
       <If Condition="GetQuestStep(70392) == 4">
-        <LisbethTravel ZoneId="155" XYZ="403.78873, 346.8219, -671.2106" /> <!-- ZoneId="155" -->
+        <GetTo ZoneId="155" XYZ="403.78873, 346.8219, -671.2106" /> <!-- ZoneId="155" -->
         <WaitWhile Condition="GetQuestStep(70392) == 4" />
       </If>
       <If Condition="GetQuestStep(70392) == 255">
-        <LisbethTravel ZoneId="155" XYZ="217.55215, 302, -257.3656" /> <!-- ZoneId="155" -->
+        <GetTo ZoneId="155" XYZ="217.55215, 302, -257.3656" /> <!-- ZoneId="155" -->
         <TurnIn QuestId="70392" NpcId="1049800" XYZ="215.77783, 302, -253.86438" />
       </If>
     </If>
 
     <!-- The Crate Beyond -->
-    <If Condition="IsQuestCompleted(70392) and not IsQuestCompleted(70393)">
-
-      <If Condition="Core.Me.Levels[ClassJobType.Pictomancer] &lt; 85">
-        <UserDialog DialogText="You must be level 85 to take on the PCT quest 'The Crate Beyond'" />
-      </If>
-
+    <If Condition="IsQuestCompleted(70392) and not IsQuestCompleted(70393) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 84">
       <If Condition="not HasQuest(70393)">
         <GetTo ZoneId="155" XYZ="217.99472, 302, -257.81558" />
         <If Condition="IsQuestAcceptQualified(70393)">
@@ -93,28 +79,28 @@
         <UseItem ItemId="2003500" NpcId="2013741" XYZ="107.28613, 11.9782715, -76.676636" QuestId="70393" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70393) == 2">
-        <LisbethTravel ZoneId="613" XYZ="444.7466, 29.584179, 764.2569" />
+        <GetTo ZoneId="613" XYZ="444.7466, 29.584179, 764.2569" />
         <TalkTo NpcId="1049801" XYZ="445.9143, 29.750532, 770.8705" QuestId="70393" StepId="2" />
       </If>
       <If Condition="GetQuestStep(70393) == 3">
         <If Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 0">
-          <LisbethTravel ZoneId="613" XYZ="409.52005, 16.219938, 829.21" />
+          <GetTo ZoneId="613" XYZ="409.52005, 16.219938, 829.21" />
           <UseItem ItemId="2003559" NpcId="2013742" XYZ="411.79517, 16.250854, 832.4863" Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 0" />
           <WaitWhile Condition="not GetQuestById(70393).QuestI8A == 16" />
         </If>
         <If Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 16">
-          <LisbethTravel ZoneId="613" XYZ="338.87488, 0.58751905, 789.9681" />
+          <GetTo ZoneId="613" XYZ="338.87488, 0.58751905, 789.9681" />
           <UseItem ItemId="2003559" NpcId="2013743" XYZ="338.4298, 0.6866455, 793.4232" Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 16" />
           <WaitWhile Condition="not GetQuestById(70393).QuestI8A == 34" />
         </If>
         <If Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 34">
-          <LisbethTravel ZoneId="613" XYZ="414.19812, 0.41447222, 725.64636" />
+          <GetTo ZoneId="613" XYZ="414.19812, 0.41447222, 725.64636" />
           <UseItem ItemId="2003559" NpcId="2013744" XYZ="415.61, 0.7171631, 730.4341" Condition="GetQuestStep(70393) == 3 and GetQuestById(70393).QuestI8A == 34" />
           <WaitWhile Condition="GetQuestStep(70393) == 3" />
         </If>
       </If>
       <If Condition="GetQuestStep(70393) == 4">
-        <LisbethTravel ZoneId="613" XYZ="442.1613, 29.460203, 764.48596" />
+        <GetTo ZoneId="613" XYZ="442.1613, 29.460203, 764.48596" />
         <HandOver ItemId="2003502" NpcId="1049802" XYZ="444.6936, 29.73244, 770.9315" QuestId="70393" StepId="4" />
       </If>
       <If Condition="GetQuestStep(70393) == 255">
@@ -124,11 +110,7 @@
     </If>
 
     <!-- Beruru's Clues -->
-    <If Condition="IsQuestCompleted(70393) and not IsQuestCompleted(70394)">
-
-      <If Condition="Core.Me.Levels[ClassJobType.Pictomancer] &lt; 88">
-        <UserDialog DialogText="You must be level 88 to take on the PCT quest 'Beruru's Clues'" />
-      </If>
+    <If Condition="IsQuestCompleted(70393) and not IsQuestCompleted(70394) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 87">
 
       <If Condition="not HasQuest(70394)">
         <GetTo ZoneId="628" XYZ="106.54932, 12.000005, -73.91179" />
@@ -145,7 +127,7 @@
         <TalkTo NpcId="1049805" XYZ="-152.14777, 14.005, 45.303955" QuestId="70394" StepId="2" />
       </If>
       <If Condition="GetQuestStep(70394) == 3">
-        <LisbethTravel ZoneId="141" XYZ="-286.21295, -32.000004, 92.616745" />
+        <GetTo ZoneId="141" XYZ="-286.21295, -32.000004, 92.616745" />
         <WaitWhile Condition="GetQuestStep(70394) == 3" />
       </If>
       <If Condition="GetQuestStep(70394) == 4">
@@ -159,12 +141,7 @@
     </If>
 
     <!-- Somewhere Only She Knows -->
-    <If Condition="IsQuestCompleted(70394) and not IsQuestCompleted(70395)">
-
-      <If Condition="Core.Me.Levels[ClassJobType.Pictomancer] &lt; 90">
-        <UserDialog DialogText="You must be level 90 to take on the PCT quest 'Somewhere Only She Knows'" />
-      </If>
-
+    <If Condition="IsQuestCompleted(70394) and not IsQuestCompleted(70395) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 89">
       <If Condition="not HasQuest(70395)">
         <GetTo ZoneId="130" XYZ="-153.16962, 14.005, 46.835552" />
         <If Condition="IsQuestAcceptQualified(70395)">
@@ -172,12 +149,12 @@
         </If>
       </If>
       <If Condition="GetQuestStep(70395) == 1">
-        <LisbethTravel ZoneId="148" XYZ="16.619957, 2.8914092, -136.43448" />
+        <GetTo ZoneId="148" XYZ="16.619957, 2.8914092, -136.43448" />
         <TalkTo NpcId="1049807" XYZ="14.419739, 2.2207584, -132.25" QuestId="70395" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70395) == 2">
         <If condition="not IsOnMap(1234)">
-          <LisbethTravel ZoneId="148" XYZ="15.809302, 2.59822, -134.1571" />
+          <GetTo ZoneId="148" XYZ="15.809302, 2.59822, -134.1571" />
         </If>
         <Hook Name="PCTSelectString" Operation="A" Location="TreeStart" />
         <SimpleDuty InteractNpcId="1049807" XYZ="15.809302, 2.59822, -134.1571" QuestId="70395" StepId="2">
@@ -196,24 +173,94 @@
       </If>
       <If Condition="GetQuestStep(70395) == 255">
         <Hook Name="PCTSelectString" Operation="R" Location="TreeStart" />
-        <LisbethTravel ZoneId="148" XYZ="17.292809, 2.6199913, -134.8319" />
+        <GetTo ZoneId="148" XYZ="17.292809, 2.6199913, -134.8319" />
         <TurnIn QuestId="70395" NpcId="1049808" XYZ="17.013733, 2.0418286, -129.83911" />
       </If>
     </If>
 
+    <LastProfile/>
   </Order>
-  <GrindAreas>
-  </GrindAreas>
-  <CodeChunks>
-    <CodeChunk Type="Hook" Name="PCTSelectString">
+	<GrindAreas>
+	</GrindAreas>
+	<CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
-        if (SelectString.IsOpen && QuestLogManager.HasQuest(70395) && QuestLogManager.GetQuestById(70395).Step == 2)
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
         {
-            SelectString.ClickSlot(0);
-        }
-        
-        return false;
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+        };
+
       ]]>
-      </CodeChunk>
-  </CodeChunks>
-</Profile> 
+    </CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+    <CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
+
+            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
+            {
+                return false;
+            }
+
+            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
+
+            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
+            {
+                Log.Information($"Found Target {mobsToKill.EnglishName}");
+                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
+            }
+	        return false;
+			]]>
+		</CodeChunk>
+
+<CodeChunk Type="Hook" Name="PCTSelectString">
+  <![CDATA[
+    if (SelectString.IsOpen && QuestLogManager.HasQuest(70395) && QuestLogManager.GetQuestById(70395).Step == 2)
+    {
+        SelectString.ClickSlot(0);
+    }
+
+    return false;
+  ]]>
+  </CodeChunk>
+
+
+        <!-- Arcanist 1-15 Codechunks -->
+
+
+
+
+
+
+
+
+
+
+
+
+	</CodeChunks>
+</Profile>

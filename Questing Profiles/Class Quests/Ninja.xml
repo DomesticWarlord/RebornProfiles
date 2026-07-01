@@ -1,0 +1,2777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Panda Farmer - Ninja Class Quests
+  Authors: DomesticWarlord
+  Code Credit: nt53133
+
+-->
+<Profile>
+	<Name>Panda Farmer - Ninja Class Quests - Ninja</Name>
+	<BehaviorDirectory></BehaviorDirectory>
+	<Order>
+
+		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+
+
+		<!-- So You Want to Be a Rogue -->
+		<If Condition="not IsQuestCompleted(65637)">
+			<If Condition="not HasQuest(65637)">
+				<GetTo ZoneId="129" XYZ="-148.6992, 2.905223, 241.7078" />
+				<If Condition="IsQuestAcceptQualified(65637)">
+					<PickupQuest NpcId="1009944" QuestId="65637" XYZ="-148.6992, 2.905223, 241.7078" />
+				</If>
+			</If>
+		</If>
+		<!-- My First Daggers -->
+		<If Condition="IsQuestCompleted(65637) and not IsQuestCompleted(65638)">
+			<If Condition="not HasQuest(65638)">
+				<GetTo ZoneId="129" XYZ="-148.6992, 2.905223, 241.7078" />
+				<If Condition="IsQuestAcceptQualified(65638)">
+					<PickupQuest NpcId="1009944" QuestId="65638" XYZ="-148.6992, 2.905223, 241.7078" />
+					<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+						<UseTransport NpcId="1009944" InteractDistance="2.0" XYZ="-148.6992, 2.905223, 241.7078" />
+					</If>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65638) == 255">
+				<TurnIn QuestId="65638" StepId="255" NpcId="1009943" InteractDistance="1.0" XYZ="-155.1694, -129.4397, 265.0255" />
+				<While Condition="ClassName != ClassJobType.Rogue">
+					<EquipWeapon ItemId="7952" />
+				</While>
+				<RunCode name="GearsetSave" />
+			</If>
+		</If>
+
+		<!-- Stabbers in Yer Fambles -->
+		<If Condition="IsQuestCompleted(65638) and not IsQuestCompleted(65640)">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65640)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65640)">
+					<PickupQuest NpcId="1009943" QuestId="65640" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65640) == 1">
+				<If Condition="not IsTodoChecked(65640, 1, 2)">
+					<GetTo ZoneId="134" XYZ="44.76048, 48.27649, 0.7976724" />
+					<Grind while="not IsTodoChecked(65640, 1, 2)">
+						<GrindArea name="Stabbers_in_Yer_Fambles3">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="12.399, 42.39729, 44.50257" name="Pugils" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="640" /> <!-- Pugil -->
+							</TargetMobs>
+
+
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(65640, 1, 1)">
+					<GetTo ZoneId="134" XYZ="44.76048, 48.27649, 0.7976724" />
+					<Grind while="not IsTodoChecked(65640, 1, 1)">
+						<GrindArea name="Stabbers_in_Yer_Fambles2">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="15.40125, 42.52365, 118.8592" name="Wharf Rats" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="417" /> <!-- Wharf Rat -->
+							</TargetMobs>
+
+
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(65640, 1, 0)">
+					<GetTo ZoneId="134" XYZ="44.76048, 48.27649, 0.7976724" />
+					<Grind while="not IsTodoChecked(65640, 1, 0)">
+						<GrindArea name="Stabbers_in_Yer_Fambles">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="53.59859, 52.37904, 208.1335" name="Lost Lambs" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="392" /> <!-- Lost Lamb -->
+							</TargetMobs>
+
+
+						</GrindArea>
+					</Grind>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65640) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65640" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- A Dainty Dilemma -->
+		<If Condition="not IsQuestCompleted(65646) and IsQuestCompleted(65640) and Core.Me.Levels[ClassJobType.Rogue] &gt; 4">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65646)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65646)">
+					<PickupQuest NpcId="1009943" QuestId="65646" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65646) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<GetTo ZoneId="129" XYZ="-150.988, -129.4397, 266.3157" />
+				<TalkTo NpcId="1010197" XYZ="-150.988, -129.4397, 266.3157" QuestId="65646" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 2">
+				<GetTo ZoneId="135" XYZ="113.7739, 68.01595, 327.9957" />
+				<Grind while="HasQuest(65646) and GetQuestStep(65646) == 2">
+					<GrindArea name="A_Dainty_Dilemma">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="175.0169, 53.05838, 259.4992" name="Aureliae" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="563" />
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65646) == 3">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<GetTo ZoneId="129" XYZ="-150.988, -129.4397, 266.3157" />
+				<TalkTo NpcId="1010197" XYZ="-150.988, -129.4397, 266.3157" QuestId="65646" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 4">
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &lt; 10">
+					<UseTransport Name="Guild Exit" InteractDistance="3.0" NpcId="2004936" XYZ="-151.9036, -128.1606, 256.8551" />
+				</If>
+				<GetTo ZoneId="128" XYZ="13.41266, 40.2, -13.26007" />
+				<TalkTo NpcId="1005411" SelectStringOverride="2" XYZ="13.41266, 40.2, -13.26007" QuestId="65646" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 5">
+				<GetTo ZoneId="134" XYZ="107.7134, 47.78386, 50.73621" />
+				<TalkTo NpcId="1010206" XYZ="107.7134, 47.78386, 50.73621" QuestId="65646" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 6">
+				<GetTo ZoneId="134" XYZ="88.61414, 50.77141, -14.98808" />
+				<Grind while="HasQuest(65646) and GetQuestStep(65646) == 6">
+					<GrindArea name="A_Dainty_Dilemma2">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="118.9046, 50.17718, 4.801124" name="Goblin Gamblers" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3099" />
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65646) == 7">
+				<GetTo ZoneId="134" XYZ="107.7134, 47.78386, 50.73621" />
+				<HandOver ItemId="2001507" QuestId="65646" StepId="7" NpcId="1010206" XYZ="107.7134, 47.78386, 50.73621" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 8">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<HandOver ItemId="2001507" QuestId="65646" StepId="8" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+			</If>
+			<If Condition="GetQuestStep(65646) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65646" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Stray into the Shadows -->
+		<If Condition="not IsQuestCompleted(65662) and IsQuestCompleted(65646) and Core.Me.Levels[ClassJobType.Rogue] &gt; 9">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65662)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65662)">
+					<PickupQuest NpcId="1009943" QuestId="65662" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65662) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- V'kebbe -->
+				<GetTo ZoneId="129" XYZ="-152.1172, -129.4397, 267.1091" />
+				<TalkTo NpcId="1010198" XYZ="-152.1172, -129.4397, 267.1091" QuestId="65662" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65662) == 2">
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &lt; 10">
+					<UseTransport Name="Guild Exit" InteractDistance="3.0" NpcId="2004936" XYZ="-151.9036, -128.1606, 256.8551" />
+				</If>
+				<!-- Fishmonger -->
+				<GetTo ZoneId="128" XYZ="-50.8584, 40, 111.4061" />
+				<TalkTo NpcId="1010212" XYZ="-50.8584, 40, 111.4061" QuestId="65662" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65662) == 3">
+				<!-- V'kebbe -->
+				<GetTo ZoneId="128" XYZ="-42.22174, 42.24913, 115.8922" />
+				<TalkTo NpcId="1010211" XYZ="-42.22174, 42.24913, 115.8922" QuestId="65662" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65662) == 4">
+				<While Condition="not IsTodoChecked(65662, 4, 0)">
+					<!-- The Bismarck -->
+					<GetTo ZoneId="128" XYZ="-73.46866, 42.04493, -149.6751" />
+					<RunCode Name="Rogue_Hide" />
+					<MoveTo Name="Diving Dove" XYZ="-52.65894, 42.69984, -160.235" />
+				</While>
+				<While Condition="not IsTodoChecked(65662, 4, 2)">
+					<!-- East Hawkers' Alley -->
+					<GetTo ZoneId="129" XYZ="-142.5273, 18, 24.58443" />
+					<RunCode Name="Rogue_Hide" />
+					<MoveTo Name="Gerulf" XYZ="-151.0256, 18.2, 34.07727" />
+				</While>
+				<While Condition="not IsTodoChecked(65662, 4, 1)">
+					<!-- Lominsan Ferry Docks -->
+					<GetTo ZoneId="129" XYZ="-183.9383, 4, 181.6412" />
+					<RunCode Name="Rogue_Hide" />
+					<MoveTo Name="Rerenasu" XYZ="-192.0043, 0.9999907, 211.6884" />
+				</While>
+			</If>
+			<If Condition="GetQuestStep(65662) == 5">
+				<!-- V'kebbe -->
+				<GetTo ZoneId="129" XYZ="-161.12, 1.95, 239.3071" />
+				<TalkTo NpcId="1010213" XYZ="-161.12, 1.95, 239.3071" QuestId="65662" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65662) == 6">
+				<!-- V'kebbe -->
+				<GetTo ZoneId="129" XYZ="-161.12, 1.95, 239.3071" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010213" XYZ="-161.12, 1.95, 239.3071" QuestId="65662" StepId="6">
+					<HotSpots>
+						<!-- Start Hide for Stolen Firearms -->
+						<HotSpot XYZ="-162.5223, 1.996135, 223.7008" Radius="90" />
+						<!-- Stolen Firearms -->
+						<HotSpot XYZ="-219.3833, 4.9081, 272.2307" Radius="90" />
+						<!-- Start Hide for Hand Off -->
+						<HotSpot XYZ="-184.1264, 1.999995, 207.9486" Radius="90" />
+						<!-- Hand Off -->
+						<HotSpot XYZ="-193.6879, 9.428031, 71.95404" Radius="90" />
+					</HotSpots>
+					<InteractObjects>
+						<InteractObject Name="Stolen Firearms" NpcId="2004733" XYZ="-219.3833, 4.9081, 272.2307" />
+						<InteractObject Name="Hand Off" NpcId="2004926" XYZ="-193.6879, 9.428031, 71.95404" />
+					</InteractObjects>
+					<TargetMobs>
+						<!-- Hired Bow -->
+						<TargetMob Id="3131" Weight="3000" />
+						<!-- Hired Muscle -->
+						<TargetMob Id="3132" Weight="2000" />
+						<!-- Hired Axe -->
+						<TargetMob Id="3130" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65662) == 7">
+				<!-- V'kebbe -->
+				<GetTo ZoneId="129" XYZ="-161.12, 1.95, 239.3071" />
+				<TalkTo NpcId="1010213" XYZ="-161.12, 1.95, 239.3071" QuestId="65662" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(65662) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65662" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Stifled Screams -->
+		<If Condition="not IsQuestCompleted(65680) and IsQuestCompleted(65662) and Core.Me.Levels[ClassJobType.Rogue] &gt; 14">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65680)">
+				<If Condition="not IsOnMap(129) or IsOnMap(129) ">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65680)">
+					<PickupQuest NpcId="1009943" QuestId="65680" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65680) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="65680" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65680) == 2">
+				<!-- Swarsynt -->
+				<GetTo ZoneId="135" XYZ="256.1227, 21.09796, 581.3839" />
+				<TalkTo NpcId="1010199" XYZ="256.1227, 21.09796, 581.3839" QuestId="65680" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65680) == 3">
+				<GetTo ZoneId="135" XYZ="-131.6396, 0.503479, 729.9762" />
+				<UseObject NpcId="2004861" XYZ="-131.6396, 0.503479, 729.9762" Radius="10" QuestId="65680" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65680) == 4">
+				<!-- Jacke -->
+				<GetTo ZoneId="138" XYZ="319.4476, -36.35382, 346.7612" />
+				<TalkTo NpcId="1010218" XYZ="319.4476, -36.35382, 346.7612" QuestId="65680" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65680) == 5">
+				<!-- Jacke -->
+				<GetTo ZoneId="138" XYZ="319.4476, -36.35382, 346.7612" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010218" XYZ="319.4476, -36.35382, 346.7612" QuestId="65680" StepId="5">
+					<HotSpots>
+						<!-- Bindings -->
+						<HotSpot XYZ="324.1761, -35.55294, 317.1326" Radius="15" />
+						<!-- Bindings -->
+						<HotSpot XYZ="323.9337, -31.34907, 265.4001" Radius="15" />
+						<!-- Bindings -->
+						<HotSpot XYZ="328.1146, -24.39923, 253.6506" Radius="15" />
+						<!-- Bindings -->
+						<HotSpot XYZ="328.9824, -24.24879, 254.0822" Radius="15" />
+					</HotSpots>
+					<InteractObjects>
+						<InteractObject Name="Bindings" NpcId="2004819" XYZ="324.1761, -35.55294, 317.1326" />
+						<InteractObject Name="Bindings" NpcId="2004821" XYZ="323.9337, -31.34907, 265.4001" />
+						<InteractObject Name="Bindings" NpcId="2004824" XYZ="328.1146, -24.39923, 253.6506" />
+						<InteractObject Name="Bindings" NpcId="2004823" XYZ="328.9824, -24.24879, 254.0822" />
+					</InteractObjects>
+					<TargetMobs>
+						<!-- Axe-wielding Adventurer -->
+						<TargetMob Id="3134" Weight="1100" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65680) == 255">
+				<!-- Jacke -->
+				<GetTo ZoneId="138" XYZ="319.4476, -36.35382, 346.7612" />
+				<TurnIn QuestId="65680" NpcId="1010218" XYZ="319.4476, -36.35382, 346.7612" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Slave to the Code -->
+		<If Condition="not IsQuestCompleted(65681) and IsQuestCompleted(65680) and Core.Me.Levels[ClassJobType.Rogue] &gt; 14">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65681)">
+				<!-- Jacke -->
+				<GetTo ZoneId="138" XYZ="319.4476, -36.35382, 346.7612" />
+				<If Condition="IsQuestAcceptQualified(65681)">
+					<PickupQuest NpcId="1010218" QuestId="65681" XYZ="319.4476, -36.35382, 346.7612" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65681) == 1">
+				<!-- Beggarly Boy -->
+				<GetTo ZoneId="138" XYZ="594.1709, 43.89398, 303.7614" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<SimpleDuty InteractNpcId="1010228" XYZ="594.1709, 43.89398, 303.7614" QuestId="65681" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="591.4781, 41.49831, 310.9883" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Game Fowl -->
+						<TargetMob Id="3142" Weight="4000" />
+						<!-- Jolly Merchant Barber -->
+						<TargetMob Id="3140" Weight="3000" />
+						<!-- Jolly Merchant Waister -->
+						<TargetMob Id="3141" Weight="2000" />
+						<!-- Jolly Merchant Lodesman -->
+						<TargetMob Id="3139" Weight="1000" />
+					</TargetMobs>
+				</SimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65681) == 2">
+				<WaitWhile Condition="GetQuestStep(65681) == 2" />
+			</If>
+			<If Condition="GetQuestStep(65681) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<!-- Jacke -->
+				<GetTo ZoneId="129" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65681" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Grinners in the Mist -->
+		<If Condition="not IsQuestCompleted(65682) and IsQuestCompleted(65681) and Core.Me.Levels[ClassJobType.Rogue] &gt; 19">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65682)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65682)">
+					<PickupQuest NpcId="1009943" QuestId="65682" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65682) == 1">
+				<GetTo ZoneId="134" XYZ="146.7155, 62.3279, 291.8287" />
+				<TalkTo NpcId="1010238" XYZ="146.7155, 62.3279, 291.8287" QuestId="65682" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(65682) == 2">
+				<GetTo ZoneId="134" XYZ="161.5537, 69.5, 327.7686" />
+				<Dismount />
+				<RunCode Name="Rogue_Hide" />
+				<NoCombatMoveTo Name="Yellowjacket" XYZ="179.858, 69.5, 327.9315" />
+			</While>
+			<If Condition="GetQuestStep(65682) == 3">
+				<GetTo ZoneId="134" XYZ="146.7155, 62.3279, 291.8287" />
+				<TalkTo NpcId="1010238" XYZ="146.7155, 62.3279, 291.8287" QuestId="65682" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65682) == 4">
+				<GetTo ZoneId="134" XYZ="3.528642, 57.76335, -299.007" />
+				<TalkTo NpcId="1010242" XYZ="7.217468, 57.91382, -307.1183" QuestId="65682" StepId="4" />
+				<Grind while="HasQuest(65682) and GetQuestStep(65682) == 4">
+					<GrindArea name="Grinners_in_the_Mist">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="7.217468, 57.91382, -307.1183" name="Qiqirn Mobs" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3184" /> <!-- Qiqirn Roostkeep -->
+							<TargetMob Id="3183" /> <!-- Qiqirn Plucker -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65682) == 5">
+				<GetTo ZoneId="134" XYZ="7.217468, 57.91382, -307.1183" />
+				<TalkTo NpcId="1010242" XYZ="7.217468, 57.91382, -307.1183" QuestId="65682" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65682) == 6">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="65682" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65682) == 7">
+				<GetTo ZoneId="135" XYZ="242.298, 8.000164, 668.2383" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010237" XYZ="242.298, 8.000164, 668.2383" QuestId="65682" StepId="7">
+					<HotSpots>
+						<HotSpot XYZ="0.2462107, 14.84725, -6.881947" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- The Growler -->
+						<TargetMob Id="3149" Weight="7000" />
+						<!-- Grinning Cur Stitcher -->
+						<TargetMob Id="3147" Weight="6000" />
+						<!-- Grinning Cur Cannonier -->
+						<TargetMob Id="3146" Weight="5000" />
+						<!-- Grinning Cur Carpenter -->
+						<TargetMob Id="3145" Weight="4000" />
+						<!-- Grinning Cur Cutter -->
+						<TargetMob Id="3144" Weight="3000" />
+						<!-- Grinning Cur Swab -->
+						<TargetMob Id="3143" Weight="2000" />
+						<!-- Grinning Cur Cap'n -->
+						<TargetMob Id="3148" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+				<WaitWhile Condition="not IsOnMap(135)" />
+			</If>
+			<If Condition="GetQuestStep(65682) == 8">
+				<GetTo ZoneId="135" XYZ="242.298, 8.000164, 668.2383" />
+				<TalkTo NpcId="1010237" XYZ="242.298, 8.000164, 668.2383" QuestId="65682" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(65682) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65682" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Sweet Sorrows -->
+		<If Condition="not IsQuestCompleted(65684) and IsQuestCompleted(65682) and Core.Me.Levels[ClassJobType.Rogue] &gt; 24">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65684)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65684)">
+					<PickupQuest NpcId="1009943" QuestId="65684" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65684) == 1">
+				<GetTo ZoneId="135" XYZ="508.2322, 95.95811, -449.8207" />
+				<Grind while="HasQuest(65684) and GetQuestStep(65684) == 1">
+					<GrindArea name="Sweet_Sorrows">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="508.2322, 95.95811, -449.8207" name="Kobold Doorman" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3185" /> <!-- Kobold Doorman -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65684) == 2">
+				<GetTo ZoneId="135" XYZ="508.2322, 95.95811, -449.8207" />
+				<HandOver ItemId="2001510" QuestId="65684" StepId="2" NpcId="1010252" XYZ="508.2322, 95.95811, -449.8207" />
+			</If>
+			<If Condition="GetQuestStep(65684) == 3">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="65684" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65684) == 4">
+				<GetTo ZoneId="137" XYZ="450.8278, 16.18121, 406.6987" />
+				<TalkTo NpcId="1010251" XYZ="450.8278, 16.18121, 406.6987" QuestId="65684" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65684) == 5">
+				<GetTo ZoneId="137" XYZ="450.8278, 16.18121, 406.6987" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010251" XYZ="450.8278, 16.18121, 406.6987" QuestId="65684" StepId="5">
+					<HotSpots>
+						<!-- Bodyguards -->
+						<HotSpot XYZ="559.9659, 14.58707, 393.2331" Radius="30" />
+						<!-- Captain Jacke -->
+						<HotSpot XYZ="543.1564, 18.32838, 454.4327" Radius="30" />
+						<!-- Bodyguards -->
+						<HotSpot XYZ="611.3012, 23.93624, 468.3748" Radius="5" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Security Mammet -->
+						<TargetMob Id="3152" Weight="3000" />
+						<!-- Sellsword -->
+						<TargetMob Id="3150" Weight="2000" />
+						<!-- Sellsword Captain -->
+						<TargetMob Id="3151" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+				<WaitWhile Condition="IsOnMap(137) and not IsOnSubMap(206)" />
+			</If>
+			<If Condition="GetQuestStep(65684) == 6">
+				<GetTo ZoneId="137" XYZ="448.4778, 16.15483, 408.773" />
+				<TalkTo NpcId="1010250" XYZ="448.4778, 16.15483, 408.7739" QuestId="65684" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65684) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65684" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Market for Death -->
+		<If Condition="not IsQuestCompleted(65690) and IsQuestCompleted(65684) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65690)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65690)">
+					<PickupQuest NpcId="1009943" QuestId="65690" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65690) == 1">
+				<GetTo ZoneId="139" XYZ="-436.4631, -2.000525, 48.40558" />
+				<Grind while="HasQuest(65690) and GetQuestStep(65690) == 1">
+					<GrindArea name="Market_for_Death">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-436.4631, -2.000525, 48.40558" name="Bloody Executioner Mobs" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3154" Weight="2000" /> <!-- Bloody Executioner Leech -->
+							<TargetMob Id="3153" Weight="1000" /> <!-- Bloody Executioner Deckhand -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65690) == 2">
+				<GetTo ZoneId="139" XYZ="-436.4631, -2.000525, 48.40558" />
+				<UseObject NpcId="2004916" XYZ="-436.5454, -2.02948, 48.59985" Radius="10" QuestId="65690" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65690) == 3">
+				<GetTo ZoneId="139" XYZ="-437.3694, -2.36918, 55.95483" />
+				<TalkTo NpcId="1010261" XYZ="-437.3694, -2.36918, 55.95483" QuestId="65690" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65690) == 4">
+				<GetTo ZoneId="134" XYZ="-449.0883, 21.63458, -327.9316" />
+				<TalkTo NpcId="1010267" XYZ="-449.0883, 21.63458, -327.9316" QuestId="65690" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65690) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-84.08636, 18.60033, -12.41393" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65690" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Cloying Victory -->
+		<If Condition="not IsQuestCompleted(65691) and IsQuestCompleted(65690) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65691)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-84.08636, 18.60033, -12.41393" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65691)">
+					<PickupQuest NpcId="1009943" QuestId="65691" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<While Condition="GetQuestStep(65691) == 1">
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &lt; 10">
+					<UseTransport Name="Guild Exit" InteractDistance="3.0" NpcId="2004936" XYZ="-151.9036, -128.1606, 256.8551" />
+				</If>
+				<If Condition="not DutyManager.InInstance">
+					<GetTo ZoneId="128" XYZ="4.440308, 44.47998, 121.2938" />
+					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+						<LeaveParty />
+					</If>
+					<RunCode Name="ROGDutyCommence" />
+				</If>
+				<If Condition="DutyManager.InInstance">
+					<If Condition="DutyManager.InInstance">
+						<MoveTo XYZ="-48.26155, 40, 114.3296" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(40, Array[int]([3160,3154,3158,3156,3155,3153,3189,3157,3159])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_1">
+								<HotSpots>
+									<HotSpot XYZ="-48.26155, 40, 114.3296" Radius="20" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3154" Weight="8000" /> <!-- Bloody Executioner Leech -->
+									<TargetMob Id="3158" Weight="7000" /> <!-- Bloody Executioner Seamster -->
+									<TargetMob Id="3156" Weight="6000" /> <!-- Bloody Executioner Gunner -->
+									<TargetMob Id="3155" Weight="5000" /> <!-- Bloody Executioner Boatswain -->
+									<TargetMob Id="3153" Weight="4000" /> <!-- Bloody Executioner Deckhand -->
+									<TargetMob Id="3189" Weight="3000" /> <!-- Bloody Executioner Lodesman -->
+									<TargetMob Id="3157" Weight="2000" /> <!-- Bloody Executioner Steersman -->
+									<TargetMob Id="3159" Weight="1000" /> <!-- Aisibhir Badwind -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<MoveTo XYZ="-47.88676, 40, 63.73321" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(40, Array[int]([3160,3154,3158,3156,3155,3153,3189,3157,3159])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_2">
+								<HotSpots>
+									<HotSpot XYZ="-47.88676, 40, 63.73321" Radius="20" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3154" Weight="8000" /> <!-- Bloody Executioner Leech -->
+									<TargetMob Id="3158" Weight="7000" /> <!-- Bloody Executioner Seamster -->
+									<TargetMob Id="3156" Weight="6000" /> <!-- Bloody Executioner Gunner -->
+									<TargetMob Id="3155" Weight="5000" /> <!-- Bloody Executioner Boatswain -->
+									<TargetMob Id="3153" Weight="4000" /> <!-- Bloody Executioner Deckhand -->
+									<TargetMob Id="3189" Weight="3000" /> <!-- Bloody Executioner Lodesman -->
+									<TargetMob Id="3157" Weight="2000" /> <!-- Bloody Executioner Steersman -->
+									<TargetMob Id="3159" Weight="1000" /> <!-- Aisibhir Badwind -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<RunCode Name="Cloying_Move_1" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(10, Array[int]([3160])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_3">
+								<HotSpots>
+									<HotSpot XYZ="-15.06801, 44, -36.41334" Radius="10" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3160" Weight="9000" /> <!-- Detonator -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<RunCode Name="Cloying_Move_2" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(10, Array[int]([3160])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_4">
+								<HotSpots>
+									<HotSpot XYZ="-35.84512, 31.99994, 3.838394" Radius="10" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3160" Weight="9000" /> <!-- Detonator -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<MoveTo XYZ="19.79649, 39.99997, 33.54923" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(10, Array[int]([3160])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_5">
+								<HotSpots>
+									<HotSpot XYZ="19.79649, 39.99997, 33.54923" Radius="10" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3160" Weight="9000" /> <!-- Detonator -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<MoveTo XYZ="-33.21069, 40.00498, 29.27364" InCombat="True" />
+					</If>
+					<If Condition="DutyManager.InInstance">
+						<Grind while="NumAttackableEnemies(40, Array[int]([3160,3154,3158,3156,3155,3153,3189,3157,3159])) &gt; 0 and (Core.Player.CurrentHealth > (Core.Player.CurrentHealth * 0.15))">
+							<GrindArea name="Cloying_Victory_6">
+								<HotSpots>
+									<HotSpot XYZ="-33.21069, 40.00498, 29.27364" Radius="20" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3154" Weight="8000" /> <!-- Bloody Executioner Leech -->
+									<TargetMob Id="3158" Weight="7000" /> <!-- Bloody Executioner Seamster -->
+									<TargetMob Id="3156" Weight="6000" /> <!-- Bloody Executioner Gunner -->
+									<TargetMob Id="3155" Weight="5000" /> <!-- Bloody Executioner Boatswain -->
+									<TargetMob Id="3153" Weight="4000" /> <!-- Bloody Executioner Deckhand -->
+									<TargetMob Id="3189" Weight="3000" /> <!-- Bloody Executioner Lodesman -->
+									<TargetMob Id="3157" Weight="2000" /> <!-- Bloody Executioner Steersman -->
+									<TargetMob Id="3159" Weight="1000" /> <!-- Aisibhir Badwind -->
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+				</If>
+			</While>
+			<If Condition="GetQuestStep(65691) == 255">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TurnIn QuestId="65691" NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Peasants by Day, Ninjas by Night -->
+		<If Condition="not IsQuestCompleted(65748) and IsQuestCompleted(65691) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Rogue">
+				<ChangeClass Job="Rogue" />
+			</While>
+			<If Condition="not HasQuest(65748)">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<If Condition="IsQuestAcceptQualified(65748)">
+					<PickupQuest NpcId="1009943" QuestId="65748" XYZ="-153.3685, -129.4397, 265.8884" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65748) == 1">
+				<GetTo ZoneId="137" XYZ="-1.449646, 66.48521, 46.28064" />
+				<TalkTo NpcId="1010602" XYZ="-1.449646, 66.48521, 46.28064" QuestId="65748" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 2">
+				<GetTo ZoneId="137" XYZ="-67.36859, 70.39888, 11.03223" />
+				<TalkTo NpcId="1010603" XYZ="-67.36859, 70.39888, 11.03223" QuestId="65748" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 3">
+				<GetTo ZoneId="137" XYZ="97.42883, 68.34448, -2.365173" />
+				<TalkTo NpcId="1010607" XYZ="97.42883, 68.34448, -2.365173" QuestId="65748" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 4">
+				<GetTo ZoneId="139" XYZ="585.1987, -2.49883, 221.8508" />
+				<TalkTo NpcId="1010611" XYZ="585.1987, -2.49883, 221.8508" QuestId="65748" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 5">
+				<GetTo ZoneId="137" XYZ="-8.529846, 39.5699, 260.8529" />
+				<TalkTo NpcId="1010615" XYZ="-8.529846, 39.5699, 260.8529" QuestId="65748" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 6">
+				<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				<TalkTo NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" QuestId="65748" StepId="6" />
+				<WaitTimer WaitTime="5" />
+			</If>
+			<If Condition="GetQuestStep(65748) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65748" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<While Condition="ClassName != ClassJobType.Ninja">
+					<EquipWeapon ItemId="7886" />
+					<AutoInventoryEquip />
+				</While>
+			</If>
+		</If>
+
+		<!-- My First Mudra -->
+		<If Condition="not IsQuestCompleted(65749) and IsQuestCompleted(65748) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65749)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65749)">
+					<PickupQuest NpcId="1010139" QuestId="65749" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65749) == 1">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-10.6051, 41.39771, 267.8721" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &lt; 20">
+					<UseTransport Name="Storehouse Exit" InteractDistance="3.0" NpcId="2004966" XYZ="-16.12885, -23.3006, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-9.592283, 39.76007, 266.9477" />
+				<RunCode Name="My_First_Mudra" />
+			</If>
+			<If Condition="GetQuestStep(65749) == 2">
+				<GetTo ZoneId="137" XYZ="-4.348877, 39.53194, 247.6387" />
+				<TalkTo NpcId="1010616" XYZ="-4.348877, 39.53194, 247.6387" QuestId="65749" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65749) == 3">
+				<GetTo ZoneId="137" XYZ="-4.348877, 39.53194, 247.6387" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010616" XYZ="-4.348877, 39.53194, 247.6387" QuestId="65749" StepId="3">
+					<HotSpots>
+						<HotSpot XYZ="-4.348877, 39.53194, 247.6387" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3162" Weight="3000" /> <!-- Onibi -->
+						<TargetMob Id="3163" Weight="2000" /> <!-- Ogama -->
+						<TargetMob Id="3164" Weight="1000" /> <!-- Oboro Moonrise -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65749) == 255">
+				<GetTo ZoneId="137" XYZ="-4.348877, 39.53194, 247.6387" />
+				<TurnIn QuestId="65749" NpcId="1010616" XYZ="-4.348877, 39.53194, 247.6387" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Killer Combinations -->
+		<If Condition="not IsQuestCompleted(65750) and IsQuestCompleted(65749) and Core.Me.Levels[ClassJobType.Rogue] &gt; 34">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65750)">
+				<GetTo ZoneId="137" XYZ="-8.712891, 39.59037, 255.2377" />
+				<If Condition="IsQuestAcceptQualified(65750)">
+					<PickupQuest NpcId="1010140" QuestId="65750" XYZ="-8.712891, 39.59037, 255.2377" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65750) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65750" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Once Upon a Time in Doma -->
+		<If Condition="not IsQuestCompleted(65751) and IsQuestCompleted(65750) and Core.Me.Levels[ClassJobType.Rogue] &gt; 34">
+			<If Condition="not HasQuest(65751)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65751)">
+					<PickupQuest NpcId="1010139" QuestId="65751" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65751) == 1">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-10.6051, 41.39771, 267.8721" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &lt; 20">
+					<UseTransport Name="Storehouse Exit" InteractDistance="3.0" NpcId="2004966" XYZ="-16.12885, -23.3006, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-9.592283, 39.76007, 266.9477" />
+				<RunCode Name="Once_Upon_a_Time_in_Doma" />
+			</If>
+			<If Condition="GetQuestStep(65751) == 2">
+				<GetTo ZoneId="137" XYZ="-10.6051, 41.39771, 267.8721" />
+				<TalkTo NpcId="1010615" XYZ="-8.529846, 39.5699, 260.8529" QuestId="65751" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65751) == 3">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-10.6051, 41.39771, 267.8721" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &lt; 20">
+					<UseTransport Name="Storehouse Exit" InteractDistance="3.0" NpcId="2004966" XYZ="-16.12885, -23.3006, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-9.592283, 39.76007, 266.9477" />
+				<RunCode Name="Once_Upon_a_Time_in_Doma2" />
+			</If>
+			<If Condition="GetQuestStep(65751) == 4">
+				<GetTo ZoneId="137" XYZ="-8.529846, 39.5699, 260.8529" />
+				<TalkTo NpcId="1010615" XYZ="-8.529846, 39.5699, 260.8529" QuestId="65751" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65751) == 5">
+				<GetTo ZoneId="139" XYZ="-570.8248, -1.493519, -12.61926" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010618" XYZ="-570.8248, -1.493519, -12.61926" QuestId="65751" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-570.8248, -1.493519, -12.61926" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3166" Weight="3000" /> <!-- Imperial Shadow -->
+						<TargetMob Id="3167" Weight="2000" /> <!-- Imperial Nightshadow -->
+						<TargetMob Id="3165" Weight="1000" /> <!-- Karasu Redbeak -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65751) == 6">
+				<GetTo ZoneId="139" XYZ="-570.8248, -1.493519, -12.61926" />
+				<TalkTo NpcId="1010618" XYZ="-570.8248, -1.493519, -12.61926" QuestId="65751" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65751) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65751" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Pirates versus Ninjas -->
+		<If Condition="not IsQuestCompleted(65752) and IsQuestCompleted(65751) and Core.Me.Levels[ClassJobType.Rogue] &gt; 39">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65752)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65752)">
+					<PickupQuest NpcId="1010139" QuestId="65752" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65752) == 255">
+				<GetTo ZoneId="139" XYZ="473.1364, 16.49299, 67.33801" />
+				<TurnIn QuestId="65752" NpcId="1010619" XYZ="473.1364, 16.49299, 67.33801" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Ninja Bathin' -->
+		<If Condition="not IsQuestCompleted(65753) and IsQuestCompleted(65752) and Core.Me.Levels[ClassJobType.Rogue] &gt; 39">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65753)">
+				<GetTo ZoneId="139" XYZ="473.1364, 16.49299, 67.33801" />
+				<If Condition="IsQuestAcceptQualified(65753)">
+					<PickupQuest NpcId="1010619" QuestId="65753" XYZ="473.1364, 16.49299, 67.33801" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65753) == 1">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="470.49, 16.493, 62.13023" />
+				</If>
+				<If Condition="not IsQuestCompleted(66060)">
+					<If Condition="IsOnMap(139) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(447.7897, 14.38244, 68.12959)) &gt; 10">
+						<GetTo ZoneId="139" XYZ="470.49, 16.493, 62.13023" />
+						<RunCode Name="Ninja_Bathin_Jump" />
+						<MoveTo Name="Jump Spot" Distance="1" XYZ="461.3328, 12.42364, 61.42312" />
+						<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="453.5377, 12.78679, 66.69644" />
+					</If>
+				</If>
+				<GetTo ZoneId="139" XYZ="439.7803, 12.16138, 70.54236" />
+				<UseObject NpcId="2004930" XYZ="439.7803, 12.16138, 70.54236" Radius="10" QuestId="65753" StepId="1" />
+				<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="439.5464, 4.110248, 82.75983" />
+			</If>
+			<If Condition="GetQuestStep(65753) == 2">
+				<GetTo ZoneId="139" XYZ="485.231, 16.49543, 82.15652" />
+				<TalkTo NpcId="1010622" XYZ="488.365, 16.90733, 86.71704" QuestId="65753" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65753) == 3">
+				<GetTo ZoneId="139" XYZ="413.4738, 3.60901, 76.21875" />
+				<HandOver ItemId="2001308" QuestId="65753" StepId="3" NpcId="1010623" XYZ="413.4738, 3.60901, 76.21875" />
+			</If>
+			<If Condition="GetQuestStep(65753) == 4">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="470.49, 16.493, 62.13023" />
+				</If>
+				<If Condition="not IsQuestCompleted(66060)">
+					<If Condition="IsOnMap(139) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(447.7897, 14.38244, 68.12959)) &gt; 10">
+						<GetTo ZoneId="139" XYZ="470.49, 16.493, 62.13023" />
+						<RunCode Name="Ninja_Bathin_Jump" />
+						<MoveTo Name="Jump Spot" Distance="1" XYZ="461.3328, 12.42364, 61.42312" />
+						<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="453.5377, 12.78679, 66.69644" />
+					</If>
+				</If>
+				<GetTo ZoneId="139" XYZ="441.947, 15.39665, 65.65955" />
+				<TalkTo NpcId="1010621" XYZ="441.947, 15.39665, 65.65955" QuestId="65753" StepId="4" />
+				<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="439.5464, 4.110248, 82.75983" />
+			</If>
+			<If Condition="GetQuestStep(65753) == 5">
+				<GetTo ZoneId="138" XYZ="305.5924, -25.0401, 229.6329" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2004931" XYZ="305.5924, -25.0401, 229.6329" QuestId="65753" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="261.0496, -25.00004, 265.117" Radius="1" /> <!-- Hide Spot -->
+						<HotSpot XYZ="206.3857, -24.98584, 246.2086" Radius="1" /> <!-- Hide Spot -->
+						<HotSpot XYZ="213.2676, -36.40339, 309.0858" Radius="1" /> <!-- End Spot -->
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3170" Weight="4000" /> <!-- Shadow Bat -->
+						<TargetMob Id="3166" Weight="3000" /> <!-- Imperial Shadow -->
+						<TargetMob Id="3167" Weight="2000" /> <!-- Imperial Nightshadow -->
+						<TargetMob Id="3165" Weight="1000" /> <!-- Karasu Redbeak -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65753) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65753" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Tough Guys -->
+		<If Condition="not IsQuestCompleted(65768) and IsQuestCompleted(65753) and Core.Me.Levels[ClassJobType.Rogue] &gt; 44">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65768)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65768)">
+					<PickupQuest NpcId="1010139" QuestId="65768" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65768) == 1">
+				<GetTo ZoneId="134" XYZ="-188.4642, 30.72319, -685.1759" />
+				<TalkTo NpcId="1010573" XYZ="-188.4642, 30.72319, -685.1759" QuestId="65768" StepId="1" />
+				<Grind while="HasQuest(65768) and GetQuestStep(65768) == 1">
+					<GrindArea name="Tough_Guys">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-188.4642, 30.72319, -685.1759" name="Imperial Shadow" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3166" /> <!-- Imperial Shadow -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65768) == 2">
+				<GetTo ZoneId="134" XYZ="-189.6544, 30.83744, -685.298" />
+				<TalkTo NpcId="1010627" XYZ="-189.6544, 30.83744, -685.298" QuestId="65768" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65768) == 3">
+				<GetTo ZoneId="135" XYZ="491.0505, 68.14364, -198.5046" />
+				<TalkTo NpcId="1010571" XYZ="491.0505, 68.14364, -198.5046" QuestId="65768" StepId="3" />
+				<Grind while="HasQuest(65768) and GetQuestStep(65768) == 3">
+					<GrindArea name="Tough_Guys2">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="491.0505, 68.14364, -198.5046" name="Imperial Shadow" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3166" /> <!-- Imperial Shadow -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65768) == 4">
+				<GetTo ZoneId="135" XYZ="492.8815, 68.95544, -197.5891" />
+				<UseObject NpcId="2005006" XYZ="492.8815, 68.95544, -197.5891" Radius="10" QuestId="65768" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65768) == 5">
+				<GetTo ZoneId="137" XYZ="516.6855, 9.414734, 351.1252" />
+				<TalkTo NpcId="1010575" XYZ="516.6855, 9.414734, 351.1252" QuestId="65768" StepId="5" />
+				<Grind while="HasQuest(65768) and GetQuestStep(65768) == 5">
+					<GrindArea name="Tough_Guys3">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="516.6855, 9.414734, 351.1252" name="Imperial Shadow" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3166" /> <!-- Imperial Shadow -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65768) == 6">
+				<GetTo ZoneId="137" XYZ="515.5565, 9.47583, 349.9352" />
+				<UseObject NpcId="2005007" XYZ="515.5565, 9.47583, 349.9352" Radius="10" QuestId="65768" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65768) == 7">
+				<GetTo ZoneId="139" XYZ="220.9128, -0.9591978, 259.2571" />
+				<TalkTo NpcId="1010572" XYZ="209.2164, -2.07005, 260.3036" QuestId="65768" StepId="7" />
+				<Grind while="HasQuest(65768) and GetQuestStep(65768) == 7">
+					<GrindArea name="Tough_Guys4">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="209.2164, -2.07005, 260.3036" name="Imperial Shadow" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3166" /> <!-- Imperial Shadow -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65768) == 8">
+				<GetTo ZoneId="139" XYZ="208.2704, -2.090576, 259.8458" />
+				<UseObject NpcId="2005008" XYZ="208.2704, -2.090576, 259.8458" Radius="10" QuestId="65768" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(65768) == 9">
+				<GetTo ZoneId="180" XYZ="-76.98181, 64.50076, -241.5656" />
+				<TalkTo NpcId="1010574" XYZ="-76.98181, 64.50076, -241.5656" QuestId="65768" StepId="9" />
+				<Grind while="HasQuest(65768) and GetQuestStep(65768) == 9">
+					<GrindArea name="Tough_Guys5">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-76.98181, 64.50076, -241.5656" name="Imperial Shadow" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="3166" /> <!-- Imperial Shadow -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65768) == 10">
+				<GetTo ZoneId="180" XYZ="-77.19543, 64.49988, -240.7111" />
+				<UseObject NpcId="2005009" XYZ="-77.19543, 64.49988, -240.7111" Radius="10" QuestId="65768" StepId="10" />
+			</If>
+			<If Condition="GetQuestStep(65768) == 255">
+				<GetTo ZoneId="134" XYZ="-182.8184, 30.5332, -684.9318" />
+				<TurnIn QuestId="65768" NpcId="2004932" XYZ="-182.8184, 30.5332, -684.9318" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Crow Knows -->
+		<If Condition="not IsQuestCompleted(65769) and IsQuestCompleted(65768) and Core.Me.Levels[ClassJobType.Rogue] &gt; 44">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65769)">
+				<GetTo ZoneId="134" XYZ="-189.0135, 30.93738, -687.2816" />
+				<If Condition="IsQuestAcceptQualified(65769)">
+					<PickupQuest NpcId="1010628" QuestId="65769" XYZ="-189.0135, 30.93738, -687.2816" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65769) == 1">
+				<GetTo ZoneId="137" XYZ="-8.712891, 39.58077, 258.2589" />
+				<TalkTo NpcId="1010629" XYZ="-8.712891, 39.58077, 258.2589" QuestId="65769" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65769) == 2">
+				<GetTo ZoneId="137" XYZ="-70.93927, 36.04747, 475.6696" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1010630" XYZ="-70.93927, 36.04747, 475.6696" QuestId="65769" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="-70.93927, 36.04747, 475.6696" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3171" Weight="4000" /> <!-- Medium Circle -->
+						<TargetMob Id="3170" Weight="3000" /> <!-- Shadow Bat -->
+						<TargetMob Id="3167" Weight="2000" /> <!-- Imperial Nightshadow -->
+						<TargetMob Id="3165" Weight="1000" /> <!-- Karasu Redbeak -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65769) == 3">
+				<GetTo ZoneId="137" XYZ="-68.95557, 36.05802, 471.4275" />
+				<TalkTo NpcId="1010631" XYZ="-68.95557, 36.05802, 471.4275" QuestId="65769" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65769) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65769" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Master and Student -->
+		<If Condition="not IsQuestCompleted(65770) and IsQuestCompleted(65769) and Core.Me.Levels[ClassJobType.Rogue] &gt; 49">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65770)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65770)">
+					<PickupQuest NpcId="1010139" QuestId="65770" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65770) == 1">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Tsubame" XYZ="-33.76825, -24.67444, 250.3242" />
+				<TalkTo NpcId="1010632" SelectStringOverride="1" XYZ="-33.76825, -24.67444, 250.3242" QuestId="65770" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65770) == 2">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="-570.8248, -1.493519, -12.61926" />
+				</If>
+				<GetTo ZoneId="139" XYZ="-570.8248, -1.493519, -12.61926" />
+				<TalkTo NpcId="1010633" XYZ="-570.8248, -1.493519, -12.61926" QuestId="65770" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65770) == 3">
+				<GetTo ZoneId="139" XYZ="-560.0519, -1.796486, -14.57245" />
+				<TalkTo NpcId="1010634" XYZ="-560.0519, -1.796486, -14.57245" QuestId="65770" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65770) == 4">
+				<GetTo ZoneId="135" XYZ="-10.422, 8.921356, 831.6013" />
+				<TalkTo NpcId="1002515" XYZ="-10.422, 8.921356, 831.6013" QuestId="65770" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65770) == 5">
+				<GetTo ZoneId="135" XYZ="19.94348, 42.92358, 855.4666" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2004935" XYZ="19.94348, 42.92358, 855.4666" QuestId="65770" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-0.671795, 8.921356, 853.2977" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3173" Weight="5000" /> <!-- Ten -->
+						<TargetMob Id="3174" Weight="4000" /> <!-- Chi -->
+						<TargetMob Id="3175" Weight="3000" /> <!-- Jin -->
+						<TargetMob Id="3168" Weight="2000" /> <!-- Imperial Darkshadow -->
+						<TargetMob Id="3172" Weight="1000" /> <!-- Gekkai the Blind -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65770) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65770" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<UseInventoryItem ItemId="20647" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Strangers in a Strange Land -->
+		<If Condition="not IsQuestCompleted(65771) and IsQuestCompleted(65964) and IsQuestCompleted(65770) and Core.Me.Levels[ClassJobType.Rogue] &gt; 49">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(65771)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(65771)">
+					<PickupQuest NpcId="1010139" QuestId="65771" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65771) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="65771" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 2">
+				<GetTo ZoneId="134" XYZ="172.8999, 95.27325, -202.9298" />
+				<TalkTo NpcId="1013884" XYZ="172.8999, 95.27325, -202.9298" QuestId="65771" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 3">
+				<GetTo ZoneId="134" XYZ="30.99097, 60.65454, -205.4017" />
+				<UseObject NpcId="2005921" XYZ="30.99097, 60.65454, -205.4017" Radius="10" QuestId="65771" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 4">
+				<GetTo ZoneId="134" XYZ="-90.37921, 43.04565, -308.3085" />
+				<UseObject NpcId="2005922" XYZ="-90.37921, 43.04565, -308.3085" Radius="10" QuestId="65771" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 5">
+				<GetTo ZoneId="134" XYZ="-148.0278, 20.30975, -339.4064" />
+				<UseObject NpcId="2005923" XYZ="-148.0278, 20.30975, -339.4064" Radius="10" QuestId="65771" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 6">
+				<GetTo ZoneId="134" XYZ="-19.24164, 12.51668, -462.6688" />
+				<TalkTo NpcId="1013892" XYZ="-19.24164, 12.51668, -462.6688" QuestId="65771" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65771) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="65771" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Impossible Girl -->
+		<If Condition="not IsQuestCompleted(67220) and IsQuestCompleted(65771) and Core.Me.Levels[ClassJobType.Rogue] &gt; 51">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(67220)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(67220)">
+					<PickupQuest NpcId="1010139" QuestId="67220" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67220) == 1">
+				<GetTo ZoneId="139" XYZ="-335.2865, -2.701369, 135.1796" />
+				<TalkTo NpcId="1013893" XYZ="-335.2865, -2.701369, 135.1796" QuestId="67220" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67220) == 2">
+				<GetTo ZoneId="139" XYZ="-424.2466, -5.172852, 168.658" />
+				<UseItem NpcIds="2005926,2005927,2005925" ItemId="2001723" Radius="250" QuestId="67220" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="-424.2466, -5.172852, 168.658" Radius="10" />
+						<HotSpot XYZ="-457.7554, -12.64978, 218.9211" Radius="10" />
+						<HotSpot XYZ="-449.0883, -1.205505, 116.5941" Radius="10" />
+					</HotSpots>
+				</UseItem>
+			</If>
+			<If Condition="GetQuestStep(67220) == 3">
+				<GetTo ZoneId="139" XYZ="-430.8995, -12.36214, 208.2399" />
+				<TalkTo NpcId="1013896" XYZ="-430.8995, -12.36214, 208.2399" QuestId="67220" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67220) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="67220" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Ninja Assassin -->
+		<If Condition="not IsQuestCompleted(67221) and IsQuestCompleted(67220) and Core.Me.Levels[ClassJobType.Rogue] &gt; 53">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(67221)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(67221)">
+					<PickupQuest NpcId="1010139" QuestId="67221" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67221) == 1">
+				<GetTo ZoneId="135" XYZ="107.7134, 68.15523, 332.5094" />
+				<TalkTo NpcId="1013898" XYZ="107.7134, 68.15523, 332.5094" QuestId="67221" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 2">
+				<GetTo ZoneId="135" XYZ="-22.84283, 66.30042, 426.1692" />
+				<Dismount />
+				<RunCode Name="Ninja_Assassin" />
+				<WaitWhile Condition="GetQuestStep(67221) == 2" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 3">
+				<GetTo ZoneId="135" XYZ="-46.70789, 48.41687, 529.1676" />
+				<Dismount />
+				<RunCode Name="Ninja_Assassin2" />
+				<WaitWhile Condition="GetQuestStep(67221) == 3" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 4">
+				<GetTo ZoneId="135" XYZ="-93.88879, 26.93213, 623.2546" />
+				<Dismount />
+				<RunCode Name="Ninja_Assassin3" />
+				<WaitWhile Condition="GetQuestStep(67221) == 4" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 5">
+				<GetTo ZoneId="135" XYZ="-185.4124, 0.01519775, 678.8281" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2005931" XYZ="-185.4124, 0.01519775, 678.8281" QuestId="67221" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-185.4124, 0.01519775, 678.8281" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3171" Weight="4000" /> <!-- Medium Circle -->
+						<TargetMob Id="3170" Weight="3000" /> <!-- Shadow Bat -->
+						<TargetMob Id="4241" Weight="2000" /> <!-- Imperial Deserter -->
+						<TargetMob Id="4243" Weight="1000" /> <!-- Redway the Relinquished -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67221) == 6">
+				<GetTo ZoneId="135" XYZ="-136.8887, 2.258633, 697.8407" />
+				<TalkTo NpcId="1013906" XYZ="-136.8887, 2.258633, 697.8407" QuestId="67221" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 7">
+				<GetTo ZoneId="135" XYZ="-38.01025, 71.44155, 111.9553" />
+				<TalkTo NpcId="1013908" XYZ="-38.01025, 71.44155, 111.9553" QuestId="67221" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(67221) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="67221" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Medieval Espionage -->
+		<If Condition="not IsQuestCompleted(67222) and IsQuestCompleted(67221) and Core.Me.Levels[ClassJobType.Rogue] &gt; 55">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(67222)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(67222)">
+					<PickupQuest NpcId="1010139" QuestId="67222" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67222) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="67222" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67222) == 2">
+				<GetTo ZoneId="135" XYZ="508.7509, 95.94249, -450.2785" />
+				<Grind while="HasQuest(67222) and GetQuestStep(67222) == 2">
+					<GrindArea name="Medieval_Espionage">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="508.7509, 95.94249, -450.2785" name="Qiqirn Nogbeater" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4090" /> <!-- Qiqirn Nogbeater -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67222) == 3">
+				<GetTo ZoneId="135" XYZ="508.7509, 95.94249, -450.2785" />
+				<HandOver ItemId="2001724" QuestId="67222" StepId="3" NpcId="1013909" XYZ="508.7509, 95.94249, -450.2785" />
+			</If>
+			<If Condition="GetQuestStep(67222) == 4">
+				<GetTo ZoneId="137" XYZ="483.36, 10.87964, 348.8975" />
+				<UseObject NpcId="2005932" XYZ="483.36, 10.87964, 348.8975" Radius="10" QuestId="67222" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67222) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="67222" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Staying Alive -->
+		<If Condition="not IsQuestCompleted(67223) and IsQuestCompleted(67222) and Core.Me.Levels[ClassJobType.Rogue] &gt; 57">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(67223)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<MoveTo Name="Oboro" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(67223)">
+					<PickupQuest NpcId="1010139" QuestId="67223" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67223) == 1">
+				<GetTo ZoneId="129" XYZ="-228.1682, 16, 50.64465" />
+				<HandOver ItemId="2001800" QuestId="67223" StepId="1" NpcId="1001208" XYZ="-228.1682, 16, 50.64465" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 2">
+				<GetTo ZoneId="129" XYZ="-188.7999, 1.724182, 207.7821" />
+				<UseItem NpcId="2005934" ItemId="2001725" XYZ="-188.7999, 1.724182, 207.7821" Radius="10" QuestId="67223" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 3">
+				<GetTo ZoneId="129" XYZ="-175.5551, 3.982544, 179.2477" />
+				<UseObject NpcId="2005935" XYZ="-175.5551, 3.982544, 179.2477" Radius="10" QuestId="67223" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 4">
+				<GetTo ZoneId="398" XYZ="230.7316, -56.71082, -247.2114" />
+				<TalkTo NpcId="1013912" XYZ="230.7316, -56.71082, -247.2114" QuestId="67223" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 5">
+				<GetTo ZoneId="398" XYZ="163.2867, -64.2558, -102.8917" />
+				<UseObject NpcId="2005938" XYZ="163.2867, -64.2558, -102.8917" Radius="10" QuestId="67223" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 6">
+				<GetTo ZoneId="398" XYZ="237.5981, -54.04252, -217.0291" />
+				<TalkTo NpcId="1015302" XYZ="237.5981, -54.04252, -217.0291" QuestId="67223" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67223) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="67223" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- In Her Defense -->
+		<If Condition="not IsQuestCompleted(67224) and IsQuestCompleted(67223) and Core.Me.Levels[ClassJobType.Rogue] &gt; 59">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(67224)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(67224)">
+					<PickupQuest NpcId="1010139" QuestId="67224" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<While Condition="GetQuestStep(67224) == 1">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &lt; 20">
+					<UseTransport Name="Storehouse Exit" InteractDistance="3.0" NpcId="2004966" XYZ="-16.12885, -23.3006, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-4.867676, 39.41406, 263.7826" />
+				<EmoteNPC NpcId="2005940" Emote="doze" XYZ="-4.867676, 39.41406, 263.7826" Radius="10" UseTimes="1" QuestId="67224" StepId="1" />
+				<EmoteNPC NpcId="2005941" Emote="doze" XYZ="-47.10461, 39.74963, 255.6648" Radius="10" UseTimes="1" QuestId="67224" StepId="1" />
+			</While>
+			<If Condition="GetQuestStep(67224) == 2">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TalkTo NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" QuestId="67224" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67224) == 3">
+				<GetTo ZoneId="135" XYZ="103.9902, 53.59641, 674.8607" />
+				<TalkTo NpcId="1013916" XYZ="103.9902, 53.59641, 674.8607" QuestId="67224" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67224) == 4">
+				<GetTo ZoneId="135" XYZ="122.5452, 60.65454, 934.4777" />
+				<UseObject NpcId="2005942" XYZ="122.5452, 60.65454, 934.4777" Radius="10" QuestId="67224" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67224) == 5">
+				<GetTo ZoneId="135" XYZ="259.6017, 4.403121, 715.3887" />
+				<TalkTo NpcId="1013920" XYZ="259.6017, 4.403121, 715.3887" QuestId="67224" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(67224) == 6">
+				<GetTo ZoneId="135" XYZ="259.6017, 4.403121, 715.3887" />
+				<BotSettings BlockSkippingCutscenes="1" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1013920" XYZ="259.6017, 4.403121, 715.3887" QuestId="67224" StepId="6">
+					<HotSpots>
+						<HotSpot XYZ="220.0603, 64.6908, -11.24079" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="3171" Weight="8000" /> <!-- Medium Circle -->
+						<TargetMob Id="3170" Weight="7000" /> <!-- Shadow Bat -->
+						<TargetMob Id="4246" Weight="5000" /> <!-- Truehound Cutter -->
+						<TargetMob Id="4245" Weight="6000" /> <!-- Truehound Gunner -->
+						<TargetMob Id="4091" Weight="4000" /> <!-- Truehound Swab -->
+						<TargetMob Id="4092" Weight="3000" /> <!-- Truehound Lodesman -->
+						<TargetMob Id="4243" Weight="2000" /> <!-- Redway the Relinquished -->
+						<TargetMob Id="4244" Weight="1000" /> <!-- Rosalinde Bloodfang -->
+					</TargetMobs>
+				</LLSimpleDuty>
+				<BotSettings BlockSkippingCutscenes="0" />
+			</If>
+			<If Condition="GetQuestStep(67224) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="67224" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Search for the Stolen Scroll -->
+		<If Condition="not IsQuestCompleted(68484) and IsQuestCompleted(67895) and IsQuestCompleted(67224) and Core.Me.Levels[ClassJobType.Rogue] &gt; 59">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(68484)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<If Condition="IsQuestAcceptQualified(68484)">
+					<PickupQuest NpcId="1010139" QuestId="68484" XYZ="-33.21893, -24.67444, 257.9841" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68484) == 1">
+				<If Condition="not IsOnMap(129)">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<If Condition="IsOnMap(129) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-153.3685, -129.4397, 265.8884)) &gt; 10">
+					<GetTo ZoneId="129" XYZ="-152.6666, 2.856241, 243.183" />
+					<TalkTo Name="Lonwoerd" InteractDistance="3.0" NpcId="1009944" XYZ="-152.6666, 2.856241, 243.183" />
+				</If>
+				<MoveTo Name="Jacke" XYZ="-153.3685, -129.4397, 265.8884" />
+				<TalkTo NpcId="1009943" XYZ="-153.3685, -129.4397, 265.8884" QuestId="68484" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 2">
+				<GetTo ZoneId="128" XYZ="13.41266, 40.2, -13.26007" />
+				<TalkTo NpcId="1005411" SelectStringOverride="2" XYZ="13.41266, 40.2, -13.26007" QuestId="68484" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 3">
+				<GetTo ZoneId="129" XYZ="0.6256104, 20.33334, 5.935669" />
+				<TalkTo NpcId="1023751" XYZ="0.6256104, 20.33334, 5.935669" QuestId="68484" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 4">
+				<GetTo ZoneId="137" XYZ="-3.891113, 66.76015, 45.30396" />
+				<TalkTo NpcId="1023545" XYZ="-3.891113, 66.76015, 45.30396" QuestId="68484" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 5">
+				<GetTo ZoneId="137" XYZ="468.803, 10.5382, 774.1359" />
+				<TalkTo NpcId="1023547" XYZ="468.803, 10.5382, 774.1359" QuestId="68484" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 6">
+				<GetTo ZoneId="137" XYZ="477.1038, 11.54393, 232.288" />
+				<TalkTo NpcId="1023550" XYZ="477.1038, 11.54393, 232.288" QuestId="68484" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(68484) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="68484" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Ninja Bathin' Redux -->
+		<If Condition="not IsQuestCompleted(68485) and IsQuestCompleted(68484) and Core.Me.Levels[ClassJobType.Rogue] &gt; 62">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(68485)">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-28.85486, -24.77324, 265.3086" />
+				<If Condition="IsQuestAcceptQualified(68485)">
+					<PickupQuest NpcId="1010778" QuestId="68485" XYZ="-28.85486, -24.77324, 265.3086" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68485) == 1">
+				<GetTo ZoneId="628" XYZ="116.35, 11.99354, -40.45172" />
+				<TalkTo NpcId="1023555" XYZ="116.35, 11.99354, -40.45172" QuestId="68485" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(68485) == 2">
+				<GetTo ZoneId="628" XYZ="-35.00498, 0.0298152, -68.1834" />
+				<RunCode Name="Rogue_Hide" />
+				<MoveTo Name="Garnet League Members" XYZ="-49.4156, 3.013504, -71.45861" Distance="0.5" />
+				<MoveTo Name="Rakuza District" XYZ="-67.67547, -6.890152, -106.8051" Distance="0.5" />
+				<RunCode Name="Rogue_Hide" />
+				<MoveTo Name="Garnet League Members" XYZ="-82.41079, -7.300003, -112.4815" Distance="0.5" />
+			</While>
+			<If Condition="GetQuestStep(68485) == 3">
+				<GetTo ZoneId="628" XYZ="116.35, 11.99354, -40.45172" />
+				<TalkTo NpcId="1023555" XYZ="116.35, 11.99354, -40.45172" QuestId="68485" StepId="3" />
+			</If>
+			<While Condition="GetQuestStep(68485) == 4">
+				<GetTo ZoneId="628" XYZ="-71.05771, 18, -162.8531" />
+				<RunCode Name="Ninja_Bathin_Redux" />
+				<MoveTo Name="Walk on Roof" Distance="0.1" UseMesh="False" XYZ="-40.42299, 20.37195, -163.9135" />
+				<ClimbHill Name="Jump over Roof Peak" Distance="0.1" Start="-40.42299, 20.37195, -163.9135" End="-40.44627, 21.62523, -157.689" />
+				<MoveTo Name="Roof Ledge" Distance="0.1" UseMesh="False" XYZ="-39.43414, 20.15029, -155.0972" />
+				<MoveTo Name="Destination" Distance="0.1" UseMesh="False" XYZ="-40.05493, 18.78381, -143.3891" />
+				<UseObject NpcId="2008933" XYZ="-40.05493, 18.78381, -143.3891" Radius="10" QuestId="68485" StepId="4" />
+				<MoveTo Name="Jump" Distance="0.1" UseMesh="False" XYZ="-33.98598, 5.86844, -143.2727" />
+			</While>
+			<If Condition="GetQuestStep(68485) == 5">
+				<GetTo ZoneId="628" XYZ="-117.5708, 13.41266, -134.3557" />
+				<UseObject NpcId="2008934" XYZ="-117.5708, 13.41266, -134.3557" Radius="10" QuestId="68485" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68485) == 6">
+				<GetTo ZoneId="628" XYZ="-118.1812, 13.19904, -143.145" />
+				<UseObject NpcId="2008935" XYZ="-118.1812, 13.19904, -143.145" Radius="10" QuestId="68485" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(68485) == 7">
+				<GetTo ZoneId="628" XYZ="-107.4999, 19.24152, -201.3123" />
+				<UseObject NpcId="2008936" XYZ="-107.4999, 19.24152, -201.3123" Radius="10" QuestId="68485" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(68485) == 255">
+				<GetTo ZoneId="628" XYZ="116.8077, 11.97827, -38.34595" />
+				<TurnIn QuestId="68485" NpcId="2008937" XYZ="116.8077, 11.97827, -38.34595" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- A Game of Life and Death -->
+		<If Condition="not IsQuestCompleted(68486) and IsQuestCompleted(68485) and Core.Me.Levels[ClassJobType.Rogue] &gt; 64">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(68486)">
+				<GetTo ZoneId="628" XYZ="116.35, 11.99354, -40.45172" />
+				<If Condition="IsQuestAcceptQualified(68486)">
+					<PickupQuest NpcId="1023555" QuestId="68486" XYZ="116.35, 11.99354, -40.45172" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68486) == 1">
+				<GetTo ZoneId="628" XYZ="60.77661, 2.011992, 34.04285" />
+				<TalkTo NpcId="1023565" XYZ="60.77661, 2.011992, 34.04285" QuestId="68486" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68486) == 2">
+				<GetTo ZoneId="628" XYZ="8.682312, 3.999999, 49.88171" />
+				<TalkTo NpcId="1023566" XYZ="8.682312, 3.999999, 49.88171" QuestId="68486" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68486) == 3">
+				<GetTo ZoneId="628" XYZ="60.77661, 2.011992, 34.04285" />
+				<TalkTo NpcId="1023565" XYZ="60.77661, 2.011992, 34.04285" QuestId="68486" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68486) == 4">
+				<GetTo ZoneId="628" XYZ="116.35, 11.99354, -40.45172" />
+				<TalkTo NpcId="1023555" XYZ="116.35, 11.99354, -40.45172" QuestId="68486" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68486) == 5">
+				<GetTo ZoneId="613" XYZ="696.681, -0.05143756, 22.65961" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1023567" XYZ="696.681, -0.05143756, 22.65961" QuestId="68486" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="652.4329, 22.22583, 57.33592" Radius="10" />
+						<HotSpot XYZ="579.2309, 39.88651, 19.87102" Radius="90" />
+						<HotSpot XYZ="519.9241, 52.63891, -24.31592" Radius="10" />
+						<HotSpot XYZ="523.2573, 52.87864, -26.75093" Radius="90" />
+					</HotSpots>
+					<InteractObjects>
+						<InteractObject Name="Shackles" NpcId="2008896" />
+					</InteractObjects>
+					<TargetMobs>
+						<TargetMob Id="6681" Weight="5000" /> <!-- Garnet Lookout -->
+						<TargetMob Id="6680" Weight="4000" /> <!-- Garnet Bounder -->
+						<TargetMob Id="6682" Weight="3000" /> <!-- Garnet Brute -->
+						<TargetMob Id="3165" Weight="2000" /> <!-- Karasu Redbeak -->
+						<TargetMob Id="6679" Weight="1000" /> <!-- Zakuro Brightblood -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(68486) == 6">
+				<WaitWhile Condition="not GetQuestStep(68486) == 255" />
+			</If>
+			<If Condition="GetQuestStep(68486) == 255">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<TurnIn QuestId="68486" NpcId="1023570" XYZ="412.1614, 68.02851, -96.75751" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- True Enlightenment -->
+		<If Condition="not IsQuestCompleted(68487) and IsQuestCompleted(68486) and Core.Me.Levels[ClassJobType.Rogue] &gt; 67">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(68487)">
+				<GetTo ZoneId="614" XYZ="413.0769, 68.02851, -99.32104" />
+				<If Condition="IsQuestAcceptQualified(68487)">
+					<PickupQuest NpcId="1023571" SelectStringOverride="2" QuestId="68487" XYZ="413.0769, 68.02851, -99.32104" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68487) == 1">
+				<GetTo ZoneId="614" XYZ="703.2424, 107.839, -341.4512" />
+				<TalkTo NpcId="1023573" XYZ="703.2424, 107.839, -341.4512" QuestId="68487" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 2">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<TalkTo NpcId="1023570" XYZ="412.1614, 68.02851, -96.75751" QuestId="68487" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 3">
+				<GetTo ZoneId="614" XYZ="693.2936, 171.374, 84.82483" />
+				<TalkTo NpcId="1023577" XYZ="693.2936, 171.374, 84.82483" QuestId="68487" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 4">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<TalkTo NpcId="1023570" XYZ="412.1614, 68.02851, -96.75751" QuestId="68487" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 5">
+				<GetTo ZoneId="614" XYZ="577.1782, 8.791731, 407.5306" />
+				<Grind while="HasQuest(68487) and GetQuestStep(68487) == 5">
+					<GrindArea name="True_Enlightenment">
+						<Hotspots>
+							<Hotspot Radius="250" XYZ="577.1782, 8.791731, 407.5306" name="Doman Weasels" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="5758" /> <!-- Doman Weasel -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(68487) == 6">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<HandOver ItemId="2002382" QuestId="68487" StepId="6" NpcId="1023570" XYZ="412.1614, 68.02851, -96.75751" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 7">
+				<GetTo ZoneId="614" XYZ="693.2936, 171.374, 84.82483" />
+				<TalkTo NpcId="1023577" XYZ="693.2936, 171.374, 84.82483" QuestId="68487" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(68487) == 255">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<TurnIn QuestId="68487" NpcId="1023570" XYZ="412.1614, 68.02851, -96.75751" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- When Clans Collide -->
+		<If Condition="not IsQuestCompleted(68488) and IsQuestCompleted(68487) and Core.Me.Levels[ClassJobType.Rogue] &gt; 69">
+			<While Condition="ClassName != ClassJobType.Ninja">
+				<ChangeClass Job="Ninja" />
+			</While>
+			<If Condition="not HasQuest(68488)">
+				<GetTo ZoneId="614" XYZ="412.1614, 68.02851, -96.75751" />
+				<If Condition="IsQuestAcceptQualified(68488)">
+					<PickupQuest NpcId="1023570" QuestId="68488" XYZ="412.1614, 68.02851, -96.75751" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68488) == 1">
+				<GetTo ZoneId="622" XYZ="-174.609, 1.113892, 767.5134" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2008939" XYZ="-174.609, 1.113892, 767.5134" QuestId="68488" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="-174.4213, 1.181022, 761.1149" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="6340" Weight="2000" /> <!-- Mirrored Hanzo -->
+						<TargetMob Id="6338" Weight="1000" /> <!-- Hanzo the Hidden -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(68488) == 2">
+				<WaitWhile Condition="not GetQuestStep(68488) == 255" />
+			</If>
+			<If Condition="GetQuestStep(68488) == 255">
+				<If Condition="not IsOnMap(137)">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<If Condition="IsOnMap(137) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-33.21893, -24.67445, 257.9841)) &gt; 20">
+					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
+					<TalkTo Name="Byakubu" InteractDistance="3.0" NpcId="1010601" XYZ="-14.75549, 41.39178, 258.1368" />
+				</If>
+				<GetTo ZoneId="137" XYZ="-33.21893, -24.67444, 257.9841" />
+				<TurnIn QuestId="68488" NpcId="1010139" XYZ="-33.21893, -24.67444, 257.9841" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<LastProfile />
+	</Order>
+	<GrindAreas>
+	</GrindAreas>
+	<CodeChunks>
+		<CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
+        {
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+        };
+
+      ]]>
+    </CodeChunk>
+		<CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+		<CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
+
+            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
+            {
+                return false;
+            }
+
+            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
+
+            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
+            {
+                Log.Information($"Found Target {mobsToKill.EnglishName}");
+                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
+            }
+	        return false;
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="GearsetSave">
+  <![CDATA[
+	await CommonTasks.StopAndDismount();
+	ChatManager.SendChat("/gs save");
+  ]]>
+</CodeChunk>
+		<CodeChunk Name="Rogue_Hide">
+			<![CDATA[
+				SpellData data;
+				if (!Core.Me.HasAura(614) && ActionManager.CurrentActions.TryGetValue(2245, out data) && ActionManager.CanCast(data, Core.Me))
+				{
+					ActionManager.DoAction(2245, Core.Me);
+				}
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="My_First_Mudra">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004927);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2265,target);
+					await Coroutine.Sleep(500);
+				}
+
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Once_Upon_a_Time_in_Doma">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004928);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Once_Upon_a_Time_in_Doma2">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004929);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Bathin_Jump">
+			<![CDATA[
+				if(Core.Player.IsMounted)
+				{
+					ff14bot.Managers.ActionManager.Dismount();
+					await Coroutine.Sleep(3000);
+				}
+
+				ff14bot.Managers.MovementManager.SetFacing(4.564095f);
+				ff14bot.Managers.MovementManager.MoveForwardStart();
+				await Coroutine.Sleep(500);
+				ff14bot.Managers.MovementManager.Jump();
+				await Coroutine.Sleep(1500);
+				ff14bot.Managers.MovementManager.MoveStop();
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005928);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin2">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005929);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin3">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005930);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Bathin_Redux">
+			<![CDATA[
+				MovementManager.SetFacing(1.585401f);
+				MovementManager.MoveForwardStart();
+				await Coroutine.Sleep(1000);
+				MovementManager.Jump();
+				await Coroutine.Sleep(1000);
+				MovementManager.Jump();
+				await Coroutine.Sleep(1000);
+				MovementManager.MoveStop();
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Cloying_Move_1">
+			<![CDATA[
+				var vector3Array = new Vector3[]
+				{
+					new Vector3(-45.94231f, 40.03208f, 15.35122f),
+					new Vector3(-39.09391f, 39.99997f, -23.83099f),
+					new Vector3(-15.8341f, 44f, -37.34334f)
+				};
+
+				foreach (var pos in vector3Array)
+				{
+					Navigator.PlayerMover.MoveTowards(pos);
+					while (Core.Me.Location.Distance2D(pos) > 0.5f)
+					{
+						await Coroutine.Yield();
+						Navigator.PlayerMover.MoveTowards(pos);
+					}
+				}
+
+				Navigator.PlayerMover.MoveStop();
+				await Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Cloying_Move_2">
+			<![CDATA[
+				var vector3Array = new Vector3[]
+				{
+					new Vector3(-27.69446f, 43.37358f, -36.28551f),
+					new Vector3(-42.31695f, 40f, -13.29175f),
+					new Vector3(-35.88639f, 38.83962f, -11.47515f),
+					new Vector3(-21.58907f, 32f, -33.61335f),
+					new Vector3(-35.80517f, 31.99998f, -16.44617f),
+					new Vector3(-35.94568f, 31.99994f, 3.631114f)
+				};
+
+				foreach (var pos in vector3Array)
+				{
+					Navigator.PlayerMover.MoveTowards(pos);
+					while (Core.Me.Location.Distance2D(pos) > 0.5f)
+					{
+						await Coroutine.Yield();
+						Navigator.PlayerMover.MoveTowards(pos);
+					}
+				}
+
+				Navigator.PlayerMover.MoveStop();
+				await Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+
+
+		<!-- Arcanist 1-15 Codechunks -->
+
+
+		<CodeChunk Name="Rogue_Hide">
+			<![CDATA[ SpellData data;
+				if (!Core.Me.HasAura(614) && ActionManager.CurrentActions.TryGetValue(2245, out data) && ActionManager.CanCast(data, Core.Me)) ActionManager.DoAction(2245, Core.Me);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="My_First_Mudra">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004927);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2265,target);
+					await Coroutine.Sleep(500);
+				}
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Once_Upon_a_Time_in_Doma">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004928);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Once_Upon_a_Time_in_Doma2">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2004929);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Bathin_Jump">
+			<![CDATA[
+				if(Core.Player.IsMounted)
+				{
+					ff14bot.Managers.ActionManager.Dismount();
+					await Coroutine.Sleep(3000);
+				}
+				ff14bot.Managers.MovementManager.SetFacing(4.564095f);
+				ff14bot.Managers.MovementManager.MoveForwardStart();
+				await Coroutine.Sleep(500);
+				ff14bot.Managers.MovementManager.Jump();
+				await Coroutine.Sleep(1500);
+				ff14bot.Managers.MovementManager.MoveStop();
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005928);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin2">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005929);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Assassin3">
+			<![CDATA[
+				GameObject target;
+
+				await Coroutine.Sleep(1000);
+				target = GameObjectManager.GetObjectByNPCId(2005930);
+
+				target.Target();
+
+				await Coroutine.Sleep(1000);
+				if(!Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2259,target);
+					await Coroutine.Sleep(500);
+				}
+
+				if(Core.Me.HasAura(496))
+				{
+					ActionManager.DoAction(2261,target);
+					await Coroutine.Sleep(500);
+				}
+				ActionManager.DoAction(2260,target);
+				await Coroutine.Sleep(5000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+				ff14bot.RemoteWindows.Talk.Next();
+				await Coroutine.Sleep(2000);
+			]]>
+		</CodeChunk>
+		<CodeChunk Name="Ninja_Bathin_Redux">
+			<![CDATA[
+				MovementManager.SetFacing(1.585401f);
+				MovementManager.MoveForwardStart();
+				await Coroutine.Sleep(1000);
+				MovementManager.Jump();
+				await Coroutine.Sleep(1000);
+				MovementManager.Jump();
+				await Coroutine.Sleep(1000);
+				MovementManager.MoveStop();
+        	]]>
+		</CodeChunk>
+		<CodeChunk Name="ROGDutyCommence">
+      <![CDATA[
+        Logging.Write("Commencing duty.");
+        uint[] npcIds = { 2004863 };
+        var dutyNpc = GameObjectManager.GameObjects.Where(r => r.IsTargetable && npcIds.Contains(r.NpcId)).OrderBy(r => r.Distance()).FirstOrDefault();
+        while (Core.Me.Location.Distance2D(dutyNpc.Location) > 1.5f)
+        {
+          await Coroutine.Yield();
+          Navigator.PlayerMover.MoveTowards(dutyNpc.Location);
+        }
+        Navigator.PlayerMover.MoveStop();
+        dutyNpc.Interact();
+        await Coroutine.Wait(5000, () => Talk.DialogOpen || DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+        while (!(DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen))
+        {
+          Talk.Next();
+          await Coroutine.Yield();
+        }
+        await Coroutine.Wait(5000, () => DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
+        if (DifficultySelectYesNo.IsOpen) { DifficultySelectYesNo.Proceed(2); }
+        else if (SelectYesno.IsOpen) { SelectYesno.Yes(); }
+        else
+        {
+         Logging.Write("Duty window didn't open.");
+         TreeRoot.Stop();
+        }
+        await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+        await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+        while (QuestLogManager.InCutscene)
+        {
+          ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+          if (ff14bot.RemoteAgents.AgentCutScene.Instance.CanSkip && SelectString.IsOpen) { SelectString.ClickSlot(0); }
+          if (Talk.DialogOpen) { Talk.Next(); }
+          await Coroutine.Yield();
+        }
+        await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
+        await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+        await Coroutine.Wait(10000, () => !Core.Me.HasAura(1268));
+        Logging.Write("Duty commenced.");
+        await Coroutine.Sleep(1500);
+      ]]>
+    </CodeChunk>
+		<CodeChunk Name="Cloying_Move_1">
+      <![CDATA[
+        var vector3Array = new Vector3[]
+        {
+          new Vector3(-45.94231f, 40.03208f, 15.35122f),
+          new Vector3(-39.09391f, 39.99997f, -23.83099f),
+          new Vector3(-15.8341f, 44f, -37.34334f)
+        };
+        foreach (var pos in vector3Array)
+        {
+          Navigator.PlayerMover.MoveTowards(pos);
+          while (Core.Me.Location.Distance2D(pos) > 0.5f)
+          {
+            await Coroutine.Yield();
+            Navigator.PlayerMover.MoveTowards(pos);
+          }
+        }
+        Navigator.PlayerMover.MoveStop();
+        await Coroutine.Sleep(1000);
+      ]]>
+    </CodeChunk>
+		<CodeChunk Name="Cloying_Move_2">
+      <![CDATA[
+        var vector3Array = new Vector3[]
+        {
+          new Vector3(-27.69446f, 43.37358f, -36.28551f),
+          new Vector3(-42.31695f, 40f, -13.29175f),
+          new Vector3(-35.88639f, 38.83962f, -11.47515f),
+          new Vector3(-21.58907f, 32f, -33.61335f),
+          new Vector3(-35.80517f, 31.99998f, -16.44617f),
+          new Vector3(-35.94568f, 31.99994f, 3.631114f)
+        };
+        foreach (var pos in vector3Array)
+        {
+          Navigator.PlayerMover.MoveTowards(pos);
+          while (Core.Me.Location.Distance2D(pos) > 0.5f)
+          {
+            await Coroutine.Yield();
+            Navigator.PlayerMover.MoveTowards(pos);
+          }
+        }
+        Navigator.PlayerMover.MoveStop();
+        await Coroutine.Sleep(1000);
+			]]>
+		</CodeChunk>
+
+
+	</CodeChunks>
+</Profile>
