@@ -213,7 +213,7 @@
 			</If>
 			<If Condition="GetQuestStep(65683) == 1">
 				<!-- Wulfiue -->
-				<GetTo ZoneId="152" XYZ="-483.4211, 10.13082, 209.4606" />
+				<GetTo ZoneId="152" XYZ="-477.61108, 7.3125553, 204.09076" />
 				<TalkTo NpcId="1000767" XYZ="-483.4211, 10.13082, 209.4606" QuestId="65683" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(65683) == 2">
