@@ -6,341 +6,340 @@
 
 -->
 <Profile>
-  <Name>Panda Farmer - Gunbreaker Class Quests - Gunbreaker</Name>
-  <BehaviorDirectory></BehaviorDirectory>
-  <Order>
+	<Name>Panda Farmer - Gunbreaker Class Quests - Gunbreaker</Name>
+	<BehaviorDirectory></BehaviorDirectory>
+	<Order>
 
-    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
-    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
 
 
-<!-- The Makings of a Gunbreaker -->
-<If Condition="not IsQuestCompleted(68797)">
-    <If Condition="Core.Player.ClassLevel &lt; 60">
-        <RunCode Name="SwitchCombatJob" />
-        <If Condition="Core.Player.ClassLevel &lt; 60">
-		    <UserDialog IsBotContinueAllowed="True" DialogText="Please switch to a level 60 or higher combat class and press continue." />
-        </If>
-    </If>
-	<If Condition="not HasQuest(68797)">
-		<GetTo ZoneId="132" XYZ="15.74765, -1.504427, 39.0001" />
-		<If Condition="IsQuestAcceptQualified(68797)">
-			<PickupQuest QuestId="68797" NpcId="1029028" XYZ="15.74765, -1.504427, 39.0001" />
+		<!-- The Makings of a Gunbreaker -->
+		<If Condition="not IsQuestCompleted(68797)">
+			<If Condition="Core.Player.ClassLevel &lt; 60">
+				<RunCode Name="SwitchCombatJob" />
+				<If Condition="Core.Player.ClassLevel &lt; 60">
+					<UserDialog IsBotContinueAllowed="True" DialogText="Please switch to a level 60 or higher combat class and press continue." />
+				</If>
+			</If>
+			<If Condition="not HasQuest(68797)">
+				<GetTo ZoneId="132" XYZ="15.74765, -1.504427, 39.0001" />
+				<If Condition="IsQuestAcceptQualified(68797)">
+					<PickupQuest QuestId="68797" NpcId="1029028" XYZ="15.74765, -1.504427, 39.0001" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68797) == 1">
+				<GetTo ZoneId="152" XYZ="-244.1596, 5.935669, 80.03345" />
+				<UseObject NpcIds="2010237" XYZ="-244.1596, 5.935669, 80.03345" Radius="25" QuestId="68797" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68797) == 2">
+				<GetTo ZoneId="152" XYZ="-218.1137, 11.81297, 18.75217" />
+				<Grind while="GetQuestStep(68797) == 2">
+					<GrindArea name="Gunblade">
+						<Hotspots>
+							<Hotspot Radius="50" XYZ="-218.7991, 11.85537, 19.4552" name="Gunblade" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob id="8877" /> <!-- name="Vicious Highwayman"-->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(68797) == 3">
+				<GetTo ZoneId="152" XYZ="-214.6487, 11.98001, 25.40625" />
+				<TalkTo InteractDistance="3.0" QuestId="68797" StepId="3" NpcId="1029029" XYZ="-214.6487, 11.98001, 25.40625" />
+			</If>
+			<If Condition="GetQuestStep(68797) == 255">
+				<GetTo ZoneId="152" XYZ="-214.6793, 11.97104, 25.19263" />
+				<TurnIn QuestId="68797" NpcId="1029033" XYZ="-214.6793, 11.97104, 25.19263" />
+				<UseInventoryItem ItemId="27266" />
+				<While Condition="ClassName != ClassJobType.Gunbreaker">
+					<EquipWeapon ItemId="27357" />
+					<AutoEquip />
+				</While>
+				<RunCode name="GearsetSave" />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68797) == 1">
-		<GetTo ZoneId="152" XYZ="-244.1596, 5.935669, 80.03345" />
-		<UseObject NpcIds="2010237" XYZ="-244.1596, 5.935669, 80.03345" Radius="25" QuestId="68797" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68797) == 2">
-		<GetTo ZoneId="152" XYZ="-218.1137, 11.81297, 18.75217" />
-		<Grind while="GetQuestStep(68797) == 2" >
-			<GrindArea name="Gunblade">
-				<Hotspots>
-					<Hotspot Radius="50" XYZ="-218.7991, 11.85537, 19.4552" name="Gunblade"/>
-				</Hotspots>
-				<TargetMobs>
-					<TargetMob id="8877" /> <!-- name="Vicious Highwayman"-->
-				</TargetMobs>
-			</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(68797) == 3">
-		<GetTo ZoneId="152" XYZ="-214.6487, 11.98001, 25.40625" />
-		<TalkTo InteractDistance="3.0" QuestId="68797" StepId="3" NpcId="1029029" XYZ="-214.6487, 11.98001, 25.40625" />
-	</If>
-	<If Condition="GetQuestStep(68797) == 255">
-		<GetTo ZoneId="152" XYZ="-214.6793, 11.97104, 25.19263" />
-		<TurnIn QuestId="68797" NpcId="1029033" XYZ="-214.6793, 11.97104, 25.19263" />
-        <UseInventoryItem ItemId="27266"/>
-	    <While Condition="ClassName != ClassJobType.Gunbreaker">
-		    <EquipWeapon ItemId="27357"/>
-            <AutoEquip/>
-	    </While>
-        <RunCode name="GearsetSave"/>
-	</If>
-</If>
 
-<!-- Hired Gunblades -->
-<If Condition="IsQuestCompleted(68797) and not IsQuestCompleted(68798) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 59">
-	<While Condition="ClassName != ClassJobType.Gunbreaker">
-		<ChangeClass Job="Gunbreaker" />
-	</While>
-	<If Condition="not HasQuest(68798)">
-		<GetTo ZoneId="152" XYZ="-214.5651, 12.08442, 26.41814" />
-		<If Condition="IsQuestAcceptQualified(68798)">
-			<PickupQuest QuestId="68798" NpcId="1029033" />
+		<!-- Hired Gunblades -->
+		<If Condition="IsQuestCompleted(68797) and not IsQuestCompleted(68798) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 59">
+			<While Condition="ClassName != ClassJobType.Gunbreaker">
+				<ChangeClass Job="Gunbreaker" />
+			</While>
+			<If Condition="not HasQuest(68798)">
+				<GetTo ZoneId="152" XYZ="-214.5651, 12.08442, 26.41814" />
+				<If Condition="IsQuestAcceptQualified(68798)">
+					<PickupQuest QuestId="68798" NpcId="1029033" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68798) == 1">
+				<GetTo ZoneId="132" XYZ="36.04033, -8, 113.829" />
+				<TalkTo NpcId="1029035" XYZ="35.50769, -8, 115.3124" QuestId="68798" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 2">
+				<GetTo ZoneId="133" XYZ="72.21275, 13.99046, -269.2655" />
+				<TalkTo NpcId="1029037" XYZ="73.65515, 13.99409, -270.8325" QuestId="68798" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 0">
+				<GetTo ZoneId="133" XYZ="-38.39882, 7.012353, -134.4588" />
+				<TalkTo NpcId="1003063" XYZ="-37.9798, 7.439375, -139.6049" QuestId="68798" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 16">
+				<GetTo ZoneId="133" XYZ="-52.04197, 6.943437, -121.8969" />
+				<TalkTo NpcId="1000286" XYZ="-53.57446, 7.202538, -118.3643" QuestId="68798" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 33">
+				<GetTo ZoneId="133" XYZ="-56.95519, 6.964742, -122.1168" />
+				<TalkTo NpcId="1000288" XYZ="-62.02802, 7.175424, -117.6013" QuestId="68798" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 4">
+				<GetTo ZoneId="133" XYZ="-92.93575, 7.083286, -131.2883" />
+				<TalkTo NpcId="1029041" XYZ="-93.98035, 7.111186, -131.3345" QuestId="68798" StepId="4" />
+			</If>
+			<While Condition="GetQuestStep(68798) == 5">
+				<GetTo ZoneId="133" XYZ="72.5507, 13.99131, -269.2406" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1029089" XYZ="72.5507, 13.99131, -269.2406" QuestId="68798" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-25.43794, 10, -254.2919" Radius="90" />
+						<HotSpot XYZ="-50.4933, 10.77688, -224.6821" Radius="90" />
+						<HotSpot XYZ="-55.58307, 6.965093, -140.1326" Radius="90" />
+					</HotSpots>
+					<InteractObjects>
+						<InteractObject NpcId="2010642" />
+						<InteractObject NpcId="2010643" />
+						<InteractObject NpcId="2010644" />
+						<InteractObject NpcId="2010645" />
+						<InteractObject NpcId="2010646" />
+					</InteractObjects>
+					<TargetMobs>
+						<TargetMob Id="8863" Weight="2000" />
+						<TargetMob Id="8862" Weight="2000" />
+						<TargetMob Id="8861" Weight="2000" />
+						<TargetMob Id="8860" Weight="2000" />
+						<TargetMob Id="8858" Weight="3000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</While>
+			<If Condition="GetQuestStep(68798) == 6">
+				<WaitWhile Condition="not GetQuestStep(68798) == 7" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 7">
+				<GetTo ZoneId="133" XYZ="-235.5806, 2.418686, -209.6913" />
+				<TalkTo NpcId="1029043" XYZ="-232.2576, 2.41869, -210.9865" QuestId="68798" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(68798) == 255">
+				<GetTo ZoneId="130" XYZ="25.01418, 7.999992, -113.6449" />
+				<TurnIn QuestId="68798" NpcId="1029044" XYZ="18.44812, 7.999983, -115.3124" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68798) == 1">
-		<GetTo ZoneId="132" XYZ="36.04033, -8, 113.829" />
-		<TalkTo NpcId="1029035" XYZ="35.50769, -8, 115.3124" QuestId="68798" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 2">
-		<GetTo ZoneId="133" XYZ="72.21275, 13.99046, -269.2655" />
-		<TalkTo NpcId="1029037" XYZ="73.65515, 13.99409, -270.8325" QuestId="68798" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 0">
-		<GetTo ZoneId="133" XYZ="-38.39882, 7.012353, -134.4588" />
-		<TalkTo NpcId="1003063" XYZ="-37.9798, 7.439375, -139.6049" QuestId="68798" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 16">
-		<GetTo ZoneId="133" XYZ="-52.04197, 6.943437, -121.8969" />
-		<TalkTo NpcId="1000286" XYZ="-53.57446, 7.202538, -118.3643" QuestId="68798" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 3 and GetQuestById(68798).QuestI8A == 33">
-		<GetTo ZoneId="133" XYZ="-56.95519, 6.964742, -122.1168" />
-		<TalkTo NpcId="1000288" XYZ="-62.02802, 7.175424, -117.6013" QuestId="68798" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 4">
-		<GetTo ZoneId="133" XYZ="-92.93575, 7.083286, -131.2883" />
-		<TalkTo NpcId="1029041" XYZ="-93.98035, 7.111186, -131.3345" QuestId="68798" StepId="4" />
-	</If>
-	<While Condition="GetQuestStep(68798) == 5">
-		<GetTo ZoneId="133" XYZ="72.5507, 13.99131, -269.2406" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1029089" XYZ="72.5507, 13.99131, -269.2406" QuestId="68798" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="-25.43794, 10, -254.2919" Radius="90" />
-				<HotSpot XYZ="-50.4933, 10.77688, -224.6821" Radius="90" />
-				<HotSpot XYZ="-55.58307, 6.965093, -140.1326" Radius="90" />
-			</HotSpots>
-			<InteractObjects>
-				<InteractObject NpcId="2010642" />
-				<InteractObject NpcId="2010643" />
-				<InteractObject NpcId="2010644" />
-				<InteractObject NpcId="2010645" />
-				<InteractObject NpcId="2010646" />
-			</InteractObjects>
-			<TargetMobs>
-				<TargetMob Id="8863" Weight="2000" />
-				<TargetMob Id="8862" Weight="2000" />
-				<TargetMob Id="8861" Weight="2000" />
-				<TargetMob Id="8860" Weight="2000" />
-				<TargetMob Id="8858" Weight="3000" />
-			</TargetMobs>
-		</LLSimpleDuty>
-	</While>
-	<If Condition="GetQuestStep(68798) == 6">
-		<WaitWhile Condition="not GetQuestStep(68798) == 7" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 7">
-		<GetTo ZoneId="133" XYZ="-235.5806, 2.418686, -209.6913" />
-		<TalkTo NpcId="1029043" XYZ="-232.2576, 2.41869, -210.9865" QuestId="68798" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(68798) == 255">
-		<GetTo ZoneId="130" XYZ="25.01418, 7.999992, -113.6449" />
-		<TurnIn QuestId="68798" NpcId="1029044" XYZ="18.44812, 7.999983, -115.3124" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- For Better or Worse -->
-<If Condition="IsQuestCompleted(68798) and not IsQuestCompleted(68799) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 62">
-	<While Condition="ClassName != ClassJobType.Gunbreaker">
-		<ChangeClass Job="Gunbreaker" />
-	</While>
-	<If Condition="not HasQuest(68799)">
-		<GetTo ZoneId="130" XYZ="23.37659, 7.999983, -115.2888" />
-		<If Condition="IsQuestAcceptQualified(68799)">
-			<PickupQuest QuestId="68799" NpcId="1029044" />
+		<!-- For Better or Worse -->
+		<If Condition="IsQuestCompleted(68798) and not IsQuestCompleted(68799) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 62">
+			<While Condition="ClassName != ClassJobType.Gunbreaker">
+				<ChangeClass Job="Gunbreaker" />
+			</While>
+			<If Condition="not HasQuest(68799)">
+				<GetTo ZoneId="130" XYZ="23.37659, 7.999983, -115.2888" />
+				<If Condition="IsQuestAcceptQualified(68799)">
+					<PickupQuest QuestId="68799" NpcId="1029044" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68799) == 1">
+				<GetTo ZoneId="131" XYZ="151.1854, 3.999999, 35.31199" />
+				<TalkTo NpcId="1029054" XYZ="154.6807, 4.099995, 31.66235" QuestId="68799" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68799) == 2">
+				<GetTo ZoneId="141" XYZ="16.7154, 15.70348, 418.9655" />
+				<TalkTo NpcId="1029058" XYZ="18.82472, 15.24765, 402.8737" QuestId="68799" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68799) == 3">
+				<GetTo ZoneId="145" XYZ="-305.6029, -31.5357, 173.3427" />
+				<TalkTo NpcId="1029062" XYZ="-306.1113, -31.52506, 171.6792" QuestId="68799" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68799) == 4">
+				<GetTo ZoneId="145" XYZ="-294.2797, -32.32653, 159.5707" />
+				<WaitWhile Condition="GetQuestStep(68799) == 4" />
+			</If>
+			<If Condition="GetQuestStep(68799) == 5">
+				<GetTo ZoneId="145" XYZ="-292.5125, -32.53329, 158.425" />
+				<TalkTo NpcId="1029070" XYZ="-293.2937, -32.53709, 157.885" QuestId="68799" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68799) == 255">
+				<GetTo ZoneId="128" XYZ="-9.544762, 40.00953, 8.550041" />
+				<TurnIn QuestId="68799" NpcId="1029073" XYZ="-17.38013, 40.00056, -0.3204956" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68799) == 1">
-		<GetTo ZoneId="131" XYZ="151.1854, 3.999999, 35.31199" />
-		<TalkTo NpcId="1029054" XYZ="154.6807, 4.099995, 31.66235" QuestId="68799" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68799) == 2">
-		<GetTo ZoneId="141" XYZ="16.7154, 15.70348, 418.9655" />
-		<TalkTo NpcId="1029058" XYZ="18.82472, 15.24765, 402.8737" QuestId="68799" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68799) == 3">
-		<GetTo ZoneId="145" XYZ="-305.6029, -31.5357, 173.3427" />
-		<TalkTo NpcId="1029062" XYZ="-306.1113, -31.52506, 171.6792" QuestId="68799" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68799) == 4">
-		<GetTo ZoneId="145" XYZ="-294.2797, -32.32653, 159.5707" />
-		<WaitWhile Condition="GetQuestStep(68799) == 4" />
-	</If>
-	<If Condition="GetQuestStep(68799) == 5">
-		<GetTo ZoneId="145" XYZ="-292.5125, -32.53329, 158.425" />
-		<TalkTo NpcId="1029070" XYZ="-293.2937, -32.53709, 157.885" QuestId="68799" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(68799) == 255">
-		<GetTo ZoneId="128" XYZ="-9.544762, 40.00953, 8.550041" />
-		<TurnIn QuestId="68799" NpcId="1029073" XYZ="-17.38013, 40.00056, -0.3204956" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Confessions of a Flaming Mongrel -->
-<If Condition="IsQuestCompleted(68799) and not IsQuestCompleted(68800) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 64">
-	<While Condition="ClassName != ClassJobType.Gunbreaker">
-		<ChangeClass Job="Gunbreaker" />
-	</While>
-	<If Condition="not HasQuest(68800)">
-		<GetTo ZoneId="128" XYZ="-14.19082, 40.00013, 3.478016" />
-		<If Condition="IsQuestAcceptQualified(68800)">
-			<PickupQuest QuestId="68800" NpcId="1029073" />
+		<!-- Confessions of a Flaming Mongrel -->
+		<If Condition="IsQuestCompleted(68799) and not IsQuestCompleted(68800) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 64">
+			<While Condition="ClassName != ClassJobType.Gunbreaker">
+				<ChangeClass Job="Gunbreaker" />
+			</While>
+			<If Condition="not HasQuest(68800)">
+				<GetTo ZoneId="128" XYZ="-14.19082, 40.00013, 3.478016" />
+				<If Condition="IsQuestAcceptQualified(68800)">
+					<PickupQuest QuestId="68800" NpcId="1029073" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68800) == 1">
+				<GetTo ZoneId="129" XYZ="0.6877111, 20.33334, -6.287525" />
+				<TalkTo NpcId="1029078" XYZ="-0.07635498, 20.33334, -6.393555" QuestId="68800" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 0">
+				<GetTo ZoneId="129" XYZ="-59.6938, 18.05033, -2.251313" />
+				<TalkTo NpcId="1003604" XYZ="-60.44104, 18.00033, -4.348877" QuestId="68800" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 16">
+				<GetTo ZoneId="129" XYZ="-61.19771, 18.00033, 5.109014" />
+				<TalkTo NpcId="1003355" XYZ="-60.86829, 18.00033, 7.492188" QuestId="68800" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 33">
+				<GetTo ZoneId="129" XYZ="-78.35118, 18.00033, -21.44458" />
+				<TalkTo NpcId="1001023" XYZ="-78.62976, 18.00033, -22.62915" QuestId="68800" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 3">
+				<GetTo ZoneId="129" XYZ="-152.6738, 18.2, 23.60083" />
+				<TalkTo NpcId="1029081" XYZ="-153.8263, 18.2, 22.84271" QuestId="68800" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 4">
+				<GetTo ZoneId="135" XYZ="112.5633, 22.88085, 635.7622" />
+				<TalkTo NpcId="1029085" XYZ="111.101, 22.88085, 635.7976" QuestId="68800" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 5 and GetQuestById(68800).QuestI8A == 0">
+				<GetTo ZoneId="135" XYZ="-35.3697, 46.73957, 541.1609" />
+				<UseObject NpcId="2010241" XYZ="-34.53119, 46.92151, 541.2222" QuestId="68800" StepId="5" Condition="GetQuestById(68800).QuestI8A == 0" />
+				<WaitWhile Condition="Core.Player.InCombat" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 5 and GetQuestById(68800).QuestI8A == 16">
+				<GetTo ZoneId="135" XYZ="-58.42871, 56.88447, 494.2499" />
+				<UseObject NpcId="2010242" XYZ="-59.00665, 57.29761, 492.1492" QuestId="68800" StepId="5" Condition="GetQuestById(68800).QuestI8A == 16" />
+				<WaitWhile Condition="not GetQuestStep(68800) == 6" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 6">
+				<GetTo ZoneId="135" XYZ="-16.52659, 66.38613, 431.6222" />
+				<UseObject NpcId="2010243" XYZ="-15.67102, 66.36145, 431.6318" QuestId="68800" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 7">
+				<GetTo ZoneId="135" XYZ="319.8589, 75.62552, -320.516" />
+				<TalkTo NpcId="1029092" XYZ="322.3773, 75.9492, -322.4385" QuestId="68800" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 8">
+				<GetTo ZoneId="135" XYZ="-33.95303, 71.35356, 126.6421" />
+				<TalkTo NpcId="1029094" XYZ="-35.81299, 71.40167, 124.6814" QuestId="68800" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(68800) == 255">
+				<GetTo ZoneId="418" XYZ="59.61231, 23.97913, 1.691136" />
+				<TurnIn QuestId="68800" NpcId="1029098" XYZ="53.97119, 23.97913, 8.102478" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68800) == 1">
-		<GetTo ZoneId="129" XYZ="0.6877111, 20.33334, -6.287525" />
-		<TalkTo NpcId="1029078" XYZ="-0.07635498, 20.33334, -6.393555" QuestId="68800" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 0">
-		<GetTo ZoneId="129" XYZ="-59.6938, 18.05033, -2.251313" />
-		<TalkTo NpcId="1003604" XYZ="-60.44104, 18.00033, -4.348877" QuestId="68800" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 16">
-		<GetTo ZoneId="129" XYZ="-61.19771, 18.00033, 5.109014" />
-		<TalkTo NpcId="1003355" XYZ="-60.86829, 18.00033, 7.492188" QuestId="68800" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 2 and GetQuestById(68800).QuestI8A == 33">
-		<GetTo ZoneId="129" XYZ="-78.35118, 18.00033, -21.44458" />
-		<TalkTo NpcId="1001023" XYZ="-78.62976, 18.00033, -22.62915" QuestId="68800" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 3">
-		<GetTo ZoneId="129" XYZ="-152.6738, 18.2, 23.60083" />
-		<TalkTo NpcId="1029081" XYZ="-153.8263, 18.2, 22.84271" QuestId="68800" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 4">
-		<GetTo ZoneId="135" XYZ="112.5633, 22.88085, 635.7622" />
-		<TalkTo NpcId="1029085" XYZ="111.101, 22.88085, 635.7976" QuestId="68800" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 5 and GetQuestById(68800).QuestI8A == 0">
-		<GetTo ZoneId="135" XYZ="-35.3697, 46.73957, 541.1609" />
-		<UseObject NpcId="2010241" XYZ="-34.53119, 46.92151, 541.2222" QuestId="68800" StepId="5" Condition="GetQuestById(68800).QuestI8A == 0" />
-		<WaitWhile Condition="Core.Player.InCombat" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 5 and GetQuestById(68800).QuestI8A == 16">
-		<GetTo ZoneId="135" XYZ="-58.42871, 56.88447, 494.2499" />
-		<UseObject NpcId="2010242" XYZ="-59.00665, 57.29761, 492.1492" QuestId="68800" StepId="5" Condition="GetQuestById(68800).QuestI8A == 16" />
-		<WaitWhile Condition="not GetQuestStep(68800) == 6" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 6">
-		<GetTo ZoneId="135" XYZ="-16.52659, 66.38613, 431.6222" />
-		<UseObject NpcId="2010243" XYZ="-15.67102, 66.36145, 431.6318" QuestId="68800" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 7">
-		<GetTo ZoneId="135" XYZ="319.8589, 75.62552, -320.516" />
-		<TalkTo NpcId="1029092" XYZ="322.3773, 75.9492, -322.4385" QuestId="68800" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 8">
-		<GetTo ZoneId="135" XYZ="-33.95303, 71.35356, 126.6421" />
-		<TalkTo NpcId="1029094" XYZ="-35.81299, 71.40167, 124.6814" QuestId="68800" StepId="8" />
-	</If>
-	<If Condition="GetQuestStep(68800) == 255">
-		<GetTo ZoneId="418" XYZ="59.61231, 23.97913, 1.691136" />
-		<TurnIn QuestId="68800" NpcId="1029098" XYZ="53.97119, 23.97913, 8.102478" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Of Defectors and Defenders -->
-<If Condition="IsQuestCompleted(68800) and not IsQuestCompleted(68801) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 67">
-	<While Condition="ClassName != ClassJobType.Gunbreaker">
-		<ChangeClass Job="Gunbreaker" />
-	</While>
-	<If Condition="not HasQuest(68801)">
-		<GetTo ZoneId="418" XYZ="55.16406, 23.97913, 2.076151" />
-		<If Condition="IsQuestAcceptQualified(68801)">
-			<PickupQuest QuestId="68801" NpcId="1029098" />
+		<!-- Of Defectors and Defenders -->
+		<If Condition="IsQuestCompleted(68800) and not IsQuestCompleted(68801) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 67">
+			<While Condition="ClassName != ClassJobType.Gunbreaker">
+				<ChangeClass Job="Gunbreaker" />
+			</While>
+			<If Condition="not HasQuest(68801)">
+				<GetTo ZoneId="418" XYZ="55.16406, 23.97913, 2.076151" />
+				<If Condition="IsQuestAcceptQualified(68801)">
+					<PickupQuest QuestId="68801" NpcId="1029098" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68801) == 1">
+				<GetTo ZoneId="418" XYZ="-149.937, 23.14059, -75.42512" />
+				<TalkTo NpcId="1029103" XYZ="-151.5984, 23.14059, -75.60846" QuestId="68801" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 2">
+				<GetTo ZoneId="155" XYZ="207.4689, 307.8622, 423.1182" />
+				<TalkTo NpcId="1029106" XYZ="207.3549, 307.8622, 424.6432" QuestId="68801" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 3">
+				<GetTo ZoneId="155" XYZ="212.995, 222.4948, 290.6107" />
+				<TalkTo NpcId="1029109" XYZ="213.0922, 222.5091, 291.7372" QuestId="68801" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 0">
+				<GetTo ZoneId="155" XYZ="252.2049, 246.7273, 190.174" />
+				<UseObject NpcId="2010298" XYZ="252.6436, 246.9673, 189.5322" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 0" />
+				<WaitWhile Condition="not GetQuestById(68801).QuestI8A == 16" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 16">
+				<GetTo ZoneId="155" XYZ="163.6118, 274.3991, 7.079714" />
+				<UseObject NpcId="2010299" XYZ="163.2562, 274.3114, 5.264343" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 16" />
+				<WaitWhile Condition="not GetQuestById(68801).QuestI8A == 34" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 34">
+				<GetTo ZoneId="155" XYZ="285.3213, 299.7108, -77.36889" />
+				<UseObject NpcId="2010300" XYZ="285.3894, 299.9771, -78.66034" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 34" />
+				<WaitWhile Condition="not GetQuestStep(68801) == 5" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 5">
+				<GetTo ZoneId="155" XYZ="239.9577, 302.064, -173.1606" />
+				<UseObject NpcId="2010301" XYZ="240.2837, 302.0217, -174.8837" QuestId="68801" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 6">
+				<GetTo ZoneId="155" XYZ="-653.7841, 224.0023, -39.40716" />
+				<UseObject NpcId="2010302" XYZ="-653.3761, 224.2617, -40.4212" QuestId="68801" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(68801) == 255">
+				<GetTo ZoneId="418" XYZ="57.3609, 23.97913, 7.916853" />
+				<TurnIn QuestId="68801" NpcId="1029099" XYZ="54.91711, 23.97913, 8.926453" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68801) == 1">
-		<GetTo ZoneId="418" XYZ="-149.937, 23.14059, -75.42512" />
-		<TalkTo NpcId="1029103" XYZ="-151.5984, 23.14059, -75.60846" QuestId="68801" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 2">
-		<GetTo ZoneId="155" XYZ="207.4689, 307.8622, 423.1182" />
-		<TalkTo NpcId="1029106" XYZ="207.3549, 307.8622, 424.6432" QuestId="68801" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 3">
-		<GetTo ZoneId="155" XYZ="212.995, 222.4948, 290.6107" />
-		<TalkTo NpcId="1029109" XYZ="213.0922, 222.5091, 291.7372" QuestId="68801" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 0">
-		<GetTo ZoneId="155" XYZ="252.2049, 246.7273, 190.174" />
-		<UseObject NpcId="2010298" XYZ="252.6436, 246.9673, 189.5322" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 0" />
-		<WaitWhile Condition="not GetQuestById(68801).QuestI8A == 16" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 16">
-		<GetTo ZoneId="155" XYZ="163.6118, 274.3991, 7.079714" />
-		<UseObject NpcId="2010299" XYZ="163.2562, 274.3114, 5.264343" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 16" />
-		<WaitWhile Condition="not GetQuestById(68801).QuestI8A == 34" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 4 and GetQuestById(68801).QuestI8A == 34">
-		<GetTo ZoneId="155" XYZ="285.3213, 299.7108, -77.36889" />
-		<UseObject NpcId="2010300" XYZ="285.3894, 299.9771, -78.66034" QuestId="68801" StepId="4" Condition="GetQuestById(68801).QuestI8A == 34" />
-		<WaitWhile Condition="not GetQuestStep(68801) == 5" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 5">
-		<GetTo ZoneId="155" XYZ="239.9577, 302.064, -173.1606" />
-		<UseObject NpcId="2010301" XYZ="240.2837, 302.0217, -174.8837" QuestId="68801" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 6">
-		<GetTo ZoneId="155" XYZ="-653.7841, 224.0023, -39.40716" />
-		<UseObject NpcId="2010302" XYZ="-653.3761, 224.2617, -40.4212" QuestId="68801" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(68801) == 255">
-		<GetTo ZoneId="418" XYZ="57.3609, 23.97913, 7.916853" />
-		<TurnIn QuestId="68801" NpcId="1029099" XYZ="54.91711, 23.97913, 8.926453" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Steel against Steel -->
-<If Condition="IsQuestCompleted(68801) and not IsQuestCompleted(68802) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 69">
-	<While Condition="ClassName != ClassJobType.Gunbreaker">
-		<ChangeClass Job="Gunbreaker" />
-	</While>
-	<If Condition="not HasQuest(68802)">
-		<GetTo ZoneId="418" XYZ="56.53569, 23.97913, 7.805883" />
-		<If Condition="IsQuestAcceptQualified(68802)">
-			<PickupQuest QuestId="68802" NpcId="1029099" />
+		<!-- Steel against Steel -->
+		<If Condition="IsQuestCompleted(68801) and not IsQuestCompleted(68802) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 69">
+			<While Condition="ClassName != ClassJobType.Gunbreaker">
+				<ChangeClass Job="Gunbreaker" />
+			</While>
+			<If Condition="not HasQuest(68802)">
+				<GetTo ZoneId="418" XYZ="56.53569, 23.97913, 7.805883" />
+				<If Condition="IsQuestAcceptQualified(68802)">
+					<PickupQuest QuestId="68802" NpcId="1029099" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68802) == 1">
+				<GetTo ZoneId="418" XYZ="-61.80428, 15.16852, -37.52953" />
+				<TalkTo NpcId="1029120" XYZ="-56.01587, 15.14058, -35.32471" QuestId="68802" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68802) == 2">
+				<GetTo ZoneId="397" XYZ="-266.0908, 92.17725, -500.3852" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1029121" XYZ="-266.4378, 92.16852, -501.854" QuestId="68802" StepId="2">
+					<HotSpots>
+						<Hotspot Radius="90" XYZ="-266.9453, 92.08987, -510.0175" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="8872" Weight="1" /> <!-- Vitus quo Messalla -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(68802) == 3">
+				<WaitWhile Condition="not GetQuestStep(68802) == 4" />
+			</If>
+			<If Condition="GetQuestStep(68802) == 4">
+				<GetTo ZoneId="418" XYZ="55.96792, 23.97913, 5.279478" />
+				<TalkTo NpcId="1029113" XYZ="55.64954, 23.97913, 9.689453" QuestId="68802" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68802) == 255">
+				<GetTo ZoneId="156" XYZ="20.03265, 20.4848, -660.0515" />
+				<TurnIn QuestId="68802" NpcId="1029122" XYZ="17.74622, 20.68727, -660.1205" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68802) == 1">
-		<GetTo ZoneId="418" XYZ="-61.80428, 15.16852, -37.52953" />
-		<TalkTo NpcId="1029120" XYZ="-56.01587, 15.14058, -35.32471" QuestId="68802" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68802) == 2">
-		<GetTo ZoneId="397" XYZ="-266.0908, 92.17725, -500.3852" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1029121" XYZ="-266.4378, 92.16852, -501.854" QuestId="68802" StepId="2">
-			<HotSpots>
-				<Hotspot Radius="90" XYZ="-266.9453, 92.08987, -510.0175" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="8872" Weight="1" /> <!-- Vitus quo Messalla -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(68802) == 3">
-		<WaitWhile Condition="not GetQuestStep(68802) == 4" />
-	</If>
-	<If Condition="GetQuestStep(68802) == 4">
-		<GetTo ZoneId="418" XYZ="55.96792, 23.97913, 5.279478" />
-		<TalkTo NpcId="1029113" XYZ="55.64954, 23.97913, 9.689453" QuestId="68802" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(68802) == 255">
-		<GetTo ZoneId="156" XYZ="20.03265, 20.4848, -660.0515" />
-		<TurnIn QuestId="68802" NpcId="1029122" XYZ="17.74622, 20.68727, -660.1205" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-    <LastProfile/>
-  </Order>
+	</Order>
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
-    <CodeChunk Type="Definition" Name="Logger">
+		<CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
         public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
@@ -358,7 +357,7 @@
 
       ]]>
     </CodeChunk>
-    <CodeChunk Type="Hook" Name="CloseHowTo">
+		<CodeChunk Type="Hook" Name="CloseHowTo">
 			<![CDATA[
 
         bool hasTutorialWindow = TutorialWindows
@@ -372,7 +371,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
             uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
@@ -393,13 +392,13 @@
 	        return false;
 			]]>
 		</CodeChunk>
-<CodeChunk Name="GearsetSave">
+		<CodeChunk Name="GearsetSave">
   <![CDATA[
 	await CommonTasks.StopAndDismount();
 	ChatManager.SendChat("/gs save");
   ]]>
 </CodeChunk>
- <CodeChunk Name="SwitchCombatJob">
+		<CodeChunk Name="SwitchCombatJob">
     <![CDATA[
     var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
     var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
@@ -413,17 +412,7 @@
 </CodeChunk>
 
 
-        <!-- Arcanist 1-15 Codechunks -->
-
-
-
-
-
-
-
-
-
-
+		<!-- Arcanist 1-15 Codechunks -->
 
 
 	</CodeChunks>

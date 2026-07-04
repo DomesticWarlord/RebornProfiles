@@ -6,1294 +6,1293 @@
 
 -->
 <Profile>
-  <Name>Panda Farmer - BlackMage Class Quests - BlackMage</Name>
-  <BehaviorDirectory></BehaviorDirectory>
-  <Order>
+	<Name>Panda Farmer - BlackMage Class Quests - BlackMage</Name>
+	<BehaviorDirectory></BehaviorDirectory>
+	<Order>
 
-    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
-    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
+		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
 
 
-<!-- Way of the Thaumaturge -->
-<If Condition="not IsQuestCompleted(65880) and Core.Me.Levels[ClassJobType.Thaumaturge] == 0">
-	<If Condition="not HasQuest(65880)">
-		<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
-		<TalkTo NpcId="1002279" XYZ="-197.8095, 18, 61.88784" />
-		<If Condition="IsQuestAcceptQualified(65880)">
-			<PickupQuest NpcId="1002279" QuestId="65880" XYZ="-197.8095, 18, 61.88784" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(65880) == 255">
-		<GetTo ZoneId="130" XYZ="-239.8579, 18.7, 82.89022" />
-		<TurnIn QuestId="65880" StepId="255" NpcId="1001709" InteractDistance="1.0" XYZ="-239.8579, 18.7, 82.89022" />
-	    <While Condition="ClassName != ClassJobType.Thaumaturge">
-		    <EquipWeapon ItemId="2055"/>
-	    </While>
-		<RunCode name="GearsetSave"/>
-	</If>
-</If>
-
-<!-- My First Scepter -->
-<If Condition="not IsQuestCompleted(65882) and IsQuestCompleted(65880)">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65882)">
-		<If Condition="not HasQuest(65882)">
-			<!-- Cocobuki -->
-			<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-			<If Condition="IsQuestAcceptQualified(65882)">
-				<PickupQuest NpcId="1001708" QuestId="65882" XYZ="-250.3548, 18, 80.88806" />
-
+		<!-- Way of the Thaumaturge -->
+		<If Condition="not IsQuestCompleted(65880) and Core.Me.Levels[ClassJobType.Thaumaturge] == 0">
+			<If Condition="not HasQuest(65880)">
+				<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
+				<TalkTo NpcId="1002279" XYZ="-197.8095, 18, 61.88784" />
+				<If Condition="IsQuestAcceptQualified(65880)">
+					<PickupQuest NpcId="1002279" QuestId="65880" XYZ="-197.8095, 18, 61.88784" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65880) == 255">
+				<GetTo ZoneId="130" XYZ="-239.8579, 18.7, 82.89022" />
+				<TurnIn QuestId="65880" StepId="255" NpcId="1001709" InteractDistance="1.0" XYZ="-239.8579, 18.7, 82.89022" />
+				<While Condition="ClassName != ClassJobType.Thaumaturge">
+					<EquipWeapon ItemId="2055" />
+				</While>
+				<RunCode name="GearsetSave" />
 			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(65882) == 1">
-		<If Condition="not IsTodoChecked(65882, 1, 0)">
-			<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
-			<Grind while="not IsTodoChecked(65882, 1, 0)" >
-			    <GrindArea name="My_First_Scepter">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Star Marmots" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="262" /> <!-- Star Marmot -->
-			    			</TargetMobs>
+
+		<!-- My First Scepter -->
+		<If Condition="not IsQuestCompleted(65882) and IsQuestCompleted(65880)">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65882)">
+				<If Condition="not HasQuest(65882)">
+					<!-- Cocobuki -->
+					<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+					<If Condition="IsQuestAcceptQualified(65882)">
+						<PickupQuest NpcId="1001708" QuestId="65882" XYZ="-250.3548, 18, 80.88806" />
+
+					</If>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65882) == 1">
+				<If Condition="not IsTodoChecked(65882, 1, 0)">
+					<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
+					<Grind while="not IsTodoChecked(65882, 1, 0)">
+						<GrindArea name="My_First_Scepter">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Star Marmots" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="262" /> <!-- Star Marmot -->
+							</TargetMobs>
 
 
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="not IsTodoChecked(65882, 1, 1)">
-			<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
-			<Grind while="not IsTodoChecked(65882, 1, 1)" >
-			    <GrindArea name="My_First_Scepter2">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Huge Hornets" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="632" /> <!-- Huge Hornet -->
-			    			</TargetMobs>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(65882, 1, 1)">
+					<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
+					<Grind while="not IsTodoChecked(65882, 1, 1)">
+						<GrindArea name="My_First_Scepter2">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Huge Hornets" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="632" /> <!-- Huge Hornet -->
+							</TargetMobs>
 
 
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="not IsTodoChecked(65882, 1, 2)">
-			<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
-			<Grind while="not IsTodoChecked(65882, 1, 2)" >
-			    <GrindArea name="My_First_Scepter3">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="47.62748, 2.513385, 317.5547" name="Snapping Shrews" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="318" /> <!-- Snapping Shrew -->
-			    			</TargetMobs>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(65882, 1, 2)">
+					<GetTo ZoneId="141" XYZ="-64.98568, -3.602963, 190.0947" />
+					<Grind while="not IsTodoChecked(65882, 1, 2)">
+						<GrindArea name="My_First_Scepter3">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="47.62748, 2.513385, 317.5547" name="Snapping Shrews" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="318" /> <!-- Snapping Shrew -->
+							</TargetMobs>
 
 
-			    		</GrindArea>
-			</Grind>
+						</GrindArea>
+					</Grind>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65882) == 255">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<TurnIn QuestId="65882" NpcId="1001708" ItemId="2001545" XYZ="-250.3548, 18, 80.88806" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(65882) == 255">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<TurnIn QuestId="65882" NpcId="1001708" ItemId="2001545" XYZ="-250.3548, 18, 80.88806" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- The Threat of Intimacy -->
-<If Condition="not IsQuestCompleted(65883) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 4">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65883)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65883)">
-			<PickupQuest NpcId="1001708" QuestId="65883" XYZ="-250.3548, 18, 80.88806" />
+		<!-- The Threat of Intimacy -->
+		<If Condition="not IsQuestCompleted(65883) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 4">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65883)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65883)">
+					<PickupQuest NpcId="1001708" QuestId="65883" XYZ="-250.3548, 18, 80.88806" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65883) == 1">
+				<!-- Cocobygo -->
+				<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
+				<TalkTo NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" QuestId="65883" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65883) == 2">
+				<GetTo ZoneId="140" XYZ="-87.38843, 50.61414, 315.6023" />
+				<UseItem NpcId="2001468" ItemId="2000414" XYZ="-87.38843, 50.61414, 315.6023" Radius="10" QuestId="65883" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65883) == 3">
+				<GetTo ZoneId="140" XYZ="-74.96759, 53.23865, 336.7819" />
+				<UseObject NpcId="2001469" XYZ="-74.96759, 53.23865, 336.7819" Radius="10" QuestId="65883" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65883) == 4">
+				<!-- Fafafono -->
+				<GetTo ZoneId="140" XYZ="-255.2377, 33.23877, 407.2786" />
+				<HandOver ItemId="2000415" QuestId="65883" StepId="4" NpcId="1002027" XYZ="-255.2377, 33.23877, 407.2786" />
+			</If>
+			<If Condition="GetQuestStep(65883) == 255">
+				<!-- Cocobygo -->
+				<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
+				<TurnIn QuestId="65883" NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(65883) == 1">
-		<!-- Cocobygo -->
-		<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
-		<TalkTo NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" QuestId="65883" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(65883) == 2">
-		<GetTo ZoneId="140" XYZ="-87.38843, 50.61414, 315.6023" />
-		<UseItem NpcId="2001468" ItemId="2000414" XYZ="-87.38843, 50.61414, 315.6023" Radius="10" QuestId="65883" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(65883) == 3">
-		<GetTo ZoneId="140" XYZ="-74.96759, 53.23865, 336.7819" />
-		<UseObject NpcId="2001469" XYZ="-74.96759, 53.23865, 336.7819" Radius="10" QuestId="65883" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(65883) == 4">
-		<!-- Fafafono -->
-		<GetTo ZoneId="140" XYZ="-255.2377, 33.23877, 407.2786" />
-		<HandOver ItemId="2000415" QuestId="65883" StepId="4" NpcId="1002027" XYZ="-255.2377, 33.23877, 407.2786" />
-	</If>
-	<If Condition="GetQuestStep(65883) == 255">
-		<!-- Cocobygo -->
-		<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
-		<TurnIn QuestId="65883" NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- The Threat of Paucity (Primary) -->
-<If Condition="not IsQuestCompleted(65884) and not IsQuestCompleted(65882) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 9">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65884)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65884)">
-			<PickupQuest NpcId="1001708" QuestId="65884" XYZ="-250.3548, 18, 80.88806" />
-</If>
-	</If>
-	<If Condition="HasQuest(65884)">
-		<If Condition="GetQuestStep(65884) == 1">
-			<!-- Cocobani -->
-			<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-			<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65884" StepId="1" />
-		</If>
-		<If Condition="GetQuestStep(65884) == 2">
-			<GetTo ZoneId="141" XYZ="39.38721, -0.5063726, -186.9318" />
-			<Grind while="HasQuest(65884) and GetQuestStep(65884) == 2" >
-			    <GrindArea name="The_Threat_of_Paucity">
-			    			<Hotspots>
-			    				<Hotspot Radius="180" XYZ="151.9343, -2, -219.2622" name="Efts" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="289" /> <!-- Eft -->
-			    			</TargetMobs>
-
-
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="GetQuestStep(65884) == 3">
-			<!-- Cocobani -->
-			<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-			<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65884" StepId="3" />
-		</If>
-		<If Condition="GetQuestStep(65884) == 4">
-			<!-- Armored War Transport -->
-			<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
-			<UseObject NpcId="2001511" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65884" StepId="4" />
-		</If>
-		<If Condition="GetQuestStep(65884) == 5">
-			<!-- Armored War Transport -->
-			<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
-			<UseObject NpcId="2001498" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65884" StepId="5" />
-		</If>
-		<If Condition="GetQuestStep(65884) == 6">
-			<!-- Cocobani -->
-			<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-			<HandOver ItemIds="2000416,2000417" QuestId="65884" StepId="6" NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" />
-		</If>
-		<If Condition="GetQuestStep(65884) == 255">
-			<!-- Cocobuki -->
-			<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-			<TurnIn QuestId="65884" NpcId="1001708" ItemIds="2000418,2000419" XYZ="-250.3548, 18, 80.88806" />
-<AutoInventoryEquip />
-		</If>
-	</If>
-</If>
-<!-- The Threat of Paucity (Secondary) -->
-<If Condition="not IsQuestCompleted(65885) and not IsQuestCompleted(65884) and IsQuestCompleted(65883) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 9">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65885)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65885)">
-			<PickupQuest NpcId="1001708" QuestId="65885" XYZ="-250.3548, 18, 80.88806" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(65885) == 1">
-		<!-- Cocobani-->
-		<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-		<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65885" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(65885) == 2">
-		<GetTo ZoneId="141" XYZ="39.38721, -0.5063726, -186.9318" />
-		<Grind while="HasQuest(65885) and GetQuestStep(65885) == 2" >
-		    <GrindArea name="The_Threat_of_Paucity">
-		    			<Hotspots>
-		    				<Hotspot Radius="180" XYZ="151.9343, -2, -219.2622" name="Efts" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="289" /> <!-- Eft -->
-		    			</TargetMobs>
+		<!-- The Threat of Paucity (Primary) -->
+		<If Condition="not IsQuestCompleted(65884) and not IsQuestCompleted(65882) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 9">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65884)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65884)">
+					<PickupQuest NpcId="1001708" QuestId="65884" XYZ="-250.3548, 18, 80.88806" />
+				</If>
+			</If>
+			<If Condition="HasQuest(65884)">
+				<If Condition="GetQuestStep(65884) == 1">
+					<!-- Cocobani -->
+					<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+					<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65884" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(65884) == 2">
+					<GetTo ZoneId="141" XYZ="39.38721, -0.5063726, -186.9318" />
+					<Grind while="HasQuest(65884) and GetQuestStep(65884) == 2">
+						<GrindArea name="The_Threat_of_Paucity">
+							<Hotspots>
+								<Hotspot Radius="180" XYZ="151.9343, -2, -219.2622" name="Efts" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="289" /> <!-- Eft -->
+							</TargetMobs>
 
 
-		    		</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(65885) == 3">
-		<!-- Cocobani -->
-		<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-		<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65885" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(65885) == 4">
-		<!-- Armored War Transport -->
-		<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
-		<UseObject NpcId="2001512" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65885" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(65885) == 5">
-		<!-- Armored War Transport -->
-		<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
-		<UseObject NpcId="2001499" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65885" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(65885) == 255">
-		<!-- Cocobani -->
-		<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
-		<TurnIn QuestId="65885" NpcId="1001710" ItemIds="2000418,2000419" XYZ="-240.2533, 18.8, 86.90002" />
-<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Threat of Superiority -->
-<If Condition="not IsQuestCompleted(65886) and (IsQuestCompleted(65885) or IsQuestCompleted(65884)) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 14">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65886)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65886)">
-			<PickupQuest NpcId="1001708" QuestId="65886" XYZ="-250.3548, 18, 80.88806" />
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="GetQuestStep(65884) == 3">
+					<!-- Cocobani -->
+					<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+					<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65884" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(65884) == 4">
+					<!-- Armored War Transport -->
+					<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
+					<UseObject NpcId="2001511" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65884" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(65884) == 5">
+					<!-- Armored War Transport -->
+					<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
+					<UseObject NpcId="2001498" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65884" StepId="5" />
+				</If>
+				<If Condition="GetQuestStep(65884) == 6">
+					<!-- Cocobani -->
+					<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+					<HandOver ItemIds="2000416,2000417" QuestId="65884" StepId="6" NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" />
+				</If>
+				<If Condition="GetQuestStep(65884) == 255">
+					<!-- Cocobuki -->
+					<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+					<TurnIn QuestId="65884" NpcId="1001708" ItemIds="2000418,2000419" XYZ="-250.3548, 18, 80.88806" />
+					<AutoInventoryEquip />
+				</If>
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(65886) == 1">
-		<!-- Cocobezi -->
-		<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
-		<TalkTo NpcId="1001711" XYZ="-241.6266, 18.8, 83.32947" QuestId="65886" StepId="1" />
-	</If>
-	<While Condition="GetQuestStep(65886) == 2">
-		<!-- Furious Merchants -->
-		<GetTo ZoneId="130" XYZ="-176.9284, 18, 62.36353" />
-		<EmoteNPC NpcId="1002300" Emote="cry" XYZ="-176.9284, 18, 62.36353" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
-		<EmoteNPC NpcId="1002301" Emote="cry" XYZ="-178.2102, 18, 61.41748" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
-		<EmoteNPC NpcId="1002302" Emote="cry" XYZ="-176.7148, 18, 64.34729" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
-	</While>
-	<If Condition="GetQuestStep(65886) == 3">
-		<!-- Cocobezi -->
-		<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
-		<TalkTo NpcId="1001711" XYZ="-241.6266, 18.8, 83.32947" QuestId="65886" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(65886) == 4">
-		<!-- Designated Location -->
-		<GetTo ZoneId="145" XYZ="-24.88751, -25.34528, 321.95" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="2001470" XYZ="-24.88751, -25.34528, 321.95" QuestId="65886" StepId="4">
-			<HotSpots>
-				<!-- Mormo's Urn -->
-				<HotSpot XYZ="100.9384, -24.09399, 256.9772" Radius="10" />
-			</HotSpots>
-			<InteractObjects>
-				<InteractObject Name="Mormo's Urn" NpcId="2001471" XYZ="100.9384, -24.09399, 256.9772" />
-			</InteractObjects>
-			<TargetMobs>
-				<!-- Diligence of the Alacran -->
-				<TargetMob Id="1306" Weight="3000" />
-				<!-- Kindness Of The Alacran -->
-				<TargetMob Id="757" Weight="2000" />
-				<!-- Temperance Of The Alacran -->
-				<TargetMob Id="756" Weight="1000" />
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(65886) == 255">
-		<!-- Cocobezi -->
-		<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
-		<TurnIn QuestId="65886" NpcId="1001711" ItemId="2001545" XYZ="-241.6266, 18.8, 83.32947" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Threat of Perplexity -->
-<If Condition="not IsQuestCompleted(65887) and IsQuestCompleted(65886) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 19">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65887)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65887)">
-			<PickupQuest NpcId="1001708" QuestId="65887" XYZ="-250.3548, 18, 80.88806" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(65887) == 1">
-		<!-- Cocoboha -->
-		<GetTo ZoneId="130" XYZ="-241.5046, 19.57727, 84.64172" />
-		<TalkTo NpcId="1001712" XYZ="-241.5046, 19.57727, 84.64172" QuestId="65887" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(65887) == 2">
-		<!-- Cocobusi -->
-		<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
-		<TalkTo NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" QuestId="65887" StepId="2" />
-	</If>
-	<While Condition="GetQuestStep(65887) == 3">
-		<!-- Coastline -->
-		<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
-		<RunCode Name="The_Threat_of_Perplexity" />
-		<UseObject NpcId="1002324" XYZ="112.8099, 17.53689, 31.29626" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 0" />
-		<UseObject NpcId="1002322" XYZ="116.8993, 17.53689, 12.9549" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 16" />
-		<UseObject NpcId="1002323" XYZ="132.433, 21.10498, 9.018005" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 33" />
-		<NoCombatMoveTo Name="Jump Spot" XYZ="104.5747, 17.53689, 45.18474" />
-		<RunCode Name="The_Threat_of_Perplexity2" />
-	</While>
-	<If Condition="GetQuestStep(65887) == 4">
-		<!-- Cocobusi -->
-		<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
-		<HandOver ItemId="2000420,2000421,2000433" QuestId="65887" StepId="4" NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" />
-	</If>
-	<While Condition="GetQuestStep(65887) == 5">
-		<!-- Coastline -->
-		<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
-		<RunCode Name="The_Threat_of_Perplexity" />
-		<NoCombatMoveTo Name="Destination" XYZ="150.7134, 18.78381, -5.752686" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="2001472" XYZ="150.7134, 18.78381, -5.752686" QuestId="65887" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="150.9649, 18.73823, -5.603077" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<!-- Seemingly Ordinary Imp -->
-				<TargetMob Id="766" Weight="2000" />
-				<!-- Soulsucker Imp -->
-				<TargetMob Id="765" Weight="1000" />
-			</TargetMobs>
-		</LLSimpleDuty>
-		<NoCombatMoveTo Name="Jump Spot" XYZ="104.5747, 17.53689, 45.18474" />
-		<RunCode Name="The_Threat_of_Perplexity2" />
-	</While>
-	<If Condition="GetQuestStep(65887) == 6">
-		<!-- Cocobusi -->
-		<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
-		<TalkTo NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" QuestId="65887" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(65887) == 7">
-		<!-- Shaded Outcropping -->
-		<GetTo ZoneId="140" XYZ="96.23853, 16.9527, 188.8303" />
-		<UseObject NpcId="2001474" XYZ="96.23853, 16.9527, 188.8303" Radius="10" QuestId="65887" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(65887) == 8">
-		<!-- Cocoboha -->
-		<GetTo ZoneId="130" XYZ="-241.5046, 19.57727, 84.64172" />
-		<TalkTo NpcId="1001712" XYZ="-241.5046, 19.57727, 84.64172" QuestId="65887" StepId="8" />
-	</If>
-	<If Condition="GetQuestStep(65887) == 255">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<TurnIn QuestId="65887" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Hidden Chapter -->
-<If Condition="not IsQuestCompleted(65888) and IsQuestCompleted(65887) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 24">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65888)">
-		<!-- Cocobygo -->
-		<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
-		<If Condition="IsQuestAcceptQualified(65888)">
-			<PickupQuest NpcId="1001709" QuestId="65888" XYZ="-240.4975, 18.7, 85.58777" />
-
-		</If>
-	</If>
-	<If Condition="GetQuestStep(65888) == 1">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<TalkTo NpcId="1001708" XYZ="-250.3548, 18, 80.88806" QuestId="65888" StepId="1" />
-	</If>
-	<While Condition="GetQuestStep(65888) == 2">
-		<!-- Smirking Voidmath -->
-		<GetTo ZoneId="145" XYZ="-374.2886, -57.07999, 144.1213" />
-		<TalkTo NpcId="1002309" XYZ="-374.2886, -57.07999, 144.1213" QuestId="65888" StepId="2" />
-		<TalkTo NpcId="1002308" XYZ="-386.7094, -59.3, 166.3995" QuestId="65888" StepId="2" />
-		<TalkTo NpcId="1002307" XYZ="-396.6583, -48.15, 99.68713" QuestId="65888" StepId="2" />
-	</While>
-	<If Condition="GetQuestStep(65888) == 3">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<HandOver ItemId="2000422" QuestId="65888" StepId="3" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
-	</If>
-	<If Condition="GetQuestStep(65888) == 4">
-		<!-- Cocobygo -->
-		<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
-		<HandOver ItemId="2000425" QuestId="65888" StepId="4" NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" />
-	</If>
-	<If Condition="GetQuestStep(65888) == 5">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="145" XYZ="184.8934, 3.180922, -338.6436" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1002310" XYZ="184.8934, 3.180922, -338.6436" QuestId="65888" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="189.0239, 3.180922, -334.4384" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<!-- Void Dross -->
-				<TargetMob Id="783" Weight="3000" />
-				<!-- Void Herald -->
-				<TargetMob Id="782" Weight="2000" />
-				<!-- Void Jumper -->
-				<TargetMob Id="781" Weight="1000" />
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(65888) == 255">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<TurnIn QuestId="65888" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Facing Your Demons -->
-<If Condition="not IsQuestCompleted(65889) and IsQuestCompleted(65888) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 29">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(65889)">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<If Condition="IsQuestAcceptQualified(65889)">
-			<PickupQuest NpcId="1001708" QuestId="65889" XYZ="-250.3548, 18, 80.88806" />
-
-		</If>
-	</If>
-	<While Condition="GetQuestStep(65889) == 1">
-		<!-- Vesper Bay Locals -->
-		<GetTo ZoneId="140" XYZ="-408.2911, 23.16707, -350.9318" />
-		<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004094" XYZ="-413.4738, 23.11401, -383.7186" />
-		<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004070" XYZ="-455.8633, 23.11401, -326.9246" />
-		<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004096" XYZ="-444.7548, 25, -324.2695" />
-	</While>
-	<If Condition="GetQuestStep(65889) == 2">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="140" XYZ="-436.7285, 23.77481, -350.8202" />
-		<TalkTo NpcId="1002316" XYZ="-436.7285, 23.77481, -350.8202" QuestId="65889" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(65889) == 3">
-		<!-- Maimed Marauder -->
-		<GetTo ZoneId="140" XYZ="-392.3248, 23.55769, -546.9902" />
-		<TalkTo NpcId="1002315" XYZ="-392.3248, 23.55769, -546.9902" QuestId="65889" StepId="3" />
-		<Grind while="HasQuest(65889) and GetQuestStep(65889) == 3" >
-		    <GrindArea name="Facing_Your_Demons">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-392.3248, 23.55769, -546.9902" name="Mormo's Missionary" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="1213" /> <!-- Mormo's Missionary -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(65889) == 4">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="140" XYZ="-392.3248, 23.55769, -546.9902" />
-		<TalkTo NpcId="1002315" XYZ="-392.3248, 23.55769, -546.9902" QuestId="65889" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(65889) == 5">
-		<!-- Maimed Marauder -->
-		<GetTo ZoneId="140" XYZ="-269.8558, 15.34657, -718.1354" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<TalkTo NpcId="1002317" XYZ="-269.8558, 15.34657, -718.1354" SelectStringOverride="0" BlacklistAfter="True" />
-		<LLSimpleDuty InteractNpcId="1002317" XYZ="-269.8558, 15.34657, -718.1354" QuestId="65889" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="-203.04, 14.63993, -736.2756" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<!-- Void Warrior -->
-				<TargetMob Id="841" Weight="1000" />
-				<!-- Mormo -->
-				<TargetMob Id="1221" Weight="2000" />
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(65889) == 255">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
-		<TurnIn QuestId="65889" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Taking the Black -->
-<If Condition="not IsQuestCompleted(66609) and IsQuestCompleted(65889) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 29">
-	<While Condition="ClassName != ClassJobType.Thaumaturge">
-		<ChangeClass Job="Thaumaturge" />
-	</While>
-	<If Condition="not HasQuest(66609)">
-		<!-- Yayake -->
-		<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
-		<If Condition="IsQuestAcceptQualified(66609)">
-			<PickupQuest NpcId="1002279" QuestId="66609" XYZ="-196.8872, 18.46, 59.95264" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66609) == 1">
-		<!-- Planar Fissure -->
-		<GetTo ZoneId="145" XYZ="-72.67877, -32.05927, -46.83002" />
-		<UseObject NpcId="2002533" XYZ="-72.67877, -32.05927, -46.83002" Radius="10" QuestId="66609" StepId="1" />
-		<Grind while="HasQuest(66609) and GetQuestStep(66609) == 1" >
-		    <GrindArea name="Taking_the_Black">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-72.67877, -32.05927, -46.83002" name="Deepvoid Souls" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="2038" /> <!-- Deepvoid Soul -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(66609) == 2">
-		<!-- Cocobuki -->
-		<GetTo ZoneId="145" XYZ="-72.67877, -32.05927, -46.83002" />
-		<UseItem NpcId="2002429" ItemId="2000954" XYZ="-72.67877, -32.05927, -46.83002" Radius="10" QuestId="66609" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66609) == 3">
-		<!-- Yayake -->
-		<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
-		<TalkTo NpcId="1002279" XYZ="-196.8872, 18.46, 59.95264" QuestId="66609" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66609) == 255">
-		<!-- Lalai -->
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="66609" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-	    <While Condition="ClassName != ClassJobType.BlackMage">
-		    <EquipWeapon ItemId="4548"/>
-            <AutoInventoryEquip/>
-	    </While>
-    </If>
-</If>
-
-<!-- You'll Never Go Back -->
-<If Condition="not IsQuestCompleted(66610) and IsQuestCompleted(66609) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 34">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(66610)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(66610)">
-			<PickupQuest NpcId="1006752" QuestId="66610" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66610) == 1">
-		<GetTo ZoneId="146" XYZ="-7.919495, 13.68732, 866.5444" />
-		<UseObject NpcId="2002534" XYZ="-7.919495, 13.68732, 866.5444" Radius="10" QuestId="66610" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66610) == 2">
-		<GetTo ZoneId="146" XYZ="-7.919495, 13.68732, 866.5444" />
-		<UseItem NpcId="2002430" ItemId="2000809" QuestId="66610" StepId="2" XYZ="-7.919495, 13.68732, 866.5444" Radius="5" />
-	</If>
-	<If Condition="GetQuestStep(66610) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="66610" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- International Relations -->
-<If Condition="not IsQuestCompleted(66611) and IsQuestCompleted(66610) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 39">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(66611)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(66611)">
-			<PickupQuest NpcId="1006752" QuestId="66611" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66611) == 1">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="66611" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 2">
-		<GetTo ZoneId="140" XYZ="-167.4067, 14.51378, -251.3009" />
-		<TalkTo NpcId="1007864" XYZ="-167.4067, 14.51378, -251.3009" QuestId="66611" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 3">
-		<GetTo ZoneId="140" XYZ="-178.3933, 15.42688, -244.6479" />
-		<UseObject NpcId="2002535" XYZ="-178.3933, 15.42688, -244.6479" Radius="10" QuestId="66611" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 4">
-		<GetTo ZoneId="140" XYZ="-178.3933, 15.42688, -244.6479" />
-		<UseItem NpcId="2002431" ItemId="2000810" XYZ="-178.3933, 15.42688, -244.6479" Radius="10" QuestId="66611" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 5">
-		<GetTo ZoneId="140" XYZ="-167.4067, 14.51378, -251.3009" />
-		<TalkTo NpcId="1007864" XYZ="-167.4067, 14.51378, -251.3009" QuestId="66611" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 6">
-		<GetTo ZoneId="140" XYZ="-223.1022, 14.51385, -365.2552" />
-		<TalkTo NpcId="1007865" XYZ="-223.1022, 14.51385, -365.2552" QuestId="66611" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 7">
-		<GetTo ZoneId="140" XYZ="-211.1696, 15.3963, -345.4185" />
-		<UseObject NpcId="2002536" XYZ="-211.1696, 15.3963, -345.4185" Radius="10" QuestId="66611" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 8">
-		<GetTo ZoneId="140" XYZ="-211.1696, 15.3963, -345.4185" />
-		<UseItem NpcId="2002432" ItemId="2000811" XYZ="-211.1696, 15.3963, -345.4185" Radius="10" QuestId="66611" StepId="8" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 9">
-		<GetTo ZoneId="140" XYZ="-223.1022, 14.51385, -365.2552" />
-		<TalkTo NpcId="1007865" XYZ="-223.1022, 14.51385, -365.2552" QuestId="66611" StepId="9" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 10">
-		<GetTo ZoneId="140" XYZ="-131.7006, 17.98201, -278.8587" />
-		<TalkTo NpcId="1007863" XYZ="-131.7006, 17.98201, -278.8587" QuestId="66611" StepId="10" />
-	</If>
-	<If Condition="GetQuestStep(66611) == 255">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TurnIn QuestId="66611" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Voidgate Breathes Gloomy -->
-<If Condition="not IsQuestCompleted(66612) and IsQuestCompleted(66611) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(66612)">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<If Condition="IsQuestAcceptQualified(66612)">
-			<PickupQuest NpcId="1006753" QuestId="66612" XYZ="325.063, 11.23651, -6.21051" />
-</If>
-	</If>
-	<If Condition="GetQuestStep(66612) == 1">
-		<GetTo ZoneId="153" XYZ="374.2885, 3.40271, 161.7303" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="2002433" XYZ="374.2885, 3.40271, 161.7303" QuestId="66612" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="375.312, 2.313976, 158.28" Radius="30" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="2096" Weight="4000" /> <!-- Planar Fissure -->
-				<TargetMob Id="1933" Weight="3000" /> <!-- Void Echo -->
-				<TargetMob Id="1932" Weight="2000" /> <!-- Void Tyrant -->
-				<TargetMob Id="1931" Weight="1000" /> <!-- Planebreaker -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66612) == 2">
-		<GetTo ZoneId="153" XYZ="376.1501, 3.009833, 161.7609" />
-		<TalkTo NpcId="1007866" XYZ="376.1501, 3.009833, 161.7609" />
-	</If>
-	<If Condition="GetQuestStep(66612) == 3">
-		<GetTo ZoneId="145" XYZ="282.3987, 11.15124, -6.729248" />
-		<TalkTo NpcId="1007867" XYZ="282.3987, 11.15124, -6.729248" />
-	</If>
-	<If Condition="GetQuestStep(66612) == 255">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TurnIn QuestId="66612" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Blood Must Flow -->
-<If Condition="not IsQuestCompleted(66613) and IsQuestCompleted(66612) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(66613)">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<If Condition="IsQuestAcceptQualified(66613)">
-			<PickupQuest NpcId="1006753" QuestId="66613" XYZ="325.063, 11.23651, -6.21051" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66613) == 1">
-		<If Condition="not IsTodoChecked(66613, 1, 0)">
-			<GetTo ZoneId="146" XYZ="-101.2742, 28.21387, 117.235" />
-			<UseItem NpcId="2002434" ItemId="2000812" XYZ="-101.2742, 28.21387, 117.235" Radius="10" Condition="GetQuestById(66613).QuestI8AH == 0" />
-		</If>
-		<If Condition="not IsTodoChecked(66613, 1, 1)">
-			<GetTo ZoneId="154" XYZ="-0.7826095, -11.93195, -34.4479" />
-			<UseItem NpcId="2002435" ItemId="2000955" XYZ="-1.815857, -11.70367, -37.79669" Radius="10" Condition="GetQuestById(66613).QuestI8AH == 1" />
-		</If>
-		<If Condition="not IsTodoChecked(66613, 1, 2)">
-			<GetTo ZoneId="180" XYZ="68.68079, 55.83276, -503.9597" />
-			<UseItem NpcId="2002436" ItemId="2000956" XYZ="68.68079, 55.83276, -503.9597" Radius="10" QuestId="66613" StepId="1" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66613) == 2">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="66613" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66613) == 3">
-		<GetTo ZoneId="145" XYZ="220.8743, 5.599976, -269.9779" />
-		<UseObject NpcId="2002537" XYZ="220.8743, 5.599976, -269.9779" Radius="10" QuestId="66613" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66613) == 4">
-		<GetTo ZoneId="145" XYZ="225.2949, 4.421391, -258.2836" />
-		<UseItem NpcId="2002437" ItemId="2000957" XYZ="220.8743, 5.599976, -269.9779" Radius="10" QuestId="66613" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(66613) == 255">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TurnIn QuestId="66613" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Always Bet on Black -->
-<If Condition="not IsQuestCompleted(66614) and IsQuestCompleted(66613) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(66614)">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<If Condition="IsQuestAcceptQualified(66614)">
-			<PickupQuest NpcId="1006753" QuestId="66614" XYZ="325.063, 11.23651, -6.21051" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66614) == 1">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TalkTo NpcId="1006752" XYZ="87.5105, 18, 113.7255" QuestId="66614" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66614) == 2">
-		<GetTo ZoneId="146" XYZ="-424.2095, 5.300763, -25.12411" />
-		<Dismount />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty XYZ="-432.3785, 6.373979, -15.91354" QuestId="66614" StepId="2">
-			<HotSpots>
-				<HotSpot XYZ="-462.0845, -3.164931, 53.24925" Radius="30" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="2102" Weight="5000" /> <!-- Dark Plasma -->
-				<TargetMob Id="2103" Weight="4000" /> <!-- Void Trumpeter -->
-				<TargetMob Id="2097" Weight="3000" /> <!-- Voidgate -->
-				<TargetMob Id="2101" Weight="2000" /> <!-- Void Lantern -->
-				<TargetMob Id="2100" Weight="1000" /> <!-- Barbatos -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<While Condition="GetQuestStep(66614) == 3">
-		<GetTo ZoneId="146" XYZ="-458.7015, -3.164927, 63.37073" />
-		<TalkTo NpcId="1007873" XYZ="-458.7015, -3.164927, 63.37073" QuestId="66614" StepId="3" />
-		<TalkTo NpcId="1007871" XYZ="-464.4694, -3.164927, 65.41541" QuestId="66614" StepId="3" />
-		<TalkTo NpcId="1007872" XYZ="-468.925, -3.164927, 59.46436" QuestId="66614" StepId="3" />
-	</While>
-	<If Condition="GetQuestStep(66614) == 255">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TurnIn QuestId="66614" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
-		<UseInventoryItem ItemId="20649"/>
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Black Books -->
-<If Condition="not IsQuestCompleted(67214) and IsQuestCompleted(65964) and IsQuestCompleted(66614) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67214)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67214)">
-			<PickupQuest NpcId="1006752" QuestId="67214" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67214) == 1">
-		<GetTo ZoneId="146" XYZ="-431.9444, 6.604713, -16.70799" />
-		<TalkTo NpcId="1013042" XYZ="-465.9343, -3.164927, 66.66663" QuestId="67214" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67214) == 2">
-		<GetTo ZoneId="145" XYZ="221.0749, 5.584767, -269.9219" />
-		<TalkTo NpcId="1013043" XYZ="184.6189, 3.180922, -334.2794" QuestId="67214" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67214) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67214" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- An Unexpected Journey -->
-<If Condition="not IsQuestCompleted(67215) and IsQuestCompleted(67214) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 51">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67215)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67215)">
-			<PickupQuest NpcId="1006752" QuestId="67215" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67215) == 1">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67215" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67215) == 2">
-		<GetTo ZoneId="145" XYZ="191.7296, -1.915309, 32.94421" />
-		<TalkTo NpcId="1013044" XYZ="191.7296, -1.915309, 32.94421" QuestId="67215" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67215) == 3">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67215" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67215) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67215" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- A Cunning Plan -->
-<If Condition="not IsQuestCompleted(67216) and IsQuestCompleted(67215) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 53">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67216)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67216)">
-			<PickupQuest NpcId="1006752" QuestId="67216" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67216) == 1">
-		<If Condition="not IsOnMap(139)">
-			<GetTo ZoneId="139" XYZ="409.4757, -3.4, 198.9929" />
-		</If>
-		<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-			<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-		</If>
-		<GetTo ZoneId="139" XYZ="409.4757, -3.4, 198.9929" />
-		<TalkTo NpcId="1013047" XYZ="409.4757, -3.4, 198.9929" QuestId="67216" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67216) == 2">
-		<If Condition="not IsOnMap(139)">
-			<GetTo ZoneId="139" XYZ="377.6454, 0.7781982, -3.616455" />
-		</If>
-		<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-			<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-		</If>
-		<GetTo ZoneId="139" XYZ="377.6454, 0.7781982, -3.616455" />
-		<UseObject NpcId="2005469" XYZ="377.6454, 0.7781982, -3.616455" Radius="10" QuestId="67216" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67216) == 3">
-		<If Condition="not IsOnMap(139)">
-			<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
-		</If>
-		<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-			<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-		</If>
-		<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
-		<Grind while="HasQuest(67216) and GetQuestStep(67216) == 3" >
-		    <GrindArea Name="A_Cunning_Plan">
-		    			<Hotspots>
-		    				<Hotspot XYZ="399.0996, -3.4, 11.21539" Name="Defiant Mage" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4079" /> <!-- Defiant Mage -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67216) == 4">
-		<If Condition="not IsOnMap(139)">
-			<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
-		</If>
-		<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-			<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-		</If>
-		<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
-		<TalkTo NpcId="1013048" XYZ="399.0996, -3.4, 11.21539" QuestId="67216" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67216) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67216" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Black Squawk Down -->
-<If Condition="not IsQuestCompleted(67217) and IsQuestCompleted(67216) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 55">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67217)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67217)">
-			<PickupQuest NpcId="1006752" QuestId="67217" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67217) == 1">
-		<GetTo ZoneId="154" XYZ="-175.1278, -61.86741, 371.9996" />
-		<Grind while="HasQuest(67217) and GetQuestStep(67217) == 1" >
-		    <GrindArea Name="Black_Squawk_Down">
-		    			<Hotspots>
-		    				<Hotspot XYZ="-175.1278, -61.86741, 371.9996" Name="Defiant Mage" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4079" /> <!-- Defiant Mage -->
-		    			</TargetMobs>
+		<!-- The Threat of Paucity (Secondary) -->
+		<If Condition="not IsQuestCompleted(65885) and not IsQuestCompleted(65884) and IsQuestCompleted(65883) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 9">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65885)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65885)">
+					<PickupQuest NpcId="1001708" QuestId="65885" XYZ="-250.3548, 18, 80.88806" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65885) == 1">
+				<!-- Cocobani-->
+				<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+				<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65885" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65885) == 2">
+				<GetTo ZoneId="141" XYZ="39.38721, -0.5063726, -186.9318" />
+				<Grind while="HasQuest(65885) and GetQuestStep(65885) == 2">
+					<GrindArea name="The_Threat_of_Paucity">
+						<Hotspots>
+							<Hotspot Radius="180" XYZ="151.9343, -2, -219.2622" name="Efts" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="289" /> <!-- Eft -->
+						</TargetMobs>
 
 
-		    		</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67217) == 2">
-		<GetTo ZoneId="154" XYZ="-175.1278, -61.86741, 371.9996" />
-		<TalkTo NpcId="1013055" XYZ="-175.1278, -61.86741, 371.9996" QuestId="67217" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67217) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67217" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<WaitWhile Condition="ff14bot.Managers.QuestLogManager.InCutscene" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65885) == 3">
+				<!-- Cocobani -->
+				<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+				<TalkTo NpcId="1001710" XYZ="-240.2533, 18.8, 86.90002" QuestId="65885" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65885) == 4">
+				<!-- Armored War Transport -->
+				<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
+				<UseObject NpcId="2001512" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65885" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65885) == 5">
+				<!-- Armored War Transport -->
+				<GetTo ZoneId="145" XYZ="-366.2928, -34.98901, 293.5682" />
+				<UseObject NpcId="2001499" XYZ="-366.2928, -34.98901, 293.5682" Radius="10" QuestId="65885" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(65885) == 255">
+				<!-- Cocobani -->
+				<GetTo ZoneId="130" XYZ="-240.2533, 18.8, 86.90002" />
+				<TurnIn QuestId="65885" NpcId="1001710" ItemIds="2000418,2000419" XYZ="-240.2533, 18.8, 86.90002" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
 
-<!-- Destruction in the Name of Justice -->
-<If Condition="not IsQuestCompleted(67218) and IsQuestCompleted(67217) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 57">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67218)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67218)">
-			<PickupQuest NpcId="1006752" QuestId="67218" XYZ="87.5105, 18, 113.7255" />
+		<!-- The Threat of Superiority -->
+		<If Condition="not IsQuestCompleted(65886) and (IsQuestCompleted(65885) or IsQuestCompleted(65884)) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 14">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65886)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65886)">
+					<PickupQuest NpcId="1001708" QuestId="65886" XYZ="-250.3548, 18, 80.88806" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65886) == 1">
+				<!-- Cocobezi -->
+				<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
+				<TalkTo NpcId="1001711" XYZ="-241.6266, 18.8, 83.32947" QuestId="65886" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(65886) == 2">
+				<!-- Furious Merchants -->
+				<GetTo ZoneId="130" XYZ="-176.9284, 18, 62.36353" />
+				<EmoteNPC NpcId="1002300" Emote="cry" XYZ="-176.9284, 18, 62.36353" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
+				<EmoteNPC NpcId="1002301" Emote="cry" XYZ="-178.2102, 18, 61.41748" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
+				<EmoteNPC NpcId="1002302" Emote="cry" XYZ="-176.7148, 18, 64.34729" Radius="10" UseTimes="1" QuestId="65886" StepId="2" />
+			</While>
+			<If Condition="GetQuestStep(65886) == 3">
+				<!-- Cocobezi -->
+				<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
+				<TalkTo NpcId="1001711" XYZ="-241.6266, 18.8, 83.32947" QuestId="65886" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(65886) == 4">
+				<!-- Designated Location -->
+				<GetTo ZoneId="145" XYZ="-24.88751, -25.34528, 321.95" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2001470" XYZ="-24.88751, -25.34528, 321.95" QuestId="65886" StepId="4">
+					<HotSpots>
+						<!-- Mormo's Urn -->
+						<HotSpot XYZ="100.9384, -24.09399, 256.9772" Radius="10" />
+					</HotSpots>
+					<InteractObjects>
+						<InteractObject Name="Mormo's Urn" NpcId="2001471" XYZ="100.9384, -24.09399, 256.9772" />
+					</InteractObjects>
+					<TargetMobs>
+						<!-- Diligence of the Alacran -->
+						<TargetMob Id="1306" Weight="3000" />
+						<!-- Kindness Of The Alacran -->
+						<TargetMob Id="757" Weight="2000" />
+						<!-- Temperance Of The Alacran -->
+						<TargetMob Id="756" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65886) == 255">
+				<!-- Cocobezi -->
+				<GetTo ZoneId="130" XYZ="-241.6266, 18.8, 83.32947" />
+				<TurnIn QuestId="65886" NpcId="1001711" ItemId="2001545" XYZ="-241.6266, 18.8, 83.32947" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67218) == 1">
-		<GetTo ZoneId="130" XYZ="30.41113, 7.199998, -103.0747" />
-		<TalkTo NpcId="1013059" XYZ="30.41113, 7.199998, -103.0747" QuestId="67218" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67218) == 2">
-		<GetTo ZoneId="418" XYZ="26.04712, 1.27528, 92.85107" />
-		<TalkTo NpcId="1013060" XYZ="26.04712, 1.27528, 92.85107" QuestId="67218" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67218) == 3">
-		<GetTo ZoneId="397" XYZ="-277.699, 124.9653, -19.39423" />
-		<TalkTo NpcId="1013061" XYZ="-277.699, 124.9653, -19.39423" QuestId="67218" StepId="3" />
-	</If>
-	<While Condition="GetQuestStep(67218) == 4">
-		<GetTo ZoneId="397" XYZ="-284.4435, 127.1838, 11.82568" />
-		<UseObject NpcId="1013063" XYZ="-284.4435, 127.1838, 11.82568" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 0" />
-		<UseObject NpcId="1013062" XYZ="-301.9913, 126.8593, 4.898132" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 1" />
-		<UseObject NpcId="1013064" XYZ="-308.3391, 126.0998, -14.84705" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 2" />
-	</While>
-	<If Condition="GetQuestStep(67218) == 5">
-		<GetTo ZoneId="397" XYZ="-67.00244, 98.04463, 189.9901" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1013065" XYZ="-67.00244, 98.04463, 189.9901" QuestId="67218" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="-80.37748, 98.04464, 256.4148" Radius="180" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="2096" Weight="20000" /> <!-- Planar Fissure -->
-				<TargetMob Id="4175" Weight="4000" /> <!-- Deepvoid Sludge -->
-				<TargetMob Id="4176" Weight="3000" /> <!-- Deepvoid Planebreaker -->
-				<TargetMob Id="4174" Weight="2000" /> <!-- Defiant Strike Mage -->
-				<TargetMob Id="4173" Weight="1000" /> <!-- Defiant Burn Mage -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67218) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67218" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- The Defiant Ones -->
-<If Condition="not IsQuestCompleted(67219) and IsQuestCompleted(67218) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(67219)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(67219)">
-			<PickupQuest NpcId="1006752" QuestId="67219" XYZ="87.5105, 18, 113.7255" />
+		<!-- The Threat of Perplexity -->
+		<If Condition="not IsQuestCompleted(65887) and IsQuestCompleted(65886) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 19">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65887)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65887)">
+					<PickupQuest NpcId="1001708" QuestId="65887" XYZ="-250.3548, 18, 80.88806" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65887) == 1">
+				<!-- Cocoboha -->
+				<GetTo ZoneId="130" XYZ="-241.5046, 19.57727, 84.64172" />
+				<TalkTo NpcId="1001712" XYZ="-241.5046, 19.57727, 84.64172" QuestId="65887" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(65887) == 2">
+				<!-- Cocobusi -->
+				<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
+				<TalkTo NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" QuestId="65887" StepId="2" />
+			</If>
+			<While Condition="GetQuestStep(65887) == 3">
+				<!-- Coastline -->
+				<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
+				<RunCode Name="The_Threat_of_Perplexity" />
+				<UseObject NpcId="1002324" XYZ="112.8099, 17.53689, 31.29626" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 0" />
+				<UseObject NpcId="1002322" XYZ="116.8993, 17.53689, 12.9549" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 16" />
+				<UseObject NpcId="1002323" XYZ="132.433, 21.10498, 9.018005" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 33" />
+				<NoCombatMoveTo Name="Jump Spot" XYZ="104.5747, 17.53689, 45.18474" />
+				<RunCode Name="The_Threat_of_Perplexity2" />
+			</While>
+			<If Condition="GetQuestStep(65887) == 4">
+				<!-- Cocobusi -->
+				<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
+				<HandOver ItemId="2000420,2000421,2000433" QuestId="65887" StepId="4" NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" />
+			</If>
+			<While Condition="GetQuestStep(65887) == 5">
+				<!-- Coastline -->
+				<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
+				<RunCode Name="The_Threat_of_Perplexity" />
+				<NoCombatMoveTo Name="Destination" XYZ="150.7134, 18.78381, -5.752686" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2001472" XYZ="150.7134, 18.78381, -5.752686" QuestId="65887" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="150.9649, 18.73823, -5.603077" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Seemingly Ordinary Imp -->
+						<TargetMob Id="766" Weight="2000" />
+						<!-- Soulsucker Imp -->
+						<TargetMob Id="765" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+				<NoCombatMoveTo Name="Jump Spot" XYZ="104.5747, 17.53689, 45.18474" />
+				<RunCode Name="The_Threat_of_Perplexity2" />
+			</While>
+			<If Condition="GetQuestStep(65887) == 6">
+				<!-- Cocobusi -->
+				<GetTo ZoneId="140" XYZ="14.41974, 22.15717, 72.3125" />
+				<TalkTo NpcId="1002305" XYZ="14.41974, 22.15717, 72.3125" QuestId="65887" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(65887) == 7">
+				<!-- Shaded Outcropping -->
+				<GetTo ZoneId="140" XYZ="96.23853, 16.9527, 188.8303" />
+				<UseObject NpcId="2001474" XYZ="96.23853, 16.9527, 188.8303" Radius="10" QuestId="65887" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(65887) == 8">
+				<!-- Cocoboha -->
+				<GetTo ZoneId="130" XYZ="-241.5046, 19.57727, 84.64172" />
+				<TalkTo NpcId="1001712" XYZ="-241.5046, 19.57727, 84.64172" QuestId="65887" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(65887) == 255">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<TurnIn QuestId="65887" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67219) == 1">
-		<GetTo ZoneId="145" XYZ="385.275, -18.74231, 273.0907" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1013066" XYZ="385.275, -18.74231, 273.0907" QuestId="67219" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="436.8613, -32.93616, 293.6362" Radius="90" /> <!-- Burning Wall Path -->
-				<HotSpot XYZ="474.1054, -44.50378, 282.5573" Radius="90" /> <!-- Burning Wall Path -->
-				<HotSpot XYZ="494.9261, -62.72339, 242.981" Radius="90" /> <!-- Burning Wall Path -->
-				<HotSpot XYZ="432.5475, -64.41454, 202.3499" Radius="90" /> <!-- Barghest -->
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="2347" Weight="7000" /> <!-- Planar Fissure -->
-				<TargetMob Id="3224" Weight="6000" /> <!-- Head Of Thunder -->
-				<TargetMob Id="3223" Weight="5000" /> <!-- Head Of Ice -->
-				<TargetMob Id="4180" Weight="4000" /> <!-- Deepvoid Devilet -->
-				<TargetMob Id="4174" Weight="3000" /> <!-- Defiant Strike Mage -->
-				<TargetMob Id="4173" Weight="2000" /> <!-- Defiant Burn Mage -->
-				<TargetMob Id="4179" Weight="1000" /> <!-- Barghest -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67219) == 2">
-		<WaitWhile Condition="GetQuestStep(67219) == 2" />
-	</If>
-	<If Condition="GetQuestStep(67219) == 3">
-		<GetTo ZoneId="145" XYZ="476.7377, -64.30186, 234.2107" />
-		<TalkTo NpcId="1013187" XYZ="476.7377, -64.30186, 234.2107" QuestId="67219" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67219) == 4">
-		<If Condition="not IsTodoChecked(67219, 4, 0)">
-			<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-			<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67219" StepId="4" />
-		</If>
-		<If Condition="not IsTodoChecked(67219, 4, 1)">
-			<GetTo ZoneId="145" XYZ="322.8961, 10.81887, -8.46875" />
-			<TalkTo NpcId="1013189" XYZ="322.8961, 10.81887, -8.46875" QuestId="67219" StepId="4" />
-		</If>
-		<If Condition="not IsTodoChecked(67219, 4, 2)">
-			<GetTo ZoneId="145" XYZ="327.9622, 11.42572, -6.759766" />
-			<TalkTo NpcId="1013188" XYZ="327.9622, 11.42572, -6.759766" QuestId="67219" StepId="4" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67219) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="67219" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Shades of Shatotto -->
-<If Condition="not IsQuestCompleted(68124) and IsQuestCompleted(67895) and IsQuestCompleted(67219) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(68124)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(68124)">
-			<PickupQuest NpcId="1006752" QuestId="68124" XYZ="87.5105, 18, 113.7255" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(68124) == 1">
-		<GetTo ZoneId="146" XYZ="-428.0709, 5.935945, -21.03935" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1020959" XYZ="-463.1571, -3.164927, 61.26489" QuestId="68124" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="-463.0016, -3.164927, 58.91371" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="6662" Weight="5000" /> <!-- Origins of Thunder -->
-				<TargetMob Id="6658" Weight="4000" /> <!-- Summoning Circle -->
-				<TargetMob Id="6659" Weight="3000" /> <!-- Blizzard Sprite -->
-				<TargetMob Id="6660" Weight="2000" /> <!-- Summoned Golem -->
-				<TargetMob Id="5648" Weight="1000" /> <!-- Shatotto -->
-			</TargetMobs>
-		</LLSimpleDuty>
-		<WaitWhile Condition="not GetQuestStep(68124) == 255" />
-	</If>
-	<If Condition="GetQuestStep(68124) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="68124" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- The Hidden Chapter -->
+		<If Condition="not IsQuestCompleted(65888) and IsQuestCompleted(65887) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 24">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65888)">
+				<!-- Cocobygo -->
+				<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
+				<If Condition="IsQuestAcceptQualified(65888)">
+					<PickupQuest NpcId="1001709" QuestId="65888" XYZ="-240.4975, 18.7, 85.58777" />
 
-<!-- Golems Gone Wild -->
-<If Condition="not IsQuestCompleted(68125) and IsQuestCompleted(68124) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 62">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(68125)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(68125)">
-			<PickupQuest NpcId="1006752" QuestId="68125" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(65888) == 1">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<TalkTo NpcId="1001708" XYZ="-250.3548, 18, 80.88806" QuestId="65888" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(65888) == 2">
+				<!-- Smirking Voidmath -->
+				<GetTo ZoneId="145" XYZ="-374.2886, -57.07999, 144.1213" />
+				<TalkTo NpcId="1002309" XYZ="-374.2886, -57.07999, 144.1213" QuestId="65888" StepId="2" />
+				<TalkTo NpcId="1002308" XYZ="-386.7094, -59.3, 166.3995" QuestId="65888" StepId="2" />
+				<TalkTo NpcId="1002307" XYZ="-396.6583, -48.15, 99.68713" QuestId="65888" StepId="2" />
+			</While>
+			<If Condition="GetQuestStep(65888) == 3">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<HandOver ItemId="2000422" QuestId="65888" StepId="3" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
+			</If>
+			<If Condition="GetQuestStep(65888) == 4">
+				<!-- Cocobygo -->
+				<GetTo ZoneId="130" XYZ="-240.4975, 18.7, 85.58777" />
+				<HandOver ItemId="2000425" QuestId="65888" StepId="4" NpcId="1001709" XYZ="-240.4975, 18.7, 85.58777" />
+			</If>
+			<If Condition="GetQuestStep(65888) == 5">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="145" XYZ="184.8934, 3.180922, -338.6436" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1002310" XYZ="184.8934, 3.180922, -338.6436" QuestId="65888" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="189.0239, 3.180922, -334.4384" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Void Dross -->
+						<TargetMob Id="783" Weight="3000" />
+						<!-- Void Herald -->
+						<TargetMob Id="782" Weight="2000" />
+						<!-- Void Jumper -->
+						<TargetMob Id="781" Weight="1000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65888) == 255">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<TurnIn QuestId="65888" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68125) == 1">
-		<GetTo ZoneId="153" XYZ="-360.0062, 1.264419, 459.8306" />
-		<TalkTo NpcId="1008543" XYZ="-360.0062, 1.264419, 459.8306" QuestId="68125" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68125) == 2">
-		<If Condition="GetQuestById(68125).QuestI8A == 0">
-			<GetTo ZoneId="153" XYZ="-275.6238, 4.867554, 523.7659" />
-			<Dismount />
-			<RunCode name="Fire_III_Golem" />
-			<WaitWhile Condition="not GetQuestById(68125).QuestI8A == 16" />
-		</If>
-		<If Condition="GetQuestById(68125).QuestI8A == 16">
-			<GetTo ZoneId="153" XYZ="-298.909, 11.82568, 567.4677" />
-			<Dismount />
-			<RunCode name="Fire_III_Golem" />
-			<WaitWhile Condition="not GetQuestById(68125).QuestI8A == 33" />
-		</If>
-		<If Condition="GetQuestById(68125).QuestI8A == 33">
-			<GetTo ZoneId="153" XYZ="-310.5974, 12.34448, 645.777" />
-			<Dismount />
-			<RunCode name="Fire_III_Golem" />
-			<WaitWhile Condition="not GetQuestStep(68125) == 3" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(68125) == 3">
-		<GetTo ZoneId="153" XYZ="-348.5009, 0.2234653, 454.4594" />
-		<TalkTo NpcId="1020964" XYZ="-348.5009, 0.2234653, 454.4594" QuestId="68125" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68125) == 255">
-		<GetTo ZoneId="131" XYZ="87.47986, 18, 113.6949" />
-		<TurnIn QuestId="68125" NpcId="1020966" XYZ="87.47986, 18, 113.6949" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- When the Golems Get Tough -->
-<If Condition="not IsQuestCompleted(68126) and IsQuestCompleted(68125) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 64">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(68126)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(68126)">
-			<PickupQuest NpcId="1006752" QuestId="68126" XYZ="87.5105, 18, 113.7255" />
-</If>
-	</If>
-	<If Condition="GetQuestStep(68126) == 1">
-		<GetTo ZoneId="156" XYZ="-36.91156, 20.09092, -679.0723" />
-		<TalkTo NpcId="1021051" XYZ="-36.91156, 20.09092, -679.0723" QuestId="68126" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68126) == 2">
-		<GetTo ZoneId="156" XYZ="-334.0048, -16.18119, -490.1961" />
-		<TalkTo NpcId="1021052" XYZ="-334.0048, -16.18119, -490.1961" QuestId="68126" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68126) == 3">
-		<GetTo ZoneId="156" XYZ="-321.2177, -16.9223, -361.6236" />
-		<UseObject NpcId="2007907" XYZ="-321.2177, -16.9223, -361.6236" Radius="10" QuestId="68126" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68126) == 4">
-		<GetTo ZoneId="156" XYZ="-413.8094, -17.14841, -362.2339" />
-		<WaitWhile Condition="GetQuestStep(68126) == 4" />
-	</If>
-	<If Condition="GetQuestStep(68126) == 5">
-		<GetTo ZoneId="156" XYZ="-413.8094, -17.14841, -362.2339" />
-		<TalkTo NpcId="1021059" XYZ="-413.8094, -17.14841, -362.2339" QuestId="68126" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(68126) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="68126" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- Facing Your Demons -->
+		<If Condition="not IsQuestCompleted(65889) and IsQuestCompleted(65888) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(65889)">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<If Condition="IsQuestAcceptQualified(65889)">
+					<PickupQuest NpcId="1001708" QuestId="65889" XYZ="-250.3548, 18, 80.88806" />
 
-<!-- Unnatural Selection -->
-<If Condition="not IsQuestCompleted(68127) and IsQuestCompleted(68126) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 67">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(68127)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(68127)">
-			<PickupQuest NpcId="1006752" QuestId="68127" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<While Condition="GetQuestStep(65889) == 1">
+				<!-- Vesper Bay Locals -->
+				<GetTo ZoneId="140" XYZ="-408.2911, 23.16707, -350.9318" />
+				<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004094" XYZ="-413.4738, 23.11401, -383.7186" />
+				<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004070" XYZ="-455.8633, 23.11401, -326.9246" />
+				<HandOver ItemId="2000426" QuestId="65889" StepId="1" NpcId="1004096" XYZ="-444.7548, 25, -324.2695" />
+			</While>
+			<If Condition="GetQuestStep(65889) == 2">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="140" XYZ="-436.7285, 23.77481, -350.8202" />
+				<TalkTo NpcId="1002316" XYZ="-436.7285, 23.77481, -350.8202" QuestId="65889" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(65889) == 3">
+				<!-- Maimed Marauder -->
+				<GetTo ZoneId="140" XYZ="-392.3248, 23.55769, -546.9902" />
+				<TalkTo NpcId="1002315" XYZ="-392.3248, 23.55769, -546.9902" QuestId="65889" StepId="3" />
+				<Grind while="HasQuest(65889) and GetQuestStep(65889) == 3">
+					<GrindArea name="Facing_Your_Demons">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-392.3248, 23.55769, -546.9902" name="Mormo's Missionary" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="1213" /> <!-- Mormo's Missionary -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(65889) == 4">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="140" XYZ="-392.3248, 23.55769, -546.9902" />
+				<TalkTo NpcId="1002315" XYZ="-392.3248, 23.55769, -546.9902" QuestId="65889" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(65889) == 5">
+				<!-- Maimed Marauder -->
+				<GetTo ZoneId="140" XYZ="-269.8558, 15.34657, -718.1354" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<TalkTo NpcId="1002317" XYZ="-269.8558, 15.34657, -718.1354" SelectStringOverride="0" BlacklistAfter="True" />
+				<LLSimpleDuty InteractNpcId="1002317" XYZ="-269.8558, 15.34657, -718.1354" QuestId="65889" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-203.04, 14.63993, -736.2756" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Void Warrior -->
+						<TargetMob Id="841" Weight="1000" />
+						<!-- Mormo -->
+						<TargetMob Id="1221" Weight="2000" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(65889) == 255">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
+				<TurnIn QuestId="65889" NpcId="1001708" XYZ="-250.3548, 18, 80.88806" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68127) == 1">
-		<GetTo ZoneId="145" XYZ="326.1005, 11.18124, -8.743469" />
-		<TalkTo NpcId="1021086" XYZ="326.1005, 11.18124, -8.743469" QuestId="68127" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68127) == 2">
-		<GetTo ZoneId="620" XYZ="7.217468, 115.5143, -720.7599" />
-		<TalkTo NpcId="1021090" XYZ="7.217468, 115.5143, -720.7599" QuestId="68127" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68127) == 3">
-		<GetTo ZoneId="620" XYZ="-284.9318, 66.20886, -679.0723" />
-		<UseObject NpcId="2007936" XYZ="-284.9318, 66.20886, -679.0723" Radius="10" QuestId="68127" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(68127) == 4">
-		<GetTo ZoneId="620" XYZ="-266.4073, 76.297, -623.1022" />
-		<TalkTo NpcId="1021092" XYZ="-266.4073, 76.297, -623.1022" QuestId="68127" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(68127) == 5">
-		<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
-		<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="68127" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(68127) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="68127" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- One Golem to Rule Them All -->
-<If Condition="not IsQuestCompleted(68128) and IsQuestCompleted(68127) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 69">
-	<While Condition="ClassName != ClassJobType.BlackMage">
-		<ChangeClass Job="BlackMage" />
-	</While>
-	<If Condition="not HasQuest(68128)">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<If Condition="IsQuestAcceptQualified(68128)">
-			<PickupQuest NpcId="1006752" QuestId="68128" XYZ="87.5105, 18, 113.7255" />
+		<!-- Taking the Black -->
+		<If Condition="not IsQuestCompleted(66609) and IsQuestCompleted(65889) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Thaumaturge">
+				<ChangeClass Job="Thaumaturge" />
+			</While>
+			<If Condition="not HasQuest(66609)">
+				<!-- Yayake -->
+				<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
+				<If Condition="IsQuestAcceptQualified(66609)">
+					<PickupQuest NpcId="1002279" QuestId="66609" XYZ="-196.8872, 18.46, 59.95264" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66609) == 1">
+				<!-- Planar Fissure -->
+				<GetTo ZoneId="145" XYZ="-72.67877, -32.05927, -46.83002" />
+				<UseObject NpcId="2002533" XYZ="-72.67877, -32.05927, -46.83002" Radius="10" QuestId="66609" StepId="1" />
+				<Grind while="HasQuest(66609) and GetQuestStep(66609) == 1">
+					<GrindArea name="Taking_the_Black">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-72.67877, -32.05927, -46.83002" name="Deepvoid Souls" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="2038" /> <!-- Deepvoid Soul -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(66609) == 2">
+				<!-- Cocobuki -->
+				<GetTo ZoneId="145" XYZ="-72.67877, -32.05927, -46.83002" />
+				<UseItem NpcId="2002429" ItemId="2000954" XYZ="-72.67877, -32.05927, -46.83002" Radius="10" QuestId="66609" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66609) == 3">
+				<!-- Yayake -->
+				<GetTo ZoneId="130" XYZ="-197.64369, 18, 62.6914" />
+				<TalkTo NpcId="1002279" XYZ="-196.8872, 18.46, 59.95264" QuestId="66609" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66609) == 255">
+				<!-- Lalai -->
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="66609" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<While Condition="ClassName != ClassJobType.BlackMage">
+					<EquipWeapon ItemId="4548" />
+					<AutoInventoryEquip />
+				</While>
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(68128) == 1">
-		<GetTo ZoneId="398" XYZ="-270.3746, -29.99883, 111.9249" />
-		<TalkTo NpcId="1021097" XYZ="-270.3746, -29.99883, 111.9249" QuestId="68128" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(68128) == 2">
-		<GetTo ZoneId="398" XYZ="-285.6337, 39.04305, 53.72693" />
-		<TalkTo NpcId="1011935" XYZ="-285.6337, 39.04305, 53.72693" QuestId="68128" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(68128) == 3">
-		<GetTo ZoneId="398" XYZ="-287.1901, 39.04307, 44.47998" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1021102" XYZ="-287.1901, 39.04307, 44.47998" QuestId="68128" StepId="3">
-			<HotSpots>
-				<HotSpot XYZ="-105.4156, 348.1758, -391.5558" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="6656" Weight="8000" /> <!-- Crimson Shard -->
-				<TargetMob Id="6657" Weight="7000" /> <!-- Sable Shard -->
-				<TargetMob Id="6661" Weight="2000" /> <!-- Gemstone Golem -->
-				<TargetMob Id="5649" Weight="1000" /> <!-- Gemstone Golem -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(68128) == 4">
-		<WaitWhile Condition="GetQuestStep(68128) == 4" />
-	</If>
-	<If Condition="GetQuestStep(68128) == 5">
-		<GetTo ZoneId="398" XYZ="-267.1702, -30.09441, 117.5402" />
-		<TalkTo NpcId="1021104" XYZ="-267.1702, -30.09441, 117.5402" QuestId="68128" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(68128) == 255">
-		<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
-		<TurnIn QuestId="68128" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-    <LastProfile/>
-  </Order>
+		<!-- You'll Never Go Back -->
+		<If Condition="not IsQuestCompleted(66610) and IsQuestCompleted(66609) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 34">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(66610)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(66610)">
+					<PickupQuest NpcId="1006752" QuestId="66610" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66610) == 1">
+				<GetTo ZoneId="146" XYZ="-7.919495, 13.68732, 866.5444" />
+				<UseObject NpcId="2002534" XYZ="-7.919495, 13.68732, 866.5444" Radius="10" QuestId="66610" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66610) == 2">
+				<GetTo ZoneId="146" XYZ="-7.919495, 13.68732, 866.5444" />
+				<UseItem NpcId="2002430" ItemId="2000809" QuestId="66610" StepId="2" XYZ="-7.919495, 13.68732, 866.5444" Radius="5" />
+			</If>
+			<If Condition="GetQuestStep(66610) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="66610" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- International Relations -->
+		<If Condition="not IsQuestCompleted(66611) and IsQuestCompleted(66610) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 39">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(66611)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(66611)">
+					<PickupQuest NpcId="1006752" QuestId="66611" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66611) == 1">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="66611" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 2">
+				<GetTo ZoneId="140" XYZ="-167.4067, 14.51378, -251.3009" />
+				<TalkTo NpcId="1007864" XYZ="-167.4067, 14.51378, -251.3009" QuestId="66611" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 3">
+				<GetTo ZoneId="140" XYZ="-178.3933, 15.42688, -244.6479" />
+				<UseObject NpcId="2002535" XYZ="-178.3933, 15.42688, -244.6479" Radius="10" QuestId="66611" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 4">
+				<GetTo ZoneId="140" XYZ="-178.3933, 15.42688, -244.6479" />
+				<UseItem NpcId="2002431" ItemId="2000810" XYZ="-178.3933, 15.42688, -244.6479" Radius="10" QuestId="66611" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 5">
+				<GetTo ZoneId="140" XYZ="-167.4067, 14.51378, -251.3009" />
+				<TalkTo NpcId="1007864" XYZ="-167.4067, 14.51378, -251.3009" QuestId="66611" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 6">
+				<GetTo ZoneId="140" XYZ="-223.1022, 14.51385, -365.2552" />
+				<TalkTo NpcId="1007865" XYZ="-223.1022, 14.51385, -365.2552" QuestId="66611" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 7">
+				<GetTo ZoneId="140" XYZ="-211.1696, 15.3963, -345.4185" />
+				<UseObject NpcId="2002536" XYZ="-211.1696, 15.3963, -345.4185" Radius="10" QuestId="66611" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 8">
+				<GetTo ZoneId="140" XYZ="-211.1696, 15.3963, -345.4185" />
+				<UseItem NpcId="2002432" ItemId="2000811" XYZ="-211.1696, 15.3963, -345.4185" Radius="10" QuestId="66611" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 9">
+				<GetTo ZoneId="140" XYZ="-223.1022, 14.51385, -365.2552" />
+				<TalkTo NpcId="1007865" XYZ="-223.1022, 14.51385, -365.2552" QuestId="66611" StepId="9" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 10">
+				<GetTo ZoneId="140" XYZ="-131.7006, 17.98201, -278.8587" />
+				<TalkTo NpcId="1007863" XYZ="-131.7006, 17.98201, -278.8587" QuestId="66611" StepId="10" />
+			</If>
+			<If Condition="GetQuestStep(66611) == 255">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TurnIn QuestId="66611" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Voidgate Breathes Gloomy -->
+		<If Condition="not IsQuestCompleted(66612) and IsQuestCompleted(66611) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(66612)">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<If Condition="IsQuestAcceptQualified(66612)">
+					<PickupQuest NpcId="1006753" QuestId="66612" XYZ="325.063, 11.23651, -6.21051" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66612) == 1">
+				<GetTo ZoneId="153" XYZ="374.2885, 3.40271, 161.7303" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2002433" XYZ="374.2885, 3.40271, 161.7303" QuestId="66612" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="375.312, 2.313976, 158.28" Radius="30" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="2096" Weight="4000" /> <!-- Planar Fissure -->
+						<TargetMob Id="1933" Weight="3000" /> <!-- Void Echo -->
+						<TargetMob Id="1932" Weight="2000" /> <!-- Void Tyrant -->
+						<TargetMob Id="1931" Weight="1000" /> <!-- Planebreaker -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66612) == 2">
+				<GetTo ZoneId="153" XYZ="376.1501, 3.009833, 161.7609" />
+				<TalkTo NpcId="1007866" XYZ="376.1501, 3.009833, 161.7609" />
+			</If>
+			<If Condition="GetQuestStep(66612) == 3">
+				<GetTo ZoneId="145" XYZ="282.3987, 11.15124, -6.729248" />
+				<TalkTo NpcId="1007867" XYZ="282.3987, 11.15124, -6.729248" />
+			</If>
+			<If Condition="GetQuestStep(66612) == 255">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TurnIn QuestId="66612" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Blood Must Flow -->
+		<If Condition="not IsQuestCompleted(66613) and IsQuestCompleted(66612) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(66613)">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<If Condition="IsQuestAcceptQualified(66613)">
+					<PickupQuest NpcId="1006753" QuestId="66613" XYZ="325.063, 11.23651, -6.21051" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66613) == 1">
+				<If Condition="not IsTodoChecked(66613, 1, 0)">
+					<GetTo ZoneId="146" XYZ="-101.2742, 28.21387, 117.235" />
+					<UseItem NpcId="2002434" ItemId="2000812" XYZ="-101.2742, 28.21387, 117.235" Radius="10" Condition="GetQuestById(66613).QuestI8AH == 0" />
+				</If>
+				<If Condition="not IsTodoChecked(66613, 1, 1)">
+					<GetTo ZoneId="154" XYZ="-0.7826095, -11.93195, -34.4479" />
+					<UseItem NpcId="2002435" ItemId="2000955" XYZ="-1.815857, -11.70367, -37.79669" Radius="10" Condition="GetQuestById(66613).QuestI8AH == 1" />
+				</If>
+				<If Condition="not IsTodoChecked(66613, 1, 2)">
+					<GetTo ZoneId="180" XYZ="68.68079, 55.83276, -503.9597" />
+					<UseItem NpcId="2002436" ItemId="2000956" XYZ="68.68079, 55.83276, -503.9597" Radius="10" QuestId="66613" StepId="1" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66613) == 2">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="66613" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66613) == 3">
+				<GetTo ZoneId="145" XYZ="220.8743, 5.599976, -269.9779" />
+				<UseObject NpcId="2002537" XYZ="220.8743, 5.599976, -269.9779" Radius="10" QuestId="66613" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66613) == 4">
+				<GetTo ZoneId="145" XYZ="225.2949, 4.421391, -258.2836" />
+				<UseItem NpcId="2002437" ItemId="2000957" XYZ="220.8743, 5.599976, -269.9779" Radius="10" QuestId="66613" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(66613) == 255">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TurnIn QuestId="66613" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Always Bet on Black -->
+		<If Condition="not IsQuestCompleted(66614) and IsQuestCompleted(66613) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(66614)">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<If Condition="IsQuestAcceptQualified(66614)">
+					<PickupQuest NpcId="1006753" QuestId="66614" XYZ="325.063, 11.23651, -6.21051" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66614) == 1">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TalkTo NpcId="1006752" XYZ="87.5105, 18, 113.7255" QuestId="66614" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66614) == 2">
+				<GetTo ZoneId="146" XYZ="-424.2095, 5.300763, -25.12411" />
+				<Dismount />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty XYZ="-432.3785, 6.373979, -15.91354" QuestId="66614" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="-462.0845, -3.164931, 53.24925" Radius="30" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="2102" Weight="5000" /> <!-- Dark Plasma -->
+						<TargetMob Id="2103" Weight="4000" /> <!-- Void Trumpeter -->
+						<TargetMob Id="2097" Weight="3000" /> <!-- Voidgate -->
+						<TargetMob Id="2101" Weight="2000" /> <!-- Void Lantern -->
+						<TargetMob Id="2100" Weight="1000" /> <!-- Barbatos -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<While Condition="GetQuestStep(66614) == 3">
+				<GetTo ZoneId="146" XYZ="-458.7015, -3.164927, 63.37073" />
+				<TalkTo NpcId="1007873" XYZ="-458.7015, -3.164927, 63.37073" QuestId="66614" StepId="3" />
+				<TalkTo NpcId="1007871" XYZ="-464.4694, -3.164927, 65.41541" QuestId="66614" StepId="3" />
+				<TalkTo NpcId="1007872" XYZ="-468.925, -3.164927, 59.46436" QuestId="66614" StepId="3" />
+			</While>
+			<If Condition="GetQuestStep(66614) == 255">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TurnIn QuestId="66614" NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" />
+				<UseInventoryItem ItemId="20649" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Black Books -->
+		<If Condition="not IsQuestCompleted(67214) and IsQuestCompleted(65964) and IsQuestCompleted(66614) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67214)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67214)">
+					<PickupQuest NpcId="1006752" QuestId="67214" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67214) == 1">
+				<GetTo ZoneId="146" XYZ="-431.9444, 6.604713, -16.70799" />
+				<TalkTo NpcId="1013042" XYZ="-465.9343, -3.164927, 66.66663" QuestId="67214" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67214) == 2">
+				<GetTo ZoneId="145" XYZ="221.0749, 5.584767, -269.9219" />
+				<TalkTo NpcId="1013043" XYZ="184.6189, 3.180922, -334.2794" QuestId="67214" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67214) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67214" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- An Unexpected Journey -->
+		<If Condition="not IsQuestCompleted(67215) and IsQuestCompleted(67214) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 51">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67215)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67215)">
+					<PickupQuest NpcId="1006752" QuestId="67215" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67215) == 1">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67215" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67215) == 2">
+				<GetTo ZoneId="145" XYZ="191.7296, -1.915309, 32.94421" />
+				<TalkTo NpcId="1013044" XYZ="191.7296, -1.915309, 32.94421" QuestId="67215" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67215) == 3">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67215" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67215) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67215" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- A Cunning Plan -->
+		<If Condition="not IsQuestCompleted(67216) and IsQuestCompleted(67215) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 53">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67216)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67216)">
+					<PickupQuest NpcId="1006752" QuestId="67216" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67216) == 1">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="409.4757, -3.4, 198.9929" />
+				</If>
+				<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
+					<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+				</If>
+				<GetTo ZoneId="139" XYZ="409.4757, -3.4, 198.9929" />
+				<TalkTo NpcId="1013047" XYZ="409.4757, -3.4, 198.9929" QuestId="67216" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67216) == 2">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="377.6454, 0.7781982, -3.616455" />
+				</If>
+				<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
+					<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+				</If>
+				<GetTo ZoneId="139" XYZ="377.6454, 0.7781982, -3.616455" />
+				<UseObject NpcId="2005469" XYZ="377.6454, 0.7781982, -3.616455" Radius="10" QuestId="67216" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67216) == 3">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
+				</If>
+				<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
+					<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+				</If>
+				<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
+				<Grind while="HasQuest(67216) and GetQuestStep(67216) == 3">
+					<GrindArea Name="A_Cunning_Plan">
+						<Hotspots>
+							<Hotspot XYZ="399.0996, -3.4, 11.21539" Name="Defiant Mage" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4079" /> <!-- Defiant Mage -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67216) == 4">
+				<If Condition="not IsOnMap(139)">
+					<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
+				</If>
+				<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
+					<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+				</If>
+				<GetTo ZoneId="139" XYZ="399.0996, -3.4, 11.21539" />
+				<TalkTo NpcId="1013048" XYZ="399.0996, -3.4, 11.21539" QuestId="67216" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67216) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67216" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Black Squawk Down -->
+		<If Condition="not IsQuestCompleted(67217) and IsQuestCompleted(67216) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 55">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67217)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67217)">
+					<PickupQuest NpcId="1006752" QuestId="67217" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67217) == 1">
+				<GetTo ZoneId="154" XYZ="-175.1278, -61.86741, 371.9996" />
+				<Grind while="HasQuest(67217) and GetQuestStep(67217) == 1">
+					<GrindArea Name="Black_Squawk_Down">
+						<Hotspots>
+							<Hotspot XYZ="-175.1278, -61.86741, 371.9996" Name="Defiant Mage" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4079" /> <!-- Defiant Mage -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67217) == 2">
+				<GetTo ZoneId="154" XYZ="-175.1278, -61.86741, 371.9996" />
+				<TalkTo NpcId="1013055" XYZ="-175.1278, -61.86741, 371.9996" QuestId="67217" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67217) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67217" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<WaitWhile Condition="ff14bot.Managers.QuestLogManager.InCutscene" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Destruction in the Name of Justice -->
+		<If Condition="not IsQuestCompleted(67218) and IsQuestCompleted(67217) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 57">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67218)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67218)">
+					<PickupQuest NpcId="1006752" QuestId="67218" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67218) == 1">
+				<GetTo ZoneId="130" XYZ="30.41113, 7.199998, -103.0747" />
+				<TalkTo NpcId="1013059" XYZ="30.41113, 7.199998, -103.0747" QuestId="67218" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67218) == 2">
+				<GetTo ZoneId="418" XYZ="26.04712, 1.27528, 92.85107" />
+				<TalkTo NpcId="1013060" XYZ="26.04712, 1.27528, 92.85107" QuestId="67218" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67218) == 3">
+				<GetTo ZoneId="397" XYZ="-277.699, 124.9653, -19.39423" />
+				<TalkTo NpcId="1013061" XYZ="-277.699, 124.9653, -19.39423" QuestId="67218" StepId="3" />
+			</If>
+			<While Condition="GetQuestStep(67218) == 4">
+				<GetTo ZoneId="397" XYZ="-284.4435, 127.1838, 11.82568" />
+				<UseObject NpcId="1013063" XYZ="-284.4435, 127.1838, 11.82568" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 0" />
+				<UseObject NpcId="1013062" XYZ="-301.9913, 126.8593, 4.898132" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 1" />
+				<UseObject NpcId="1013064" XYZ="-308.3391, 126.0998, -14.84705" QuestId="67218" StepId="4" Condition="GetQuestById(67218).QuestI8A == 2" />
+			</While>
+			<If Condition="GetQuestStep(67218) == 5">
+				<GetTo ZoneId="397" XYZ="-67.00244, 98.04463, 189.9901" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1013065" XYZ="-67.00244, 98.04463, 189.9901" QuestId="67218" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-80.37748, 98.04464, 256.4148" Radius="180" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="2096" Weight="20000" /> <!-- Planar Fissure -->
+						<TargetMob Id="4175" Weight="4000" /> <!-- Deepvoid Sludge -->
+						<TargetMob Id="4176" Weight="3000" /> <!-- Deepvoid Planebreaker -->
+						<TargetMob Id="4174" Weight="2000" /> <!-- Defiant Strike Mage -->
+						<TargetMob Id="4173" Weight="1000" /> <!-- Defiant Burn Mage -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67218) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67218" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Defiant Ones -->
+		<If Condition="not IsQuestCompleted(67219) and IsQuestCompleted(67218) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(67219)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(67219)">
+					<PickupQuest NpcId="1006752" QuestId="67219" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67219) == 1">
+				<GetTo ZoneId="145" XYZ="385.275, -18.74231, 273.0907" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1013066" XYZ="385.275, -18.74231, 273.0907" QuestId="67219" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="436.8613, -32.93616, 293.6362" Radius="90" /> <!-- Burning Wall Path -->
+						<HotSpot XYZ="474.1054, -44.50378, 282.5573" Radius="90" /> <!-- Burning Wall Path -->
+						<HotSpot XYZ="494.9261, -62.72339, 242.981" Radius="90" /> <!-- Burning Wall Path -->
+						<HotSpot XYZ="432.5475, -64.41454, 202.3499" Radius="90" /> <!-- Barghest -->
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="2347" Weight="7000" /> <!-- Planar Fissure -->
+						<TargetMob Id="3224" Weight="6000" /> <!-- Head Of Thunder -->
+						<TargetMob Id="3223" Weight="5000" /> <!-- Head Of Ice -->
+						<TargetMob Id="4180" Weight="4000" /> <!-- Deepvoid Devilet -->
+						<TargetMob Id="4174" Weight="3000" /> <!-- Defiant Strike Mage -->
+						<TargetMob Id="4173" Weight="2000" /> <!-- Defiant Burn Mage -->
+						<TargetMob Id="4179" Weight="1000" /> <!-- Barghest -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67219) == 2">
+				<WaitWhile Condition="GetQuestStep(67219) == 2" />
+			</If>
+			<If Condition="GetQuestStep(67219) == 3">
+				<GetTo ZoneId="145" XYZ="476.7377, -64.30186, 234.2107" />
+				<TalkTo NpcId="1013187" XYZ="476.7377, -64.30186, 234.2107" QuestId="67219" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67219) == 4">
+				<If Condition="not IsTodoChecked(67219, 4, 0)">
+					<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+					<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="67219" StepId="4" />
+				</If>
+				<If Condition="not IsTodoChecked(67219, 4, 1)">
+					<GetTo ZoneId="145" XYZ="322.8961, 10.81887, -8.46875" />
+					<TalkTo NpcId="1013189" XYZ="322.8961, 10.81887, -8.46875" QuestId="67219" StepId="4" />
+				</If>
+				<If Condition="not IsTodoChecked(67219, 4, 2)">
+					<GetTo ZoneId="145" XYZ="327.9622, 11.42572, -6.759766" />
+					<TalkTo NpcId="1013188" XYZ="327.9622, 11.42572, -6.759766" QuestId="67219" StepId="4" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67219) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="67219" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Shades of Shatotto -->
+		<If Condition="not IsQuestCompleted(68124) and IsQuestCompleted(67895) and IsQuestCompleted(67219) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(68124)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(68124)">
+					<PickupQuest NpcId="1006752" QuestId="68124" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68124) == 1">
+				<GetTo ZoneId="146" XYZ="-428.0709, 5.935945, -21.03935" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1020959" XYZ="-463.1571, -3.164927, 61.26489" QuestId="68124" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="-463.0016, -3.164927, 58.91371" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="6662" Weight="5000" /> <!-- Origins of Thunder -->
+						<TargetMob Id="6658" Weight="4000" /> <!-- Summoning Circle -->
+						<TargetMob Id="6659" Weight="3000" /> <!-- Blizzard Sprite -->
+						<TargetMob Id="6660" Weight="2000" /> <!-- Summoned Golem -->
+						<TargetMob Id="5648" Weight="1000" /> <!-- Shatotto -->
+					</TargetMobs>
+				</LLSimpleDuty>
+				<WaitWhile Condition="not GetQuestStep(68124) == 255" />
+			</If>
+			<If Condition="GetQuestStep(68124) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="68124" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Golems Gone Wild -->
+		<If Condition="not IsQuestCompleted(68125) and IsQuestCompleted(68124) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 62">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(68125)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(68125)">
+					<PickupQuest NpcId="1006752" QuestId="68125" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68125) == 1">
+				<GetTo ZoneId="153" XYZ="-360.0062, 1.264419, 459.8306" />
+				<TalkTo NpcId="1008543" XYZ="-360.0062, 1.264419, 459.8306" QuestId="68125" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68125) == 2">
+				<If Condition="GetQuestById(68125).QuestI8A == 0">
+					<GetTo ZoneId="153" XYZ="-275.6238, 4.867554, 523.7659" />
+					<Dismount />
+					<RunCode name="Fire_III_Golem" />
+					<WaitWhile Condition="not GetQuestById(68125).QuestI8A == 16" />
+				</If>
+				<If Condition="GetQuestById(68125).QuestI8A == 16">
+					<GetTo ZoneId="153" XYZ="-298.909, 11.82568, 567.4677" />
+					<Dismount />
+					<RunCode name="Fire_III_Golem" />
+					<WaitWhile Condition="not GetQuestById(68125).QuestI8A == 33" />
+				</If>
+				<If Condition="GetQuestById(68125).QuestI8A == 33">
+					<GetTo ZoneId="153" XYZ="-310.5974, 12.34448, 645.777" />
+					<Dismount />
+					<RunCode name="Fire_III_Golem" />
+					<WaitWhile Condition="not GetQuestStep(68125) == 3" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68125) == 3">
+				<GetTo ZoneId="153" XYZ="-348.5009, 0.2234653, 454.4594" />
+				<TalkTo NpcId="1020964" XYZ="-348.5009, 0.2234653, 454.4594" QuestId="68125" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68125) == 255">
+				<GetTo ZoneId="131" XYZ="87.47986, 18, 113.6949" />
+				<TurnIn QuestId="68125" NpcId="1020966" XYZ="87.47986, 18, 113.6949" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- When the Golems Get Tough -->
+		<If Condition="not IsQuestCompleted(68126) and IsQuestCompleted(68125) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 64">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(68126)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(68126)">
+					<PickupQuest NpcId="1006752" QuestId="68126" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68126) == 1">
+				<GetTo ZoneId="156" XYZ="-36.91156, 20.09092, -679.0723" />
+				<TalkTo NpcId="1021051" XYZ="-36.91156, 20.09092, -679.0723" QuestId="68126" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68126) == 2">
+				<GetTo ZoneId="156" XYZ="-334.0048, -16.18119, -490.1961" />
+				<TalkTo NpcId="1021052" XYZ="-334.0048, -16.18119, -490.1961" QuestId="68126" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68126) == 3">
+				<GetTo ZoneId="156" XYZ="-321.2177, -16.9223, -361.6236" />
+				<UseObject NpcId="2007907" XYZ="-321.2177, -16.9223, -361.6236" Radius="10" QuestId="68126" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68126) == 4">
+				<GetTo ZoneId="156" XYZ="-413.8094, -17.14841, -362.2339" />
+				<WaitWhile Condition="GetQuestStep(68126) == 4" />
+			</If>
+			<If Condition="GetQuestStep(68126) == 5">
+				<GetTo ZoneId="156" XYZ="-413.8094, -17.14841, -362.2339" />
+				<TalkTo NpcId="1021059" XYZ="-413.8094, -17.14841, -362.2339" QuestId="68126" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68126) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="68126" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Unnatural Selection -->
+		<If Condition="not IsQuestCompleted(68127) and IsQuestCompleted(68126) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 67">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(68127)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(68127)">
+					<PickupQuest NpcId="1006752" QuestId="68127" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68127) == 1">
+				<GetTo ZoneId="145" XYZ="326.1005, 11.18124, -8.743469" />
+				<TalkTo NpcId="1021086" XYZ="326.1005, 11.18124, -8.743469" QuestId="68127" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68127) == 2">
+				<GetTo ZoneId="620" XYZ="7.217468, 115.5143, -720.7599" />
+				<TalkTo NpcId="1021090" XYZ="7.217468, 115.5143, -720.7599" QuestId="68127" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68127) == 3">
+				<GetTo ZoneId="620" XYZ="-284.9318, 66.20886, -679.0723" />
+				<UseObject NpcId="2007936" XYZ="-284.9318, 66.20886, -679.0723" Radius="10" QuestId="68127" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(68127) == 4">
+				<GetTo ZoneId="620" XYZ="-266.4073, 76.297, -623.1022" />
+				<TalkTo NpcId="1021092" XYZ="-266.4073, 76.297, -623.1022" QuestId="68127" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(68127) == 5">
+				<GetTo ZoneId="145" XYZ="325.063, 11.23651, -6.21051" />
+				<TalkTo NpcId="1006753" XYZ="325.063, 11.23651, -6.21051" QuestId="68127" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68127) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="68127" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- One Golem to Rule Them All -->
+		<If Condition="not IsQuestCompleted(68128) and IsQuestCompleted(68127) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 69">
+			<While Condition="ClassName != ClassJobType.BlackMage">
+				<ChangeClass Job="BlackMage" />
+			</While>
+			<If Condition="not HasQuest(68128)">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<If Condition="IsQuestAcceptQualified(68128)">
+					<PickupQuest NpcId="1006752" QuestId="68128" XYZ="87.5105, 18, 113.7255" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(68128) == 1">
+				<GetTo ZoneId="398" XYZ="-270.3746, -29.99883, 111.9249" />
+				<TalkTo NpcId="1021097" XYZ="-270.3746, -29.99883, 111.9249" QuestId="68128" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(68128) == 2">
+				<GetTo ZoneId="398" XYZ="-285.6337, 39.04305, 53.72693" />
+				<TalkTo NpcId="1011935" XYZ="-285.6337, 39.04305, 53.72693" QuestId="68128" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68128) == 3">
+				<GetTo ZoneId="398" XYZ="-287.1901, 39.04307, 44.47998" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1021102" XYZ="-287.1901, 39.04307, 44.47998" QuestId="68128" StepId="3">
+					<HotSpots>
+						<HotSpot XYZ="-105.4156, 348.1758, -391.5558" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="6656" Weight="8000" /> <!-- Crimson Shard -->
+						<TargetMob Id="6657" Weight="7000" /> <!-- Sable Shard -->
+						<TargetMob Id="6661" Weight="2000" /> <!-- Gemstone Golem -->
+						<TargetMob Id="5649" Weight="1000" /> <!-- Gemstone Golem -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(68128) == 4">
+				<WaitWhile Condition="GetQuestStep(68128) == 4" />
+			</If>
+			<If Condition="GetQuestStep(68128) == 5">
+				<GetTo ZoneId="398" XYZ="-267.1702, -30.09441, 117.5402" />
+				<TalkTo NpcId="1021104" XYZ="-267.1702, -30.09441, 117.5402" QuestId="68128" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(68128) == 255">
+				<GetTo ZoneId="131" XYZ="87.5105, 18, 113.7255" />
+				<TurnIn QuestId="68128" NpcId="1006752" XYZ="87.5105, 18, 113.7255" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+	</Order>
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
-    <CodeChunk Type="Definition" Name="Logger">
+		<CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
         public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
@@ -1311,7 +1310,7 @@
 
       ]]>
     </CodeChunk>
-    <CodeChunk Type="Hook" Name="CloseHowTo">
+		<CodeChunk Type="Hook" Name="CloseHowTo">
 			<![CDATA[
 
         bool hasTutorialWindow = TutorialWindows
@@ -1325,7 +1324,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
             uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
@@ -1346,13 +1345,13 @@
 	        return false;
 			]]>
 		</CodeChunk>
-<CodeChunk Name="GearsetSave">
+		<CodeChunk Name="GearsetSave">
   <![CDATA[
 	await CommonTasks.StopAndDismount();
 	ChatManager.SendChat("/gs save");
   ]]>
 </CodeChunk>
-<CodeChunk Name="Fire_III_Golem">
+		<CodeChunk Name="Fire_III_Golem">
 <![CDATA[
 	uint[] questNpcIds = { 2007872, 2007873, 2007874 };
 
@@ -1365,9 +1364,7 @@
 </CodeChunk>
 
 
-        <!-- Arcanist 1-15 Codechunks -->
-
-
+		<!-- Arcanist 1-15 Codechunks -->
 
 
 		<CodeChunk Name="The_Threat_of_Perplexity">
@@ -1402,16 +1399,6 @@
 
 			]]>
 		</CodeChunk>
-
-
-
-
-
-
-
-
-
-
 
 
 	</CodeChunks>

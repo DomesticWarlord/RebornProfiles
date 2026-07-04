@@ -194,7 +194,7 @@
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
 				<If Condition="IsQuestAcceptQualified(65992)">
 					<PickupQuest NpcId="1000909" QuestId="65992" XYZ="-326.3752, 12.89966, 9.994568" />
-</If>
+				</If>
 			</If>
 			<If Condition="HasQuest(65992)">
 				<If Condition="GetQuestStep(65992) == 1">
@@ -286,7 +286,7 @@
 					<!-- Thubyrgeim -->
 					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
 					<TurnIn QuestId="65992" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-<AutoInventoryEquip />
+					<AutoInventoryEquip />
 				</If>
 			</If>
 		</If>
@@ -885,7 +885,7 @@
 		<If Condition="not IsQuestCompleted(66627) and IsQuestCompleted(65997) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
 			<If Condition="not HasQuest(66627)">
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-<If Condition="IsQuestAcceptQualified(66627)">
+				<If Condition="IsQuestAcceptQualified(66627)">
 					<PickUpQuest NpcId="1000909" QuestId="66627" XYZ="-326.3752, 12.89966, 9.994568" />
 				</If>
 			</If>
@@ -920,7 +920,6 @@
 			</If>
 		</If>
 
-		<LastProfile />
 	</Order>
 	<GrindAreas>
 	</GrindAreas>

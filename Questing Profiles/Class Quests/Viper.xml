@@ -252,11 +252,10 @@
       </If>
     </If>
 
-    <LastProfile/>
   </Order>
-	<GrindAreas>
-	</GrindAreas>
-	<CodeChunks>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
     <CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
@@ -312,18 +311,8 @@
 		</CodeChunk>
 
 
-        <!-- Arcanist 1-15 Codechunks -->
+    <!-- Arcanist 1-15 Codechunks -->
 
 
-
-
-
-
-
-
-
-
-
-
-	</CodeChunks>
+  </CodeChunks>
 </Profile>

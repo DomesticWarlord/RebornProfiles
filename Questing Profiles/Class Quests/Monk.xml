@@ -6,1313 +6,1312 @@
 
 -->
 <Profile>
-  <Name>Panda Farmer - Monk Class Quests - Monk</Name>
-  <BehaviorDirectory></BehaviorDirectory>
-  <Order>
+	<Name>Panda Farmer - Monk Class Quests - Monk</Name>
+	<BehaviorDirectory></BehaviorDirectory>
+	<Order>
 
-    <Hook Name="KillMobs" Operation="A" Location="TreeStart" />
-    <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
-
-
-<!-- Way of the Pugilist -->
-<If Condition="not IsQuestCompleted(66068) and Core.Me.Levels[ClassJobType.Pugilist] == 0">
-	<If Condition="not HasQuest(66068)">
-		<GetTo ZoneId="130" XYZ="-86.9456, 2.099863, -51.57794" />
-		<TalkTo NpcId="1001286" XYZ="-86.9456, 2.099863, -51.57794" />
-		<If Condition="IsQuestAcceptQualified(66068)">
-			<PickupQuest NpcId="1001286" QuestId="66068" XYZ="-86.9456, 2.099863, -51.57794" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66068) == 255">
-		<GetTo ZoneId="130" XYZ="-76.29147, 2.000005, -42.58416" />
-		<TurnIn QuestId="66068" StepId="255" NpcId="1003817" InteractDistance="1.0" XYZ="-76.29147, 2.000005, -42.58416" />
-	    <While Condition="ClassName != ClassJobType.Pugilist">
-		    <EquipWeapon ItemId="1680"/>
-	    </While>
-		<RunCode name="GearsetSave"/>
-	</If>
-</If>
-
-<!-- My First Hora -->
-<If Condition="IsQuestCompleted(66068) and not IsQuestCompleted(66089)">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66089)">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66089)">
-			<PickupQuest NpcId="1003817" QuestId="66089" XYZ="-74.57086, 2.000005, -42.40485" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66089) == 1">
-		<If Condition="not IsTodoChecked(66089, 1, 0)">
-			<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" />
-			<Grind while="not IsTodoChecked(66089, 1, 0)" >
-			    <GrindArea name="My_First_Hora">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Star Marmots" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="262" /> <!-- Star Marmot -->
-			    			</TargetMobs>
+		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
+		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
 
 
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="not IsTodoChecked(66089, 1, 1)">
-			<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" />
-			<Grind while="not IsTodoChecked(66089, 1, 1)" >
-			    <GrindArea name="My_First_Hora2">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Huge Hornets" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="632" /> <!-- Huge Hornet -->
-			    			</TargetMobs>
-
-
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="not IsTodoChecked(66089, 1, 2)">
-			<GetTo ZoneId="141" XYZ="47.62748, 2.513385, 317.5547" />
-			<Grind while="not IsTodoChecked(66089, 1, 2)" >
-			    <GrindArea name="My_First_Hora3">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="47.62748, 2.513385, 317.5547" name="Snapping Shrews" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="318" /> <!-- Snapping Shrew -->
-			    			</TargetMobs>
-
-
-			    		</GrindArea>
-			</Grind>
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66089) == 255">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66089" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Harder than Rock -->
-<If Condition="not IsQuestCompleted(66090) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 4">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66090)">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66090)">
-			<PickupQuest NpcId="1003817" QuestId="66090" XYZ="-74.57086, 2.000005, -42.40485" />
-
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66090) == 1">
-		<!-- Faded Gil Coins -->
-		<GetTo ZoneId="130" XYZ="-80.36932, 0.6866455, -59.55603" />
-		<UseObject NpcIds="2001285,2001282,2001283,2001280,2001281" QuestId="66090" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="-80.36932, 0.6866455, -59.55603" Radius="10" />
-				<HotSpot XYZ="-21.74414, 9.994568, -78.50769" Radius="10" />
-				<HotSpot XYZ="37.03357, 7.248047, -98.8938" Radius="10" />
-				<HotSpot XYZ="-162.4628, 17.47156, 60.19678" Radius="10" />
-				<HotSpot XYZ="-254.7494, 17.99036, 67.33801" Radius="10" />
-			</HotSpots>
-		</UseObject>
-	</If>
-	<If Condition="GetQuestStep(66090) == 2">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<HandOver ItemId="2000423" QuestId="66090" StepId="2" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-	</If>
-	<While Condition="GetQuestStep(66090) == 3">
-		<!-- Trial Stone -->
-		<GetTo ZoneId="140" XYZ="229.0933, 51.94556, 91.25763" />
-		<If Condition="GetQuestById(66090).QuestI8A == 0">
-			<MoveTo Name="Trial Stone" XYZ="224.9629, 52.80996, 78.25069" />
-			<Dismount />
-			<LLUseSpell SpellId="53" NpcId="2001541" XYZ="224.7196, 52.04846, 79.45361" Condition="not Core.Player.InCombat" />
-			<WaitWhile Condition="GetQuestById(66090).QuestI8A == 0" />
-		</If>
-		<If Condition="GetQuestById(66090).QuestI8A == 17">
-			<MoveTo Name="Trial Stone" XYZ="245.7159, 52.47571, 58.09106" />
-			<Dismount />
-			<LLUseSpell SpellId="53" Distance="1" NpcId="2001542" XYZ="245.7159, 52.47571, 58.09106" Condition="not Core.Player.InCombat" />
-			<WaitWhile Condition="GetQuestById(66090).QuestI8A == 17" />
-		</If>
-		<If Condition="GetQuestById(66090).QuestI8A == 33">
-			<MoveTo Name="Trial Stone" XYZ="222.513, 52.76848, 40.68093" />
-			<Dismount />
-			<LLUseSpell SpellId="53" Distance="2.5" NpcId="2001543" XYZ="224.0176, 52.23157, 41.36719" Condition="not Core.Player.InCombat" />
-			<WaitWhile Condition="GetQuestById(66090).QuestI8A == 33" />
-		</If>
-		<If Condition="GetQuestById(66090).QuestI8A == 49">
-			<MoveTo Name="Trial Stone" XYZ="261.3669, 55.53403, 24.92537" />
-			<Dismount />
-			<LLUseSpell SpellId="53" NpcId="2001544" XYZ="259.0524, 53.42175, 25.40625" Condition="not Core.Player.InCombat" />
-			<WaitWhile Condition="GetQuestById(66090).QuestI8A == 49" />
-		</If>
-		<WaitTimer WaitTime="3" />
-	</While>
-	<If Condition="GetQuestStep(66090) == 255">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66090" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Burning Up the Quarter Malm (Primary) -->
-<If Condition="not IsQuestCompleted(66091) and not IsQuestCompleted(66089) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 9">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66091)">
-		<!-- Hamon -->
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66091)">
-			<PickUpQuest NpcId="1003817" QuestId="66091" XYZ="-74.57086, 2.000005, -42.40485" />
-		</If>
-	</If>
-	<If Condition="HasQuest(66091)">
-		<While Condition="GetQuestStep(66091) == 1">
-			<!-- Striking Dummy -->
-			<GetTo ZoneId="130" XYZ="-111.3515, 4, -91.69934" />
-		    <If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 0">
-		      	<LLUseSpell SpellId="53" NpcId="2001718" XYZ="-107.5282, 4, -106.335" condition="GetQuestById(66091).QuestI8A == 0" />
-		    </If>
-		    <If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 17">
-				<LLUseSpell SpellId="53" NpcId="2001719" XYZ="-105.3938, 4, -108.4852" condition="GetQuestById(66091).QuestI8A == 17"/>
-		    </If>
-		    <If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 33">
-				<LLUseSpell SpellId="53" NpcId="2001720" XYZ="-77.16577, 4, -129.6812" condition="GetQuestById(66091).QuestI8A == 33"/>
-		    </If>
-			<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 49">
-				<LLUseSpell SpellId="53" NpcId="2001721" XYZ="-74.07706, 4, -131.5156" condition="GetQuestById(66091).QuestI8A == 49"/>
+		<!-- Way of the Pugilist -->
+		<If Condition="not IsQuestCompleted(66068) and Core.Me.Levels[ClassJobType.Pugilist] == 0">
+			<If Condition="not HasQuest(66068)">
+				<GetTo ZoneId="130" XYZ="-86.9456, 2.099863, -51.57794" />
+				<TalkTo NpcId="1001286" XYZ="-86.9456, 2.099863, -51.57794" />
+				<If Condition="IsQuestAcceptQualified(66068)">
+					<PickupQuest NpcId="1001286" QuestId="66068" XYZ="-86.9456, 2.099863, -51.57794" />
+				</If>
 			</If>
-		    <If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 65">
-				<LLUseSpell SpellId="53" NpcId="2001722" XYZ="-70.9402, 4, -133.1431" condition="GetQuestById(66091).QuestI8A == 65"/>
-		    </If>
-		</While>
-		<If Condition="GetQuestStep(66091) == 2">
-			<!-- Hamon -->
-			<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-			<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66091" StepId="2" />
-		</If>
-		<If Condition="GetQuestStep(66091) == 3">
-			<!-- Grinding Area -->
-			<GetTo ZoneId="141" XYZ="-194.8194, 19.05426, -91.78304" />
-			<Grind while="HasQuest(66091) and GetQuestStep(66091) == 3" >
-			    <GrindArea name="Burning_Up_the_Quarter_Malm">
-			    			<Hotspots>
-			    				<Hotspot Radius="90" XYZ="-243.1457, 28, -105.9213" name="Qiqirn Shellsweepers" />
-			    			</Hotspots>
-			    			<TargetMobs>
-			    				<TargetMob Id="266" /> <!-- Qiqirn Shellsweeper -->
-			    			</TargetMobs>
-
-
-			    		</GrindArea>
-			</Grind>
-		</If>
-		<If Condition="GetQuestStep(66091) == 255">
-			<!-- Hamon -->
-			<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-			<TurnIn QuestId="66091" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-			<AutoInventoryEquip />
-		</If>
-	</If>
-</If>
-<!-- Burning Up the Quarter Malm (Secondary) -->
-<If Condition="not IsQuestCompleted(66234) and not IsQuestCompleted(66091) and IsQuestCompleted(66090) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 9">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66234)">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66234)">
-			<PickUpQuest NpcId="1003817" QuestId="66234" XYZ="-74.57086, 2.000005, -42.40485" />
-		</If>
-	</If>
-	<While Condition="GetQuestStep(66234) == 1">
-		<GetTo ZoneId="130" XYZ="-111.3515, 4, -91.69934" />
-		<LLUseSpell SpellId="53" NpcIds="2001798,2001799,2001800,2001801,2001802" XYZ="-107.5282, 4, -106.335" QuestId="66234" StepId="1" Condition="GetQuestStep(66234) == 1" />
-	</While>
-	<If Condition="GetQuestStep(66234) == 2">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66234" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66234) == 3">
-		<GetTo ZoneId="141" XYZ="-194.8194, 19.05426, -91.78304" />
-		<Grind while="HasQuest(66234) and GetQuestStep(66234) == 3" >
-		    <GrindArea name="Burning_Up_the_Quarter_Malm">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-243.1457, 28, -105.9213" name="Qiqirn Shellsweepers" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="266" /> <!-- Qiqirn Shellsweeper -->
-		    			</TargetMobs>
-
-
-		    		</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(66234) == 255">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66234" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Spirit Is Willing -->
-<If Condition="(IsQuestCompleted(66234) or IsQuestCompleted(66091)) and not IsQuestCompleted(66094) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 14">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66094)">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66094)">
-			<PickupQuest NpcId="1003817" QuestId="66094" XYZ="-74.57086, 2.000005, -42.40485" />
-
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66094) == 1">
-		<GetTo ZoneId="141" XYZ="246.5041, -17.21218, -131.6801" />
-		<Grind while="HasQuest(66094) and GetQuestStep(66094) == 1" >
-		    <GrindArea name="The_Spirit_Is_Willing">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="297.1484, -19.71835, -134.486" name="Toxic Toads" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="216" /> <!-- Toxic Toad -->
-		    			</TargetMobs>
-
-
-		    		</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(66094) == 2">
-		<GetTo ZoneId="141" XYZ="-27.39001, -2.056931, -146.9291" />
-		<HandOver ItemId="2000408" QuestId="66094" StepId="2" NpcId="1003822" XYZ="-27.39001, -2.056931, -146.9291" />
-	</If>
-	<While Condition="GetQuestStep(66094) == 3">
-		<GetTo ZoneId="141" XYZ="-35.44672, -2.057617, -154.9554" />
-		<TalkTo NpcId="1001578" XYZ="-35.44672, -2.057617, -154.9554" QuestId="66094" StepId="3" />
-		<TalkTo NpcId="1001445" XYZ="-13.04651, -2.090576, -184.4053" QuestId="66094" StepId="3" />
-		<TalkTo NpcId="1004148" XYZ="5.722107, -1.985179, -172.7779" QuestId="66094" StepId="3" />
-	</While>
-	<If Condition="GetQuestStep(66094) == 4">
-		<GetTo ZoneId="141" XYZ="-27.39001, -2.056931, -146.9291" />
-		<TalkTo NpcId="1003822" XYZ="-27.39001, -2.056931, -146.9291" QuestId="66094" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(66094) == 5">
-		<GetTo ZoneId="141" XYZ="-241.413, 8.072021, -32.24237" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="2001349" XYZ="-241.413, 8.072021, -32.24237" QuestId="66094" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="-243.5387, 6.434249, -24.07663" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="1305" Weight="3000" /> <!-- Chastity of the Alacran -->
-				<TargetMob Id="262" Weight="2000" /> <!-- Star Marmot -->
-				<TargetMob Id="932" Weight="1000" /> <!-- Patience of the Alacran -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66094) == 6">
-		<GetTo ZoneId="141" XYZ="-242.8474, 7.405224, -29.31262" />
-		<TalkTo NpcId="1004149" XYZ="-242.8474, 7.405224, -29.31262" QuestId="66094" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(66094) == 255">
-		<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
-		<TurnIn QuestId="66094" NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Keeping the Spirit Alive -->
-<If Condition="not IsQuestCompleted(66098) and IsQuestCompleted(66094) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 19">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66098)">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66098)">
-			<PickupQuest NpcId="1003817" QuestId="66098" XYZ="-74.57086, 2.000005, -42.40485" />
-
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66098) == 1">
-		<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
-		<TalkTo NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" QuestId="66098" StepId="1" />
-	</If>
-	<While Condition="GetQuestStep(66098) == 2">
-		<GetTo ZoneId="145" XYZ="-234.2744, -27.51055, 213.4975" />
-		<Dismount />
-		<LLUseSpell SpellId="53" Distance="1" NpcId="2001390" XYZ="-230.5438, -27.51504, 251.6609" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 0 and not Core.Player.InCombat" />
-		<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 0" >
-		    <GrindArea name="Keeping_the_Spirit_Alive">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-228.8396, -27.8172, 250.1411" name="Hornet Clouds" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="696" /> <!-- Hornet Cloud -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-		<LLUseSpell SpellId="53" Distance="0.1" NpcId="2001389" XYZ="-244.6173, -25.80246, 230.886" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 1 and not Core.Player.InCombat" />
-		<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 1" >
-		    <GrindArea name="Keeping_the_Spirit_Alive2">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-242.4201, -26.13879, 229.1752" name="Hornet Clouds" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="696" /> <!-- Hornet Cloud -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-		<LLUseSpell SpellId="53" Distance="0.5" NpcId="2001391" XYZ="-214.5668, -30.79744, 202.9852" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 2 and not Core.Player.InCombat" />
-		<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 2" >
-		    <GrindArea name="Keeping_the_Spirit_Alive3">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-215.9915, -29.49573, 203.7842" name="Hornet Mobs" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="696" Weight="2000" /> <!-- Hornet Cloud -->
-		    				<TargetMob Id="950" Weight="1000" /> <!-- Gila Monster -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</While>
-	<If Condition="GetQuestStep(66098) == 3">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<HandOver ItemId="2000367" QuestId="66098" StepId="3" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-	</If>
-	<If Condition="GetQuestStep(66098) == 4">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66098" StepId="4">
-			<HotSpots>
-				<HotSpot XYZ="-69.05283, 0.9482071, -47.61369" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="751" /> <!-- Hamon Holyfist -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66098) == 255">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66098" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Star-crossed Rivals -->
-<If Condition="not IsQuestCompleted(66102) and IsQuestCompleted(66098) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 24">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66102)">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66102)">
-			<PickupQuest NpcId="1003817" QuestId="66102" XYZ="-74.57086, 2.000005, -42.40485" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66102) == 1">
-		<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
-		<TalkTo NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" QuestId="66102" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66102) == 2">
-		<GetTo ZoneId="146" XYZ="-147.3259, 25.91345, -359.762" />
-		<TalkTo NpcId="1003829" XYZ="-147.3259, 25.91345, -359.762" QuestId="66102" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66102) == 3">
-		<If Condition="GetQuestById(66102).QuestI8A == 0">
-			<GetTo ZoneId="146" XYZ="-203.8148, 27.26782, -351.7662" />
-			<UseItem ItemId="2000409" NpcId="2001525" XYZ="-203.8148, 27.26782, -351.7662" Condition="GetQuestById(66102).QuestI8A == 0" />
-		</If>
-		<If Condition="GetQuestById(66102).QuestI8A == 16">
-			<GetTo ZoneId="146" XYZ="-105.5772, 14.99957, -185.3209" />
-			<UseItem ItemId="2000409" NpcId="2001523" XYZ="-105.5772, 14.99957, -185.3209" Condition="GetQuestById(66102).QuestI8A == 16" />
-		</If>
-		<If Condition="GetQuestById(66102).QuestI8A == 32">
-			<GetTo ZoneId="146" XYZ="197.4364, 15.54889, -450.5837" />
-			<UseItem ItemId="2000409" NpcId="2001524" XYZ="197.4364, 15.54889, -450.5837" Condition="GetQuestById(66102).QuestI8A == 32" />
-		</If>
-		<If Condition="GetQuestById(66102).QuestI8A == 48">
-			<GetTo ZoneId="146" XYZ="22.17133, 17.86829, -600.2441" />
-			<UseItem ItemId="2000409" NpcId="2001522" XYZ="22.17133, 17.86829, -600.2441" Condition="GetQuestById(66102).QuestI8A == 48" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66102) == 4">
-		<GetTo ZoneId="146" XYZ="-147.3259, 25.91345, -359.762" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1003829" XYZ="-147.3259, 25.91345, -359.762" QuestId="66102" StepId="4">
-			<HotSpots>
-				<HotSpot XYZ="-159.9906, 25.05829, -357.117" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="262" Weight="5000" /> <!-- Star Marmot -->
-				<TargetMob Id="829" Weight="4000" /> <!-- Alacran Bloodhound -->
-				<TargetMob Id="830" Weight="3000" /> <!-- Alacran Warhound -->
-				<TargetMob Id="828" Weight="2000" /> <!-- Rurukuta Tornstar -->
-				<TargetMob Id="831" Weight="1000" /> <!-- Bastet -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66102) == 255">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66102" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Return of the Holyfist -->
-<If Condition="not IsQuestCompleted(66103) and IsQuestCompleted(66102) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 29">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66103)">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<If Condition="IsQuestAcceptQualified(66103)">
-			<PickUpQuest NpcId="1003817" QuestId="66103" XYZ="-74.57086, 2.000005, -42.40485" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66103) == 1">
-		<GetTo ZoneId="146" XYZ="-301.5335, 5, 471.3053" />
-		<TalkTo NpcId="1003830" XYZ="-301.5335, 5, 471.3053" QuestId="66103" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66103) == 2">
-		<GetTo ZoneId="146" XYZ="-276.5637, 8.205684, 671.5793" />
-		<Grind while="HasQuest(66103) and GetQuestStep(66103) == 2" >
-		    <GrindArea name="Return_of_the_Holyfist">
-		    			<Hotspots>
-		    				<Hotspot Radius="180" XYZ="-276.5637, 8.205684, 671.5793" name="Sandworms" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="290" /> <!-- Sandworm -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(66103) == 3">
-		<GetTo ZoneId="146" XYZ="-301.5335, 5, 471.3053" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1003830" XYZ="-301.5335, 5, 471.3053" QuestId="66103" StepId="3">
-			<HotSpots>
-				<HotSpot XYZ="-311.0773, 5, 471.3708" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<!-- Hamon Holyfist -->
-				<TargetMob Id="751" />
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66103) == 4">
-		<GetTo ZoneId="130" XYZ="-21.80518, 4, -145.1896" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1003890" XYZ="-21.80518, 4, -145.1896" QuestId="66103" StepId="4">
-			<HotSpots>
-				<HotSpot XYZ="-28.71414, 3.999999, -146.9265" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="757" Weight="6000" /> <!-- Kindness of the Alacran -->
-				<TargetMob Id="1307" Weight="5000" /> <!-- Humility of the Alacran -->
-				<TargetMob Id="1306" Weight="4000" /> <!-- Diligence of the Alacran -->
-				<TargetMob Id="756" Weight="3000" /> <!-- Temperance of the Alacran -->
-				<TargetMob Id="932" Weight="2000" /> <!-- Patience of the Alacran -->
-				<TargetMob Id="907" Weight="1000" /> <!-- Weggfarr Wideaxe -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66103) == 255">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TurnIn QuestId="66103" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Brother from Another Mother -->
-<If Condition="not IsQuestCompleted(66597) and IsQuestCompleted(66103) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 29">
-	<While Condition="ClassName != ClassJobType.Pugilist">
-		<ChangeClass Job="Pugilist" />
-	</While>
-	<If Condition="not HasQuest(66597)">
-		<GetTo ZoneId="130" XYZ="-86.65684, 2.0999424, -50.70609" />
-		<If Condition="IsQuestAcceptQualified(66597)">
-			<PickupQuest NpcId="1001286" QuestId="66597" XYZ="-88.9754, 2.55, -51.16351" />
-
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66597) == 1">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TalkTo NpcId="1006749" XYZ="-30.47229, 13.59992, 95.26196" QuestId="66597" StepId="1" />
-	</If>
-	<While Condition="GetQuestStep(66597) == 2">
-		<GetTo ZoneId="141" XYZ="-232.8069, -28.79382, 125.2917" />
-		<Dismount />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<UseItem ItemId="2000951" NpcId="2002439" XYZ="-232.8069, -28.79382, 125.2917" UseTimes="1" BlacklistAfter="True" BlacklistDuration="2" />
-		<LLSimpleDuty ItemId="2000951" InteractNpcId="2002439" XYZ="-232.8069, -28.79382, 125.2917" QuestId="66597" StepId="2">
-			<HotSpots>
-				<HotSpot XYZ="-231.698, -29.0454, 122.45" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="1963" Weight="3000" /> <!-- Sil'dihn Spriggan -->
-				<TargetMob Id="1962" Weight="2000" /> <!-- Runagate Imp -->
-				<TargetMob Id="1961" Weight="1000" /> <!-- Rabisu -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</While>
-	<If Condition="GetQuestStep(66597) == 3">
-		<GetTo ZoneId="141" XYZ="-232.8069, -28.94641, 125.2917" />
-		<UseObject NpcId="2002440" XYZ="-232.8069, -28.94641, 125.2917" Radius="10" QuestId="66597" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66597) == 255">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TurnIn QuestId="66597" NpcId="1006749" ItemId="2001061" XYZ="-30.47229, 13.59992, 95.26196" />
-	    <While Condition="ClassName != ClassJobType.Monk">
-		    <EquipWeapon ItemId="4543"/>
-            <AutoInventoryEquip/>
-	    </While>
-	</If>
-</If>
-
-<!-- Insulted Intelligence -->
-<If Condition="not IsQuestCompleted(66598) and IsQuestCompleted(66597) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 34">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(66598)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(66598)">
-			<PickUpQuest NpcId="1006749" QuestId="66598" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66598) == 1">
-		<GetTo ZoneId="137" XYZ="689.5093, 9.750427, 483.3295" />
-		<UseItem NpcId="2002441" ItemId="2000817" XYZ="689.5093, 9.750427, 483.3295" Radius="10" QuestId="66598" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66598) == 2">
-		<GetTo ZoneId="137" XYZ="689.5093, 9.750427, 483.3295" />
-		<UseObject NpcId="2002442" XYZ="689.5093, 9.750427, 483.3295" Radius="10" QuestId="66598" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66598) == 255">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TurnIn QuestId="66598" NpcId="1006749" ItemId="2001062" XYZ="-30.47229, 13.59992, 95.26196" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- A Slave to the Aether -->
-<If Condition="not IsQuestCompleted(66599) and IsQuestCompleted(66598) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 39">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(66599)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(66599)">
-			<PickUpQuest NpcId="1006749" QuestId="66599" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66599) == 1">
-		<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
-		<TalkTo NpcId="1007874" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66599" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66599) == 2">
-		<GetTo ZoneId="153" XYZ="24.21594, 25.65039, 115.9838" />
-		<UseItem NpcId="2002443" ItemId="2000818" XYZ="24.21594, 25.65039, 115.9838" Radius="10" QuestId="66599" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66599) == 3">
-		<GetTo ZoneId="153" XYZ="24.21594, 25.65039, 115.9838" />
-		<UseObject NpcId="2002444" XYZ="24.21594, 25.65039, 115.9838" Radius="10" QuestId="66599" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66599) == 255">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TurnIn QuestId="66599" NpcId="1006749" ItemIds="2000819,2001063" XYZ="-30.47229, 13.59992, 95.26196" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- The Pursuit of Power -->
-<If Condition="not IsQuestCompleted(66600) and IsQuestCompleted(66599) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(66600)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(66600)">
-			<PickUpQuest NpcId="1006749" QuestId="66600" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66600) == 1">
-		<GetTo ZoneId="152" XYZ="3.158569, 20.58435, -13.16864" />
-		<UseItem NpcId="2002445" ItemId="2000820" XYZ="3.158569, 20.58435, -13.16864" Radius="10" QuestId="66600" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66600) == 2">
-		<GetTo ZoneId="152" XYZ="3.158569, 20.58435, -13.16864" />
-		<UseObject NpcId="2002446" XYZ="3.158569, 20.58435, -13.16864" Radius="10" QuestId="66600" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(66600) == 255">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TurnIn QuestId="66600" NpcId="1006749" ItemId="2001064" XYZ="-30.47229, 13.59992, 95.26196" />
-		<AutoInventoryEquip />
-	</If>
-</If>
-
-<!-- Good Vibrations -->
-<If Condition="not IsQuestCompleted(66601) and IsQuestCompleted(66600) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(66601)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(66601)">
-			<PickUpQuest NpcId="1006749" QuestId="66601" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66601) == 1">
-		<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
-		<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(66601) == 2">
-		<If Condition="not IsTodoChecked(66601, 2, 1)">
-			<GetTo ZoneId="146" XYZ="39.13896, 23.51147, -151.3145" />
-			<UseObject UseDistance="3.0" NpcId="2002447" XYZ="41.42822, 25.10107, -149.6453" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
-		</If>
-		<If Condition="not IsTodoChecked(66601, 2, 0)">
-			<GetTo ZoneId="146" XYZ="29.64425, 17.97282, -620.1209" />
-			<UseObject NpcId="2002548" XYZ="17.83771, 20.52332, -629.1448" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
-		</If>
-		<While Condition="not IsTodoChecked(66601, 2, 2)">
-			<If Condition="not IsQuestCompleted(66060)">
-				<GetTo ZoneId="147" XYZ="212.0454, 24.92337, 65.03921" />
-				<ClimbHill Name="Stairs" Start="211.6043, 24.95354, 64.5901" End="218.0361, 29.38419, 60.17913" />
+			<If Condition="GetQuestStep(66068) == 255">
+				<GetTo ZoneId="130" XYZ="-76.29147, 2.000005, -42.58416" />
+				<TurnIn QuestId="66068" StepId="255" NpcId="1003817" InteractDistance="1.0" XYZ="-76.29147, 2.000005, -42.58416" />
+				<While Condition="ClassName != ClassJobType.Pugilist">
+					<EquipWeapon ItemId="1680" />
+				</While>
+				<RunCode name="GearsetSave" />
 			</If>
-			<GetTo ZoneId="147" XYZ="213.7025, 30.19751, 61.02075" />
-			<UseObject NpcId="2002448" XYZ="213.7025, 30.19751, 61.02075" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
-		</While>
-	</If>
-	<If Condition="GetQuestStep(66601) == 3">
-		<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
-		<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(66601) == 4">
-		<GetTo ZoneId="135" XYZ="-74.08258, 2.606998, 716.3958" />
-		<TalkTo NpcId="1007877" XYZ="-74.08258, 2.606998, 716.3958" QuestId="66601" StepId="4" />
-		<Grind while="HasQuest(66601) and GetQuestStep(66601) == 4" >
-		    <GrindArea name="Good_Vibrations">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-74.08258, 2.606998, 716.3958" name="Mercenary Mobs" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="675" /> <!-- Mindful Mercenary -->
-		    				<TargetMob Id="674" /> <!-- Menacing Mercenary -->
-		    			</TargetMobs>
+		</If>
+
+		<!-- My First Hora -->
+		<If Condition="IsQuestCompleted(66068) and not IsQuestCompleted(66089)">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66089)">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66089)">
+					<PickupQuest NpcId="1003817" QuestId="66089" XYZ="-74.57086, 2.000005, -42.40485" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66089) == 1">
+				<If Condition="not IsTodoChecked(66089, 1, 0)">
+					<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" />
+					<Grind while="not IsTodoChecked(66089, 1, 0)">
+						<GrindArea name="My_First_Hora">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Star Marmots" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="262" /> <!-- Star Marmot -->
+							</TargetMobs>
 
 
-		    		</GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(66601) == 5">
-		<GetTo ZoneId="135" XYZ="-74.08258, 2.606998, 716.3958" />
-		<TalkTo NpcId="1007877" XYZ="-74.08258, 2.606998, 716.3958" QuestId="66601" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(66601) == 6">
-		<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
-		<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(66601) == 255">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<TurnIn QuestId="66601" NpcId="1006749" ItemId="2001064" XYZ="-30.47229, 13.59992, 95.26196" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(66089, 1, 1)">
+					<GetTo ZoneId="141" XYZ="-120.001, 5.346663, 244.9141" />
+					<Grind while="not IsTodoChecked(66089, 1, 1)">
+						<GrindArea name="My_First_Hora2">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="-120.001, 5.346663, 244.9141" name="Huge Hornets" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="632" /> <!-- Huge Hornet -->
+							</TargetMobs>
 
-<!-- Five Easy Pieces -->
-<If Condition="not IsQuestCompleted(66602) and IsQuestCompleted(66601) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(66602)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(66602)">
-			<PickUpQuest NpcId="1006749" QuestId="66602" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(66602) == 1">
-		<GetTo ZoneId="156" XYZ="117.0387, -5.6613, -537.7056" />
-		<Dismount />
-		<MoveTo Name="Widargelt" XYZ="109.36, -5.169723, -535.2126" Distance="0.5" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty XYZ="109.8366, -5.201663, -535.4407" QuestId="66602" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="112.9144, -5.426363, -536.2955" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="1906" Weight="6000" /> <!-- Ala Mhigan Shaman -->
-				<TargetMob Id="1904" Weight="5000" /> <!-- Ala Mhigan Bowman -->
-				<TargetMob Id="1903" Weight="4000" /> <!-- Ala Mhigan Pikeman -->
-				<TargetMob Id="1905" Weight="3000" /> <!-- Ala Mhigan Axeman -->
-				<TargetMob Id="2204" Weight="2000" /> <!-- Spirit Pulse -->
-				<TargetMob Id="1416" Weight="1000" /> <!-- Widargelt the Watcher -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(66602) == 255">
-		<GetTo ZoneId="156" XYZ="104.7227, -4.938011, -533.5317" />
-		<TurnIn QuestId="66602" NpcId="1007899" XYZ="104.7227, -4.938011, -533.5317" />
-		<UseInventoryItem ItemId="20643"/>
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- The Legend Continues -->
-<If Condition="not IsQuestCompleted(67562) and IsQuestCompleted(65964) and IsQuestCompleted(66602) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67562)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(67562)">
-			<PickUpQuest NpcId="1006749" QuestId="67562" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67562) == 1">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TalkTo NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" QuestId="67562" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67562) == 2">
-		<GetTo ZoneId="156" XYZ="95.87244, -4.4635, -533.5623" />
-		<TalkTo NpcId="1013976" XYZ="95.87244, -4.4635, -533.5623" QuestId="67562" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67562) == 3">
-		<GetTo ZoneId="156" XYZ="207.5378, 18.12324, -608.7587" />
-		<TalkTo NpcId="1013977" XYZ="207.5378, 18.12324, -608.7587" QuestId="67562" StepId="3" />
-		<Grind while="HasQuest(67562) and GetQuestStep(67562) == 3" >
-		    <GrindArea name="The_Legend_Continues">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="207.5378, 18.12324, -608.7587" name="Silvertear Cobra" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4094" /> <!-- Silvertear Cobra -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67562) == 4">
-		<GetTo ZoneId="156" XYZ="207.5378, 18.12324, -608.7587" />
-		<TalkTo NpcId="1013977" XYZ="207.5378, 18.12324, -608.7587" QuestId="67562" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67562) == 5">
-		<GetTo ZoneId="156" XYZ="205.9509, -22.99126, -449.2408" />
-		<TalkTo NpcId="1013978" XYZ="205.9509, -22.99126, -449.2408" QuestId="67562" StepId="5" />
-		<Grind while="HasQuest(67562) and GetQuestStep(67562) == 5" >
-		    <GrindArea name="The_Legend_Continues2">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="205.9509, -22.99126, -449.2408" name="Lightning Sprites" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4093" /> <!-- Lightning Sprite -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67562) == 6">
-		<GetTo ZoneId="156" XYZ="205.9509, -22.99126, -449.2408" />
-		<TalkTo NpcId="1013978" XYZ="205.9509, -22.99126, -449.2408" QuestId="67562" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(67562) == 7">
-		<GetTo ZoneId="156" XYZ="95.87244, -4.4635, -533.5623" />
-		<TalkTo NpcId="1014111" XYZ="95.87244, -4.4635, -533.5623" QuestId="67562" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(67562) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67562" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="not IsTodoChecked(66089, 1, 2)">
+					<GetTo ZoneId="141" XYZ="47.62748, 2.513385, 317.5547" />
+					<Grind while="not IsTodoChecked(66089, 1, 2)">
+						<GrindArea name="My_First_Hora3">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="47.62748, 2.513385, 317.5547" name="Snapping Shrews" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="318" /> <!-- Snapping Shrew -->
+							</TargetMobs>
 
-<!-- Let's Talk About Sects -->
-<If Condition="not IsQuestCompleted(67563) and IsQuestCompleted(67562) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 51">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67563)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67563)">
-			<PickUpQuest NpcId="1013971" QuestId="67563" XYZ="15.85406, 28.62082, -682.765" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67563) == 1">
-		<GetTo ZoneId="156" XYZ="-73.0755, 2.668869, -622.5223" />
-		<TalkTo NpcId="1013982" XYZ="-73.0755, 2.668869, -622.5223" QuestId="67563" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67563) == 2">
-		<GetTo ZoneId="156" XYZ="-142.2294, 1.391692, -654.139" />
-		<TalkTo NpcId="1013984" XYZ="-142.2294, 1.391692, -654.139" QuestId="67563" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67563) == 3">
-		<GetTo ZoneId="156" XYZ="-142.2294, 1.391692, -654.139" />
-		<Grind while="HasQuest(67563) and GetQuestStep(67563) == 3" >
-		    <GrindArea name="Lets_Talk_about_Sects">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-142.2294, 1.391692, -654.139" name="Mysterious Assailants" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67563) == 4">
-		<GetTo ZoneId="156" XYZ="-223.4073, 4.145869, -628.3207" />
-		<TalkTo NpcId="1013987" XYZ="-223.4073, 4.145869, -628.3207" QuestId="67563" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67563) == 5">
-		<GetTo ZoneId="156" XYZ="-223.4073, 4.145869, -628.3207" />
-		<Grind while="HasQuest(67563) and GetQuestStep(67563) == 5" >
-		    <GrindArea name="Lets_Talk_about_Sects2">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-223.4073, 4.145869, -628.3207" name="Mysterious Assailants" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67563) == 6">
-		<GetTo ZoneId="156" XYZ="-253.8034, -5.454714, -542.8702" />
-		<TalkTo NpcId="1013990" XYZ="-253.8034, -5.454714, -542.8702" QuestId="67563" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(67563) == 7">
-		<GetTo ZoneId="156" XYZ="-253.8034, -5.454714, -542.8702" />
-		<Grind while="HasQuest(67563) and GetQuestStep(67563) == 7" >
-		    <GrindArea name="Lets_Talk_about_Sects3">
-		    			<Hotspots>
-		    				<Hotspot Radius="90" XYZ="-253.8034, -5.454714, -542.8702" name="Mysterious Assailants" />
-		    			</Hotspots>
-		    			<TargetMobs>
-		    				<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
-		    			</TargetMobs>
-		    </GrindArea>
-		</Grind>
-	</If>
-	<If Condition="GetQuestStep(67563) == 8">
-		<GetTo ZoneId="156" XYZ="-402.3652, -14.21307, -502.0676" />
-		<TalkTo NpcId="1013994" XYZ="-402.3652, -14.21307, -502.0676" QuestId="67563" StepId="8" />
-	</If>
-	<If Condition="GetQuestStep(67563) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67563" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Against the Shadow -->
-<If Condition="not IsQuestCompleted(67564) and IsQuestCompleted(67563) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 53">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67564)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67564)">
-			<PickUpQuest NpcId="1013971" QuestId="67564" XYZ="15.85406, 28.62082, -682.765" />
+						</GrindArea>
+					</Grind>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66089) == 255">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66089" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67564) == 1">
-		<GetTo ZoneId="147" XYZ="-78.29407, 68.34659, -157.3358" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1013997" XYZ="-78.29407, 68.34659, -157.3358" QuestId="67564" StepId="1">
-			<HotSpots>
-				<HotSpot XYZ="-86.20497, 67.49268, -149.5923" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="4226" Weight="2000" /> <!-- O'tchakha of the Endless Day -->
-				<TargetMob Id="4227" Weight="1000" /> <!-- D'zentsa of the Endless Night -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67564) == 2">
-		<GetTo ZoneId="147" XYZ="-78.29407, 68.34659, -157.3358" />
-		<TalkTo NpcId="1013997" XYZ="-78.29407, 68.34659, -157.3358" QuestId="67564" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67564) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67564" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Fight the Battle to Win -->
-<If Condition="not IsQuestCompleted(67565) and IsQuestCompleted(67564) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 55">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67565)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67565)">
-			<PickUpQuest NpcId="1013971" QuestId="67565" XYZ="15.85406, 28.62082, -682.765" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67565) == 1">
-		<GetTo ZoneId="154" XYZ="33.89026, -8.812927, 126.1768" />
-		<TalkTo NpcId="1013999" XYZ="33.89026, -8.812927, 126.1768" QuestId="67565" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67565) == 2">
-		<GetTo ZoneId="154" XYZ="163.5309, -27.32892, 207.8431" />
-		<UseObject NpcId="2005966" XYZ="163.5309, -27.32892, 207.8431" Radius="10" QuestId="67565" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67565) == 3">
-		<GetTo ZoneId="154" XYZ="404.8981, -5.458813, 72.3429" />
-		<TalkTo NpcId="1014001" XYZ="404.8981, -5.458813, 72.3429" QuestId="67565" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67565) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67565" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- Harder than Rock -->
+		<If Condition="not IsQuestCompleted(66090) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 4">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66090)">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66090)">
+					<PickupQuest NpcId="1003817" QuestId="66090" XYZ="-74.57086, 2.000005, -42.40485" />
 
-<!-- Stop the Senseless Killing -->
-<If Condition="not IsQuestCompleted(67566) and IsQuestCompleted(67565) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 57">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67566)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67566)">
-			<PickUpQuest NpcId="1013971" QuestId="67566" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66090) == 1">
+				<!-- Faded Gil Coins -->
+				<GetTo ZoneId="130" XYZ="-80.36932, 0.6866455, -59.55603" />
+				<UseObject NpcIds="2001285,2001282,2001283,2001280,2001281" QuestId="66090" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="-80.36932, 0.6866455, -59.55603" Radius="10" />
+						<HotSpot XYZ="-21.74414, 9.994568, -78.50769" Radius="10" />
+						<HotSpot XYZ="37.03357, 7.248047, -98.8938" Radius="10" />
+						<HotSpot XYZ="-162.4628, 17.47156, 60.19678" Radius="10" />
+						<HotSpot XYZ="-254.7494, 17.99036, 67.33801" Radius="10" />
+					</HotSpots>
+				</UseObject>
+			</If>
+			<If Condition="GetQuestStep(66090) == 2">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<HandOver ItemId="2000423" QuestId="66090" StepId="2" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+			</If>
+			<While Condition="GetQuestStep(66090) == 3">
+				<!-- Trial Stone -->
+				<GetTo ZoneId="140" XYZ="229.0933, 51.94556, 91.25763" />
+				<If Condition="GetQuestById(66090).QuestI8A == 0">
+					<MoveTo Name="Trial Stone" XYZ="224.9629, 52.80996, 78.25069" />
+					<Dismount />
+					<LLUseSpell SpellId="53" NpcId="2001541" XYZ="224.7196, 52.04846, 79.45361" Condition="not Core.Player.InCombat" />
+					<WaitWhile Condition="GetQuestById(66090).QuestI8A == 0" />
+				</If>
+				<If Condition="GetQuestById(66090).QuestI8A == 17">
+					<MoveTo Name="Trial Stone" XYZ="245.7159, 52.47571, 58.09106" />
+					<Dismount />
+					<LLUseSpell SpellId="53" Distance="1" NpcId="2001542" XYZ="245.7159, 52.47571, 58.09106" Condition="not Core.Player.InCombat" />
+					<WaitWhile Condition="GetQuestById(66090).QuestI8A == 17" />
+				</If>
+				<If Condition="GetQuestById(66090).QuestI8A == 33">
+					<MoveTo Name="Trial Stone" XYZ="222.513, 52.76848, 40.68093" />
+					<Dismount />
+					<LLUseSpell SpellId="53" Distance="2.5" NpcId="2001543" XYZ="224.0176, 52.23157, 41.36719" Condition="not Core.Player.InCombat" />
+					<WaitWhile Condition="GetQuestById(66090).QuestI8A == 33" />
+				</If>
+				<If Condition="GetQuestById(66090).QuestI8A == 49">
+					<MoveTo Name="Trial Stone" XYZ="261.3669, 55.53403, 24.92537" />
+					<Dismount />
+					<LLUseSpell SpellId="53" NpcId="2001544" XYZ="259.0524, 53.42175, 25.40625" Condition="not Core.Player.InCombat" />
+					<WaitWhile Condition="GetQuestById(66090).QuestI8A == 49" />
+				</If>
+				<WaitTimer WaitTime="3" />
+			</While>
+			<If Condition="GetQuestStep(66090) == 255">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66090" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67566) == 1">
-		<GetTo ZoneId="397" XYZ="-631.22, 121.2451, -652.3995" />
-		<TalkTo NpcId="1014005" XYZ="-631.22, 121.2451, -652.3995" QuestId="67566" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67566) == 2">
-		<GetTo ZoneId="397" XYZ="-556.9696, 116.6857, -794.0032" />
-		<UseObject NpcId="2005967" XYZ="-556.9696, 116.6857, -794.0032" Radius="10" QuestId="67566" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67566) == 3">
-		<GetTo ZoneId="397" XYZ="-627.1917, 121.248, -648.5847" />
-		<TalkTo NpcId="1014006" XYZ="-627.1917, 121.248, -648.5847" QuestId="67566" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67566) == 4">
-		<GetTo ZoneId="397" XYZ="-621.5153, 121.248, -649.134" />
-		<TalkTo NpcId="1014007" XYZ="-621.5153, 121.248, -649.134" QuestId="67566" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67566) == 5">
-		<GetTo ZoneId="397" XYZ="-621.5153, 121.248, -649.134" />
-		<EmoteNPC NpcId="1014010" Emote="rally" XYZ="-621.5153, 121.248, -649.134" Radius="10" QuestId="67566" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(67566) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67566" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Appetite for Destruction -->
-<If Condition="not IsQuestCompleted(67567) and IsQuestCompleted(67566) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67567)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67567)">
-			<PickUpQuest NpcId="1013971" QuestId="67567" XYZ="15.85406, 28.62082, -682.765" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67567) == 1">
-		<GetTo ZoneId="146" XYZ="-142.1684, 26.76425, -357.5037" />
-		<TalkTo NpcId="1014012" XYZ="-142.1684, 26.76425, -357.5037" QuestId="67567" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67567) == 2">
-		<GetTo ZoneId="146" XYZ="-143.0839, 26.65499, -358.114" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1014011" XYZ="-143.0839, 26.65499, -358.114" QuestId="67567" StepId="2">
-			<HotSpots>
-				<HotSpot XYZ="-96.32603, 14.76366, -234.0453" Radius="250" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="4229" Weight="10000" /> <!-- Shadow Spirit Pulse -->
-				<TargetMob Id="4228" Weight="2000" /> <!-- H'raha Tia Fistborn -->
-				<TargetMob Id="4230" Weight="1000" /> <!-- Shadow Monk -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67567) == 255">
-		<GetTo ZoneId="146" XYZ="-149.3401, 12.68588, -260.9141" />
-		<TurnIn QuestId="67567" NpcId="1014112" XYZ="-149.3401, 12.68588, -260.9141" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- Burning Up the Quarter Malm (Primary) -->
+		<If Condition="not IsQuestCompleted(66091) and not IsQuestCompleted(66089) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 9">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66091)">
+				<!-- Hamon -->
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66091)">
+					<PickUpQuest NpcId="1003817" QuestId="66091" XYZ="-74.57086, 2.000005, -42.40485" />
+				</If>
+			</If>
+			<If Condition="HasQuest(66091)">
+				<While Condition="GetQuestStep(66091) == 1">
+					<!-- Striking Dummy -->
+					<GetTo ZoneId="130" XYZ="-111.3515, 4, -91.69934" />
+					<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 0">
+						<LLUseSpell SpellId="53" NpcId="2001718" XYZ="-107.5282, 4, -106.335" condition="GetQuestById(66091).QuestI8A == 0" />
+					</If>
+					<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 17">
+						<LLUseSpell SpellId="53" NpcId="2001719" XYZ="-105.3938, 4, -108.4852" condition="GetQuestById(66091).QuestI8A == 17" />
+					</If>
+					<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 33">
+						<LLUseSpell SpellId="53" NpcId="2001720" XYZ="-77.16577, 4, -129.6812" condition="GetQuestById(66091).QuestI8A == 33" />
+					</If>
+					<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 49">
+						<LLUseSpell SpellId="53" NpcId="2001721" XYZ="-74.07706, 4, -131.5156" condition="GetQuestById(66091).QuestI8A == 49" />
+					</If>
+					<If Condition="GetQuestStep(66091) == 1 and GetQuestById(66091).QuestI8A == 65">
+						<LLUseSpell SpellId="53" NpcId="2001722" XYZ="-70.9402, 4, -133.1431" condition="GetQuestById(66091).QuestI8A == 65" />
+					</If>
+				</While>
+				<If Condition="GetQuestStep(66091) == 2">
+					<!-- Hamon -->
+					<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+					<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66091" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(66091) == 3">
+					<!-- Grinding Area -->
+					<GetTo ZoneId="141" XYZ="-194.8194, 19.05426, -91.78304" />
+					<Grind while="HasQuest(66091) and GetQuestStep(66091) == 3">
+						<GrindArea name="Burning_Up_the_Quarter_Malm">
+							<Hotspots>
+								<Hotspot Radius="90" XYZ="-243.1457, 28, -105.9213" name="Qiqirn Shellsweepers" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="266" /> <!-- Qiqirn Shellsweeper -->
+							</TargetMobs>
 
-<!-- A Fistful of Resolve -->
-<If Condition="not IsQuestCompleted(67962) and IsQuestCompleted(67895) and IsQuestCompleted(67567) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67962)">
-		<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
-		<If Condition="IsQuestAcceptQualified(67962)">
-			<PickUpQuest NpcId="1006749" QuestId="67962" XYZ="-30.47229, 13.59992, 95.26196" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67962) == 1">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TalkTo NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" QuestId="67962" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67962) == 2">
-		<GetTo ZoneId="146" XYZ="-224.9028, 26.13934, -353.3837" />
-		<TalkTo NpcId="1022372" XYZ="-224.9028, 26.13934, -353.3837" QuestId="67962" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67962) == 3">
-		<GetTo ZoneId="146" XYZ="-81.22388, 39.42477, -336.965" />
-		<TalkTo NpcId="1022373" XYZ="-81.22388, 39.42477, -336.965" QuestId="67962" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67962) == 255">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<TurnIn QuestId="67962" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Return of the Monk -->
-<If Condition="not IsQuestCompleted(67963) and IsQuestCompleted(67962) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 62">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67963)">
-		<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
-		<If Condition="IsQuestAcceptQualified(67963)">
-			<PickUpQuest NpcId="1013971" QuestId="67963" XYZ="15.85406, 28.62082, -682.765" />
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="GetQuestStep(66091) == 255">
+					<!-- Hamon -->
+					<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+					<TurnIn QuestId="66091" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+					<AutoInventoryEquip />
+				</If>
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67963) == 1">
-		<GetTo ZoneId="612" XYZ="76.92065, 62.19928, -669.4591" />
-		<TalkTo NpcId="1022384" XYZ="76.92065, 62.19928, -669.4591" QuestId="67963" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67963) == 2">
-		<GetTo ZoneId="620" XYZ="49.94275, 118.3919, -746.0899" />
-		<TalkTo NpcId="1022387" XYZ="49.94275, 118.3919, -746.0899" QuestId="67963" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67963) == 3">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TalkTo NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" QuestId="67963" StepId="3" />
-	</If>
-	<While Condition="GetQuestStep(67963) == 4">
-		<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
-		<RunCode Name="True_Strike" />
-		<WaitTimer WaitTime="2" />
-	</While>
-	<If Condition="GetQuestStep(67963) == 5">
-		<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
-		<LLUseSpell SpellId="74" NpcId="2008451" XYZ="46.55518, 117.9979, -784.2374" QuestId="67963" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(67963) == 6">
-		<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
-		<LLUseSpell SpellId="53" NpcId="2008451" XYZ="46.55518, 117.9979, -784.2374" QuestId="67963" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(67963) == 255">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TurnIn QuestId="67963" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- Burning Up the Quarter Malm (Secondary) -->
+		<If Condition="not IsQuestCompleted(66234) and not IsQuestCompleted(66091) and IsQuestCompleted(66090) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 9">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66234)">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66234)">
+					<PickUpQuest NpcId="1003817" QuestId="66234" XYZ="-74.57086, 2.000005, -42.40485" />
+				</If>
+			</If>
+			<While Condition="GetQuestStep(66234) == 1">
+				<GetTo ZoneId="130" XYZ="-111.3515, 4, -91.69934" />
+				<LLUseSpell SpellId="53" NpcIds="2001798,2001799,2001800,2001801,2001802" XYZ="-107.5282, 4, -106.335" QuestId="66234" StepId="1" Condition="GetQuestStep(66234) == 1" />
+			</While>
+			<If Condition="GetQuestStep(66234) == 2">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66234" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66234) == 3">
+				<GetTo ZoneId="141" XYZ="-194.8194, 19.05426, -91.78304" />
+				<Grind while="HasQuest(66234) and GetQuestStep(66234) == 3">
+					<GrindArea name="Burning_Up_the_Quarter_Malm">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-243.1457, 28, -105.9213" name="Qiqirn Shellsweepers" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="266" /> <!-- Qiqirn Shellsweeper -->
+						</TargetMobs>
 
-<!-- Cross-fist Training -->
-<If Condition="not IsQuestCompleted(67964) and IsQuestCompleted(67963) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 64">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67964)">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<If Condition="IsQuestAcceptQualified(67964)">
-			<PickUpQuest NpcId="1022390" QuestId="67964" XYZ="51.13293, 118.4443, -789.2729" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67964) == 1">
-		<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
-		<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="67964" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 2">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TalkTo NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" QuestId="67964" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 3">
-		<GetTo ZoneId="612" XYZ="76.43237, 62.14882, -667.2923" />
-		<TalkTo NpcId="1022404" XYZ="76.43237, 62.14882, -667.2923" QuestId="67964" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 4">
-		<GetTo ZoneId="612" XYZ="-106.8284, 60.07189, -609.4911" />
-		<TalkTo NpcId="1022405" XYZ="-106.8284, 60.07189, -609.4911" QuestId="67964" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 5">
-		<GetTo ZoneId="612" XYZ="-107.9271, 60.0356, -609.7657" />
-		<TalkTo NpcId="1022411" XYZ="-107.9271, 60.0356, -609.7657" QuestId="67964" StepId="5" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 6">
-		<GetTo ZoneId="620" XYZ="103.7765, 118.1835, -707.393" />
-		<TalkTo NpcId="1022412" XYZ="103.7765, 118.1835, -707.393" QuestId="67964" StepId="6" />
-	</If>
-	<If Condition="GetQuestStep(67964) == 255">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TurnIn QuestId="67964" NpcId="1023728" XYZ="51.13293, 118.4443, -789.2729" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- Choices and Paths -->
-<If Condition="not IsQuestCompleted(67965) and IsQuestCompleted(67964) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 67">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67965)">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<If Condition="IsQuestAcceptQualified(67965)">
-			<PickUpQuest NpcId="1023728" QuestId="67965" XYZ="51.13293, 118.4443, -789.2729" />
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(66234) == 255">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66234" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
 		</If>
-	</If>
-	<If Condition="GetQuestStep(67965) == 1">
-		<GetTo ZoneId="620" XYZ="81.4679, 118.3919, -792.7825" />
-		<TalkTo NpcId="1022437" XYZ="81.4679, 118.3919, -792.7825" QuestId="67965" StepId="1" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 2">
-		<GetTo ZoneId="635" XYZ="-61.11243, -0.002525449, -67.67377" />
-		<TalkTo NpcId="1022438" XYZ="-61.11243, -0.002525449, -67.67377" QuestId="67965" StepId="2" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 3">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TalkTo NpcId="1023728" XYZ="51.13293, 118.4443, -789.2729" QuestId="67965" StepId="3" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 4">
-		<GetTo ZoneId="612" XYZ="162.4017, 49.7417, -251.9112" />
-		<TalkTo NpcId="1022439" XYZ="162.4017, 49.7417, -251.9112" QuestId="67965" StepId="4" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 5">
-		<GetTo ZoneId="612" XYZ="-575.1583, 110.8993, -324.6967" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1022442" XYZ="-575.1583, 110.8993, -324.6967" QuestId="67965" StepId="5">
-			<HotSpots>
-				<HotSpot XYZ="-598.6672, 114.6781, -290.9337" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="6114" Weight="5000" /> <!-- Corpse Brigade Barber -->
-				<TargetMob Id="332" Weight="4000" /> <!-- Corpse Brigade Firedancer -->
-				<TargetMob Id="6021" Weight="3000" /> <!-- Corpse Brigade Bowdancer -->
-				<TargetMob Id="331" Weight="2000" /> <!-- Corpse Brigade Knuckledancer -->
-				<TargetMob Id="5666" Weight="1000" /> <!-- Hewerald Ironaxe -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67965) == 6">
-		<WaitWhile Condition="not GetQuestStep(67965) == 7" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 7">
-		<GetTo ZoneId="612" XYZ="-586.2974, 113.0066, -312.7337" />
-		<TalkTo NpcId="1022446" XYZ="-586.2974, 113.0066, -312.7337" QuestId="67965" StepId="7" />
-	</If>
-	<If Condition="GetQuestStep(67965) == 255">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TurnIn QuestId="67965" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
-		<AutoInventoryEquip />
-	</If>
-</If>
 
-<!-- The Power to Protect -->
-<If Condition="not IsQuestCompleted(67966) and IsQuestCompleted(67965) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 69">
-	<While Condition="ClassName != ClassJobType.Monk">
-		<ChangeClass Job="Monk" />
-	</While>
-	<If Condition="not HasQuest(67966)">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<If Condition="IsQuestAcceptQualified(67966)">
-			<PickUpQuest NpcId="1022390" QuestId="67966" XYZ="51.13293, 118.4443, -789.2729" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67966) == 1">
-		<GetTo ZoneId="620" XYZ="617.6089, 271.0004, -463.1266" />
-		<HandOver ItemId="2002261" QuestId="67966" StepId="1" NpcId="1022532" XYZ="617.6089, 271.0004, -463.1266" />
-	</If>
-	<If Condition="GetQuestStep(67966) == 2">
-		<GetTo ZoneId="612" XYZ="75.63892, 62.11143, -665.3696" />
-		<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-			<LeaveParty />
-		</If>
-		<LLSimpleDuty InteractNpcId="1022548" XYZ="75.63892, 62.11143, -665.3696" QuestId="67966" StepId="2">
-			<HotSpots>
-				<HotSpot XYZ="74.55685, 61.69615, -655.5299" Radius="90" />
-			</HotSpots>
-			<TargetMobs>
-				<TargetMob Id="6667" Weight="8000" /> <!-- Salvaged Slasher -->
-				<TargetMob Id="6022" Weight="7000" /> <!-- Corpse Brigade Vanguard -->
-				<TargetMob Id="6114" Weight="6000" /> <!-- Corpse Brigade Barber -->
-				<TargetMob Id="332" Weight="5000" /> <!-- Corpse Brigade Firedancer -->
-				<TargetMob Id="6021" Weight="4000" /> <!-- Corpse Brigade Bowdancer -->
-				<TargetMob Id="331" Weight="3000" /> <!-- Corpse Brigade Knuckledancer -->
-				<TargetMob Id="5666" Weight="2000" /> <!-- Hewerald Ironaxe -->
-				<TargetMob Id="5667" Weight="1000" /> <!-- Io -->
-			</TargetMobs>
-		</LLSimpleDuty>
-	</If>
-	<If Condition="GetQuestStep(67966) == 3">
-		<WaitWhile Condition="not GetQuestStep(67966) == 4" />
-	</If>
-	<If Condition="GetQuestStep(67966) == 4">
-		<If Condition="not IsTodoChecked(67966, 4, 2)">
-			<GetTo ZoneId="620" XYZ="51.31604, 118.3275, -786.9841" />
-			<TalkTo NpcId="1022538" XYZ="51.31604, 118.3275, -786.9841" QuestId="67966" StepId="4" />
-		</If>
-		<If Condition="not IsTodoChecked(67966, 4, 1)">
-			<GetTo ZoneId="620" XYZ="53.14709, 118.4737, -788.4489" />
-			<TalkTo NpcId="1022392" XYZ="53.14709, 118.4737, -788.4489" QuestId="67966" StepId="4" />
-		</If>
-		<If Condition="not IsTodoChecked(67966, 4, 0)">
-			<GetTo ZoneId="620" XYZ="54.36792, 118.2234, -785.1224" />
-			<TalkTo NpcId="1022539" XYZ="54.36792, 118.2234, -785.1224" QuestId="67966" StepId="4" />
-		</If>
-	</If>
-	<If Condition="GetQuestStep(67966) == 255">
-		<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
-		<TurnIn QuestId="67966" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
-		<AutoInventoryEquip />
-	</If>
-</If>
+		<!-- The Spirit Is Willing -->
+		<If Condition="(IsQuestCompleted(66234) or IsQuestCompleted(66091)) and not IsQuestCompleted(66094) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 14">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66094)">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66094)">
+					<PickupQuest NpcId="1003817" QuestId="66094" XYZ="-74.57086, 2.000005, -42.40485" />
 
-    <LastProfile/>
-  </Order>
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66094) == 1">
+				<GetTo ZoneId="141" XYZ="246.5041, -17.21218, -131.6801" />
+				<Grind while="HasQuest(66094) and GetQuestStep(66094) == 1">
+					<GrindArea name="The_Spirit_Is_Willing">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="297.1484, -19.71835, -134.486" name="Toxic Toads" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="216" /> <!-- Toxic Toad -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(66094) == 2">
+				<GetTo ZoneId="141" XYZ="-27.39001, -2.056931, -146.9291" />
+				<HandOver ItemId="2000408" QuestId="66094" StepId="2" NpcId="1003822" XYZ="-27.39001, -2.056931, -146.9291" />
+			</If>
+			<While Condition="GetQuestStep(66094) == 3">
+				<GetTo ZoneId="141" XYZ="-35.44672, -2.057617, -154.9554" />
+				<TalkTo NpcId="1001578" XYZ="-35.44672, -2.057617, -154.9554" QuestId="66094" StepId="3" />
+				<TalkTo NpcId="1001445" XYZ="-13.04651, -2.090576, -184.4053" QuestId="66094" StepId="3" />
+				<TalkTo NpcId="1004148" XYZ="5.722107, -1.985179, -172.7779" QuestId="66094" StepId="3" />
+			</While>
+			<If Condition="GetQuestStep(66094) == 4">
+				<GetTo ZoneId="141" XYZ="-27.39001, -2.056931, -146.9291" />
+				<TalkTo NpcId="1003822" XYZ="-27.39001, -2.056931, -146.9291" QuestId="66094" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(66094) == 5">
+				<GetTo ZoneId="141" XYZ="-241.413, 8.072021, -32.24237" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="2001349" XYZ="-241.413, 8.072021, -32.24237" QuestId="66094" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-243.5387, 6.434249, -24.07663" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="1305" Weight="3000" /> <!-- Chastity of the Alacran -->
+						<TargetMob Id="262" Weight="2000" /> <!-- Star Marmot -->
+						<TargetMob Id="932" Weight="1000" /> <!-- Patience of the Alacran -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66094) == 6">
+				<GetTo ZoneId="141" XYZ="-242.8474, 7.405224, -29.31262" />
+				<TalkTo NpcId="1004149" XYZ="-242.8474, 7.405224, -29.31262" QuestId="66094" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(66094) == 255">
+				<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
+				<TurnIn QuestId="66094" NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Keeping the Spirit Alive -->
+		<If Condition="not IsQuestCompleted(66098) and IsQuestCompleted(66094) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 19">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66098)">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66098)">
+					<PickupQuest NpcId="1003817" QuestId="66098" XYZ="-74.57086, 2.000005, -42.40485" />
+
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66098) == 1">
+				<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
+				<TalkTo NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" QuestId="66098" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(66098) == 2">
+				<GetTo ZoneId="145" XYZ="-234.2744, -27.51055, 213.4975" />
+				<Dismount />
+				<LLUseSpell SpellId="53" Distance="1" NpcId="2001390" XYZ="-230.5438, -27.51504, 251.6609" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 0 and not Core.Player.InCombat" />
+				<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 0">
+					<GrindArea name="Keeping_the_Spirit_Alive">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-228.8396, -27.8172, 250.1411" name="Hornet Clouds" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="696" /> <!-- Hornet Cloud -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+				<LLUseSpell SpellId="53" Distance="0.1" NpcId="2001389" XYZ="-244.6173, -25.80246, 230.886" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 1 and not Core.Player.InCombat" />
+				<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 1">
+					<GrindArea name="Keeping_the_Spirit_Alive2">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-242.4201, -26.13879, 229.1752" name="Hornet Clouds" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="696" /> <!-- Hornet Cloud -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+				<LLUseSpell SpellId="53" Distance="0.5" NpcId="2001391" XYZ="-214.5668, -30.79744, 202.9852" QuestId="66098" StepId="2" Condition="GetQuestById(66098).QuestI8AH == 2 and not Core.Player.InCombat" />
+				<Grind while="HasQuest(66098) and GetQuestById(66098).QuestI8AH == 2">
+					<GrindArea name="Keeping_the_Spirit_Alive3">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-215.9915, -29.49573, 203.7842" name="Hornet Mobs" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="696" Weight="2000" /> <!-- Hornet Cloud -->
+							<TargetMob Id="950" Weight="1000" /> <!-- Gila Monster -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</While>
+			<If Condition="GetQuestStep(66098) == 3">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<HandOver ItemId="2000367" QuestId="66098" StepId="3" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+			</If>
+			<If Condition="GetQuestStep(66098) == 4">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="66098" StepId="4">
+					<HotSpots>
+						<HotSpot XYZ="-69.05283, 0.9482071, -47.61369" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="751" /> <!-- Hamon Holyfist -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66098) == 255">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66098" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Star-crossed Rivals -->
+		<If Condition="not IsQuestCompleted(66102) and IsQuestCompleted(66098) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 24">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66102)">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66102)">
+					<PickupQuest NpcId="1003817" QuestId="66102" XYZ="-74.57086, 2.000005, -42.40485" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66102) == 1">
+				<GetTo ZoneId="130" XYZ="-65.65961, 0.9482077, -51.98755" />
+				<TalkTo NpcId="1003827" XYZ="-65.65961, 0.9482077, -51.98755" QuestId="66102" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66102) == 2">
+				<GetTo ZoneId="146" XYZ="-147.3259, 25.91345, -359.762" />
+				<TalkTo NpcId="1003829" XYZ="-147.3259, 25.91345, -359.762" QuestId="66102" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66102) == 3">
+				<If Condition="GetQuestById(66102).QuestI8A == 0">
+					<GetTo ZoneId="146" XYZ="-203.8148, 27.26782, -351.7662" />
+					<UseItem ItemId="2000409" NpcId="2001525" XYZ="-203.8148, 27.26782, -351.7662" Condition="GetQuestById(66102).QuestI8A == 0" />
+				</If>
+				<If Condition="GetQuestById(66102).QuestI8A == 16">
+					<GetTo ZoneId="146" XYZ="-105.5772, 14.99957, -185.3209" />
+					<UseItem ItemId="2000409" NpcId="2001523" XYZ="-105.5772, 14.99957, -185.3209" Condition="GetQuestById(66102).QuestI8A == 16" />
+				</If>
+				<If Condition="GetQuestById(66102).QuestI8A == 32">
+					<GetTo ZoneId="146" XYZ="197.4364, 15.54889, -450.5837" />
+					<UseItem ItemId="2000409" NpcId="2001524" XYZ="197.4364, 15.54889, -450.5837" Condition="GetQuestById(66102).QuestI8A == 32" />
+				</If>
+				<If Condition="GetQuestById(66102).QuestI8A == 48">
+					<GetTo ZoneId="146" XYZ="22.17133, 17.86829, -600.2441" />
+					<UseItem ItemId="2000409" NpcId="2001522" XYZ="22.17133, 17.86829, -600.2441" Condition="GetQuestById(66102).QuestI8A == 48" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66102) == 4">
+				<GetTo ZoneId="146" XYZ="-147.3259, 25.91345, -359.762" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1003829" XYZ="-147.3259, 25.91345, -359.762" QuestId="66102" StepId="4">
+					<HotSpots>
+						<HotSpot XYZ="-159.9906, 25.05829, -357.117" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="262" Weight="5000" /> <!-- Star Marmot -->
+						<TargetMob Id="829" Weight="4000" /> <!-- Alacran Bloodhound -->
+						<TargetMob Id="830" Weight="3000" /> <!-- Alacran Warhound -->
+						<TargetMob Id="828" Weight="2000" /> <!-- Rurukuta Tornstar -->
+						<TargetMob Id="831" Weight="1000" /> <!-- Bastet -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66102) == 255">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66102" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Return of the Holyfist -->
+		<If Condition="not IsQuestCompleted(66103) and IsQuestCompleted(66102) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66103)">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<If Condition="IsQuestAcceptQualified(66103)">
+					<PickUpQuest NpcId="1003817" QuestId="66103" XYZ="-74.57086, 2.000005, -42.40485" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66103) == 1">
+				<GetTo ZoneId="146" XYZ="-301.5335, 5, 471.3053" />
+				<TalkTo NpcId="1003830" XYZ="-301.5335, 5, 471.3053" QuestId="66103" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66103) == 2">
+				<GetTo ZoneId="146" XYZ="-276.5637, 8.205684, 671.5793" />
+				<Grind while="HasQuest(66103) and GetQuestStep(66103) == 2">
+					<GrindArea name="Return_of_the_Holyfist">
+						<Hotspots>
+							<Hotspot Radius="180" XYZ="-276.5637, 8.205684, 671.5793" name="Sandworms" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="290" /> <!-- Sandworm -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(66103) == 3">
+				<GetTo ZoneId="146" XYZ="-301.5335, 5, 471.3053" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1003830" XYZ="-301.5335, 5, 471.3053" QuestId="66103" StepId="3">
+					<HotSpots>
+						<HotSpot XYZ="-311.0773, 5, 471.3708" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<!-- Hamon Holyfist -->
+						<TargetMob Id="751" />
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66103) == 4">
+				<GetTo ZoneId="130" XYZ="-21.80518, 4, -145.1896" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1003890" XYZ="-21.80518, 4, -145.1896" QuestId="66103" StepId="4">
+					<HotSpots>
+						<HotSpot XYZ="-28.71414, 3.999999, -146.9265" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="757" Weight="6000" /> <!-- Kindness of the Alacran -->
+						<TargetMob Id="1307" Weight="5000" /> <!-- Humility of the Alacran -->
+						<TargetMob Id="1306" Weight="4000" /> <!-- Diligence of the Alacran -->
+						<TargetMob Id="756" Weight="3000" /> <!-- Temperance of the Alacran -->
+						<TargetMob Id="932" Weight="2000" /> <!-- Patience of the Alacran -->
+						<TargetMob Id="907" Weight="1000" /> <!-- Weggfarr Wideaxe -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66103) == 255">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TurnIn QuestId="66103" NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Brother from Another Mother -->
+		<If Condition="not IsQuestCompleted(66597) and IsQuestCompleted(66103) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 29">
+			<While Condition="ClassName != ClassJobType.Pugilist">
+				<ChangeClass Job="Pugilist" />
+			</While>
+			<If Condition="not HasQuest(66597)">
+				<GetTo ZoneId="130" XYZ="-86.65684, 2.0999424, -50.70609" />
+				<If Condition="IsQuestAcceptQualified(66597)">
+					<PickupQuest NpcId="1001286" QuestId="66597" XYZ="-88.9754, 2.55, -51.16351" />
+
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66597) == 1">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TalkTo NpcId="1006749" XYZ="-30.47229, 13.59992, 95.26196" QuestId="66597" StepId="1" />
+			</If>
+			<While Condition="GetQuestStep(66597) == 2">
+				<GetTo ZoneId="141" XYZ="-232.8069, -28.79382, 125.2917" />
+				<Dismount />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<UseItem ItemId="2000951" NpcId="2002439" XYZ="-232.8069, -28.79382, 125.2917" UseTimes="1" BlacklistAfter="True" BlacklistDuration="2" />
+				<LLSimpleDuty ItemId="2000951" InteractNpcId="2002439" XYZ="-232.8069, -28.79382, 125.2917" QuestId="66597" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="-231.698, -29.0454, 122.45" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="1963" Weight="3000" /> <!-- Sil'dihn Spriggan -->
+						<TargetMob Id="1962" Weight="2000" /> <!-- Runagate Imp -->
+						<TargetMob Id="1961" Weight="1000" /> <!-- Rabisu -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</While>
+			<If Condition="GetQuestStep(66597) == 3">
+				<GetTo ZoneId="141" XYZ="-232.8069, -28.94641, 125.2917" />
+				<UseObject NpcId="2002440" XYZ="-232.8069, -28.94641, 125.2917" Radius="10" QuestId="66597" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66597) == 255">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TurnIn QuestId="66597" NpcId="1006749" ItemId="2001061" XYZ="-30.47229, 13.59992, 95.26196" />
+				<While Condition="ClassName != ClassJobType.Monk">
+					<EquipWeapon ItemId="4543" />
+					<AutoInventoryEquip />
+				</While>
+			</If>
+		</If>
+
+		<!-- Insulted Intelligence -->
+		<If Condition="not IsQuestCompleted(66598) and IsQuestCompleted(66597) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 34">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(66598)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(66598)">
+					<PickUpQuest NpcId="1006749" QuestId="66598" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66598) == 1">
+				<GetTo ZoneId="137" XYZ="689.5093, 9.750427, 483.3295" />
+				<UseItem NpcId="2002441" ItemId="2000817" XYZ="689.5093, 9.750427, 483.3295" Radius="10" QuestId="66598" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66598) == 2">
+				<GetTo ZoneId="137" XYZ="689.5093, 9.750427, 483.3295" />
+				<UseObject NpcId="2002442" XYZ="689.5093, 9.750427, 483.3295" Radius="10" QuestId="66598" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66598) == 255">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TurnIn QuestId="66598" NpcId="1006749" ItemId="2001062" XYZ="-30.47229, 13.59992, 95.26196" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- A Slave to the Aether -->
+		<If Condition="not IsQuestCompleted(66599) and IsQuestCompleted(66598) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 39">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(66599)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(66599)">
+					<PickUpQuest NpcId="1006749" QuestId="66599" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66599) == 1">
+				<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
+				<TalkTo NpcId="1007874" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66599" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66599) == 2">
+				<GetTo ZoneId="153" XYZ="24.21594, 25.65039, 115.9838" />
+				<UseItem NpcId="2002443" ItemId="2000818" XYZ="24.21594, 25.65039, 115.9838" Radius="10" QuestId="66599" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66599) == 3">
+				<GetTo ZoneId="153" XYZ="24.21594, 25.65039, 115.9838" />
+				<UseObject NpcId="2002444" XYZ="24.21594, 25.65039, 115.9838" Radius="10" QuestId="66599" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66599) == 255">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TurnIn QuestId="66599" NpcId="1006749" ItemIds="2000819,2001063" XYZ="-30.47229, 13.59992, 95.26196" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Pursuit of Power -->
+		<If Condition="not IsQuestCompleted(66600) and IsQuestCompleted(66599) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(66600)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(66600)">
+					<PickUpQuest NpcId="1006749" QuestId="66600" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66600) == 1">
+				<GetTo ZoneId="152" XYZ="3.158569, 20.58435, -13.16864" />
+				<UseItem NpcId="2002445" ItemId="2000820" XYZ="3.158569, 20.58435, -13.16864" Radius="10" QuestId="66600" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66600) == 2">
+				<GetTo ZoneId="152" XYZ="3.158569, 20.58435, -13.16864" />
+				<UseObject NpcId="2002446" XYZ="3.158569, 20.58435, -13.16864" Radius="10" QuestId="66600" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(66600) == 255">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TurnIn QuestId="66600" NpcId="1006749" ItemId="2001064" XYZ="-30.47229, 13.59992, 95.26196" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Good Vibrations -->
+		<If Condition="not IsQuestCompleted(66601) and IsQuestCompleted(66600) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(66601)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(66601)">
+					<PickUpQuest NpcId="1006749" QuestId="66601" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66601) == 1">
+				<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
+				<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(66601) == 2">
+				<If Condition="not IsTodoChecked(66601, 2, 1)">
+					<GetTo ZoneId="146" XYZ="39.13896, 23.51147, -151.3145" />
+					<UseObject UseDistance="3.0" NpcId="2002447" XYZ="41.42822, 25.10107, -149.6453" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
+				</If>
+				<If Condition="not IsTodoChecked(66601, 2, 0)">
+					<GetTo ZoneId="146" XYZ="29.64425, 17.97282, -620.1209" />
+					<UseObject NpcId="2002548" XYZ="17.83771, 20.52332, -629.1448" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
+				</If>
+				<While Condition="not IsTodoChecked(66601, 2, 2)">
+					<If Condition="not IsQuestCompleted(66060)">
+						<GetTo ZoneId="147" XYZ="212.0454, 24.92337, 65.03921" />
+						<ClimbHill Name="Stairs" Start="211.6043, 24.95354, 64.5901" End="218.0361, 29.38419, 60.17913" />
+					</If>
+					<GetTo ZoneId="147" XYZ="213.7025, 30.19751, 61.02075" />
+					<UseObject NpcId="2002448" XYZ="213.7025, 30.19751, 61.02075" Radius="10" UseTimes="1" QuestId="66601" StepId="2" />
+				</While>
+			</If>
+			<If Condition="GetQuestStep(66601) == 3">
+				<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
+				<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(66601) == 4">
+				<GetTo ZoneId="135" XYZ="-74.08258, 2.606998, 716.3958" />
+				<TalkTo NpcId="1007877" XYZ="-74.08258, 2.606998, 716.3958" QuestId="66601" StepId="4" />
+				<Grind while="HasQuest(66601) and GetQuestStep(66601) == 4">
+					<GrindArea name="Good_Vibrations">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-74.08258, 2.606998, 716.3958" name="Mercenary Mobs" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="675" /> <!-- Mindful Mercenary -->
+							<TargetMob Id="674" /> <!-- Menacing Mercenary -->
+						</TargetMobs>
+
+
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(66601) == 5">
+				<GetTo ZoneId="135" XYZ="-74.08258, 2.606998, 716.3958" />
+				<TalkTo NpcId="1007877" XYZ="-74.08258, 2.606998, 716.3958" QuestId="66601" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(66601) == 6">
+				<GetTo ZoneId="146" XYZ="-221.4847, 26.16912, -343.9536" />
+				<TalkTo NpcId="1007875" XYZ="-221.4847, 26.16912, -343.9536" QuestId="66601" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(66601) == 255">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<TurnIn QuestId="66601" NpcId="1006749" ItemId="2001064" XYZ="-30.47229, 13.59992, 95.26196" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Five Easy Pieces -->
+		<If Condition="not IsQuestCompleted(66602) and IsQuestCompleted(66601) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(66602)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(66602)">
+					<PickUpQuest NpcId="1006749" QuestId="66602" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(66602) == 1">
+				<GetTo ZoneId="156" XYZ="117.0387, -5.6613, -537.7056" />
+				<Dismount />
+				<MoveTo Name="Widargelt" XYZ="109.36, -5.169723, -535.2126" Distance="0.5" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty XYZ="109.8366, -5.201663, -535.4407" QuestId="66602" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="112.9144, -5.426363, -536.2955" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="1906" Weight="6000" /> <!-- Ala Mhigan Shaman -->
+						<TargetMob Id="1904" Weight="5000" /> <!-- Ala Mhigan Bowman -->
+						<TargetMob Id="1903" Weight="4000" /> <!-- Ala Mhigan Pikeman -->
+						<TargetMob Id="1905" Weight="3000" /> <!-- Ala Mhigan Axeman -->
+						<TargetMob Id="2204" Weight="2000" /> <!-- Spirit Pulse -->
+						<TargetMob Id="1416" Weight="1000" /> <!-- Widargelt the Watcher -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(66602) == 255">
+				<GetTo ZoneId="156" XYZ="104.7227, -4.938011, -533.5317" />
+				<TurnIn QuestId="66602" NpcId="1007899" XYZ="104.7227, -4.938011, -533.5317" />
+				<UseInventoryItem ItemId="20643" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Legend Continues -->
+		<If Condition="not IsQuestCompleted(67562) and IsQuestCompleted(65964) and IsQuestCompleted(66602) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67562)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(67562)">
+					<PickUpQuest NpcId="1006749" QuestId="67562" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67562) == 1">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TalkTo NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" QuestId="67562" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67562) == 2">
+				<GetTo ZoneId="156" XYZ="95.87244, -4.4635, -533.5623" />
+				<TalkTo NpcId="1013976" XYZ="95.87244, -4.4635, -533.5623" QuestId="67562" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67562) == 3">
+				<GetTo ZoneId="156" XYZ="207.5378, 18.12324, -608.7587" />
+				<TalkTo NpcId="1013977" XYZ="207.5378, 18.12324, -608.7587" QuestId="67562" StepId="3" />
+				<Grind while="HasQuest(67562) and GetQuestStep(67562) == 3">
+					<GrindArea name="The_Legend_Continues">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="207.5378, 18.12324, -608.7587" name="Silvertear Cobra" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4094" /> <!-- Silvertear Cobra -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67562) == 4">
+				<GetTo ZoneId="156" XYZ="207.5378, 18.12324, -608.7587" />
+				<TalkTo NpcId="1013977" XYZ="207.5378, 18.12324, -608.7587" QuestId="67562" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67562) == 5">
+				<GetTo ZoneId="156" XYZ="205.9509, -22.99126, -449.2408" />
+				<TalkTo NpcId="1013978" XYZ="205.9509, -22.99126, -449.2408" QuestId="67562" StepId="5" />
+				<Grind while="HasQuest(67562) and GetQuestStep(67562) == 5">
+					<GrindArea name="The_Legend_Continues2">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="205.9509, -22.99126, -449.2408" name="Lightning Sprites" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4093" /> <!-- Lightning Sprite -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67562) == 6">
+				<GetTo ZoneId="156" XYZ="205.9509, -22.99126, -449.2408" />
+				<TalkTo NpcId="1013978" XYZ="205.9509, -22.99126, -449.2408" QuestId="67562" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67562) == 7">
+				<GetTo ZoneId="156" XYZ="95.87244, -4.4635, -533.5623" />
+				<TalkTo NpcId="1014111" XYZ="95.87244, -4.4635, -533.5623" QuestId="67562" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(67562) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67562" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Let's Talk About Sects -->
+		<If Condition="not IsQuestCompleted(67563) and IsQuestCompleted(67562) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 51">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67563)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67563)">
+					<PickUpQuest NpcId="1013971" QuestId="67563" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67563) == 1">
+				<GetTo ZoneId="156" XYZ="-73.0755, 2.668869, -622.5223" />
+				<TalkTo NpcId="1013982" XYZ="-73.0755, 2.668869, -622.5223" QuestId="67563" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67563) == 2">
+				<GetTo ZoneId="156" XYZ="-142.2294, 1.391692, -654.139" />
+				<TalkTo NpcId="1013984" XYZ="-142.2294, 1.391692, -654.139" QuestId="67563" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67563) == 3">
+				<GetTo ZoneId="156" XYZ="-142.2294, 1.391692, -654.139" />
+				<Grind while="HasQuest(67563) and GetQuestStep(67563) == 3">
+					<GrindArea name="Lets_Talk_about_Sects">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-142.2294, 1.391692, -654.139" name="Mysterious Assailants" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67563) == 4">
+				<GetTo ZoneId="156" XYZ="-223.4073, 4.145869, -628.3207" />
+				<TalkTo NpcId="1013987" XYZ="-223.4073, 4.145869, -628.3207" QuestId="67563" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67563) == 5">
+				<GetTo ZoneId="156" XYZ="-223.4073, 4.145869, -628.3207" />
+				<Grind while="HasQuest(67563) and GetQuestStep(67563) == 5">
+					<GrindArea name="Lets_Talk_about_Sects2">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-223.4073, 4.145869, -628.3207" name="Mysterious Assailants" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67563) == 6">
+				<GetTo ZoneId="156" XYZ="-253.8034, -5.454714, -542.8702" />
+				<TalkTo NpcId="1013990" XYZ="-253.8034, -5.454714, -542.8702" QuestId="67563" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67563) == 7">
+				<GetTo ZoneId="156" XYZ="-253.8034, -5.454714, -542.8702" />
+				<Grind while="HasQuest(67563) and GetQuestStep(67563) == 7">
+					<GrindArea name="Lets_Talk_about_Sects3">
+						<Hotspots>
+							<Hotspot Radius="90" XYZ="-253.8034, -5.454714, -542.8702" name="Mysterious Assailants" />
+						</Hotspots>
+						<TargetMobs>
+							<TargetMob Id="4422" /> <!-- Mysterious Assailant -->
+						</TargetMobs>
+					</GrindArea>
+				</Grind>
+			</If>
+			<If Condition="GetQuestStep(67563) == 8">
+				<GetTo ZoneId="156" XYZ="-402.3652, -14.21307, -502.0676" />
+				<TalkTo NpcId="1013994" XYZ="-402.3652, -14.21307, -502.0676" QuestId="67563" StepId="8" />
+			</If>
+			<If Condition="GetQuestStep(67563) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67563" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Against the Shadow -->
+		<If Condition="not IsQuestCompleted(67564) and IsQuestCompleted(67563) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 53">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67564)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67564)">
+					<PickUpQuest NpcId="1013971" QuestId="67564" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67564) == 1">
+				<GetTo ZoneId="147" XYZ="-78.29407, 68.34659, -157.3358" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1013997" XYZ="-78.29407, 68.34659, -157.3358" QuestId="67564" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="-86.20497, 67.49268, -149.5923" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="4226" Weight="2000" /> <!-- O'tchakha of the Endless Day -->
+						<TargetMob Id="4227" Weight="1000" /> <!-- D'zentsa of the Endless Night -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67564) == 2">
+				<GetTo ZoneId="147" XYZ="-78.29407, 68.34659, -157.3358" />
+				<TalkTo NpcId="1013997" XYZ="-78.29407, 68.34659, -157.3358" QuestId="67564" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67564) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67564" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Fight the Battle to Win -->
+		<If Condition="not IsQuestCompleted(67565) and IsQuestCompleted(67564) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 55">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67565)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67565)">
+					<PickUpQuest NpcId="1013971" QuestId="67565" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67565) == 1">
+				<GetTo ZoneId="154" XYZ="33.89026, -8.812927, 126.1768" />
+				<TalkTo NpcId="1013999" XYZ="33.89026, -8.812927, 126.1768" QuestId="67565" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67565) == 2">
+				<GetTo ZoneId="154" XYZ="163.5309, -27.32892, 207.8431" />
+				<UseObject NpcId="2005966" XYZ="163.5309, -27.32892, 207.8431" Radius="10" QuestId="67565" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67565) == 3">
+				<GetTo ZoneId="154" XYZ="404.8981, -5.458813, 72.3429" />
+				<TalkTo NpcId="1014001" XYZ="404.8981, -5.458813, 72.3429" QuestId="67565" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67565) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67565" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Stop the Senseless Killing -->
+		<If Condition="not IsQuestCompleted(67566) and IsQuestCompleted(67565) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 57">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67566)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67566)">
+					<PickUpQuest NpcId="1013971" QuestId="67566" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67566) == 1">
+				<GetTo ZoneId="397" XYZ="-631.22, 121.2451, -652.3995" />
+				<TalkTo NpcId="1014005" XYZ="-631.22, 121.2451, -652.3995" QuestId="67566" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67566) == 2">
+				<GetTo ZoneId="397" XYZ="-556.9696, 116.6857, -794.0032" />
+				<UseObject NpcId="2005967" XYZ="-556.9696, 116.6857, -794.0032" Radius="10" QuestId="67566" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67566) == 3">
+				<GetTo ZoneId="397" XYZ="-627.1917, 121.248, -648.5847" />
+				<TalkTo NpcId="1014006" XYZ="-627.1917, 121.248, -648.5847" QuestId="67566" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67566) == 4">
+				<GetTo ZoneId="397" XYZ="-621.5153, 121.248, -649.134" />
+				<TalkTo NpcId="1014007" XYZ="-621.5153, 121.248, -649.134" QuestId="67566" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67566) == 5">
+				<GetTo ZoneId="397" XYZ="-621.5153, 121.248, -649.134" />
+				<EmoteNPC NpcId="1014010" Emote="rally" XYZ="-621.5153, 121.248, -649.134" Radius="10" QuestId="67566" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(67566) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67566" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Appetite for Destruction -->
+		<If Condition="not IsQuestCompleted(67567) and IsQuestCompleted(67566) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67567)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67567)">
+					<PickUpQuest NpcId="1013971" QuestId="67567" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67567) == 1">
+				<GetTo ZoneId="146" XYZ="-142.1684, 26.76425, -357.5037" />
+				<TalkTo NpcId="1014012" XYZ="-142.1684, 26.76425, -357.5037" QuestId="67567" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67567) == 2">
+				<GetTo ZoneId="146" XYZ="-143.0839, 26.65499, -358.114" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1014011" XYZ="-143.0839, 26.65499, -358.114" QuestId="67567" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="-96.32603, 14.76366, -234.0453" Radius="250" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="4229" Weight="10000" /> <!-- Shadow Spirit Pulse -->
+						<TargetMob Id="4228" Weight="2000" /> <!-- H'raha Tia Fistborn -->
+						<TargetMob Id="4230" Weight="1000" /> <!-- Shadow Monk -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67567) == 255">
+				<GetTo ZoneId="146" XYZ="-149.3401, 12.68588, -260.9141" />
+				<TurnIn QuestId="67567" NpcId="1014112" XYZ="-149.3401, 12.68588, -260.9141" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- A Fistful of Resolve -->
+		<If Condition="not IsQuestCompleted(67962) and IsQuestCompleted(67895) and IsQuestCompleted(67567) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67962)">
+				<GetTo ZoneId="131" XYZ="-30.47229, 13.59992, 95.26196" />
+				<If Condition="IsQuestAcceptQualified(67962)">
+					<PickUpQuest NpcId="1006749" QuestId="67962" XYZ="-30.47229, 13.59992, 95.26196" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67962) == 1">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TalkTo NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" QuestId="67962" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67962) == 2">
+				<GetTo ZoneId="146" XYZ="-224.9028, 26.13934, -353.3837" />
+				<TalkTo NpcId="1022372" XYZ="-224.9028, 26.13934, -353.3837" QuestId="67962" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67962) == 3">
+				<GetTo ZoneId="146" XYZ="-81.22388, 39.42477, -336.965" />
+				<TalkTo NpcId="1022373" XYZ="-81.22388, 39.42477, -336.965" QuestId="67962" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67962) == 255">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<TurnIn QuestId="67962" NpcId="1013971" XYZ="15.85406, 28.62082, -682.765" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Return of the Monk -->
+		<If Condition="not IsQuestCompleted(67963) and IsQuestCompleted(67962) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 62">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67963)">
+				<GetTo ZoneId="156" XYZ="15.85406, 28.62082, -682.765" />
+				<If Condition="IsQuestAcceptQualified(67963)">
+					<PickUpQuest NpcId="1013971" QuestId="67963" XYZ="15.85406, 28.62082, -682.765" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67963) == 1">
+				<GetTo ZoneId="612" XYZ="76.92065, 62.19928, -669.4591" />
+				<TalkTo NpcId="1022384" XYZ="76.92065, 62.19928, -669.4591" QuestId="67963" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67963) == 2">
+				<GetTo ZoneId="620" XYZ="49.94275, 118.3919, -746.0899" />
+				<TalkTo NpcId="1022387" XYZ="49.94275, 118.3919, -746.0899" QuestId="67963" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67963) == 3">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TalkTo NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" QuestId="67963" StepId="3" />
+			</If>
+			<While Condition="GetQuestStep(67963) == 4">
+				<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
+				<RunCode Name="True_Strike" />
+				<WaitTimer WaitTime="2" />
+			</While>
+			<If Condition="GetQuestStep(67963) == 5">
+				<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
+				<LLUseSpell SpellId="74" NpcId="2008451" XYZ="46.55518, 117.9979, -784.2374" QuestId="67963" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(67963) == 6">
+				<GetTo ZoneId="620" XYZ="46.55518, 117.9979, -784.2374" />
+				<LLUseSpell SpellId="53" NpcId="2008451" XYZ="46.55518, 117.9979, -784.2374" QuestId="67963" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67963) == 255">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TurnIn QuestId="67963" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Cross-fist Training -->
+		<If Condition="not IsQuestCompleted(67964) and IsQuestCompleted(67963) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 64">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67964)">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<If Condition="IsQuestAcceptQualified(67964)">
+					<PickUpQuest NpcId="1022390" QuestId="67964" XYZ="51.13293, 118.4443, -789.2729" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67964) == 1">
+				<GetTo ZoneId="130" XYZ="-74.57086, 2.000005, -42.40485" />
+				<TalkTo NpcId="1003817" XYZ="-74.57086, 2.000005, -42.40485" QuestId="67964" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 2">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TalkTo NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" QuestId="67964" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 3">
+				<GetTo ZoneId="612" XYZ="76.43237, 62.14882, -667.2923" />
+				<TalkTo NpcId="1022404" XYZ="76.43237, 62.14882, -667.2923" QuestId="67964" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 4">
+				<GetTo ZoneId="612" XYZ="-106.8284, 60.07189, -609.4911" />
+				<TalkTo NpcId="1022405" XYZ="-106.8284, 60.07189, -609.4911" QuestId="67964" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 5">
+				<GetTo ZoneId="612" XYZ="-107.9271, 60.0356, -609.7657" />
+				<TalkTo NpcId="1022411" XYZ="-107.9271, 60.0356, -609.7657" QuestId="67964" StepId="5" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 6">
+				<GetTo ZoneId="620" XYZ="103.7765, 118.1835, -707.393" />
+				<TalkTo NpcId="1022412" XYZ="103.7765, 118.1835, -707.393" QuestId="67964" StepId="6" />
+			</If>
+			<If Condition="GetQuestStep(67964) == 255">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TurnIn QuestId="67964" NpcId="1023728" XYZ="51.13293, 118.4443, -789.2729" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- Choices and Paths -->
+		<If Condition="not IsQuestCompleted(67965) and IsQuestCompleted(67964) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 67">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67965)">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<If Condition="IsQuestAcceptQualified(67965)">
+					<PickUpQuest NpcId="1023728" QuestId="67965" XYZ="51.13293, 118.4443, -789.2729" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67965) == 1">
+				<GetTo ZoneId="620" XYZ="81.4679, 118.3919, -792.7825" />
+				<TalkTo NpcId="1022437" XYZ="81.4679, 118.3919, -792.7825" QuestId="67965" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 2">
+				<GetTo ZoneId="635" XYZ="-61.11243, -0.002525449, -67.67377" />
+				<TalkTo NpcId="1022438" XYZ="-61.11243, -0.002525449, -67.67377" QuestId="67965" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 3">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TalkTo NpcId="1023728" XYZ="51.13293, 118.4443, -789.2729" QuestId="67965" StepId="3" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 4">
+				<GetTo ZoneId="612" XYZ="162.4017, 49.7417, -251.9112" />
+				<TalkTo NpcId="1022439" XYZ="162.4017, 49.7417, -251.9112" QuestId="67965" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 5">
+				<GetTo ZoneId="612" XYZ="-575.1583, 110.8993, -324.6967" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1022442" XYZ="-575.1583, 110.8993, -324.6967" QuestId="67965" StepId="5">
+					<HotSpots>
+						<HotSpot XYZ="-598.6672, 114.6781, -290.9337" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="6114" Weight="5000" /> <!-- Corpse Brigade Barber -->
+						<TargetMob Id="332" Weight="4000" /> <!-- Corpse Brigade Firedancer -->
+						<TargetMob Id="6021" Weight="3000" /> <!-- Corpse Brigade Bowdancer -->
+						<TargetMob Id="331" Weight="2000" /> <!-- Corpse Brigade Knuckledancer -->
+						<TargetMob Id="5666" Weight="1000" /> <!-- Hewerald Ironaxe -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67965) == 6">
+				<WaitWhile Condition="not GetQuestStep(67965) == 7" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 7">
+				<GetTo ZoneId="612" XYZ="-586.2974, 113.0066, -312.7337" />
+				<TalkTo NpcId="1022446" XYZ="-586.2974, 113.0066, -312.7337" QuestId="67965" StepId="7" />
+			</If>
+			<If Condition="GetQuestStep(67965) == 255">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TurnIn QuestId="67965" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+		<!-- The Power to Protect -->
+		<If Condition="not IsQuestCompleted(67966) and IsQuestCompleted(67965) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 69">
+			<While Condition="ClassName != ClassJobType.Monk">
+				<ChangeClass Job="Monk" />
+			</While>
+			<If Condition="not HasQuest(67966)">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<If Condition="IsQuestAcceptQualified(67966)">
+					<PickUpQuest NpcId="1022390" QuestId="67966" XYZ="51.13293, 118.4443, -789.2729" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67966) == 1">
+				<GetTo ZoneId="620" XYZ="617.6089, 271.0004, -463.1266" />
+				<HandOver ItemId="2002261" QuestId="67966" StepId="1" NpcId="1022532" XYZ="617.6089, 271.0004, -463.1266" />
+			</If>
+			<If Condition="GetQuestStep(67966) == 2">
+				<GetTo ZoneId="612" XYZ="75.63892, 62.11143, -665.3696" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
+				</If>
+				<LLSimpleDuty InteractNpcId="1022548" XYZ="75.63892, 62.11143, -665.3696" QuestId="67966" StepId="2">
+					<HotSpots>
+						<HotSpot XYZ="74.55685, 61.69615, -655.5299" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="6667" Weight="8000" /> <!-- Salvaged Slasher -->
+						<TargetMob Id="6022" Weight="7000" /> <!-- Corpse Brigade Vanguard -->
+						<TargetMob Id="6114" Weight="6000" /> <!-- Corpse Brigade Barber -->
+						<TargetMob Id="332" Weight="5000" /> <!-- Corpse Brigade Firedancer -->
+						<TargetMob Id="6021" Weight="4000" /> <!-- Corpse Brigade Bowdancer -->
+						<TargetMob Id="331" Weight="3000" /> <!-- Corpse Brigade Knuckledancer -->
+						<TargetMob Id="5666" Weight="2000" /> <!-- Hewerald Ironaxe -->
+						<TargetMob Id="5667" Weight="1000" /> <!-- Io -->
+					</TargetMobs>
+				</LLSimpleDuty>
+			</If>
+			<If Condition="GetQuestStep(67966) == 3">
+				<WaitWhile Condition="not GetQuestStep(67966) == 4" />
+			</If>
+			<If Condition="GetQuestStep(67966) == 4">
+				<If Condition="not IsTodoChecked(67966, 4, 2)">
+					<GetTo ZoneId="620" XYZ="51.31604, 118.3275, -786.9841" />
+					<TalkTo NpcId="1022538" XYZ="51.31604, 118.3275, -786.9841" QuestId="67966" StepId="4" />
+				</If>
+				<If Condition="not IsTodoChecked(67966, 4, 1)">
+					<GetTo ZoneId="620" XYZ="53.14709, 118.4737, -788.4489" />
+					<TalkTo NpcId="1022392" XYZ="53.14709, 118.4737, -788.4489" QuestId="67966" StepId="4" />
+				</If>
+				<If Condition="not IsTodoChecked(67966, 4, 0)">
+					<GetTo ZoneId="620" XYZ="54.36792, 118.2234, -785.1224" />
+					<TalkTo NpcId="1022539" XYZ="54.36792, 118.2234, -785.1224" QuestId="67966" StepId="4" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(67966) == 255">
+				<GetTo ZoneId="620" XYZ="51.13293, 118.4443, -789.2729" />
+				<TurnIn QuestId="67966" NpcId="1022390" XYZ="51.13293, 118.4443, -789.2729" />
+				<AutoInventoryEquip />
+			</If>
+		</If>
+
+	</Order>
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
-    <CodeChunk Type="Definition" Name="Logger">
+		<CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
         public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
@@ -1330,7 +1329,7 @@
 
       ]]>
     </CodeChunk>
-    <CodeChunk Type="Hook" Name="CloseHowTo">
+		<CodeChunk Type="Hook" Name="CloseHowTo">
 			<![CDATA[
 
         bool hasTutorialWindow = TutorialWindows
@@ -1344,7 +1343,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
             uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
@@ -1365,7 +1364,7 @@
 	        return false;
 			]]>
 		</CodeChunk>
-<CodeChunk Name="GearsetSave">
+		<CodeChunk Name="GearsetSave">
   <![CDATA[
 	await CommonTasks.StopAndDismount();
 	ChatManager.SendChat("/gs save");
@@ -1394,7 +1393,7 @@
 		</CodeChunk>
 
 
-        <!-- Arcanist 1-15 Codechunks -->
+		<!-- Arcanist 1-15 Codechunks -->
 		<CodeChunk Name="True_Strike">
 			<![CDATA[
 				GameObject target;
@@ -1419,16 +1418,6 @@
 				await Coroutine.Sleep(2000);
 			]]>
 		</CodeChunk>
-
-
-
-
-
-
-
-
-
-
 
 
 	</CodeChunks>

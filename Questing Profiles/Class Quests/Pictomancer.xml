@@ -178,11 +178,10 @@
       </If>
     </If>
 
-    <LastProfile/>
   </Order>
-	<GrindAreas>
-	</GrindAreas>
-	<CodeChunks>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
     <CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
@@ -237,7 +236,7 @@
 			]]>
 		</CodeChunk>
 
-<CodeChunk Type="Hook" Name="PCTSelectString">
+    <CodeChunk Type="Hook" Name="PCTSelectString">
   <![CDATA[
     if (SelectString.IsOpen && QuestLogManager.HasQuest(70395) && QuestLogManager.GetQuestById(70395).Step == 2)
     {
@@ -249,18 +248,8 @@
   </CodeChunk>
 
 
-        <!-- Arcanist 1-15 Codechunks -->
+    <!-- Arcanist 1-15 Codechunks -->
 
 
-
-
-
-
-
-
-
-
-
-
-	</CodeChunks>
+  </CodeChunks>
 </Profile>
