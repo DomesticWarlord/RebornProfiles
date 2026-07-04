@@ -278,8 +278,9 @@
 			</If>
 			<If Condition="GetQuestStep(65628) == 2">
 				<!-- Joacin -->
-				<GetTo ZoneId="152" XYZ="-230.1824, 3.544826, 279.0721" />
+				<GetTo ZoneId="152" XYZ="-234.97821, 1.4391329, 298.43793" />
 				<TalkTo NpcId="1000561" XYZ="-230.1824, 3.544826, 279.0721" QuestId="65628" StepId="2" />
+				<MoveTo XYZ="-234.97821, 1.4391329, 298.43793" />
 			</If>
 			<If Condition="GetQuestStep(65628) == 3">
 				<!-- Joacin -->
@@ -707,39 +708,18 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(66619)">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
 				<If Condition="IsQuestAcceptQualified(66619)">
 					<PickUpQuest NpcId="1006751" QuestId="66619" XYZ="-139.4522, 8.712891, 281.6968" />
-
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66619) == 1">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-138.5978, 8.561091, 281.2085" />
 				<TalkTo NpcId="1007861" XYZ="-138.5978, 8.561091, 281.2085" QuestId="66619" StepId="1" />
-				<MoveTo Name="Jump" XYZ="-129.4763, 0.4033523, 285.6855" UseMesh="False" />
 			</If>
 			<While Condition="GetQuestStep(66619) == 2">
-				<GetTo ZoneId="153" XYZ="42.51701, 9.193242, -95.36703" />
-				<MoveTo Name="Pukno Poki" Distance="1" UseMesh="False" XYZ="46.02802, 9.400466, -98.49544" />
-				<RunCode Name="Yearn_for_the_Urn" />
-				<TalkTo NpcId="1007853" XYZ="53.72693, 8.86706, -111.2535" QuestId="66619" StepId="2" />
-				<MoveTo Name="Jump" XYZ="52.23595, 8.851002, -92.05247" UseMesh="False" />
+				<GetTo ZoneId="153" XYZ="43.516506, 9.2400055, -97.00029" />
+				<ClimbHill Start="43.516506, 9.2400055, -97.00029" End="52.593094, 9.18075, -105.14432" />
 			</While>
 			<If Condition="GetQuestStep(66619) == 3">
 				<GetTo ZoneId="153" XYZ="138.3972, 18.28326, -126.5813" />
@@ -747,17 +727,8 @@
 				<UseObject NpcId="2002403" XYZ="151.5374, 18.11243, -127.306" Radius="10" QuestId="66619" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(66619) == 255">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
 				<TurnIn QuestId="66619" NpcId="1006751" ItemId="2000944" XYZ="-139.4522, 8.712891, 281.6968" />
-				<AutoInventoryEquip />
 			</If>
 		</If>
 
@@ -767,15 +738,7 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(66620)">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
 				<If Condition="IsQuestAcceptQualified(66620)">
 					<PickUpQuest NpcId="1006751" QuestId="66620" XYZ="-139.4522, 8.712891, 281.6968" />
 				</If>
@@ -801,18 +764,9 @@
 				<WaitWhile Condition="GetQuestStep(66620) == 2" />
 			</If>
 			<If Condition="GetQuestStep(66620) == 255">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
 				<TurnIn NpcId="1006751" QuestId="66620" XYZ="-139.4522, 8.712891, 281.6968" />
 				<UseInventoryItem ItemId="20648" />
-				<AutoInventoryEquip />
 			</If>
 		</If>
 
@@ -822,15 +776,7 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(67255)">
-				<If Condition="not IsOnMap(153) or (IsOnMap(153) and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-139.4522, 8.712891, 281.6968)) &gt; 7)">
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-136.7402, 7.782695, 276.2679" />
-					</If>
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762" />
-						<LlamaJump Start="-143.6555, 8.149665, 269.7762" End="-139.218, 7.635258, 274.1976" />
-					</If>
-				</If>
+				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
 				<If Condition="IsQuestAcceptQualified(67255)">
 					<PickUpQuest NpcId="1006751" QuestId="67255" XYZ="-139.4522, 8.712891, 281.6968" />
 				</If>
