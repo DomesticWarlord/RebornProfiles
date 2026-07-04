@@ -719,7 +719,7 @@
 			</If>
 			<While Condition="GetQuestStep(66619) == 2">
 				<GetTo ZoneId="153" XYZ="43.516506, 9.2400055, -97.00029" />
-				<ClimbHill SpamJump="True" Start="43.516506, 9.2400055, -97.00029" End="52.593094, 9.18075, -105.14432" />
+				<ClimbHill ForceDismount="True" SpamJump="True" Start="43.516506, 9.2400055, -97.00029" End="52.593094, 9.18075, -105.14432" />
 				<TalkTo NpcId="1007853" XYZ="53.72693, 8.86706, -111.25354" QuestId="66619" StepId="2" />
 			</While>
 			<If Condition="GetQuestStep(66619) == 3">
