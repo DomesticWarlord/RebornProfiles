@@ -708,7 +708,7 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(66619)">
-				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
+				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<If Condition="IsQuestAcceptQualified(66619)">
 					<PickUpQuest NpcId="1006751" QuestId="66619" XYZ="-139.4522, 8.712891, 281.6968" />
 				</If>
@@ -735,7 +735,7 @@
 				<UseObject NpcId="2002403" XYZ="151.5374, 18.11243, -127.306" Radius="10" QuestId="66619" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(66619) == 255">
-				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
+				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<TurnIn QuestId="66619" NpcId="1006751" ItemId="2000944" XYZ="-139.4522, 8.712891, 281.6968" />
 			</If>
 		</If>
@@ -746,7 +746,7 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(66620)">
-				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
+				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<If Condition="IsQuestAcceptQualified(66620)">
 					<PickUpQuest NpcId="1006751" QuestId="66620" XYZ="-139.4522, 8.712891, 281.6968" />
 				</If>
@@ -772,7 +772,7 @@
 				<WaitWhile Condition="GetQuestStep(66620) == 2" />
 			</If>
 			<If Condition="GetQuestStep(66620) == 255">
-				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
+				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<TurnIn NpcId="1006751" QuestId="66620" XYZ="-139.4522, 8.712891, 281.6968" />
 				<UseInventoryItem ItemId="20648" />
 			</If>
@@ -784,7 +784,7 @@
 				<ChangeClass Job="WhiteMage" />
 			</While>
 			<If Condition="not HasQuest(67255)">
-				<GetTo ZoneId="153" XYZ="-139.4522, 8.712891, 281.6968" />
+				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<If Condition="IsQuestAcceptQualified(67255)">
 					<PickUpQuest NpcId="1006751" QuestId="67255" XYZ="-139.4522, 8.712891, 281.6968" />
 				</If>
