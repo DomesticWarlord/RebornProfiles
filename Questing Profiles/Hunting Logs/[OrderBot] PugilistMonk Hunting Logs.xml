@@ -12,6 +12,7 @@
 
             <!-- Rank 1 -->
             <If condition="not HuntRankCompleted(ClassJobType.Pugilist, 1)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
                 <If condition="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 0, 0)">
                     <GetTo ZoneId="141" xyz="-70.81795, 9.252864, 281.2776" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 0, 0)">
@@ -172,6 +173,7 @@
 
             <!-- Rank 2 -->
             <If condition="not HuntRankCompleted(ClassJobType.Pugilist, 2)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 0, 0)">
                     <GetTo ZoneId="140" xyz="297.8392, 62.27665, -209.239" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 0, 0)">
@@ -358,6 +360,7 @@
 
             <!-- Rank 3 -->
             <If condition="not HuntRankCompleted(ClassJobType.Pugilist, 3)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
                 <If condition="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 0, 0)">
                     <GetTo ZoneId="152" xyz="72.50465, 7.970101, 415.4248" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 0, 0)">
@@ -544,6 +547,7 @@
 
             <!-- Rank 4 -->
             <If condition="not HuntRankCompleted(ClassJobType.Pugilist, 4)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 0, 0)">
                     <GetTo ZoneId="139" xyz="591.8511, -1.461178, 206.3637" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 0, 0)">
@@ -730,6 +734,7 @@
 
             <!-- Rank 5 -->
             <If condition="not HuntRankCompleted(ClassJobType.Pugilist, 5)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 0, 0)">
                     <GetTo ZoneId="145" xyz="387.6801, -8.683156, 199.9769" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 0, 0)">

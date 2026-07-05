@@ -13,6 +13,7 @@
             <!-- Rank 1 -->
             <If condition="not HuntRankCompleted(ClassJobType.Rogue, 1)">
                 <Log Message="[HUNTING LOG] Starting Rogue/Ninja Rank 1!" Color="Aqua" />
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
                 <If condition="not HuntSubEntryCompleted(1, ClassJobType.Rogue, 0, 0)">
                     <GetTo ZoneId="134" xyz="93.82973, 46.33266, 135.7144" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Rogue, 0, 0)">
@@ -173,6 +174,7 @@
 
             <!-- Rank 2 -->
             <If condition="not HuntRankCompleted(ClassJobType.Rogue, 2)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
                 <Log Message="[HUNTING LOG] Starting Rogue/Ninja Rank 2!" Color="Aqua" />
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Rogue, 0, 0)">
                     <GetTo ZoneId="135" xyz="-54.78482, 42.14679, 562.5046" />
@@ -334,6 +336,7 @@
 
             <!-- Rank 3 -->
             <If condition="not HuntRankCompleted(ClassJobType.Rogue, 3)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
                 <Log Message="[HUNTING LOG] Starting Rogue/Ninja Rank 3!" Color="Aqua" />
                 <If condition="not HuntSubEntryCompleted(3, ClassJobType.Rogue, 0, 0)">
                     <GetTo ZoneId="152" xyz="-143.3017, -0.7045678, 163.3801" />
@@ -508,6 +511,7 @@
 
             <!-- Rank 4 -->
             <If condition="not HuntRankCompleted(ClassJobType.Rogue, 4)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
                 <Log Message="[HUNTING LOG] Starting Rogue/Ninja Rank 4!" Color="Aqua" />
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Rogue, 0, 0)">
                     <GetTo ZoneId="137" xyz="316.2697, 37.56972, 355.1962" />
@@ -695,6 +699,7 @@
 
             <!-- Rank 5 -->
             <If condition="not HuntRankCompleted(ClassJobType.Rogue, 5)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
                 <Log Message="[HUNTING LOG] Starting Rogue/Ninja Rank 5!" Color="Aqua" />
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Rogue, 0, 0)">
                     <GetTo ZoneId="145" xyz="393.1204, 7.885529, 127.6649" />

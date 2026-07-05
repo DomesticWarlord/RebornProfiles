@@ -12,6 +12,7 @@
 
             <!-- Rank 1 -->
             <If condition="not HuntRankCompleted(ClassJobType.Marauder, 1)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
                 <If condition="not HuntSubEntryCompleted(1, ClassJobType.Marauder, 0, 0)">
                     <GetTo ZoneId="134" xyz="93.82973, 46.33266, 135.7144" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Marauder, 0, 0)">
@@ -147,6 +148,7 @@
 
             <!-- Rank 2 -->
             <If condition="not HuntRankCompleted(ClassJobType.Marauder, 2)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Marauder, 0, 0)">
                     <GetTo ZoneId="135" xyz="247.7612, 6.84578, 785.0369" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Marauder, 0, 0)">
@@ -307,6 +309,7 @@
 
             <!-- Rank 3 -->
             <If condition="not HuntRankCompleted(ClassJobType.Marauder, 3)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
                 <If condition="not HuntSubEntryCompleted(3, ClassJobType.Marauder, 0, 0)">
                     <GetTo ZoneId="139" xyz="-362.7808, -1.96473, 158.4184" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Marauder, 0, 0)">
@@ -467,6 +470,7 @@
 
             <!-- Rank 4 -->
             <If condition="not HuntRankCompleted(ClassJobType.Marauder, 4)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Marauder, 0, 0)">
                     <GetTo ZoneId="148" xyz="-436.3311, 49, 45.43752" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Marauder, 0, 0)">
@@ -653,6 +657,7 @@
 
             <!-- Rank 5 -->
             <If condition="not HuntRankCompleted(ClassJobType.Marauder, 5)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Marauder, 0, 0)">
                     <GetTo ZoneId="152" xyz="228.5374, 4.319172, 168.6895" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Marauder, 0, 0)">

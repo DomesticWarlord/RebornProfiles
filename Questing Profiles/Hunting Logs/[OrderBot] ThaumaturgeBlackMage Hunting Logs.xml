@@ -12,6 +12,7 @@
 
             <!-- Rank 1 -->
             <If condition="not HuntRankCompleted(ClassJobType.Thaumaturge, 1)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
                 <If condition="not HuntSubEntryCompleted(1, ClassJobType.Thaumaturge, 0, 0)">
                     <GetTo ZoneId="140" xyz="314.5982, 64.7995, 156.4156" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Thaumaturge, 0, 0)">
@@ -146,6 +147,7 @@
 
             <!-- Rank 2 -->
             <If condition="not HuntRankCompleted(ClassJobType.Thaumaturge, 2)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Thaumaturge, 0, 0)">
                     <GetTo ZoneId="140" xyz="297.8392, 62.27665, -209.239" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Thaumaturge, 0, 0)">
@@ -319,6 +321,7 @@
 
             <!-- Rank 3 -->
             <If condition="not HuntRankCompleted(ClassJobType.Thaumaturge, 3)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
                 <If condition="not HuntSubEntryCompleted(3, ClassJobType.Thaumaturge, 0, 0)">
                     <GetTo ZoneId="152" xyz="72.50465, 7.970101, 415.4248" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Thaumaturge, 0, 0)">
@@ -505,6 +508,7 @@
 
             <!-- Rank 4 -->
             <If condition="not HuntRankCompleted(ClassJobType.Thaumaturge, 4)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Thaumaturge, 0, 0)">
                     <GetTo ZoneId="139" xyz="591.8511, -1.461178, 206.3637" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Thaumaturge, 0, 0)">
@@ -691,6 +695,7 @@
 
             <!-- Rank 5 -->
             <If condition="not HuntRankCompleted(ClassJobType.Thaumaturge, 5)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Thaumaturge, 0, 0)">
                     <GetTo ZoneId="155" xyz="-558.8902, 204.9697, -340.4431" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Thaumaturge, 0, 0)">

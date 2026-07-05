@@ -12,6 +12,7 @@
 
 			<!-- Rank 1 -->
 			<If condition="not HuntRankCompleted(ClassJobType.Lancer, 1)">
+				<LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
 				<If condition="not HuntSubEntryCompleted(1, ClassJobType.Lancer, 0, 0)">
 					<GetTo ZoneId="148" xyz="82.45746, 11.482, -239.4292" />
 					<Grind while="not HuntSubEntryCompleted(1, ClassJobType.Lancer, 0, 0)">
@@ -172,6 +173,7 @@
 
 			<!-- Rank 2 -->
 			<If condition="not HuntRankCompleted(ClassJobType.Lancer, 2)">
+				<LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
 				<If condition="not HuntSubEntryCompleted(2, ClassJobType.Lancer, 0, 0)">
 					<GetTo ZoneId="140" xyz="-220.7684, 15.25812, -291.4506" />
 					<Grind while="not HuntSubEntryCompleted(2, ClassJobType.Lancer, 0, 0)">
@@ -345,6 +347,7 @@
 
 			<!-- Rank 3 -->
 			<If condition="not HuntRankCompleted(ClassJobType.Lancer, 3)">
+				<LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
 				<If condition="not HuntSubEntryCompleted(3, ClassJobType.Lancer, 0, 0)">
 					<GetTo ZoneId="139" xyz="-359.7675, -0.6754072, 158.7382" />
 					<Grind while="not HuntSubEntryCompleted(3, ClassJobType.Lancer, 0, 0)">
@@ -518,6 +521,7 @@
 
 			<!-- Rank 4 -->
 			<If condition="not HuntRankCompleted(ClassJobType.Lancer, 4)">
+				<LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
 				<If condition="not HuntSubEntryCompleted(4, ClassJobType.Lancer, 0, 0)">
 					<GetTo ZoneId="148" xyz="-505.5016, 65.23953, 69.43462" />
 					<Grind while="not HuntSubEntryCompleted(4, ClassJobType.Lancer, 0, 0)">
@@ -704,6 +708,7 @@
 
 			<!-- Rank 5 -->
 			<If condition="not HuntRankCompleted(ClassJobType.Lancer, 5)">
+				<LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
 				<If condition="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 0, 0)">
 					<GetTo ZoneId="155" xyz="-558.8902, 204.9697, -340.4431" />
 					<Grind while="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 0, 0)">

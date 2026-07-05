@@ -12,6 +12,7 @@
 
             <!-- Rank 1 -->
             <If condition="not HuntRankCompleted(ClassJobType.Gladiator, 1)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 1" />
                 <If condition="not HuntSubEntryCompleted(1, ClassJobType.Gladiator, 0, 0)">
                     <GetTo ZoneId="140" xyz="314.5982, 64.7995, 156.4156" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Gladiator, 0, 0)">
@@ -159,6 +160,7 @@
 
             <!-- Rank 2 -->
             <If condition="not HuntRankCompleted(ClassJobType.Gladiator, 2)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 2" />
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Gladiator, 0, 0)">
                     <GetTo ZoneId="140" xyz="297.8392, 62.27665, -209.239" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Gladiator, 0, 0)">
@@ -319,6 +321,7 @@
 
             <!-- Rank 3 -->
             <If condition="not HuntRankCompleted(ClassJobType.Gladiator, 3)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 3" />
                 <If condition="not HuntSubEntryCompleted(3, ClassJobType.Gladiator, 0, 0)">
                     <GetTo ZoneId="139" xyz="-379.0874, -3.400003, 157.6983" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Gladiator, 0, 0)">
@@ -479,6 +482,7 @@
 
             <!-- Rank 4 -->
             <If condition="not HuntRankCompleted(ClassJobType.Gladiator, 4)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 4" />
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Gladiator, 0, 0)">
                     <GetTo ZoneId="148" xyz="-505.5016, 65.23953, 69.43462" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Gladiator, 0, 0)">
@@ -652,6 +656,7 @@
 
             <!-- Rank 5 -->
             <If condition="not HuntRankCompleted(ClassJobType.Gladiator, 5)">
+                <LLToast Message="Hunting Mobs for Hunting Log Rank 5" />
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Gladiator, 0, 0)">
                     <GetTo ZoneId="138" xyz="-295.8291, -38.45673, 605.8625" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Gladiator, 0, 0)">
