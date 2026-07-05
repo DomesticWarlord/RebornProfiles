@@ -216,8 +216,6 @@
 							<TargetMobs>
 								<TargetMob Id="266" /> <!-- Qiqirn Shellsweeper -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -1391,34 +1389,5 @@
 				await Coroutine.Sleep(2000);
 			]]>
 		</CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
-		<CodeChunk Name="True_Strike">
-			<![CDATA[
-				GameObject target;
-
-				await Coroutine.Sleep(1000);
-				target = GameObjectManager.GetObjectByNPCId(2008451);
-
-				target.Target();
-
-				await Coroutine.Sleep(1000);
-				if(!Core.Me.HasAura(2513))
-				{
-					ActionManager.DoAction(4262,target);
-					await Coroutine.Sleep(3000);
-				}
-
-				if(Core.Me.HasAura(2513))
-				{
-					ActionManager.DoAction(54,target);
-					await Coroutine.Sleep(3000);
-				}
-				await Coroutine.Sleep(2000);
-			]]>
-		</CodeChunk>
-
-
 	</CodeChunks>
 </Profile>
