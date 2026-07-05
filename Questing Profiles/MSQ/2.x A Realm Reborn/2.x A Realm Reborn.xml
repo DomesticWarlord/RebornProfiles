@@ -45,17 +45,17 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <If condition="&EnablePlatypus;">
       <EnablePlugin Name="Platypus Hooks" />
     </If>
-
-    <If condition="&SkipCutscenes;">
+    <BotSettings EnableMount="1" />
+    <If condition="&SkipCutscenes; == True">
       <BotSettings SkipCutscenes="1" />
     </If>
-    <If condition="not &SkipCutscenes;">
+    <If condition="&SkipCutscenes; == False">
       <BotSettings SkipCutscenes="0" />
     </If>
-    <If condition="&AutoEquip;">
+    <If condition="&AutoEquip; == True">
       <BotSettings AutoEquip="1" />
     </If>
-    <If condition="not &AutoEquip;">
+    <If condition="&AutoEquip; == False">
       <BotSettings AutoEquip="0" />
     </If>
     <If condition="&CloseHowTos;">
@@ -11177,13 +11177,13 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
             uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
 
-            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
+            if (!Core.Me.IsAlive || !wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
             {
                 return false;
             }
 
             var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
-                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +3);
 
             if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
             {
