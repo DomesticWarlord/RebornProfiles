@@ -527,13 +527,7 @@
 				<ChangeClass Job="Dragoon" />
 			</While>
 			<If Condition="not HasQuest(66604)">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
+				<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
 				<If Condition="IsQuestAcceptQualified(66604)">
 					<PickupQuest NpcId="1006748" QuestId="66604" XYZ="217.8835, 222, 345.3269" />
 				</If>
@@ -566,13 +560,7 @@
 				</If>
 			</While>
 			<If Condition="GetQuestStep(66604) == 255">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
+				<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
 				<TurnIn QuestId="66604" NpcId="1006748" XYZ="217.8835, 222, 345.3269" />
 				<AutoInventoryEquip />
 			</If>
@@ -584,25 +572,13 @@
 				<ChangeClass Job="Dragoon" />
 			</While>
 			<If Condition="not HasQuest(66605)">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
+				<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
 				<If Condition="IsQuestAcceptQualified(66605)">
 					<PickupQuest NpcId="1006748" QuestId="66605" XYZ="217.8835, 222, 345.3269" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66605) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
-				</If>
+				<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
 				<TalkTo NpcId="1007857" XYZ="485.9236, 248.1806, -268.6656" QuestId="66605" StepId="1" />
 				<Grind while="HasQuest(66605) and GetQuestStep(66605) == 1">
 					<GrindArea name="Unfading_Skies">
@@ -617,23 +593,11 @@
 				</Grind>
 			</If>
 			<If Condition="GetQuestStep(66605) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
-				</If>
+				<GetTo ZoneId="155" XYZ="485.9236, 248.1806, -268.6656" />
 				<TalkTo NpcId="1007857" XYZ="485.9236, 248.1806, -268.6656" QuestId="66605" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(66605) == 255">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
-				</If>
+				<GetTo ZoneId="155" XYZ="217.8835, 222, 345.3269" />
 				<TurnIn QuestId="66605" NpcId="1006748" XYZ="217.8835, 222, 345.3269" />
 				<AutoInventoryEquip />
 			</If>
@@ -669,8 +633,6 @@
 						<TargetMobs>
 							<TargetMob Id="2035" /> <!-- Unspeaking Swordsman -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -689,8 +651,6 @@
 						<TargetMobs>
 							<TargetMob Id="2036" /> <!-- Giant Captive -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -709,8 +669,6 @@
 						<TargetMobs>
 							<TargetMob Id="2037" /> <!-- Gigas Captive -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -1312,54 +1270,5 @@
 	ChatManager.SendChat("/gs save");
   ]]>
 </CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
-
-
-		<CodeChunk Name="DutyCommenceLancer">
-      <![CDATA[
-        Logging.Write("Commencing duty.");
-        uint[] npcIds = { 2000924, 1022562 };
-        var dutyNpc = GameObjectManager.GameObjects.Where(r => r.IsTargetable && npcIds.Contains(r.NpcId)).OrderBy(r => r.Distance()).FirstOrDefault();
-        while (Core.Me.Location.Distance2D(dutyNpc.Location) > 1.5f)
-        {
-          await Coroutine.Yield();
-          Navigator.PlayerMover.MoveTowards(dutyNpc.Location);
-        }
-        Navigator.PlayerMover.MoveStop();
-        dutyNpc.Interact();
-        await Coroutine.Wait(5000, () => Talk.DialogOpen || DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
-        while (!(DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen))
-        {
-          Talk.Next();
-          await Coroutine.Yield();
-        }
-        await Coroutine.Wait(5000, () => DifficultySelectYesNo.IsOpen || SelectYesno.IsOpen);
-        if (DifficultySelectYesNo.IsOpen) { DifficultySelectYesNo.Proceed(2); }
-        else if (SelectYesno.IsOpen) { SelectYesno.Yes(); }
-        else
-        {
-         Logging.Write("Duty window didn't open.");
-         TreeRoot.Stop();
-        }
-        await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
-        await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-        while (QuestLogManager.InCutscene)
-        {
-          ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-          if (ff14bot.RemoteAgents.AgentCutScene.Instance.CanSkip && SelectString.IsOpen) { SelectString.ClickSlot(0); }
-          if (Talk.DialogOpen) { Talk.Next(); }
-          await Coroutine.Yield();
-        }
-        await Coroutine.Wait(2000, () => CommonBehaviors.IsLoading);
-        await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-        await Coroutine.Wait(10000, () => !Core.Me.HasAura(1268));
-        Logging.Write("Duty commenced.");
-        await Coroutine.Sleep(1500);
-      ]]>
-    </CodeChunk>
-
-
 	</CodeChunks>
 </Profile>

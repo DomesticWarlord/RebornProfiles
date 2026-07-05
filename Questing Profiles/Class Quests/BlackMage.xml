@@ -44,7 +44,6 @@
 					<GetTo ZoneId="130" XYZ="-250.3548, 18, 80.88806" />
 					<If Condition="IsQuestAcceptQualified(65882)">
 						<PickupQuest NpcId="1001708" QuestId="65882" XYZ="-250.3548, 18, 80.88806" />
-
 					</If>
 				</If>
 			</If>
@@ -59,8 +58,6 @@
 							<TargetMobs>
 								<TargetMob Id="262" /> <!-- Star Marmot -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -74,8 +71,6 @@
 							<TargetMobs>
 								<TargetMob Id="632" /> <!-- Huge Hornet -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -89,8 +84,6 @@
 							<TargetMobs>
 								<TargetMob Id="318" /> <!-- Snapping Shrew -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -169,8 +162,6 @@
 							<TargetMobs>
 								<TargetMob Id="289" /> <!-- Eft -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -229,8 +220,6 @@
 						<TargetMobs>
 							<TargetMob Id="289" /> <!-- Eft -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -1362,11 +1351,6 @@
 	await Coroutine.Sleep(10000);
 ]]>
 </CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
-
-
 		<CodeChunk Name="The_Threat_of_Perplexity">
 			<![CDATA[
 				await Coroutine.Sleep(1000);
@@ -1399,7 +1383,5 @@
 
 			]]>
 		</CodeChunk>
-
-
 	</CodeChunks>
 </Profile>

@@ -192,73 +192,37 @@
 					</If>
 					<While Condition="GetQuestStep(65603) == 2">
 						<While Condition="GetQuestById(65603).QuestI8A == 0">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
 						</While>
 						<While Condition="GetQuestById(65603).QuestI8A == 1">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-28.49119, 0.4725635, -150.8261" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
 						</While>
 						<While Condition="GetQuestById(65603).QuestI8A == 2">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-81.56133, -0.006021142, -183.5941" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-81.56133, -0.006021142, -183.5941" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-81.56133, -0.006021142, -183.5941" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
 						</While>
 						<While Condition="GetQuestById(65603).QuestI8A == 3">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-116.2865, -3.682212, -63.99775" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-116.2865, -3.682212, -63.99775" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-116.2865, -3.682212, -63.99775" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
 						</While>
 						<While Condition="GetQuestById(65603).QuestI8A == 4">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-154.7968, -0.3608802, -64.02232" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-154.7968, -0.3608802, -64.02232" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-154.7968, -0.3608802, -64.02232" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
 						</While>
 						<While Condition="GetQuestById(65603).QuestI8A == 5">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-150.6393, 4.784497, -136.8705" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="148" XYZ="-150.6393, 4.784497, -136.8705" />
-							</If>
+							<GetTo ZoneId="148" XYZ="-150.6393, 4.784497, -136.8705" />
 							<Dismount />
 							<RunCode name="Archer_Target" />
 							<WaitTimer WaitTime="1" />
@@ -271,13 +235,7 @@
 					</If>
 					<If Condition="GetQuestStep(65603) == 4">
 						<If Condition="not IsTodoChecked(65603, 4, 0)">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="152" XYZ="-463.7145, 7.505338, 244.168" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="152" XYZ="-463.7145, 7.505338, 244.168" />
-							</If>
+							<GetTo ZoneId="152" XYZ="-463.7145, 7.505338, 244.168" />
 							<Grind while="not IsTodoChecked(65603, 4, 0)">
 								<GrindArea Name="School_of_Hard_Nocks">
 									<Hotspots>
@@ -290,13 +248,7 @@
 							</Grind>
 						</If>
 						<If Condition="not IsTodoChecked(65603, 4, 1)">
-							<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-							<If condition="not IsQuestCompleted(70058)">
-								<GetTo ZoneId="152" XYZ="-505.7623, 11.60868, 127.5668" />
-							</If>
-							<If condition="IsQuestCompleted(70058)">
-								<GetTo ZoneId="152" XYZ="-505.7623, 11.60868, 127.5668" />
-							</If>
+							<GetTo ZoneId="152" XYZ="-505.7623, 11.60868, 127.5668" />
 							<Grind while="not IsTodoChecked(65603, 4, 1)">
 								<GrindArea Name="School_of_Hard_Nocks2">
 									<Hotspots>
@@ -433,90 +385,46 @@
 			</If>
 			<While Condition="GetQuestStep(65604) == 2">
 				<While Condition="GetQuestById(65604).QuestI8A == 0">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-294.8734, 0.2634137, 257.7264" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-294.8734, 0.2634137, 257.7264" />
-					</If>
+					<GetTo ZoneId="152" XYZ="-294.8734, 0.2634137, 257.7264" />
 					<Dismount />
 					<RunCode name="Archer_Target" />
 					<WaitTimer WaitTime="1" />
 				</While>
-				<While Condition="GetQuestById(65604).QuestI8A == 1">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-273.4749, -2.071945, 245.7643" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-273.4749, -2.071945, 245.7643" />
-					</If>
-					<Dismount />
-					<RunCode name="Archer_Target" />
-					<WaitTimer WaitTime="1" />
-				</While>
-				<While Condition="GetQuestById(65604).QuestI8A == 2">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-332.781, 4.054853, 300.7027" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-332.781, 4.054853, 300.7027" />
-					</If>
-					<Dismount />
-					<RunCode name="Archer_Target" />
-					<WaitTimer WaitTime="1" />
-				</While>
-				<While Condition="GetQuestById(65604).QuestI8A == 3">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-326.8647, 8.898, 321.8404" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-326.8647, 8.898, 321.8404" />
-					</If>
-					<Dismount />
-					<RunCode name="Archer_Target" />
-					<WaitTimer WaitTime="1" />
-				</While>
-				<While Condition="GetQuestById(65604).QuestI8A == 4">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-350.3452, 6.267966, 305.1577" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-350.3452, 6.267966, 305.1577" />
-					</If>
-					<Dismount />
-					<RunCode name="Archer_Target" />
-					<WaitTimer WaitTime="1" />
-				</While>
-				<While Condition="GetQuestById(65604).QuestI8A == 5">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-378.4444, 4.169621, 277.9274" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="152" XYZ="-378.4444, 4.169621, 277.9274" />
-					</If>
-					<Dismount />
-					<RunCode name="Archer_Target" />
-					<WaitTimer WaitTime="1" />
-				</While>
+				<GetTo ZoneId="152" XYZ="-273.4749, -2.071945, 245.7643" />
+				<Dismount />
+				<RunCode name="Archer_Target" />
+				<WaitTimer WaitTime="1" />
+			</While>
+			<While Condition="GetQuestById(65604).QuestI8A == 2">
+				<GetTo ZoneId="152" XYZ="-332.781, 4.054853, 300.7027" />
+				<Dismount />
+				<RunCode name="Archer_Target" />
+				<WaitTimer WaitTime="1" />
+			</While>
+			<While Condition="GetQuestById(65604).QuestI8A == 3">
+				<GetTo ZoneId="152" XYZ="-326.8647, 8.898, 321.8404" />
+				<Dismount />
+				<RunCode name="Archer_Target" />
+				<WaitTimer WaitTime="1" />
+			</While>
+			<While Condition="GetQuestById(65604).QuestI8A == 4">
+				<GetTo ZoneId="152" XYZ="-350.3452, 6.267966, 305.1577" />
+				<Dismount />
+				<RunCode name="Archer_Target" />
+				<WaitTimer WaitTime="1" />
+			</While>
+			<While Condition="GetQuestById(65604).QuestI8A == 5">
+				<GetTo ZoneId="152" XYZ="-378.4444, 4.169621, 277.9274" />
+				<Dismount />
+				<RunCode name="Archer_Target" />
+				<WaitTimer WaitTime="1" />
 			</While>
 			<If Condition="GetQuestStep(65604) == 3">
 				<GetTo ZoneId="132" XYZ="226.337, 1.999909, 29.06836" /> <!-- Silvairre -->
 				<TalkTo NpcId="1000204" XYZ="226.337, 1.999909, 29.06836" QuestId="65604" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(65604) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="154" XYZ="288.5634, -11.30695, 52.38416" /> <!-- Destination -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="154" XYZ="288.5634, -11.30695, 52.38416" /> <!-- Destination -->
-				</If>
+				<GetTo ZoneId="154" XYZ="288.5634, -11.30695, 52.38416" /> <!-- Destination -->
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -556,24 +464,12 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(65606) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
 				<TalkTo NpcId="1000590" XYZ="-165.9419, 9.869228, -81.34589" QuestId="65606" StepId="1" />
 				<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
 			</If>
 			<If Condition="GetQuestStep(65606) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-240.0856, 6.312324, -98.97705" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-240.0856, 6.312324, -98.97705" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-240.0856, 6.312324, -98.97705" />
 				<UseObject NpcIds="2000948,2000949,2000947" QuestId="65606" StepId="2">
 					<HotSpots>
 						<HotSpot XYZ="-270.0085, 15.48785, -91.17267" Radius="10" />
@@ -583,25 +479,13 @@
 				</UseObject>
 			</If>
 			<While Condition="GetQuestStep(65606) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-165.8599, 8.412343, -63.5905" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-165.8599, 8.412343, -63.5905" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-165.8599, 8.412343, -63.5905" />
 				<SelectStringOverride Index="0,3" QuestId="65606" StepId="3" />
 				<UseObject NpcId="2001105" XYZ="-173.022, 9.872559, -78.6908" Radius="10" QuestId="65606" StepId="3" />
 				<GetTo ZoneId="153" XYZ="-165.8599, 8.412343, -63.5905" />
 			</While>
 			<If Condition="GetQuestStep(65606) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-295.8572, 23.57513, -192.34" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-295.8572, 23.57513, -192.34" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-295.8572, 23.57513, -192.34" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -617,13 +501,7 @@
 				</LLSimpleDuty>
 			</If>
 			<If Condition="GetQuestStep(65606) == 5">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-167.1886, 9.014794, -64.75754" />
 				<TalkTo NpcId="1000590" XYZ="-165.9419, 9.869228, -81.34589" QuestId="65606" StepId="5" />
 			</If>
 			<If Condition="GetQuestStep(65606) == 255">
@@ -654,23 +532,11 @@
 				<TalkTo NpcId="1000199" XYZ="211.139, 1.502782E-05, 28.58008" QuestId="65607" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(65607) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-1.815857, 6.912292, -93.0343" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-1.815857, 6.912292, -93.0343" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-1.815857, 6.912292, -93.0343" />
 				<UseObject NpcId="2000951" XYZ="-1.815857, 6.912292, -93.0343" Radius="10" QuestId="65607" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(65607) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="148" XYZ="134.4777, -7, -69.99316" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="148" XYZ="134.4777, -7, -69.99316" />
-				</If>
+				<GetTo ZoneId="148" XYZ="134.4777, -7, -69.99316" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -704,13 +570,7 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(65612) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="278.6144, 8.346143, -38.22394" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="278.6144, 8.346143, -38.22394" />
-				</If>
+				<GetTo ZoneId="153" XYZ="278.6144, 8.346143, -38.22394" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -727,13 +587,7 @@
 				</LLSimpleDuty>
 			</If>
 			<If Condition="GetQuestStep(65612) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-90.74542, 0.01519775, 61.08191" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="-90.74542, 0.01519775, 61.08191" />
-				</If>
+				<GetTo ZoneId="153" XYZ="-90.74542, 0.01519775, 61.08191" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -770,53 +624,23 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66621) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
-				</If>
+				<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
 				<TalkTo NpcId="1006750" XYZ="16.46442, 6.750492, -7.339661" QuestId="66621" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(66621) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
-				</If>
+				<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
 				<TalkTo NpcId="1007834" XYZ="447.2876, 2.147105, 21.86615" QuestId="66621" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(66621) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="457.9995, 0.4425049, -106.7369" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="457.9995, 0.4425049, -106.7369" />
-				</If>
+				<GetTo ZoneId="153" XYZ="457.9995, 0.4425049, -106.7369" />
 				<UseObject NpcId="2002364" XYZ="457.9995, 0.4425049, -106.7369" Radius="10" QuestId="66621" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(66621) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
-				</If>
+				<GetTo ZoneId="153" XYZ="447.2876, 2.147105, 21.86615" />
 				<HandOver ItemId="2000813" QuestId="66621" StepId="4" NpcId="1007834" XYZ="447.2876, 2.147105, 21.86615" />
 			</If>
 			<If Condition="GetQuestStep(66621) == 255">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
-				</If>
+				<GetTo ZoneId="153" XYZ="16.46442, 6.750492, -7.339661" />
 				<TurnIn QuestId="66621" NpcId="1006750" ItemId="2000813" XYZ="16.46442, 6.750492, -7.339661" />
 				<While Condition="ClassName != ClassJobType.Bard">
 					<EquipWeapon ItemId="4546" />
@@ -837,13 +661,7 @@
 				</If>
 			</If>
 			<While Condition="GetQuestStep(66622) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="-145.9675, 60.04568, 598.5966" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="-145.9675, 60.04568, 598.5966" />
-				</If>
+				<GetTo ZoneId="137" XYZ="-145.9675, 60.04568, 598.5966" />
 				<UseObject NpcId="2002366" XYZ="-143.0534, 68.1925, 586.1448" Radius="10" QuestId="66622" StepId="1" />
 			</While>
 			<If Condition="GetQuestStep(66622) == 255">
@@ -1550,9 +1368,6 @@
 	ChatManager.SendChat("/gs save");
   ]]>
 </CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
 		<CodeChunk Name="Archer_Target">
 			<![CDATA[
 			        uint[] questNpcIds = { 2000937, 2000925, 2000926, 2000931, 2000929, 2000927, 2000928, 2001174, 2000936, 2001173, 2001171, 2000940, 2000939, 2001178, 2000955, 2001177, 2001175, 2000959, 2000958, 2001179, 2000946, 2000943, 2000944, 2000945, 2000942 };
@@ -1565,7 +1380,5 @@
 
 			]]>
 		</CodeChunk>
-
-
 	</CodeChunks>
 </Profile>

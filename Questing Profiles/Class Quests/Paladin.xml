@@ -55,8 +55,6 @@
 							<TargetMobs>
 								<TargetMob Id="262" /> <!-- Star Marmot -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -70,8 +68,6 @@
 							<TargetMobs>
 								<TargetMob Id="632" /> <!-- Huge Hornet -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -85,8 +81,6 @@
 							<TargetMobs>
 								<TargetMob Id="318" /> <!-- Snapping Shrew -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -177,8 +171,6 @@
 							<TargetMobs>
 								<TargetMob Id="923" /> <!-- Duskwight Freelancer -->
 							</TargetMobs>
-
-
 						</GrindArea>
 					</Grind>
 				</If>
@@ -244,8 +236,6 @@
 						<TargetMobs>
 							<TargetMob Id="923" /> <!-- Duskwight Freelancer -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -307,8 +297,6 @@
 						<TargetMobs>
 							<TargetMob Id="1177" /> <!-- Amalj'aa Ravager -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>
@@ -684,7 +672,7 @@
 				<If Condition="GetQuestStep(66595) == 1">
 					<GetTo ZoneId="146" XYZ="-407.4312, 7.156433, 525.6886" />
 					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-						<RunCode name="LeaveParty" />
+						<LeaveParty />
 					</If>
 					<LLSimpleDuty InteractNpcId="2002356" XYZ="-407.4312, 7.156433, 525.6886" QuestId="66595" StepId="1">
 						<HotSpots>
@@ -1401,68 +1389,11 @@
 	ChatManager.SendChat("/gs save");
   ]]>
 </CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-
-
 		<CodeChunk Name="This_Little_Sword_of_Mine">
 			<![CDATA[
 				SpellData data;
 				if (!Core.Me.HasAura(79) && ActionManager.CurrentActions.TryGetValue(28, out data) && ActionManager.CanCast(data, Core.Me)) ActionManager.DoAction(28, Core.Me);
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-
-
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="LeaveParty">
-			<![CDATA[
-				ChatManager.SendChat("/pcmd leave");
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-
-
 	</CodeChunks>
 </Profile>
