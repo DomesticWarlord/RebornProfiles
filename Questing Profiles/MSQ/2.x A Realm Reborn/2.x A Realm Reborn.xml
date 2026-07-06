@@ -8225,7 +8225,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
         </If>
         <If Condition="GetQuestStep(66711) == 1">
-          <GetTo ZoneId="212" XYZ="-0.80877686, -3, -47.80658" />
+          <GetTo ZoneId="212" XYZ="2.5922697, -3.0000014, -50.30493" />
           <If Condition="GetQuestStep(66711) == 1 and not IsTodoChecked(66711, 1, 0)">
             <TalkTo NpcId="1007533" XYZ="-0.80877686, -3, -47.80658" QuestId="66711" StepId="1" /> <!-- Y'shtola -->
           </If>
