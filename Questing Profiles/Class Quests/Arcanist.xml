@@ -788,24 +788,11 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-		<CodeChunk Type="Hook" Name="KillMobs">
+    <CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
-            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
+          await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
 
-            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
-            {
-                return false;
-            }
-
-            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
-                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
-
-            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
-            {
-                Log.Information($"Found Target {mobsToKill.EnglishName}");
-                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
-            }
 	        return false;
 			]]>
 		</CodeChunk>

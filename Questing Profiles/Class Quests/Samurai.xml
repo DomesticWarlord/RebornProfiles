@@ -10,10 +10,6 @@
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 
-		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
-		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
-
-
 		<!-- The Way of the Samurai -->
 		<If Condition="not IsQuestCompleted(68095)">
 			<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -531,59 +527,6 @@
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
-		<CodeChunk Type="Definition" Name="Logger">
-      <![CDATA[
-
-        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
-
-        private static readonly string[] TutorialWindows =
-        {
-            "HowToNotice",
-            "HowTo",
-            "PlayGuide",
-            "JobHudNotice",
-            "ContentsTutorial",
-            "RecommendList",
-            "AchievementInfo",
-        };
-
-      ]]>
-    </CodeChunk>
-		<CodeChunk Type="Hook" Name="CloseHowTo">
-			<![CDATA[
-
-        bool hasTutorialWindow = TutorialWindows
-            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
-
-        if (hasTutorialWindow)
-        {
-            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
-        }
-
-			  return false;
-			]]>
-	  </CodeChunk>
-		<CodeChunk Type="Hook" Name="KillMobs">
-			<![CDATA[
-
-            uint[] wayOfQuestIds = { 65557,65558,65559,65789,66069,65881,65989,65847 };
-
-            if (!wayOfQuestIds.Any(QuestLogManager.IsQuestCompleted))
-            {
-                return false;
-            }
-
-            var mobsToKill = GameObjectManager.GetObjectsOfType<BattleCharacter>()
-                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.IsAlive && !bc.IsFate && bc.IsActiveHuntTarget && bc.IsVisible && bc.IsTargetable && bc.ClassLevel <= Core.Me.ClassLevel +5);
-
-            if (mobsToKill != null && mobsToKill.IsValid && !Core.Me.InCombat && (Poi.Current == null || Poi.Current.Type != PoiType.Kill))
-            {
-                Log.Information($"Found Target {mobsToKill.EnglishName}");
-                Poi.Current = new Poi(mobsToKill, PoiType.Kill);
-            }
-	        return false;
-			]]>
-		</CodeChunk>
 		<CodeChunk Name="GearsetSave">
   <![CDATA[
 	await CommonTasks.StopAndDismount();
