@@ -7102,6 +7102,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
       <!-- Sweet Somethings (Level 42) -->
       <If Condition="IsQuestCompleted(66498) and not IsQuestCompleted(66499) and Core.Me.ClassLevel &gt; 41">
+        <!-- Isles of Umbra -->
         <If condition="not IsOnSubMap(230) and not IsOnSubMap(173) and not IsOnSubMap(461) and not IsOnSubMap(228)">
           <GetTo ZoneId="138" XYZ="317.4333, -36.325, 352.8649" />
           <UseTransport NpcId="1003584" DialogOption="2" />
