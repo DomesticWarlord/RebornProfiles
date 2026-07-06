@@ -5,32 +5,26 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 -->
 <!DOCTYPE Profile [
 
-  <!ENTITY SkipCutscenes "False">
-  <!ENTITY AutoEquip "False">
-  <!ENTITY CloseHowTos "False">
-  <!ENTITY UseCarry "False">
-  <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
-
+  <!ENTITY SkipCutscenes "False"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
+  <!ENTITY AutoEquip "False"> <!-- Uses GardlandDB to weigh new items to equip -->
+  <!ENTITY CloseHowTos "False"> <!-- Close How To Windows as they open to keep the UI clean -->
   <!ENTITY EnablePlatypus "False">
-
-  <!-- Use PandaFarmer to do Class quests? -->
-  <!ENTITY DoClassQuests "False">
-
-  <!-- Kill Hunting Log mobs if they come near by -->
-  <!ENTITY KillHuntMobs "False">
-
-  <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
-  <!ENTITY BuyGysahlGreens "False">
-
+  <!ENTITY KillHuntMobs "False"> <!-- Kill Hunting Log mobs if they come near by -->
+  <!ENTITY BuyGysahlGreens "False"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
   <!-- A lot of the early quests give useless items like Chicken Egg or Weak Silencing Potions
         the bot can toss these to help keep your inventory clean -->
   <!ENTITY DiscardInventoryClutter "False">
-
   <!-- Select which Grand Company you'd like to join -->
   <!-- 0 = Twin Adder -->
   <!-- 1 = Maelstrom -->
   <!-- 2 = Immortal Flames -->
   <!ENTITY GrandCompanyChoice "1">
+
+  <!-- Panda Farmer specific settings -->
+
+  <!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
+  <!ENTITY UseCarry "False">
+  <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
 ]>
 
 <Profile>
@@ -11414,7 +11408,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <TalkTo NpcId="1010998" XYZ="78.41602, -0.6357315, -166.3386" QuestId="65963" StepId="2" />
         </If>
         <If Condition="GetQuestStep(65963) == 255">
-          <GetTo ZoneId="155" XYZ="263.5996, 303.1, -199.9695"  />
+          <GetTo ZoneId="155" XYZ="263.5996, 303.1, -199.9695" />
           <TurnIn QuestId="65963" NpcId="1006384" XYZ="263.5996, 303.1, -199.9695" />
         </If>
       </If>
@@ -11422,7 +11416,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <!-- Before the Dawn (Level 50) -->
       <If Condition="IsQuestCompleted(65963) and not IsQuestCompleted(65964) and Core.Player.ClassLevel &gt; 49">
         <If Condition="not HasQuest(65964)">
-          <GetTo ZoneId="155" XYZ="263.5996, 303.1, -199.9695"  />
+          <GetTo ZoneId="155" XYZ="263.5996, 303.1, -199.9695" />
           <If Condition="IsQuestAcceptQualified(65964)">
             <PickUpQuest NpcId="1006384" QuestId="65964" XYZ="263.5996, 303.1, -199.9695" />
           </If>
