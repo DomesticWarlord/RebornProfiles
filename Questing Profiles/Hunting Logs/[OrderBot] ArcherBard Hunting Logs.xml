@@ -738,6 +738,10 @@
                     </Grind>
                 </If>
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 0)">
+                    <If condition="not IsOnSubMap(230) and not IsOnSubMap(173) and not IsOnSubMap(461) and not IsOnSubMap(228)">
+                        <GetTo ZoneId="138" XYZ="317.4333, -36.325, 352.8649" />
+                        <UseTransport NpcId="1003584" DialogOption="2" />
+                    </If>
                     <GetTo ZoneId="138" xyz="-461.8138, -38.06499, 720.3731" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_5_2">
