@@ -7950,7 +7950,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
         </If>
         <If Condition="GetQuestStep(70057) == 1">
-          <GetTo ZoneId="212" XYZ="-467.277, 22.99698, -475.2117" />
+          <GetTo ZoneId="140" XYZ="-467.277, 22.99698, -475.2117" />
           <TalkTo NpcId="1006578" XYZ="-467.277, 22.99698, -475.2117" />
         </If>
         <If Condition="GetQuestStep(70057) == 2">
