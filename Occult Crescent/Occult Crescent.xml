@@ -663,11 +663,11 @@ ID: 47, Name: Flame of Dusk, State: Inactive, Progress: 0, IsActive: False, Time
             </If>
 
             <If condition="not LlamaLibrary.ScriptConditions.Helpers.IsAnyDynamicEventActive()">
-              <LLFate UseGetTo="True" MinProgress="&MinimumFateProgress;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
+              <LLFate MinProgress="&MinimumFateProgress;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
             </If>
             <If condition="LlamaLibrary.ScriptConditions.Helpers.IsAnyDynamicEventActive()">
               <LLToast Red="255" Green="20" Blue="147" message="[Occult Crescent] CE active. Waiting for minimum FATE progress before joining." Duration="10000" />
-              <LLFate UseGetTo="True" MinProgress="&MinimumFateProgressWhenCEIsActive;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
+              <LLFate MinProgress="&MinimumFateProgressWhenCEIsActive;" FateIds="&FatesToDo;" MinLevel="0" MaxLevel="101" while="IsAnyFateActive() and IsOnMap(&SouthHorn;)" />
             </If>
 
           </While>

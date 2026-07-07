@@ -36,8 +36,8 @@
         
         if (ff14bot.RemoteWindows.SelectString.IsOpen)
         {
-            Logging.WriteDiagnostic("Clicking Journey to the Occult Crescent: south horn");
-            ff14bot.RemoteWindows.SelectString.ClickLineContains("south horn");
+            Logging.WriteDiagnostic($"Clicking {LlamaLibrary.Helpers.Translator.JourneyToSouthHorn}");
+            ff14bot.RemoteWindows.SelectString.ClickLineContains(LlamaLibrary.Helpers.Translator.JourneyToSouthHorn);
             await Coroutine.Wait(5000, () => !SelectString.IsOpen);
             await Coroutine.Wait(5000, () => SelectString.IsOpen);
         }
