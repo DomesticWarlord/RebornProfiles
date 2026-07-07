@@ -434,26 +434,18 @@
 				</If>
 			</If>
 			<While Condition="GetQuestStep(65975) == 1">
-				<If Condition="not DutyManager.InInstance">
-					<GetTo ZoneId="148" XYZ="-389.2424, 65.53748, -186.5721" />
-					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-						<LeaveParty />
-					</If>
-					<RunCode Name="DutyCommenceLancer" />
+				<GetTo ZoneId="148" XYZ="-389.2424, 65.53748, -186.5721" />
+				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+					<LeaveParty />
 				</If>
-				<If Condition="DutyManager.InInstance and Clio.Utilities.Vector3.Distance(Core.Player.Location, Vector3(-389.1023, 65.55623, -185.9254)) &lt; 5">
-					<MoveTo XYZ="-396.4131, 60.54156, -162.7954" UseMesh="False" InCombat="True" />
-				</If>
-				<Grind while="DutyManager.InInstance">
-					<GrindArea name="Proof_of_Might">
-						<HotSpots>
-							<HotSpot XYZ="-394.4528, 60.26678, -164.9411" Radius="90" />
-						</HotSpots>
-						<TargetMobs>
-							<TargetMob Id="130" /> <!-- Lindwurm -->
-						</TargetMobs>
-					</GrindArea>
-				</Grind>
+				<LLSimpleDuty InteractNpcId="2000924" XYZ="-389.24243, 65.537476, -186.57214" QuestId="65975" StepId="1">
+					<HotSpots>
+						<HotSpot XYZ="-394.4528, 60.26678, -164.9411" Radius="90" />
+					</HotSpots>
+					<TargetMobs>
+						<TargetMob Id="130" /> <!-- Lindwurm -->
+					</TargetMobs>
+				</LLSimpleDuty>
 			</While>
 			<If Condition="GetQuestStep(65975) == 2">
 				<GetTo ZoneId="154" XYZ="-287.007, -54.43104, 289.9977" />
@@ -1243,7 +1235,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
           await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
