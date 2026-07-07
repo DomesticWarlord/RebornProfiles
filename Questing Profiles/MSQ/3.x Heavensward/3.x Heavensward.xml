@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!--
+Profile:  3.x Heavensward MSQ
+Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
+-->
+<!DOCTYPE Profile [
+
+  <!ENTITY SkipCutscenes "False"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
+  <!ENTITY AutoEquip "False"> <!-- Uses GardlandDB to weigh new items to equip -->
+  <!ENTITY CloseHowTos "False"> <!-- Close How To Windows as they open to keep the UI clean -->
+  <!ENTITY EnablePlatypus "False">
+  <!ENTITY KillHuntMobs "False"> <!-- Kill Hunting Log mobs if they come near by -->
+  <!ENTITY BuyGysahlGreens "False"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
+  <!-- A lot of the early quests give useless items like Chicken Egg or Weak Silencing Potions
+        the bot can toss these to help keep your inventory clean -->
+  <!ENTITY DiscardInventoryClutter "False">
+  <!-- Select which Grand Company you'd like to join -->
+  <!-- 0 = Twin Adder -->
+  <!-- 1 = Maelstrom -->
+  <!-- 2 = Immortal Flames -->
+  <!ENTITY GrandCompanyChoice "1">
+
+  <!-- Panda Farmer specific settings -->
+
+  <!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
+  <!ENTITY UseCarry "False">
+  <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
+]>
+
+<Profile>
+  <Name>3.x Heavensward MSQ</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Coming to Ishgard (Level 50) -->
+    <If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67116) and Core.Player.ClassLevel &gt; 49">
+      <If Condition="not HasQuest(67116)">
+        <!-- House Fortemps -->
+        <If Condition="not IsOnMap(395)">
+          <GetTo ZoneId="155" XYZ="262.81787, 302.17316, -221.37408" />
+          <UseTransport InteractDistance="3.0" NpcId="1009973" XYZ="264.9119, 302.2624, -223.7126" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(67116)">
+          <PickupQuest NpcId="1010925" QuestId="67116" XYZ="-1.419189, 0.01498272, -0.07635498" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67116) == 1">
+        <!-- House Fortemps -->
+        <If Condition="not IsOnMap(395)">
+          <GetTo ZoneId="155" XYZ="262.81787, 302.17316, -221.37408" />
+          <UseTransport InteractDistance="3.0" NpcId="1009973" XYZ="264.9119, 302.2624, -223.7126" />
+        </If>
+        <TalkTo NpcId="1012308" XYZ="-3.128174, 7.450581E-09, 2.822876" QuestId="67116" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67116) == 2">
+        <!-- Leave House Fortemps -->
+        <If Condition="IsOnMap(395)">
+          <UseTransport NpcId="2004781" InteractDistance="3.0" XYZ="-4, 1.2, 11" />
+        </If>
+        <GetTo ZoneId="155" XYZ="-163.8972, 304.1538, -333.0587" />
+        <UseTransport InteractDistance="3.0" NpcId="1012309" XYZ="-163.8972, 304.1538, -333.0587" />
+        <WaitWhile Condition="HasQuest(67116) and not IsQuestCompleted(67116) and not GetQuestStep(67116) == 4" />
+      </If>
+      <If Condition="GetQuestStep(67116) == 3">
+        <WaitWhile Condition="GetQuestStep(67116) == 3" />
+      </If>
+      <If Condition="GetQuestStep(67116) == 4">
+        <GetTo ZoneId="418" XYZ="-10.26941, 1.279128, 83.42102" />
+        <TalkTo NpcId="1012310" XYZ="-10.26941, 1.279128, 83.42102" QuestId="67116" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(67116) == 255">
+        <GetTo ZoneId="419" XYZ="15.60992, 16.00967, -6.515625" />
+        <TurnIn QuestId="67116" NpcId="1012313" XYZ="15.60992, 16.00967, -6.515625" />
+      </If>
+    </If>
+
+    <!-- Taking in the Sights (Level 50) -->
+    <If Condition="IsQuestCompleted(67116) and not IsQuestCompleted(67117) and Core.Player.ClassLevel &gt; 49">
+      <If Condition="not HasQuest(67117)">
+        <!-- Fortemps Manor Entrace - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(67117)">
+          <PickupQuest NpcId="1013036" QuestId="67117" XYZ="-0.2289429, 0, 7.339539" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67117) == 1">
+        <GetTo ZoneId="419" XYZ="12.13086, 16.00967, -7.003906" />
+        <TalkTo NpcId="1012316" XYZ="12.13086, 16.00967, -7.003906" QuestId="67117" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67117) == 2">
+        <GetTo ZoneId="419" XYZ="-4.379395, 27.75385, -148.272" />
+        <TalkTo NpcId="1012317" XYZ="-4.379395, 27.75385, -148.272" QuestId="67117" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67117) == 3">
+        <GetTo ZoneId="419" XYZ="-174.1818, -12.55547, -21.56104" />
+        <TalkTo NpcId="1012180" XYZ="-174.1818, -12.55547, -21.56104" QuestId="67117" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67117) == 255">
+        <GetTo ZoneId="418" XYZ="-50.21753, 8.05915, 15.45734" />
+        <If Condition="IsFendingClass()">
+          <TurnIn QuestId="67117" NpcId="1012323" XYZ="-50.21753, 8.05915, 15.45734" RewardSlot="0" />
+        </If>
+        <If Condition="IsMaimingClass()">
+          <TurnIn QuestId="67117" NpcId="1012323" XYZ="-50.21753, 8.05915, 15.45734" RewardSlot="1" />
+        </If>
+        <If Condition="IsStrikingClass()">
+          <TurnIn QuestId="67117" NpcId="1012323" XYZ="-50.21753, 8.05915, 15.45734" RewardSlot="2" />
+        </If>
+        <If Condition="IsScoutingClass()">
+          <TurnIn QuestId="67117" NpcId="1012323" XYZ="-50.21753, 8.05915, 15.45734" RewardSlot="3" />
+        </If>
+        <If Condition="HasQuest(67117) and GetQuestStep(67117) == 255">
+          <TurnIn QuestId="67117" NpcId="1012323" XYZ="-50.21753, 8.05915, 15.45734" RewardSlot="4" />
+        </If>
+      </If>
+    </If>
+
+    <!-- The Better Half (Level 50) -->
+    <If Condition="IsQuestCompleted(67117) and not IsQuestCompleted(67118) and Core.Player.ClassLevel &gt; 49">
+      <If Condition="not HasQuest(67118)">
+        <GetTo ZoneId="418" XYZ="-50.21753, 8.05915, 15.45734" />
+        <If Condition="IsQuestAcceptQualified(67118)">
+          <PickupQuest NpcId="1012323" QuestId="67118" XYZ="-50.21753, 8.05915, 15.45734" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67118) == 1">
+        <GetTo ZoneId="418" XYZ="88.66167, 15.09468, 33.88989" />
+        <TalkTo NpcId="1011192" XYZ="88.36499, 15.09468, 31.29626" QuestId="67118" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67118) == 2">
+        <!-- Fortemps Manor Entrace - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <TalkTo NpcId="1013033" XYZ="-0.01531982, 0.02225424, 3.707886" QuestId="67118" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67118) == 255">
+        <!-- Fortemps Manor Entrace - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <If Condition="IsAimingClass()">
+          <TurnIn QuestId="67118" NpcId="1013036" XYZ="-0.2289429, 0, 7.339539" RewardSlot="0" />
+        </If>
+        <If Condition="IsHealingClass()">
+          <TurnIn QuestId="67118" NpcId="1013036" XYZ="-0.2289429, 0, 7.339539" RewardSlot="1" />
+        </If>
+        <If Condition="IsCastingClass()">
+          <TurnIn QuestId="67118" NpcId="1013036" XYZ="-0.2289429, 0, 7.339539" RewardSlot="2" />
+        </If>
+        <TurnIn QuestId="67118" NpcId="1013036" XYZ="-0.2289429, 0, 7.339539" RewardSlot="3" />
+      </If>
+    </If>
+
+    <!-- Over the Wall (Level 50) -->
+    <If Condition="IsQuestCompleted(67118) and not IsQuestCompleted(67119) and Core.Player.ClassLevel &gt; 49">
+      <If Condition="not HasQuest(67119)">
+        <!-- Fortemps Manor Entrace - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(67119)">
+          <PickupQuest NpcId="1012328" QuestId="67119" XYZ="1.754761, 0.003450237, -9.750549" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67119) == 1">
+        <!-- Fortemps Manor - Manor Exit -->
+        <If Condition="IsOnMap(433)">
+          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
+        </If>
+        <GetTo ZoneId="418" XYZ="-163.4394, 2.15106, -5.508545" />
+        <UseTransport InteractDistance="3.0" NpcId="1012331" XYZ="-163.4394, 2.15106, -5.508545" />
+        <WaitWhile Condition="HasQuest(67119) and not IsQuestCompleted(67119) and not GetQuestStep(67119) == 3" />
+      </If>
+      <If Condition="GetQuestStep(67119) == 3">
+        <GetTo ZoneId="397" XYZ="479.2788, 225.0023, 793.1844" />
+        <TalkTo NpcId="1012333" XYZ="481.4069, 225.0023, 793.1486" QuestId="67119" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67119) == 255">
+        <GetTo ZoneId="397" XYZ="503.1051, 217.9515, 790.2189" />
+        <TurnIn QuestId="67119" NpcId="1011231" XYZ="503.1051, 217.9515, 790.2189" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+    <CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
+        {
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+            "CreditScroll",
+        };
+
+      ]]>
+    </CodeChunk>
+    <CodeChunk Name="SkipCutscenes">
+			<![CDATA[
+				ff14bot.BotBases.OrderBotSettings.Instance.SkipCutScenes = true;
+			]]>
+		</CodeChunk>
+    <CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (RaptureAtkUnitManager.GetWindowByName("CreditScroll") != null)
+        {
+            RaptureAtkUnitManager.GetWindowByName("CreditScroll").SendAction(1, 3uL, 0xFFFFFFFFuL);
+        }
+
+        if (RaptureAtkUnitManager.GetWindowByName("CreditPlayer") != null)
+        {
+            RaptureAtkUnitManager.GetWindowByName("CreditPlayer").SendAction(1, 3uL, 0xFFFFFFFFuL);
+        }
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+    <CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+          await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
+
+	        return false;
+			]]>
+		</CodeChunk>
+  </CodeChunks>
+</Profile> 
