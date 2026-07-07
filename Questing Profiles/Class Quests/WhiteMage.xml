@@ -278,9 +278,8 @@
 			</If>
 			<If Condition="GetQuestStep(65628) == 2">
 				<!-- Joacin -->
-				<GetTo ZoneId="152" XYZ="-234.97821, 1.4391329, 298.43793" />
+				<GetTo ZoneId="152" XYZ="-227.38083, 3.5444405, 279.80374" />
 				<TalkTo NpcId="1000561" XYZ="-230.1824, 3.544826, 279.0721" QuestId="65628" StepId="2" />
-				<MoveTo XYZ="-234.97821, 1.4391329, 298.43793" />
 			</If>
 			<If Condition="GetQuestStep(65628) == 3">
 				<!-- Joacin -->
