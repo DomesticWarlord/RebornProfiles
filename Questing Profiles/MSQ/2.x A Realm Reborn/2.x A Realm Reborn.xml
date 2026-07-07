@@ -43,14 +43,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <If condition="&SkipCutscenes; == True">
       <BotSettings SkipCutscenes="1" />
     </If>
-    <If condition="&SkipCutscenes; == False">
-      <BotSettings SkipCutscenes="0" />
-    </If>
     <If condition="&AutoEquip; == True">
       <BotSettings AutoEquip="1" />
-    </If>
-    <If condition="&AutoEquip; == False">
-      <BotSettings AutoEquip="0" />
     </If>
     <If condition="&CloseHowTos;">
       <Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
@@ -1851,10 +1845,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <PickupQuest NpcId="1002058" QuestId="65869" XYZ="59.61694, 45.14532, -215.9" />
               </If>
             </If>
-          </If>
-          <If Condition="GetQuestStep(65869) == 255">
-            <GetTo ZoneId="140" XYZ="-176.9589, 15.65209, -270.985" />
-            <TurnIn QuestId="65869" NpcId="1002066" XYZ="-176.9589, 15.65209, -270.985" />
+            <If Condition="GetQuestStep(65869) == 255">
+              <GetTo ZoneId="140" XYZ="-176.9589, 15.65209, -270.985" />
+              <TurnIn QuestId="65869" NpcId="1002066" XYZ="-176.9589, 15.65209, -270.985" />
+            </If>
           </If>
 
           <!-- Storms on the Horizon (Level 13) -->
