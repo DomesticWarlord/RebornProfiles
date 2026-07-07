@@ -29,7 +29,7 @@
 				<While Condition="ClassName != ClassJobType.Archer">
 					<EquipWeapon ItemId="1889" />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 
@@ -620,7 +620,6 @@
 				<GetTo ZoneId="132" XYZ="209.5521, 0.9999819, 35.01941" />
 				<If Condition="IsQuestAcceptQualified(66621)">
 					<PickupQuest NpcId="1000200" QuestId="66621" XYZ="209.5521, 0.9999819, 35.01941" />
-
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66621) == 1">
@@ -645,6 +644,7 @@
 				<While Condition="ClassName != ClassJobType.Bard">
 					<EquipWeapon ItemId="4546" />
 					<AutoInventoryEquip />
+					<SaveGearset />
 				</While>
 			</If>
 		</If>

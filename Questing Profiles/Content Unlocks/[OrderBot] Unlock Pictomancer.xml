@@ -40,7 +40,7 @@
       <If condition="ClassName != ClassJobType.Pictomancer">
         <EquipWeapon ItemID="&WeatheredRoundBrush;" />
         <WaitWhile condition="ClassName != ClassJobType.Pictomancer" />
-        <RunCode name="GearsetSave" />
+        <SaveGearset />
       </If>
       <UseInventoryItem ItemID="&WeatheredPaintersAttireCoffer;" />
       <WaitTimer WaitTime="3" />
@@ -58,4 +58,4 @@
       ]]>
     </CodeChunk>
   </CodeChunks>
-</Profile> 
+</Profile>

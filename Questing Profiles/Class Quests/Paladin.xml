@@ -29,7 +29,7 @@
 				<While Condition="ClassName != ClassJobType.Gladiator">
 					<EquipWeapon ItemId="1601" />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 
@@ -563,6 +563,7 @@
 				<While Condition="ClassName != ClassJobType.Paladin">
 					<EquipWeapon ItemId="4542" />
 					<AutoInventoryEquip />
+					<SaveGearset />
 				</While>
 			</If>
 		</If>

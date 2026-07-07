@@ -37,7 +37,7 @@
 					<EquipWeapon ItemId="20388" />
 					<AutoEquip />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 

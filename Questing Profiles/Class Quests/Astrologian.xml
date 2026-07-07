@@ -63,7 +63,7 @@
 					<EquipWeapon ItemID="10524" />
 					<EquipWeapon ItemID="8840" />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 

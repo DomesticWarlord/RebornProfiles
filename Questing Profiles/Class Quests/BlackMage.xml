@@ -29,7 +29,7 @@
 				<While Condition="ClassName != ClassJobType.Thaumaturge">
 					<EquipWeapon ItemId="2055" />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 
@@ -568,6 +568,7 @@
 				<While Condition="ClassName != ClassJobType.BlackMage">
 					<EquipWeapon ItemId="4548" />
 					<AutoInventoryEquip />
+					<SaveGearset />
 				</While>
 			</If>
 		</If>

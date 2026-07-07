@@ -29,7 +29,7 @@
 				<While Condition="ClassName != ClassJobType.Arcanist">
 					<EquipWeapon ItemId="2142" />
 				</While>
-				<RunCode name="GearsetSave" />
+				<SaveGearset />
 			</If>
 		</If>
 
