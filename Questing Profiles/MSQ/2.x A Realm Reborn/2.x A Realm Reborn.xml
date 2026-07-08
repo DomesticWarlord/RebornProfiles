@@ -128,9 +128,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="148" XYZ="104.0594, 14.69139, -262.7849" />
                   <Grind While="GetQuestStep(65557) == 2 and not IsTodoChecked(65557, 2, 0)">
                     <GrindArea Name="Ground_Squirrel">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="37" />
                       </TargetMobs>
@@ -143,9 +143,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65557) == 2 and not IsTodoChecked(65557, 2, 1)">
                     <GrindArea Name="Gridanian_Little_Ladybug">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="49" />
                       </TargetMobs>
@@ -158,9 +158,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65557) == 2 and not IsTodoChecked(65557, 2, 2)">
                     <GrindArea Name="Forest_Funguar">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="113.5422, 0.7499394, -171.7874" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="47" />
                       </TargetMobs>
@@ -222,9 +222,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="148" XYZ="104.0594, 14.69139, -262.7849" />
                   <Grind While="GetQuestStep(65558) == 2 and not IsTodoChecked(65558, 2, 0)">
                     <GrindArea Name="Ground_Squirrel">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="37" />
                       </TargetMobs>
@@ -237,9 +237,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65558) == 2 and not IsTodoChecked(65558, 2, 1)">
                     <GrindArea Name="Gridanian_Little_Ladybug">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="49" />
                       </TargetMobs>
@@ -252,9 +252,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65558) == 2 and not IsTodoChecked(65558, 2, 2)">
                     <GrindArea Name="Forest_Funguar">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="113.5422, 0.7499394, -171.7874" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="47" />
                       </TargetMobs>
@@ -314,9 +314,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="148" XYZ="103.3762, 14.36276, -255.1773" />
                   <Grind While="GetQuestStep(65559) == 2 and not IsTodoChecked(65559, 2, 0)">
                     <GrindArea Name="Ground_Squirrel">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="37" />
                       </TargetMobs>
@@ -329,9 +329,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65559) == 2 and not IsTodoChecked(65559, 2, 1)">
                     <GrindArea Name="Gridanian_Little_Ladybug">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="104.0594, 14.69139, -262.7849" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="49" />
                       </TargetMobs>
@@ -344,9 +344,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65559) == 2 and not IsTodoChecked(65559, 2, 2)">
                     <GrindArea Name="Forest_Funguar">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="113.5422, 0.7499394, -171.7874" Radius="50" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="47" />
                       </TargetMobs>
@@ -464,9 +464,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               </If>
               <Grind While="GetQuestStep(69390) == 1">
                 <GrindArea Name="Chigoe">
-                  <Hotspots>
+                  <HotSpots>
                     <Hotspot Radius="90" XYZ="203.5701, -7.845859, -56.78665" />
-                  </Hotspots>
+                  </HotSpots>
                   <TargetMobs>
                     <TargetMob Id="43" />
                   </TargetMobs>
@@ -527,9 +527,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 </If>
                 <Grind While="GetQuestStep(69391) == 1 and not IsTodoChecked(69391, 1, 1)">
                   <GrindArea Name="Anole">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot XYZ="469.1977, 20.34101, -71.83479" Radius="90" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob Id="120" />
                     </TargetMobs>
@@ -652,9 +652,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               </If>
               <Grind While="GetQuestStep(65912) == 2">
                 <GrindArea Name="Qiqirn_Scrambler">
-                  <Hotspots>
+                  <HotSpots>
                     <Hotspot XYZ="-184.605, 2.197764, -76.01891" Radius="90" />
-                  </Hotspots>
+                  </HotSpots>
                   <TargetMobs>
                     <TargetMob Id="218" />
                   </TargetMobs>
@@ -1161,9 +1161,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="141" XYZ="-124.5378, 8.191166, 263.1792" />
                   <Grind While="HasQuest(65789) and not IsQuestCompleted(65789) and GetQuestStep(65789) == 2 and not IsTodoChecked(65789, 2, 0)">
                     <GrindArea Name="Star_Marmot">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="-124.5378, 8.191166, 263.1792" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="262" /> <!-- Star Marmot -->
                       </TargetMobs>
@@ -1176,9 +1176,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(65789) and not IsQuestCompleted(65789) and GetQuestStep(65789) == 2 and not IsTodoChecked(65789, 2, 1)">
                     <GrindArea Name="Huge_Hornet">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="632" /> <!-- Huge Hornet -->
                       </TargetMobs>
@@ -1191,9 +1191,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(65789) and not IsQuestCompleted(65789) and GetQuestStep(65789) == 2 and not IsTodoChecked(65789, 2, 2)">
                     <GrindArea Name="Snapping_Shrew">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="318" /> <!-- Snapping Shrew -->
                       </TargetMobs>
@@ -1253,9 +1253,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="141" XYZ="-124.5378, 8.191166, 263.1792" />
                   <Grind While="HasQuest(66069) and not IsQuestCompleted(66069) and GetQuestStep(66069) == 2 and not IsTodoChecked(66069, 2, 0)">
                     <GrindArea Name="Star_Marmot">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="-124.5378, 8.191166, 263.1792" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="262" /> <!-- Star Marmot -->
                       </TargetMobs>
@@ -1268,9 +1268,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(66069) and not IsQuestCompleted(66069) and GetQuestStep(66069) == 2 and not IsTodoChecked(66069, 2, 1)">
                     <GrindArea Name="Huge_Hornet">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="632" /> <!-- Huge Hornet -->
                       </TargetMobs>
@@ -1283,9 +1283,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(66069) and not IsQuestCompleted(66069) and GetQuestStep(66069) == 2 and not IsTodoChecked(66069, 2, 2)">
                     <GrindArea Name="Snapping_Shrew">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="318" /> <!-- Snapping Shrew -->
                       </TargetMobs>
@@ -1344,9 +1344,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="141" XYZ="-124.5378, 8.191166, 263.1792" />
                   <Grind While="HasQuest(65881) and not IsQuestCompleted(65881) and GetQuestStep(65881) == 2 and not IsTodoChecked(65881, 2, 0)">
                     <GrindArea Name="Star_Marmot">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="-124.5378, 8.191166, 263.1792" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="262" /> <!-- Star Marmot -->
                       </TargetMobs>
@@ -1359,9 +1359,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(65881) and not IsQuestCompleted(65881) and GetQuestStep(65881) == 2 and not IsTodoChecked(65881, 2, 1)">
                     <GrindArea Name="Huge_Hornet">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="632" /> <!-- Huge Hornet -->
                       </TargetMobs>
@@ -1374,9 +1374,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="HasQuest(65881) and not IsQuestCompleted(65881) and GetQuestStep(65881) == 2 and not IsTodoChecked(65881, 2, 2)">
                     <GrindArea Name="Snapping_Shrew">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="47.77102, 4.473118, 298.6426" Radius="90" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="318" /> <!-- Snapping Shrew -->
                       </TargetMobs>
@@ -1616,9 +1616,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="140" xyz="314.5982, 64.7995, 156.4156" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Gladiator, 0, 0)">
                   <GrindArea name="Gladiator_1_0">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="314.5982, 64.7995, 156.4156" name="Gladiator_1_0" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="49" />
                     </TargetMobs>
@@ -1630,9 +1630,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="140" xyz="351.6014, 74.74335, 160.1844" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Gladiator, 1, 0)">
                   <GrindArea name="Gladiator_1_1">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="351.6014, 74.74335, 160.1844" name="Gladiator_1_1" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="262" />
                     </TargetMobs>
@@ -1645,9 +1645,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="141" xyz="-70.81795, 9.252864, 281.2776" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 0, 0)">
                   <GrindArea name="Pugilist_1_0">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="-70.81795, 9.252864, 281.2776" name="Pugilist_1_0" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="632" />
                     </TargetMobs>
@@ -1658,9 +1658,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="140" xyz="356.4496, 74.74335, 159.5603" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 1, 0)">
                   <GrindArea name="Pugilist_1_1">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="356.4496, 74.74335, 159.5603" name="Pugilist_1_1" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="262" />
                     </TargetMobs>
@@ -1673,9 +1673,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="140" xyz="314.5982, 64.7995, 156.4156" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Thaumaturge, 0, 0)">
                   <GrindArea name="Thaumaturge_1_0">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="314.5982, 64.7995, 156.4156" name="Thaumaturge_1_0" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="49" />
                     </TargetMobs>
@@ -1686,9 +1686,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="141" xyz="-70.81795, 9.252864, 281.2776" />
                 <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Thaumaturge, 1, 0)">
                   <GrindArea name="Thaumaturge_1_1">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot radius="90" xyz="-70.81795, 9.252864, 281.2776" name="Thaumaturge_1_1" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob id="632" />
                     </TargetMobs>
@@ -1768,9 +1768,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               </If>
               <Grind While="GetQuestStep(65865) == 1">
                 <GrindArea Name="Sun_Midge_Swarm">
-                  <Hotspots>
+                  <HotSpots>
                     <Hotspot XYZ="166.7881, 49.49792, -137.0374" Radius="90" />
-                  </Hotspots>
+                  </HotSpots>
                   <TargetMobs>
                     <TargetMob Id="298" />
                   </TargetMobs>
@@ -2218,9 +2218,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="134" XYZ="-10.1936, 44.80988, 99.69167" />
                   <Grind While="not IsTodoChecked(65989, 2, 0)">
                     <GrindArea Name="Wharf_Rat">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="-10.1936, 44.80988, 99.69167" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="417" />
                       </TargetMobs>
@@ -2233,9 +2233,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="not IsTodoChecked(65989, 2, 2)">
                     <GrindArea Name="Lominsan_Little_Ladybug">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="89.14595, 46.44084, 159.3749" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="49" />
                       </TargetMobs>
@@ -2246,9 +2246,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="135" XYZ="141.39731, 35.665123, 58.02031" />
                   <Grind While="not IsTodoChecked(65989, 2, 1)">
                     <GrindArea Name="Aurelia">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="141.39731, 35.665123, 58.02031" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="563" />
                       </TargetMobs>
@@ -2343,9 +2343,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="134" XYZ="-10.1936, 44.80988, 99.69167" />
                   <Grind While="GetQuestStep(65847) == 2 and not IsTodoChecked(65847, 2, 0)">
                     <GrindArea Name="Wharf_Rat">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="-10.1936, 44.80988, 99.69167" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="417" />
                       </TargetMobs>
@@ -2358,9 +2358,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65847) == 2 and not IsTodoChecked(65847, 2, 1)">
                     <GrindArea Name="Lost_Lamb">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="89.14595, 46.44084, 159.3749" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="392" />
                       </TargetMobs>
@@ -2373,9 +2373,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind While="GetQuestStep(65847) == 2 and not IsTodoChecked(65847, 2, 2)">
                     <GrindArea Name="Lominsan_Little_Ladybug">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot XYZ="89.14595, 46.44084, 159.3749" Radius="100" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="49" />
                       </TargetMobs>
@@ -2601,9 +2601,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <GetTo ZoneId="134" XYZ="-87.0993, 48.55717, -234.4706" />
               <Grind While="GetQuestStep(66004) == 1">
                 <GrindArea Name="Grounded_Pirate">
-                  <Hotspots>
+                  <HotSpots>
                     <Hotspot XYZ="-64.79494, 54.49197, -253.2742" Radius="90" />
-                  </Hotspots>
+                  </HotSpots>
                   <TargetMobs>
                     <TargetMob Id="421" />
                   </TargetMobs>
@@ -3909,14 +3909,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <GetTo ZoneId="145" XYZ="-163.6711, -31.44233, 314.1603" /> <!-- Grinding Area -->
                   <Grind while="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
                     <GrindArea name="The_Order_of_the_Twin_Adder_Entry_01">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot Radius="250" XYZ="-86.03491, -28.22512, 286.1961" name="Amalj'aa Javeliniers" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="247" /> <!-- Amalj'aa Javelinier -->
                       </TargetMobs>
-                      <MinLevel>18</MinLevel>
-                      <MaxLevel>71</MaxLevel>
                     </GrindArea>
                   </Grind>
                   <WaitWhile condition="Core.Me.InCombat" />
@@ -3960,9 +3958,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                 <GetTo ZoneId="145" XYZ="-146.6476, -30.8517, 317.8676" />
                 <Grind While="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
                   <GrindArea Name="Amaljaa_Hunter">
-                    <Hotspots>
+                    <HotSpots>
                       <Hotspot Radius="200" XYZ="-79.84995, -27.19742, 282.9791" name="Name" />
-                    </Hotspots>
+                    </HotSpots>
                     <TargetMobs>
                       <TargetMob Id="250" />
                     </TargetMobs>
@@ -4011,9 +4009,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   </If>
                   <Grind while="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
                     <GrindArea name="The_Immortal_Flames_Entry_01">
-                      <Hotspots>
+                      <HotSpots>
                         <Hotspot Radius="250" XYZ="-85.73637, -28.16244, 285.836" name="Amalj'aa Hunters" />
-                      </Hotspots>
+                      </HotSpots>
                       <TargetMobs>
                         <TargetMob Id="250" /> <!-- Amalj'aa Hunter -->
                       </TargetMobs>
@@ -4239,14 +4237,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <GetTo ZoneId="152" XYZ="-51.74144, -8.187675, 221.1585" />
             <Grind While="GetQuestStep(69394) == 2 and not IsTodoChecked(69394, 2, 0)">
               <GrindArea Name="Ziz_Gorlin">
-                <Hotspots>
+                <HotSpots>
                   <Hotspot XYZ="-51.74144, -8.187675, 221.1585" Radius="90" />
-                </Hotspots>
+                </HotSpots>
                 <TargetMobs>
                   <TargetMob Id="223" />
                 </TargetMobs>
-                <MinLevel />
-                <MaxLevel />
               </GrindArea>
             </Grind>
           </If>
@@ -4254,14 +4250,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <GetTo ZoneId="152" XYZ="-51.74144, -8.187675, 221.1585" />
             <Grind While="GetQuestStep(69394) == 2 and not IsTodoChecked(69394, 2, 1)">
               <GrindArea Name="Gall_Gnat">
-                <Hotspots>
+                <HotSpots>
                   <Hotspot XYZ="26.9151, 8.439501, 450.6626" Radius="90" />
-                </Hotspots>
+                </HotSpots>
                 <TargetMobs>
                   <TargetMob Id="2157" />
                 </TargetMobs>
-                <MinLevel />
-                <MaxLevel />
               </GrindArea>
             </Grind>
           </If>
@@ -4473,9 +4467,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <GetTo ZoneId="139" XYZ="-592.3483, -1.423002, -0.968532" />
           <Grind While="HasQuest(69397) and not IsQuestCompleted(69397) and GetQuestStep(69397) == 1">
             <GrindArea Name="Couerl_Pup">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-592.3483, -1.423002, -0.968532" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="28" />
               </TargetMobs>
@@ -4946,9 +4940,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <GetTo ZoneId="153" XYZ="263.0978, 10.98233, -144.6348" />
           <Grind While="GetQuestStep(66310) == 1">
             <GrindArea Name="Antelope_Stag">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="263.0978, 10.98233, -144.6348" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="4" />
               </TargetMobs>
@@ -5215,9 +5209,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <GetTo ZoneId="154" XYZ="-211.991, -30.25394, 311.5289" />
           <Grind While="GetQuestStep(69400) == 1">
             <GrindArea Name="Ziz">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-211.991, -30.25394, 311.5289" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="224" />
               </TargetMobs>
@@ -5548,9 +5542,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <GetTo ZoneId="148" XYZ="-239.3125, 57.47225, -93.26726" />
           <Grind While="GetQuestStep(66698) == 4">
             <GrindArea Name="Brood_Ziz">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-239.3125, 57.47225, -93.26726" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="221" />
               </TargetMobs>
@@ -5642,9 +5636,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
           <Grind While="GetQuestStep(66358) == 1">
             <GrindArea Name="Angler">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-28.85349, 8.024628, 419.9498" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="307" />
               </TargetMobs>
@@ -5867,9 +5861,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
           <Grind While="GetQuestStep(66382) == 1">
             <GrindArea Name="Dung_Midge_Swarm">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-235.112, 40.57494, 351.7272" Radius="200" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="396" />
               </TargetMobs>
@@ -5900,9 +5894,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
           <Grind While="GetQuestStep(66383) == 1">
             <GrindArea Name="Jungle_Coeurl">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-150.9628, 44.00233, 319.1552" Radius="200" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="352" />
               </TargetMobs>
@@ -6673,9 +6667,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <GetTo ZoneId="155" XYZ="-613.4891, 204.1258, -420.6291" />
           <Grind While="GetQuestStep(69405) == 1">
             <GrindArea Name="Ice_Sprite">
-              <Hotspots>
+              <HotSpots>
                 <Hotspot XYZ="-613.4891, 204.1258, -420.6291" Radius="90" />
-              </Hotspots>
+              </HotSpots>
               <TargetMobs>
                 <TargetMob Id="114" />
               </TargetMobs>
@@ -7616,9 +7610,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <GetTo ZoneId="156" XYZ="-442.3953, -13.35768, -481.1577" />
             <Grind While="HasQuest(69407) and not IsQuestCompleted(69407) and GetQuestStep(69407) == 1 and not IsTodoChecked(69407, 1, 1)">
               <GrindArea Name="Laquearius_Hoplomachus">
-                <Hotspots>
+                <HotSpots>
                   <Hotspot XYZ="-468.7451, -7.353733, -449.2023" Radius="90" />
-                </Hotspots>
+                </HotSpots>
                 <TargetMobs>
                   <TargetMob Id="1810" Weight="2000" />
                   <TargetMob Id="1809" Weight="1000" />
@@ -7630,9 +7624,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <GetTo ZoneId="156" XYZ="-442.3953, -13.35768, -481.1577" />
             <Grind While="HasQuest(69407) and not IsQuestCompleted(69407) and GetQuestStep(69407) == 1 and not IsTodoChecked(69407, 1, 0)">
               <GrindArea Name="Secutor_Eques">
-                <Hotspots>
+                <HotSpots>
                   <Hotspot XYZ="-468.7451, -7.353733, -449.2023" Radius="90" />
-                </Hotspots>
+                </HotSpots>
                 <TargetMobs>
                   <TargetMob Id="1812" Weight="2000" />
                   <TargetMob Id="1811" Weight="1000" />
