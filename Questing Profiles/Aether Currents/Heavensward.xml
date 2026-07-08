@@ -22,11 +22,11 @@ Profile and fixes by Anges
 		<!-- Coerthas Western Highlands Aether Currents -->
 		<If condition="not AetherCurrentManager.IsZoneComplete(397)">
 
-			<If Condition="not IsQuestCompleted(&PickUpQuest;)">
+			<If Condition="not IsQuestCompleted(67144)">
 				<UserDialog DialogText="Please finish the level 51 MSQ quest 'Purple Flame, Purple Flame' to unlock Coerthas Western Highlands Flying." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(&PickUpQuest;)">
+			<If Condition="IsQuestCompleted(67144)">
 
 				<!-- Bridge Over Frozen Water -->
 				<If Condition="IsQuestCompleted(67134) and not IsQuestCompleted(67280) and Core.Player.ClassLevel &gt; 49">
@@ -77,7 +77,7 @@ Profile and fixes by Anges
 						<TalkTo NpcId="1013746" XYZ="-87.81573, 87.189, -735.0424" QuestId="67647" StepId="1" />
 					</If>
 					<If Condition="GetQuestStep(67647) == 2">
-						<LoadPFWPFDungeon EquipGear="True" ProfileName="Dusk Vigil" QueueType="2" />
+						<LoadPFWPFDungeon EquipGear="True" ProfileName="The Dusk Vigil" QueueType="2" />
 						<UserDialog DialogText="In order to unlock Coerthas Western Highlands Aether Currents the 4 man duty The Dusk Vigil must be completed.\nPlease either do so now, or press continue to skip this step and complete it later." IsBotContinueAllowed="True" QuestId="67647" StepId="2" />
 					</If>
 					<If Condition="GetQuestStep(67647) == 255">
@@ -177,11 +177,11 @@ Profile and fixes by Anges
 		<!-- The Dravanian Forelands Aether Currents-->
 		<If condition="not AetherCurrentManager.IsZoneComplete(398)">
 
-			<If Condition="not IsQuestCompleted(&MournInPassing;)">
+			<If Condition="not IsQuestCompleted(67153)">
 				<UserDialog DialogText="Please finish the level 53 MSQ quest 'Mourn in Passing' to unlock The Dravanian Forelands Aether Currents." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(&MournInPassing;)">
+			<If Condition="IsQuestCompleted(67153)">
 
 				<!-- Some Bad News -->
 				<If Condition="IsQuestCompleted(67145) and not IsQuestCompleted(67307) and Core.Player.ClassLevel &gt; 51">
@@ -390,11 +390,11 @@ Profile and fixes by Anges
 		<!-- Churning Mists -->
 		<If condition="not AetherCurrentManager.IsZoneComplete(400)">
 
-			<If Condition="not IsQuestCompleted(&IntotheAery;)">
+			<If Condition="not IsQuestCompleted(67170)">
 				<UserDialog DialogText="Please finish the level 55 MSQ quest 'Into the Aery' to unlock Churning Mists Aether Currents." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(&IntotheAery;)">
+			<If Condition="IsQuestCompleted(67170)">
 
 				<!-- The Bathing Bully -->
 				<If Condition="QuestCompleted(67156) and not IsQuestCompleted(67355) and Core.Player.ClassLevel &gt; 53">
@@ -560,7 +560,7 @@ Profile and fixes by Anges
 
 			<If Condition="IsQuestCompleted(67183)">
 
-				<If Condition="not IsQuestCompleted(&BoltChainandIsland;)">
+				<If Condition="not IsQuestCompleted(67183)">
 					<UserDialog DialogText="Please finish the level 57 MSQ quest 'Bolt, Chain, and Island' to unlock The Sea of Clouds Aether Currents." IsBotContinueAllowed="True" />
 				</If>
 
@@ -829,11 +829,11 @@ Profile and fixes by Anges
 		<!-- The Dravanian Hinterlands Aether Currents-->
 		<If condition="not AetherCurrentManager.IsZoneComplete(399)">
 
-			<If Condition="not IsQuestCompleted(&ForbiddenKnowledge;)">
+			<If Condition="not IsQuestCompleted(67196)">
 				<UserDialog DialogText="Please finish the level 59 MSQ quest 'Forbiden Knowledge' to unlock The Dravanian Hinterlands Aether Currents." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(&ForbiddenKnowledge;)">
+			<If Condition="IsQuestCompleted(67196)">
 
 				<!-- Louder than Words -->
 				<If Condition="IsQuestCompleted(67191) and not IsQuestCompleted(67472) and Core.Player.ClassLevel &gt; 57">
