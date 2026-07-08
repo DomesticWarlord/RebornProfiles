@@ -189,24 +189,18 @@ Profile and fixes by Anges
 						</If>
 					</If>
 					<If Condition="GetQuestStep(67307) == 1">
-						<If Condition="not IsOnMap(398)">
-							<GetTo ZoneId="398" XYZ="527.918, -51.27571, 41.3532" /><!-- Tailfeather -->
-						</If>
-						<While Condition="not IsTodoChecked(67307, 1, 0)">
-							<NoCombatMoveTo Name="Leonulfe" XYZ="711.1161, -36.39083, 198.1079" />
+						<If Condition="GetQuestStep(67307) == 1 and GetQuestById(67307).QuestI8A == 0">
+							<GetTo ZoneId="398" XYZ="711.1161, -36.39083, 198.1079" />
 							<TalkTo NpcId="1011923" XYZ="711.1161, -36.39083, 198.1079" QuestId="67307" StepId="1" />
-
-							<NoCombatMoveTo Name="Guenaret" XYZ="849.0576, -37.66994, -39.56665" />
+						</If>
+						<If Condition="GetQuestStep(67307) == 1 and GetQuestById(67307).QuestI8A == 16">
+							<GetTo ZoneId="398" XYZ="849.0576, -37.66994, -39.56665" />
 							<TalkTo NpcId="1011924" XYZ="849.0576, -37.66994, -39.56665" QuestId="67307" StepId="1" />
-
-							<NoCombatMoveTo Name="Jump Spot" XYZ="675.6691, -19.5401, -340.323" />
-							<MoveTo Name="Jump Spot" XYZ="682.945, -19.77036, -327.5137" />
-							<RunCode Name="MoveForwardStart" />
+						</If>
+						<If Condition="GetQuestStep(67307) == 1 and GetQuestById(67307).QuestI8A == 33">
+							<GetTo ZoneId="398" XYZ="685.9692, -24.38285, -269.0624" />
 							<TalkTo NpcId="1011932" XYZ="685.9692, -24.38285, -269.0624" QuestId="67307" StepId="1" />
-
-						</While>
-						<NoCombatMoveTo Name="Jump Spot" XYZ="693.4866, -24.62367, -244.3382" />
-						<RunCode Name="MoveForwardStart" />
+						</If>
 					</If>
 					<If Condition="GetQuestStep(67307) == 255">
 						<GetTo ZoneId="398" XYZ="470.0236, -49.89133, 20.37079" />
