@@ -77,7 +77,7 @@ Profile and fixes by Anges
 						<TalkTo NpcId="1013746" XYZ="-87.81573, 87.189, -735.0424" QuestId="67647" StepId="1" />
 					</If>
 					<If Condition="GetQuestStep(67647) == 2">
-						<LoadPFWPFDungeon EquipGear="True" ProfileName="The Dusk Vigil" QueueType="2" />
+						<LoadPFWPFDungeon EquipGear="True" ProfileName="Dusk Vigil" QueueType="2" />
 						<UserDialog DialogText="In order to unlock Coerthas Western Highlands Aether Currents the 4 man duty The Dusk Vigil must be completed.\nPlease either do so now, or press continue to skip this step and complete it later." IsBotContinueAllowed="True" QuestId="67647" StepId="2" />
 					</If>
 					<If Condition="GetQuestStep(67647) == 255">
