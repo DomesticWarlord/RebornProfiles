@@ -332,6 +332,7 @@
 			<While Condition="GetQuestStep(65887) == 3">
 				<!-- Coastline -->
 				<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
+				<Dismount/>
 				<RunCode Name="The_Threat_of_Perplexity" />
 				<UseObject NpcId="1002324" XYZ="112.8099, 17.53689, 31.29626" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 0" />
 				<UseObject NpcId="1002322" XYZ="116.8993, 17.53689, 12.9549" QuestId="65887" StepId="3" Condition="GetQuestById(65887).QuestI8A == 16" />
@@ -347,6 +348,7 @@
 			<While Condition="GetQuestStep(65887) == 5">
 				<!-- Coastline -->
 				<GetTo ZoneId="140" XYZ="97.17191, 20.82853, 51.70921" />
+				<Dismount/>
 				<RunCode Name="The_Threat_of_Perplexity" />
 				<NoCombatMoveTo Name="Destination" XYZ="150.7134, 18.78381, -5.752686" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
