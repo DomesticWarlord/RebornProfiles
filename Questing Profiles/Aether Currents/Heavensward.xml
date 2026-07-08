@@ -40,12 +40,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67280) == 1">
 						<GetTo ZoneId="397" XYZ="458.0518, 161.7498, -262.45" />
 						<Grind while="HasQuest(67280) and GetQuestStep(67280) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="412.0077, 162.327, -176.6836" name="Upland Mylodons" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3474" />
-							</TargetMobs>
+							<GrindArea Name="Bridge Over Frozen Water">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="412.0077, 162.327, -176.6836" name="Upland Mylodons" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3474" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67280) == 255">
@@ -100,12 +102,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67296) == 1">
 						<GetTo ZoneId="397" XYZ="-383.8947, 116.7741, -102.1182" />
 						<Grind while="HasQuest(67296) and GetQuestStep(67296) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-396.3525, 118.1586, -141.6539" name="Rheums" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3482" />
-							</TargetMobs>
+							<GrindArea name="Baby Steps">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-396.3525, 118.1586, -141.6539" name="Rheums" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3482" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67296) == 255">
@@ -130,12 +134,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67295) == 1">
 						<GetTo ZoneId="397" XYZ="-142.4411, 110.1172, -37.57337" />
 						<Grind while="HasQuest(67295) and GetQuestStep(67295) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-73.46559, 103.3808, -52.77872" name="Polar Bears" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3485" />
-							</TargetMobs>
+							<GrindArea name="Protecting What's Important ">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-73.46559, 103.3808, -52.77872" name="Polar Bears" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3485" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67295) == 255">
@@ -179,6 +185,7 @@ Profile and fixes by Anges
 
 				<!-- Some Bad News -->
 				<If Condition="IsQuestCompleted(67145) and not IsQuestCompleted(67307) and Core.Player.ClassLevel &gt; 51">
+					<LLToast message="Working on quest 'Some Bad News' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67307)">
 						<GetTo ZoneId="398" XYZ="470.0236, -49.89133, 20.37079" />
 						<If Condition="not IsQuestAcceptQualified(67307)">
@@ -217,6 +224,7 @@ Profile and fixes by Anges
 
 				<!-- A Lesson in Humility -->
 				<If Condition="IsQuestCompleted(67150) and not IsQuestCompleted(67338) and Core.Player.ClassLevel &gt; 52">
+					<LLToast message="Working on quest 'A Lesson in Humility' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67338)">
 						<GetTo ZoneId="398" XYZ="-305.562, 39.04307, 22.9953" />
 						<If Condition="not IsQuestAcceptQualified(67338)">
@@ -234,14 +242,16 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67338) == 2">
 						<GetTo ZoneId="398" XYZ="-431.3565, -34.77514, 249.9151" />
 						<Grind while="HasQuest(67338) and GetQuestStep(67338) == 2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4275" />
-								<TargetMob Id="4274" />
-								<TargetMob Id="4273" />
-							</TargetMobs>
+							<GrindArea name="A Lesson in Humility">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4275" />
+									<TargetMob Id="4274" />
+									<TargetMob Id="4273" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67338) == 3">
@@ -251,14 +261,16 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67338) == 4">
 						<GetTo ZoneId="398" XYZ="-431.3565, -34.77514, 249.9151" />
 						<Grind while="HasQuest(67338) and GetQuestStep(67338) == 4">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4275" />
-								<TargetMob Id="4274" />
-								<TargetMob Id="4273" />
-							</TargetMobs>
+							<GrindArea name="A Lesson in Humility2">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4275" />
+									<TargetMob Id="4274" />
+									<TargetMob Id="4273" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67338) == 5">
@@ -268,14 +280,16 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67338) == 6">
 						<GetTo ZoneId="398" XYZ="-431.3565, -34.77514, 249.9151" />
 						<Grind while="HasQuest(67338) and GetQuestStep(67338) == 6">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4275" />
-								<TargetMob Id="4274" />
-								<TargetMob Id="4273" />
-							</TargetMobs>
+							<GrindArea name="A Lesson in Humility3">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-435.5374, -34.95808, 252.4331" name="Kohm Mobs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4275" />
+									<TargetMob Id="4274" />
+									<TargetMob Id="4273" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67338) == 255">
@@ -286,6 +300,7 @@ Profile and fixes by Anges
 
 				<!-- Stolen Munitions -->
 				<If Condition="IsQuestCompleted(67149) and not IsQuestCompleted(67326) and Core.Player.ClassLevel &gt; 52">
+					<LLToast message="Working on quest 'Stolen Munitions' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67326)">
 						<GetTo ZoneId="398" XYZ="72.31982, -49.153, -142.5694" />
 						<If Condition="not IsQuestAcceptQualified(67326)">
@@ -299,12 +314,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67326) == 1">
 						<GetTo ZoneId="398" XYZ="169.0192, -109.5845, 597.6518" />
 						<Grind while="HasQuest(67326) and GetQuestStep(67326) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="169.0192, -109.5845, 597.6518" name="Gnath Firedrone" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3573" />
-							</TargetMobs>
+							<GrindArea Name="Stolen Munitions">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="169.0192, -109.5845, 597.6518" name="Gnath Firedrone" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3573" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67326) == 255">
@@ -315,6 +332,7 @@ Profile and fixes by Anges
 
 				<!-- The Hunter Becomes the Kweh -->
 				<If Condition="IsQuestCompleted(67150) and not IsQuestCompleted(67333) and Core.Player.ClassLevel &gt; 52">
+					<LLToast message="Working on quest 'The Hunter Becomes the Kweh' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67333)">
 						<GetTo ZoneId="398" XYZ="470.1163, -49.89133, 22.38989" />
 						<If Condition="not IsQuestAcceptQualified(67333)">
@@ -380,6 +398,7 @@ Profile and fixes by Anges
 
 				<!-- The Bathing Bully -->
 				<If Condition="QuestCompleted(67156) and not IsQuestCompleted(67355) and Core.Player.ClassLevel &gt; 53">
+					<LLToast message="Working on quest 'The Bathing Bully' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67355)">
 						<GetTo ZoneId="400" XYZ="363.241, -73.25598, 678.4314" />
 						<If Condition="not IsQuestAcceptQualified(67355)">
@@ -393,12 +412,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67355) == 1">
 						<GetTo ZoneId="400" XYZ="714.7452, -50.23019, 407.4195" />
 						<Grind while="HasQuest(67355) and GetQuestStep(67355) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="714.7452, -50.23019, 407.4195" name="Hropkens" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3614" />
-							</TargetMobs>
+							<GrindArea Name="The Bathing Bully">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="714.7452, -50.23019, 407.4195" name="Hropkens" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3614" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67355) == 255">
@@ -409,6 +430,7 @@ Profile and fixes by Anges
 
 				<!-- Waiting to Inhale -->
 				<If Condition="IsQuestCompleted(67163) and not IsQuestCompleted(67371) and Core.Player.ClassLevel &gt; 53">
+					<LLToast message="Working on quest 'Waiting to Inhale' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67371)">
 						<GetTo ZoneId="400" XYZ="517.9064, -1.191711, -354.6349" />
 						<If Condition="not IsQuestAcceptQualified(67371)">
@@ -422,12 +444,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67371) == 1">
 						<GetTo ZoneId="400" XYZ="537.2871, -8.29427, -335.9211" />
 						<Grind while="HasQuest(67371) and GetQuestStep(67371) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="537.2871, -8.29427, -335.9211" name="Tulihands" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3615" />
-							</TargetMobs>
+							<GrindArea Name="Waiting to Inhale">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="537.2871, -8.29427, -335.9211" name="Tulihands" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3615" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67371) == 255">
@@ -438,6 +462,7 @@ Profile and fixes by Anges
 
 				<!-- Road Kill -->
 				<If Condition="IsQuestCompleted(67160) and not IsQuestCompleted(67359) and Core.Player.ClassLevel &gt; 53">
+					<LLToast message="Working on quest 'Road Kill' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67359)">
 						<GetTo ZoneId="400" XYZ="247.1199, -42.33362, 565.3314" />
 						<If Condition="not IsQuestAcceptQualified(67359)">
@@ -451,12 +476,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67359) == 1">
 						<GetTo ZoneId="400" XYZ="432.7348, -31.88561, 196.7521" />
 						<Grind while="HasQuest(67359) and GetQuestStep(67359) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="452.8487, -24.88893, 110.8987" name="Archaeosaurs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3620" />
-							</TargetMobs>
+							<GrindArea Name="Road Kill">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="452.8487, -24.88893, 110.8987" name="Archaeosaurs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3620" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67359) == 255">
@@ -467,6 +494,7 @@ Profile and fixes by Anges
 
 				<!-- Hide Your Moogles -->
 				<If Condition="IsQuestCompleted(67164) and not IsQuestCompleted(67364) and Core.Player.ClassLevel &gt; 53">
+					<LLToast message="Working on quest 'Hide Your Moogles' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67364)">
 						<GetTo ZoneId="400" XYZ="-511.6354, 50, 348.9565" />
 						<If Condition="not IsQuestAcceptQualified(67364)">
@@ -538,6 +566,7 @@ Profile and fixes by Anges
 
 				<!-- Clipped Wings -->
 				<If Condition="IsQuestCompleted(67134) and not IsQuestCompleted(67284) and Core.Player.ClassLevel &gt; 49">
+					<LLToast message="Working on quest 'Clipped Wings' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67284)">
 						<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
 							<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
@@ -551,23 +580,27 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67284) == 1">
 						<GetTo ZoneId="401" XYZ="-481.1719, -165.427, 608.4476" />
 						<Grind while="HasQuest(67284) and GetQuestStep(67284) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-481.1719, -165.427, 608.4476" name="Gaelicats" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3494" />
-							</TargetMobs>
+							<GrindArea Name="Clipped Wings">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-481.1719, -165.427, 608.4476" name="Gaelicats" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3494" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67284) == 2">
 						<GetTo ZoneId="401" XYZ="-481.1719, -165.427, 608.4476" />
 						<Grind while="HasQuest(67284) and GetQuestStep(67284) == 2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-481.1719, -165.427, 608.4476" name="Gaelicats" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="3494" />
-							</TargetMobs>
+							<GrindArea Name="Clipped Wings2">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-481.1719, -165.427, 608.4476" name="Gaelicats" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3494" />
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67284) == 255">
@@ -578,6 +611,7 @@ Profile and fixes by Anges
 
 				<!-- Honoring the Past -->
 				<If Condition="IsQuestCompleted(67173) and not IsQuestCompleted(67410) and Core.Player.ClassLevel &gt; 55">
+					<LLToast message="Working on quest 'Honoring the Past' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67410)">
 						<GetTo ZoneId="419" XYZ="12.93354, 15.96505, -15.44089" />
 						<If Condition="IsQuestAcceptQualified(67410)">
@@ -603,6 +637,7 @@ Profile and fixes by Anges
 
 				<!-- Sleepless in Ok' Zundu -->
 				<If Condition="IsQuestCompleted(67182) and not IsQuestCompleted(67445) and Core.Player.ClassLevel &gt; 56">
+					<LLToast message="Working on quest 'Sleepless in Ok' Zundu' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67445)">
 						<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
 							<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
@@ -662,6 +697,7 @@ Profile and fixes by Anges
 
 				<!-- Flying the Nest -->
 				<If Condition="IsQuestCompleted(67182) and not IsQuestCompleted(67446) and Core.Player.ClassLevel &gt; 56">
+					<LLToast message="Working on quest 'Flying the Nest' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67446)">
 						<If Condition="not IsOnMap(401)">
 							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
@@ -801,6 +837,7 @@ Profile and fixes by Anges
 
 				<!-- Louder than Words -->
 				<If Condition="IsQuestCompleted(67191) and not IsQuestCompleted(67472) and Core.Player.ClassLevel &gt; 57">
+					<LLToast message="Working on quest 'Louder than Words' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67472)">
 						<GetTo ZoneId="399" XYZ="-28.39703, 100.9697, -186.4195" />
 						<If Condition="not IsQuestAcceptQualified(67472)">
@@ -814,25 +851,29 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67472) == 1">
 						<GetTo ZoneId="399" XYZ="57.10491, 83.32266, -218.4489" />
 						<Grind while="HasQuest(67472) and GetQuestStep(67472) == 1">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="57.10491, 83.32266, -218.4489" name="Illuminati Mobs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4299" Weight="2000" /><!-- Illuminati Smallhand -->
-								<TargetMob Id="4298" Weight="1000" /><!-- Illuminati Bighand -->
-							</TargetMobs>
+							<GrindArea Name="Louder than Words">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="57.10491, 83.32266, -218.4489" name="Illuminati Mobs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4299" Weight="2000" /><!-- Illuminati Smallhand -->
+									<TargetMob Id="4298" Weight="1000" /><!-- Illuminati Bighand -->
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67472) == 2">
 						<GetTo ZoneId="399" XYZ="105.1743, 63.32292, -218.451" />
 						<Grind while="HasQuest(67472) and GetQuestStep(67472) == 2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="105.1743, 63.32292, -218.451" name="Illuminati Mobs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4299" Weight="2000" /><!-- Illuminati Smallhand -->
-								<TargetMob Id="4298" Weight="1000" /><!-- Illuminati Bighand -->
-							</TargetMobs>
+							<GrindArea Name="Louder than Words2">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="105.1743, 63.32292, -218.451" name="Illuminati Mobs" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4299" Weight="2000" /><!-- Illuminati Smallhand -->
+									<TargetMob Id="4298" Weight="1000" /><!-- Illuminati Bighand -->
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67472) == 255">
@@ -843,6 +884,7 @@ Profile and fixes by Anges
 
 				<!-- Ebb and Aetherflow -->
 				<If Condition="IsQuestCompleted(67193) and not IsQuestCompleted(67481) and Core.Player.ClassLevel &gt; 57">
+					<LLToast message="Working on quest 'Ebb and Aetherflow' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67481)">
 						<GetTo ZoneId="478" XYZ="72.40405, 205.6816, 31.63196" />
 						<If Condition="not IsQuestAcceptQualified(67481)">
@@ -872,6 +914,7 @@ Profile and fixes by Anges
 
 				<!-- Taking Stock -->
 				<If Condition="IsQuestCompleted(67194) and not IsQuestCompleted(67499) and Core.Player.ClassLevel &gt; 57">
+					<LLToast message="Working on quest 'Taking Stock' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67499)">
 						<GetTo ZoneId="478" XYZ="-26.84064, 206.5, 28.67163" />
 						<If Condition="not IsQuestAcceptQualified(67499)">
@@ -889,12 +932,14 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67499) == 2">
 						<GetTo ZoneId="399" XYZ="-403.2807, 155.3521, 82.84119" />
 						<Grind while="HasQuest(67499) and GetQuestStep(67499) == 2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="-403.2807, 155.3521, 82.84119" name="Guildless Marauders" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="4305" /><!-- Guildless Marauder -->
-							</TargetMobs>
+							<GrindArea Name="Taking Stock">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="-403.2807, 155.3521, 82.84119" name="Guildless Marauders" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="4305" /><!-- Guildless Marauder -->
+								</TargetMobs>
+							</GrindArea>
 						</Grind>
 					</If>
 					<If Condition="GetQuestStep(67499) == 3">
@@ -909,6 +954,7 @@ Profile and fixes by Anges
 
 				<!-- Sidequest: Saro Roggo's Common Life -->
 				<If Condition="IsQuestCompleted(67195) and not IsQuestCompleted(67502) and Core.Player.ClassLevel &gt; 57">
+					<LLToast message="Working on quest 'Saro Roggo's Common Life' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67502)">
 						<If Condition="not IsOnMap(399) and not IsOnMap(463)">
 							<GetTo ZoneId="399" XYZ="-529.9246, 150.2556, -467.4438" /><!-- The Dravanian Hinterlands (West) -->
