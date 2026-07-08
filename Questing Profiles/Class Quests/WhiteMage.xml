@@ -925,6 +925,7 @@
 			</If>
 			<If Condition="GetQuestStep(67258) == 2">
 				<GetTo ZoneId="397" XYZ="-275.2575, 125.5969, -11.21539" />
+				<Dismount/>
 				<LLUseSpell SpellId="135" NpcId="1013620" XYZ="-275.2575, 125.5969, -11.21539" QuestId="67258" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(67258) == 3">
