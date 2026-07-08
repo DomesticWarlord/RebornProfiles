@@ -17,9 +17,9 @@
                     <GetTo ZoneId="141" xyz="-70.81795, 9.252864, 281.2776" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 0, 0)">
                         <GrindArea name="Pugilist_1_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-70.81795, 9.252864, 281.2776" name="Pugilist_1_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-70.81795, 9.252864, 281.2776" name="Pugilist_1_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="632" />
                             </TargetMobs>
@@ -30,9 +30,9 @@
                     <GetTo ZoneId="140" xyz="356.4496, 74.74335, 159.5603" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_1_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="356.4496, 74.74335, 159.5603" name="Pugilist_1_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="356.4496, 74.74335, 159.5603" name="Pugilist_1_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="262" />
                             </TargetMobs>
@@ -43,9 +43,9 @@
                     <GetTo ZoneId="140" xyz="356.4496, 74.74335, 159.5603" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 2, 0)">
                         <GrindArea name="Pugilist_1_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="356.4496, 74.74335, 159.5603" name="Pugilist_1_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="356.4496, 74.74335, 159.5603" name="Pugilist_1_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="287" />
                             </TargetMobs>
@@ -56,9 +56,9 @@
                     <GetTo ZoneId="141" xyz="38.54113, 4.357831, 279.7944" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 3, 0)">
                         <GrindArea name="Pugilist_1_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="38.54113, 4.357831, 279.7944" name="Pugilist_1_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="38.54113, 4.357831, 279.7944" name="Pugilist_1_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="318" />
                             </TargetMobs>
@@ -69,9 +69,9 @@
                     <GetTo ZoneId="141" xyz="-37.02945, -7, 154.1964" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 4, 0)">
                         <GrindArea name="Pugilist_1_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-37.02945, -7, 154.1964" name="Pugilist_1_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-37.02945, -7, 154.1964" name="Pugilist_1_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="308" />
                             </TargetMobs>
@@ -82,9 +82,9 @@
                     <GetTo ZoneId="140" xyz="4.421546, 51.0052, 208.2111" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 5, 0)">
                         <GrindArea name="Pugilist_1_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="4.421546, 51.0052, 208.2111" name="Pugilist_1_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="4.421546, 51.0052, 208.2111" name="Pugilist_1_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="299" />
                             </TargetMobs>
@@ -95,9 +95,9 @@
                     <GetTo ZoneId="141" xyz="-201.8878, -30.66331, 101.3387" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 6, 0)">
                         <GrindArea name="Pugilist_1_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-201.8878, -30.66331, 101.3387" name="Pugilist_1_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-201.8878, -30.66331, 101.3387" name="Pugilist_1_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="317" />
                             </TargetMobs>
@@ -108,9 +108,9 @@
                     <GetTo ZoneId="140" xyz="-116.4889, 51.04927, 234.954" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 7, 0)">
                         <GrindArea name="Pugilist_1_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-116.4889, 51.04927, 234.954" name="Pugilist_1_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-116.4889, 51.04927, 234.954" name="Pugilist_1_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="283" />
                             </TargetMobs>
@@ -121,9 +121,9 @@
                     <GetTo ZoneId="140" xyz="-10.57907, 20.47346, 104.9839" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 8, 0)">
                         <GrindArea name="Pugilist_1_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-10.57907, 20.47346, 104.9839" name="Pugilist_1_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-10.57907, 20.47346, 104.9839" name="Pugilist_1_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="265" />
                             </TargetMobs>
@@ -134,9 +134,9 @@
                     <GetTo ZoneId="140" xyz="164.4741, 51.68739, -88.07418" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 9, 0)">
                         <GrindArea name="Pugilist_1_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="164.4741, 51.68739, -88.07418" name="Pugilist_1_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="164.4741, 51.68739, -88.07418" name="Pugilist_1_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="305" />
                             </TargetMobs>
@@ -147,9 +147,9 @@
                     <GetTo ZoneId="140" xyz="164.4741, 51.68739, -88.07418" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 9, 1)">
                         <GrindArea name="Pugilist_1_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="164.4741, 51.68739, -88.07418" name="Pugilist_1_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="164.4741, 51.68739, -88.07418" name="Pugilist_1_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="298" />
                             </TargetMobs>
@@ -160,9 +160,9 @@
                     <GetTo ZoneId="141" xyz="71.14718, -2, -122.1982" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Pugilist, 9, 2)">
                         <GrindArea name="Pugilist_1_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="71.14718, -2, -122.1982" name="Pugilist_1_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="71.14718, -2, -122.1982" name="Pugilist_1_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="289" />
                             </TargetMobs>
@@ -178,9 +178,9 @@
                     <GetTo ZoneId="140" xyz="297.8392, 62.27665, -209.239" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 0, 0)">
                         <GrindArea name="Pugilist_2_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="297.8392, 62.27665, -209.239" name="Pugilist_2_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="297.8392, 62.27665, -209.239" name="Pugilist_2_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="316" />
                             </TargetMobs>
@@ -191,9 +191,9 @@
                     <GetTo ZoneId="141" xyz="153.6733, 14.86536, -51.7644" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_2_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="153.6733, 14.86536, -51.7644" name="Pugilist_2_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="153.6733, 14.86536, -51.7644" name="Pugilist_2_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="288" />
                             </TargetMobs>
@@ -204,9 +204,9 @@
                     <GetTo ZoneId="141" xyz="-245.8036, -3.610852, -354.2835" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 2, 0)">
                         <GrindArea name="Pugilist_2_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-245.8036, -3.610852, -354.2835" name="Pugilist_2_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-245.8036, -3.610852, -354.2835" name="Pugilist_2_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="293" />
                             </TargetMobs>
@@ -217,9 +217,9 @@
                     <GetTo ZoneId="140" xyz="263.6787, 54.29805, 121.2497" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 3, 0)">
                         <GrindArea name="Pugilist_2_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="263.6787, 54.29805, 121.2497" name="Pugilist_2_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="263.6787, 54.29805, 121.2497" name="Pugilist_2_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="244" />
                             </TargetMobs>
@@ -230,9 +230,9 @@
                     <GetTo ZoneId="140" xyz="-220.7684, 15.25812, -291.4506" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 4, 0)">
                         <GrindArea name="Pugilist_2_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="13" />
                             </TargetMobs>
@@ -243,9 +243,9 @@
                     <GetTo ZoneId="140" xyz="-220.7684, 15.25812, -291.4506" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 4, 1)">
                         <GrindArea name="Pugilist_2_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="636" />
                             </TargetMobs>
@@ -256,9 +256,9 @@
                     <GetTo ZoneId="140" xyz="-220.7684, 15.25812, -291.4506" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 4, 2)">
                         <GrindArea name="Pugilist_2_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Pugilist_2_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="635" />
                             </TargetMobs>
@@ -269,9 +269,9 @@
                     <GetTo ZoneId="145" xyz="-405.9275, -37.34286, 277.9005" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 5, 0)">
                         <GrindArea name="Pugilist_2_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-405.9275, -37.34286, 277.9005" name="Pugilist_2_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-405.9275, -37.34286, 277.9005" name="Pugilist_2_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="306" />
                             </TargetMobs>
@@ -282,9 +282,9 @@
                     <GetTo ZoneId="145" xyz="-284.3846, -36.72001, 64.88946" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 6, 0)">
                         <GrindArea name="Pugilist_2_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-284.3846, -36.72001, 64.88946" name="Pugilist_2_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-284.3846, -36.72001, 64.88946" name="Pugilist_2_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="274" />
                             </TargetMobs>
@@ -295,9 +295,9 @@
                     <GetTo ZoneId="145" xyz="-427.9544, -29.05921, 19.60006" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 7, 0)">
                         <GrindArea name="Pugilist_2_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-427.9544, -29.05921, 19.60006" name="Pugilist_2_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-427.9544, -29.05921, 19.60006" name="Pugilist_2_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1199" />
                             </TargetMobs>
@@ -308,9 +308,9 @@
                     <GetTo ZoneId="145" xyz="-370.0136, -8.865561, -212.5749" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 8, 0)">
                         <GrindArea name="Pugilist_2_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-370.0136, -8.865561, -212.5749" name="Pugilist_2_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-370.0136, -8.865561, -212.5749" name="Pugilist_2_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1198" />
                             </TargetMobs>
@@ -321,9 +321,9 @@
                     <GetTo ZoneId="145" xyz="-341.3801, -11.72587, -234.1548" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 9, 0)">
                         <GrindArea name="Pugilist_2_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-341.3801, -11.72587, -234.1548" name="Pugilist_2_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-341.3801, -11.72587, -234.1548" name="Pugilist_2_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="319" />
                             </TargetMobs>
@@ -334,9 +334,9 @@
                     <GetTo ZoneId="145" xyz="-341.3801, -11.72587, -234.1548" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 9, 1)">
                         <GrindArea name="Pugilist_2_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-341.3801, -11.72587, -234.1548" name="Pugilist_2_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-341.3801, -11.72587, -234.1548" name="Pugilist_2_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="322" />
                             </TargetMobs>
@@ -347,9 +347,9 @@
                     <GetTo ZoneId="140" xyz="-404.8704, 24.48058, -483.6965" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Pugilist, 9, 2)">
                         <GrindArea name="Pugilist_2_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-404.8704, 24.48058, -483.6965" name="Pugilist_2_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-404.8704, 24.48058, -483.6965" name="Pugilist_2_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="309" />
                             </TargetMobs>
@@ -365,9 +365,9 @@
                     <GetTo ZoneId="152" xyz="72.50465, 7.970101, 415.4248" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 0, 0)">
                         <GrindArea name="Pugilist_3_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="72.50465, 7.970101, 415.4248" name="Pugilist_3_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="72.50465, 7.970101, 415.4248" name="Pugilist_3_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="214" />
                             </TargetMobs>
@@ -378,9 +378,9 @@
                     <GetTo ZoneId="153" xyz="-217.7982, 9.1602, -144.6874" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_3_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-217.7982, 9.1602, -144.6874" name="Pugilist_3_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-217.7982, 9.1602, -144.6874" name="Pugilist_3_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="234" />
                             </TargetMobs>
@@ -391,9 +391,9 @@
                     <GetTo ZoneId="139" xyz="-496.8976, -3.400001, -5.841871" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 2, 0)">
                         <GrindArea name="Pugilist_3_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-496.8976, -3.400001, -5.841871" name="Pugilist_3_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-496.8976, -3.400001, -5.841871" name="Pugilist_3_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="381" />
                             </TargetMobs>
@@ -404,9 +404,9 @@
                     <GetTo ZoneId="139" xyz="-592.8195, -1.44532, 1.632414" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 3, 0)">
                         <GrindArea name="Pugilist_3_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-592.8195, -1.44532, 1.632414" name="Pugilist_3_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-592.8195, -1.44532, 1.632414" name="Pugilist_3_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="28" />
                             </TargetMobs>
@@ -417,9 +417,9 @@
                     <GetTo ZoneId="153" xyz="-85.29664, -0.224, 60.80035" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 4, 0)">
                         <GrindArea name="Pugilist_3_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-85.29664, -0.224, 60.80035" name="Pugilist_3_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-85.29664, -0.224, 60.80035" name="Pugilist_3_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="228" />
                             </TargetMobs>
@@ -430,9 +430,9 @@
                     <GetTo ZoneId="154" xyz="-32.6973, -46.5684, 408.4815" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 4, 1)">
                         <GrindArea name="Pugilist_3_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-32.6973, -46.5684, 408.4815" name="Pugilist_3_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-32.6973, -46.5684, 408.4815" name="Pugilist_3_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="40" />
                             </TargetMobs>
@@ -443,9 +443,9 @@
                     <GetTo ZoneId="146" xyz="-113.6612, 16.28217, -254.1625" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 4, 2)">
                         <GrindArea name="Pugilist_3_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-113.6612, 16.28217, -254.1625" name="Pugilist_3_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-113.6612, 16.28217, -254.1625" name="Pugilist_3_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="323" />
                             </TargetMobs>
@@ -456,9 +456,9 @@
                     <GetTo ZoneId="154" xyz="-257.0301, -58.12682, 300.4926" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 5, 0)">
                         <GrindArea name="Pugilist_3_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-257.0301, -58.12682, 300.4926" name="Pugilist_3_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-257.0301, -58.12682, 300.4926" name="Pugilist_3_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="224" />
                             </TargetMobs>
@@ -469,9 +469,9 @@
                     <GetTo ZoneId="146" xyz="141.5266, 2.895067, -596.9803" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 6, 0)">
                         <GrindArea name="Pugilist_3_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="141.5266, 2.895067, -596.9803" name="Pugilist_3_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="141.5266, 2.895067, -596.9803" name="Pugilist_3_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="331" />
                             </TargetMobs>
@@ -482,9 +482,9 @@
                     <GetTo ZoneId="154" xyz="-175.8622, -56.67997, 334.0674" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 7, 0)">
                         <GrindArea name="Pugilist_3_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-175.8622, -56.67997, 334.0674" name="Pugilist_3_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-175.8622, -56.67997, 334.0674" name="Pugilist_3_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="30" />
                             </TargetMobs>
@@ -495,9 +495,9 @@
                     <GetTo ZoneId="153" xyz="425.5199, 0.8837109, -33.88228" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 8, 0)">
                         <GrindArea name="Pugilist_3_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="425.5199, 0.8837109, -33.88228" name="Pugilist_3_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="425.5199, 0.8837109, -33.88228" name="Pugilist_3_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="139" />
                             </TargetMobs>
@@ -508,9 +508,9 @@
                     <GetTo ZoneId="137" xyz="410.9877, 15.23924, 676.7095" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 9, 0)">
                         <GrindArea name="Pugilist_3_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="410.9877, 15.23924, 676.7095" name="Pugilist_3_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="410.9877, 15.23924, 676.7095" name="Pugilist_3_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="341" />
                             </TargetMobs>
@@ -521,9 +521,9 @@
                     <GetTo ZoneId="148" xyz="-406.9117, 60.8596, -117.0442" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 9, 1)">
                         <GrindArea name="Pugilist_3_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-406.9117, 60.8596, -117.0442" name="Pugilist_3_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-406.9117, 60.8596, -117.0442" name="Pugilist_3_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="130" />
                             </TargetMobs>
@@ -534,9 +534,9 @@
                     <GetTo ZoneId="153" xyz="-147.9386, 0.4716271, 471.9752" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Pugilist, 9, 2)">
                         <GrindArea name="Pugilist_3_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-147.9386, 0.4716271, 471.9752" name="Pugilist_3_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-147.9386, 0.4716271, 471.9752" name="Pugilist_3_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="235" />
                             </TargetMobs>
@@ -552,9 +552,9 @@
                     <GetTo ZoneId="139" xyz="591.8511, -1.461178, 206.3637" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 0, 0)">
                         <GrindArea name="Pugilist_4_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="591.8511, -1.461178, 206.3637" name="Pugilist_4_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="591.8511, -1.461178, 206.3637" name="Pugilist_4_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="414" />
                             </TargetMobs>
@@ -565,9 +565,9 @@
                     <GetTo ZoneId="146" xyz="-365.768, 7.618832, 540.2332" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_4_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-365.768, 7.618832, 540.2332" name="Pugilist_4_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-365.768, 7.618832, 540.2332" name="Pugilist_4_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="285" />
                             </TargetMobs>
@@ -578,9 +578,9 @@
                     <GetTo ZoneId="146" xyz="-55.55076, -2.02129, 783.1107" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 2, 0)">
                         <GrindArea name="Pugilist_4_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-55.55076, -2.02129, 783.1107" name="Pugilist_4_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-55.55076, -2.02129, 783.1107" name="Pugilist_4_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="132" />
                             </TargetMobs>
@@ -591,9 +591,9 @@
                     <GetTo ZoneId="148" xyz="-258.9205, 55.44057, 39.8202" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 3, 0)">
                         <GrindArea name="Pugilist_4_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-258.9205, 55.44057, 39.8202" name="Pugilist_4_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-258.9205, 55.44057, 39.8202" name="Pugilist_4_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="55" />
                             </TargetMobs>
@@ -604,9 +604,9 @@
                     <GetTo ZoneId="137" xyz="-7.642155, 39.55009, 378.3857" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 4, 0)">
                         <GrindArea name="Pugilist_4_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-7.642155, 39.55009, 378.3857" name="Pugilist_4_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-7.642155, 39.55009, 378.3857" name="Pugilist_4_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="353" />
                             </TargetMobs>
@@ -617,9 +617,9 @@
                     <GetTo ZoneId="137" xyz="-184.401, 38.55942, 325.2947" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 4, 1)">
                         <GrindArea name="Pugilist_4_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-184.401, 38.55942, 325.2947" name="Pugilist_4_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-184.401, 38.55942, 325.2947" name="Pugilist_4_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="352" />
                             </TargetMobs>
@@ -630,9 +630,9 @@
                     <GetTo ZoneId="180" xyz="-314.1754, 52.76623, -284.2115" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 4, 2)">
                         <GrindArea name="Pugilist_4_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-314.1754, 52.76623, -284.2115" name="Pugilist_4_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-314.1754, 52.76623, -284.2115" name="Pugilist_4_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="365" />
                             </TargetMobs>
@@ -643,9 +643,9 @@
                     <GetTo ZoneId="180" xyz="-135.1674, 80.6256, -303.728" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 5, 0)">
                         <GrindArea name="Pugilist_4_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-135.1674, 80.6256, -303.728" name="Pugilist_4_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-135.1674, 80.6256, -303.728" name="Pugilist_4_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="412" />
                             </TargetMobs>
@@ -656,9 +656,9 @@
                     <GetTo ZoneId="155" xyz="77.01029, 213.8567, 403.0025" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 6, 0)">
                         <GrindArea name="Pugilist_4_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="77.01029, 213.8567, 403.0025" name="Pugilist_4_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="77.01029, 213.8567, 403.0025" name="Pugilist_4_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1612" />
                             </TargetMobs>
@@ -669,9 +669,9 @@
                     <GetTo ZoneId="155" xyz="226.6057, 269.9143, 8.515696" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 7, 0)">
                         <GrindArea name="Pugilist_4_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="226.6057, 269.9143, 8.515696" name="Pugilist_4_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="226.6057, 269.9143, 8.515696" name="Pugilist_4_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="784" />
                             </TargetMobs>
@@ -682,9 +682,9 @@
                     <GetTo ZoneId="155" xyz="168.0872, 340.8541, -399.9034" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 8, 0)">
                         <GrindArea name="Pugilist_4_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="168.0872, 340.8541, -399.9034" name="Pugilist_4_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="168.0872, 340.8541, -399.9034" name="Pugilist_4_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="794" />
                             </TargetMobs>
@@ -695,9 +695,9 @@
                     <GetTo ZoneId="155" xyz="110.766, 287.7978, -223.3034" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 9, 0)">
                         <GrindArea name="Pugilist_4_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="110.766, 287.7978, -223.3034" name="Pugilist_4_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="110.766, 287.7978, -223.3034" name="Pugilist_4_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1611" />
                             </TargetMobs>
@@ -708,9 +708,9 @@
                     <GetTo ZoneId="152" xyz="228.5374, 4.319172, 168.6895" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 9, 1)">
                         <GrindArea name="Pugilist_4_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="228.5374, 4.319172, 168.6895" name="Pugilist_4_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="228.5374, 4.319172, 168.6895" name="Pugilist_4_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="33" />
                             </TargetMobs>
@@ -721,9 +721,9 @@
                     <GetTo ZoneId="152" xyz="228.5374, 4.319172, 168.6895" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Pugilist, 9, 2)">
                         <GrindArea name="Pugilist_4_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="228.5374, 4.319172, 168.6895" name="Pugilist_4_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="228.5374, 4.319172, 168.6895" name="Pugilist_4_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="222" />
                             </TargetMobs>
@@ -739,9 +739,9 @@
                     <GetTo ZoneId="145" xyz="387.6801, -8.683156, 199.9769" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 0, 0)">
                         <GrindArea name="Pugilist_5_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="387.6801, -8.683156, 199.9769" name="Pugilist_5_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="387.6801, -8.683156, 199.9769" name="Pugilist_5_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="275" />
                             </TargetMobs>
@@ -755,9 +755,9 @@
                     </If>
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 1, 0)">
                         <GrindArea name="Pugilist_5_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-284.1149, -41.42301, 691.4664" name="Pugilist_5_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-284.1149, -41.42301, 691.4664" name="Pugilist_5_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1854" />
                             </TargetMobs>
@@ -768,9 +768,9 @@
                     <GetTo ZoneId="152" xyz="557.9612, -12, -45.12115" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 2, 0)">
                         <GrindArea name="Pugilist_5_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="557.9612, -12, -45.12115" name="Pugilist_5_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="557.9612, -12, -45.12115" name="Pugilist_5_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="61" />
                             </TargetMobs>
@@ -781,9 +781,9 @@
                     <GetTo ZoneId="153" xyz="415.4924, 2.942458, 146.8065" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 3, 0)">
                         <GrindArea name="Pugilist_5_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="415.4924, 2.942458, 146.8065" name="Pugilist_5_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="415.4924, 2.942458, 146.8065" name="Pugilist_5_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="15" />
                             </TargetMobs>
@@ -794,9 +794,9 @@
                     <GetTo ZoneId="156" xyz="-227.2761, -3.742822, -287.8165" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 4, 0)">
                         <GrindArea name="Pugilist_5_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-227.2761, -3.742822, -287.8165" name="Pugilist_5_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-227.2761, -3.742822, -287.8165" name="Pugilist_5_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="651" />
                             </TargetMobs>
@@ -807,9 +807,9 @@
                     <GetTo ZoneId="155" xyz="-123.4198, 214.9523, 438.493" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 4, 1)">
                         <GrindArea name="Pugilist_5_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-123.4198, 214.9523, 438.493" name="Pugilist_5_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-123.4198, 214.9523, 438.493" name="Pugilist_5_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="788" />
                             </TargetMobs>
@@ -820,9 +820,9 @@
                     <GetTo ZoneId="156" xyz="278.3706, -4.352112, -537.9239" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 4, 2)">
                         <GrindArea name="Pugilist_5_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="278.3706, -4.352112, -537.9239" name="Pugilist_5_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="278.3706, -4.352112, -537.9239" name="Pugilist_5_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="647" />
                             </TargetMobs>
@@ -833,9 +833,9 @@
                     <GetTo ZoneId="155" xyz="-249.2081, 224.763, 520.3425" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 5, 0)">
                         <GrindArea name="Pugilist_5_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-249.2081, 224.763, 520.3425" name="Pugilist_5_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-249.2081, 224.763, 520.3425" name="Pugilist_5_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="653" />
                             </TargetMobs>
@@ -846,9 +846,9 @@
                     <GetTo ZoneId="156" xyz="-478.9515, -3.2168, -254.2694" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 6, 0)">
                         <GrindArea name="Pugilist_5_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-478.9515, -3.2168, -254.2694" name="Pugilist_5_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-478.9515, -3.2168, -254.2694" name="Pugilist_5_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1809" />
                             </TargetMobs>
@@ -859,9 +859,9 @@
                     <GetTo ZoneId="152" xyz="315.0393, -17.43429, -171.5787" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 7, 0)">
                         <GrindArea name="Pugilist_5_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="315.0393, -17.43429, -171.5787" name="Pugilist_5_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="315.0393, -17.43429, -171.5787" name="Pugilist_5_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="164" />
                             </TargetMobs>
@@ -872,9 +872,9 @@
                     <GetTo ZoneId="156" xyz="441.122, -6.09517, -759.0013" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 8, 0)">
                         <GrindArea name="Pugilist_5_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="441.122, -6.09517, -759.0013" name="Pugilist_5_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="441.122, -6.09517, -759.0013" name="Pugilist_5_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="793" />
                             </TargetMobs>
@@ -885,9 +885,9 @@
                     <GetTo ZoneId="146" xyz="410.7916, 12.56278, -105.1917" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 9, 0)">
                         <GrindArea name="Pugilist_5_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="410.7916, 12.56278, -105.1917" name="Pugilist_5_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="410.7916, 12.56278, -105.1917" name="Pugilist_5_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1841" />
                             </TargetMobs>
@@ -898,9 +898,9 @@
                     <GetTo ZoneId="147" xyz="30.81657, 10.5538, 271.4451" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 9, 1)">
                         <GrindArea name="Pugilist_5_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="30.81657, 10.5538, 271.4451" name="Pugilist_5_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="30.81657, 10.5538, 271.4451" name="Pugilist_5_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="304" />
                             </TargetMobs>
@@ -911,9 +911,9 @@
                     <GetTo ZoneId="138" xyz="-421.4905, -40.56665, -225.1713" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Pugilist, 9, 2)">
                         <GrindArea name="Pugilist_5_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-421.4905, -40.56665, -225.1713" name="Pugilist_5_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-421.4905, -40.56665, -225.1713" name="Pugilist_5_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="345" />
                             </TargetMobs>

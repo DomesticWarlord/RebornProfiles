@@ -18,9 +18,9 @@
                     <GetTo ZoneId="148" xyz="82.45746, 11.482, -239.4292" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 0, 0)">
                         <GrindArea name="Archer_1_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="82.45746, 11.482, -239.4292" name="Archer_1_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="82.45746, 11.482, -239.4292" name="Archer_1_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="49" />
                             </TargetMobs>
@@ -31,9 +31,9 @@
                     <GetTo ZoneId="148" xyz="82.45746, 11.482, -239.4292" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 1, 0)">
                         <GrindArea name="Archer_1_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="82.45746, 11.482, -239.4292" name="Archer_1_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="82.45746, 11.482, -239.4292" name="Archer_1_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="37" />
                             </TargetMobs>
@@ -44,9 +44,9 @@
                     <GetTo ZoneId="148" xyz="120.5706, 0.647573, -169.7976" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_1_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="120.5706, 0.647573, -169.7976" name="Archer_1_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="120.5706, 0.647573, -169.7976" name="Archer_1_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="47" />
                             </TargetMobs>
@@ -58,9 +58,9 @@
                     <GetTo ZoneId="154" xyz="226.9634, -27.85979, 342.9897" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 3, 0)">
                         <GrindArea name="Archer_1_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="226.9634, -27.85979, 342.9897" name="Archer_1_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="226.9634, -27.85979, 342.9897" name="Archer_1_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="9" />
                             </TargetMobs>
@@ -71,9 +71,9 @@
                     <GetTo ZoneId="154" xyz="279.7798, -14.28025, 103.8638" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 4, 0)">
                         <GrindArea name="Archer_1_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="279.7798, -14.28025, 103.8638" name="Archer_1_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="279.7798, -14.28025, 103.8638" name="Archer_1_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="118" />
                             </TargetMobs>
@@ -84,9 +84,9 @@
                     <GetTo ZoneId="148" xyz="203.7139, -8.653679, -32.52829" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 5, 0)">
                         <GrindArea name="Archer_1_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="203.7139, -8.653679, -32.52829" name="Archer_1_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="203.7139, -8.653679, -32.52829" name="Archer_1_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="56" />
                             </TargetMobs>
@@ -97,9 +97,9 @@
                     <GetTo ZoneId="148" xyz="258.4995, -12.03043, -71.76523" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 6, 0)">
                         <GrindArea name="Archer_1_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="258.4995, -12.03043, -71.76523" name="Archer_1_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="258.4995, -12.03043, -71.76523" name="Archer_1_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="196" />
                             </TargetMobs>
@@ -110,9 +110,9 @@
                     <GetTo ZoneId="148" xyz="465.0707, 19.11924, -75.06451" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 7, 0)">
                         <GrindArea name="Archer_1_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="465.0707, 19.11924, -75.06451" name="Archer_1_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="465.0707, 19.11924, -75.06451" name="Archer_1_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="120" />
                             </TargetMobs>
@@ -123,9 +123,9 @@
                     <GetTo ZoneId="148" xyz="306.2513, 15.86189, 161.2982" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 8, 0)">
                         <GrindArea name="Archer_1_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="306.2513, 15.86189, 161.2982" name="Archer_1_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="306.2513, 15.86189, 161.2982" name="Archer_1_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="21" />
                             </TargetMobs>
@@ -136,9 +136,9 @@
                     <GetTo ZoneId="148" xyz="53.26877, -14.05511, 161.6631" />
                     <Grind while="not HuntSubEntryCompleted(1, ClassJobType.Archer, 9, 0)">
                         <GrindArea name="Archer_1_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="53.26877, -14.05511, 161.6631" name="Archer_1_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="53.26877, -14.05511, 161.6631" name="Archer_1_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="22" />
                             </TargetMobs>
@@ -154,9 +154,9 @@
                     <GetTo ZoneId="152" xyz="-391.869, 9.165998, 308.7953" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 0, 0)">
                         <GrindArea name="Archer_2_0">
-                            <Hotspots>
-                                <Hotspot Radius="200" XYZ="-10.94299, -32.25789, 290.5542" name="Name" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot Radius="200" XYZ="-10.94299, -32.25789, 290.5542" name="Name" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob Id="54" Weight="1" /> <!-- Hornet Swarm -->
                             </TargetMobs>
@@ -167,9 +167,9 @@
                     <GetTo ZoneId="140" xyz="-220.7684, 15.25812, -291.4506" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 1, 0)">
                         <GrindArea name="Archer_2_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Archer_2_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-220.7684, 15.25812, -291.4506" name="Archer_2_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="13" />
                             </TargetMobs>
@@ -180,9 +180,9 @@
                     <GetTo ZoneId="152" xyz="-391.869, 9.165998, 308.7953" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_2_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-391.869, 9.165998, 308.7953" name="Archer_2_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-391.869, 9.165998, 308.7953" name="Archer_2_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="225" />
                             </TargetMobs>
@@ -193,9 +193,9 @@
                     <GetTo ZoneId="148" xyz="307.5142, -1.174989, -297.8878" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 1)">
                         <GrindArea name="Archer_2_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="307.5142, -1.174989, -297.8878" name="Archer_2_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="307.5142, -1.174989, -297.8878" name="Archer_2_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="128" />
                             </TargetMobs>
@@ -206,9 +206,9 @@
                     <GetTo Area="Central Shroud" Position="-38.08831, -33.77425, 311.8487" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 2)">
                         <GrindArea name="Archer_2_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-91.3383, -40.04069, 314.7826" name="Archer_2_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-91.3383, -40.04069, 314.7826" name="Archer_2_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="20" />
                             </TargetMobs>
@@ -219,9 +219,9 @@
                     <GetTo ZoneId="152" xyz="-379.6286, -0.1591827, 221.3451" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 3)">
                         <GrindArea name="Archer_2_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-379.6286, -0.1591827, 221.3451" name="Archer_2_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-379.6286, -0.1591827, 221.3451" name="Archer_2_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="107" />
                             </TargetMobs>
@@ -232,9 +232,9 @@
                     <GetTo ZoneId="152" xyz="-443.2791, 0.0152936, 105.9235" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 3, 0)">
                         <GrindArea name="Archer_2_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-443.2791, 0.0152936, 105.9235" name="Archer_2_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-443.2791, 0.0152936, 105.9235" name="Archer_2_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="14" />
                             </TargetMobs>
@@ -245,9 +245,9 @@
                     <GetTo ZoneId="152" xyz="-306.4555, 4.365113, 331.4698" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 4, 0)">
                         <GrindArea name="Archer_2_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-306.4555, 4.365113, 331.4698" name="Archer_2_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-306.4555, 4.365113, 331.4698" name="Archer_2_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="6" />
                             </TargetMobs>
@@ -258,9 +258,9 @@
                     <GetTo ZoneId="152" xyz="-144.1982, 4.481786, 370.3617" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 5, 0)">
                         <GrindArea name="Archer_2_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-144.1982, 4.481786, 370.3617" name="Archer_2_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-144.1982, 4.481786, 370.3617" name="Archer_2_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="220" />
                             </TargetMobs>
@@ -271,9 +271,9 @@
                     <GetTo ZoneId="152" xyz="-129.0268, -6.018359, 299.0834" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 6, 0)">
                         <GrindArea name="Archer_2_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-129.0268, -6.018359, 299.0834" name="Archer_2_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-129.0268, -6.018359, 299.0834" name="Archer_2_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="7" />
                             </TargetMobs>
@@ -284,9 +284,9 @@
                     <GetTo ZoneId="152" xyz="-95.50292, 11.03478, 430.7531" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 7, 0)">
                         <GrindArea name="Archer_2_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-95.50292, 11.03478, 430.7531" name="Archer_2_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-95.50292, 11.03478, 430.7531" name="Archer_2_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="239" />
                             </TargetMobs>
@@ -297,9 +297,9 @@
                     <GetTo ZoneId="153" xyz="-321.6884, 20.85904, -188.7529" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 8, 0)">
                         <GrindArea name="Archer_2_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-321.6884, 20.85904, -188.7529" name="Archer_2_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-321.6884, 20.85904, -188.7529" name="Archer_2_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="3" />
                             </TargetMobs>
@@ -310,9 +310,9 @@
                     <GetTo ZoneId="152" xyz="-129.2341, -2.916349, 180.8452" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 9, 0)">
                         <GrindArea name="Archer_2_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-129.2341, -2.916349, 180.8452" name="Archer_2_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-129.2341, -2.916349, 180.8452" name="Archer_2_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="16" />
                             </TargetMobs>
@@ -328,9 +328,9 @@
                     <GetTo ZoneId="139" xyz="-359.7675, -0.6754072, 158.7382" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 0, 0)">
                         <GrindArea name="Archer_3_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-359.7675, -0.6754072, 158.7382" name="Archer_3_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-359.7675, -0.6754072, 158.7382" name="Archer_3_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="638" />
                             </TargetMobs>
@@ -341,9 +341,9 @@
                     <GetTo ZoneId="152" xyz="-198.7925, 4.902349, 98.83768" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 1, 0)">
                         <GrindArea name="Archer_3_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-198.7925, 4.902349, 98.83768" name="Archer_3_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-198.7925, 4.902349, 98.83768" name="Archer_3_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="232" />
                             </TargetMobs>
@@ -354,9 +354,9 @@
                     <GetTo ZoneId="139" xyz="-496.8976, -3.400001, -5.841871" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_3_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-496.8976, -3.400001, -5.841871" name="Archer_3_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-496.8976, -3.400001, -5.841871" name="Archer_3_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="381" />
                             </TargetMobs>
@@ -367,9 +367,9 @@
                     <GetTo ZoneId="140" xyz="-358.7231, 15.01274, -661.0321" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 2, 1)">
                         <GrindArea name="Archer_3_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-358.7231, 15.01274, -661.0321" name="Archer_3_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-358.7231, 15.01274, -661.0321" name="Archer_3_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="227" />
                             </TargetMobs>
@@ -380,9 +380,9 @@
                     <GetTo ZoneId="153" xyz="-89.83807, 0.8806657, -125.7679" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 2, 2)">
                         <GrindArea name="Archer_3_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-89.83807, 0.8806657, -125.7679" name="Archer_3_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-89.83807, 0.8806657, -125.7679" name="Archer_3_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="215" />
                             </TargetMobs>
@@ -393,9 +393,9 @@
                     <GetTo ZoneId="152" xyz="-287.7212, 12.12707, -34.03314" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 2, 3)">
                         <GrindArea name="Archer_3_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-287.7212, 12.12707, -34.03314" name="Archer_3_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-287.7212, 12.12707, -34.03314" name="Archer_3_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="44" />
                             </TargetMobs>
@@ -406,9 +406,9 @@
                     <GetTo ZoneId="153" xyz="-298.1658, 16.14205, 76.57407" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 3, 0)">
                         <GrindArea name="Archer_3_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-298.1658, 16.14205, 76.57407" name="Archer_3_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-298.1658, 16.14205, 76.57407" name="Archer_3_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="83" />
                             </TargetMobs>
@@ -419,9 +419,9 @@
                     <GetTo ZoneId="154" xyz="109.7664, -27.49133, 248.9074" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 4, 0)">
                         <GrindArea name="Archer_3_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="109.7664, -27.49133, 248.9074" name="Archer_3_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="109.7664, -27.49133, 248.9074" name="Archer_3_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="11" />
                             </TargetMobs>
@@ -432,9 +432,9 @@
                     <GetTo ZoneId="145" xyz="75.76781, 2.053529, -69.24194" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 5, 0)">
                         <GrindArea name="Archer_3_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="75.76781, 2.053529, -69.24194" name="Archer_3_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="75.76781, 2.053529, -69.24194" name="Archer_3_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="301" />
                             </TargetMobs>
@@ -445,9 +445,9 @@
                     <GetTo ZoneId="146" xyz="-118.9183, 14.51372, -569.1295" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 6, 0)">
                         <GrindArea name="Archer_3_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-118.9183, 14.51372, -569.1295" name="Archer_3_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-118.9183, 14.51372, -569.1295" name="Archer_3_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="303" />
                             </TargetMobs>
@@ -458,9 +458,9 @@
                     <GetTo ZoneId="154" xyz="-257.0301, -58.12682, 300.4926" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 7, 0)">
                         <GrindArea name="Archer_3_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-257.0301, -58.12682, 300.4926" name="Archer_3_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-257.0301, -58.12682, 300.4926" name="Archer_3_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="224" />
                             </TargetMobs>
@@ -471,9 +471,9 @@
                     <GetTo ZoneId="148" xyz="-294.3489, 59.47368, -150.8057" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 8, 0)">
                         <GrindArea name="Archer_3_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-294.3489, 59.47368, -150.8057" name="Archer_3_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-294.3489, 59.47368, -150.8057" name="Archer_3_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="48" />
                             </TargetMobs>
@@ -484,9 +484,9 @@
                     <GetTo ZoneId="137" xyz="410.9877, 15.23924, 676.7095" />
                     <Grind while="not HuntSubEntryCompleted(3, ClassJobType.Archer, 9, 0)">
                         <GrindArea name="Archer_3_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="410.9877, 15.23924, 676.7095" name="Archer_3_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="410.9877, 15.23924, 676.7095" name="Archer_3_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="341" />
                             </TargetMobs>
@@ -502,9 +502,9 @@
                     <GetTo ZoneId="148" xyz="-505.5016, 65.23953, 69.43462" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 0, 0)">
                         <GrindArea name="Archer_4_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-505.5016, 65.23953, 69.43462" name="Archer_4_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-505.5016, 65.23953, 69.43462" name="Archer_4_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="207" />
                             </TargetMobs>
@@ -515,9 +515,9 @@
                     <GetTo ZoneId="146" xyz="-225.2421, 2.956992, 660.3145" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 1, 0)">
                         <GrindArea name="Archer_4_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-225.2421, 2.956992, 660.3145" name="Archer_4_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-225.2421, 2.956992, 660.3145" name="Archer_4_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="290" />
                             </TargetMobs>
@@ -528,9 +528,9 @@
                     <GetTo ZoneId="146" xyz="-365.768, 7.618832, 540.2332" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_4_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-365.768, 7.618832, 540.2332" name="Archer_4_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-365.768, 7.618832, 540.2332" name="Archer_4_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="285" />
                             </TargetMobs>
@@ -541,9 +541,9 @@
                     <GetTo ZoneId="137" xyz="-79.53699, 41.76706, 530.0026" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 2, 1)">
                         <GrindArea name="Archer_4_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-79.53699, 41.76706, 530.0026" name="Archer_4_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-79.53699, 41.76706, 530.0026" name="Archer_4_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="366" />
                             </TargetMobs>
@@ -554,9 +554,9 @@
                     <GetTo ZoneId="146" xyz="-55.55076, -2.02129, 783.1107" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 2, 2)">
                         <GrindArea name="Archer_4_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-55.55076, -2.02129, 783.1107" name="Archer_4_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-55.55076, -2.02129, 783.1107" name="Archer_4_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="132" />
                             </TargetMobs>
@@ -567,9 +567,9 @@
                     <GetTo ZoneId="148" xyz="-462.412, 62.01105, -235.266" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 2, 3)">
                         <GrindArea name="Archer_4_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-462.412, 62.01105, -235.266" name="Archer_4_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-462.412, 62.01105, -235.266" name="Archer_4_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="91" />
                             </TargetMobs>
@@ -580,9 +580,9 @@
                     <GetTo ZoneId="137" xyz="521.7017, 8.804245, 270.3921" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 3, 0)">
                         <GrindArea name="Archer_4_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="521.7017, 8.804245, 270.3921" name="Archer_4_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="521.7017, 8.804245, 270.3921" name="Archer_4_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="361" />
                             </TargetMobs>
@@ -593,9 +593,9 @@
                     <GetTo ZoneId="137" xyz="-184.401, 38.55942, 325.2947" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 4, 0)">
                         <GrindArea name="Archer_4_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-184.401, 38.55942, 325.2947" name="Archer_4_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-184.401, 38.55942, 325.2947" name="Archer_4_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="352" />
                             </TargetMobs>
@@ -606,9 +606,9 @@
                     <GetTo ZoneId="180" xyz="-316.5049, 33.00128, -446.3409" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 5, 0)">
                         <GrindArea name="Archer_4_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-316.5049, 33.00128, -446.3409" name="Archer_4_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-316.5049, 33.00128, -446.3409" name="Archer_4_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="407" />
                             </TargetMobs>
@@ -619,9 +619,9 @@
                     <GetTo ZoneId="180" xyz="-254.3316, 63.01915, -251.4929" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 5, 1)">
                         <GrindArea name="Archer_4_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-254.3316, 63.01915, -251.4929" name="Archer_4_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-254.3316, 63.01915, -251.4929" name="Archer_4_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="398" />
                             </TargetMobs>
@@ -632,9 +632,9 @@
                     <GetTo ZoneId="139" xyz="277.1513, -3.4, 81.08727" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 5, 2)">
                         <GrindArea name="Archer_4_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="277.1513, -3.4, 81.08727" name="Archer_4_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="277.1513, -3.4, 81.08727" name="Archer_4_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="391" />
                             </TargetMobs>
@@ -645,9 +645,9 @@
                     <GetTo ZoneId="146" xyz="-98.84982, -5.063812, 824.9921" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 5, 3)">
                         <GrindArea name="Archer_4_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-98.84982, -5.063812, 824.9921" name="Archer_4_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-98.84982, -5.063812, 824.9921" name="Archer_4_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="321" />
                             </TargetMobs>
@@ -658,9 +658,9 @@
                     <GetTo ZoneId="155" xyz="227.2754, 274.1229, -40.20396" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 6, 0)">
                         <GrindArea name="Archer_4_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="227.2754, 274.1229, -40.20396" name="Archer_4_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="227.2754, 274.1229, -40.20396" name="Archer_4_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="114" />
                             </TargetMobs>
@@ -671,9 +671,9 @@
                     <GetTo ZoneId="155" xyz="226.6057, 269.9143, 8.515696" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 7, 0)">
                         <GrindArea name="Archer_4_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="226.6057, 269.9143, 8.515696" name="Archer_4_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="226.6057, 269.9143, 8.515696" name="Archer_4_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="784" />
                             </TargetMobs>
@@ -684,9 +684,9 @@
                     <GetTo ZoneId="155" xyz="293.3883, 235.0341, -340.8607" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 8, 0)">
                         <GrindArea name="Archer_4_14">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="293.3883, 235.0341, -340.8607" name="Archer_4_14" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="293.3883, 235.0341, -340.8607" name="Archer_4_14" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="658" />
                             </TargetMobs>
@@ -697,9 +697,9 @@
                     <GetTo ZoneId="155" xyz="-853.2675, 223.9743, 13.21246" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Archer, 9, 0)">
                         <GrindArea name="Archer_4_15">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-853.2675, 223.9743, 13.21246" name="Archer_4_15" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-853.2675, 223.9743, 13.21246" name="Archer_4_15" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1850" />
                             </TargetMobs>
@@ -715,9 +715,9 @@
                     <GetTo ZoneId="155" xyz="-476.1835, 228.4839, -121.6641" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 0, 0)">
                         <GrindArea name="Archer_5_0">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-476.1835, 228.4839, -121.6641" name="Archer_5_0" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-476.1835, 228.4839, -121.6641" name="Archer_5_0" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="790" />
                             </TargetMobs>
@@ -728,9 +728,9 @@
                     <GetTo ZoneId="155" xyz="-558.8902, 204.9697, -340.4431" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 1, 0)">
                         <GrindArea name="Archer_5_1">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-558.8902, 204.9697, -340.4431" name="Archer_5_1" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-558.8902, 204.9697, -340.4431" name="Archer_5_1" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="637" />
                             </TargetMobs>
@@ -745,9 +745,9 @@
                     <GetTo ZoneId="138" xyz="-461.8138, -38.06499, 720.3731" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 0)">
                         <GrindArea name="Archer_5_2">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-461.8138, -38.06499, 720.3731" name="Archer_5_2" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-461.8138, -38.06499, 720.3731" name="Archer_5_2" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1853" />
                             </TargetMobs>
@@ -762,9 +762,9 @@
                     <GetTo ZoneId="138" xyz="-284.1149, -41.42301, 691.4664" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 1)">
                         <GrindArea name="Archer_5_3">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-284.1149, -41.42301, 691.4664" name="Archer_5_3" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-284.1149, -41.42301, 691.4664" name="Archer_5_3" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1854" />
                             </TargetMobs>
@@ -775,9 +775,9 @@
                     <GetTo ZoneId="152" xyz="211.0939, -2.650456, -25.04965" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 2)">
                         <GrindArea name="Archer_5_4">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="211.0939, -2.650456, -25.04965" name="Archer_5_4" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="211.0939, -2.650456, -25.04965" name="Archer_5_4" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="233" />
                             </TargetMobs>
@@ -788,9 +788,9 @@
                     <GetTo ZoneId="152" xyz="98.1741, 7.041402, -12.62055" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 2, 3)">
                         <GrindArea name="Archer_5_5">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="98.1741, 7.041402, -12.62055" name="Archer_5_5" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="98.1741, 7.041402, -12.62055" name="Archer_5_5" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="237" />
                             </TargetMobs>
@@ -801,9 +801,9 @@
                     <GetTo ZoneId="156" xyz="-373.4164, -15.66826, -493.1652" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 3, 0)">
                         <GrindArea name="Archer_5_6">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-373.4164, -15.66826, -493.1652" name="Archer_5_6" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-373.4164, -15.66826, -493.1652" name="Archer_5_6" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="645" />
                             </TargetMobs>
@@ -814,9 +814,9 @@
                     <GetTo ZoneId="153" xyz="367.8673, -5.148543, 67.47323" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 4, 0)">
                         <GrindArea name="Archer_5_7">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="367.8673, -5.148543, 67.47323" name="Archer_5_7" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="367.8673, -5.148543, 67.47323" name="Archer_5_7" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="112" />
                             </TargetMobs>
@@ -827,9 +827,9 @@
                     <GetTo ZoneId="155" xyz="-386.6831, 232.0503, 312.9869" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 5, 0)">
                         <GrindArea name="Archer_5_8">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-386.6831, 232.0503, 312.9869" name="Archer_5_8" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-386.6831, 232.0503, 312.9869" name="Archer_5_8" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="787" />
                             </TargetMobs>
@@ -840,9 +840,9 @@
                     <GetTo ZoneId="156" xyz="332.7726, 23.10302, -723.5326" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 5, 1)">
                         <GrindArea name="Archer_5_9">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="332.7726, 23.10302, -723.5326" name="Archer_5_9" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="332.7726, 23.10302, -723.5326" name="Archer_5_9" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="789" />
                             </TargetMobs>
@@ -853,9 +853,9 @@
                     <GetTo ZoneId="156" xyz="-543.7769, -2.933026, -325.6161" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 5, 2)">
                         <GrindArea name="Archer_5_10">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-543.7769, -2.933026, -325.6161" name="Archer_5_10" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-543.7769, -2.933026, -325.6161" name="Archer_5_10" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="1812" />
                             </TargetMobs>
@@ -866,9 +866,9 @@
                     <GetTo ZoneId="146" xyz="-10.0968, 8.385177, -102.9517" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 5, 3)">
                         <GrindArea name="Archer_5_11">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-10.0968, 8.385177, -102.9517" name="Archer_5_11" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-10.0968, 8.385177, -102.9517" name="Archer_5_11" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="337" />
                             </TargetMobs>
@@ -879,9 +879,9 @@
                     <GetTo ZoneId="152" xyz="373.8125, -19.27936, -205.9416" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 6, 0)">
                         <GrindArea name="Archer_5_12">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="373.8125, -19.27936, -205.9416" name="Archer_5_12" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="373.8125, -19.27936, -205.9416" name="Archer_5_12" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="567" />
                             </TargetMobs>
@@ -892,9 +892,9 @@
                     <GetTo ZoneId="152" xyz="120.2488, -26.82621, -361.4293" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 7, 0)">
                         <GrindArea name="Archer_5_13">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="120.2488, -26.82621, -361.4293" name="Archer_5_13" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="120.2488, -26.82621, -361.4293" name="Archer_5_13" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="162" />
                             </TargetMobs>
@@ -905,9 +905,9 @@
                     <GetTo ZoneId="147" xyz="150.9621, 34.95453, 10.96959" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 8, 0)">
                         <GrindArea name="Archer_5_14">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="150.9621, 34.95453, 10.96959" name="Archer_5_14" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="150.9621, 34.95453, 10.96959" name="Archer_5_14" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="242" />
                             </TargetMobs>
@@ -918,9 +918,9 @@
                     <GetTo ZoneId="138" xyz="-403.7165, -39.97526, -224.9921" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Archer, 9, 0)">
                         <GrindArea name="Archer_5_15">
-                            <Hotspots>
-                                <Hotspot radius="200" xyz="-403.7165, -39.97526, -224.9921" name="Archer_5_15" />
-                            </Hotspots>
+                            <HotSpots>
+                                <HotSpot radius="200" xyz="-403.7165, -39.97526, -224.9921" name="Archer_5_15" />
+                            </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="559" />
                             </TargetMobs>
