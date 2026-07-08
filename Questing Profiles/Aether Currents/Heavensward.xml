@@ -3,14 +3,6 @@
 Code used from Y2k and Sodimm
 Profile and fixes by Anges
 -->
-<!DOCTYPE Profile [
-	<!ENTITY PickUpQuest "67144">
-	<!ENTITY MournInPassing "67153">
-	<!ENTITY IntotheAery "67170">
-	<!ENTITY BoltChainandIsland "67183">
-	<!ENTITY ForbiddenKnowledge "67196">
-]>
-
 <Profile>
 	<Name>Heavensward Aether Currents All</Name>
 	<KillRadius>90</KillRadius>
