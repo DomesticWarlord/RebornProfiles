@@ -329,20 +329,19 @@ Profile and fixes by Anges
 							<PickUpQuest NpcId="1011916" QuestId="67333" XYZ="470.1163, -49.89133, 22.38989" />
 						</If>
 					</If>
-					<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 0">
-						<GetTo ZoneId="398" XYZ="713.429, -36.46737, 197.3796" />
-						<TalkTo NpcId="1011923" XYZ="713.429, -36.46737, 197.3796" QuestId="67333" />
-					</If>
-					<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 1">
-						<GetTo ZoneId="398" XYZ="847.2927, -37.66238, -38.70405" />
-						<TalkTo NpcId="1011924" XYZ="847.2927, -37.66238, -38.70405" QuestId="67333" />
-					</If>
-					<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 2">
-						<GetTo ZoneId="398" XYZ="625.3038, -26.78107, -407.2412" />
-						<MoveTo XYZ="656.5858, -19.03242, -404.9117" Distance="0.2" UseMesh="False" />
-						<MoveTo XYZ="684.6665, -24.41711, -268.053" Distance="0.2" UseMesh="False" />
-						<TalkTo NpcId="1011932" XYZ="684.6665, -24.41711, -268.053" QuestId="67333" />
-						<MoveTo XYZ="678.1696, -43.41352, -252.7307" Distance="0.2" UseMesh="False" />
+					<If Condition="GetQuestStep(67333) == 1">
+						<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 0">
+							<GetTo ZoneId="398" XYZ="713.429, -36.46737, 197.3796" />
+							<TalkTo NpcId="1011923" XYZ="713.429, -36.46737, 197.3796" QuestId="67333" />
+						</If>
+						<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 1">
+							<GetTo ZoneId="398" XYZ="847.2927, -37.66238, -38.70405" />
+							<TalkTo NpcId="1011924" XYZ="847.2927, -37.66238, -38.70405" QuestId="67333" />
+						</If>
+						<If Condition="HasQuest(67333) and not IsQuestCompleted(67333) and GetQuestStep(67333) == 1 and GetQuestById(67333).GetTodoArgs(1, 0).Item1 == 2">
+							<GetTo ZoneId="398" XYZ="684.6665, -24.41711, -268.053" />
+							<TalkTo NpcId="1011932" XYZ="684.6665, -24.41711, -268.053" QuestId="67333" />
+						</If>
 					</If>
 					<If Condition="GetQuestStep(67333) == 255">
 						<GetTo ZoneId="398" XYZ="470.1163, -49.89133, 22.38989" />
