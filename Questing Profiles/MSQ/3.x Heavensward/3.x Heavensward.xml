@@ -5,27 +5,22 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 -->
 <!DOCTYPE Profile [
 
-  <!ENTITY SkipCutscenes "False"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
-  <!ENTITY AutoEquip "False"> <!-- Uses GardlandDB to weigh new items to equip -->
-  <!ENTITY CloseHowTos "False"> <!-- Close How To Windows as they open to keep the UI clean -->
-  <!ENTITY EnablePlatypus "False">
+  <!ENTITY SkipCutscenes "True"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
+  <!ENTITY AutoEquip "True"> <!-- Uses GardlandDB to weigh new items to equip -->
+  <!ENTITY CloseHowTos "True"> <!-- Close How To Windows as they open to keep the UI clean -->
+  <!ENTITY EnablePlatypus "True">
   <!ENTITY KillHuntMobs "False"> <!-- Kill Hunting Log mobs if they come near by -->
-  <!ENTITY BuyGysahlGreens "False"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
+  <!ENTITY BuyGysahlGreens "True"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
   <!-- A lot of the early quests give useless items like Chicken Egg or Weak Silencing Potions
         the bot can toss these to help keep your inventory clean -->
-  <!ENTITY DiscardInventoryClutter "False">
-  <!-- Select which Grand Company you'd like to join -->
-  <!-- 0 = Twin Adder -->
-  <!-- 1 = Maelstrom -->
-  <!-- 2 = Immortal Flames -->
-  <!ENTITY GrandCompanyChoice "1">
+  <!ENTITY DiscardInventoryClutter "True">
 
   <!-- Panda Farmer specific settings -->
 
-  <!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
+  <!ENTITY DoClassQuests "True"> <!-- Use PandaFarmer to do Class quests? -->
   <!ENTITY UseCarry "False">
   <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
-  <!ENTITY CurrentHook "False">
+  <!ENTITY CurrentHook "True">
 ]>
 
 <Profile>
@@ -271,14 +266,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <GetTo ZoneId="397" XYZ="501.7318, 164.194, 301.1367" />
         <Grind While="HasQuest(67121) and GetQuestStep(67121) == 2">
           <GrindArea Name="Deepeye">
-            <Hotspots>
+            <HotSpots>
               <Hotspot XYZ="403.5994, 167.5542, 293.2362" Radius="90" />
-            </Hotspots>
+            </HotSpots>
             <TargetMobs>
               <TargetMob Id="3471" />
             </TargetMobs>
-            <MinLevel />
-            <MaxLevel />
           </GrindArea>
         </Grind>
       </If>
@@ -1100,6 +1093,60 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       </If>
     </If>
 
+    <!-- Camp of the Convictors (Level 51) -->
+    <If Condition="IsQuestCompleted(67142) and not IsQuestCompleted(67143) and Core.Player.ClassLevel &gt; 50">
+      <If Condition="not HasQuest(67143)">
+        <GetTo ZoneId="397" XYZ="-280.0794, 127.0303, 11.97827" />
+        <If Condition="IsQuestAcceptQualified(67143)">
+          <PickupQuest NpcId="1012765" QuestId="67143" XYZ="-280.0794, 127.0303, 11.97827" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67143) == 1">
+        <If Condition="GetQuestById(67143).GetTodoArgs(1, 0).Item1 == 0">
+          <GetTo ZoneId="397" XYZ="-298.2681, 126.6705, -1.419189" />
+          <TalkTo NpcId="1011910" XYZ="-298.2681, 126.6705, -1.419189" QuestId="67143" />
+        </If>
+        <If Condition="GetQuestById(67143).GetTodoArgs(1, 0).Item1 == 1">
+          <GetTo ZoneId="397" XYZ="-271.046, 126.894, 8.773865" />
+          <TalkTo NpcId="1013435" XYZ="-271.046, 126.894, 8.773865" QuestId="67143" />
+        </If>
+        <If Condition="GetQuestById(67143).GetTodoArgs(1, 0).Item1 == 2">
+          <GetTo ZoneId="397" XYZ="-260.3953, 126.2186, -2.822998" />
+          <TalkTo NpcId="1013436" XYZ="-260.3953, 126.2186, -2.822998" QuestId="67143" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67143) == 255">
+        <GetTo ZoneId="397" XYZ="-311.1467, 126.5033, -6.729248" />
+        <TurnIn QuestId="67143" NpcId="1012283" XYZ="-311.1467, 126.5033, -6.729248" />
+      </If>
+    </If>
+
+    <!-- Purple Flame, Purple Flame (Level 51) -->
+    <If Condition="IsQuestCompleted(67143) and not IsQuestCompleted(67144) and Core.Player.ClassLevel &gt; 50">
+      <If Condition="not HasQuest(67144)">
+        <GetTo ZoneId="397" XYZ="-307.5457, 126.6344, -3.280701" />
+        <If Condition="IsQuestAcceptQualified(67144)">
+          <PickupQuest NpcId="1012764" QuestId="67144" XYZ="-307.5457, 126.6344, -3.280701" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67144) == 1">
+        <GetTo ZoneId="397" XYZ="-334.8885, 93.59946, -194.6472" />
+        <Grind  While="GetQuestStep(67144) == 1">
+          <GrindArea Name="Wooly_Yak">
+            <HotSpots>
+              <HotSpot XYZ="-334.3916, 80.6248, -299.0159" Radius="90" />
+            </HotSpots>
+            <TargetMobs>
+              <TargetMob Id="3479" />
+            </TargetMobs>
+          </GrindArea>
+        </Grind>
+      </If>
+      <If Condition="GetQuestStep(67144) == 255">
+        <GetTo ZoneId="397" XYZ="-631.9219, 142.1073, -322.7131" />
+        <TurnIn QuestId="67144" NpcId="1012670" ItemId="2001584" XYZ="-631.9219, 142.1073, -322.7131" />
+      </If>
+    </If>
 
   </Order>
   <GrindAreas>
