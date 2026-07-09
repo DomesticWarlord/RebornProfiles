@@ -3905,9 +3905,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <If Condition="GetQuestStep(66236) == 1">
             <While condition="not HasItem(6018)">
               <If condition="CurrentGCSeals() &lt; 200">
-                <If Condition="not HuntGCEntryCompleted(1,0)">
+                <While Condition="not HuntGCEntryCompleted(1,0)">
                   <GetTo ZoneId="145" XYZ="-163.6711, -31.44233, 314.1603" /> <!-- Grinding Area -->
-                  <Grind while="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
+                  <Grind while="not HuntGCEntryCompleted(1,0)">
                     <GrindArea name="The_Order_of_the_Twin_Adder_Entry_01">
                       <HotSpots>
                         <Hotspot Radius="250" XYZ="-86.03491, -28.22512, 286.1961" name="Amalj'aa Javeliniers" />
@@ -3918,7 +3918,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                     </GrindArea>
                   </Grind>
                   <WaitWhile condition="Core.Me.InCombat" />
-                </If>
+                </While>
               </If>
               <If condition="CurrentGCSeals() &gt; 199">
                 <BuyGCItem ItemId="6018" Count="1" />
@@ -3954,9 +3954,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
           <If Condition="GetQuestStep(66237) == 1">
             <While Condition="not HasItem(6017)">
-              <If condition="CurrentGCSeals() &lt; 200">
+              <While condition="CurrentGCSeals() &lt; 200">
                 <GetTo ZoneId="145" XYZ="-146.6476, -30.8517, 317.8676" />
-                <Grind While="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
+                <Grind While="not HuntGCEntryCompleted(1,0)">
                   <GrindArea Name="Amaljaa_Hunter">
                     <HotSpots>
                       <Hotspot Radius="200" XYZ="-79.84995, -27.19742, 282.9791" name="Name" />
@@ -3966,7 +3966,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                     </TargetMobs>
                   </GrindArea>
                 </Grind>
-              </If>
+                <WaitWhile condition="Core.Me.InCombat" />
+              </While>
               <GetTo ZoneId="128" XYZ="95.98284, 40.2488, 80.93768" />
               <BuyGCItem ItemId="6017" Count="1" />
             </While>
@@ -4002,12 +4003,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <If Condition="GetQuestStep(66238) == 1">
             <While condition="not HasItem(6019)">
               <If condition="CurrentGCSeals() &lt; 200">
-                <If Condition="not HuntGCEntryCompleted(1,0)">
+                <While Condition="not HuntGCEntryCompleted(1,0)">
                   <GetTo ZoneId="145" XYZ="-71.73267,-27.06166,289.0211" /> <!-- Grinding Area -->
                   <If condition="IsFateActive(398)">
                     <LLFate FateIds="398" MinLevel="1" MaxLevel="91" while="not HuntGCEntryCompleted(1,0)" />
                   </If>
-                  <Grind while="not HuntGCEntryCompleted(1,0) and not Core.Me.InCombat">
+                  <Grind while="not HuntGCEntryCompleted(1,0)">
                     <GrindArea name="The_Immortal_Flames_Entry_01">
                       <HotSpots>
                         <Hotspot Radius="250" XYZ="-85.73637, -28.16244, 285.836" name="Amalj'aa Hunters" />
@@ -4018,7 +4019,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                     </GrindArea>
                   </Grind>
                   <WaitWhile condition="Core.Me.InCombat" />
-                </If>
+                </While>
               </If>
               <If condition="CurrentGCSeals() &gt; 199">
                 <BuyGCItem ItemId="6019" Count="1" />
