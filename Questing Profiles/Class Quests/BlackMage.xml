@@ -1324,12 +1324,6 @@
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
 		<CodeChunk Name="Fire_III_Golem">
 <![CDATA[
 	uint[] questNpcIds = { 2007872, 2007873, 2007874 };

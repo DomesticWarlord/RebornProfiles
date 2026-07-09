@@ -1868,12 +1868,6 @@
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
 		<CodeChunk Name="DutyCommence">
 <![CDATA[
 	Logging.Write("Commencing duty.");

@@ -1350,12 +1350,6 @@
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
 		<CodeChunk Name="True_Strike">
 			<![CDATA[
 				await Coroutine.Sleep(1000);

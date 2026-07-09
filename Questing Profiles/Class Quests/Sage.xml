@@ -274,12 +274,6 @@
 	        return false;
 			]]>
 		</CodeChunk>
-    <CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
     <CodeChunk Name="SwitchCombatJob">
     <![CDATA[
     var Combat = Enumerable.Range(8, 11).Append(0).Append(36);

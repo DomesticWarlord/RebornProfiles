@@ -1371,12 +1371,6 @@
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
 		<CodeChunk Name="This_Little_Sword_of_Mine">
 			<![CDATA[
 				SpellData data;

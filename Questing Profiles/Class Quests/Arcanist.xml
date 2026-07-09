@@ -796,16 +796,5 @@
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="GearsetSave">
-  <![CDATA[
-	await CommonTasks.StopAndDismount();
-	ChatManager.SendChat("/gs save");
-  ]]>
-</CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
-
-
 	</CodeChunks>
 </Profile>
