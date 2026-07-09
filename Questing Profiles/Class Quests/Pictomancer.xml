@@ -178,6 +178,28 @@
   <GrindAreas>
   </GrindAreas>
   <CodeChunks>
+    <CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+    <CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+          await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
+
+	        return false;
+			]]>
+		</CodeChunk>
     <CodeChunk Type="Hook" Name="PCTSelectString">
   <![CDATA[
     if (SelectString.IsOpen && QuestLogManager.HasQuest(70395) && QuestLogManager.GetQuestById(70395).Step == 2)
@@ -188,10 +210,5 @@
     return false;
   ]]>
   </CodeChunk>
-
-
-    <!-- Arcanist 1-15 Codechunks -->
-
-
   </CodeChunks>
 </Profile>

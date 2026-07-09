@@ -382,7 +382,7 @@ Profile and fixes by Anges
 			<If Condition="IsQuestCompleted(67170)">
 
 				<!-- The Bathing Bully -->
-				<If Condition="QuestCompleted(67156) and not IsQuestCompleted(67355) and Core.Player.ClassLevel &gt; 53">
+				<If Condition="IsQuestCompleted(67156) and not IsQuestCompleted(67355) and Core.Player.ClassLevel &gt; 53">
 					<LLToast message="Working on quest 'The Bathing Bully' to unlock AetherCurrent" />
 					<If Condition="not HasQuest(67355)">
 						<GetTo ZoneId="400" XYZ="363.241, -73.25598, 678.4314" />
@@ -410,38 +410,6 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67355) == 255">
 						<GetTo ZoneId="400" XYZ="363.241, -73.25598, 678.4314" />
 						<TurnIn QuestId="67355" NpcId="1012284" XYZ="363.241, -73.25598, 678.4314" />
-					</If>
-				</If>
-
-				<!-- Waiting to Inhale -->
-				<If Condition="IsQuestCompleted(67163) and not IsQuestCompleted(67371) and Core.Player.ClassLevel &gt; 53">
-					<LLToast message="Working on quest 'Waiting to Inhale' to unlock AetherCurrent" />
-					<If Condition="not HasQuest(67371)">
-						<GetTo ZoneId="400" XYZ="517.9064, -1.191711, -354.6349" />
-						<If Condition="not IsQuestAcceptQualified(67371)">
-							<LogMessage Message="You are not eligible for the Waiting to Inhale quest." />
-							<LogMessage Message="Skipping for now..." />
-						</If>
-						<If Condition="IsQuestAcceptQualified(67371)">
-							<PickUpQuest NpcId="1013434" QuestId="67371" XYZ="517.9064, -1.191711, -354.6349" />
-						</If>
-					</If>
-					<If Condition="GetQuestStep(67371) == 1">
-						<GetTo ZoneId="400" XYZ="537.2871, -8.29427, -335.9211" />
-						<Grind while="HasQuest(67371) and GetQuestStep(67371) == 1">
-							<GrindArea Name="Waiting to Inhale">
-								<HotSpots>
-									<HotSpot Radius="90" XYZ="537.2871, -8.29427, -335.9211" name="Tulihands" />
-								</HotSpots>
-								<TargetMobs>
-									<TargetMob Id="3615" />
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
-					</If>
-					<If Condition="GetQuestStep(67371) == 255">
-						<GetTo ZoneId="400" XYZ="517.9064, -1.191711, -354.6349" />
-						<TurnIn QuestId="67371" NpcId="1013434" XYZ="517.9064, -1.191711, -354.6349" />
 					</If>
 				</If>
 
@@ -474,6 +442,38 @@ Profile and fixes by Anges
 					<If Condition="GetQuestStep(67359) == 255">
 						<GetTo ZoneId="400" XYZ="-47.04364, -8.866012, 165.9418" />
 						<TurnIn QuestId="67359" NpcId="1012288" XYZ="-47.04364, -8.866012, 165.9418" />
+					</If>
+				</If>
+
+				<!-- Waiting to Inhale -->
+				<If Condition="IsQuestCompleted(67163) and not IsQuestCompleted(67371) and Core.Player.ClassLevel &gt; 53">
+					<LLToast message="Working on quest 'Waiting to Inhale' to unlock AetherCurrent" />
+					<If Condition="not HasQuest(67371)">
+						<GetTo ZoneId="400" XYZ="517.9064, -1.191711, -354.6349" />
+						<If Condition="not IsQuestAcceptQualified(67371)">
+							<LogMessage Message="You are not eligible for the Waiting to Inhale quest." />
+							<LogMessage Message="Skipping for now..." />
+						</If>
+						<If Condition="IsQuestAcceptQualified(67371)">
+							<PickUpQuest NpcId="1013434" QuestId="67371" XYZ="517.9064, -1.191711, -354.6349" />
+						</If>
+					</If>
+					<If Condition="GetQuestStep(67371) == 1">
+						<GetTo ZoneId="400" XYZ="537.2871, -8.29427, -335.9211" />
+						<Grind while="HasQuest(67371) and GetQuestStep(67371) == 1">
+							<GrindArea Name="Waiting to Inhale">
+								<HotSpots>
+									<HotSpot Radius="90" XYZ="537.2871, -8.29427, -335.9211" name="Tulihands" />
+								</HotSpots>
+								<TargetMobs>
+									<TargetMob Id="3615" />
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="GetQuestStep(67371) == 255">
+						<GetTo ZoneId="400" XYZ="517.9064, -1.191711, -354.6349" />
+						<TurnIn QuestId="67371" NpcId="1013434" XYZ="517.9064, -1.191711, -354.6349" />
 					</If>
 				</If>
 

@@ -272,6 +272,28 @@
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
+		<CodeChunk Type="Hook" Name="CloseHowTo">
+			<![CDATA[
+
+        bool hasTutorialWindow = TutorialWindows
+            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
+
+        if (hasTutorialWindow)
+        {
+            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+			  return false;
+			]]>
+	  </CodeChunk>
+		<CodeChunk Type="Hook" Name="KillMobs">
+			<![CDATA[
+
+          await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
+
+	        return false;
+			]]>
+		</CodeChunk>
 		<CodeChunk Name="GearsetSave">
   <![CDATA[
 	await CommonTasks.StopAndDismount();
