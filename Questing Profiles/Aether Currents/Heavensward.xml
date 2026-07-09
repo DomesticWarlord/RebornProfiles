@@ -170,10 +170,10 @@ Profile and fixes by Anges
 		<If condition="not AetherCurrentManager.IsZoneComplete(398)">
 
 			<If Condition="not IsQuestCompleted(67153)">
-				<UserDialog DialogText="Please finish the level 53 MSQ quest 'A Gnathic Deity' to unlock The Dravanian Forelands Aether Currents." IsBotContinueAllowed="True" />
+				<UserDialog DialogText="Please finish the level 53 MSQ quest 'Mourn in Passing' to unlock The Dravanian Forelands Aether Currents." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(67150)">
+			<If Condition="IsQuestCompleted(67153)">
 
 				<!-- Some Bad News -->
 				<If Condition="IsQuestCompleted(67145) and not IsQuestCompleted(67307) and Core.Player.ClassLevel &gt; 51">
