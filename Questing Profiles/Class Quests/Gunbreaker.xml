@@ -335,6 +335,24 @@
 	<GrindAreas>
 	</GrindAreas>
 	<CodeChunks>
+		<CodeChunk Type="Definition" Name="Logger">
+      <![CDATA[
+
+        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
+
+        private static readonly string[] TutorialWindows =
+        {
+            "HowToNotice",
+            "HowTo",
+            "PlayGuide",
+            "JobHudNotice",
+            "ContentsTutorial",
+            "RecommendList",
+            "AchievementInfo",
+        };
+
+      ]]>
+    </CodeChunk>
 		<CodeChunk Type="Hook" Name="CloseHowTo">
 			<![CDATA[
 
