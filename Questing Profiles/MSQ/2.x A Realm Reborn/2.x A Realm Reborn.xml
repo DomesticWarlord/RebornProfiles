@@ -5188,7 +5188,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
         <If Condition="GetQuestStep(69399) == 255">
           <GetTo ZoneId="154" XYZ="13.93146, -44.8656, 257.9537" />
-          <EmoteNPC Emote="soothe" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" UseTimes="1" QuestId="69399" StepId="255" BlacklistAfter="True" />
+          <EmoteNPC Emote="soothe" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" BlacklistDuration="8" BlackListAfter="True" Condition="not ff14bot.RemoteWindows.JournalResult.IsOpen" />
           <TurnIn QuestId="69399" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" />
         </If>
       </If>
@@ -11470,15 +11470,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         if (hasTutorialWindow)
         {
             await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
-        }
-
-        // Adding this as a work around as 'Terror at Fallgourd' requires an emote to turn in.
-        if (QuestLogManager.HasQuest(69399) && QuestLogManager.GetQuestById(69399).Step == 255)
-        {
-            if (JournalResult.IsOpen)
-            {
-                JournalResult.Complete();
-            }
         }
 
 			  return false;
