@@ -623,35 +623,18 @@ Profile and fixes by Anges
 				<!-- Sleepless in Ok' Zundu -->
 				<If Condition="IsQuestCompleted(67182) and not IsQuestCompleted(67445) and Core.Player.ClassLevel &gt; 56">
 					<LLToast message="Working on quest 'Sleepless in Ok' Zundu' to unlock AetherCurrent" />
+					<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
+						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
+						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
+					</If>
 					<If Condition="not HasQuest(67445)">
-						<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
-							<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
-							<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
-						</If>
 						<GetTo ZoneId="401" XYZ="-647.0283, -51.05719, -417.7463" />
 						<If Condition="IsQuestAcceptQualified(67445)">
 							<PickUpQuest NpcId="1012069" QuestId="67445" XYZ="-647.0283, -51.05719, -417.7463" />
 						</If>
 					</If>
 					<If Condition="GetQuestStep(67445) == 1">
-						<If Condition="not IsOnMap(401)">
-							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
-								<TeleportTo Name="Ok' Zundu" AetheryteId="73" />
-							</If>
-							<If Condition="not Managers.WorldManager.HasAetheryteId(73)">
-								<If Condition="not IsOnMap(419)">
-									<GetTo ZoneId="419" XYZ="-48.65455, -8.234923, -59.07746" /><!-- The Pillars -->
-								</If>
-								<If Condition="IsOnMap(419)">
-									<UseTransport InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
-								</If>
-							</If>
-						</If>
-						<GetTo ZoneId="401" XYZ="-388.0158, -55.30107, -612.6802" />
-						<MoveTo ZoneId="401" XYZ="-364.2079, -42.77096, -633.5755" UseMesh="False" />
-						<MoveTo ZoneId="401" XYZ="-338.5004, -28.77532, -607.3351" UseMesh="False" />
-						<MoveTo ZoneId="401" XYZ="-290.4832, -14.16158, -629.2758" UseMesh="False" />
-						<NoCombatMoveTo Name="Gurglegrass" XYZ="204.8523, 12.74121, -596.2158" />
+						<GetTo ZoneId="401" XYZ="204.8523, 12.74121, -596.2158" />
 						<UseObject NpcIds="2005824,2005825,2005826" QuestId="67445" StepId="1">
 							<HotSpots>
 								<HotSpot XYZ="204.8523, 12.74121, -596.2158" Radius="10" />
@@ -661,21 +644,7 @@ Profile and fixes by Anges
 						</UseObject>
 					</If>
 					<If Condition="GetQuestStep(67445) == 255">
-						<If Condition="not IsOnMap(401)">
-							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
-								<TeleportTo Name="Ok' Zundu" AetheryteId="73" />
-							</If>
-							<If Condition="not Managers.WorldManager.HasAetheryteId(73)">
-								<If Condition="not IsOnMap(419)">
-									<GetTo ZoneId="419" XYZ="-48.65455, -8.234923, -59.07746" /><!-- The Pillars -->
-								</If>
-								<If Condition="IsOnMap(419)">
-									<UseTransport Name="Blue Window" InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
-								</If>
-							</If>
-						</If>
-						<TeleportTo Name="Ok' Zundu" AetheryteId="73" Force="True" />
-						<NoCombatMoveTo Name="Ganu Vali" XYZ="-647.0283, -51.05719, -417.7463" />
+						<GetTo ZoneId="401" XYZ="-647.0283, -51.05719, -417.7463" />
 						<TurnIn QuestId="67445" NpcId="1012069" ItemId="2001670" XYZ="-647.0283, -51.05719, -417.7463" />
 					</If>
 				</If>
@@ -683,66 +652,36 @@ Profile and fixes by Anges
 				<!-- Flying the Nest -->
 				<If Condition="IsQuestCompleted(67182) and not IsQuestCompleted(67446) and Core.Player.ClassLevel &gt; 56">
 					<LLToast message="Working on quest 'Flying the Nest' to unlock AetherCurrent" />
+					<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
+						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
+						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
+					</If>
 					<If Condition="not HasQuest(67446)">
-						<If Condition="not IsOnMap(401)">
-							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
-								<TeleportTo Name="Ok' Zundu" AetheryteId="73" />
-							</If>
-							<If Condition="not Managers.WorldManager.HasAetheryteId(73)">
-								<If Condition="not IsOnMap(419)">
-									<GetTo ZoneId="419" XYZ="-48.65455, -8.234923, -59.07746" /><!-- The Pillars -->
-								</If>
-								<If Condition="IsOnMap(419)">
-									<UseTransport Name="Blue Window" InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
-								</If>
-							</If>
-						</If>
-						<NoCombatMoveTo Name="Guna Vanu" XYZ="-597.0398, -51.05185, -387.0451" />
+						<GetTo ZoneId="401" XYZ="-597.0398, -51.05185, -387.0451" />
 						<If Condition="IsQuestAcceptQualified(67446)">
 							<PickUpQuest NpcId="1012068" QuestId="67446" XYZ="-597.0398, -51.05185, -387.0451" />
 						</If>
 					</If>
 					<If Condition="GetQuestStep(67446) == 1">
-						<If Condition="not IsOnMap(401)">
-							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
-								<TeleportTo Name="Ok' Zundu" AetheryteId="73" />
-							</If>
-							<If Condition="not Managers.WorldManager.HasAetheryteId(73)">
-								<If Condition="not IsOnMap(419)">
-									<GetTo ZoneId="419" XYZ="-48.65455, -8.234923, -59.07746" /><!-- The Pillars -->
-								</If>
-								<If Condition="IsOnMap(419)">
-									<UseTransport Name="Blue Window" InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
-								</If>
-							</If>
+						<GetTo ZoneId="401" XYZ="-568.3833, -50.60525, -449.1188" />
+						<If Condition="GetQuestStep(67446) == 1 and GetQuestById(67446).QuestI8A == 0">
+							<GetTo ZoneId="401" XYZ="-569.55975, -50.75693, -447.52695" />
+							<TalkTo NpcId="1012071" XYZ="-568.3833, -50.605247, -449.11877" QuestId="67446" StepId="1" />
 						</If>
-						<NoCombatMoveTo Name="Hinu Vali" XYZ="-568.3833, -50.60525, -449.1188" />
-						<While Condition="not IsTodoChecked(67446, 1, 0)">
-							<TalkTo NpcId="1012071" XYZ="-568.3833, -50.60525, -449.1188" QuestId="67446" StepId="1" UseTimes="1" BlacklistAfter="True" />
-
-							<TalkTo NpcId="1012072" XYZ="-568.5969, -50.64948, -452.1096" QuestId="67446" StepId="1" UseTimes="1" BlacklistAfter="True" />
-
-							<TalkTo NpcId="1012069" XYZ="-647.0283, -51.05719, -417.7463" QuestId="67446" StepId="1" UseTimes="1" BlacklistAfter="True" />
-
-						</While>
+						<If Condition="GetQuestStep(67446) == 1 and GetQuestById(67446).QuestI8A == 16">
+							<GetTo ZoneId="401" XYZ="-569.55975, -50.75693, -447.52695" />
+							<TalkTo NpcId="1012072" XYZ="-568.5969, -50.649483, -452.10956" QuestId="67446" StepId="1" />
+						</If>
+						<If Condition="GetQuestStep(67446) == 1 and GetQuestById(67446).QuestI8A == 32">
+							<GetTo ZoneId="401" XYZ="-642.57, -51.053207, -418.40347" />
+							<TalkTo NpcId="1012069" XYZ="-647.0283, -51.05719, -417.74628" QuestId="67446" StepId="1" />
+						</If>
 					</If>
 					<If Condition="GetQuestStep(67446) == 255">
-						<If Condition="not IsOnMap(401)">
-							<If Condition="Managers.WorldManager.HasAetheryteId(73)">
-								<TeleportTo Name="Ok' Zundu" AetheryteId="73" />
-							</If>
-							<If Condition="not Managers.WorldManager.HasAetheryteId(73)">
-								<If Condition="not IsOnMap(419)">
-									<GetTo ZoneId="419" XYZ="-48.65455, -8.234923, -59.07746" /><!-- The Pillars -->
-								</If>
-								<If Condition="IsOnMap(419)">
-									<UseTransport Name="Blue Window" InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
-								</If>
-							</If>
-						</If>
-						<NoCombatMoveTo Name="Gunu Vanu" XYZ="-373.4341, -55.21164, -630.0908" />
+						<GetTo ZoneId="401" XYZ="-375.20303, -55.234283, -629.7591" />
 						<Dismount />
-						<RunCode Name="FlyingtheNest" />
+						<EmoteNPC Emote="s Wake up!" NpcId="1014171" XYZ="-373.43408, -55.21164, -630.0908" BlacklistDuration="8" BlackListAfter="True" Condition="not ff14bot.RemoteWindows.JournalResult.IsOpen" />
+						<TurnIn QuestId="67446" NpcId="1014171" XYZ="-373.43408, -55.21164, -630.0908" />
 					</If>
 				</If>
 
@@ -751,13 +690,7 @@ Profile and fixes by Anges
 						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
 						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
 					</If>
-					<TeleportTo Name="Ok' Zundu" AetheryteId="73" Force="True" />
-					<GetTo ZoneId="401" XYZ="-701.7735, -58.55827, -262.7887" />
-					<MoveTo ZoneId="401" XYZ="-703.2999, -44.77136, -224.2907" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-739.8525, -30.77407, -225.4978" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-742.0502, -27.19359, -206.858" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-755.5894, -14.18909, -180.0195" UseMesh="False" />
-					<GetTo ZoneId="401" XYZ="-747.097, -57.11456, 163.8361" />
+					<GetTo ZoneId="401" XYZ="-747.46075, -57.86936, 161.6646" />
 					<UseObject NpcId="2006228" XYZ="-747.097, -57.11456, 163.8361" Condition="not IsAetherCurrentCompleted(401,8)" />
 				</If>
 				<If Condition="not IsAetherCurrentCompleted(401,7)">
@@ -765,42 +698,22 @@ Profile and fixes by Anges
 						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
 						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
 					</If>
-					<TeleportTo Name="Ok' Zundu" AetheryteId="73" Force="True" />
-					<GetTo ZoneId="401" XYZ="-701.7735, -58.55827, -262.7887" />
-					<MoveTo ZoneId="401" XYZ="-703.2999, -44.77136, -224.2907" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-739.8525, -30.77407, -225.4978" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-742.0502, -27.19359, -206.858" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-755.5894, -14.18909, -180.0195" UseMesh="False" />
-					<GetTo ZoneId="401" XYZ="-754.3656, -13.87734, -120.4015" />
-					<Dismount />
-					<RunCode Name="AetherCurrent5.2" />
-					<MoveTo XYZ="-759.4263, -9.201294, -110.8568" Distance="1" UseMesh="False" />
+					<GetTo ZoneId="401" XYZ="-756.87225, -9.931893, -112.499565" />
 					<UseObject NpcId="2006229" XYZ="-759.4263, -9.201294, -110.8568" Condition="not IsAetherCurrentCompleted(401,7)" />
-					<MoveTo XYZ="-753.8975, -13.87735, -119.7341" Distance="1" UseMesh="False" />
 				</If>
 				<If Condition="not IsAetherCurrentCompleted(401,5)">
 					<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
 						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
 						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
 					</If>
-					<TeleportTo Name="Ok' Zundu" AetheryteId="73" Force="True" />
-					<GetTo ZoneId="401" XYZ="-555.3919, -52.29293, -430.8823" />
-					<MoveTo ZoneId="401" XYZ="-512.9859, -37.93283, -406.9482" UseMesh="False" />
-					<GetTo ZoneId="401" XYZ="-564.8127, -36.698, -349.0807" />
-					<UseObject NpcId="2006234" XYZ="-564.8127, -36.698, -349.0807" Condition="not IsAetherCurrentCompleted(401,5)" />
-					<GetTo ZoneId="401" XYZ="-512.9859, -37.93283, -406.9482" />
-					<MoveTo ZoneId="401" XYZ="-555.3919, -52.29293, -430.8823" UseMesh="False" />
+					<GetTo ZoneId="419" XYZ="-558.84314,-36.951397,-356.8249" />
+					<UseObject NpcId="2006234" XYZ="-564.81274, -36.697998, -349.1112" Condition="not IsAetherCurrentCompleted(401,5)" />
 				</If>
 				<If Condition="not IsAetherCurrentCompleted(401,6)">
 					<If condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(72)">
 						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
 						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
 					</If>
-					<TeleportTo Name="Ok' Zundu" AetheryteId="73" Force="True" />
-					<GetTo ZoneId="401" XYZ="-388.0158, -55.30107, -612.6802" />
-					<MoveTo ZoneId="401" XYZ="-364.2079, -42.77096, -633.5755" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-338.5004, -28.77532, -607.3351" UseMesh="False" />
-					<MoveTo ZoneId="401" XYZ="-290.4832, -14.16158, -629.2758" UseMesh="False" />
 					<GetTo ZoneId="401" XYZ="-180.3159, -14.96918, -543.1144" />
 					<UseObject NpcId="2006231" XYZ="-180.3159, -14.96918, -543.1144" Condition="not IsAetherCurrentCompleted(401,6)" />
 				</If>
