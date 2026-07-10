@@ -8032,7 +8032,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <Log Message="We're not level 50 yet" />
         <PFWPFHuntingLogs />
         <If condition="&DoClassQuests;">
-          <PFCurrentClassQuests />
+          <PFWPFCurrentClassQuests />
         </If>
         <PFDungeonLevel while="not Core.Player.ClassLevel &gt; 49" />
         <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Rock the Castrum' you need to be at least class level 50" />
