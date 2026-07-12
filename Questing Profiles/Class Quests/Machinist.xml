@@ -14,6 +14,7 @@
 		<If Condition="not IsQuestCompleted(65964)">
 			<UserDialog DialogText="In order to unlock Machinest please complete the Level 50 MSQ Quest Before the Dawn.." />
 		</If>
+
 		<!-- So You Want to Be a Machinist -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67645)">
 			<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -29,6 +30,7 @@
 				</If>
 			</If>
 		</If>
+
 		<!-- Savior of Skysteel -->
 		<If Condition="not IsQuestCompleted(67232) and IsQuestCompleted(67645)">
 			<If Condition="not HasQuest(67232)">

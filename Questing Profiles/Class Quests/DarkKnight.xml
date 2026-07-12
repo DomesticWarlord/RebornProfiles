@@ -13,6 +13,7 @@
 		<If Condition="not IsQuestCompleted(65964)">
 			<UserDialog DialogText="In order to unlock Dark Knight please complete the Level 50 MSQ Quest Before the Dawn." />
 		</If>
+
 		<!-- A Dark Spectacle -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67646)">
 			<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -28,6 +29,7 @@
 				</If>
 			</If>
 		</If>
+
 		<!-- Our End -->
 		<If Condition="IsQuestCompleted(67646) and not IsQuestCompleted(67589)">
 			<If Condition="not HasQuest(67589)">
