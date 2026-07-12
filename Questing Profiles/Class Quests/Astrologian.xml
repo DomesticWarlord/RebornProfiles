@@ -264,22 +264,20 @@
 					<UseObject NpcId="2006046" XYZ="16.17829, 33.03577, 36.88089" UseTimes="1" BlacklistAfter="True" />
 					<WaitWhile Condition="not Core.Player.InCombat" />
 					<Grind while="DutyManager.InInstance">
-						<Grind while="Core.Player.InCombat">
-							<GrindArea name="Slings_and_Arrows">
-								<HotSpots>
-									<HotSpot XYZ="-178.9668, 40.9999, 178.6314" Radius="90" /> <!-- August Astrologian -->
-								</HotSpots>
-								<TargetMobs>
-									<TargetMob Id="3864" Weight="7000" /> <!-- Suspicious Astrologian -->
-									<TargetMob Id="3866" Weight="6000" /> <!-- Serpent Reavest Fin -->
-									<TargetMob Id="3868" Weight="5000" /> <!-- Serpent Reavest Claw -->
-									<TargetMob Id="3869" Weight="4000" /> <!-- Serpent Reavest Tail -->
-									<TargetMob Id="3867" Weight="3000" /> <!-- Serpent Reavest Fang -->
-									<TargetMob Id="2095" Weight="2000" /> <!-- Amber Carbuncle -->
-									<TargetMob Id="4425" Weight="1000" /> <!-- Pirate Captain -->
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
+						<GrindArea name="Slings_and_Arrows">
+							<HotSpots>
+								<HotSpot XYZ="-178.9668, 40.9999, 178.6314" Radius="90" /> <!-- August Astrologian -->
+							</HotSpots>
+							<TargetMobs>
+								<TargetMob Id="3864" Weight="7000" /> <!-- Suspicious Astrologian -->
+								<TargetMob Id="3866" Weight="6000" /> <!-- Serpent Reavest Fin -->
+								<TargetMob Id="3868" Weight="5000" /> <!-- Serpent Reavest Claw -->
+								<TargetMob Id="3869" Weight="4000" /> <!-- Serpent Reavest Tail -->
+								<TargetMob Id="3867" Weight="3000" /> <!-- Serpent Reavest Fang -->
+								<TargetMob Id="2095" Weight="2000" /> <!-- Amber Carbuncle -->
+								<TargetMob Id="4425" Weight="1000" /> <!-- Pirate Captain -->
+							</TargetMobs>
+						</GrindArea>
 					</Grind>
 				</If>
 			</While>
