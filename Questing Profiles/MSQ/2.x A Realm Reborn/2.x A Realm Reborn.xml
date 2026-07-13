@@ -3813,6 +3813,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <If Condition="GetQuestStep(66217) == 1">
               <GetTo ZoneId="128" XYZ="94.01343, 40.27537, 74.67204" />
               <TalkTo NpcId="1002388" XYZ="95.68933, 40.25029, 74.54028" QuestId="66217" StepId="1" />
+              <WaitWhile Condition="GetQuestStep(66217) == 1"/>
             </If>
             <If Condition="GetQuestStep(66217) == 2">
               <GetTo ZoneId="135" XYZ="389.6217, 78.09978, -346.5833" />
