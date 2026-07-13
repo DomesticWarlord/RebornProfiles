@@ -17,9 +17,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
   <!-- Panda Farmer specific settings -->
 
-  <!ENTITY DoClassQuests "True"> <!-- Use PandaFarmer to do Class quests? -->
+  <!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
   <!ENTITY UseCarry "False">
-  <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
+  <!ENTITY CarryName "Arelia"> <!-- For privacy only put the first name of the carry character here -->
   <!ENTITY CurrentHook "True">
 ]>
 
@@ -2150,7 +2150,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       </If>
     </If>
 
-    <If Condition="IsQuestCompleted(67171) and not IsQuestCompleted(67172) and not Core.Player.ClassLevel &gt; 53">
+    <If Condition="IsQuestCompleted(67171) and not IsQuestCompleted(67172) and not Core.Player.ClassLevel &gt; 55">
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Ready to Fly' you need to be at least class level 55" />
     </If>
 
@@ -2919,7 +2919,566 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <TurnIn QuestId="67192" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="3" />
         </If>
         <TurnIn QuestId="67192" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="4" />
-        <LLDiscardItem ItemId="5682" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Battledance Materia IV -->
+          <LLDiscardItem ItemId="5682" />
+        </If>
+      </If>
+    </If>
+
+    <!-- An Illuminati Incident (Level 58) -->
+    <If Condition="IsQuestCompleted(67192) and not IsQuestCompleted(67193) and Core.Player.ClassLevel &gt; 57">
+      <If Condition="not HasQuest(67193)">
+        <GetTo ZoneId="478" XYZ="73.3501, 205.8894, 23.48358" />
+        <If Condition="IsQuestAcceptQualified(67193)">
+          <PickupQuest NpcId="1012097" QuestId="67193" XYZ="73.3501, 205.8894, 23.48358" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67193) == 1">
+        <GetTo ZoneId="399" XYZ="365.835, 80.11143, 6.332458" />
+        <If condition="(PartyManager.IsInParty or PartyManager.IsPartyLeader) and not DutyManager.InInstance">
+          <LeaveParty />
+        </If>
+        <SimpleDuty InteractNpcId="1012416" XYZ="365.835, 80.11143, 6.332458" QuestId="67193" StepId="1">
+          <HotSpots>
+            <HotSpot XYZ="347.3683, 77.63412, -6.711346" Radius="90" />
+          </HotSpots>
+          <TargetMobs>
+            <TargetMob Id="2667" Weight="6000" />
+            <TargetMob Id="3599" Weight="5000" />
+            <TargetMob Id="3600" Weight="4000" />
+            <TargetMob Id="3601" Weight="3000" />
+            <TargetMob Id="3602" Weight="2000" />
+            <TargetMob Id="3761" Weight="1000" />
+          </TargetMobs>
+        </SimpleDuty>
+      </If>
+      <If Condition="GetQuestStep(67193) == 2">
+        <GetTo ZoneId="399" XYZ="352.6512, 77.85947, -5.905273" />
+        <TalkTo NpcId="1012418" XYZ="352.6512, 77.85947, -5.905273" QuestId="67193" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67193) == 255">
+        <GetTo ZoneId="478" XYZ="73.3501, 205.8894, 23.48358" />
+        <If Condition="ClassName == ClassJobType.Archer or ClassName == ClassJobType.Bard">
+          <TurnIn QuestId="67193" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="0" />
+        </If>
+        <If Condition="ClassName == ClassJobType.Machinist">
+          <TurnIn QuestId="67193" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="1" />
+        </If>
+        <If Condition="ClassName == ClassJobType.Thaumaturge or ClassName == ClassJobType.BlackMage">
+          <TurnIn QuestId="67193" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="2" />
+        </If>
+        <If Condition="ClassName == ClassJobType.Arcanist or ClassName == ClassJobType.Summoner">
+          <TurnIn QuestId="67193" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="3" />
+        </If>
+        <TurnIn QuestId="67193" NpcId="1012097" XYZ="73.3501, 205.8894, 23.48358" RewardSlot="4" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Heavens' Eye Materia IV -->
+          <LLDiscardItem ItemId="5667" />
+        </If>
+      </If>
+    </If>
+
+    <If Condition="IsQuestCompleted(67193) and not IsQuestCompleted(67194) and not Core.Player.ClassLevel &gt; 58">
+      <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Leaving Idyllshire' you need to be at least class level 59" />
+    </If>
+
+    <!-- Leaving Idyllshire (Level 58) -->
+    <If Condition="IsQuestCompleted(67193) and not IsQuestCompleted(67194) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67194)">
+        <GetTo ZoneId="478" XYZ="73.3501, 205.8894, 23.48358" />
+        <If Condition="IsQuestAcceptQualified(67194)">
+          <PickupQuest NpcId="1012097" QuestId="67194" XYZ="73.3501, 205.8894, 23.48358" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67194) == 1">
+        <GetTo ZoneId="478" XYZ="78.96533, 203.98, 133.1654" />
+        <TalkTo NpcId="1012419" XYZ="78.96533, 203.98, 133.1654" QuestId="67194" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67194) == 255">
+        <GetTo ZoneId="478" XYZ="77.98877, 203.9799, 127.9163" />
+        <If Condition="ClassName == ClassJobType.Conjurer or ClassName == ClassJobType.WhiteMage">
+          <TurnIn QuestId="67194" NpcId="1012421" XYZ="77.98877, 203.9799, 127.9163" RewardSlot="0" />
+        </If>
+        <If Condition="ClassName == ClassJobType.Scholar">
+          <TurnIn QuestId="67194" NpcId="1012421" XYZ="77.98877, 203.9799, 127.9163" RewardSlot="1" />
+        </If>
+        <If Condition="ClassName == ClassJobType.Arcanist">
+          <TurnIn QuestId="67194" NpcId="1012421" XYZ="77.98877, 203.9799, 127.9163" RewardSlot="2" />
+        </If>
+        <If Condition="ClassName == ClassJobType.RedMage">
+          <TurnIn QuestId="67194" NpcId="1012421" XYZ="77.98877, 203.9799, 127.9163" RewardSlot="3" />
+        </If>
+        <TurnIn QuestId="67194" NpcId="1012421" XYZ="77.98877, 203.9799, 127.9163" RewardSlot="4" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Quickarm Materia IV -->
+          <LLDiscardItem ItemId="5667" />
+        </If>
+      </If>
+    </If>
+
+    <!-- Matoya's Cave (Level 59) -->
+    <If Condition="IsQuestCompleted(67194) and not IsQuestCompleted(67195) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67195)">
+        <GetTo ZoneId="478" XYZ="77.98877, 203.9799, 127.9163" />
+        <If Condition="IsQuestAcceptQualified(67195)">
+          <PickupQuest NpcId="1012421" QuestId="67195" XYZ="77.98877, 203.9799, 127.9163" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67195) == 1">
+        <GetTo ZoneId="399" XYZ="-476.585, 137.4297, 702.6931" />
+        <TalkTo NpcId="1012423" XYZ="-476.585, 137.4297, 702.6931" QuestId="67195" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67195) == 2">
+        <GetTo ZoneId="399" XYZ="-488.7618, 138.9944, 742.1224" />
+        <UseObject UseDistance="2.5" NpcId="2005532" XYZ="-488.7618, 138.9944, 742.1224" QuestId="67195" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67195) == 255">
+        <GetTo ZoneId="399" XYZ="-476.585, 137.4297, 702.6931" />
+        <TurnIn QuestId="67195" NpcId="1012423" XYZ="-476.585, 137.4297, 702.6931" />
+        <WaitWhile Condition="not IsOnMap(463)" />
+        <WaitTimer WaitTime="5" />
+      </If>
+    </If>
+
+    <!-- Forbidden Knowledge (Level 59) -->
+    <If Condition="IsQuestCompleted(67195) and not IsQuestCompleted(67196) and Core.Player.ClassLevel &gt; 58">
+      <!-- Matoya's Cave -->
+      <If Condition="not IsOnMap(463)">
+        <GetTo ZoneId="399" XYZ="-488.7923, 138.9333, 741.0543" />
+        <UseTransport InteractDistance="2.5" NpcId="2005336" XYZ="-488.7923, 138.9333, 741.0543" />
+      </If>
+      <If Condition="not HasQuest(67196)">
+        <If Condition="IsQuestAcceptQualified(67196)">
+          <PickupQuest NpcId="1012138" QuestId="67196" XYZ="19.27209, 38.43, 15.85406" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67196) == 1">
+        <TalkTo NpcId="1012138" XYZ="19.27209, 38.43, 15.85406" QuestId="67196" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67196) == 2">
+        <TalkTo NpcId="1012426" XYZ="23.97186, 38.43, 3.555298" QuestId="67196" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67196) == 3">
+        <!-- Cave Exit -->
+        <If Condition="IsOnMap(463)">
+          <UseTransport InteractDistance="3.0" NpcId="2005337" XYZ="7.765594, 38.9395, -50.9989" />
+        </If>
+        <GetTo ZoneId="399" XYZ="300.4653, 232.541, 767.8796" />
+        <TalkTo NpcId="1012427" XYZ="300.4653, 232.541, 767.8796" QuestId="67196" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67196) == 4">
+        <If condition="(PartyManager.IsInParty or PartyManager.IsPartyLeader) and not DutyManager.InInstance">
+          <LeaveParty />
+        </If>
+        <If condition="&UseCarry; == False">
+          <LoadPFWPFDungeon EquipGear="True" ProfileName="The Great Gubal Library" QueueType="2" />
+          <UserDialog QuestId="67196" StepId="4" IsBotContinueAllowed="True" DialogText="Please manually complete the 4 player duty 'The Great Gubal Library.'" />
+        </If>
+        <If condition="&UseCarry; == True">
+          <LLToast message="Teleporting to Aleport to invite FillMeIn" />
+          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
+            <!-- Aleport -->
+            <TeleportTo AetheryteId="14" Force="True" />
+            <InviteToParty Name="&CarryName;" />
+            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
+          </If>
+          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+            <If condition="not IsOnMap(1109)">
+              <LLJoinDuty DutyId="31" Trial="False" />
+            </If>
+            <If condition="IsOnMap(1109)">
+              <WaitWhile condition="not IsDutyEnded()" />
+              <If condition="IsDutyEnded">
+                <WaitTimer WaitTime="5" />
+                <LLLeaveDuty />
+              </If>
+            </If>
+          </If>
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67196) == 5">
+        <WaitWhile condition="GetQuestStep(67196) == 5" />
+      </If>
+      <If Condition="GetQuestStep(67196) == 255">
+        <If Condition="not IsOnMap(463)">
+          <GetTo ZoneId="399" XYZ="-488.7923, 138.9333, 741.0543" />
+          <UseTransport InteractDistance="2.5" NpcId="2005336" XYZ="-488.7923, 138.9333, 741.0543" />
+        </If>
+        <TurnIn QuestId="67196" NpcId="1012138" ItemId="2001575" XYZ="19.27209, 38.43, 15.85406" />
+      </If>
+    </If>
+
+    <!-- An Eye for Aether (Level 59) -->
+    <If Condition="IsQuestCompleted(67196) and not IsQuestCompleted(67197) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67197)">
+        <If Condition="not IsOnMap(463)">
+          <GetTo ZoneId="399" XYZ="-488.7923, 138.9333, 741.0543" />
+          <UseTransport InteractDistance="2.5" NpcId="2005336" XYZ="-488.7923, 138.9333, 741.0543" />
+        </If>
+        <NoCombatMoveTo XYZ="19.27209, 38.43, 15.85406" />
+        <If Condition="IsQuestAcceptQualified(67197)">
+          <PickupQuest NpcId="1012138" QuestId="67197" XYZ="19.27209, 38.43, 15.85406" />
+        </If>
+        <WaitWhile Condition="not IsOnMap(399)" />
+      </If>
+      <If Condition="GetQuestStep(67197) == 1">
+        <GetTo ZoneId="399" XYZ="-475.7916, 137.4297, 701.4724" />
+        <TalkTo NpcId="1012422" XYZ="-475.7916, 137.4297, 701.4724" QuestId="67197" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67197) == 2">
+        <GetTo ZoneId="418" XYZ="124.4678, 24.45884, 0.4729614" />
+        <TalkTo NpcId="1012380" XYZ="124.4678, 24.45884, 0.4729614" QuestId="67197" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67197) == 255">
+        <GetTo ZoneId="419" XYZ="167.0404, -14.3133, 51.28552" />
+        <TurnIn QuestId="67197" NpcId="1013163" XYZ="167.0404, -14.3133, 51.28552" />
+      </If>
+    </If>
+
+    <!-- Hour of Departure (Level 59) -->
+    <If Condition="IsQuestCompleted(67197) and not IsQuestCompleted(67198) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67198)">
+        <GetTo ZoneId="419" XYZ="165.9418, -14.34896, 51.65173" />
+        <If Condition="IsQuestAcceptQualified(67198)">
+          <PickupQuest NpcId="1012430" QuestId="67198" XYZ="165.9418, -14.34896, 51.65173" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67198) == 1">
+        <GetTo ZoneId="419" XYZ="168.2917, -14.52896, 41.15356" />
+        <TalkTo NpcId="1013166" XYZ="168.2917, -14.52896, 41.15356" QuestId="67198" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67198) == 2">
+        <If Condition="GetQuestStep(67198) == 2 and not IsTodoChecked(67198, 2, 2)">
+          <GetTo ZoneId="418" XYZ="12.31396, -12.02088, 40.26843" />
+          <TalkTo NpcId="1012251" XYZ="12.31396, -12.02088, 40.26843" QuestId="67198" />
+        </If>
+        <If Condition="GetQuestStep(67198) == 2 and not IsTodoChecked(67198, 2, 1)">
+          <GetTo ZoneId="418" XYZ="92.36279, 15.09468, 33.18835" />
+          <TalkTo NpcId="1013161" XYZ="92.36279, 15.09468, 33.18835" QuestId="67198" />
+        </If>
+        <If Condition="GetQuestStep(67198) == 2 and not IsTodoChecked(67198, 2, 0)">
+          <GetTo ZoneId="418" XYZ="125.6885, 24.45884, 2.456604" />
+          <TalkTo NpcId="1013167" XYZ="125.6885, 24.45884, 2.456604" QuestId="67198" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67198) == 3">
+        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <TalkTo NpcId="1012397" XYZ="4.013123, 7.450581E-09, 5.661072" QuestId="67198" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67198) == 255">
+        <!-- Fortemps Manor - Manor Exit -->
+        <If Condition="IsOnMap(433)">
+          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
+        </If>
+        <GetTo ZoneId="419" XYZ="165.9418, -14.34896, 51.65173" />
+        <TurnIn QuestId="67198" NpcId="1012430" XYZ="165.9418, -14.34896, 51.65173" />
+      </If>
+    </If>
+
+    <!-- The First Flight of the Excelsior (Level 59) -->
+    <If Condition="IsQuestCompleted(67198) and not IsQuestCompleted(67199) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67199)">
+        <GetTo ZoneId="419" XYZ="165.9418, -14.34896, 51.65173" />
+        <If Condition="IsQuestAcceptQualified(67199)">
+          <PickupQuest NpcId="1012430" QuestId="67199" XYZ="165.9418, -14.34896, 51.65173" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67199) == 1">
+        <GetTo ZoneId="419" XYZ="180.1632, -16.02896, 34.6532" />
+        <TalkTo NpcId="1012431" XYZ="180.1632, -16.02896, 34.6532" QuestId="67199" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67199) == 2">
+        <GetTo ZoneId="419" XYZ="165.9418, -14.34896, 51.65173" />
+        <TalkTo NpcId="1012430" XYZ="165.9418, -14.34896, 51.65173" QuestId="67199" StepId="2" />
+        <WaitWhile Condition="not GetQuestStep(67199) == 4" />
+        <WaitWhile Condition="not IsOnMap(402)" />
+      </If>
+      <If Condition="GetQuestStep(67199) == 4">
+        <If Condition="not IsOnMap(402)">
+          <GetTo ZoneId="419" XYZ="168.4442, -14.34896, 49.57654" />
+          <UseTransport InteractDistance="3.0" NpcId="1012153" XYZ="168.4442, -14.34896, 49.57654" />
+        </If>
+        <GetTo ZoneId="402" XYZ="-861.8448, -184.293, -659.2356" />
+        <TalkTo NpcId="1012854" XYZ="-861.8448, -184.293, -659.2356" QuestId="67199" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(67199) == 255">
+        <If Condition="not IsOnMap(402)">
+          <GetTo ZoneId="419" XYZ="168.4442, -14.34896, 49.57654" />
+          <UseTransport InteractDistance="3.0" NpcId="1012153" XYZ="168.4442, -14.34896, 49.57654" />
+        </If>
+        <GetTo ZoneId="402" XYZ="-650.1717, -176.4502, -565.1484" />
+        <TurnIn QuestId="67199" NpcId="1012792" XYZ="-650.1717, -176.4502, -565.1484" />
+      </If>
+    </If>
+
+    <!-- Systematic Exploration (Level 59) -->
+    <If Condition="IsQuestCompleted(67199) and not IsQuestCompleted(67200) and Core.Player.ClassLevel &gt; 58">
+      <If condition="not IsOnMap(402) and not ff14bot.Managers.WorldManager.HasAetheryteId(74)">
+        <GetTo ZoneId="419" XYZ="168.4442, -14.34896, 49.57654" />
+        <UseTransport InteractDistance="3.0" NpcId="1012153" XYZ="168.4442, -14.34896, 49.57654" />
+      </If>
+      <If Condition="not HasQuest(67200)">
+        <GetTo ZoneId="402" XYZ="-650.1717, -176.4502, -565.1484" />
+        <If Condition="IsQuestAcceptQualified(67200)">
+          <PickupQuest NpcId="1012792" QuestId="67200" XYZ="-650.1717, -176.4502, -565.1484" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67200) == 1">
+        <GetTo ZoneId="402" XYZ="-637.6898, -176.4706, -558.3734" />
+        <UseObject NpcIds="2006237,2006236,2006238" QuestId="67200" StepId="1">
+          <HotSpots>
+            <HotSpot XYZ="-637.6898, -176.4706, -558.3734" Radius="10" />
+            <HotSpot XYZ="-649.7139, -176.4706, -538.6893" Radius="10" />
+            <HotSpot XYZ="-645.1667, -174.5786, -477.9279" Radius="10" />
+          </HotSpots>
+        </UseObject>
+      </If>
+      <If Condition="GetQuestStep(67200) == 2">
+        <GetTo ZoneId="402" XYZ="-638.3612, -176.4502, -578.6679" />
+        <TalkTo NpcId="1014675" XYZ="-638.3612, -176.4502, -578.6679" QuestId="67200" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67200) == 3">
+        <GetTo ZoneId="402" XYZ="-428.0614, -166.2166, -411.8868" />
+        <UseObject NpcId="2005565" XYZ="-428.0614, -166.2166, -411.8868" QuestId="67200" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67200) == 255">
+        <GetTo ZoneId="402" XYZ="-638.3612, -176.4502, -578.6679" />
+        <TurnIn QuestId="67200" NpcId="1014675" XYZ="-638.3612, -176.4502, -578.6679" RewardSlot="0" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Peity Materia IV -->
+          <LLDiscardItem ItemId="5632" />
+        </If>
+      </If>
+    </If>
+
+    <!-- In Node We Trust (Level 59) -->
+    <If Condition="IsQuestCompleted(67200) and not IsQuestCompleted(67201) and Core.Player.ClassLevel &gt; 58">
+      <If condition="not IsOnMap(402) and not ff14bot.Managers.WorldManager.HasAetheryteId(74)">
+        <GetTo ZoneId="419" XYZ="168.4442, -14.34896, 49.57654" />
+        <UseTransport InteractDistance="3.0" NpcId="1012153" XYZ="168.4442, -14.34896, 49.57654" />
+      </If>
+      <If Condition="not HasQuest(67201)">
+        <GetTo ZoneId="402" XYZ="-639.8871, -176.4502, -579.3393" />
+        <If Condition="IsQuestAcceptQualified(67201)">
+          <PickupQuest NpcId="1012796" QuestId="67201" XYZ="-639.8871, -176.4502, -579.3393" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67201) == 1">
+        <GetTo ZoneId="402" XYZ="-642.9083, -176.4502, -577.5082" />
+        <TalkTo NpcId="1014677" XYZ="-642.9083, -176.4502, -577.5082" QuestId="67201" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67201) == 2">
+        <GetTo ZoneId="402" XYZ="-166.3691, -162.1073, -490.898" />
+        <TalkTo NpcId="1012797" XYZ="-166.3691, -162.1073, -490.898" QuestId="67201" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67201) == 3">
+        <GetTo ZoneId="402" XYZ="-145.6169, -154.8333, -503.4715" />
+        <UseObject NpcId="2006363" XYZ="-145.6169, -154.8333, -503.4715" QuestId="67201" StepId="3" />
+        <WaitWhile Condition="not GetQuestStep(67201) == 255" />
+        <WaitTimer WaitTime="5" />
+      </If>
+      <If Condition="GetQuestStep(67201) == 255">
+        <GetTo ZoneId="402" XYZ="235.9807, -72.83498, -619.8978" />
+        <TurnIn QuestId="67201" NpcId="1012802" XYZ="235.9807, -72.83498, -619.8978" RewardSlot="0" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Battledance Materia IV -->
+          <LLDiscardItem ItemId="5682" />
+        </If>
+      </If>
+    </If>
+
+    <!-- Chimerical Maintenance (Level 59) -->
+    <If Condition="IsQuestCompleted(67201) and not IsQuestCompleted(67202) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67202)">
+        <GetTo ZoneId="402" XYZ="235.9807, -72.83498, -619.8978" />
+        <If Condition="IsQuestAcceptQualified(67202)">
+          <PickupQuest NpcId="1012802" QuestId="67202" XYZ="235.9807, -72.83498, -619.8978" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67202) == 1">
+        <GetTo ZoneId="402" XYZ="780.9414, -25.90514, -508.1102" />
+        <TalkTo NpcId="1012807" XYZ="780.9414, -25.90514, -508.1102" QuestId="67202" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67202) == 2">
+        <If Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 0">
+          <GetTo ZoneId="402" XYZ="296.7117, -55.28345, -459.2508" />
+          <UseObject NpcId="2005569" XYZ="296.7117, -55.28345, -459.2508" UseTimes="1" />
+          <WaitWhile Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 0" />
+        </If>
+        <If Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 1">
+          <GetTo ZoneId="402" XYZ="344.1367, -55.375, -428.4886" />
+          <UseObject NpcId="2005568" XYZ="344.1367, -55.375, -428.4886" UseTimes="1" />
+          <WaitWhile Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 1" />
+        </If>
+        <If Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 2">
+          <GetTo ZoneId="402" XYZ="249.2561, -55.49713, -406.5156" />
+          <UseObject NpcId="2005567" XYZ="249.2561, -55.49713, -406.5156" UseTimes="1" />
+          <WaitWhile Condition="GetQuestById(67202).GetTodoArgs(2, 0).Item1 == 2" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67202) == 3">
+        <GetTo ZoneId="402" XYZ="780.9414, -25.90514, -508.1102" />
+        <TalkTo NpcId="1012807" XYZ="780.9414, -25.90514, -508.1102" QuestId="67202" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(67202) == 255">
+        <GetTo ZoneId="402" XYZ="776.4245, -17.94297, -486.3318" />
+        <TurnIn QuestId="67202" InteractDistance="2.0" NpcId="2006364" XYZ="778.8052, -17.99042, -483.5432" />
+        <If condition="&DiscardInventoryClutter;">
+          <!-- Savage Might Materia IV -->
+          <LLDiscardItem ItemId="5677" />
+        </If>
+      </If>
+    </If>
+
+    <!-- Close Encounters of the Vith Kind (Level 59) -->
+    <If Condition="IsQuestCompleted(67202) and not IsQuestCompleted(67203) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67203)">
+        <GetTo ZoneId="402" XYZ="634.5159, 10.47438, 77.50049" />
+        <If Condition="IsQuestAcceptQualified(67203)">
+          <PickupQuest NpcId="1014850" QuestId="67203" XYZ="634.5159, 10.47438, 77.50049" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67203) == 1">
+        <GetTo ZoneId="402" XYZ="641.9012, 13.84011, 506.9504" />
+        <TalkTo NpcId="1012829" XYZ="641.9012, 13.84011, 506.9504" QuestId="67203" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(67203) == 2">
+        <GetTo ZoneId="402" XYZ="228.2291, 14.93359, 553.9788" />
+        <TalkTo NpcId="1012827" XYZ="228.2291, 14.93359, 553.9788" QuestId="67203" StepId="2" />
+        <WaitWhile Condition="not GetQuestStep(67203) == 3" />
+      </If>
+      <If Condition="GetQuestStep(67203) == 3">
+        <GetTo ZoneId="402" XYZ="228.2291, 14.93359, 553.9788" />
+        <If condition="(PartyManager.IsInParty or PartyManager.IsPartyLeader) and not DutyManager.InInstance">
+          <LeaveParty />
+        </If>
+        <SimpleDuty InteractNpcId="1012827" XYZ="228.2291, 14.93359, 553.9788" QuestId="67203" StepId="3">
+          <HotSpots>
+            <HotSpot XYZ="248.0971, 17.15141, 552.9381" Radius="30" />
+          </HotSpots>
+          <TargetMobs>
+            <TargetMob Id="3372" Weight="6000" />
+            <TargetMob Id="4152" Weight="5000" />
+            <TargetMob Id="4153" Weight="4000" />
+            <TargetMob Id="4151" Weight="3000" />
+            <TargetMob Id="4150" Weight="2000" />
+            <TargetMob Id="3818" Weight="1000" />
+          </TargetMobs>
+        </SimpleDuty>
+        <WaitWhile Condition="not GetQuestStep(67203) == 255" />
+        <WaitTimer WaitTime="10" />
+      </If>
+      <If Condition="GetQuestStep(67203) == 255">
+        <GetTo ZoneId="402" XYZ="-197.8638, -102.783, 456.5347" />
+        <TurnIn QuestId="67203" NpcId="1012834" XYZ="-197.8638, -102.783, 456.5347" />
+      </If>
+    </If>
+
+    <!-- Fetters of Lament (Level 59) -->
+    <If Condition="IsQuestCompleted(67203) and not IsQuestCompleted(67204) and Core.Player.ClassLevel &gt; 58">
+      <If Condition="not HasQuest(67204)">
+        <GetTo ZoneId="402" XYZ="-197.8638, -102.783, 456.5347" />
+        <If Condition="IsQuestAcceptQualified(67204)">
+          <PickupQuest NpcId="1012834" QuestId="67204" XYZ="-197.8638, -102.783, 456.5347" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67204) == 255">
+        <GetTo ZoneId="402" XYZ="-696.1318, -37.06427, 432.4253" />
+        <TurnIn QuestId="67204" NpcId="2005465" XYZ="-696.1318, -37.06427, 432.4253" />
+        <WaitTimer WaitTime="10" />
+      </If>
+    </If>
+
+    <!-- Heavensward (Level 60) -->
+    <If Condition="IsQuestCompleted(67204) and not IsQuestCompleted(67205) and Core.Player.ClassLevel &gt; 59">
+      <If Condition="not HasQuest(67205)">
+        <GetTo ZoneId="402" XYZ="-319.0204, 253, -5.233948" />
+        <If Condition="IsQuestAcceptQualified(67205)">
+          <PickupQuest NpcId="1012848" QuestId="67205" XYZ="-319.0204, 253, -5.233948" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67205) == 1">
+        <GetTo ZoneId="402" XYZ="-62.88245, 271.2328, -5.661133" />
+        <TalkTo NpcId="1012850" XYZ="-62.88245, 271.2328, -5.661133" QuestId="67205" StepId="1" />
+        <WaitWhile Condition="not GetQuestStep(67205) == 2" />
+      </If>
+      <If Condition="GetQuestStep(67205) == 2">
+        <GetTo ZoneId="402" XYZ="-62.88245, 271.2328, -5.661133" />
+        <TalkTo NpcId="1012850" XYZ="-62.88245, 271.2328, -5.661133" QuestId="67205" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(67205) == 3">
+        <If condition="(PartyManager.IsInParty or PartyManager.IsPartyLeader) and not DutyManager.InInstance">
+          <LeaveParty />
+        </If>
+        <If condition="&UseCarry; == False">
+          <LoadPFWPFDungeon EquipGear="True" ProfileName="The Aetherochemical Research Facility" QueueType="2" />
+          <UserDialog QuestId="67205" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Aetherochemical Research Facility.'" />
+        </If>
+        <If condition="&UseCarry; == True">
+          <LLToast message="Teleporting to Aleport to invite &CarryName;" />
+          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
+            <!-- Aleport -->
+            <TeleportTo AetheryteId="14" Force="True" />
+            <InviteToParty Name="&CarryName;" />
+            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
+          </If>
+          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+            <If condition="not IsOnMap(1110)">
+              <LLJoinDuty DutyId="38" Trial="False" />
+            </If>
+            <If condition="IsOnMap(1110)">
+              <WaitWhile condition="not IsDutyEnded()" />
+              <If condition="IsDutyEnded">
+                <WaitTimer WaitTime="5" />
+                <LLLeaveDuty />
+              </If>
+            </If>
+          </If>
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67205) == 4">
+        <WaitWhile condition="GetQuestStep(67205) == 4" />
+      </If>
+      <If Condition="GetQuestStep(67205) == 5">
+        <If condition="&UseCarry; == False">
+          <UserDialog QuestId="67205" StepId="5" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Singularity Reactor.'" />
+        </If>
+        <If condition="&UseCarry; == True">
+          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
+            <!-- Aleport -->
+            <TeleportTo AetheryteId="14" />
+            <InviteToParty Name="&CarryName;" />
+            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
+          </If>
+          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
+            <If condition="not IsOnMap(432)">
+              <LLJoinDuty DutyId="90" Trial="True" />
+            </If>
+            <If condition="IsOnMap(432)">
+              <WaitWhile condition="not IsDutyEnded()" />
+              <If condition="IsDutyEnded">
+                <WaitTimer WaitTime="5" />
+                <LLLeaveDuty />
+              </If>
+            </If>
+          </If>
+        </If>
+      </If>
+      <If Condition="GetQuestStep(67205) == 6">
+        <WaitWhile condition="GetQuestStep(67205) == 6" />
+      </If>
+      <If Condition="GetQuestStep(67205) == 255">
+        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
+        <If Condition="not IsOnMap(433)">
+          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
+          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
+        </If>
+        <TurnIn QuestId="67205" NpcId="1012857" XYZ="0.7476196, 0.02225424, 4.623413" />
       </If>
     </If>
 
