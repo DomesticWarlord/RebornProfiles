@@ -9338,6 +9338,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <If Condition="GetQuestStep(69421) == 3">
           <GetTo ZoneId="152" XYZ="106.8589, -27.48706, -366.3844" />
           <TalkTo NpcId="1009119" XYZ="106.8589, -27.48706, -366.3844" QuestId="69421" StepId="3" />
+          <WaitWhile Condition="GetQuestStep(69421) == 3" />
         </If>
         <If Condition="GetQuestStep(69421) == 4">
           <GetTo ZoneId="152" XYZ="198.4854, -31.48771, -226.4165" />
