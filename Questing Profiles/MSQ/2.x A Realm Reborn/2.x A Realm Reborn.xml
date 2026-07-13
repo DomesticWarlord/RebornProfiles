@@ -8549,7 +8549,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <WaitWhile Condition="not IsOnSubMap(374)" />
         </If>
         <If Condition="GetQuestStep(66728) == 2">
-          <GetTo ZoneId="212" XYZ="-458.952, 23.1922, -369.333" />
+          <GetTo ZoneId="140" XYZ="-458.952, 23.1922, -369.333" />
           <WaitWhile Condition="not GetQuestStep(66728) == 3" />
         </If>
         <If Condition="GetQuestStep(66728) == 3">
