@@ -10765,7 +10765,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <TalkTo NpcId="1010903" XYZ="24.88745, -1, -1.022339" QuestId="65906" StepId="1" />
         </If>
         <If Condition="GetQuestStep(65906) == 2">
-          <GetTo ZoneId="351" XYZ="25.58936, 29, -825.3757" />
+          <GetTo ZoneId="156" XYZ="25.58936, 29, -825.3757" />
           <HandOver ItemId="2001546" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="65906" StepId="2" />
         </If>
         <If Condition="GetQuestStep(65906) == 3">
