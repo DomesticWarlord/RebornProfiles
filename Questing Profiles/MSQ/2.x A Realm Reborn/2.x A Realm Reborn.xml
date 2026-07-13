@@ -9227,7 +9227,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <TalkTo NpcId="1009055" XYZ="-142.7482, 4.235418, 232.7762" QuestId="69419" StepId="4" />
         </If>
         <If Condition="GetQuestStep(69419) == 255">
-          <GetTo ZoneId="141" XYZ="187.5486, -1, -302.9374" />
+          <GetTo ZoneId="141" XYZ="189.05466, -1, -306.28378" />
           <If Condition="IsHealingClass()">
             <TurnIn QuestId="69419" NpcId="1009049" XYZ="187.5486, -1, -302.9374" RewardSlot="0" />
           </If>
