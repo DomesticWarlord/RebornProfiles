@@ -593,6 +593,10 @@
 					<PickUpQuest NpcId="1000909" QuestId="65997" XYZ="-326.3752, 12.89966, 9.994568" />
 				</If>
 			</If>
+			<If condition="not IsOnMap(137) and not ff14bot.Managers.WorldManager.HasAetheryteId(11)">
+				<GetTo ZoneId="129" XYZ="-189.94867, 0.9999907, 210.21616" />
+				<UseTransport NpcId="1000868" DialogOption="1" XYZ="-192.00433, 0.9999907, 211.68835" />
+			</If>
 			<If Condition="GetQuestStep(65997) == 1">
 				<GetTo ZoneId="137" XYZ="550.4692, 12.14773, 220.9353" />
 				<HandOver ItemId="2000885" QuestId="65997" StepId="1" NpcId="1005251" XYZ="550.4692, 12.14773, 220.9353" />
@@ -788,7 +792,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
           await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
