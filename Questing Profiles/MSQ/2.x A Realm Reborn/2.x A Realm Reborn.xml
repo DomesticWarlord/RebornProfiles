@@ -8450,7 +8450,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <WaitWhile Condition="not GetQuestStep(66726) == 3" />
         </If>
         <If Condition="GetQuestStep(66726) == 3">
-          <GetTo ZoneId="152" XYZ="-542.9313, 11.20175, 62.24158" />
+          <GetTo Fly="False" ZoneId="152" XYZ="-542.9313, 11.20175, 62.24158" />
           <TalkTo NpcId="1008276" XYZ="-542.9313, 11.20175, 62.24158" QuestId="66726" StepId="3" />
         </If>
         <While Condition="GetQuestStep(66726) == 4">
@@ -8470,7 +8470,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UseObject NpcId="2003347" XYZ="-318.6237, 12.25293, -35.05005" Radius="10" QuestId="66726" StepId="4" />
         </While>
         <If Condition="GetQuestStep(66726) == 5">
-          <GetTo ZoneId="152" XYZ="-317.6776, 12.29312, -37.30841" />
+          <GetTo Fly="False" ZoneId="152" XYZ="-317.6776, 12.29312, -37.30841" />
           <TalkTo NpcId="1008277" XYZ="-317.6776, 12.29312, -37.30841" QuestId="66726" StepId="5" />
         </If>
         <If Condition="GetQuestStep(66726) == 6">
