@@ -10333,7 +10333,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <TalkTo NpcId="1000168" XYZ="-75.48645, -0.5013741, -5.081299" QuestId="66693" StepId="1" />
         </If>
         <If Condition="GetQuestStep(66693) == 255">
-          <GetTo ZoneId="155" XYZ="649.7748, 292.4391, 175.3414" />
+          <GetTo ZoneId="155" XYZ="639.867, 287.4449, 171.79074" />
           <TurnIn QuestId="66693" NpcId="2002582" XYZ="649.7748, 292.4391, 175.3414" />
         </If>
       </If>
