@@ -9714,6 +9714,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <If Condition="GetQuestStep(65589) == 3">
           <GetTo ZoneId="156" XYZ="-455.8939, -4.098358, -302.7238" />
           <TalkTo NpcId="1009966" XYZ="-455.8939, -4.098358, -302.7238" QuestId="65589" StepId="3" />
+          <WaitWhile Condition="GetQuestStep(65589) == 3"/>
         </If>
         <If Condition="GetQuestStep(65589) == 4">
           <If Condition="GetQuestById(65589).GetTodoArgs(4, 0).Item1 == 0">
