@@ -15,6 +15,10 @@
 			<UserDialog DialogText="In order to unlock Machinest please complete the Level 50 MSQ Quest Before the Dawn.." />
 		</If>
 
+		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67645) and Core.Player.ClassLevel &lt; 50">
+			<UserDialog IsBotContinueAllowed="True" DialogText="Please switch to a level 50 or higher combat class and press continue." />
+		</If>
+
 		<!-- So You Want to Be a Machinist -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67645)">
 			<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -62,7 +66,6 @@
 				<TurnIn QuestId="67232" NpcId="1014736" XYZ="-99.25995, 62.38235, -182.7878" />
 				<While Condition="ClassName != ClassJobType.Machinist">
 					<EquipWeapon ItemId="10462" />
-					<AutoEquip />
 				</While>
 				<SaveGearset />
 			</If>

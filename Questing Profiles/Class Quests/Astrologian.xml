@@ -67,7 +67,7 @@
 			<If Condition="GetQuestStep(67548) == 255">
 				<GetTo ZoneId="153" XYZ="184.4968, 14.11746, 51.92639" />
 				<TurnIn QuestId="67548" NpcId="1014925" XYZ="184.4968, 14.11746, 51.92639" />
-				<WaitTimer WaitTime="20" />
+				<WaitTimer WaitTime="5" />
 				<While Condition="ClassName != ClassJobType.Astrologian">
 					<EquipWeapon ItemID="10524" />
 					<EquipWeapon ItemID="8840" />

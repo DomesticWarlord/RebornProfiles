@@ -35,7 +35,6 @@
 				<UseInventoryItem ItemId="20620" />
 				<While Condition="ClassName != ClassJobType.Samurai">
 					<EquipWeapon ItemId="20388" />
-					<AutoEquip />
 				</While>
 				<SaveGearset />
 			</If>
