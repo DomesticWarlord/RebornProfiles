@@ -925,7 +925,7 @@
 			</If>
 			<If Condition="GetQuestStep(67258) == 2">
 				<GetTo ZoneId="397" XYZ="-275.2575, 125.5969, -11.21539" />
-				<Dismount/>
+				<Dismount />
 				<LLUseSpell SpellId="135" NpcId="1013620" XYZ="-275.2575, 125.5969, -11.21539" QuestId="67258" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(67258) == 3">
@@ -1040,6 +1040,7 @@
 			<If Condition="GetQuestStep(67261) == 255">
 				<GetTo ZoneId="153" XYZ="-138.0858, 8.351243, 279.3183" />
 				<TurnIn QuestId="67261" NpcId="1006751" ItemId="2001688" XYZ="-139.4522, 8.712891, 281.6968" />
+				<OpenInventoryItem ItemId="20661" />
 				<AutoInventoryEquip />
 			</If>
 		</If>
@@ -1271,7 +1272,7 @@
 			  return false;
 			]]>
 	  </CodeChunk>
-    <CodeChunk Type="Hook" Name="KillMobs">
+		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
           await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
