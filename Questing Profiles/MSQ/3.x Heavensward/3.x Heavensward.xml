@@ -58,28 +58,16 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Coming to Ishgard (Level 50) -->
     <If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67116) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67116)">
-        <!-- House Fortemps -->
-        <If Condition="not IsOnMap(395)">
-          <GetTo ZoneId="155" XYZ="262.81787, 302.17316, -221.37408" />
-          <UseTransport InteractDistance="3.0" NpcId="1009973" XYZ="264.9119, 302.2624, -223.7126" />
-        </If>
+        <GetTo ZoneId="395" XYZ="-1.419189, 0.01498272, -0.07635498" />
         <If Condition="IsQuestAcceptQualified(67116)">
           <PickupQuest NpcId="1010925" QuestId="67116" XYZ="-1.419189, 0.01498272, -0.07635498" />
         </If>
       </If>
       <If Condition="GetQuestStep(67116) == 1">
-        <!-- House Fortemps -->
-        <If Condition="not IsOnMap(395)">
-          <GetTo ZoneId="155" XYZ="262.81787, 302.17316, -221.37408" />
-          <UseTransport InteractDistance="3.0" NpcId="1009973" XYZ="264.9119, 302.2624, -223.7126" />
-        </If>
+        <GetTo ZoneId="395" XYZ="-1.419189, 0.01498272, -0.07635498" />
         <TalkTo NpcId="1012308" XYZ="-3.128174, 7.450581E-09, 2.822876" QuestId="67116" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67116) == 2">
-        <!-- Leave House Fortemps -->
-        <If Condition="IsOnMap(395)">
-          <UseTransport NpcId="2004781" InteractDistance="3.0" XYZ="-4, 1.2, 11" />
-        </If>
         <GetTo ZoneId="155" XYZ="-163.8972, 304.1538, -333.0587" />
         <UseTransport InteractDistance="3.0" NpcId="1012309" XYZ="-163.8972, 304.1538, -333.0587" />
         <WaitWhile Condition="HasQuest(67116) and not IsQuestCompleted(67116) and not GetQuestStep(67116) == 4" />
@@ -100,11 +88,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Taking in the Sights (Level 50) -->
     <If Condition="IsQuestCompleted(67116) and not IsQuestCompleted(67117) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67117)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.2289429, 0, 7.339539" />
         <If Condition="IsQuestAcceptQualified(67117)">
           <PickupQuest NpcId="1013036" QuestId="67117" XYZ="-0.2289429, 0, 7.339539" />
         </If>
@@ -154,19 +138,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1011192" XYZ="88.36499, 15.09468, 31.29626" QuestId="67118" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67118) == 2">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.01531982, 0.02225424, 3.707886" />
         <TalkTo NpcId="1013033" XYZ="-0.01531982, 0.02225424, 3.707886" QuestId="67118" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67118) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.2289429, 0, 7.339539" />
         <If Condition="IsAimingClass()">
           <TurnIn QuestId="67118" NpcId="1013036" XYZ="-0.2289429, 0, 7.339539" RewardSlot="0" />
         </If>
@@ -183,20 +159,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Over the Wall (Level 50) -->
     <If Condition="IsQuestCompleted(67118) and not IsQuestCompleted(67119) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67119)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="1.754761, 0.003450237, -9.750549"  />
         <If Condition="IsQuestAcceptQualified(67119)">
           <PickupQuest NpcId="1012328" QuestId="67119" XYZ="1.754761, 0.003450237, -9.750549" />
         </If>
       </If>
       <If Condition="GetQuestStep(67119) == 1">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="418" XYZ="-163.4394, 2.15106, -5.508545" />
         <UseTransport InteractDistance="3.0" NpcId="1012331" XYZ="-163.4394, 2.15106, -5.508545" />
         <WaitWhile Condition="HasQuest(67119) and not IsQuestCompleted(67119) and not GetQuestStep(67119) == 3" />
@@ -413,11 +381,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1011231" XYZ="503.1051, 217.9515, 790.2189" QuestId="67125" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67125) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="1.754761, 0.003450237, -9.750549" />
         <TurnIn QuestId="67125" NpcId="1012328" XYZ="1.754761, 0.003450237, -9.750549" />
       </If>
     </If>
@@ -425,20 +389,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Onwards and Upwards (Level 50) -->
     <If Condition="IsQuestCompleted(67125) and not IsQuestCompleted(67126) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67126)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.2289429, 0, 7.339539" />
         <If Condition="IsQuestAcceptQualified(67126)">
           <PickupQuest NpcId="1012329" QuestId="67126" XYZ="-7.309082, 0.003586963, -0.5036011" />
         </If>
       </If>
       <If Condition="GetQuestStep(67126) == 1">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="419" XYZ="152.2333, -12.63491, -7.967191" />
         <UseTransport InteractDistance="3.0" NpcId="1012353" XYZ="149.7367, -12.26397, -7.888916" />
         <WaitWhile Condition="HasQuest(67126) and not IsQuestCompleted(67126) and not GetQuestStep(67126) == 3" />
@@ -705,11 +661,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1012375" XYZ="164.5074, -12.63491, -23.17853" QuestId="67132" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67132) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-7.309082, 0.003586963, -0.5036011" />
         <TurnIn QuestId="67132" NpcId="1012329" XYZ="-7.309082, 0.003586963, -0.5036011" RewardSlot="0" />
         <If condition="&DiscardInventoryClutter;">
           <!-- Savage Might Materia IV -->
@@ -721,28 +673,16 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Divine Intervention (Level 50) -->
     <If Condition="IsQuestCompleted(67132) and not IsQuestCompleted(67133) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67133)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="5.691528, 7.450581E-09, 5.752625"  />
         <If Condition="IsQuestAcceptQualified(67133)">
           <PickupQuest NpcId="1012377" QuestId="67133" XYZ="5.691528, 7.450581E-09, 5.752625" />
         </If>
       </If>
       <If Condition="GetQuestStep(67133) == 1">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="3.524841, 7.450581E-09, 9.018005" />
         <TalkTo NpcId="1012378" XYZ="3.524841, 7.450581E-09, 9.018005" QuestId="67133" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67133) == 2">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="418" XYZ="124.4678, 24.45884, 0.4729614" />
         <TalkTo NpcId="1012380" XYZ="124.4678, 24.45884, 0.4729614" QuestId="67133" StepId="2" />
       </If>
@@ -779,27 +719,15 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
       <If Condition="GetQuestStep(67134) == 1">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.22507147, 0.009369016, 9.160522" />
         <TalkTo NpcId="1013033" XYZ="-0.01531982, 0.02225424, 3.707886" QuestId="67134" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67134) == 2">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="419" XYZ="6.149353, 42.34489, -208.3925" />
         <TalkTo NpcId="1012386" XYZ="6.149353, 42.34489, -208.3925" QuestId="67134" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67134) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="0.6866455, 0.02225424, 4.623413"  />
         <TurnIn QuestId="67134" NpcId="1012387" XYZ="0.6866455, 0.02225424, 4.623413" />
       </If>
     </If>
@@ -811,11 +739,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Flame General Affairs (Level 51) -->
     <If Condition="IsQuestCompleted(67134) and not IsQuestCompleted(67135) and Core.Player.ClassLevel &gt; 50">
       <If Condition="not HasQuest(67135)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="0.6866455, 0.02225424, 4.623413" />
         <If Condition="IsQuestAcceptQualified(67135)">
           <PickupQuest NpcId="1012387" QuestId="67135" XYZ="0.6866455, 0.02225424, 4.623413" />
         </If>
@@ -935,19 +859,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1014644" XYZ="15.85406, 15.96505, -0.7781982" QuestId="67138" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67138) == 2">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="1.113892, 0.02225424, -4.409851" />
         <WaitWhile Condition="HasQuest(67138) and not IsQuestCompleted(67138) and not GetQuestStep(67138) == 255" />
       </If>
       <If Condition="GetQuestStep(67138) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="1.113892, 0.02225424, -4.409851" />
         <TurnIn QuestId="67138" NpcId="1012579" XYZ="1.113892, 0.02225424, -4.409851" />
       </If>
     </If>
@@ -955,20 +871,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Alphinaud's Way (Level 51) -->
     <If Condition="IsQuestCompleted(67138) and not IsQuestCompleted(67139) and Core.Player.ClassLevel &gt; 50">
       <If Condition="not HasQuest(67139)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="1.113892, 0.02225424, -4.409851" />
         <If Condition="IsQuestAcceptQualified(67139)">
           <PickupQuest NpcId="1012579" QuestId="67139" XYZ="1.113892, 0.02225424, -4.409851" />
         </If>
       </If>
       <If Condition="GetQuestStep(67139) == 1">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="419" XYZ="14.75543, 16.00967, -4.074219" />
         <TalkTo NpcId="1012585" XYZ="14.75543, 16.00967, -4.074219" QuestId="67139" StepId="1" />
       </If>
@@ -992,18 +900,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
       <If Condition="GetQuestStep(67140) == 1">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-0.22507147, 0.009369016, 9.160522" />
         <WaitWhile Condition="not GetQuestStep(67140) == 2" />
       </If>
       <If Condition="GetQuestStep(67140) == 2">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="418" XYZ="-97.73407, 15.23318, -40.78741" />
         <TalkTo NpcId="1013422" XYZ="-97.73407, 15.23318, -40.78741" QuestId="67140" StepId="2" />
       </If>
@@ -1497,10 +1397,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67153" StepId="3" IsBotContinueAllowed="True" DialogText="Please manually complete the 4 player duty 'Sohm Al.'" />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="&OnlyNonDutySupport; == False">
+          <If condition="&OnlyNonDutySupport; == True">
             <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Sohm Al" QueueType="2" />
           </If>
-          <If condition="&OnlyNonDutySupport; == True">
+          <If condition="&OnlyNonDutySupport; == False">
             <LLToast message="Teleporting to Aleport to invite &CarryName;" />
             <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
               <!-- Aleport -->
@@ -1954,18 +1854,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1012720" XYZ="-106.9505, 15.16852, -40.60431" QuestId="67165" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67165) == 2">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-2.121033, 0.009368896, -9.567444" />
         <TalkTo NpcId="1012583" XYZ="-2.121033, 0.009368896, -9.567444" QuestId="67165" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67165) == 3">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="419" XYZ="151.0184, -12.63491, -28.67175" />
         <TalkTo NpcId="1012709" XYZ="151.0184, -12.63491, -28.67175" QuestId="67165" StepId="3" />
       </If>
@@ -2068,18 +1960,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1012717" XYZ="-158.8007, 17.06621, -56.16852" QuestId="67169" StepId="1" />
       </If>
       <If Condition="GetQuestStep(67169) == 2">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-2.304138, 0, 5.905212" />
         <TalkTo NpcId="1012744" XYZ="-2.304138, 0, 5.905212" QuestId="67169" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67169) == 3">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="418" XYZ="114.58, 24.41283, -11.06281" />
         <UseTransport InteractDistance="3.0" NpcId="1011223" XYZ="114.58, 24.41283, -11.06281" />
         <WaitWhile Condition="not GetQuestStep(67169) == 255" />
@@ -2111,10 +1995,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67170" StepId="2" IsBotContinueAllowed="True" DialogText="Please manually complete the 4 player duty 'The Aery.'" />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="&OnlyNonDutySupport; == False">
+          <If condition="&OnlyNonDutySupport; == True">
             <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Aery" QueueType="2" />
           </If>
-          <If condition="&OnlyNonDutySupport; == True">
+          <If condition="&OnlyNonDutySupport; == False">
             <LLToast message="Teleporting to Aleport to invite &CarryName;" />
             <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
               <!-- Aleport -->
@@ -2197,19 +2081,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
       <If Condition="GetQuestStep(67173) == 1">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-2.578735, -7.450581E-09, 7.644714" />
         <WaitWhile Condition="not GetQuestStep(67173) == 255" />
       </If>
       <If Condition="GetQuestStep(67173) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-2.578735, -7.450581E-09, 7.644714" />
         <If Condition="IsFendingClass()">
           <TurnIn QuestId="67173" NpcId="1012753" XYZ="-2.578735, -7.450581E-09, 7.644714" RewardSlot="0" />
         </If>
@@ -2229,11 +2105,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <!-- Ill-weather Friends (Level 56) -->
     <If Condition="IsQuestCompleted(67173) and not IsQuestCompleted(67174) and Core.Player.ClassLevel &gt; 55">
       <If Condition="not HasQuest(67174)">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="-2.578735, -7.450581E-09, 7.644714" />
         <If Condition="IsQuestAcceptQualified(67174)">
           <PickupQuest NpcId="1012751" QuestId="67174" XYZ="-2.02948, 7.450581E-09, 6.362976" />
         </If>
@@ -2432,10 +2304,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67176" StepId="3" IsBotContinueAllowed="True" DialogText="Please manually complete the 4 player duty 'The Vault.'" />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="&OnlyNonDutySupport; == False">
+          <If condition="&OnlyNonDutySupport; == True">
             <LoadPFWPFDungeon EquipGear="True" ProfileName="The Vault" QueueType="2" />
           </If>
-          <If condition="&OnlyNonDutySupport; == True">
+          <If condition="&OnlyNonDutySupport; == False">
             <LLToast message="Teleporting to Aleport to invite &CarryName;" />
             <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
               <!-- Aleport -->
@@ -3092,10 +2964,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67196" StepId="4" IsBotContinueAllowed="True" DialogText="Please manually complete the 4 player duty 'The Great Gubal Library.'" />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="&OnlyNonDutySupport; == False">
+          <If condition="&OnlyNonDutySupport; == True">
             <LoadPFWPFDungeon EquipGear="True" ProfileName="The Great Gubal Library" QueueType="2" />
           </If>
-          <If condition="&OnlyNonDutySupport; == True">
+          <If condition="&OnlyNonDutySupport; == False">
             <LLToast message="Teleporting to Aleport to invite &CarryName;" />
             <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
               <!-- Aleport -->
@@ -3184,18 +3056,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
       <If Condition="GetQuestStep(67198) == 3">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="4.013123, 7.450581E-09, 5.661072" />
         <TalkTo NpcId="1012397" XYZ="4.013123, 7.450581E-09, 5.661072" QuestId="67198" StepId="3" />
       </If>
       <If Condition="GetQuestStep(67198) == 255">
-        <!-- Fortemps Manor - Manor Exit -->
-        <If Condition="IsOnMap(433)">
-          <UseTransport InteractDistance="3.0" NpcId="2005334" XYZ="-0.01531982, 1.144348, 13.19904" />
-        </If>
         <GetTo ZoneId="419" XYZ="165.9418, -14.34896, 51.65173" />
         <TurnIn QuestId="67198" NpcId="1012430" XYZ="165.9418, -14.34896, 51.65173" />
       </If>
@@ -3445,10 +3309,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67205" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Aetherochemical Research Facility.'" />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="&OnlyNonDutySupport; == False">
+          <If condition="&OnlyNonDutySupport; == True">
             <LoadPFWPFDungeon EquipGear="True" ProfileName="The Aetherochemical Research Facility" QueueType="2" />
           </If>
-          <If condition="&OnlyNonDutySupport; == True">
+          <If condition="&OnlyNonDutySupport; == False">
             <LLToast message="Teleporting to Aleport to invite &CarryName;" />
             <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
               <!-- Aleport -->
@@ -3503,11 +3367,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <WaitWhile condition="GetQuestStep(67205) == 6" />
       </If>
       <If Condition="GetQuestStep(67205) == 255">
-        <!-- Fortemps Manor Entrance - House Fortemps Guard -->
-        <If Condition="not IsOnMap(433)">
-          <GetTo ZoneId="419" XYZ="17.99036, 16.00967, -9.567444" />
-          <UseTransport InteractDistance="3.0" NpcId="1011217" XYZ="17.99036, 16.00967, -9.567444" />
-        </If>
+        <GetTo ZoneId="433" XYZ="0.7476196, 0.02225424, 4.623413" />
         <TurnIn QuestId="67205" NpcId="1012857" XYZ="0.7476196, 0.02225424, 4.623413" />
       </If>
     </If>

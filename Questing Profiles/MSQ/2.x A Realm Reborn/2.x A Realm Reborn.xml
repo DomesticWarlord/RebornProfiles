@@ -3122,10 +3122,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65781" StepId="4" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Sastasha.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Sastasha" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <LLToast message="Teleporting to Aleport to invite &CarryName;" />
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <!-- Aleport -->
@@ -3197,10 +3197,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66213" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty Tam-Tara Deepcroft." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Tam-Tara Deepcroft" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <!-- Aleport -->
@@ -3277,10 +3277,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66196" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Copperbell Mines.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Copperbell Mines" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -3685,10 +3685,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65879" StepId="4" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player trial Bowl of Embers." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Bowl of Embers" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -4637,10 +4637,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66050" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Thousand Maws of Toto-Rak.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Thousand Maws of Toto-Rak" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -5361,10 +5361,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66337" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Haukke Manor'." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Haukke Manor" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -5753,10 +5753,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66368" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Brayflox's Longstop.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Brayflox's Longstop" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -6093,10 +6093,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66393" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player trial 'The Navel.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Navel" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -6878,10 +6878,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66488" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Stone Vigil.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Stone Vigil" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -7301,10 +7301,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66055" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player trial 'The Howling Eye.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Howling Eye" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -8102,10 +8102,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="69409" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Castrum Meridianum'." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Castrum Meridianum" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -8163,10 +8163,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="70058" StepId="2" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Praetorium.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Praetorium" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -8197,10 +8197,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="70058" StepId="4" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player trial 'The Porta Decumana'." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Porta Decumana" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -9940,10 +9940,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65611" StepId="4" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'Snowcloak'." />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Snowcloak" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
@@ -10446,7 +10446,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <!-- Completing Titan Hard is required to pick up the next quest -->
       <If condition="IsQuestCompleted(66694) and not HasDutyBeenCompleted(60)">
         <If condition="&UseCarry; == False">
-          <UserDialog IsBotContinueAllowed="False" DialogText="Please complete The Navel (Hard) manually." />
+          <UserDialog IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Navel (Hard).'" />
         </If>
         <If condition="&UseCarry; == True">
           <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
@@ -10566,10 +10566,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65902" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 4 player duty 'The Keeper of the Lake.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="&OnlyNonDutySupport; == False">
+            <If condition="&OnlyNonDutySupport; == True">
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Keeper of the Lake" QueueType="2" />
             </If>
-            <If condition="&OnlyNonDutySupport; == True">
+            <If condition="&OnlyNonDutySupport; == False">
               <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
                 <LLToast message="Teleporting to Aleport to invite &CarryName;" />
                 <TeleportTo AetheryteId="14" Force="True" />
