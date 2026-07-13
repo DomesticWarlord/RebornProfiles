@@ -3394,6 +3394,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       </If>
     </If>
 
+    <If Condition="IsQuestCompleted(67204) and not IsQuestCompleted(67205) and not Core.Player.ClassLevel &gt; 59">
+      <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Heavensward' you need to be at least class level 60" />
+    </If>
+
     <!-- Heavensward (Level 60) -->
     <If Condition="IsQuestCompleted(67204) and not IsQuestCompleted(67205) and Core.Player.ClassLevel &gt; 59">
       <If Condition="not HasQuest(67205)">
