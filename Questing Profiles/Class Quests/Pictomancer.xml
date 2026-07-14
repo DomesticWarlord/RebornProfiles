@@ -12,6 +12,7 @@
 
     <!-- Mind over Manor -->
     <If Condition="not IsQuestCompleted(70391) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 79">
+      <LLToast Message="Beginning Pictomancer class quest 'Mind over Manor'"/>
       <If Condition="not HasQuest(70391)">
         <GetTo ZoneId="132" XYZ="56.802406, -8.008161, 94.6082" />
         <If Condition="IsQuestAcceptQualified(70391)">
@@ -34,6 +35,7 @@
 
     <!-- Perspectives in Pursuit -->
     <If Condition="IsQuestCompleted(70391) and not IsQuestCompleted(70392) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 82">
+      <LLToast Message="Beginning Pictomancer class quest 'Perspectives in Pursuit'"/>
       <If Condition="not HasQuest(70392)">
         <GetTo ZoneId="133" XYZ="28.392187, 16.198997, -337.23294" />
         <If Condition="IsQuestAcceptQualified(70392)">
@@ -64,6 +66,7 @@
 
     <!-- The Crate Beyond -->
     <If Condition="IsQuestCompleted(70392) and not IsQuestCompleted(70393) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 84">
+      <LLToast Message="Beginning Pictomancer class quest 'The Crate Beyond'"/>
       <If Condition="not HasQuest(70393)">
         <GetTo ZoneId="155" XYZ="217.99472, 302, -257.81558" />
         <If Condition="IsQuestAcceptQualified(70393)">
@@ -107,6 +110,7 @@
 
     <!-- Beruru's Clues -->
     <If Condition="IsQuestCompleted(70393) and not IsQuestCompleted(70394) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 87">
+      <LLToast Message="Beginning Pictomancer class quest 'Beruru's Clues'"/>
 
       <If Condition="not HasQuest(70394)">
         <GetTo ZoneId="628" XYZ="106.54932, 12.000005, -73.91179" />
@@ -138,6 +142,7 @@
 
     <!-- Somewhere Only She Knows -->
     <If Condition="IsQuestCompleted(70394) and not IsQuestCompleted(70395) and Core.Me.Levels[ClassJobType.Pictomancer] &gt; 89">
+      <LLToast Message="Beginning Pictomancer class quest 'Somewhere Only She Knows'"/>
       <If Condition="not HasQuest(70395)">
         <GetTo ZoneId="130" XYZ="-153.16962, 14.005, 46.835552" />
         <If Condition="IsQuestAcceptQualified(70395)">

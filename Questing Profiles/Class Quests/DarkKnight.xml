@@ -20,6 +20,7 @@
 
 		<!-- A Dark Spectacle -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67646)">
+			<LLToast Message="Beginning DarkKnight class quest 'A Dark Spectacle'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 50">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -36,6 +37,7 @@
 
 		<!-- Our End -->
 		<If Condition="IsQuestCompleted(67646) and not IsQuestCompleted(67589)">
+			<LLToast Message="Beginning DarkKnight class quest 'Our End'"/>
 			<If Condition="not HasQuest(67589)">
 				<!-- Ishgardian Citizen -->
 				<GetTo ZoneId="419" XYZ="101.5792, 12.4182, -117.6013" />
@@ -59,6 +61,7 @@
 
 		<!-- Ishgardian Justice -->
 		<If Condition="IsQuestCompleted(67589) and not IsQuestCompleted(67590) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 29">
+			<LLToast Message="Beginning DarkKnight class quest 'Ishgardian Justice'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -116,6 +119,7 @@
 
 		<!-- The Voice in the Abyss -->
 		<If Condition="IsQuestCompleted(67590) and not IsQuestCompleted(67591) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 34">
+			<LLToast Message="Beginning DarkKnight class quest 'The Voice in the Abyss'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -162,6 +166,7 @@
 
 		<!-- Heroic Reprise -->
 		<If Condition="IsQuestCompleted(67591) and not IsQuestCompleted(67592) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 39">
+			<LLToast Message="Beginning DarkKnight class quest 'Heroic Reprise'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -228,6 +233,7 @@
 
 		<!-- Declaration of Blood -->
 		<If Condition="IsQuestCompleted(67592) and not IsQuestCompleted(67593) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 44">
+			<LLToast Message="Beginning DarkKnight class quest 'Declaration of Blood'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -281,6 +287,7 @@
 
 		<!-- Our Answer -->
 		<If Condition="IsQuestCompleted(67593) and not IsQuestCompleted(67594) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 49">
+			<LLToast Message="Beginning DarkKnight class quest 'Our Answer'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -342,6 +349,7 @@
 
 		<!-- The Wages of Mercy -->
 		<If Condition="IsQuestCompleted(67594) and not IsQuestCompleted(67595) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 49">
+			<LLToast Message="Beginning DarkKnight class quest 'The Wages of Mercy'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -378,6 +386,7 @@
 
 		<!-- The Knight and the Maiden Fair -->
 		<If Condition="IsQuestCompleted(67595) and not IsQuestCompleted(67596) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 51">
+			<LLToast Message="Beginning DarkKnight class quest 'The Knight and the Maiden Fair'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -429,6 +438,7 @@
 
 		<!-- Kindred Spirits -->
 		<If Condition="IsQuestCompleted(67596) and not IsQuestCompleted(67597) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 53">
+			<LLToast Message="Beginning DarkKnight class quest 'Kindred Spirits'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -489,6 +499,7 @@
 
 		<!-- Original Sins -->
 		<If Condition="IsQuestCompleted(67597) and not IsQuestCompleted(67598) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 55">
+			<LLToast Message="Beginning DarkKnight class quest 'Original Sins'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -527,6 +538,7 @@
 
 		<!-- The Flame in the Abyss -->
 		<If Condition="IsQuestCompleted(67598) and not IsQuestCompleted(67599) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 57">
+			<LLToast Message="Beginning DarkKnight class quest 'The Flame in the Abyss'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -593,6 +605,7 @@
 
 		<!-- Absolution -->
 		<If Condition="IsQuestCompleted(67599) and not IsQuestCompleted(67600) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 59">
+			<LLToast Message="Beginning DarkKnight class quest 'Absolution'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -634,6 +647,7 @@
 
 		<!-- In Memories We Walked -->
 		<If Condition="IsQuestCompleted(67600) and not IsQuestCompleted(68451) and IsQuestCompleted(67895) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 59">
+			<LLToast Message="Beginning DarkKnight class quest 'In Memories We Walked'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -684,6 +698,7 @@
 
 		<!-- The Widow and Her Love -->
 		<If Condition="IsQuestCompleted(68451) and not IsQuestCompleted(68452) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 62">
+			<LLToast Message="Beginning DarkKnight class quest 'The Widow and Her Love'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -727,6 +742,7 @@
 
 		<!-- The Orphans and the Broken Blade -->
 		<If Condition="IsQuestCompleted(68452) and not IsQuestCompleted(68453) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 64">
+			<LLToast Message="Beginning DarkKnight class quest 'The Orphans and the Broken Blade'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -776,6 +792,7 @@
 
 		<!-- We Can Never Go Home -->
 		<If Condition="IsQuestCompleted(68453) and not IsQuestCompleted(68454) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 67">
+			<LLToast Message="Beginning DarkKnight class quest 'We Can Never Go Home'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>
@@ -830,6 +847,7 @@
 
 		<!-- Our Compromise -->
 		<If Condition="IsQuestCompleted(68454) and not IsQuestCompleted(68455) and Core.Me.Levels[ClassJobType.DarkKnight] &gt; 69">
+			<LLToast Message="Beginning DarkKnight class quest 'Our Compromise'"/>
 			<While Condition="ClassName != ClassJobType.DarkKnight">
 				<ChangeClass Job="DarkKnight" />
 			</While>

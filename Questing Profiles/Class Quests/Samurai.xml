@@ -12,6 +12,7 @@
 
 		<!-- The Way of the Samurai -->
 		<If Condition="not IsQuestCompleted(68095)">
+			<LLToast Message="Beginning Samurai class quest 'The Way of the Samurai'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 50">
 				<UserDialog IsBotContinueAllowed="True" DialogText="Please switch to a level 50 or higher combat class and press continue." />
 				<RunCode Name="SwitchCombatJob" />
@@ -42,6 +43,7 @@
 
 		<!-- Master Musosai -->
 		<If Condition="IsQuestCompleted(68095) and not IsQuestCompleted(68096) and Core.Me.Levels[ClassJobType.Samurai] &gt; 49">
+			<LLToast Message="Beginning Samurai class quest 'Master Musosai'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -80,6 +82,7 @@
 
 		<!-- The Sands of Debt -->
 		<If Condition="not IsQuestCompleted(68097) and IsQuestCompleted(68096) and Core.Me.Levels[ClassJobType.Samurai] &gt; 51">
+			<LLToast Message="Beginning Samurai class quest 'The Sands of Debt'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -124,6 +127,7 @@
 
 		<!-- Blood on the Deck -->
 		<If Condition="not IsQuestCompleted(68098) and IsQuestCompleted(68097) and Core.Me.Levels[ClassJobType.Samurai] &gt; 53">
+			<LLToast Message="Beginning Samurai class quest 'Blood on the Deck'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -179,6 +183,7 @@
 
 		<!-- A Fraudster in the Forest -->
 		<If Condition="not IsQuestCompleted(68099) and IsQuestCompleted(68098) and Core.Me.Levels[ClassJobType.Samurai] &gt; 55">
+			<LLToast Message="Beginning Samurai class quest 'A Fraudster in the Forest'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -227,6 +232,7 @@
 
 		<!-- Tears in the Snow -->
 		<If Condition="not IsQuestCompleted(68100) and IsQuestCompleted(68099) and Core.Me.Levels[ClassJobType.Samurai] &gt; 57">
+			<LLToast Message="Beginning Samurai class quest 'Tears in the Snow'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -271,6 +277,7 @@
 
 		<!-- The Face of True Evil -->
 		<If Condition="not IsQuestCompleted(68101) and IsQuestCompleted(68100) and Core.Me.Levels[ClassJobType.Samurai] &gt; 59">
+			<LLToast Message="Beginning Samurai class quest 'The Face of True Evil'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -315,6 +322,7 @@
 
 		<!-- A Dignified Visitor -->
 		<If Condition="not IsQuestCompleted(68102) and IsQuestCompleted(67895) and IsQuestCompleted(68101) and Core.Me.Levels[ClassJobType.Samurai] &gt; 59">
+			<LLToast Message="Beginning Samurai class quest 'A Dignified Visitor'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -349,6 +357,7 @@
 
 		<!-- Trials of the Sekiseigumi -->
 		<If Condition="not IsQuestCompleted(68103) and IsQuestCompleted(68102) and Core.Me.Levels[ClassJobType.Samurai] &gt; 62">
+			<LLToast Message="Beginning Samurai class quest 'Trials of the Sekiseigumi'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -379,6 +388,7 @@
 
 		<!-- Matsuba Mayhem -->
 		<If Condition="not IsQuestCompleted(68104) and IsQuestCompleted(68103) and Core.Me.Levels[ClassJobType.Samurai] &gt; 64">
+			<LLToast Message="Beginning Samurai class quest 'Matsuba Mayhem'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -435,6 +445,7 @@
 
 		<!-- The Hunt for Ugetsu -->
 		<If Condition="not IsQuestCompleted(68105) and IsQuestCompleted(68104) and Core.Me.Levels[ClassJobType.Samurai] &gt; 67">
+			<LLToast Message="Beginning Samurai class quest 'The Hunt for Ugetsu'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>
@@ -477,6 +488,7 @@
 
 		<!-- The Battle on Bekko -->
 		<If Condition="not IsQuestCompleted(68106) and IsQuestCompleted(68105) and Core.Me.Levels[ClassJobType.Samurai] &gt; 69">
+			<LLToast Message="Beginning Samurai class quest 'The Battle on Bekko'"/>
 			<While Condition="ClassName != ClassJobType.Samurai">
 				<ChangeClass Job="Samurai" />
 			</While>

@@ -16,6 +16,7 @@
 
 		<!-- Way of the Gladiator -->
 		<If Condition="not IsQuestCompleted(65821) and Core.Me.Levels[ClassJobType.Gladiator] == 0">
+			<LLToast Message="Beginning Gladiator class quest 'Way of the Gladiator'"/>
 			<If Condition="not HasQuest(65821)">
 				<GetTo ZoneId="131" XYZ="-95.37389, 6.599854, 25.39494" />
 				<TalkTo NpcId="1002277" XYZ="-95.37389, 6.599854, 25.39494" />
@@ -35,6 +36,7 @@
 
 		<!-- My First Gladius -->
 		<If Condition="not IsQuestCompleted(65822) and IsQuestCompleted(65821)">
+			<LLToast Message="Beginning Gladiator class quest 'My First Gladius'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -94,6 +96,7 @@
 
 		<!-- Kicking the Hornet's Nest -->
 		<If Condition="not IsQuestCompleted(65792) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 4">
+			<LLToast Message="Beginning Gladiator class quest 'Kicking the Hornet's Nest'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -148,6 +151,7 @@
 
 		<!-- Ul'dah's Most Wanted (Primary) -->
 		<If Condition="not IsQuestCompleted(65797) and not IsQuestCompleted(65822) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 9">
+			<LLToast Message="Beginning Gladiator class quest 'Ul'dah's Most Wanted (Primary)'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -216,6 +220,7 @@
 		</If>
 		<!-- Ul'dah's Most Wanted (Secondary) -->
 		<If Condition="not IsQuestCompleted(65824) and not IsQuestCompleted(65797) and IsQuestCompleted(65822) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 9">
+			<LLToast Message="Beginning Gladiator class quest 'Ul'dah's Most Wanted (Secondary)'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -275,6 +280,7 @@
 
 		<!-- That Old Familiar Feeling -->
 		<If Condition="(IsQuestCompleted(65797) or IsQuestCompleted(65824)) and not IsQuestCompleted(65798) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 14">
+			<LLToast Message="Beginning Gladiator class quest 'That Old Familiar Feeling'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -340,6 +346,7 @@
 
 		<!-- The Face of Thal -->
 		<If Condition="IsQuestCompleted(65798) and not IsQuestCompleted(65799) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 19">
+			<LLToast Message="Beginning Gladiator class quest 'The Face of Thal'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -408,6 +415,7 @@
 
 		<!-- On Holy Ground -->
 		<If Condition="IsQuestCompleted(65799) and not IsQuestCompleted(65800) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 24">
+			<LLToast Message="Beginning Gladiator class quest 'On Holy Ground'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -467,6 +475,7 @@
 
 		<!-- The Rematch -->
 		<If Condition="IsQuestCompleted(65800) and not IsQuestCompleted(65801) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 29">
+			<LLToast Message="Beginning Gladiator class quest 'The Rematch'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -532,6 +541,7 @@
 
 		<!-- Paladin's Pledge -->
 		<If Condition="IsQuestCompleted(65801) and not IsQuestCompleted(66591) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 29">
+			<LLToast Message="Beginning Gladiator class quest 'Paladin's Pledge'"/>
 			<While Condition="ClassName != ClassJobType.Gladiator">
 				<ChangeClass Job="Gladiator" />
 			</While>
@@ -570,6 +580,7 @@
 
 		<!-- Honor Lost -->
 		<If Condition="IsQuestCompleted(66591) and not IsQuestCompleted(66592) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 34">
+			<LLToast Message="Beginning Gladiator class quest 'Honor Lost'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -594,6 +605,7 @@
 
 		<!-- Power Struggles -->
 		<If Condition="IsQuestCompleted(66592) and not IsQuestCompleted(66593) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 39">
+			<LLToast Message="Beginning Gladiator class quest 'Power Struggles'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -618,6 +630,7 @@
 
 		<!-- Poisoned Hearts -->
 		<If Condition="IsQuestCompleted(66593) and not IsQuestCompleted(66594) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 44">
+			<LLToast Message="Beginning Gladiator class quest 'Poisoned Hearts'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -660,6 +673,7 @@
 
 		<!-- Parley in the Sagolii -->
 		<If Condition="IsQuestCompleted(66594) and not IsQuestCompleted(66595) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 44">
+			<LLToast Message="Beginning Gladiator class quest 'Parley in the Sagolii'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -699,6 +713,7 @@
 
 		<!-- Keeping the Oath -->
 		<If Condition="IsQuestCompleted(66595) and not IsQuestCompleted(66596) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 49">
+			<LLToast Message="Beginning Gladiator class quest 'Keeping the Oath'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -757,6 +772,7 @@
 
 		<!-- An Exemplary Example -->
 		<If Condition="IsQuestCompleted(66596) and not IsQuestCompleted(67568) and IsQuestCompleted(65964) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 49">
+			<LLToast Message="Beginning Gladiator class quest 'An Exemplary Example'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -797,6 +813,7 @@
 
 		<!-- The Paladin Who Cried Wolf -->
 		<If Condition="IsQuestCompleted(67568) and not IsQuestCompleted(67569) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 51">
+			<LLToast Message="Beginning Gladiator class quest 'The Paladin Who Cried Wolf'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -831,6 +848,7 @@
 
 		<!-- Big Sollerets to Fill -->
 		<If Condition="IsQuestCompleted(67569) and not IsQuestCompleted(67570) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 53">
+			<LLToast Message="Beginning Gladiator class quest 'Big Sollerets to Fill'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -914,6 +932,7 @@
 
 		<!-- Hey Soul Crystal -->
 		<If Condition="IsQuestCompleted(67570) and not IsQuestCompleted(67571) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 55">
+			<LLToast Message="Beginning Gladiator class quest 'Hey Soul Crystal'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -946,6 +965,7 @@
 
 		<!-- All According to Plan -->
 		<If Condition="IsQuestCompleted(67571) and not IsQuestCompleted(67572) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 57">
+			<LLToast Message="Beginning Gladiator class quest 'All According to Plan'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1018,6 +1038,7 @@
 
 		<!-- This Little Sword of Mine -->
 		<If Condition="IsQuestCompleted(67572) and not IsQuestCompleted(67573) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 59">
+			<LLToast Message="Beginning Gladiator class quest 'This Little Sword of Mine'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1078,6 +1099,7 @@
 
 		<!-- Tournament of the Century -->
 		<If Condition="IsQuestCompleted(67573) and not IsQuestCompleted(68107) and IsQuestCompleted(67895) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 59">
+			<LLToast Message="Beginning Gladiator class quest 'Tournament of the Century'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1114,6 +1136,7 @@
 
 		<!-- In Thal's Name -->
 		<If Condition="IsQuestCompleted(68107) and not IsQuestCompleted(68108) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 62">
+			<LLToast Message="Beginning Gladiator class quest 'In Thal's Name'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1170,6 +1193,7 @@
 
 		<!-- In Nald's Name -->
 		<If Condition="IsQuestCompleted(68108) and not IsQuestCompleted(68109) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 64">
+			<LLToast Message="Beginning Gladiator class quest 'In Nald's Name'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1218,6 +1242,7 @@
 
 		<!-- Fade to Black Lotus -->
 		<If Condition="IsQuestCompleted(68109) and not IsQuestCompleted(68110) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 67">
+			<LLToast Message="Beginning Gladiator class quest 'Fade to Black Lotus'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>
@@ -1288,6 +1313,7 @@
 
 		<!-- Raising the Sword -->
 		<If Condition="IsQuestCompleted(68110) and not IsQuestCompleted(68111) and Core.Me.Levels[ClassJobType.Gladiator] &gt; 69">
+			<LLToast Message="Beginning Gladiator class quest 'Raising the Sword'"/>
 			<While Condition="ClassName != ClassJobType.Paladin">
 				<ChangeClass Job="Paladin" />
 			</While>

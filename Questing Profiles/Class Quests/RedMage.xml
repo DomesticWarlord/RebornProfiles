@@ -12,6 +12,7 @@
 
 		<!-- Taking the Red -->
 		<If Condition="not IsQuestCompleted(68112)">
+			<LLToast Message="Beginning RedMage class quest 'Taking the Red'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 50">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -53,6 +54,7 @@
 
 		<!-- The Crimson Duelist -->
 		<If Condition="not IsQuestCompleted(68113) and IsQuestCompleted(68112) and Core.Me.Levels[ClassJobType.RedMage] &gt; 49">
+			<LLToast Message="Beginning RedMage class quest 'The Crimson Duelist'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -102,6 +104,7 @@
 
 		<!-- A Rewarding Struggle -->
 		<If Condition="not IsQuestCompleted(68114) and IsQuestCompleted(68113) and Core.Me.Levels[ClassJobType.RedMage] &gt; 51">
+			<LLToast Message="Beginning RedMage class quest 'A Rewarding Struggle'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -153,6 +156,7 @@
 
 		<!-- Tracking the Cabal -->
 		<If Condition="not IsQuestCompleted(68115) and IsQuestCompleted(68114) and Core.Me.Levels[ClassJobType.RedMage] &gt; 53">
+			<LLToast Message="Beginning RedMage class quest 'Tracking the Cabal'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -201,6 +205,7 @@
 
 		<!-- A Vermilion Vendetta -->
 		<If Condition="not IsQuestCompleted(68116) and IsQuestCompleted(68115) and Core.Me.Levels[ClassJobType.RedMage] &gt; 55">
+			<LLToast Message="Beginning RedMage class quest 'A Vermilion Vendetta'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -268,6 +273,7 @@
 
 		<!-- On Lambard's Trail -->
 		<If Condition="not IsQuestCompleted(68117) and IsQuestCompleted(68116) and Core.Me.Levels[ClassJobType.RedMage] &gt; 57">
+			<LLToast Message="Beginning RedMage class quest 'On Lambard's Trail'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -306,6 +312,7 @@
 
 		<!-- Stained in Scarlet -->
 		<If Condition="not IsQuestCompleted(68118) and IsQuestCompleted(68117) and Core.Me.Levels[ClassJobType.RedMage] &gt; 59">
+			<LLToast Message="Beginning RedMage class quest 'Stained in Scarlet'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -363,6 +370,7 @@
 
 		<!-- The Color of Her Hair -->
 		<If Condition="not IsQuestCompleted(68119) and IsQuestCompleted(67895) and IsQuestCompleted(68118) and Core.Me.Levels[ClassJobType.RedMage] &gt; 59">
+			<LLToast Message="Beginning RedMage class quest 'The Color of Her Hair'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -401,6 +409,7 @@
 
 		<!-- Traced in Blood -->
 		<If Condition="not IsQuestCompleted(68120) and IsQuestCompleted(68119) and Core.Me.Levels[ClassJobType.RedMage] &gt; 62">
+			<LLToast Message="Beginning RedMage class quest 'Traced in Blood'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -460,6 +469,7 @@
 
 		<!-- Nightkin -->
 		<If Condition="not IsQuestCompleted(68121) and IsQuestCompleted(68120) and Core.Me.Levels[ClassJobType.RedMage] &gt; 64">
+			<LLToast Message="Beginning RedMage class quest 'Nightkin'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -518,6 +528,7 @@
 
 		<!-- Child of Lilith -->
 		<If Condition="not IsQuestCompleted(68122) and IsQuestCompleted(68121) and Core.Me.Levels[ClassJobType.RedMage] &gt; 67">
+			<LLToast Message="Beginning RedMage class quest 'Child of Lilith'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>
@@ -570,6 +581,7 @@
 
 		<!-- With Heart and Steel -->
 		<If Condition="not IsQuestCompleted(68123) and IsQuestCompleted(68122) and Core.Me.Levels[ClassJobType.RedMage] &gt; 69">
+			<LLToast Message="Beginning RedMage class quest 'With Heart and Steel'"/>
 			<While Condition="ClassName != ClassJobType.RedMage">
 				<ChangeClass Job="RedMage" />
 			</While>

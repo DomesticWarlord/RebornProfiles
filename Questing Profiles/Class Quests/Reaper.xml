@@ -12,6 +12,7 @@
 
     <!-- The Killer Instinct -->
     <If Condition="not IsQuestCompleted(69609)">
+      <LLToast Message="Beginning RedMage class quest 'The Killer Instinct'"/>
       <If Condition="Core.Player.ClassLevel &lt; 70">
         <RunCode Name="SwitchCombatJob" />
         <If Condition="Core.Player.ClassLevel &lt; 70">
@@ -50,6 +51,7 @@
 
     <!-- The Harvest Begins -->
     <If Condition="IsQuestCompleted(69609) and not IsQuestCompleted(69610) and Core.Me.Levels[ClassJobType.Reaper] &gt; 69">
+      <LLToast Message="Beginning Reaper class quest 'The Harvest Begins'"/>
       <While Condition="ClassName != ClassJobType.Reaper">
         <ChangeClass Job="Reaper" />
       </While>
@@ -81,6 +83,7 @@
 
     <!-- On The Hunt -->
     <If Condition="IsQuestCompleted(69610) and not IsQuestCompleted(69611) and Core.Me.Levels[ClassJobType.Reaper] &gt; 72">
+      <LLToast Message="Beginning Reaper class quest 'On The Hunt'"/>
       <While Condition="ClassName != ClassJobType.Reaper">
         <ChangeClass Job="Reaper" />
       </While>
@@ -117,6 +120,7 @@
 
     <!-- Dark Days -->
     <If Condition="IsQuestCompleted(69611) and not IsQuestCompleted(69612) and Core.Me.Levels[ClassJobType.Reaper] &gt; 74">
+      <LLToast Message="Beginning Reaper class quest 'Dark Days'"/>
       <While Condition="ClassName != ClassJobType.Reaper">
         <ChangeClass Job="Reaper" />
       </While>
@@ -156,6 +160,7 @@
 
     <!-- Thicker Than Blood -->
     <If Condition="IsQuestCompleted(69612) and not IsQuestCompleted(69613) and Core.Me.Levels[ClassJobType.Reaper] &gt; 77">
+      <LLToast Message="Beginning Reaper class quest 'Thicker Than Blood'"/>
       <While Condition="ClassName != ClassJobType.Reaper">
         <ChangeClass Job="Reaper" />
       </While>
@@ -210,6 +215,7 @@
 
     <!-- The Killing Act -->
     <If Condition="IsQuestCompleted(69613) and not IsQuestCompleted(69614) and Core.Me.Levels[ClassJobType.Reaper] &gt; 79">
+      <LLToast Message="Beginning Reaper class quest 'The Killing Act'"/>
       <While Condition="ClassName != ClassJobType.Reaper">
         <ChangeClass Job="Reaper" />
       </While>

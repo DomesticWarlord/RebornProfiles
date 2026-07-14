@@ -16,6 +16,7 @@
 
 		<!-- Way of the Lancer -->
 		<If Condition="not IsQuestCompleted(65668) and Core.Me.Levels[ClassJobType.Lancer] == 0">
+			<LLToast Message="Beginning Lancer class quest 'Way of the Lancer'"/>
 			<If Condition="not HasQuest(65668)">
 				<GetTo ZoneId="133" XYZ="143.75, 15.5, -267.9585" />
 				<TalkTo NpcId="1000251" XYZ="143.75, 15.5, -267.9585" />
@@ -35,6 +36,7 @@
 
 		<!-- My First Spear -->
 		<If Condition="IsQuestCompleted(65668) and not IsQuestCompleted(65754)">
+			<LLToast Message="Beginning Lancer class quest 'My First Spear'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -102,6 +104,7 @@
 
 		<!-- Spear of the Fearless -->
 		<If Condition="not IsQuestCompleted(65583) and Core.Me.Levels[ClassJobType.Lancer] &gt; 4">
+			<LLToast Message="Beginning Lancer class quest 'Spear of the Fearless'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -155,6 +158,7 @@
 
 		<!-- Courage of Stone (Primary) -->
 		<If Condition="not IsQuestCompleted(65571) and not IsQuestCompleted(65754) and Core.Me.Levels[ClassJobType.Lancer] &gt; 9">
+			<LLToast Message="Beginning Lancer class quest 'Courage of Stone (Primary)'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -186,6 +190,7 @@
 		</If>
 		<!-- Courage of Stone (Secondary) -->
 		<If Condition="IsQuestCompleted(65583) and not IsQuestCompleted(65679) and not IsQuestCompleted(65571) and Core.Me.Levels[ClassJobType.Lancer] &gt; 9">
+			<LLToast Message="Beginning Lancer class quest 'Courage of Stone (Secondary)'"/>
 			<If Condition="not HasQuest(65679)">
 				<!-- Ywain -->
 				<GetTo ZoneId="133" XYZ="157.7019, 15.90038, -270.3442" />
@@ -213,6 +218,7 @@
 
 		<!-- A Dangerous Proposition -->
 		<If Condition="(IsQuestCompleted(65679) or IsQuestCompleted(65571)) and not IsQuestCompleted(65591) and Core.Me.Levels[ClassJobType.Lancer] &gt; 14">
+			<LLToast Message="Beginning Lancer class quest 'A Dangerous Proposition'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -266,6 +272,7 @@
 
 		<!-- Lance of Destiny -->
 		<If Condition="not IsQuestCompleted(65592) and IsQuestCompleted(65591) and Core.Me.Levels[ClassJobType.Lancer] &gt; 19">
+			<LLToast Message="Beginning Lancer class quest 'Lance of Destiny'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -346,6 +353,7 @@
 
 		<!-- Questions and Lancers -->
 		<If Condition="not IsQuestCompleted(65974) and IsQuestCompleted(65592) and Core.Me.Levels[ClassJobType.Lancer] &gt; 24">
+			<LLToast Message="Beginning Lancer class quest 'Questions and Lancers'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -424,6 +432,7 @@
 
 		<!-- Proof of Might -->
 		<If Condition="not IsQuestCompleted(65975) and IsQuestCompleted(65974) and Core.Me.Levels[ClassJobType.Lancer] &gt; 29">
+			<LLToast Message="Beginning Lancer class quest 'Proof of Might'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -472,6 +481,7 @@
 
 		<!-- Eye of the Dragon -->
 		<If Condition="not IsQuestCompleted(66603) and IsQuestCompleted(65975) and Core.Me.Levels[ClassJobType.Lancer] &gt; 29">
+			<LLToast Message="Beginning Lancer class quest 'Eye of the Dragon'"/>
 			<While Condition="ClassName != ClassJobType.Lancer">
 				<ChangeClass Job="Lancer" />
 			</While>
@@ -516,6 +526,7 @@
 
 		<!-- Lance of Fury -->
 		<If Condition="not IsQuestCompleted(66604) and IsQuestCompleted(66603) and Core.Me.Levels[ClassJobType.Lancer] &gt; 34">
+			<LLToast Message="Beginning Lancer class quest 'Lance of Fury'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -561,6 +572,7 @@
 
 		<!-- Unfading Skies -->
 		<If Condition="not IsQuestCompleted(66605) and IsQuestCompleted(66604) and Core.Me.Levels[ClassJobType.Lancer] &gt; 39">
+			<LLToast Message="Beginning Lancer class quest 'Unfading Skies'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -598,6 +610,7 @@
 
 		<!-- Double Dragoon -->
 		<If Condition="not IsQuestCompleted(66606) and IsQuestCompleted(66605) and Core.Me.Levels[ClassJobType.Lancer] &gt; 44">
+			<LLToast Message="Beginning Lancer class quest 'Double Dragoon'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -686,6 +699,7 @@
 
 		<!-- Fatal Seduction -->
 		<If Condition="not IsQuestCompleted(66607) and IsQuestCompleted(66606) and Core.Me.Levels[ClassJobType.Lancer] &gt; 44">
+			<LLToast Message="Beginning Lancer class quest 'Fatal Seduction'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -708,6 +722,7 @@
 
 		<!-- Into the Dragon's Maw -->
 		<If Condition="not IsQuestCompleted(66608) and IsQuestCompleted(66607) and Core.Me.Levels[ClassJobType.Lancer] &gt; 49">
+			<LLToast Message="Beginning Lancer class quest 'Into the Dragon's Maw'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -742,6 +757,7 @@
 
 		<!-- Sky's the Limit -->
 		<If Condition="not IsQuestCompleted(67225) and IsQuestCompleted(65964) and IsQuestCompleted(66608) and Core.Me.Levels[ClassJobType.Lancer] &gt; 49">
+			<LLToast Message="Beginning Lancer class quest 'Sky's the Limit'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -764,6 +780,7 @@
 
 		<!-- Days of Azure -->
 		<If Condition="not IsQuestCompleted(67226) and IsQuestCompleted(67225) and Core.Me.Levels[ClassJobType.Lancer] &gt; 51">
+			<LLToast Message="Beginning Lancer class quest 'Days of Azure'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -814,6 +831,7 @@
 
 		<!-- Heart of Justice -->
 		<If Condition="not IsQuestCompleted(67227) and IsQuestCompleted(67226) and Core.Me.Levels[ClassJobType.Lancer] &gt; 51">
+			<LLToast Message="Beginning Lancer class quest 'Heart of Justice'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -836,6 +854,7 @@
 
 		<!-- Sworn Upon a Lance -->
 		<If Condition="not IsQuestCompleted(67228) and IsQuestCompleted(67227) and Core.Me.Levels[ClassJobType.Lancer] &gt; 53">
+			<LLToast Message="Beginning Lancer class quest 'Sworn Upon a Lance'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -882,6 +901,7 @@
 
 		<!-- Dragoon's Errand -->
 		<If Condition="not IsQuestCompleted(67229) and IsQuestCompleted(67228) and Core.Me.Levels[ClassJobType.Lancer] &gt; 55">
+			<LLToast Message="Beginning Lancer class quest 'Dragoon's Errand'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -912,6 +932,7 @@
 
 		<!-- Sanguine Dragoon -->
 		<If Condition="not IsQuestCompleted(67230) and IsQuestCompleted(67229) and Core.Me.Levels[ClassJobType.Lancer] &gt; 57">
+			<LLToast Message="Beginning Lancer class quest 'Sanguine Dragoon'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -956,6 +977,7 @@
 
 		<!-- Dragoon's Fate -->
 		<If Condition="not IsQuestCompleted(67231) and IsQuestCompleted(67230) and Core.Me.Levels[ClassJobType.Lancer] &gt; 59">
+			<LLToast Message="Beginning Lancer class quest 'Dragoon's Fate'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -1000,6 +1022,7 @@
 
 		<!-- Friends Through Eternity -->
 		<If Condition="not IsQuestCompleted(68446) and IsQuestCompleted(67895) and IsQuestCompleted(67231) and Core.Me.Levels[ClassJobType.Lancer] &gt; 59">
+			<LLToast Message="Beginning Lancer class quest 'Friends Through Eternity'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -1022,6 +1045,7 @@
 
 		<!-- Drowsy Dragons -->
 		<If Condition="not IsQuestCompleted(68447) and IsQuestCompleted(68446) and Core.Me.Levels[ClassJobType.Lancer] &gt; 62">
+			<LLToast Message="Beginning Lancer class quest 'Drowsy Dragons'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -1056,6 +1080,7 @@
 
 		<!-- Serpent and the Sea of Rubies -->
 		<If Condition="not IsQuestCompleted(68448) and IsQuestCompleted(68447) and Core.Me.Levels[ClassJobType.Lancer] &gt; 64">
+			<LLToast Message="Beginning Lancer class quest 'Serpent and the Sea of Rubies'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -1099,6 +1124,7 @@
 
 		<!-- Dark as the Night Sky -->
 		<If Condition="not IsQuestCompleted(68449) and IsQuestCompleted(68448) and Core.Me.Levels[ClassJobType.Lancer] &gt; 67">
+			<LLToast Message="Beginning Lancer class quest 'Dark as the Night Sky'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>
@@ -1158,6 +1184,7 @@
 
 		<!-- Dragon Sound -->
 		<If Condition="not IsQuestCompleted(68450) and IsQuestCompleted(68449) and Core.Me.Levels[ClassJobType.Lancer] &gt; 69">
+			<LLToast Message="Beginning Lancer class quest 'Dragon Sound'"/>
 			<While Condition="ClassName != ClassJobType.Dragoon">
 				<ChangeClass Job="Dragoon" />
 			</While>

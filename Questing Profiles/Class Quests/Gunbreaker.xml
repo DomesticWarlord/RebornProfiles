@@ -12,6 +12,7 @@
 
 		<!-- The Makings of a Gunbreaker -->
 		<If Condition="not IsQuestCompleted(68797)">
+			<LLToast Message="Beginning Gunbreaker class quest 'The Makings of a Gunbreaker'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 60">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 60">
@@ -58,6 +59,7 @@
 
 		<!-- Hired Gunblades -->
 		<If Condition="IsQuestCompleted(68797) and not IsQuestCompleted(68798) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 59">
+			<LLToast Message="Beginning Gunbreaker class quest 'Hired Gunblades'"/>
 			<While Condition="ClassName != ClassJobType.Gunbreaker">
 				<ChangeClass Job="Gunbreaker" />
 			</While>
@@ -134,6 +136,7 @@
 
 		<!-- For Better or Worse -->
 		<If Condition="IsQuestCompleted(68798) and not IsQuestCompleted(68799) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 62">
+			<LLToast Message="Beginning Gunbreaker class quest 'For Better or Worse'"/>
 			<While Condition="ClassName != ClassJobType.Gunbreaker">
 				<ChangeClass Job="Gunbreaker" />
 			</While>
@@ -172,6 +175,7 @@
 
 		<!-- Confessions of a Flaming Mongrel -->
 		<If Condition="IsQuestCompleted(68799) and not IsQuestCompleted(68800) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 64">
+			<LLToast Message="Beginning Gunbreaker class quest 'Confessions of a Flaming Mongrel'"/>
 			<While Condition="ClassName != ClassJobType.Gunbreaker">
 				<ChangeClass Job="Gunbreaker" />
 			</While>
@@ -236,6 +240,7 @@
 
 		<!-- Of Defectors and Defenders -->
 		<If Condition="IsQuestCompleted(68800) and not IsQuestCompleted(68801) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 67">
+			<LLToast Message="Beginning Gunbreaker class quest 'Of Defectors and Defenders'"/>
 			<While Condition="ClassName != ClassJobType.Gunbreaker">
 				<ChangeClass Job="Gunbreaker" />
 			</While>
@@ -289,6 +294,7 @@
 
 		<!-- Steel against Steel -->
 		<If Condition="IsQuestCompleted(68801) and not IsQuestCompleted(68802) and Core.Me.Levels[ClassJobType.Gunbreaker] &gt; 69">
+			<LLToast Message="Beginning Gunbreaker class quest 'Steel against Steel'"/>
 			<While Condition="ClassName != ClassJobType.Gunbreaker">
 				<ChangeClass Job="Gunbreaker" />
 			</While>

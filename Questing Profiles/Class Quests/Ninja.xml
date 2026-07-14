@@ -16,6 +16,7 @@
 
 		<!-- So You Want to Be a Rogue -->
 		<If Condition="not IsQuestCompleted(65637)">
+			<LLToast Message="Beginning Rogue class quest 'So You Want to Be a Rogue'"/>
 			<If Condition="not HasQuest(65637)">
 				<GetTo ZoneId="129" XYZ="-148.6992, 2.905223, 241.7078" />
 				<If Condition="IsQuestAcceptQualified(65637)">
@@ -25,6 +26,7 @@
 		</If>
 		<!-- My First Daggers -->
 		<If Condition="IsQuestCompleted(65637) and not IsQuestCompleted(65638)">
+			<LLToast Message="Beginning Rogue class quest 'My First Daggers'"/>
 			<If Condition="not HasQuest(65638)">
 				<GetTo ZoneId="129" XYZ="-148.6992, 2.905223, 241.7078" />
 				<If Condition="IsQuestAcceptQualified(65638)">
@@ -45,6 +47,7 @@
 
 		<!-- Stabbers in Yer Fambles -->
 		<If Condition="IsQuestCompleted(65638) and not IsQuestCompleted(65640)">
+			<LLToast Message="Beginning Rogue class quest 'Stabbers in Yer Fambles'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -125,6 +128,7 @@
 
 		<!-- A Dainty Dilemma -->
 		<If Condition="not IsQuestCompleted(65646) and IsQuestCompleted(65640) and Core.Me.Levels[ClassJobType.Rogue] &gt; 4">
+			<LLToast Message="Beginning Rogue class quest 'A Dainty Dilemma'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -237,6 +241,7 @@
 
 		<!-- Stray into the Shadows -->
 		<If Condition="not IsQuestCompleted(65662) and IsQuestCompleted(65646) and Core.Me.Levels[ClassJobType.Rogue] &gt; 9">
+			<LLToast Message="Beginning Rogue class quest 'Stray into the Shadows'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -357,6 +362,7 @@
 
 		<!-- Stifled Screams -->
 		<If Condition="not IsQuestCompleted(65680) and IsQuestCompleted(65662) and Core.Me.Levels[ClassJobType.Rogue] &gt; 14">
+			<LLToast Message="Beginning Rogue class quest 'Stifled Screams'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -439,6 +445,7 @@
 
 		<!-- Slave to the Code -->
 		<If Condition="not IsQuestCompleted(65681) and IsQuestCompleted(65680) and Core.Me.Levels[ClassJobType.Rogue] &gt; 14">
+			<LLToast Message="Beginning Rogue class quest 'Slave to the Code'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -491,6 +498,7 @@
 
 		<!-- Grinners in the Mist -->
 		<If Condition="not IsQuestCompleted(65682) and IsQuestCompleted(65681) and Core.Me.Levels[ClassJobType.Rogue] &gt; 19">
+			<LLToast Message="Beginning Rogue class quest 'Grinners in the Mist'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -599,6 +607,7 @@
 
 		<!-- Sweet Sorrows -->
 		<If Condition="not IsQuestCompleted(65684) and IsQuestCompleted(65682) and Core.Me.Levels[ClassJobType.Rogue] &gt; 24">
+			<LLToast Message="Beginning Rogue class quest 'Sweet Sorrows'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -692,6 +701,7 @@
 
 		<!-- Market for Death -->
 		<If Condition="not IsQuestCompleted(65690) and IsQuestCompleted(65684) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<LLToast Message="Beginning Rogue class quest 'Market for Death'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -750,6 +760,7 @@
 
 		<!-- Cloying Victory -->
 		<If Condition="not IsQuestCompleted(65691) and IsQuestCompleted(65690) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<LLToast Message="Beginning Rogue class quest 'Cloying Victory'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -907,6 +918,7 @@
 
 		<!-- Peasants by Day, Ninjas by Night -->
 		<If Condition="not IsQuestCompleted(65748) and IsQuestCompleted(65691) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<LLToast Message="Beginning Rogue class quest 'Peasants by Day, Ninjas by Night'"/>
 			<While Condition="ClassName != ClassJobType.Rogue">
 				<ChangeClass Job="Rogue" />
 			</While>
@@ -968,6 +980,7 @@
 
 		<!-- My First Mudra -->
 		<If Condition="not IsQuestCompleted(65749) and IsQuestCompleted(65748) and Core.Me.Levels[ClassJobType.Rogue] &gt; 29">
+			<LLToast Message="Beginning Rogue class quest 'My First Mudra'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1023,6 +1036,7 @@
 
 		<!-- Killer Combinations -->
 		<If Condition="not IsQuestCompleted(65750) and IsQuestCompleted(65749) and Core.Me.Levels[ClassJobType.Rogue] &gt; 34">
+			<LLToast Message="Beginning Rogue class quest 'Killer Combinations'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1048,6 +1062,7 @@
 
 		<!-- Once Upon a Time in Doma -->
 		<If Condition="not IsQuestCompleted(65751) and IsQuestCompleted(65750) and Core.Me.Levels[ClassJobType.Rogue] &gt; 34">
+			<LLToast Message="Beginning Rogue class quest 'Once Upon a Time in Doma'"/>
 			<If Condition="not HasQuest(65751)">
 				<If Condition="not IsOnMap(137)">
 					<GetTo ZoneId="137" XYZ="-14.75549, 41.39178, 258.1368" />
@@ -1125,6 +1140,7 @@
 
 		<!-- Pirates versus Ninjas -->
 		<If Condition="not IsQuestCompleted(65752) and IsQuestCompleted(65751) and Core.Me.Levels[ClassJobType.Rogue] &gt; 39">
+			<LLToast Message="Beginning Rogue class quest 'Pirates versus Ninjas'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1150,6 +1166,7 @@
 
 		<!-- Ninja Bathin' -->
 		<If Condition="not IsQuestCompleted(65753) and IsQuestCompleted(65752) and Core.Me.Levels[ClassJobType.Rogue] &gt; 39">
+			<LLToast Message="Beginning Rogue class quest 'Ninja Bathin''"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1234,6 +1251,7 @@
 
 		<!-- Tough Guys -->
 		<If Condition="not IsQuestCompleted(65768) and IsQuestCompleted(65753) and Core.Me.Levels[ClassJobType.Rogue] &gt; 44">
+			<LLToast Message="Beginning Rogue class quest 'Tough Guys'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1359,6 +1377,7 @@
 
 		<!-- The Crow Knows -->
 		<If Condition="not IsQuestCompleted(65769) and IsQuestCompleted(65768) and Core.Me.Levels[ClassJobType.Rogue] &gt; 44">
+			<LLToast Message="Beginning Rogue class quest 'The Crow Knows'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1409,6 +1428,7 @@
 
 		<!-- Master and Student -->
 		<If Condition="not IsQuestCompleted(65770) and IsQuestCompleted(65769) and Core.Me.Levels[ClassJobType.Rogue] &gt; 49">
+			<LLToast Message="Beginning Rogue class quest 'Master and Student'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1486,6 +1506,7 @@
 
 		<!-- Strangers in a Strange Land -->
 		<If Condition="not IsQuestCompleted(65771) and IsQuestCompleted(65964) and IsQuestCompleted(65770) and Core.Me.Levels[ClassJobType.Rogue] &gt; 49">
+			<LLToast Message="Beginning Rogue class quest 'Strangers in a Strange Land'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1548,6 +1569,7 @@
 
 		<!-- The Impossible Girl -->
 		<If Condition="not IsQuestCompleted(67220) and IsQuestCompleted(65771) and Core.Me.Levels[ClassJobType.Rogue] &gt; 51">
+			<LLToast Message="Beginning Rogue class quest 'The Impossible Girl'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1598,6 +1620,7 @@
 
 		<!-- Ninja Assassin -->
 		<If Condition="not IsQuestCompleted(67221) and IsQuestCompleted(67220) and Core.Me.Levels[ClassJobType.Rogue] &gt; 53">
+			<LLToast Message="Beginning Rogue class quest 'Ninja Assassin'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1677,6 +1700,7 @@
 
 		<!-- Medieval Espionage -->
 		<If Condition="not IsQuestCompleted(67222) and IsQuestCompleted(67221) and Core.Me.Levels[ClassJobType.Rogue] &gt; 55">
+			<LLToast Message="Beginning Rogue class quest 'Medieval Espionage'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1743,6 +1767,7 @@
 
 		<!-- Staying Alive -->
 		<If Condition="not IsQuestCompleted(67223) and IsQuestCompleted(67222) and Core.Me.Levels[ClassJobType.Rogue] &gt; 57">
+			<LLToast Message="Beginning Rogue class quest 'Staying Alive'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1799,6 +1824,7 @@
 
 		<!-- In Her Defense -->
 		<If Condition="not IsQuestCompleted(67224) and IsQuestCompleted(67223) and Core.Me.Levels[ClassJobType.Rogue] &gt; 59">
+			<LLToast Message="Beginning Rogue class quest 'In Her Defense'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1888,6 +1914,7 @@
 
 		<!-- The Search for the Stolen Scroll -->
 		<If Condition="not IsQuestCompleted(68484) and IsQuestCompleted(67895) and IsQuestCompleted(67224) and Core.Me.Levels[ClassJobType.Rogue] &gt; 59">
+			<LLToast Message="Beginning Rogue class quest 'The Search for the Stolen Scroll'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -1951,6 +1978,7 @@
 
 		<!-- Ninja Bathin' Redux -->
 		<If Condition="not IsQuestCompleted(68485) and IsQuestCompleted(68484) and Core.Me.Levels[ClassJobType.Rogue] &gt; 62">
+			<LLToast Message="Beginning Rogue class quest 'Ninja Bathin' Redux'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -2014,6 +2042,7 @@
 
 		<!-- A Game of Life and Death -->
 		<If Condition="not IsQuestCompleted(68486) and IsQuestCompleted(68485) and Core.Me.Levels[ClassJobType.Rogue] &gt; 64">
+			<LLToast Message="Beginning Rogue class quest 'A Game of Life and Death'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -2075,6 +2104,7 @@
 
 		<!-- True Enlightenment -->
 		<If Condition="not IsQuestCompleted(68487) and IsQuestCompleted(68486) and Core.Me.Levels[ClassJobType.Rogue] &gt; 67">
+			<LLToast Message="Beginning Rogue class quest 'True Enlightenment'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>
@@ -2130,6 +2160,7 @@
 
 		<!-- When Clans Collide -->
 		<If Condition="not IsQuestCompleted(68488) and IsQuestCompleted(68487) and Core.Me.Levels[ClassJobType.Rogue] &gt; 69">
+			<LLToast Message="Beginning Rogue class quest 'When Clans Collide'"/>
 			<While Condition="ClassName != ClassJobType.Ninja">
 				<ChangeClass Job="Ninja" />
 			</While>

@@ -12,6 +12,7 @@
 
 		<!-- Shall We Dance -->
 		<If Condition="not IsQuestCompleted(68785)">
+			<LLToast Message="Beginning Dancer class quest 'Shall We Dance'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 60">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 60">
@@ -45,6 +46,7 @@
 
 		<!-- Gamboling for Gil -->
 		<If Condition="not IsQuestCompleted(68786) and IsQuestCompleted(68785) and Core.Me.Levels[ClassJobType.Dancer] &gt; 59">
+			<LLToast Message="Beginning Dancer class quest 'Gamboling for Gil'"/>
 			<While Condition="ClassName != ClassJobType.Dancer">
 				<ChangeClass Job="Dancer" />
 			</While>
@@ -99,6 +101,7 @@
 
 		<!-- A Soirée in the Sultanate -->
 		<If Condition="IsQuestCompleted(68786) and not IsQuestCompleted(68787) and Core.Me.Levels[ClassJobType.Dancer] &gt; 62">
+			<LLToast Message="Beginning Dancer class quest 'A Soirée in the Sultanate'"/>
 			<While Condition="ClassName != ClassJobType.Dancer">
 				<ChangeClass Job="Dancer" />
 			</While>
@@ -149,6 +152,7 @@
 
 		<!-- Dances with Duskwights -->
 		<If Condition="not IsQuestCompleted(68788) and IsQuestCompleted(68787) and Core.Me.Levels[ClassJobType.Dancer] &gt; 64">
+			<LLToast Message="Beginning Dancer class quest 'Dances with Duskwights'"/>
 			<While Condition="ClassName != ClassJobType.Dancer">
 				<ChangeClass Job="Dancer" />
 			</While>
@@ -187,6 +191,7 @@
 
 		<!-- High-steppin' in the Holy See -->
 		<If Condition="not IsQuestCompleted(68789) and IsQuestCompleted(68788) and Core.Me.Levels[ClassJobType.Dancer] &gt; 67">
+			<LLToast Message="Beginning Dancer class quest 'High-steppin' in the Holy See'"/>
 			<While Condition="ClassName != ClassJobType.Dancer">
 				<ChangeClass Job="Dancer" />
 			</While>
@@ -225,6 +230,7 @@
 
 		<!-- Save the Last Dance for Me -->
 		<If Condition="not IsQuestCompleted(68790) and IsQuestCompleted(68789) and Core.Me.Levels[ClassJobType.Dancer] &gt; 69">
+			<LLToast Message="Beginning Dancer class quest 'Save the Last Dance for Me'"/>
 			<While Condition="ClassName != ClassJobType.Dancer">
 				<ChangeClass Job="Dancer" />
 			</While>

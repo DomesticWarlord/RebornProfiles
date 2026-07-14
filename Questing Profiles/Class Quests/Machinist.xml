@@ -12,6 +12,7 @@
 
 		<!-- Before the Dawn -->
 		<If Condition="not IsQuestCompleted(65964)">
+			<LLToast Message="Beginning Machinist class quest 'Before the Dawn'"/>
 			<UserDialog DialogText="In order to unlock Machinest please complete the Level 50 MSQ Quest Before the Dawn.." />
 		</If>
 
@@ -21,6 +22,7 @@
 
 		<!-- So You Want to Be a Machinist -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67645)">
+			<LLToast Message="Beginning Machinist class quest 'So You Want to Be a Machinist'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 50">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -37,6 +39,7 @@
 
 		<!-- Savior of Skysteel -->
 		<If Condition="not IsQuestCompleted(67232) and IsQuestCompleted(67645)">
+			<LLToast Message="Beginning Machinist class quest 'Savior of Skysteel'"/>
 			<If Condition="not HasQuest(67232)">
 				<GetTo ZoneId="418" XYZ="-154.3146, 16.99999, -53.3609" />
 				<If Condition="IsQuestAcceptQualified(67232)">
@@ -73,6 +76,7 @@
 
 		<!-- Master of Marksmanship -->
 		<If Condition="not IsQuestCompleted(67233) and IsQuestCompleted(67232) and Core.Me.Levels[ClassJobType.Machinist] &gt; 29">
+			<LLToast Message="Beginning Machinist class quest 'Master of Marksmanship'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -115,6 +119,7 @@
 
 		<!-- Always the Last Place You Look -->
 		<If Condition="not IsQuestCompleted(67234) and IsQuestCompleted(67233) and Core.Me.Levels[ClassJobType.Machinist] &gt; 34">
+			<LLToast Message="Beginning Machinist class quest 'Always the Last Place You Look'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -187,6 +192,7 @@
 
 		<!-- Rook Before You Reap -->
 		<If Condition="not IsQuestCompleted(67235) and IsQuestCompleted(67234) and Core.Me.Levels[ClassJobType.Machinist] &gt; 39">
+			<LLToast Message="Beginning Machinist class quest 'Rook Before You Reap'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -203,6 +209,7 @@
 
 		<!-- Securing the Locks -->
 		<If Condition="not IsQuestCompleted(67236) and IsQuestCompleted(67235) and Core.Me.Levels[ClassJobType.Machinist] &gt; 39">
+			<LLToast Message="Beginning Machinist class quest 'Securing the Locks'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -263,6 +270,7 @@
 
 		<!-- A Suppressive Strategy -->
 		<If Condition="not IsQuestCompleted(67237) and IsQuestCompleted(67236) and Core.Me.Levels[ClassJobType.Machinist] &gt; 44">
+			<LLToast Message="Beginning Machinist class quest 'A Suppressive Strategy'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -281,6 +289,7 @@
 
 		<!-- Blood on the Sands -->
 		<If Condition="not IsQuestCompleted(67238) and IsQuestCompleted(67237) and Core.Me.Levels[ClassJobType.Machinist] &gt; 44">
+			<LLToast Message="Beginning Machinist class quest 'Blood on the Sands'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -336,6 +345,7 @@
 
 		<!-- Rage Against the Machinists -->
 		<If Condition="not IsQuestCompleted(67239) and IsQuestCompleted(67238) and Core.Me.Levels[ClassJobType.Machinist] &gt; 49">
+			<LLToast Message="Beginning Machinist class quest 'Rage Against the Machinists'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -379,6 +389,7 @@
 
 		<!-- The Power of a Tourney -->
 		<If Condition="not IsQuestCompleted(67240) and IsQuestCompleted(67239) and Core.Me.Levels[ClassJobType.Machinist] &gt; 49">
+			<LLToast Message="Beginning Machinist class quest 'The Power of a Tourney'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -437,6 +448,7 @@
 
 		<!-- A Joye-less Celebration -->
 		<If Condition="not IsQuestCompleted(67241) and IsQuestCompleted(67240) and Core.Me.Levels[ClassJobType.Machinist] &gt; 49">
+			<LLToast Message="Beginning Machinist class quest 'A Joye-less Celebration'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -463,6 +475,7 @@
 
 		<!-- Pushing the Brume -->
 		<If Condition="not IsQuestCompleted(67242) and IsQuestCompleted(67241) and Core.Me.Levels[ClassJobType.Machinist] &gt; 51">
+			<LLToast Message="Beginning Machinist class quest 'Pushing the Brume'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -509,6 +522,7 @@
 
 		<!-- A Joye-ful Reunion -->
 		<If Condition="not IsQuestCompleted(67243) and IsQuestCompleted(67242) and Core.Me.Levels[ClassJobType.Machinist] &gt; 53">
+			<LLToast Message="Beginning Machinist class quest 'A Joye-ful Reunion'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -563,6 +577,7 @@
 
 		<!-- Wheels of Justice -->
 		<If Condition="not IsQuestCompleted(67244) and IsQuestCompleted(67243) and Core.Me.Levels[ClassJobType.Machinist] &gt; 55">
+			<LLToast Message="Beginning Machinist class quest 'Wheels of Justice'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -616,6 +631,7 @@
 
 		<!-- Taking the Fall -->
 		<If Condition="not IsQuestCompleted(67246) and IsQuestCompleted(67244) and Core.Me.Levels[ClassJobType.Machinist] &gt; 57">
+			<LLToast Message="Beginning Machinist class quest 'Taking the Fall'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -648,6 +664,7 @@
 
 		<!-- Rusted Steel -->
 		<If Condition="not IsQuestCompleted(67247) and IsQuestCompleted(67246) and Core.Me.Levels[ClassJobType.Machinist] &gt; 57">
+			<LLToast Message="Beginning Machinist class quest 'Rusted Steel'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -674,6 +691,7 @@
 
 		<!-- Rise of the Machinists -->
 		<If Condition="not IsQuestCompleted(67248) and IsQuestCompleted(67247) and Core.Me.Levels[ClassJobType.Machinist] &gt; 59">
+			<LLToast Message="Beginning Machinist class quest 'Rise of the Machinists'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -732,6 +750,7 @@
 
 		<!-- The Machinists' Choice -->
 		<If Condition="not IsQuestCompleted(68441) and IsQuestCompleted(67895) and IsQuestCompleted(67248) and Core.Me.Levels[ClassJobType.Machinist] &gt; 59">
+			<LLToast Message="Beginning Machinist class quest 'The Machinists' Choice'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -764,6 +783,7 @@
 
 		<!-- The Hrunting Heist -->
 		<If Condition="not IsQuestCompleted(68442) and IsQuestCompleted(68441) and Core.Me.Levels[ClassJobType.Machinist] &gt; 62">
+			<LLToast Message="Beginning Machinist class quest 'The Hrunting Heist'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -802,6 +822,7 @@
 
 		<!-- Release the Hounds -->
 		<If Condition="not IsQuestCompleted(68443) and IsQuestCompleted(68442) and Core.Me.Levels[ClassJobType.Machinist] &gt; 64">
+			<LLToast Message="Beginning Machinist class quest 'Release the Hounds'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -847,6 +868,7 @@
 
 		<!-- Snouts Down, Tails Up -->
 		<If Condition="not IsQuestCompleted(68444) and IsQuestCompleted(68443) and Core.Me.Levels[ClassJobType.Machinist] &gt; 67">
+			<LLToast Message="Beginning Machinist class quest 'Snouts Down, Tails Up'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>
@@ -886,6 +908,7 @@
 
 		<!-- The Mongrel and the Knight -->
 		<If Condition="not IsQuestCompleted(68445) and IsQuestCompleted(68444) and Core.Me.Levels[ClassJobType.Machinist] &gt; 69">
+			<LLToast Message="Beginning Machinist class quest 'The Mongrel and the Knight'"/>
 			<While Condition="ClassName != ClassJobType.Machinist">
 				<ChangeClass Job="Machinist" />
 			</While>

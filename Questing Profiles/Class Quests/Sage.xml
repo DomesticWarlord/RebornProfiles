@@ -12,6 +12,7 @@
 
     <!-- Sage's Path -->
     <If Condition="not IsQuestCompleted(69603)">
+      <LLToast Message="Beginning Sage class quest 'Sage's Path'"/>
       <If Condition="Core.Player.ClassLevel &lt; 70">
         <RunCode Name="SwitchCombatJob" />
         <If Condition="Core.Player.ClassLevel &lt; 70">
@@ -42,6 +43,7 @@
 
     <!-- Sage's Focus -->
     <If Condition="IsQuestCompleted(69603) and not IsQuestCompleted(69604) and Core.Me.Levels[ClassJobType.Sage] &gt; 69">
+      <LLToast Message="Beginning Sage class quest 'Sage's Focus'"/>
       <While Condition="ClassName != ClassJobType.Sage">
         <ChangeClass Job="Sage" />
       </While>
@@ -90,6 +92,7 @@
 
     <!-- Sands of Despair -->
     <If Condition="IsQuestCompleted(69604) and not IsQuestCompleted(69605) and Core.Me.Levels[ClassJobType.Sage] &gt; 72">
+      <LLToast Message="Beginning Sage class quest 'Sands of Despair'"/>
       <While Condition="ClassName != ClassJobType.Sage">
         <ChangeClass Job="Sage" />
       </While>
@@ -135,6 +138,7 @@
 
     <!-- A Poisoned Gift -->
     <If Condition="IsQuestCompleted(69605) and not IsQuestCompleted(69606) and Core.Me.Levels[ClassJobType.Sage] &gt; 74">
+      <LLToast Message="Beginning Sage class quest 'A Poisoned Gift'"/>
       <While Condition="ClassName != ClassJobType.Sage">
         <ChangeClass Job="Sage" />
       </While>
@@ -168,6 +172,7 @@
 
     <!-- Pledge of Hope -->
     <If Condition="IsQuestCompleted(69606) and not IsQuestCompleted(69607) and Core.Me.Levels[ClassJobType.Sage] &gt; 77">
+      <LLToast Message="Beginning Sage class quest 'Pledge of Hope'"/>
       <While Condition="ClassName != ClassJobType.Sage">
         <ChangeClass Job="Sage" />
       </While>
@@ -206,6 +211,7 @@
 
     <!-- Life Ephemeral, Path Eternal -->
     <If Condition="IsQuestCompleted(69607) and not IsQuestCompleted(69608) and Core.Me.Levels[ClassJobType.Sage] &gt; 79">
+      <LLToast Message="Beginning Sage class quest 'Life Ephemeral, Path Eternal'"/>
       <While Condition="ClassName != ClassJobType.Sage">
         <ChangeClass Job="Sage" />
       </While>

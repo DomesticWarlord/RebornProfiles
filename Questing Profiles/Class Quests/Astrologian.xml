@@ -12,6 +12,7 @@
 
 		<!-- What's Your Sign -->
 		<If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67659)">
+			<LLToast Message="Beginning Astrologian class quest 'What's Your Sign'"/>
 			<If Condition="Core.Player.ClassLevel &lt; 50">
 				<RunCode Name="SwitchCombatJob" />
 				<If Condition="Core.Player.ClassLevel &lt; 50">
@@ -27,6 +28,7 @@
 		</If>
 		<!-- Stairway to the Heavens -->
 		<If Condition="IsQuestCompleted(67659) and not IsQuestCompleted(67548)">
+			<LLToast Message="Beginning Astrologian class quest 'Stairway to the Heavens'"/>
 			<If Condition="not HasQuest(67548)">
 				<GetTo ZoneId="419" XYZ="199.9706, -5.399966, -59.39262" />
 				<If Condition="IsQuestAcceptQualified(67548)">
@@ -123,6 +125,7 @@
 
 		<!-- Hanging in the Balance -->
 		<If Condition="not IsQuestCompleted(67550) and IsQuestCompleted(67549) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 34">
+			<LLToast Message="Beginning Astrologian class quest 'Hanging in the Balance'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -161,6 +164,7 @@
 
 		<!-- A Lesson in Patience -->
 		<If Condition="not IsQuestCompleted(67551) and IsQuestCompleted(67550) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 39">
+			<LLToast Message="Beginning Astrologian class quest 'A Lesson in Patience'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -179,6 +183,7 @@
 
 		<!-- Slings and Arrows -->
 		<If Condition="not IsQuestCompleted(67552) and IsQuestCompleted(67551) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 39">
+			<LLToast Message="Beginning Astrologian class quest 'Slings and Arrows'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -293,6 +298,7 @@
 
 		<!-- Ewer Right -->
 		<If Condition="not IsQuestCompleted(67553) and IsQuestCompleted(67552) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 44">
+			<LLToast Message="Beginning Astrologian class quest 'Ewer Right'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -339,6 +345,7 @@
 
 		<!-- Loved by the Sun -->
 		<If Condition="not IsQuestCompleted(67554) and IsQuestCompleted(67553) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 49">
+			<LLToast Message="Beginning Astrologian class quest 'Loved by the Sun'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -357,6 +364,7 @@
 
 		<!-- Spearheading Initiatives -->
 		<If Condition="not IsQuestCompleted(67555) and IsQuestCompleted(67554) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 49">
+			<LLToast Message="Beginning Astrologian class quest 'Spearheading Initiatives'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -394,6 +402,7 @@
 
 		<!-- Sharlayan Ascending -->
 		<If Condition="not IsQuestCompleted(67556) and IsQuestCompleted(65964) and IsQuestCompleted(67555) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 49">
+			<LLToast Message="Beginning Astrologian class quest 'Sharlayan Ascending'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -433,6 +442,7 @@
 
 		<!-- Empty Nest -->
 		<If Condition="not IsQuestCompleted(67557) and IsQuestCompleted(67556) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 51">
+			<LLToast Message="Beginning Astrologian class quest 'Empty Nest'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -493,6 +503,7 @@
 
 		<!-- Conviction -->
 		<If Condition="not IsQuestCompleted(67558) and IsQuestCompleted(67557) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 53">
+			<LLToast Message="Beginning Astrologian class quest 'Conviction'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -541,6 +552,7 @@
 
 		<!-- Feather in the Cap -->
 		<If Condition="not IsQuestCompleted(67559) and IsQuestCompleted(67558) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 55">
+			<LLToast Message="Beginning Astrologian class quest 'Feather in the Cap'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -601,6 +613,7 @@
 
 		<!-- Trumped -->
 		<If Condition="not IsQuestCompleted(67560) and IsQuestCompleted(67559) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 57">
+			<LLToast Message="Beginning Astrologian class quest 'Trumped'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -654,6 +667,7 @@
 
 		<!-- The Hands of Fate -->
 		<If Condition="not IsQuestCompleted(67561) and IsQuestCompleted(67560) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 59">
+			<LLToast Message="Beginning Astrologian class quest 'The Hands of Fate'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -707,6 +721,7 @@
 
 		<!-- East Meets West -->
 		<If Condition="not IsQuestCompleted(67945) and IsQuestCompleted(67895) and IsQuestCompleted(67561) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 59">
+			<LLToast Message="Beginning Astrologian class quest 'East Meets West'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -733,6 +748,7 @@
 
 		<!-- Ride Like the Wind -->
 		<If Condition="not IsQuestCompleted(67946) and IsQuestCompleted(67945) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 62">
+			<LLToast Message="Beginning Astrologian class quest 'Ride Like the Wind'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -763,6 +779,7 @@
 
 		<!-- Come Rain or Shine -->
 		<If Condition="not IsQuestCompleted(67947) and IsQuestCompleted(67946) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 64">
+			<LLToast Message="Beginning Astrologian class quest 'Come Rain or Shine'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -861,6 +878,7 @@
 
 		<!-- Behind Door Number Two -->
 		<If Condition="not IsQuestCompleted(67948) and IsQuestCompleted(67947) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 67">
+			<LLToast Message="Beginning Astrologian class quest 'Behind Door Number Two'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>
@@ -896,6 +914,7 @@
 
 		<!-- Foxfire -->
 		<If Condition="not IsQuestCompleted(67949) and IsQuestCompleted(67948) and Core.Me.Levels[ClassJobType.Astrologian] &gt; 69">
+			<LLToast Message="Beginning Astrologian class quest 'Foxfire'"/>
 			<While Condition="ClassName != ClassJobType.Astrologian">
 				<ChangeClass Job="Astrologian" />
 			</While>

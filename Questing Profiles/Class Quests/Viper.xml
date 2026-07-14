@@ -12,6 +12,7 @@
 
     <!-- Fangs of the Viper -->
     <If Condition="not IsQuestCompleted(70385) and Core.Me.Levels[ClassJobType.Viper] &gt; 79">
+      <LLToast Message="Beginning Viper class quest 'Fangs of the Viper'"/>
       <If Condition="not HasQuest(70385)">
         <GetTo ZoneId="131" XYZ="89.234245, 12, 49.561222" />
         <If Condition="IsQuestAcceptQualified(70385)">
@@ -58,6 +59,7 @@
 
     <!-- Viper in the Vidraal's Shadow -->
     <If Condition="IsQuestCompleted(70385) and not IsQuestCompleted(70386) and Core.Me.Levels[ClassJobType.Viper] &gt; 82">
+      <LLToast Message="Beginning Viper class quest 'Viper in the Vidraal's Shadow'"/>
       <If Condition="not HasQuest(70386)">
         <GetTo ZoneId="130" XYZ="-150.85902, 12, 13.845115" />
         <If Condition="IsQuestAcceptQualified(70386)">
@@ -110,6 +112,7 @@
 
     <!-- Vipers on the Hunt -->
     <If Condition="IsQuestCompleted(70386) and not IsQuestCompleted(70387) and Core.Me.Levels[ClassJobType.Viper] &gt; 85">
+      <LLToast Message="Beginning Viper class quest 'Vipers on the Hunt'"/>
       <If Condition="not HasQuest(70387)">
         <GetTo ZoneId="153" XYZ="201.22926, 8.315068, -70.24205" />
         <If Condition="IsQuestAcceptQualified(70387)">
@@ -162,6 +165,7 @@
 
     <!-- Into the Viper Pit -->
     <If Condition="IsQuestCompleted(70387) and not IsQuestCompleted(70388) and Core.Me.Levels[ClassJobType.Viper] &gt; 87">
+      <LLToast Message="Beginning Viper class quest 'Into the Viper Pit'"/>
       <If Condition="not HasQuest(70388)">
         <GetTo ZoneId="153" XYZ="202.35536, 8.39272, -71.26598" />
         <If Condition="IsQuestAcceptQualified(70388)">
@@ -210,6 +214,7 @@
 
     <!-- Vengeance of the Viper -->
     <If Condition="IsQuestCompleted(70388) and not IsQuestCompleted(70389) and Core.Me.Levels[ClassJobType.Viper] &gt; 89">
+      <LLToast Message="Beginning Viper class quest 'Vengeance of the Viper'"/>
       <If Condition="not HasQuest(70389)">
         <GetTo ZoneId="153" XYZ="199.69986, 8.313172, -70.167046" />
         <If Condition="IsQuestAcceptQualified(70389)">
