@@ -11560,6 +11560,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             Magitek.Models.Warrior.WarriorSettings.Instance.UseAoe = false;
             Magitek.Models.Summoner.SummonerSettings.Instance.Outburst = false;
             Magitek.Models.Paladin.PaladinSettings.Instance.UseShieldLobOnLostAggro = false;
+            Magitek.Models.Paladin.ScholarSettings.Instance.BioMultipleTargets = false;
         }
         else
         {
@@ -11579,6 +11580,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             Magitek.Models.Warrior.WarriorSettings.Instance.UseAoe = true;
             Magitek.Models.Summoner.SummonerSettings.Instance.Outburst = true;
             Magitek.Models.Paladin.PaladinSettings.Instance.UseShieldLobOnLostAggro = true;
+            Magitek.Models.Paladin.ScholarSettings.Instance.BioMultipleTargets = true;
         }
         else
         {
