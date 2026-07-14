@@ -8096,7 +8096,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
         <If Condition="GetQuestStep(69409) == 2">
           <If condition="&UseCarry; == False">
-            <If condition="AverageItemLevel() &lt; 42">
+            <If condition="CurrentItemLevel() &lt; 42">
               <UserDialog IsBotContinueAllowed="True" DialogText="'Castrum Meridianum' requires a minimum item level of 42." />
             </If>
             <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Castrum Meridianum" QueueType="2" />
