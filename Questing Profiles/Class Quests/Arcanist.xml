@@ -16,7 +16,7 @@
 
 		<!-- Way of the Arcanist -->
 		<If Condition="not IsQuestCompleted(65988) and Core.Me.Levels[ClassJobType.Arcanist] == 0">
-			<LLToast Message="Beginning Arcanist class quest 'Way of the Arcanist'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Way of the Arcanist'" />
 			<If Condition="not HasQuest(65988)">
 				<GetTo ZoneId="129" XYZ="-336.621, 12.89976, 5.536654" />
 				<TalkTo NpcId="1000895" XYZ="-336.621, 12.89976, 5.536654" />
@@ -36,7 +36,7 @@
 
 		<!-- My First Grimoire -->
 		<If Condition="IsQuestCompleted(65988) and not IsQuestCompleted(65990)">
-			<LLToast Message="Beginning Arcanist class quest 'My First Grimoire'"/>
+			<LLToast Message="Beginning Arcanist class quest 'My First Grimoire'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -95,7 +95,7 @@
 
 		<!-- What's in the Box -->
 		<If Condition="not IsQuestCompleted(65991) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 4">
-			<LLToast Message="Beginning Arcanist class quest 'What's in the Box'"/>
+			<LLToast Message="Beginning Arcanist class quest 'What's in the Box'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -153,7 +153,7 @@
 
 		<!-- Tactical Planning (Primary) -->
 		<If Condition="not IsQuestCompleted(65992) and not IsQuestCompleted(65990) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 9">
-			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Primary)'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Primary)'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -236,7 +236,7 @@
 		</If>
 		<!-- Tactical Planning (Secondary) -->
 		<If Condition="IsQuestCompleted(65991) and not IsQuestCompleted(65992) and not IsQuestCompleted(65993) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 9">
-			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Secondary)'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Secondary)'" />
 			<If Condition="not HasQuest(65993)">
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
 				<If Condition="IsQuestAcceptQualified(65993)">
@@ -310,7 +310,7 @@
 
 		<!-- Topaz Teachings -->
 		<If Condition="not IsQuestCompleted(66639) and (IsQuestCompleted(65992) or IsQuestCompleted(65993)) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 14">
-			<LLToast Message="Beginning Arcanist class quest 'Topaz Teachings'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Topaz Teachings'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -332,7 +332,7 @@
 
 		<!-- Over the Rails -->
 		<If Condition="not IsQuestCompleted(65994) and IsQuestCompleted(66639) and Core.Player.ClassLevel &gt; 14">
-			<LLToast Message="Beginning Arcanist class quest 'Over the Rails'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Over the Rails'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -392,7 +392,7 @@
 
 		<!-- Pincer Maneuver -->
 		<If Condition="not IsQuestCompleted(65995) and IsQuestCompleted(65994) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 19">
-			<LLToast Message="Beginning Arcanist class quest 'Pincer Maneuver'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Pincer Maneuver'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -454,7 +454,7 @@
 
 		<!-- Grimoire Fandango -->
 		<If Condition="not IsQuestCompleted(65996) and IsQuestCompleted(65995) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 24">
-			<LLToast Message="Beginning Arcanist class quest 'Grimoire Fandango'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Grimoire Fandango'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -593,7 +593,7 @@
 
 		<!-- Sinking Doesmaga -->
 		<If Condition="not IsQuestCompleted(65997) and IsQuestCompleted(65996) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Sinking Doesmaga'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Sinking Doesmaga'" />
 			<While Condition="ClassName != ClassJobType.Arcanist">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -666,7 +666,7 @@
 
 		<!-- Forgotten but Not Gone -->
 		<If Condition="not IsQuestCompleted(66633) and IsQuestCompleted(65997) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Forgotten but Not Gone'"/>
+			<LLToast Message="Beginning Arcanist class quest 'Forgotten but Not Gone'" />
 			<While Condition="ClassName != ClassJobType.Arcanist and ClassName != ClassJobType.Summoner and ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Arcanist" />
 			</While>
@@ -727,9 +727,35 @@
 				<TurnIn QuestId="66633" NpcId="1006757" XYZ="-4.470947, 44.99989, -250.5685" />
 			</If>
 		</If>
+
+		<!-- A Faerie Tale Come True -->
+		<If Condition="IsQuestCompleted(66633) and not IsQuestCompleted(70300) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
+			<LLToast Message="Beginning Arcanist class quest 'A Faerie Tale Come True'" />
+			<If Condition="not HasQuest(70300)">
+				<GetTo ZoneId="129" XYZ="-327.9025, 12.899763, 10.551035" />
+				<If Condition="IsQuestAcceptQualified(70300)">
+					<PickupQuest QuestId="70300" NpcId="1000909" />
+				</If>
+			</If>
+			<If Condition="GetQuestStep(70300) == 1">
+				<GetTo ZoneId="129" XYZ="-335.38742, -2.3744934, 13.535345" />
+				<UseObject NpcId="2013383" XYZ="-332.3855, -2.374472, 14.99623" QuestId="70300" StepId="1" />
+			</If>
+			<If Condition="GetQuestStep(70300) == 255">
+				<GetTo ZoneId="129" XYZ="-328.73306, 12.899763, 11.601294" />
+				<TurnIn QuestId="70300" NpcId="1000909" XYZ="-326.37524, 12.899658, 9.994568" />
+			</If>
+		</If>
+
 		<!-- Austerities of Flame -->
-		<If Condition="not IsQuestCompleted(66627) and IsQuestCompleted(65997) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Austerities of Flame'"/>
+		<If Condition="not IsQuestCompleted(66627) and IsQuestCompleted(70300) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
+			<LLToast Message="Beginning Arcanist class quest 'Austerities of Flame'" />
+			<If Condition="ClassName != ClassJobType.Scholar">
+				<RunCode name="UnequipSoul" />
+			</If>
+			<While Condition="ClassName != ClassJobType.Arcanist">
+				<ChangeClass Job="Arcanist" />
+			</While>
 			<If Condition="not HasQuest(66627)">
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
 				<If Condition="IsQuestAcceptQualified(66627)">
@@ -811,6 +837,15 @@
 			  return false;
 			]]>
 	  </CodeChunk>
+		<CodeChunk Name="UnequipSoul">
+		<![CDATA[
+			if (InventoryManager.EquippedItems.Any(i => i.RawItemId == 4549))
+			{
+				var newSlot = InventoryManager.GetBagByInventoryBagId(InventoryBagId.Armory_Souls).First(i => !i.IsFilled);
+				InventoryManager.EquippedItems.First(i => i.RawItemId == 4547).Move(newSlot);
+			}
+		]]>
+	</CodeChunk>
 		<CodeChunk Type="Hook" Name="KillMobs">
 			<![CDATA[
 
