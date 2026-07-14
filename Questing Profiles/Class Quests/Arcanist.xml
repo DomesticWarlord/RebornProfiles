@@ -792,7 +792,7 @@
 			<If Condition="GetQuestStep(66627) == 255">
 				<GetTo ZoneId="133" XYZ="-16.89185, 10.17425, -246.8757" />
 				<TurnIn QuestId="66627" NpcId="1006756" XYZ="-16.89185, 10.17425, -246.8757" />
-				<While Condition="ClassName != ClassJobType.Scholar">
+				<While Condition="ClassName != ClassJobType.Summoner">
 					<EquipWeapon ItemId="4549" />
 					<AutoInventoryEquip />
 					<SaveGearset />
