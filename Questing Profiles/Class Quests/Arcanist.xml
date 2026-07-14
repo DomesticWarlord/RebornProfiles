@@ -461,7 +461,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-311.3298, -1.451626, 127.3364" /> <!-- Witness -->
@@ -473,7 +473,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" /> <!-- Tanga Tonga -->
@@ -486,7 +486,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-463.1131, 27.24346, 65.27731" /> <!-- Hidden Parchment -->
@@ -510,7 +510,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" /> <!-- Tanga Tonga -->
@@ -523,7 +523,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" /> <!-- Old Wooden Box -->
@@ -535,7 +535,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" />
@@ -547,7 +547,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" />
@@ -559,7 +559,7 @@
 						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
+						<UseTransport InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="-337.3007, -2.181173, 141.3137" />
@@ -620,7 +620,6 @@
 			<If Condition="GetQuestStep(65997) == 6">
 				<GetTo ZoneId="137" XYZ="514.7089, 17.18591, 456.9704" />
 				<HandOver ItemId="2000891" QuestId="65997" StepId="6" NpcId="1005229" XYZ="522.9114, 17.41504, 456.3516" />
-				<GetTo ZoneId="137" XYZ="514.7089, 17.18591, 456.9704" />
 			</If>
 			<If Condition="GetQuestStep(65997) == 7">
 				<GetTo ZoneId="137" XYZ="684.3823, 11.59444, 411.9478" />
@@ -676,7 +675,7 @@
 						<GetTo ZoneId="137" XYZ="344.6859, 31.88946, 89.37195" />
 					</If>
 					<If Condition="IsOnMap(137) and (IsOnSubMap(167) or IsOnSubMap(205) or IsOnSubMap(206) or IsOnSubMap(209) or IsOnSubMap(210) or IsOnSubMap(211))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
+						<UseTransport InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
 					</If>
 				</If>
 				<GetTo ZoneId="137" XYZ="-8.011047, 40.66735, 192.76721" />
@@ -706,7 +705,7 @@
 						<GetTo ZoneId="137" XYZ="344.6859, 31.88946, 89.37195" />
 					</If>
 					<If Condition="IsOnMap(137) and (IsOnSubMap(167) or IsOnSubMap(205) or IsOnSubMap(206) or IsOnSubMap(209) or IsOnSubMap(210) or IsOnSubMap(211))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
+						<UseTransport InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
 					</If>
 				</If>
 				<GetTo ZoneId="137" XYZ="31.3573, 34.07881, 222.7664" />
@@ -787,6 +786,14 @@
         if (hasTutorialWindow)
         {
             await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
+        }
+
+				if (QuestLogManager.GetQuestStep(65997) == 6)
+        {
+            if (SelectYesno.IsOpen)
+            {
+                SelectYesno.Yes();
+            }
         }
 
 			  return false;
