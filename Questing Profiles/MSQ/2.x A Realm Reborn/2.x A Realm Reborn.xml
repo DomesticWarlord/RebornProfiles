@@ -1127,22 +1127,22 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
                   <PickupQuest NpcId="1003988" QuestId="66104" XYZ="21.07263, 7.45, -78.78235" />
                 </If>
               </If>
-            </If>
-            <If Condition="GetQuestStep(66104) == 1">
-              <If Condition="GetQuestStep(66104) == 1 and not IsTodoChecked(66104, 1, 1)">
-                <GetTo ZoneId="131" XYZ="-96.30766, 6.599899, 25.0843" />
-                <TalkTo NpcId="1002277" XYZ="-97.55096, 7.050001, 23.60565" QuestId="66104" StepId="1" />
+              <If Condition="GetQuestStep(66104) == 1">
+                <If Condition="GetQuestStep(66104) == 1 and not IsTodoChecked(66104, 1, 1)">
+                  <GetTo ZoneId="131" XYZ="-96.30766, 6.599899, 25.0843" />
+                  <TalkTo NpcId="1002277" XYZ="-97.55096, 7.050001, 23.60565" QuestId="66104" StepId="1" />
+                </If>
+                <If Condition="GetQuestStep(66104) == 1 and not IsTodoChecked(66104, 1, 2)">
+                  <GetTo ZoneId="131" XYZ="137.9568, 4.041112, -41.09259" />
+                  <HandOver ItemId="2000386" QuestId="66104" StepId="1" NpcId="1003908" XYZ="137.9568, 4.041112, -41.09259" />
+                </If>
               </If>
-              <If Condition="GetQuestStep(66104) == 1 and not IsTodoChecked(66104, 1, 2)">
-                <GetTo ZoneId="131" XYZ="137.9568, 4.041112, -41.09259" />
-                <HandOver ItemId="2000386" QuestId="66104" StepId="1" NpcId="1003908" XYZ="137.9568, 4.041112, -41.09259" />
+              <If Condition="HasQuest(66104) and not IsQuestCompleted(66104) and GetQuestStep(66104) == 255">
+                <If Condition="not IsOnMap(130)">
+                  <GetTo ZoneId="130" XYZ="21.73813, 6.999996, -80.83638" />
+                </If>
+                <TurnIn QuestId="66104" NpcId="1001353" XYZ="21.07263, 7.45, -78.78235" />
               </If>
-            </If>
-            <If Condition="HasQuest(66104) and not IsQuestCompleted(66104) and GetQuestStep(66104) == 255">
-              <If Condition="not IsOnMap(130)">
-                <GetTo ZoneId="130" XYZ="21.73813, 6.999996, -80.83638" />
-              </If>
-              <TurnIn QuestId="66104" NpcId="1001353" XYZ="21.07263, 7.45, -78.78235" />
             </If>
 
             <!-- Way of the Gladiator (Level 1) -->
