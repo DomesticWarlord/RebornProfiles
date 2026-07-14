@@ -5212,7 +5212,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
         <If Condition="GetQuestStep(69399) == 255">
           <GetTo ZoneId="154" XYZ="13.93146, -44.8656, 257.9537" />
-          <EmoteNPC Emote="soothe" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" BlacklistDuration="8" BlackListAfter="True" Condition="not ff14bot.RemoteWindows.JournalResult.IsOpen" />
+          <EmoteNPC Emote="soothe" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" BlacklistDuration="8" BlackListAfter="True" Condition="GetQuestStep(69399) == 255 and not ff14bot.RemoteWindows.JournalResult.IsOpen" />
           <TurnIn QuestId="69399" NpcId="1006240" XYZ="13.93146, -44.8656, 257.9537" />
         </If>
       </If>
