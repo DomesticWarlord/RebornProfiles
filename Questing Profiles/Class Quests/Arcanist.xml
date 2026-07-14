@@ -659,8 +659,6 @@
 			<If Condition="GetQuestStep(65997) == 255">
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
 				<TurnIn QuestId="65997" NpcId="1000909" ItemId="2000889" XYZ="-326.3752, 12.89966, 9.994568" />
-
-				<AutoInventoryEquip />
 			</If>
 		</If>
 
@@ -725,6 +723,11 @@
 			<If Condition="GetQuestStep(66633) == 255">
 				<GetTo ZoneId="128" XYZ="-4.470947, 44.99989, -250.5685" />
 				<TurnIn QuestId="66633" NpcId="1006757" XYZ="-4.470947, 44.99989, -250.5685" />
+				<While Condition="ClassName != ClassJobType.Scholar">
+					<EquipWeapon ItemId="4550" />
+					<AutoInventoryEquip />
+					<SaveGearset />
+				</While>
 			</If>
 		</If>
 
@@ -750,7 +753,7 @@
 		<!-- Austerities of Flame -->
 		<If Condition="not IsQuestCompleted(66627) and IsQuestCompleted(70300) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
 			<LLToast Message="Beginning Arcanist class quest 'Austerities of Flame'" />
-			<If Condition="ClassName != ClassJobType.Scholar">
+			<If Condition="ClassName == ClassJobType.Scholar">
 				<RunCode name="UnequipSoul" />
 			</If>
 			<While Condition="ClassName != ClassJobType.Arcanist">
@@ -789,7 +792,11 @@
 			<If Condition="GetQuestStep(66627) == 255">
 				<GetTo ZoneId="133" XYZ="-16.89185, 10.17425, -246.8757" />
 				<TurnIn QuestId="66627" NpcId="1006756" XYZ="-16.89185, 10.17425, -246.8757" />
-				<UserDialog IsBotContinueAllowed="False" DialogText="Please choose whether to continue as SMN or SCH and make a new gearset and choose that as your class in the plugin." />
+				<While Condition="ClassName != ClassJobType.Scholar">
+					<EquipWeapon ItemId="4549" />
+					<AutoInventoryEquip />
+					<SaveGearset />
+				</While>
 			</If>
 		</If>
 
@@ -839,10 +846,10 @@
 	  </CodeChunk>
 		<CodeChunk Name="UnequipSoul">
 		<![CDATA[
-			if (InventoryManager.EquippedItems.Any(i => i.RawItemId == 4549))
+			if (InventoryManager.EquippedItems.Any(i => i.RawItemId == 4550))
 			{
 				var newSlot = InventoryManager.GetBagByInventoryBagId(InventoryBagId.Armory_Souls).First(i => !i.IsFilled);
-				InventoryManager.EquippedItems.First(i => i.RawItemId == 4547).Move(newSlot);
+				InventoryManager.EquippedItems.First(i => i.RawItemId == 4550).Move(newSlot);
 			}
 		]]>
 	</CodeChunk>
