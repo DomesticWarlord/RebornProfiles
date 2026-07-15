@@ -661,7 +661,7 @@
 
 		<!-- The Archer's Anthem -->
 		<If Condition="not IsQuestCompleted(66622) and IsQuestCompleted(66621) and Core.Me.Levels[ClassJobType.Archer] &gt; 34">
-			<LLToast Message="Beginning Archer class quest 'The Archer's Anthem'"/>
+			<LLToast Message="Beginning Bard class quest 'The Archer's Anthem'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -684,7 +684,7 @@
 
 		<!-- Bard's-eye View -->
 		<If Condition="not IsQuestCompleted(66623) and IsQuestCompleted(66622) and Core.Me.Levels[ClassJobType.Archer] &gt; 39">
-			<LLToast Message="Beginning Archer class quest 'Bard's-eye View'"/>
+			<LLToast Message="Beginning Bard class quest 'Bard's-eye View'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -709,7 +709,7 @@
 
 		<!-- Doing It the Bard Way -->
 		<If Condition="not IsQuestCompleted(66624) and IsQuestCompleted(66623) and Core.Me.Levels[ClassJobType.Archer] &gt; 44">
-			<LLToast Message="Beginning Archer class quest 'Doing It the Bard Way'"/>
+			<LLToast Message="Beginning Bard class quest 'Doing It the Bard Way'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -747,7 +747,7 @@
 
 		<!-- Pieces of the Past -->
 		<If Condition="not IsQuestCompleted(66625) and IsQuestCompleted(66624) and Core.Me.Levels[ClassJobType.Archer] &gt; 44">
-			<LLToast Message="Beginning Archer class quest 'Pieces of the Past'"/>
+			<LLToast Message="Beginning Bard class quest 'Pieces of the Past'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -789,7 +789,7 @@
 
 		<!-- Requiem for the Fallen -->
 		<If Condition="not IsQuestCompleted(66626) and IsQuestCompleted(66625) and Core.Me.Levels[ClassJobType.Archer] &gt; 49">
-			<LLToast Message="Beginning Archer class quest 'Requiem for the Fallen'"/>
+			<LLToast Message="Beginning Bard class quest 'Requiem for the Fallen'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -829,7 +829,7 @@
 
 		<!-- On the Road Again -->
 		<If Condition="not IsQuestCompleted(67249) and IsQuestCompleted(65964) and IsQuestCompleted(66626) and Core.Me.Levels[ClassJobType.Archer] &gt; 49">
-			<LLToast Message="Beginning Archer class quest 'On the Road Again'"/>
+			<LLToast Message="Beginning Bard class quest 'On the Road Again'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -898,7 +898,7 @@
 
 		<!-- The Stiff and the Spent -->
 		<If Condition="not IsQuestCompleted(67250) and IsQuestCompleted(67249) and Core.Me.Levels[ClassJobType.Archer] &gt; 51">
-			<LLToast Message="Beginning Archer class quest 'The Stiff and the Spent'"/>
+			<LLToast Message="Beginning Bard class quest 'The Stiff and the Spent'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -933,7 +933,7 @@
 
 		<!-- Requiem on Ice -->
 		<If Condition="not IsQuestCompleted(67251) and IsQuestCompleted(67250) and Core.Me.Levels[ClassJobType.Archer] &gt; 53">
-			<LLToast Message="Beginning Archer class quest 'Requiem on Ice'"/>
+			<LLToast Message="Beginning Bard class quest 'Requiem on Ice'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -980,7 +980,7 @@
 
 		<!-- When Gnaths Cry -->
 		<If Condition="not IsQuestCompleted(67252) and IsQuestCompleted(67251) and Core.Me.Levels[ClassJobType.Archer] &gt; 55">
-			<LLToast Message="Beginning Archer class quest 'When Gnaths Cry'"/>
+			<LLToast Message="Beginning Bard class quest 'When Gnaths Cry'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1020,7 +1020,7 @@
 
 		<!-- A Saint of Song -->
 		<If Condition="not IsQuestCompleted(67253) and IsQuestCompleted(67252) and Core.Me.Levels[ClassJobType.Archer] &gt; 57">
-			<LLToast Message="Beginning Archer class quest 'A Saint of Song'"/>
+			<LLToast Message="Beginning Bard class quest 'A Saint of Song'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1075,7 +1075,7 @@
 
 		<!-- The Ballad of Oblivion -->
 		<If Condition="not IsQuestCompleted(67254) and IsQuestCompleted(67253) and Core.Me.Levels[ClassJobType.Archer] &gt; 59">
-			<LLToast Message="Beginning Archer class quest 'The Ballad of Oblivion'"/>
+			<LLToast Message="Beginning Bard class quest 'The Ballad of Oblivion'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1128,7 +1128,7 @@
 
 		<!-- Three's a Company -->
 		<If Condition="not IsQuestCompleted(68426) and IsQuestCompleted(67895) and IsQuestCompleted(67254) and Core.Me.Levels[ClassJobType.Archer] &gt; 59">
-			<LLToast Message="Beginning Archer class quest 'Three's a Company'"/>
+			<LLToast Message="Beginning Bard class quest 'Three's a Company'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1159,7 +1159,7 @@
 
 		<!-- Masked Motives -->
 		<If Condition="not IsQuestCompleted(68427) and IsQuestCompleted(68426) and Core.Me.Levels[ClassJobType.Archer] &gt; 62">
-			<LLToast Message="Beginning Archer class quest 'Masked Motives'"/>
+			<LLToast Message="Beginning Bard class quest 'Masked Motives'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1190,7 +1190,7 @@
 
 		<!-- One Autumn's Secret -->
 		<If Condition="not IsQuestCompleted(68428) and IsQuestCompleted(68427) and Core.Me.Levels[ClassJobType.Archer] &gt; 64">
-			<LLToast Message="Beginning Archer class quest 'One Autumn's Secret'"/>
+			<LLToast Message="Beginning Bard class quest 'One Autumn's Secret'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1236,7 +1236,7 @@
 
 		<!-- Sleeping Truths Lie -->
 		<If Condition="not IsQuestCompleted(68429) and IsQuestCompleted(68428) and Core.Me.Levels[ClassJobType.Archer] &gt; 67">
-			<LLToast Message="Beginning Archer class quest 'Sleeping Truths Lie'"/>
+			<LLToast Message="Beginning Bard class quest 'Sleeping Truths Lie'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>
@@ -1271,7 +1271,7 @@
 
 		<!-- Sweet Dreams Are Made of Peace -->
 		<If Condition="not IsQuestCompleted(68430) and IsQuestCompleted(68429) and Core.Me.Levels[ClassJobType.Archer] &gt; 69">
-			<LLToast Message="Beginning Archer class quest 'Sweet Dreams Are Made of Peace'"/>
+			<LLToast Message="Beginning Bard class quest 'Sweet Dreams Are Made of Peace'"/>
 			<While Condition="ClassName != ClassJobType.Bard">
 				<ChangeClass Job="Bard" />
 			</While>

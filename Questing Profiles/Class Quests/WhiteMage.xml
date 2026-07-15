@@ -551,7 +551,7 @@
 
 		<!-- Only You Can Prevent Forest Ire -->
 		<If Condition="not IsQuestCompleted(66616) and IsQuestCompleted(66615) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 34">
-			<LLToast Message="Beginning Conjurer class quest 'Only You Can Prevent Forest Ire'" />
+			<LLToast Message="Beginning White Mage class quest 'Only You Can Prevent Forest Ire'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -592,7 +592,7 @@
 
 		<!-- O Brother, Where Art Thou -->
 		<If Condition="not IsQuestCompleted(66617) and IsQuestCompleted(66616) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 39">
-			<LLToast Message="Beginning Conjurer class quest 'O Brother, Where Art Thou'" />
+			<LLToast Message="Beginning White Mage class quest 'O Brother, Where Art Thou'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -636,7 +636,7 @@
 
 		<!-- Following in His Footsteps -->
 		<If Condition="not IsQuestCompleted(66618) and IsQuestCompleted(66617) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 44">
-			<LLToast Message="Beginning Conjurer class quest 'Following in His Footsteps'" />
+			<LLToast Message="Beginning White Mage class quest 'Following in His Footsteps'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -717,7 +717,7 @@
 
 		<!-- Yearn for the Urn -->
 		<If Condition="not IsQuestCompleted(66619) and IsQuestCompleted(66618) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 44">
-			<LLToast Message="Beginning Conjurer class quest 'Yearn for the Urn'" />
+			<LLToast Message="Beginning White Mage class quest 'Yearn for the Urn'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -756,7 +756,7 @@
 
 		<!-- Heart of the Forest -->
 		<If Condition="not IsQuestCompleted(66620) and IsQuestCompleted(66619) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 49">
-			<LLToast Message="Beginning Conjurer class quest 'Heart of the Forest'" />
+			<LLToast Message="Beginning White Mage class quest 'Heart of the Forest'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -796,7 +796,7 @@
 
 		<!-- Taint Misbehaving -->
 		<If Condition="not IsQuestCompleted(67255) and IsQuestCompleted(65964) and IsQuestCompleted(66620) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 49">
-			<LLToast Message="Beginning Conjurer class quest 'Taint Misbehaving'" />
+			<LLToast Message="Beginning White Mage class quest 'Taint Misbehaving'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -841,7 +841,7 @@
 
 		<!-- A Journey of Purification -->
 		<If Condition="not IsQuestCompleted(67256) and IsQuestCompleted(67255) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 51">
-			<LLToast Message="Beginning Conjurer class quest 'A Journey of Purification'" />
+			<LLToast Message="Beginning White Mage class quest 'A Journey of Purification'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -885,7 +885,7 @@
 
 		<!-- The Girl with the Dragon Tissue -->
 		<If Condition="not IsQuestCompleted(67257) and IsQuestCompleted(67256) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 53">
-			<LLToast Message="Beginning Conjurer class quest 'The Girl with the Dragon Tissue'" />
+			<LLToast Message="Beginning White Mage class quest 'The Girl with the Dragon Tissue'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -929,7 +929,7 @@
 
 		<!-- The Dark Blight Writhes -->
 		<If Condition="not IsQuestCompleted(67258) and IsQuestCompleted(67257) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 55">
-			<LLToast Message="Beginning Conjurer class quest 'The Dark Blight Writhes'" />
+			<LLToast Message="Beginning White Mage class quest 'The Dark Blight Writhes'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -961,7 +961,7 @@
 
 		<!-- In the Wake of Death -->
 		<If Condition="not IsQuestCompleted(67259) and IsQuestCompleted(67258) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 57">
-			<LLToast Message="Beginning Conjurer class quest 'In the Wake of Death'" />
+			<LLToast Message="Beginning White Mage class quest 'In the Wake of Death'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -996,7 +996,7 @@
 
 		<!-- Trials of the Padjals -->
 		<If Condition="not IsQuestCompleted(67260) and IsQuestCompleted(67259) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 57">
-			<LLToast Message="Beginning Conjurer class quest 'Trials of the Padjals'" />
+			<LLToast Message="Beginning White Mage class quest 'Trials of the Padjals'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1015,7 +1015,7 @@
 
 		<!-- Hands of Healing -->
 		<If Condition="not IsQuestCompleted(67261) and IsQuestCompleted(67260) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 59">
-			<LLToast Message="Beginning Conjurer class quest 'Hands of Healing'" />
+			<LLToast Message="Beginning White Mage class quest 'Hands of Healing'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1070,7 +1070,7 @@
 
 		<!-- Unease in East End -->
 		<If Condition="not IsQuestCompleted(67950) and IsQuestCompleted(67895) and IsQuestCompleted(67261) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 59">
-			<LLToast Message="Beginning Conjurer class quest 'Unease in East End'" />
+			<LLToast Message="Beginning White Mage class quest 'Unease in East End'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1105,7 +1105,7 @@
 
 		<!-- An Aura for Trouble -->
 		<If Condition="not IsQuestCompleted(67951) and IsQuestCompleted(67950) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 62">
-			<LLToast Message="Beginning Conjurer class quest 'An Aura for Trouble'" />
+			<LLToast Message="Beginning White Mage class quest 'An Aura for Trouble'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1136,7 +1136,7 @@
 
 		<!-- A Beacon for Bad Things -->
 		<If Condition="not IsQuestCompleted(67952) and IsQuestCompleted(67951) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 64">
-			<LLToast Message="Beginning Conjurer class quest 'A Beacon for Bad Things'" />
+			<LLToast Message="Beginning White Mage class quest 'A Beacon for Bad Things'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1187,7 +1187,7 @@
 
 		<!-- The Problem with Padjals -->
 		<If Condition="not IsQuestCompleted(67953) and IsQuestCompleted(67952) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 67">
-			<LLToast Message="Beginning Conjurer class quest 'The Problem with Padjals'" />
+			<LLToast Message="Beginning White Mage class quest 'The Problem with Padjals'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>
@@ -1219,7 +1219,7 @@
 
 		<!-- What She Always Wanted -->
 		<If Condition="not IsQuestCompleted(67954) and IsQuestCompleted(67953) and Core.Me.Levels[ClassJobType.Conjurer] &gt; 69">
-			<LLToast Message="Beginning Conjurer class quest 'What She Always Wanted'" />
+			<LLToast Message="Beginning White Mage class quest 'What She Always Wanted'" />
 			<While Condition="ClassName != ClassJobType.WhiteMage">
 				<ChangeClass Job="WhiteMage" />
 			</While>

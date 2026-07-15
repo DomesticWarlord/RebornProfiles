@@ -12,7 +12,7 @@
 
 		<!-- A Faerie Tale Come True -->
 		<If Condition="IsQuestCompleted(66633) and not IsQuestCompleted(70300) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'A Faerie Tale Come True'" />
+			<LLToast Message="Beginning Scholar class quest 'A Faerie Tale Come True'" />
 			<If Condition="not HasQuest(70300)">
 				<GetTo ZoneId="129" XYZ="-327.9025, 12.899763, 10.551035" />
 				<If Condition="IsQuestAcceptQualified(70300)">
@@ -31,7 +31,7 @@
 
 		<!-- The Last Remnants -->
 		<If Condition="not IsQuestCompleted(66634) and IsQuestCompleted(66633) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 34">
-			<LLToast Message="Beginning Arcanist class quest 'The Last Remnants'" />
+			<LLToast Message="Beginning Scholar class quest 'The Last Remnants'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -43,21 +43,12 @@
 			</If>
 			<If Condition="GetQuestStep(66634) == 1">
 				<GetTo ZoneId="180" XYZ="-352.65436, 64.764786, -317.50867" />
-				<If Condition="GetQuestStep(66634) == 1 and GetQuestById(66634).QuestI8A == 0">
-					<MoveTo Distance="1" XYZ="-363.9957, 65.48413, -309.9172" usemesh="false" />
-					<UseObject NpcId="2002381" XYZ="-360.55542, 66.33093, -310.87207" condition="GetQuestById(66634).QuestI8A == 0" />
-					<MoveTo XYZ="-348.2912, 51.157833, -303.51837" usemesh="false" />
-				</If>
-				<If Condition="GetQuestStep(66634) == 1 and GetQuestById(66634).QuestI8A == 16">
-					<GetTo ZoneId="180" XYZ="-295.9975, 70.48801, -271.2891" />
-					<UseObject NpcId="2002382" XYZ="-327.8707, 65.87317, -267.5975" Radius="10" UseTimes="1" QuestId="66634" StepId="1" />
-					<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="-316.7654, 52.04363, -286.56" />
-				</If>
-				<UseObject NpcIds="2002380,2002379" QuestId="66634" StepId="1">
+				<UseObject NpcIds="2002379,2002380,2002381,2002382" QuestId="66634" StepId="1">
 					<HotSpots>
-						<HotSpot XYZ="-338.8877, 61.72266, -120.2564" Radius="10" />
-						<HotSpot XYZ="-274.2809, 65.81213, -196.9788" Radius="10" />
-						<HotSpot XYZ="-360.5554, 66.33093, -310.8721" Radius="10" />
+						<HotSpot XYZ="-338.8877, 61.72266, -120.2564" Radius="100" />
+						<HotSpot XYZ="-274.2809, 65.81213, -196.9788" Radius="100" />
+						<HotSpot XYZ="-360.5554, 66.33093, -310.8721" Radius="100" />
+						<HotSpot XYZ="-327.87067, 65.87317, -267.59753" Radius="100" />
 					</HotSpots>
 				</UseObject>
 			</If>
@@ -75,7 +66,7 @@
 
 		<!-- The Consequences of Anger -->
 		<If Condition="not IsQuestCompleted(66635) and IsQuestCompleted(66634) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 39">
-			<LLToast Message="Beginning Arcanist class quest 'The Consequences of Anger'" />
+			<LLToast Message="Beginning Scholar class quest 'The Consequences of Anger'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -129,7 +120,7 @@
 
 		<!-- In the Image of the Ancients -->
 		<If Condition="not IsQuestCompleted(66636) and IsQuestCompleted(66635) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 44">
-			<LLToast Message="Beginning Arcanist class quest 'In the Image of the Ancients'" />
+			<LLToast Message="Beginning Scholar class quest 'In the Image of the Ancients'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -174,7 +165,7 @@
 
 		<!-- For Your Fellow Man -->
 		<If Condition="not IsQuestCompleted(66637) and IsQuestCompleted(66636) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 44">
-			<LLToast Message="Beginning Arcanist class quest 'For Your Fellow Man'" />
+			<LLToast Message="Beginning Scholar class quest 'For Your Fellow Man'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -221,7 +212,7 @@
 
 		<!-- The Beast Within -->
 		<If Condition="not IsQuestCompleted(66638) and IsQuestCompleted(66637) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 49">
-			<LLToast Message="Beginning Arcanist class quest 'The Beast Within'" />
+			<LLToast Message="Beginning Scholar class quest 'The Beast Within'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -282,7 +273,7 @@
 
 		<!-- The Green Death -->
 		<If Condition="not IsQuestCompleted(67207) and IsQuestCompleted(65964) and IsQuestCompleted(66638) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 49">
-			<LLToast Message="Beginning Arcanist class quest 'The Green Death'" />
+			<LLToast Message="Beginning Scholar class quest 'The Green Death'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -329,7 +320,7 @@
 
 		<!-- Quarantine -->
 		<If Condition="not IsQuestCompleted(67208) and IsQuestCompleted(67207) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 51">
-			<LLToast Message="Beginning Arcanist class quest 'Quarantine'" />
+			<LLToast Message="Beginning Scholar class quest 'Quarantine'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -399,7 +390,7 @@
 
 		<!-- False Friends -->
 		<If Condition="not IsQuestCompleted(67209) and IsQuestCompleted(67208) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 53">
-			<LLToast Message="Beginning Arcanist class quest 'False Friends'" />
+			<LLToast Message="Beginning Scholar class quest 'False Friends'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -458,7 +449,7 @@
 
 		<!-- Ooh Rah -->
 		<If Condition="not IsQuestCompleted(67210) and IsQuestCompleted(67209) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 55">
-			<LLToast Message="Beginning Arcanist class quest 'Ooh Rah'" />
+			<LLToast Message="Beginning Scholar class quest 'Ooh Rah'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -561,7 +552,7 @@
 
 		<!-- Unseen -->
 		<If Condition="not IsQuestCompleted(67211) and IsQuestCompleted(67210) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 57">
-			<LLToast Message="Beginning Arcanist class quest 'Unseen'" />
+			<LLToast Message="Beginning Scholar class quest 'Unseen'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -613,7 +604,7 @@
 
 		<!-- Forward, the Royal Marines -->
 		<If Condition="not IsQuestCompleted(67212) and IsQuestCompleted(67211) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 59">
-			<LLToast Message="Beginning Arcanist class quest 'Forward, the Royal Marines'" />
+			<LLToast Message="Beginning Scholar class quest 'Forward, the Royal Marines'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -718,7 +709,7 @@
 
 		<!-- The Vanishing Act -->
 		<If Condition="not IsQuestCompleted(68459) and IsQuestCompleted(67895) and IsQuestCompleted(67212) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 59">
-			<LLToast Message="Beginning Arcanist class quest 'The Vanishing Act'" />
+			<LLToast Message="Beginning Scholar class quest 'The Vanishing Act'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -749,7 +740,7 @@
 
 		<!-- A Safe Place to Hide -->
 		<If Condition="not IsQuestCompleted(68460) and IsQuestCompleted(68459) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 62">
-			<LLToast Message="Beginning Arcanist class quest 'A Safe Place to Hide'" />
+			<LLToast Message="Beginning Scholar class quest 'A Safe Place to Hide'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -796,7 +787,7 @@
 
 		<!-- In Loving Memory -->
 		<If Condition="not IsQuestCompleted(68461) and IsQuestCompleted(68460) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 64">
-			<LLToast Message="Beginning Arcanist class quest 'In Loving Memory'" />
+			<LLToast Message="Beginning Scholar class quest 'In Loving Memory'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -843,7 +834,7 @@
 
 		<!-- The Chase -->
 		<If Condition="not IsQuestCompleted(68462) and IsQuestCompleted(68461) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 67">
-			<LLToast Message="Beginning Arcanist class quest 'The Chase'" />
+			<LLToast Message="Beginning Scholar class quest 'The Chase'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>
@@ -882,7 +873,7 @@
 
 		<!-- Our Unsung Heroes -->
 		<If Condition="not IsQuestCompleted(68463) and IsQuestCompleted(68462) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 69">
-			<LLToast Message="Beginning Arcanist class quest 'Our Unsung Heroes'" />
+			<LLToast Message="Beginning Scholar class quest 'Our Unsung Heroes'" />
 			<While Condition="ClassName != ClassJobType.Scholar">
 				<ChangeClass Job="Scholar" />
 			</While>

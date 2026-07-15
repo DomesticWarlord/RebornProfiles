@@ -542,7 +542,7 @@
 
 		<!-- Embracing the Beast -->
 		<If Condition="IsQuestCompleted(66585) and not IsQuestCompleted(66586) and Core.Me.Levels[ClassJobType.Marauder] &gt; 34">
-			<LLToast Message="Beginning Marauder class quest 'Embracing the Beast'" />
+			<LLToast Message="Beginning Warrior class quest 'Embracing the Beast'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -580,7 +580,7 @@
 
 		<!-- Curious Gorge Goes to Wineport -->
 		<If Condition="IsQuestCompleted(66586) and not IsQuestCompleted(66587) and Core.Me.Levels[ClassJobType.Marauder] &gt; 39">
-			<LLToast Message="Beginning Marauder class quest 'Curious Gorge Goes to Wineport'" />
+			<LLToast Message="Beginning Warrior class quest 'Curious Gorge Goes to Wineport'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -615,7 +615,7 @@
 
 		<!-- Looking the Part -->
 		<If Condition="IsQuestCompleted(66587) and not IsQuestCompleted(66588) and Core.Me.Levels[ClassJobType.Marauder] &gt; 44">
-			<LLToast Message="Beginning Marauder class quest 'Looking the Part'" />
+			<LLToast Message="Beginning Warrior class quest 'Looking the Part'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -672,7 +672,7 @@
 
 		<!-- Proof Is the Pudding -->
 		<If Condition="IsQuestCompleted(66588) and not IsQuestCompleted(66589) and Core.Me.Levels[ClassJobType.Marauder] &gt; 44">
-			<LLToast Message="Beginning Marauder class quest 'Proof Is the Pudding'" />
+			<LLToast Message="Beginning Warrior class quest 'Proof Is the Pudding'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -695,7 +695,7 @@
 
 		<!-- Better Axe Around -->
 		<If Condition="IsQuestCompleted(66590) and not IsQuestCompleted(66121) and IsQuestCompleted(65964) and Core.Me.Levels[ClassJobType.Marauder] &gt; 49">
-			<LLToast Message="Beginning Marauder class quest 'Better Axe Around'" />
+			<LLToast Message="Beginning Warrior class quest 'Better Axe Around'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -736,7 +736,7 @@
 
 		<!-- How to Quit You -->
 		<If Condition="IsQuestCompleted(66589) and not IsQuestCompleted(66590) and Core.Me.Levels[ClassJobType.Marauder] &gt; 49">
-			<LLToast Message="Beginning Marauder class quest 'How to Quit You'" />
+			<LLToast Message="Beginning Warrior class quest 'How to Quit You'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -776,7 +776,7 @@
 
 		<!-- Duty And The Beast -->
 		<If Condition="IsQuestCompleted(66121) and not IsQuestCompleted(66122) and Core.Me.Levels[ClassJobType.Marauder] &gt; 51">
-			<LLToast Message="Beginning Marauder class quest 'Duty And The Beast'" />
+			<LLToast Message="Beginning Warrior class quest 'Duty And The Beast'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -811,7 +811,7 @@
 
 		<!-- The Bear Necessity -->
 		<If Condition="IsQuestCompleted(66122) and not IsQuestCompleted(66124) and Core.Me.Levels[ClassJobType.Marauder] &gt; 53">
-			<LLToast Message="Beginning Marauder class quest 'The Bear Necessity'" />
+			<LLToast Message="Beginning Warrior class quest 'The Bear Necessity'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -845,7 +845,7 @@
 
 		<!-- Pirates of Shallow Water -->
 		<If Condition="IsQuestCompleted(66124) and not IsQuestCompleted(66132) and Core.Me.Levels[ClassJobType.Marauder] &gt; 55">
-			<LLToast Message="Beginning Marauder class quest 'Pirates of Shallow Water'" />
+			<LLToast Message="Beginning Warrior class quest 'Pirates of Shallow Water'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -930,7 +930,7 @@
 
 		<!-- How to Train Your Warrior -->
 		<If Condition="IsQuestCompleted(66132) and not IsQuestCompleted(67213) and Core.Me.Levels[ClassJobType.Marauder] &gt; 55">
-			<LLToast Message="Beginning Marauder class quest 'How to Train Your Warrior'" />
+			<LLToast Message="Beginning Warrior class quest 'How to Train Your Warrior'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -958,7 +958,7 @@
 
 		<!-- Slap an' Chop -->
 		<If Condition="IsQuestCompleted(67213) and not IsQuestCompleted(66134) and Core.Me.Levels[ClassJobType.Marauder] &gt; 57">
-			<LLToast Message="Beginning Marauder class quest 'Slap an' Chop'" />
+			<LLToast Message="Beginning Warrior class quest 'Slap an' Chop'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1017,7 +1017,7 @@
 
 		<!-- And My Axe -->
 		<If Condition="IsQuestCompleted(66134) and not IsQuestCompleted(66137) and Core.Me.Levels[ClassJobType.Marauder] &gt; 59">
-			<LLToast Message="Beginning Marauder class quest 'And My Axe'" />
+			<LLToast Message="Beginning Warrior class quest 'And My Axe'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1069,7 +1069,7 @@
 
 		<!-- Curious George Meets His Match -->
 		<If Condition="IsQuestCompleted(66137) and not IsQuestCompleted(68436) and IsQuestCompleted(67895) and Core.Me.Levels[ClassJobType.Marauder] &gt; 59">
-			<LLToast Message="Beginning Marauder class quest 'Curious George Meets His Match'" />
+			<LLToast Message="Beginning Warrior class quest 'Curious George Meets His Match'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1111,7 +1111,7 @@
 
 		<!-- Field Training -->
 		<If Condition="IsQuestCompleted(68436) and not IsQuestCompleted(68437) and Core.Me.Levels[ClassJobType.Marauder] &gt; 62">
-			<LLToast Message="Beginning Marauder class quest 'Field Training'" />
+			<LLToast Message="Beginning Warrior class quest 'Field Training'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1146,7 +1146,7 @@
 
 		<!-- When Push Comes to Shove -->
 		<If Condition="IsQuestCompleted(68437) and not IsQuestCompleted(68438) and Core.Me.Levels[ClassJobType.Marauder] &gt; 64">
-			<LLToast Message="Beginning Marauder class quest 'When Push Comes to Shove'" />
+			<LLToast Message="Beginning Warrior class quest 'When Push Comes to Shove'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1189,7 +1189,7 @@
 
 		<!-- Going the Distance -->
 		<If Condition="IsQuestCompleted(68438) and not IsQuestCompleted(68439) and Core.Me.Levels[ClassJobType.Marauder] &gt; 67">
-			<LLToast Message="Beginning Marauder class quest 'Going the Distance'" />
+			<LLToast Message="Beginning Warrior class quest 'Going the Distance'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>
@@ -1226,7 +1226,7 @@
 
 		<!-- The Heart of the Problem -->
 		<If Condition="IsQuestCompleted(68439) and not IsQuestCompleted(68440) and Core.Me.Levels[ClassJobType.Marauder] &gt; 69">
-			<LLToast Message="Beginning Marauder class quest 'The Heart of the Problem'" />
+			<LLToast Message="Beginning Warrior class quest 'The Heart of the Problem'" />
 			<While Condition="ClassName != ClassJobType.Warrior">
 				<ChangeClass Job="Warrior" />
 			</While>

@@ -565,7 +565,6 @@
 				<GetTo ZoneId="130" XYZ="-86.65684, 2.0999424, -50.70609" />
 				<If Condition="IsQuestAcceptQualified(66597)">
 					<PickupQuest NpcId="1001286" QuestId="66597" XYZ="-88.9754, 2.55, -51.16351" />
-
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66597) == 1">
@@ -607,7 +606,7 @@
 
 		<!-- Insulted Intelligence -->
 		<If Condition="not IsQuestCompleted(66598) and IsQuestCompleted(66597) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 34">
-			<LLToast Message="Beginning Pugilist class quest 'Insulted Intelligence'"/>
+			<LLToast Message="Beginning Monk class quest 'Insulted Intelligence'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -634,7 +633,7 @@
 
 		<!-- A Slave to the Aether -->
 		<If Condition="not IsQuestCompleted(66599) and IsQuestCompleted(66598) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 39">
-			<LLToast Message="Beginning Pugilist class quest 'A Slave to the Aether'"/>
+			<LLToast Message="Beginning Monk class quest 'A Slave to the Aether'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -665,7 +664,7 @@
 
 		<!-- The Pursuit of Power -->
 		<If Condition="not IsQuestCompleted(66600) and IsQuestCompleted(66599) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
-			<LLToast Message="Beginning Pugilist class quest 'The Pursuit of Power'"/>
+			<LLToast Message="Beginning Monk class quest 'The Pursuit of Power'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -692,7 +691,7 @@
 
 		<!-- Good Vibrations -->
 		<If Condition="not IsQuestCompleted(66601) and IsQuestCompleted(66600) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 44">
-			<LLToast Message="Beginning Pugilist class quest 'Good Vibrations'"/>
+			<LLToast Message="Beginning Monk class quest 'Good Vibrations'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -762,7 +761,7 @@
 
 		<!-- Five Easy Pieces -->
 		<If Condition="not IsQuestCompleted(66602) and IsQuestCompleted(66601) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
-			<LLToast Message="Beginning Pugilist class quest 'Five Easy Pieces'"/>
+			<LLToast Message="Beginning Monk class quest 'Five Easy Pieces'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -803,7 +802,7 @@
 
 		<!-- The Legend Continues -->
 		<If Condition="not IsQuestCompleted(67562) and IsQuestCompleted(65964) and IsQuestCompleted(66602) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 49">
-			<LLToast Message="Beginning Pugilist class quest 'The Legend Continues'"/>
+			<LLToast Message="Beginning Monk class quest 'The Legend Continues'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -870,7 +869,7 @@
 
 		<!-- Let's Talk About Sects -->
 		<If Condition="not IsQuestCompleted(67563) and IsQuestCompleted(67562) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 51">
-			<LLToast Message="Beginning Pugilist class quest 'Let's Talk About Sects'"/>
+			<LLToast Message="Beginning Monk class quest 'Let's Talk About Sects'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -948,7 +947,7 @@
 
 		<!-- Against the Shadow -->
 		<If Condition="not IsQuestCompleted(67564) and IsQuestCompleted(67563) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 53">
-			<LLToast Message="Beginning Pugilist class quest 'Against the Shadow'"/>
+			<LLToast Message="Beginning Monk class quest 'Against the Shadow'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -986,7 +985,7 @@
 
 		<!-- Fight the Battle to Win -->
 		<If Condition="not IsQuestCompleted(67565) and IsQuestCompleted(67564) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 55">
-			<LLToast Message="Beginning Pugilist class quest 'Fight the Battle to Win'"/>
+			<LLToast Message="Beginning Monk class quest 'Fight the Battle to Win'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1017,7 +1016,7 @@
 
 		<!-- Stop the Senseless Killing -->
 		<If Condition="not IsQuestCompleted(67566) and IsQuestCompleted(67565) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 57">
-			<LLToast Message="Beginning Pugilist class quest 'Stop the Senseless Killing'"/>
+			<LLToast Message="Beginning Monk class quest 'Stop the Senseless Killing'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1056,7 +1055,7 @@
 
 		<!-- Appetite for Destruction -->
 		<If Condition="not IsQuestCompleted(67567) and IsQuestCompleted(67566) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
-			<LLToast Message="Beginning Pugilist class quest 'Appetite for Destruction'"/>
+			<LLToast Message="Beginning Monk class quest 'Appetite for Destruction'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1095,7 +1094,7 @@
 
 		<!-- A Fistful of Resolve -->
 		<If Condition="not IsQuestCompleted(67962) and IsQuestCompleted(67895) and IsQuestCompleted(67567) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 59">
-			<LLToast Message="Beginning Pugilist class quest 'A Fistful of Resolve'"/>
+			<LLToast Message="Beginning Monk class quest 'A Fistful of Resolve'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1126,7 +1125,7 @@
 
 		<!-- Return of the Monk -->
 		<If Condition="not IsQuestCompleted(67963) and IsQuestCompleted(67962) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 62">
-			<LLToast Message="Beginning Pugilist class quest 'Return of the Monk'"/>
+			<LLToast Message="Beginning Monk class quest 'Return of the Monk'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1170,7 +1169,7 @@
 
 		<!-- Cross-fist Training -->
 		<If Condition="not IsQuestCompleted(67964) and IsQuestCompleted(67963) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 64">
-			<LLToast Message="Beginning Pugilist class quest 'Cross-fist Training'"/>
+			<LLToast Message="Beginning Monk class quest 'Cross-fist Training'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1213,7 +1212,7 @@
 
 		<!-- Choices and Paths -->
 		<If Condition="not IsQuestCompleted(67965) and IsQuestCompleted(67964) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 67">
-			<LLToast Message="Beginning Pugilist class quest 'Choices and Paths'"/>
+			<LLToast Message="Beginning Monk class quest 'Choices and Paths'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>
@@ -1273,7 +1272,7 @@
 
 		<!-- The Power to Protect -->
 		<If Condition="not IsQuestCompleted(67966) and IsQuestCompleted(67965) and Core.Me.Levels[ClassJobType.Pugilist] &gt; 69">
-			<LLToast Message="Beginning Pugilist class quest 'The Power to Protect'"/>
+			<LLToast Message="Beginning Monk class quest 'The Power to Protect'"/>
 			<While Condition="ClassName != ClassJobType.Monk">
 				<ChangeClass Job="Monk" />
 			</While>

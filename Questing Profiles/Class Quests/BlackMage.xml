@@ -587,7 +587,7 @@
 
 		<!-- You'll Never Go Back -->
 		<If Condition="not IsQuestCompleted(66610) and IsQuestCompleted(66609) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 34">
-			<LLToast Message="Beginning Thaumaturge class quest 'You'll Never Go Back'"/>
+			<LLToast Message="Beginning Black Mage class quest 'You'll Never Go Back'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -614,7 +614,7 @@
 
 		<!-- International Relations -->
 		<If Condition="not IsQuestCompleted(66611) and IsQuestCompleted(66610) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 39">
-			<LLToast Message="Beginning Thaumaturge class quest 'International Relations'"/>
+			<LLToast Message="Beginning Black Mage class quest 'International Relations'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -673,7 +673,7 @@
 
 		<!-- The Voidgate Breathes Gloomy -->
 		<If Condition="not IsQuestCompleted(66612) and IsQuestCompleted(66611) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
-			<LLToast Message="Beginning Thaumaturge class quest 'The Voidgate Breathes Gloomy'"/>
+			<LLToast Message="Beginning Black Mage class quest 'The Voidgate Breathes Gloomy'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -717,7 +717,7 @@
 
 		<!-- The Blood Must Flow -->
 		<If Condition="not IsQuestCompleted(66613) and IsQuestCompleted(66612) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 44">
-			<LLToast Message="Beginning Thaumaturge class quest 'The Blood Must Flow'"/>
+			<LLToast Message="Beginning Black Mage class quest 'The Blood Must Flow'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -762,7 +762,7 @@
 
 		<!-- Always Bet on Black -->
 		<If Condition="not IsQuestCompleted(66614) and IsQuestCompleted(66613) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
-			<LLToast Message="Beginning Thaumaturge class quest 'Always Bet on Black'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Always Bet on Black'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -811,7 +811,7 @@
 
 		<!-- Black Books -->
 		<If Condition="not IsQuestCompleted(67214) and IsQuestCompleted(65964) and IsQuestCompleted(66614) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 49">
-			<LLToast Message="Beginning Thaumaturge class quest 'Black Books'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Black Books'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -838,7 +838,7 @@
 
 		<!-- An Unexpected Journey -->
 		<If Condition="not IsQuestCompleted(67215) and IsQuestCompleted(67214) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 51">
-			<LLToast Message="Beginning Thaumaturge class quest 'An Unexpected Journey'"/>
+			<LLToast Message="Beginning Black Mage class quest 'An Unexpected Journey'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -869,7 +869,7 @@
 
 		<!-- A Cunning Plan -->
 		<If Condition="not IsQuestCompleted(67216) and IsQuestCompleted(67215) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 53">
-			<LLToast Message="Beginning Thaumaturge class quest 'A Cunning Plan'"/>
+			<LLToast Message="Beginning Black Mage class quest 'A Cunning Plan'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -937,7 +937,7 @@
 
 		<!-- Black Squawk Down -->
 		<If Condition="not IsQuestCompleted(67217) and IsQuestCompleted(67216) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 55">
-			<LLToast Message="Beginning Thaumaturge class quest 'Black Squawk Down'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Black Squawk Down'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -976,7 +976,7 @@
 
 		<!-- Destruction in the Name of Justice -->
 		<If Condition="not IsQuestCompleted(67218) and IsQuestCompleted(67217) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 57">
-			<LLToast Message="Beginning Thaumaturge class quest 'Destruction in the Name of Justice'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Destruction in the Name of Justice'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1031,7 +1031,7 @@
 
 		<!-- The Defiant Ones -->
 		<If Condition="not IsQuestCompleted(67219) and IsQuestCompleted(67218) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
-			<LLToast Message="Beginning Thaumaturge class quest 'The Defiant Ones'"/>
+			<LLToast Message="Beginning Black Mage class quest 'The Defiant Ones'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1094,7 +1094,7 @@
 
 		<!-- Shades of Shatotto -->
 		<If Condition="not IsQuestCompleted(68124) and IsQuestCompleted(67895) and IsQuestCompleted(67219) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 59">
-			<LLToast Message="Beginning Thaumaturge class quest 'Shades of Shatotto'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Shades of Shatotto'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1132,7 +1132,7 @@
 
 		<!-- Golems Gone Wild -->
 		<If Condition="not IsQuestCompleted(68125) and IsQuestCompleted(68124) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 62">
-			<LLToast Message="Beginning Thaumaturge class quest 'Golems Gone Wild'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Golems Gone Wild'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1179,7 +1179,7 @@
 
 		<!-- When the Golems Get Tough -->
 		<If Condition="not IsQuestCompleted(68126) and IsQuestCompleted(68125) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 64">
-			<LLToast Message="Beginning Thaumaturge class quest 'When the Golems Get Tough'"/>
+			<LLToast Message="Beginning Black Mage class quest 'When the Golems Get Tough'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1218,7 +1218,7 @@
 
 		<!-- Unnatural Selection -->
 		<If Condition="not IsQuestCompleted(68127) and IsQuestCompleted(68126) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 67">
-			<LLToast Message="Beginning Thaumaturge class quest 'Unnatural Selection'"/>
+			<LLToast Message="Beginning Black Mage class quest 'Unnatural Selection'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>
@@ -1257,7 +1257,7 @@
 
 		<!-- One Golem to Rule Them All -->
 		<If Condition="not IsQuestCompleted(68128) and IsQuestCompleted(68127) and Core.Me.Levels[ClassJobType.Thaumaturge] &gt; 69">
-			<LLToast Message="Beginning Thaumaturge class quest 'One Golem to Rule Them All'"/>
+			<LLToast Message="Beginning Black Mage class quest 'One Golem to Rule Them All'"/>
 			<While Condition="ClassName != ClassJobType.BlackMage">
 				<ChangeClass Job="BlackMage" />
 			</While>

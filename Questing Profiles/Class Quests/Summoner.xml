@@ -12,7 +12,7 @@
 
 		<!-- Austerities of Flame -->
 		<If Condition="not IsQuestCompleted(66627) and IsQuestCompleted(65997) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Austerities of Flame'"/>
+			<LLToast Message="Beginning Summoner class quest 'Austerities of Flame'"/>
 			<If Condition="not HasQuest(66627)">
 				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
 				<If Condition="IsQuestAcceptQualified(66627)">
@@ -52,7 +52,7 @@
 
 		<!-- Austerities of Earth -->
 		<If Condition="not IsQuestCompleted(66628) and IsQuestCompleted(66627) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 34">
-			<LLToast Message="Beginning Arcanist class quest 'Austerities of Earth'"/>
+			<LLToast Message="Beginning Summoner class quest 'Austerities of Earth'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -93,7 +93,7 @@
 
 		<!-- Shadowing the Summoner -->
 		<If Condition="not IsQuestCompleted(66629) and IsQuestCompleted(66628) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 39">
-			<LLToast Message="Beginning Arcanist class quest 'Shadowing the Summoner'"/>
+			<LLToast Message="Beginning Summoner class quest 'Shadowing the Summoner'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -116,7 +116,7 @@
 
 		<!-- Allagan Attire -->
 		<If Condition="not IsQuestCompleted(66630) and IsQuestCompleted(66629) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 44">
-			<LLToast Message="Beginning Arcanist class quest 'Allagan Attire'"/>
+			<LLToast Message="Beginning Summoner class quest 'Allagan Attire'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -197,7 +197,7 @@
 
 		<!-- Austerities of Wind -->
 		<If Condition="not IsQuestCompleted(66631) and IsQuestCompleted(66630) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 44">
-			<LLToast Message="Beginning Arcanist class quest 'Austerities of Wind'"/>
+			<LLToast Message="Beginning Summoner class quest 'Austerities of Wind'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -237,7 +237,7 @@
 
 		<!-- Primal Burdens -->
 		<If Condition="not IsQuestCompleted(66632) and IsQuestCompleted(66631) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 49">
-			<LLToast Message="Beginning Arcanist class quest 'Primal Burdens'"/>
+			<LLToast Message="Beginning Summoner class quest 'Primal Burdens'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -287,7 +287,7 @@
 
 		<!-- A Fitting Tomestone -->
 		<If Condition="not IsQuestCompleted(67636) and IsQuestCompleted(65964) and IsQuestCompleted(66632) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 49">
-			<LLToast Message="Beginning Arcanist class quest 'A Fitting Tomestone'"/>
+			<LLToast Message="Beginning Summoner class quest 'A Fitting Tomestone'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -314,7 +314,7 @@
 
 		<!-- A Matter of Fact -->
 		<If Condition="not IsQuestCompleted(67637) and IsQuestCompleted(67636) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 51">
-			<LLToast Message="Beginning Arcanist class quest 'A Matter of Fact'"/>
+			<LLToast Message="Beginning Summoner class quest 'A Matter of Fact'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -351,7 +351,7 @@
 
 		<!-- A Miner Negotiation -->
 		<If Condition="not IsQuestCompleted(67638) and IsQuestCompleted(67637) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 53">
-			<LLToast Message="Beginning Arcanist class quest 'A Miner Negotiation'"/>
+			<LLToast Message="Beginning Summoner class quest 'A Miner Negotiation'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -388,7 +388,7 @@
 
 		<!-- Mad, Bad, and Ebon-clad -->
 		<If Condition="not IsQuestCompleted(67639) and IsQuestCompleted(67638) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 55">
-			<LLToast Message="Beginning Arcanist class quest 'Mad, Bad, and Ebon-clad'"/>
+			<LLToast Message="Beginning Summoner class quest 'Mad, Bad, and Ebon-clad'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -433,7 +433,7 @@
 
 		<!-- I Could Have Tranced All Night -->
 		<If Condition="not IsQuestCompleted(67640) and IsQuestCompleted(67639) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 57">
-			<LLToast Message="Beginning Arcanist class quest 'I Could Have Tranced All Night'"/>
+			<LLToast Message="Beginning Summoner class quest 'I Could Have Tranced All Night'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -494,7 +494,7 @@
 
 		<!-- A Flare for the Dramatic -->
 		<If Condition="not IsQuestCompleted(67641) and IsQuestCompleted(67640) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 59">
-			<LLToast Message="Beginning Arcanist class quest 'A Flare for the Dramatic'"/>
+			<LLToast Message="Beginning Summoner class quest 'A Flare for the Dramatic'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -534,7 +534,7 @@
 
 		<!-- A Book with Bite -->
 		<If Condition="not IsQuestCompleted(68161) and IsQuestCompleted(67895) and IsQuestCompleted(67641) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 59">
-			<LLToast Message="Beginning Arcanist class quest 'A Book with Bite'"/>
+			<LLToast Message="Beginning Summoner class quest 'A Book with Bite'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -570,7 +570,7 @@
 
 		<!-- Performing for Prin -->
 		<If Condition="not IsQuestCompleted(68162) and IsQuestCompleted(68161) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 62">
-			<LLToast Message="Beginning Arcanist class quest 'Performing for Prin'"/>
+			<LLToast Message="Beginning Summoner class quest 'Performing for Prin'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -612,7 +612,7 @@
 
 		<!-- An Egi-stential Crisis -->
 		<If Condition="not IsQuestCompleted(68163) and IsQuestCompleted(68162) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 64">
-			<LLToast Message="Beginning Arcanist class quest 'An Egi-stential Crisis'"/>
+			<LLToast Message="Beginning Summoner class quest 'An Egi-stential Crisis'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -671,7 +671,7 @@
 
 		<!-- Off the Record -->
 		<If Condition="IsQuestCompleted(68163) and not IsQuestCompleted(68164) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 67">
-			<LLToast Message="Beginning Arcanist class quest 'Off the Record'"/>
+			<LLToast Message="Beginning Summoner class quest 'Off the Record'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
@@ -706,7 +706,7 @@
 
 		<!-- An Art for the Living -->
 		<If Condition="IsQuestCompleted(68164) and not IsQuestCompleted(68165) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 69">
-			<LLToast Message="Beginning Arcanist class quest 'An Art for the Living'"/>
+			<LLToast Message="Beginning Summoner class quest 'An Art for the Living'"/>
 			<While Condition="ClassName != ClassJobType.Summoner">
 				<ChangeClass Job="Summoner" />
 			</While>
