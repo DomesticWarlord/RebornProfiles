@@ -56,6 +56,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <If condition="&DoClassQuests;">
       <PFWPFCurrentClassQuests />
     </If>
+    <BotSettings EnableMount="1" />
 
     <While condition="DutyManager.InInstance and IsDutyEnded()">
       <LLLeaveDuty />
@@ -8509,7 +8510,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <GetTo ZoneId="133" XYZ="179.4065, -2.154363, -241.8529" />
             <UseTransport DialogOption="0" NpcId="1001263" InteractDistance="3.0" XYZ="181.4144, -2.35195, -240.4059" />
           </If>
-          <GetTo ZoneId="152" XYZ="-530.5579, 11.92529, 70.2776" />
+          <GetTo Fly="False" ZoneId="152" XYZ="-530.5579, 11.92529, 70.2776" />
           <WaitWhile Condition="not GetQuestStep(66726) == 3" />
         </If>
         <If Condition="GetQuestStep(66726) == 3">
@@ -8518,6 +8519,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
         <While Condition="GetQuestStep(66726) == 4">
           <LLToast Message="This quest step kinda sucks. If you see if failing, just complete it manually" />
+          <BotSettings EnableMount="0" />
           <MoveTo XYZ="-483.7456, 6.760449, 80.92095" />
           <WaitWhile Condition="Core.Player.InCombat or Core.Me.Location.Distance(GameObjectManager.GetObjectByNPCId(2359).Location) &gt; 6" />
           <MoveTo XYZ="-373.9252, 1.538172, 64.90609" />
@@ -8533,6 +8535,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UseObject NpcId="2003347" XYZ="-318.6237, 12.25293, -35.05005" Radius="10" QuestId="66726" StepId="4" />
         </While>
         <If Condition="GetQuestStep(66726) == 5">
+          <BotSettings EnableMount="1" />
           <GetTo Fly="False" ZoneId="152" XYZ="-317.6776, 12.29312, -37.30841" />
           <TalkTo NpcId="1008277" XYZ="-317.6776, 12.29312, -37.30841" QuestId="66726" StepId="5" />
         </If>
