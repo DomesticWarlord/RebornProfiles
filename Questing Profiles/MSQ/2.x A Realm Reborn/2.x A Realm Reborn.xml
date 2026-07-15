@@ -9406,7 +9406,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <WaitWhile Condition="GetQuestStep(69421) == 3" />
         </If>
         <If Condition="GetQuestStep(69421) == 4">
-          <GetTo ZoneId="152" XYZ="198.4854, -31.48771, -226.4165" />
+          <GetTo Fly="False" ZoneId="152" XYZ="198.4854, -31.48771, -226.4165" />
           <WaitWhile Condition="not GetQuestStep(69421) == 5" />
         </If>
         <If Condition="HasQuest(69421) and not IsQuestCompleted(69421) and GetQuestStep(69421) == 5">
