@@ -1,897 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Scholar Class Quests
+  Profile: Scholar Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Scholar Class Quests - Scholar</Name>
+	<Name>Scholar Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
-
-		<Hook Name="KillMobs" Operation="A" Location="TreeStart" />
-		<Hook Name="CloseHowTo" Operation="A" Location="TreeStart" />
-
-
-		<!-- Way of the Arcanist -->
-		<If Condition="not IsQuestCompleted(65988) and Core.Me.Levels[ClassJobType.Arcanist] == 0">
-			<LLToast Message="Beginning Arcanist class quest 'Way of the Arcanist'" />
-			<If Condition="not HasQuest(65988)">
-				<GetTo ZoneId="129" XYZ="-336.621, 12.89976, 5.536654" />
-				<TalkTo NpcId="1000895" XYZ="-336.621, 12.89976, 5.536654" />
-				<If Condition="IsQuestAcceptQualified(65988)">
-					<PickUpQuest QuestId="65988" NpcId="1000895" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65988) == 255">
-				<GetTo ZoneId="129" XYZ="-328.4879, 12.89976, 9.217857" />
-				<TurnIn QuestId="65988" StepId="255" NpcId="1000909" InteractDistance="1.0" XYZ="-328.4879, 12.89976, 9.217857" />
-				<While Condition="ClassName != ClassJobType.Arcanist">
-					<EquipWeapon ItemId="2142" />
-				</While>
-				<SaveGearset />
-			</If>
-		</If>
-
-		<!-- My First Grimoire -->
-		<If Condition="IsQuestCompleted(65988) and not IsQuestCompleted(65990)">
-			<LLToast Message="Beginning Arcanist class quest 'My First Grimoire'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65990)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(65990)">
-					<PickUpQuest NpcId="1000909" QuestId="65990" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65990) == 1">
-				<If Condition="not IsTodoChecked(65990, 1, 0)">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="74.16445, 49.43915, 131.389" /> <!-- Grinding Area -->
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="74.16445, 49.43915, 131.389" /> <!-- Grinding Area -->
-					</If>
-					<Grind while="not IsTodoChecked(65990, 1, 0)">
-						<GrindArea name="My_First_Grimoire">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="74.16445, 49.43915, 131.389" name="Wharf Rats" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="417" /> <!-- Wharf Rat -->
-							</TargetMobs>
-						</GrindArea>
-					</Grind>
-				</If>
-				<If Condition="not IsTodoChecked(65990, 1, 1)">
-					<GetTo ZoneId="135" XYZ="154.2236, 58.79901, 285.3297" /> <!-- Grinding Area -->
-					<Grind while="not IsTodoChecked(65990, 1, 1)">
-						<GrindArea name="My_First_Grimoire2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="154.2236, 58.79901, 285.3297" name="Aureliae" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="563" /> <!-- Aurelia -->
-							</TargetMobs>
-						</GrindArea>
-					</Grind>
-				</If>
-				<If Condition="not IsTodoChecked(65990, 1, 2)">
-					<GetTo ZoneId="135" XYZ="154.2236, 58.79901, 285.3297" /> <!-- Grinding Area -->
-					<Grind while="not IsTodoChecked(65990, 1, 2)">
-						<GrindArea name="My_First_Grimoire3">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="154.2236, 58.79901, 285.3297" name="Little Ladybugs" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="49" /> <!-- Little Ladybug -->
-							</TargetMobs>
-						</GrindArea>
-					</Grind>
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65990) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<TurnIn QuestId="65990" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-			</If>
-		</If>
-
-		<!-- What's in the Box -->
-		<If Condition="not IsQuestCompleted(65991) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 4">
-			<LLToast Message="Beginning Arcanist class quest 'What's in the Box'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65991)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(65991)">
-					<PickUpQuest NpcId="1000909" QuestId="65991" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65991) == 1">
-				<If Condition="not IsTodoChecked(65991, 1, 0)">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="387.0847, 65.40367, -99.18919" /> <!-- Grinding Area -->
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="387.0847, 65.40367, -99.18919" /> <!-- Grinding Area -->
-					</If>
-					<Grind while="not IsTodoChecked(65991, 1, 0)">
-						<GrindArea name="Whats_in_the_Box">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="387.0847, 65.40367, -99.18919" name="Wild Dodos" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="393" /> <!-- Wild Dodo -->
-							</TargetMobs>
-						</GrindArea>
-					</Grind>
-				</If>
-				<If Condition="not IsTodoChecked(65991, 1, 1)">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="387.0847, 65.40367, -99.18919" /> <!-- Grinding Area -->
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="135" XYZ="387.0847, 65.40367, -99.18919" /> <!-- Grinding Area -->
-					</If>
-					<Grind while="not IsTodoChecked(65991, 1, 1)">
-						<GrindArea name="Whats_in_the_Box2">
-							<Hotspots>
-								<Hotspot Radius="90" XYZ="387.0847, 65.40367, -99.18919" name="Tiny Mandragoras" />
-							</Hotspots>
-							<TargetMobs>
-								<TargetMob Id="405" /> <!-- Tiny Mandragora -->
-							</TargetMobs>
-						</GrindArea>
-					</Grind>
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65991) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				</If>
-				<TalkTo NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" QuestId="65991" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(65991) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="134" XYZ="-0.2977523, 24.48061, 194.7422" /> <!-- Practice Crates -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="134" XYZ="-0.2977523, 24.48061, 194.7422" /> <!-- Practice Crates -->
-				</If>
-				<UseObject NpcId="2002266" XYZ="-0.1373901, 26.07764, 196.5209" Radius="10" QuestId="65991" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(65991) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="134" XYZ="-0.2977523, 24.48061, 194.7422" /> <!-- Practice Crate -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="134" XYZ="-0.2977523, 24.48061, 194.7422" /> <!-- Practice Crate -->
-				</If>
-				<UseObject NpcId="2002476" XYZ="-0.1373901, 26.07764, 196.5209" Radius="10" QuestId="65991" StepId="4" />
-			</If>
-			<If Condition="GetQuestStep(65991) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim-->
-				<TurnIn QuestId="65991" NpcId="1000909" ItemId="2000796" XYZ="-326.3752, 12.89966, 9.994568" />
-			</If>
-		</If>
-
-		<!-- Tactical Planning (Primary) -->
-		<If Condition="not IsQuestCompleted(65992) and not IsQuestCompleted(65990) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 9">
-			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Primary)'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65992)">
-				<!-- Thubyrgeim -->
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<If Condition="IsQuestAcceptQualified(65992)">
-					<PickupQuest NpcId="1000909" QuestId="65992" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="HasQuest(65992)">
-				<If Condition="GetQuestStep(65992) == 1">
-					<If Condition="not IsTodoChecked(65992, 1, 0)">
-						<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-						<If condition="not IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="724.6773, 24.88592, 434.6457" />
-						</If>
-						<If condition="IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="724.6773, 24.88592, 434.6457" />
-						</If>
-						<Grind while="not IsTodoChecked(65992, 1, 0)">
-							<GrindArea name="Tactical_Planning">
-								<Hotspots>
-									<Hotspot Radius="90" XYZ="724.6773, 24.88592, 434.6457" name="Roselings" />
-								</Hotspots>
-								<TargetMobs>
-									<TargetMob Id="400" /> <!-- Roseling -->
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
-					</If>
-					<If Condition="not IsTodoChecked(65992, 1, 1)">
-						<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-						<If condition="not IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="679.9136, 35.84999, 381.1215" />
-						</If>
-						<If condition="IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="679.9136, 35.84999, 381.1215" />
-						</If>
-						<Grind while="not IsTodoChecked(65992, 1, 1)">
-							<GrindArea name="Tactical_Planning2">
-								<Hotspots>
-									<Hotspot Radius="90" XYZ="679.9136, 35.84999, 381.1215" name="Wild Jackals" />
-								</Hotspots>
-								<TargetMobs>
-									<TargetMob Id="399" /> <!-- Wild Jackal -->
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
-					</If>
-				</If>
-				<If Condition="GetQuestStep(65992) == 2">
-					<!-- Thubyrgeim -->
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-					<TalkTo NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" QuestId="65992" StepId="2" />
-				</If>
-				<If Condition="GetQuestStep(65992) == 3">
-					<!-- K'lyhia -->
-					<GetTo ZoneId="129" XYZ="-348.3177, -2.37447, 11.91724" />
-					<TalkTo NpcId="1005199" XYZ="-348.3177, -2.37447, 11.91724" QuestId="65992" StepId="3" />
-				</If>
-				<If Condition="GetQuestStep(65992) == 4">
-					<!-- K'lyhia -->
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-106.7979, 45.6884, -252.3384" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-106.7979, 45.6884, -252.3384" />
-					</If>
-					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-						<LeaveParty />
-					</If>
-					<LLSimpleDuty InteractNpcId="1005200" XYZ="-106.7979, 45.6884, -252.3384" QuestId="65992" StepId="4">
-						<HotSpots>
-							<HotSpot XYZ="-110.3807, 45.38188, -245.4525" Radius="90" />
-						</HotSpots>
-						<TargetMobs>
-							<!-- Goblin Picaroon -->
-							<TargetMob Id="1950" Weight="2000" />
-							<!-- Goblin Trader -->
-							<TargetMob Id="1949" Weight="1000" />
-						</TargetMobs>
-					</LLSimpleDuty>
-				</If>
-				<If Condition="GetQuestStep(65992) == 5">
-					<!-- K'lyhia -->
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-98.49707, 47.27536, -262.3179" />
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-98.49707, 47.27536, -262.3179" />
-					</If>
-					<TalkTo NpcId="1005201" XYZ="-98.49707, 47.27536, -262.3179" QuestId="65992" StepId="5" />
-				</If>
-				<If Condition="GetQuestStep(65992) == 255">
-					<!-- Thubyrgeim -->
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-					<TurnIn QuestId="65992" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-					<AutoInventoryEquip />
-				</If>
-			</If>
-		</If>
-		<!-- Tactical Planning (Secondary) -->
-		<If Condition="IsQuestCompleted(65991) and not IsQuestCompleted(65992) and not IsQuestCompleted(65993) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 9">
-			<LLToast Message="Beginning Arcanist class quest 'Tactical Planning (Secondary)'" />
-			<If Condition="not HasQuest(65993)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(65993)">
-					<PickUpQuest NpcId="1000909" QuestId="65993" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="HasQuest(65993)">
-				<If Condition="GetQuestStep(65993) == 1">
-					<If Condition="not IsTodoChecked(65993, 1, 0)">
-						<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-						<If condition="not IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="724.6773, 24.88592, 434.6457" /> <!-- Grinding Area -->
-						</If>
-						<If condition="IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="724.6773, 24.88592, 434.6457" /> <!-- Grinding Area -->
-						</If>
-						<Grind while="not IsTodoChecked(65993, 1, 0)">
-							<GrindArea name="Tactical_Planning">
-								<Hotspots>
-									<Hotspot Radius="90" XYZ="724.6773, 24.88592, 434.6457" name="Roselings" />
-								</Hotspots>
-								<TargetMobs>
-									<TargetMob Id="400" /> <!-- Roseling -->
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
-					</If>
-					<If Condition="not IsTodoChecked(65993, 1, 1)">
-						<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-						<If condition="not IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="679.9136, 35.84999, 381.1215" /> <!-- Grinding Area -->
-						</If>
-						<If condition="IsQuestCompleted(70058)">
-							<GetTo ZoneId="138" XYZ="679.9136, 35.84999, 381.1215" /> <!-- Grinding Area -->
-						</If>
-						<Grind while="not IsTodoChecked(65993, 1, 1)">
-							<GrindArea name="Tactical_Planning2">
-								<Hotspots>
-									<Hotspot Radius="90" XYZ="679.9136, 35.84999, 381.1215" name="Wild Jackals" />
-								</Hotspots>
-								<TargetMobs>
-									<TargetMob Id="399" /> <!-- Wild Jackal -->
-								</TargetMobs>
-							</GrindArea>
-						</Grind>
-					</If>
-				</If>
-				<If Condition="GetQuestStep(65993) == 2">
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-					<TalkTo NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" QuestId="65993" StepId="2" />
-				</If>
-				<If Condition="GetQuestStep(65993) == 3">
-					<GetTo ZoneId="129" XYZ="-348.3177, -2.37447, 11.91724" /> <!-- K'lyhia -->
-					<TalkTo NpcId="1005199" XYZ="-348.3177, -2.37447, 11.91724" QuestId="65993" StepId="3" />
-				</If>
-				<If Condition="GetQuestStep(65993) == 4">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-106.7979, 45.6884, -252.3384" /> <!-- K'lyhia -->
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-106.7979, 45.6884, -252.3384" /> <!-- K'lyhia -->
-					</If>
-					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-						<LeaveParty />
-					</If>
-					<LLSimpleDuty InteractNpcId="1005200" XYZ="-106.7979, 45.6884, -252.3384" QuestId="65993" StepId="4">
-						<HotSpots>
-							<HotSpot XYZ="-110.3807, 45.38188, -245.4525" Radius="90" />
-						</HotSpots>
-						<TargetMobs>
-							<TargetMob Id="1950" Weight="2000" /> <!-- Goblin Picaroon -->
-							<TargetMob Id="1949" Weight="1000" /> <!-- Goblin Trader -->
-						</TargetMobs>
-					</LLSimpleDuty>
-				</If>
-				<If Condition="GetQuestStep(65993) == 5">
-					<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-					<If condition="not IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-98.49707, 47.27536, -262.3179" /> <!-- K'lyhia -->
-					</If>
-					<If condition="IsQuestCompleted(70058)">
-						<GetTo ZoneId="134" XYZ="-98.49707, 47.27536, -262.3179" /> <!-- K'lyhia -->
-					</If>
-					<TalkTo NpcId="1005201" XYZ="-98.49707, 47.27536, -262.3179" QuestId="65993" StepId="5" />
-				</If>
-				<If Condition="GetQuestStep(65993) == 255">
-					<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-					<TurnIn QuestId="65993" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-
-					<AutoInventoryEquip />
-				</If>
-			</If>
-		</If>
-
-		<!-- Topaz Teachings -->
-		<If Condition="not IsQuestCompleted(66639) and (IsQuestCompleted(65992) or IsQuestCompleted(65993)) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 14">
-			<LLToast Message="Beginning Arcanist class quest 'Topaz Teachings'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(66639)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(66639)">
-					<PickUpQuest NpcId="1000909" QuestId="66639" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(66639) == 1">
-				<GetTo ZoneId="129" XYZ="-348.3177, -2.37447, 11.91724" /> <!-- K'lyhia -->
-				<TalkTo NpcId="1005199" XYZ="-348.3177, -2.37447, 11.91724" QuestId="66639" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(66639) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<TurnIn QuestId="66639" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-			</If>
-		</If>
-
-		<!-- Over the Rails -->
-		<If Condition="not IsQuestCompleted(65994) and IsQuestCompleted(66639) and Core.Player.ClassLevel &gt; 14">
-			<LLToast Message="Beginning Arcanist class quest 'Over the Rails'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65994)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<If Condition="IsQuestAcceptQualified(65994)">
-					<PickUpQuest NpcId="1000909" QuestId="65994" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65994) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="316.0295, -24.13677, 211.2001" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="316.0295, -24.13677, 211.2001" />
-				</If>
-				<TalkTo NpcId="1005208" XYZ="316.0295, -24.13677, 211.2001" QuestId="65994" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(65994) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="204.2725, -36.40237, 306.1722" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="204.2725, -36.40237, 306.1722" />
-				</If>
-				<TalkTo NpcId="1005211" XYZ="204.2725, -36.40237, 306.1722" QuestId="65994" StepId="2" />
-				<Grind while="HasQuest(65994) and GetQuestStep(65994) == 2">
-					<GrindArea name="Over_the_Rails">
-						<Hotspots>
-							<Hotspot Radius="90" XYZ="204.2725, -36.40237, 306.1722" name="Shifty-eyed Vagrants" />
-						</Hotspots>
-						<TargetMobs>
-							<TargetMob Id="1107" /> <!-- Shifty-eyed Vagrant -->
-						</TargetMobs>
-					</GrindArea>
-				</Grind>
-			</If>
-			<If Condition="GetQuestStep(65994) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="204.2725, -36.40237, 306.1722" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="204.2725, -36.40237, 306.1722" />
-				</If>
-				<TalkTo NpcId="1005211" XYZ="204.2725, -36.40237, 306.1722" QuestId="65994" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(65994) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="173.8154, -41.36731, 280.7201" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="173.8154, -41.36731, 280.7201" />
-				</If>
-				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-					<LeaveParty />
-				</If>
-				<LLSimpleDuty InteractNpcId="2002009" XYZ="173.8154, -41.36731, 280.7201" QuestId="65994" StepId="4">
-					<HotSpots>
-						<HotSpot XYZ="6.783015, 16.34722, 0.906988" Radius="90" />
-					</HotSpots>
-					<TargetMobs>
-						<TargetMob Id="1954" Weight="5000" /> <!-- Morningstar Gunner -->
-						<TargetMob Id="1951" Weight="4000" /> <!-- Morningstar Boatswain -->
-						<TargetMob Id="1955" Weight="3000" /> <!-- Morningstar Gromet -->
-						<TargetMob Id="1952" Weight="2000" /> <!-- Morningstar Falmadair -->
-						<TargetMob Id="1953" Weight="1000" /> <!-- Morningstar Navigator -->
-					</TargetMobs>
-				</LLSimpleDuty>
-				<WaitWhile Condition="IsOnMap(286)" />
-			</If>
-			<If Condition="GetQuestStep(65994) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<TurnIn QuestId="65994" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-				<AutoInventoryEquip />
-			</If>
-		</If>
-
-		<!-- Pincer Maneuver -->
-		<If Condition="not IsQuestCompleted(65995) and IsQuestCompleted(65994) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 19">
-			<LLToast Message="Beginning Arcanist class quest 'Pincer Maneuver'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65995)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(65995)">
-					<PickUpQuest NpcId="1000909" QuestId="65995" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65995) == 1">
-				<GetTo ZoneId="129" XYZ="-186.2059, 16, 56.9314" /> <!-- Dodozan -->
-				<TalkTo NpcId="1003505" XYZ="-186.2059, 16, 56.9314" QuestId="65995" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(65995) == 2">
-				<GetTo ZoneId="128" XYZ="-4.654114, 44.99985, -241.8403" /> <!-- Ginnade -->
-				<TalkTo NpcId="1000938" XYZ="-4.654114, 44.99985, -241.8403" QuestId="65995" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(65995) == 3">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<TalkTo NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" QuestId="65995" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(65995) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="178.6678, -41.14025, 261.616" /> <!-- K'lyhia -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="138" XYZ="178.6678, -41.14025, 261.616" /> <!-- K'lyhia -->
-				</If>
-				<TalkTo NpcId="1005215" XYZ="178.6678, -41.14025, 261.616" QuestId="65995" StepId="4" />
-			</If>
-			<If Condition="GetQuestStep(65995) == 5">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="135" XYZ="105.3193, 68.15523, 335.0137" /> <!-- Thubyrgeim -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="135" XYZ="105.3193, 68.15523, 335.0137" /> <!-- Thubyrgeim -->
-				</If>
-				<TalkTo NpcId="1005217" XYZ="103.7461, 68.15523, 329.4575" QuestId="65995" StepId="5" />
-			</If>
-			<If Condition="GetQuestStep(65995) == 6">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="135" XYZ="108.3848, 68.13147, 351.6135" /> <!-- Qiqirn -->
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="135" XYZ="108.3848, 68.13147, 351.6135" /> <!-- Qiqirn -->
-				</If>
-				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-					<LeaveParty />
-				</If>
-				<LLSimpleDuty InteractNpcId="2002010" XYZ="108.3848, 68.13147, 351.6135" QuestId="65995" StepId="6">
-					<HotSpots>
-						<HotSpot XYZ="64.82155, 71.31586, 368.6396" Radius="90" />
-						<HotSpot XYZ="49.56057, 71.3255, 381.4978" Radius="90" />
-						<HotSpot XYZ="-10.20831, 67.4906, 416.0676" Radius="90" /> <!-- K'lyhia's Grimoire -->
-					</HotSpots>
-					<InteractObjects>
-						<InteractObject Name="K'lyhia's Grimoire" NpcId="2002521" />
-					</InteractObjects>
-					<TargetMobs>
-						<TargetMob Id="1958" Weight="4000" /> <!-- Mamool Ja Mercenary -->
-						<TargetMob Id="1960" Weight="3000" /> <!-- Melancholy Mercenary -->
-						<TargetMob Id="1956" Weight="2000" /> <!-- Mindful Mercenary -->
-						<TargetMob Id="1957" Weight="1000" /> <!-- Menacing Mercenary -->
-					</TargetMobs>
-				</LLSimpleDuty>
-			</If>
-			<If Condition="GetQuestStep(65995) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<TurnIn QuestId="65995" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-				<AutoInventoryEquip />
-				<LLSellItem Armory="True" ItemIds="2142,2143,2145,2147" />
-			</If>
-		</If>
-
-		<!-- Grimoire Fandango -->
-		<If Condition="not IsQuestCompleted(65996) and IsQuestCompleted(65995) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 24">
-			<LLToast Message="Beginning Arcanist class quest 'Grimoire Fandango'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65996)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" /> <!-- Thubyrgeim -->
-				<If Condition="IsQuestAcceptQualified(65996)">
-					<PickUpQuest NpcId="1000909" QuestId="65996" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65996) == 1">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-311.3298, -1.451626, 127.3364" /> <!-- Witness -->
-				<TalkTo NpcId="1005227" XYZ="-311.3298, -1.451626, 127.3364" QuestId="65996" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 2">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" /> <!-- Tanga Tonga -->
-				<TalkTo NpcId="1006195" XYZ="-453.3608, 4.574484, 71.54956" QuestId="65996" StepId="2" />
-				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 3">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-463.1131, 27.24346, 65.27731" /> <!-- Hidden Parchment -->
-				<MoveTo Name="Jump Spot" XYZ="-396.2804, 35.08436, 45.08355" />
-				<While Condition="GameObjectManager.GetObjectByNPCId(2001893).IsVisible">
-					<MoveTo Name="Jump" XYZ="-399.0649, 21.96439, 57.98044" UseMesh="False" />
-					<UseObject NpcId="2001893" XYZ="-388.7236, 27.02368, 45.57861" Radius="10" UseTimes="1" BlacklistAfter="True" QuestId="65996" StepId="3" />
-					<MoveTo Name="Jump Spot" XYZ="-408.1522, 20.50886, 59.42538" />
-					<MoveTo Name="Jump" XYZ="-427.6064, -1.823271, 66.29599" UseMesh="False" />
-				</While>
-				<UseObject NpcIds="2001892,2001894" QuestId="65996" StepId="3">
-					<HotSpots>
-						<HotSpot XYZ="-457.7249, 29.19043, 58.33521" Radius="10" />
-						<HotSpot XYZ="-393.4234, 42.55737, -2.975586" Radius="10" />
-					</HotSpots>
-				</UseObject>
-			</If>
-			<If Condition="GetQuestStep(65996) == 4">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" /> <!-- Tanga Tonga -->
-				<HandOver ItemId="2000883" QuestId="65996" StepId="4" NpcId="1006195" XYZ="-453.3608, 4.574484, 71.54956" />
-				<GetTo ZoneId="139" XYZ="-450.3789, 3.353568, 88.40228" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 5">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" /> <!-- Old Wooden Box -->
-				<EmoteNPC NpcId="2002478" Emote="dance" XYZ="-600.6104, -3.189148, -53.78809" Radius="10" QuestId="65996" StepId="5" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 6">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" />
-				<UseObject NpcId="2002478" XYZ="-600.6104, -3.189148, -53.78809" Radius="10" QuestId="65996" StepId="6" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 7">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-600.6104, -3.189148, -53.78809" />
-				<UseObject NpcId="2002478" XYZ="-600.6104, -3.189148, -53.78809" Radius="10" QuestId="65996" StepId="7" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 8">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-					<If Condition="IsOnMap(139) and (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003587" XYZ="220.9048, -0.9591975, 257.4043" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="-337.3007, -2.181173, 141.3137" />
-				<EmoteNPC NpcId="1005249" Emote="dance" XYZ="-337.3007, -2.181173, 141.3137" Radius="10" QuestId="65996" StepId="8" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 9">
-				<GetTo ZoneId="128" XYZ="-190.3258, 41.24994, 176.2264" />
-				<LLEmoteNpc NpcId="1005228" Emote="dance" XYZ="-190.3258, 41.24994, 176.2264" Radius="10" QuestId="65996" StepId="9" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 10">
-				<GetTo ZoneId="128" XYZ="-190.3258, 41.24994, 176.2264" />
-				<HandOver ItemId="2000884" QuestId="65996" StepId="10" NpcId="1005228" XYZ="-190.3258, 41.24994, 176.2264" />
-			</If>
-			<If Condition="GetQuestStep(65996) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<TurnIn QuestId="65996" NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" />
-
-				<AutoInventoryEquip />
-				<LLSellItem Armory="True" ItemIds="2142,2143,2145,2147,2149" />
-			</If>
-		</If>
-
-		<!-- Sinking Doesmaga -->
-		<If Condition="not IsQuestCompleted(65997) and IsQuestCompleted(65996) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Sinking Doesmaga'" />
-			<While Condition="ClassName != ClassJobType.Arcanist">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(65997)">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<If Condition="IsQuestAcceptQualified(65997)">
-					<PickUpQuest NpcId="1000909" QuestId="65997" XYZ="-326.3752, 12.89966, 9.994568" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(65997) == 1">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="550.4692, 12.14773, 220.9353" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="550.4692, 12.14773, 220.9353" />
-				</If>
-				<HandOver ItemId="2000885" QuestId="65997" StepId="1" NpcId="1005251" XYZ="550.4692, 12.14773, 220.9353" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 2">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="586.0226, 14.59663, 376.2111" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="586.0226, 14.59663, 376.2111" />
-				</If>
-				<HandOver ItemId="2000886" QuestId="65997" StepId="2" NpcId="1005252" XYZ="586.0226, 14.59663, 376.2111" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 3">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="619.0126, 23.93624, 455.1002" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="619.0126, 23.93624, 455.1002" />
-				</If>
-				<HandOver ItemId="2000887" QuestId="65997" StepId="3" NpcId="1006273" XYZ="619.0126, 23.93624, 455.1002" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 4">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="564.3549, 20.61789, 504.3259" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="564.3549, 20.61789, 504.3259" />
-				</If>
-				<HandOver ItemId="2000888" QuestId="65997" StepId="4" NpcId="1005253" XYZ="564.3549, 20.61789, 504.3259" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 5">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="442.0081, 15.79327, 370.321" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="442.0081, 15.79327, 370.321" />
-				</If>
-				<HandOver ItemId="2000890" QuestId="65997" StepId="5" NpcId="1005254" XYZ="442.0081, 15.79327, 370.321" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 6">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="514.7089, 17.18591, 456.9704" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="514.7089, 17.18591, 456.9704" />
-				</If>
-				<HandOver ItemId="2000891" QuestId="65997" StepId="6" NpcId="1005229" XYZ="522.9114, 17.41504, 456.3516" />
-				<GetTo ZoneId="137" XYZ="514.7089, 17.18591, 456.9704" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 7">
-				<!-- The Ultimate Weapon(70058) unlocks flying in this area. Using GetTo if flight isn't unlocked  -->
-				<If condition="not IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="684.3823, 11.59444, 411.9478" />
-				</If>
-				<If condition="IsQuestCompleted(70058)">
-					<GetTo ZoneId="137" XYZ="684.3823, 11.59444, 411.9478" />
-				</If>
-				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-					<LeaveParty />
-				</If>
-				<LLSimpleDuty InteractNpcId="1005235" XYZ="684.3823, 11.59444, 411.9478" QuestId="65997" StepId="7">
-					<HotSpots>
-						<HotSpot XYZ="7.68713, 16.34722, -1.695764" Radius="90" />
-					</HotSpots>
-					<TargetMobs>
-						<TargetMob Id="1967" Weight="7000" /> <!-- Barber Hirskskrat -->
-						<TargetMob Id="1969" Weight="6000" /> <!-- Morningstar Cosier -->
-						<TargetMob Id="1968" Weight="5000" /> <!-- Morningstar Topman -->
-						<TargetMob Id="1966" Weight="4000" /> <!-- Morningstar Gunner -->
-						<TargetMob Id="1964" Weight="3000" /> <!-- Morningstar Boatswain -->
-						<TargetMob Id="1500" Weight="2000" /> <!-- Doesmaga Poisonheart -->
-						<TargetMob Id="1965" Weight="1000" /> <!-- Morningstar Falmadair -->
-					</TargetMobs>
-				</LLSimpleDuty>
-			</If>
-			<If Condition="GetQuestStep(65997) == 8">
-				<WaitTimer WaitTime="25" />
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<TalkTo NpcId="1000909" XYZ="-326.3752, 12.89966, 9.994568" QuestId="65997" StepId="8" />
-			</If>
-			<If Condition="GetQuestStep(65997) == 255">
-				<GetTo ZoneId="129" XYZ="-326.3752, 12.89966, 9.994568" />
-				<TurnIn QuestId="65997" NpcId="1000909" ItemId="2000889" XYZ="-326.3752, 12.89966, 9.994568" />
-
-				<AutoInventoryEquip />
-			</If>
-		</If>
-
-		<!-- Forgotten but Not Gone -->
-		<If Condition="not IsQuestCompleted(66633) and IsQuestCompleted(65997) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
-			<LLToast Message="Beginning Arcanist class quest 'Forgotten but Not Gone'" />
-			<While Condition="ClassName != ClassJobType.Arcanist and ClassName != ClassJobType.Summoner and ClassName != ClassJobType.Scholar">
-				<ChangeClass Job="Arcanist" />
-			</While>
-			<If Condition="not HasQuest(66633)">
-				<GetTo ZoneId="129" XYZ="-336.1607, 12.89977, 3.395563" />
-				<If Condition="IsQuestAcceptQualified(66633)">
-					<PickUpQuest NpcId="1000895" QuestId="66633" XYZ="-335.7443, 12.89977, 1.388489" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(66633) == 1">
-				<GetTo ZoneId="128" XYZ="-4.470947, 44.99989, -250.5685" />
-				<TalkTo NpcId="1006757" XYZ="-4.470947, 44.99989, -250.5685" QuestId="66633" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(66633) == 2">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(137)">
-						<GetTo ZoneId="137" XYZ="344.6859, 31.88946, 89.37195" />
-					</If>
-					<If Condition="IsOnMap(137) and (IsOnSubMap(167) or IsOnSubMap(205) or IsOnSubMap(206) or IsOnSubMap(209) or IsOnSubMap(210) or IsOnSubMap(211))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
-					</If>
-				</If>
-				<GetTo ZoneId="137" XYZ="-8.011047, 40.66735, 192.76721" />
-				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-					<LeaveParty />
-				</If>
-				<LLSimpleDuty InteractNpcId="1007835" XYZ="-8.011047, 40.66735, 192.76721" QuestId="66633" StepId="2">
-					<HotSpots>
-						<HotSpot XYZ="-1.708023, 39.79695, 196.8475" Radius="90" />
-						<HotSpot XYZ="-4.374488, 39.95105, 236.7387" Radius="90" />
-						<HotSpot XYZ="12.8403, 39.15393, 234.888" Radius="90" />
-					</HotSpots>
-					<InteractObjects>
-						<InteractObject Name="Stolen Crate" NpcId="2002522" />
-					</InteractObjects>
-					<TargetMobs>
-						<TargetMob Id="1884" Weight="4000" /> <!-- Broken Thaumaturge -->
-						<TargetMob Id="1885" Weight="3000" /> <!-- Broken Lancer -->
-						<TargetMob Id="1886" Weight="2000" /> <!-- Broken Marauder -->
-						<TargetMob Id="1883" Weight="1000" /> <!-- Broken Gladiator -->
-					</TargetMobs>
-				</LLSimpleDuty>
-			</If>
-			<If Condition="GetQuestStep(66633) == 3">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(137)">
-						<GetTo ZoneId="137" XYZ="344.6859, 31.88946, 89.37195" />
-					</If>
-					<If Condition="IsOnMap(137) and (IsOnSubMap(167) or IsOnSubMap(205) or IsOnSubMap(206) or IsOnSubMap(209) or IsOnSubMap(210) or IsOnSubMap(211))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="1.0" NpcId="1003588" XYZ="344.6859, 31.88946, 89.37195" />
-					</If>
-				</If>
-				<GetTo ZoneId="137" XYZ="31.3573, 34.07881, 222.7664" />
-				<TalkTo NpcId="1007836" XYZ="31.3573, 34.07881, 222.7664" QuestId="66633" StepId="3" />
-			</If>
-			<If Condition="GetQuestStep(66633) == 255">
-				<GetTo ZoneId="128" XYZ="-4.470947, 44.99989, -250.5685" />
-				<TurnIn QuestId="66633" NpcId="1006757" XYZ="-4.470947, 44.99989, -250.5685" />
-			</If>
-		</If>
 
 		<!-- A Faerie Tale Come True -->
 		<If Condition="IsQuestCompleted(66633) and not IsQuestCompleted(70300) and Core.Me.Levels[ClassJobType.Arcanist] &gt; 29">
@@ -925,8 +42,18 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66634) == 1">
-				<GetTo ZoneId="180" XYZ="-353.80682,64.723465,-317.77112" />
-				<UseObject NpcIds="2002380,2002379,2002381" QuestId="66634" StepId="1">
+				<GetTo ZoneId="180" XYZ="-352.65436, 64.764786, -317.50867" />
+				<If Condition="GetQuestStep(66634) == 1 and GetQuestById(66634).QuestI8A == 0">
+					<MoveTo Distance="1" XYZ="-363.9957, 65.48413, -309.9172" usemesh="false" />
+					<UseObject NpcId="2002381" XYZ="-360.55542, 66.33093, -310.87207" condition="GetQuestById(66634).QuestI8A == 0" />
+					<MoveTo XYZ="-348.2912, 51.157833, -303.51837" usemesh="false" />
+				</If>
+				<If Condition="GetQuestStep(66634) == 1 and GetQuestById(66634).QuestI8A == 16">
+					<GetTo ZoneId="180" XYZ="-295.9975, 70.48801, -271.2891" />
+					<UseObject NpcId="2002382" XYZ="-327.8707, 65.87317, -267.5975" Radius="10" UseTimes="1" QuestId="66634" StepId="1" />
+					<MoveTo Name="Jump" Distance="1" UseMesh="False" XYZ="-316.7654, 52.04363, -286.56" />
+				</If>
+				<UseObject NpcIds="2002380,2002379" QuestId="66634" StepId="1">
 					<HotSpots>
 						<HotSpot XYZ="-338.8877, 61.72266, -120.2564" Radius="10" />
 						<HotSpot XYZ="-274.2809, 65.81213, -196.9788" Radius="10" />
@@ -964,7 +91,7 @@
 						<GetTo ZoneId="139" XYZ="256.8245, -3.052745, 60.9292" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="256.8245, -3.052745, 60.9292" />
@@ -987,7 +114,7 @@
 						<GetTo ZoneId="139" XYZ="256.3362, -3.206905, 58.09106" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="256.3362, -3.206905, 58.09106" />
@@ -1110,7 +237,7 @@
 						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="256.3668, -3.206905, 58.09106" />
@@ -1171,7 +298,7 @@
 						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1191,7 +318,7 @@
 						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1212,7 +339,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1226,7 +353,7 @@
 						<GetTo ZoneId="139" XYZ="620.9657, -3.002753, 171.0688" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="620.9657, -3.002753, 171.0688" />
@@ -1238,7 +365,7 @@
 						<GetTo ZoneId="139" XYZ="622.9191, -3.067139, 171.6792" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="622.9191, -3.067139, 171.6792" />
@@ -1261,7 +388,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1282,7 +409,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1320,7 +447,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1341,7 +468,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1355,7 +482,7 @@
 						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
@@ -1367,7 +494,7 @@
 						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
@@ -1388,7 +515,7 @@
 						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
@@ -1411,7 +538,7 @@
 						<GetTo ZoneId="139" XYZ="700.9536, -0.5095394, 133.2875" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="700.9536, -0.5095394, 133.2875" />
@@ -1423,7 +550,7 @@
 						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
@@ -1444,7 +571,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1475,7 +602,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1496,7 +623,7 @@
 						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
@@ -1514,7 +641,7 @@
 						<GetTo ZoneId="139" XYZ="290.1501, 41.27563, -193.8354" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="290.1501, 41.27563, -193.8354" />
@@ -1526,7 +653,7 @@
 						<GetTo ZoneId="139" XYZ="405.1117, 4.109557, 81.04065" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="405.1117, 4.109557, 81.04065" />
@@ -1565,7 +692,7 @@
 						<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
@@ -1580,7 +707,7 @@
 						<GetTo ZoneId="139" XYZ="491.4778, 16.49544, 69.16907" />
 					</If>
 					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport Name="Ferry Skipper" InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
+						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
 					</If>
 				</If>
 				<GetTo ZoneId="139" XYZ="491.4778, 16.49544, 69.16907" />

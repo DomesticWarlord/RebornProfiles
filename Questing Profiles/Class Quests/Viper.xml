@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Viper Class Quests
+  Profile: Viper Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-  <Name>Panda Farmer - Viper Class Quests - Viper</Name>
+  <Name>Viper Class Quests</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 

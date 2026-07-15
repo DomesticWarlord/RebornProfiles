@@ -790,6 +790,7 @@
 				<GetTo ZoneId="153" XYZ="-137.67459, 7.9636803, 277.58408" />
 				<TurnIn NpcId="1006751" QuestId="66620" XYZ="-139.4522, 8.712891, 281.6968" />
 				<UseInventoryItem ItemId="20648" />
+				<AutoInventoryEquip />
 			</If>
 		</If>
 

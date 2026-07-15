@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Paladin Class Quests
+  Profile: Paladin Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Paladin Class Quests - Paladin</Name>
+	<Name>Paladin Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Samurai Class Quests
+  Profile: Samurai Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Samurai Class Quests - Samurai</Name>
+	<Name>Samurai Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 

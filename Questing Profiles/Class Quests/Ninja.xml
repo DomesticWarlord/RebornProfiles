@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Ninja Class Quests
+  Profile: Ninja Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Ninja Class Quests - Ninja</Name>
+	<Name>Ninja Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 
@@ -1738,8 +1738,6 @@
 						<TargetMobs>
 							<TargetMob Id="4090" /> <!-- Qiqirn Nogbeater -->
 						</TargetMobs>
-
-
 					</GrindArea>
 				</Grind>
 			</If>

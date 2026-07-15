@@ -769,6 +769,7 @@
 			<If Condition="GetQuestStep(66590) == 255">
 				<GetTo ZoneId="137" XYZ="460.6545, 8.309061, 74.47925" />
 				<TurnIn QuestId="66590" NpcId="1006746" XYZ="460.6545, 8.309061, 74.47925" />
+				<OpenInventoryItem ItemId="20644"/>
 				<AutoInventoryEquip />
 			</If>
 		</If>

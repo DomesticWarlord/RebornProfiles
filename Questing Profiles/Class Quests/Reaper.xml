@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Reaper Class Quests
+  Profile: Reaper Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-  <Name>Panda Farmer - Reaper Class Quests - Reaper</Name>
+  <Name>Reaper Class Quests</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 

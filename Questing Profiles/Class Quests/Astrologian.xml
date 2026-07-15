@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Astrologian Class Quests
+  Profile: Astrologian Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Astrologian Class Quests - Astrologian</Name>
+	<Name>Astrologian Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 

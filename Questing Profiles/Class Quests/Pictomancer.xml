@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Pictomancer Class Quests
+  Profile: Pictomancer Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-  <Name>Panda Farmer - Pictomancer Class Quests - Pictomancer</Name>
+  <Name>Pictomancer Class Quests</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Dancer Class Quests
+  Profile: Dancer Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - Dancer Class Quests - Dancer</Name>
+	<Name>Dancer Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 

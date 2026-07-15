@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - RedMage Class Quests
+  Profile: RedMage Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-	<Name>Panda Farmer - RedMage Class Quests - RedMage</Name>
+	<Name>RedMage Class Quests</Name>
 	<BehaviorDirectory></BehaviorDirectory>
 	<Order>
 

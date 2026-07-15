@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Panda Farmer - Sage Class Quests
+  Profile: Sage Class Quests
   Authors: DomesticWarlord
   Code Credit: nt53133
 
 -->
 <Profile>
-  <Name>Panda Farmer - Sage Class Quests - Sage</Name>
+  <Name>Sage Class Quests</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 
