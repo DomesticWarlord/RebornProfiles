@@ -734,8 +734,7 @@
 					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 						<LeaveParty />
 					</If>
-					<GetTo ZoneId="155" XYZ="-768.3433, 225.5517, 24.00064" />
-					<LLSimpleDuty XYZ="-770.8876, 225.3577, 25.59108" QuestId="66596" StepId="2">
+\					<LLSimpleDuty XYZ="-770.8876, 225.3577, 25.59108" QuestId="66596" StepId="2">
 						<HotSpots>
 							<HotSpot XYZ="-775.9493, 224.9029, 29.37635" Radius="90" />
 							<HotSpot XYZ="-893.0953, 229.5414, -11.88684" Radius="90" />
