@@ -8862,7 +8862,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
         <If Condition="GetQuestStep(69417) == 3">
           <If Condition="GetQuestStep(69417) == 3 and GetQuestById(69417).GetTodoArgs(3, 0).Item1 == 0">
-            <GetTo ZoneId="140" XYZ="-415.9152, 23.11401, -394.6136" />
+            <GetTo ZoneId="140" XYZ="-411.04575, 23.016438, -391.6681" />
             <TalkTo NpcId="1008636" XYZ="-415.9152, 23.11401, -394.6136" QuestId="69417" />
           </If>
           <If Condition="GetQuestStep(69417) == 3 and GetQuestById(69417).GetTodoArgs(3, 0).Item1 == 1">
