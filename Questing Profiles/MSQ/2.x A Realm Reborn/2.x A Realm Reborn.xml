@@ -3127,25 +3127,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Sastasha" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <!-- Aleport -->
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1036)">
-                  <LLJoinDuty DutyId="4" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1036)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="4" ZoneId="1036" Trial="False" />
             </If>
           </If>
         </If>
@@ -3202,25 +3184,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Tam-Tara Deepcroft" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <!-- Aleport -->
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1037)">
-                  <LLJoinDuty DutyId="2" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1037)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="2" ZoneId="1037" Trial="False" />
             </If>
           </If>
         </If>
@@ -3282,24 +3246,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Copperbell Mines" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1038)">
-                  <LLJoinDuty DutyId="3" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1038)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="3" ZoneId="1038" Trial="False" />
             </If>
           </If>
         </If>
@@ -3690,24 +3637,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Bowl of Embers" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1045)">
-                  <LLJoinDuty DutyId="56" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1045)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="56" ZoneId="1045" Trial="False" />
             </If>
           </If>
         </If>
@@ -4643,24 +4573,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Thousand Maws of Toto-Rak" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1039)">
-                  <LLJoinDuty DutyId="1" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1039)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="1" ZoneId="1039" Trial="False" />
             </If>
           </If>
         </If>
@@ -5367,24 +5280,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Haukke Manor" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1040)">
-                  <LLJoinDuty DutyId="6" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1040)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="6" ZoneId="1040" Trial="False" />
             </If>
           </If>
         </If>
@@ -5759,24 +5655,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Brayflox's Longstop" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1041)">
-                  <LLJoinDuty DutyId="8" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1041)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="8" ZoneId="1041" Trial="False" />
             </If>
           </If>
         </If>
@@ -6099,24 +5978,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Navel" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1046)">
-                  <LLJoinDuty DutyId="57" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1046)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="57" ZoneId="1046" Trial="False" />
             </If>
           </If>
         </If>
@@ -6884,24 +6746,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Stone Vigil" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1042)">
-                  <LLJoinDuty DutyId="11" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1042)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="11" ZoneId="1042" Trial="False" />
             </If>
           </If>
         </If>
@@ -7307,24 +7152,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Howling Eye" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1047)">
-                  <LLJoinDuty DutyId="58" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1047)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="58" ZoneId="1047" Trial="False" />
             </If>
           </If>
         </If>
@@ -8115,24 +7943,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Castrum Meridianum" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1043)">
-                  <LLJoinDuty DutyId="15" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1043)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="15" ZoneId="1043" Trial="False" />
             </If>
           </If>
         </If>
@@ -8176,24 +7987,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Praetorium" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1044)">
-                  <LLJoinDuty DutyId="16" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1044)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="16" ZoneId="1044" Trial="False" />
             </If>
           </If>
         </If>
@@ -8210,24 +8004,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="The Porta Decumana" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1048)">
-                  <LLJoinDuty DutyId="830" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1048)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="830" ZoneId="1048" Trial="False" />
             </If>
           </If>
         </If>
@@ -8548,24 +8325,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66726" StepId="7" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player duty 'Thornmarch (Hard)'." />
           </If>
           <If condition="&UseCarry;">
-            <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-              <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-              <TeleportTo AetheryteId="14" Force="True" />
-              <InviteToParty Name="&CarryName;" />
-              <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-            </If>
-            <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-              <If condition="not IsOnMap(1067)">
-                <LLJoinDuty DutyId="66" Trial="True" />
-              </If>
-              <If condition="IsOnMap(1067)">
-                <WaitWhile condition="not IsDutyEnded()" />
-                <If condition="IsDutyEnded">
-                  <WaitTimer WaitTime="5" />
-                  <LLLeaveDuty />
-                </If>
-              </If>
-            </If>
+            <PFWPFAutoParty DutyId="66" ZoneId="1067" Trial="True" />
           </If>
         </If>
         <If Condition="GetQuestStep(66726) == 8">
@@ -9107,25 +8867,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="66897" StepId="1" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player duty 'Whorleater (Hard)'." />
           </If>
           <If condition="&UseCarry; == True">
-            <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-            <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-              <!-- Aleport -->
-              <TeleportTo AetheryteId="14" Force="True" />
-              <InviteToParty Name="&CarryName;" />
-              <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-            </If>
-            <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-              <If condition="not IsOnMap(281)">
-                <LLJoinDuty DutyId="72" Trial="True" />
-              </If>
-              <If condition="IsOnMap(281)">
-                <WaitWhile condition="not IsDutyEnded()" />
-                <If condition="IsDutyEnded">
-                  <WaitTimer WaitTime="5" />
-                  <LLLeaveDuty />
-                </If>
-              </If>
-            </If>
+            <PFWPFAutoParty DutyId="72" ZoneId="281" Trial="True" />
           </If>
         </If>
         <If Condition="GetQuestStep(66897) == 2">
@@ -9414,25 +9156,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="69421" StepId="5" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player duty 'The Striking Tree (Hard)'." />
           </If>
           <If condition="&UseCarry; == True">
-            <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-            <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-              <!-- Aleport -->
-              <TeleportTo AetheryteId="14" Force="True" />
-              <InviteToParty Name="&CarryName;" />
-              <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-            </If>
-            <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-              <If condition="not IsOnMap(374)">
-                <LLJoinDuty DutyId="77" Trial="True" />
-              </If>
-              <If condition="IsOnMap(374)">
-                <WaitWhile condition="not IsDutyEnded()" />
-                <If condition="IsDutyEnded">
-                  <WaitTimer WaitTime="5" />
-                  <LLLeaveDuty />
-                </If>
-              </If>
-            </If>
+            <PFWPFAutoParty DutyId="77" ZoneId="374" Trial="True" />
           </If>
         </If>
         <If Condition="GetQuestStep(69421) == 6">
@@ -9955,24 +9679,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Snowcloak" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1062)">
-                  <LLJoinDuty DutyId="27" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1062)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="27" ZoneId="1062" Trial="False" />
             </If>
           </If>
         </If>
@@ -10199,25 +9906,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65620" StepId="4" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Akh Afah Amphitheatre (Hard)'." />
           </If>
           <If condition="&UseCarry; == True">
-            <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-            <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-              <!-- Aleport -->
-              <TeleportTo AetheryteId="14" Force="True" />
-              <InviteToParty Name="&CarryName;" />
-              <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-            </If>
-            <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-              <If condition="not IsOnMap(377)">
-                <LLJoinDuty DutyId="79" Trial="True" />
-              </If>
-              <If condition="IsOnMap(377)">
-                <WaitWhile condition="not IsDutyEnded()" />
-                <If condition="IsDutyEnded">
-                  <WaitTimer WaitTime="5" />
-                  <LLLeaveDuty />
-                </If>
-              </If>
-            </If>
+            <PFWPFAutoParty DutyId="79" ZoneId="377" Trial="True" />
           </If>
           <WaitWhile condition="GetQuestStep(65620) == 4" />
         </If>
@@ -10368,25 +10057,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog IsBotContinueAllowed="True" DialogText="Please manually complete the 8 player trail 'The Bowl of Embers (Hard)'." />
         </If>
         <If condition="&UseCarry; == True">
-          <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-            <!-- Aleport -->
-            <TeleportTo AetheryteId="14" Force="True" />
-            <InviteToParty Name="&CarryName;" />
-            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-          </If>
-          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-            <If condition="not IsOnMap(292)">
-              <LLJoinDuty DutyId="59" Trial="True" />
-            </If>
-            <If condition="IsOnMap(292)">
-              <WaitWhile condition="not IsDutyEnded()" />
-              <If condition="IsDutyEnded">
-                <WaitTimer WaitTime="5" />
-                <LLLeaveDuty />
-              </If>
-            </If>
-          </If>
+          <PFWPFAutoParty DutyId="59" ZoneId="292" Trial="True" />
         </If>
       </If>
 
@@ -10414,25 +10085,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog IsBotContinueAllowed="True" DialogText="Please manually complete the 8 player trail 'The Howling Eyes (Hard)'." />
         </If>
         <If condition="&UseCarry; == True">
-          <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-            <!-- Aleport -->
-            <TeleportTo AetheryteId="14" Force="True" />
-            <InviteToParty Name="&CarryName;" />
-            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-          </If>
-          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-            <If condition="not IsOnMap(294)">
-              <LLJoinDuty DutyId="61" Trial="True" />
-            </If>
-            <If condition="IsOnMap(294)">
-              <WaitWhile condition="not IsDutyEnded()" />
-              <If condition="IsDutyEnded">
-                <WaitTimer WaitTime="5" />
-                <LLLeaveDuty />
-              </If>
-            </If>
-          </If>
+          <PFWPFAutoParty DutyId="61" ZoneId="294" Trial="True" />
         </If>
       </If>
 
@@ -10457,28 +10110,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <!-- Completing Titan Hard is required to pick up the next quest -->
       <If condition="IsQuestCompleted(66694) and not HasDutyBeenCompleted(60)">
         <If condition="&UseCarry; == False">
-          <UserDialog IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Navel (Hard).'" />
+          <UserDialog IsBotContinueAllowed="False" DialogText="Please complete The Navel (Hard) manually." />
         </If>
         <If condition="&UseCarry; == True">
-          <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-            <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-            <!-- Aleport -->
-            <TeleportTo AetheryteId="14" Force="True" />
-            <InviteToParty Name="&CarryName;" />
-            <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-          </If>
-          <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-            <If condition="not IsOnMap(293)">
-              <LLJoinDuty DutyId="60" Trial="True" />
-            </If>
-            <If condition="IsOnMap(293)">
-              <WaitWhile condition="not IsDutyEnded()" />
-              <If condition="IsDutyEnded">
-                <WaitTimer WaitTime="5" />
-                <LLLeaveDuty />
-              </If>
-            </If>
-          </If>
+          <PFWPFAutoParty DutyId="60" ZoneId="293" Trial="True" />
         </If>
       </If>
 
@@ -10581,24 +10216,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Keeper of the Lake" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
-              <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-                <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-                <TeleportTo AetheryteId="14" Force="True" />
-                <InviteToParty Name="&CarryName;" />
-                <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-              </If>
-              <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-                <If condition="not IsOnMap(1063)">
-                  <LLJoinDuty DutyId="32" Trial="False" />
-                </If>
-                <If condition="IsOnMap(1063)">
-                  <WaitWhile condition="not IsDutyEnded()" />
-                  <If condition="IsDutyEnded">
-                    <WaitTimer WaitTime="5" />
-                    <LLLeaveDuty />
-                  </If>
-                </If>
-              </If>
+              <PFWPFAutoParty DutyId="32" ZoneId="1063" Trial="False" />
             </If>
           </If>
         </If>
@@ -10714,25 +10332,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             <UserDialog QuestId="65902" StepId="3" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Chrysalis.'" />
           </If>
           <If condition="&UseCarry; == True">
-            <If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-              <!-- Aleport -->
-              <TeleportTo AetheryteId="14" Force="True" />
-              <InviteToParty Name="&CarryName;" />
-              <WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-            </If>
-            <If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-              <LLToast message="Teleporting to Aleport to invite &CarryName;" />
-              <If condition="not IsOnMap(426)">
-                <LLJoinDuty DutyId="84" Trial="True" />
-              </If>
-              <If condition="IsOnMap(426)">
-                <WaitWhile condition="not IsDutyEnded()" />
-                <If condition="IsDutyEnded">
-                  <WaitTimer WaitTime="5" />
-                  <LLLeaveDuty />
-                </If>
-              </If>
-            </If>
+            <PFWPFAutoParty DutyId="84" ZoneId="426" Trial="True" />
           </If>
         </If>
         <If Condition="GetQuestStep(65905) == 4">
