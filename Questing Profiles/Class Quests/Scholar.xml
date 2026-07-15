@@ -223,6 +223,7 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(66638) == 1">
+				<Hook Name="HealTonberry" Operation="A" Location="TreeStart" />
 				<If Condition="not IsQuestCompleted(66060)">
 					<If Condition="not IsOnMap(139)">
 						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
@@ -250,6 +251,8 @@
 				</LLSimpleDuty>
 			</If>
 			<If Condition="GetQuestStep(66638) == 2">
+				<Hook Name="HealTonberry" Operation="R" Location="TreeStart" />
+				<WaitWhile condition="ff14bot.Behavior.CommonBehaviors.IsLoading"/>
 				<If Condition="not IsTodoChecked(66638, 2, 0)">
 					<GetTo ZoneId="139" XYZ="256.3668, -3.206905, 58.09106" />
 					<TalkTo NpcId="1007838" XYZ="256.3668, -3.206905, 58.09106" QuestId="66638" StepId="2" />
@@ -951,39 +954,35 @@
 		<CodeChunk Type="Definition" Name="Logger">
       <![CDATA[
 
-        public static readonly LlamaLibrary.Logging.LLogger Log = new("ARR", Colors.DeepPink);
-
-        private static readonly string[] TutorialWindows =
+        public static async Task<bool> HealWanderer()
         {
-            "HowToNotice",
-            "HowTo",
-            "PlayGuide",
-            "JobHudNotice",
-            "ContentsTutorial",
-            "RecommendList",
-            "AchievementInfo",
-        };
+            var tonberryWanderer = 1650;
+
+            if (CommonBehaviors.IsLoading || QuestLogManager.InCutscene)
+            {
+                return false;
+            }
+
+            LlamaLibrary.Logging.LLogger Logging = new("The Beast Within:", Colors.Aquamarine);
+            var tonberryToHeal = GameObjectManager.GetObjectsOfType<BattleCharacter>()
+                .OrderBy(bc => bc.Distance()).FirstOrDefault(bc => bc.InLineOfSight() && bc.NpcId == tonberryWanderer && !bc.CanAttack && bc.IsVisible && bc.IsTargetable);
+
+            if (tonberryToHeal != null && tonberryToHeal.IsValid)
+            {
+                Logging.Information($"Found {tonberryToHeal.EnglishName}");
+                ActionManager.DoAction("Physick", tonberryToHeal);
+                await Coroutine.Wait(5000, () => !Core.Me.IsCasting);
+            }
+
+            return false;
+        }
 
       ]]>
     </CodeChunk>
-		<CodeChunk Type="Hook" Name="CloseHowTo">
+		<CodeChunk Type="Hook" Name="HealTonberry">
 			<![CDATA[
 
-        bool hasTutorialWindow = TutorialWindows
-            .Any(window => RaptureAtkUnitManager.GetWindowByName(window) != null);
-
-        if (hasTutorialWindow)
-        {
-            await LlamaLibrary.Helpers.GeneralFunctions.CloseHowTos();
-        }
-
-			  return false;
-			]]>
-	  </CodeChunk>
-		<CodeChunk Type="Hook" Name="KillMobs">
-			<![CDATA[
-
-          await LlamaLibrary.Helpers.GeneralFunctions.KillHuntingLogMobs();
+					await HealWanderer();
 
 	        return false;
 			]]>
@@ -1079,9 +1078,6 @@
 	}
 ]]>
 </CodeChunk>
-
-
-		<!-- Arcanist 1-15 Codechunks -->
 		<CodeChunk Name="DutyCommence">
 			<![CDATA[
 				Logging.Write("Commencing duty.");
@@ -1124,21 +1120,6 @@
 				await Coroutine.Sleep(1500);
 			]]>
 		</CodeChunk>
-		<CodeChunk Name="The_Last_Remnants">
-			<![CDATA[
-				if(Core.Player.IsMounted)
-				{
-					ff14bot.Managers.ActionManager.Dismount();
-					await Coroutine.Sleep(3000);
-				}
-				ff14bot.Managers.MovementManager.SetFacing(5.425516f);
-				ff14bot.Managers.MovementManager.MoveForwardStart();
-				await Coroutine.Sleep(250);
-				ff14bot.Managers.MovementManager.Jump();
-				await Coroutine.Sleep(2000);
-				ff14bot.Managers.MovementManager.MoveStop();
-			]]>
-		</CodeChunk>
 		<CodeChunk Name="In_the_Image_of_the_Ancients">
 			<![CDATA[
 				foreach(BagSlot slot in InventoryManager.FilledInventoryAndArmory)
@@ -1170,7 +1151,5 @@
 				}
 		]]>
 		</CodeChunk>
-
-
 	</CodeChunks>
 </Profile>
