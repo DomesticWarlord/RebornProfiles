@@ -8082,6 +8082,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Rock the Castrum' you need to be at least class level 50" />
       </If>
 
+      <If condition="&DoClassQuests;">
+        <PFWPFCurrentClassQuests />
+      </If>
+
       <!-- Rock the Castrum (Level 50) -->
       <If Condition="IsQuestCompleted(69408) and not IsQuestCompleted(69409) and Core.Player.ClassLevel &gt; 49">
         <If Condition="not HasQuest(69409)">
@@ -8104,6 +8108,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           </If>
           <If condition="&UseCarry; == True">
             <If condition="&OnlyNonDutySupport; == True">
+              <If condition="CurrentItemLevel() &lt; 42">
+                <UserDialog IsBotContinueAllowed="True" DialogText="'Castrum Meridianum' requires a minimum item level of 42." />
+              </If>
               <LoadPFWPFDungeon EquipGear="&AutoEquip;" ProfileName="Castrum Meridianum" QueueType="2" />
             </If>
             <If condition="&OnlyNonDutySupport; == False">
