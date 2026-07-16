@@ -11,6 +11,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
   <!ENTITY EnablePlatypus "False">
   <!ENTITY KillHuntMobs "False"> <!-- Kill Hunting Log mobs if they come near by -->
   <!ENTITY BuyGysahlGreens "False"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
+  <!ENTITY AssignCompanionSkillPoints "False"> <!-- Do we want to automatically assign points to our companion chocobo? -->
+  <!ENTITY CompanionRole "Attacker"> <!-- Which role do we want to assign points to our Companion? Defender, Healer, or Attacker -->
+
   <!-- A lot of the early quests give useless items like Chicken Egg or Weak Silencing Potions
         the bot can toss these to help keep your inventory clean -->
   <!ENTITY DiscardInventoryClutter "False">
@@ -56,6 +59,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     <If condition="&DoClassQuests;">
       <PFWPFCurrentClassQuests />
     </If>
+    <If condition="&AssignCompanionSkillPoints;">
+      <If condition="HasEnoughSP()">
+        <AssignBuddySkill Role="&CompanionRole;" />
+      </If>
+    </If>
+
     <BotSettings EnableMount="1" />
 
     <While condition="DutyManager.InInstance and IsDutyEnded()">
