@@ -5,25 +5,25 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 -->
 <!DOCTYPE Profile [
 
-  <!ENTITY SkipCutscenes "True"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
-  <!ENTITY AutoEquip "True"> <!-- Uses GardlandDB to weigh new items to equip -->
-  <!ENTITY CloseHowTos "True"> <!-- Close How To Windows as they open to keep the UI clean -->
-  <!ENTITY EnablePlatypus "True">
+  <!ENTITY SkipCutscenes "False"> <!-- Automatically turns on the bot's Skip Cutscenes setting -->
+  <!ENTITY AutoEquip "False"> <!-- Uses GardlandDB to weigh new items to equip -->
+  <!ENTITY CloseHowTos "False"> <!-- Close How To Windows as they open to keep the UI clean -->
+  <!ENTITY EnablePlatypus "False">
   <!ENTITY KillHuntMobs "False"> <!-- Kill Hunting Log mobs if they come near by -->
-  <!ENTITY BuyGysahlGreens "True"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
+  <!ENTITY BuyGysahlGreens "False"> <!-- After obtaining our chocobos should be buy Gysahl Greens to keep out our companion during questing? -->
   <!ENTITY AssignCompanionSkillPoints "False"> <!-- Do we want to automatically assign points to our companion chocobo? -->
   <!ENTITY CompanionRole "Attacker"> <!-- Which role do we want to assign points to our Companion? Defender, Healer, or Attacker -->
   <!-- A lot of the early quests give useless items like Chicken Egg or Weak Silencing Potions
         the bot can toss these to help keep your inventory clean -->
-  <!ENTITY DiscardInventoryClutter "True">
+  <!ENTITY DiscardInventoryClutter "False">
 
   <!-- Panda Farmer specific settings -->
 
   <!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
   <!ENTITY UseCarry "False">
-  <!ENTITY OnlyNonDutySupport "True"> <!-- Set this to true to use Auto Party only on duties that don't have Duty Support -->
-  <!ENTITY CarryName "Arelia"> <!-- For privacy only put the first name of the carry character here -->
-  <!ENTITY CurrentHook "True">
+  <!ENTITY OnlyNonDutySupport "False"> <!-- Set this to true to use Auto Party only on duties that don't have Duty Support -->
+  <!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
+  <!ENTITY CurrentHook "False">
 ]>
 
 <Profile>
