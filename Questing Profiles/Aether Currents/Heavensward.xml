@@ -3,6 +3,16 @@
 Code used from Y2k and Sodimm
 Profile and fixes by Angels and DomesticWarlord
 -->
+<!DOCTYPE Profile [
+
+	<!-- Panda Farmer specific settings -->
+
+	<!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
+	<!ENTITY UseCarry "False">
+	<!ENTITY OnlyNonDutySupport "False"> <!-- Set this to true to use Auto Party only on duties that don't have Duty Support -->
+	<!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
+	<!ENTITY CurrentHook "False">
+]>
 <Profile>
 	<Name>Heavensward Aether Currents All</Name>
 	<KillRadius>90</KillRadius>
@@ -69,8 +79,21 @@ Profile and fixes by Angels and DomesticWarlord
 						<TalkTo NpcId="1013746" XYZ="-87.81573, 87.189, -735.0424" QuestId="67647" StepId="1" />
 					</If>
 					<If Condition="GetQuestStep(67647) == 2">
-						<LoadPFWPFDungeon EquipGear="True" ProfileName="The Dusk Vigil" QueueType="2" />
-						<UserDialog DialogText="In order to unlock Coerthas Western Highlands Aether Currents the 4 man duty The Dusk Vigil must be completed.\nPlease either do so now, or press continue to skip this step and complete it later." IsBotContinueAllowed="True" QuestId="67647" StepId="2" />
+						<If condition="(PartyManager.IsInParty or PartyManager.IsPartyLeader) and not DutyManager.InInstance">
+							<LeaveParty />
+						</If>
+						<If condition="&UseCarry; == False">
+							<LoadPFWPFDungeon EquipGear="True" ProfileName="The Dusk Vigil" QueueType="2" />
+							<UserDialog DialogText="In order to unlock Coerthas Western Highlands Aether Currents the 4 man duty The Dusk Vigil must be completed.\nPlease either do so now, or press continue to skip this step and complete it later." IsBotContinueAllowed="True" QuestId="67647" StepId="2" />
+						</If>
+						<If condition="&UseCarry; == True">
+							<If condition="&OnlyNonDutySupport; == True">
+								<LoadPFWPFDungeon EquipGear="True" ProfileName="The Dusk Vigil" QueueType="2" />
+							</If>
+							<If condition="&OnlyNonDutySupport; == False">
+								<PFWPFAutoParty DutyId="36" ZoneId="1366" Trial="False" />
+							</If>
+						</If>
 					</If>
 					<If Condition="GetQuestStep(67647) == 255">
 						<GetTo ZoneId="397" XYZ="-279.5605, 127.0813, 13.59576" />
