@@ -38,7 +38,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 
-    <EnablePlugin Name="SideStep, Duty Mechanic" />
+    <EnablePlugin Name="SideStep,Duty Mechanic" />
 
     <If condition="&EnablePlatypus;">
       <EnablePlugin Name="Platypus Hooks" />

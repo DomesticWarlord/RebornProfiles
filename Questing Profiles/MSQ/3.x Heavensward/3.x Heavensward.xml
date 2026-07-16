@@ -35,7 +35,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <Hook Name="ClickCurrents" Operation="A" Location="TreeStart" />
     </If>
 
-    <EnablePlugin Name="SideStep, Duty Mechanic" />
+    <EnablePlugin Name="SideStep,Duty Mechanic" />
 
     <If condition="&EnablePlatypus;">
       <EnablePlugin Name="Platypus Hooks" />
