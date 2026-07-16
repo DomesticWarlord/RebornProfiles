@@ -203,7 +203,7 @@
                     </Grind>
                 </If>
                 <If condition="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 2)">
-                    <GetTo Area="Central Shroud" Position="-38.08831, -33.77425, 311.8487" />
+                    <GetTo ZoneId="148" XYZ="-38.08831, -33.77425, 311.8487" />
                     <Grind while="not HuntSubEntryCompleted(2, ClassJobType.Archer, 2, 2)">
                         <GrindArea name="Archer_2_4">
                             <HotSpots>
