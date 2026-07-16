@@ -10276,30 +10276,30 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
               <PickUpQuest NpcId="1006646" QuestId="65904" XYZ="-29.95355, 46.99734, 32.54749" />
             </If>
           </If>
-          <If Condition="GetQuestStep(65904) == 1">
-            <GetTo ZoneId="147" XYZ="-72.12946, 47, -8.86554" />
-            <TalkTo NpcId="1010924" XYZ="-72.12946, 47, -8.86554" QuestId="65904" StepId="1" />
-          </If>
-          <If Condition="GetQuestStep(65904) == 2">
-            <GetTo ZoneId="147" XYZ="-133.9285, 59.66894, -94.22449" />
-            <TalkTo NpcId="1010867" XYZ="-133.9285, 59.66894, -94.22449" QuestId="65904" StepId="2" />
-          </If>
-          <If Condition="GetQuestStep(65904) == 3">
-            <GetTo ZoneId="147" XYZ="-258.1064, 60.33958, -65.62909" />
-            <WaitWhile Condition="GetQuestStep(65904) == 3" />
-          </If>
-          <If Condition="GetQuestStep(65904) == 4">
-            <GetTo ZoneId="147" XYZ="-267.4754, 82.42139, -177.8135" />
-            <WaitWhile Condition="GetQuestStep(65904) == 4" />
-          </If>
-          <If Condition="GetQuestStep(65904) == 5">
-            <GetTo ZoneId="147" XYZ="-110.3685, 64.86192, -127.2756" />
-            <TalkTo NpcId="1010876" XYZ="-110.3685, 64.86192, -127.2756" QuestId="65904" StepId="5" />
-          </If>
-          <If Condition="GetQuestStep(65904) == 255">
-            <GetTo ZoneId="147" XYZ="-29.95355, 46.99734, 32.54749" />
-            <TurnIn QuestId="65904" NpcId="1006646" XYZ="-29.95355, 46.99734, 32.54749" />
-          </If>
+        </If>
+        <If Condition="GetQuestStep(65904) == 1">
+          <GetTo ZoneId="147" XYZ="-72.12946, 47, -8.86554" />
+          <TalkTo NpcId="1010924" XYZ="-72.12946, 47, -8.86554" QuestId="65904" StepId="1" />
+        </If>
+        <If Condition="GetQuestStep(65904) == 2">
+          <GetTo ZoneId="147" XYZ="-133.9285, 59.66894, -94.22449" />
+          <TalkTo NpcId="1010867" XYZ="-133.9285, 59.66894, -94.22449" QuestId="65904" StepId="2" />
+        </If>
+        <If Condition="GetQuestStep(65904) == 3">
+          <GetTo ZoneId="147" XYZ="-258.1064, 60.33958, -65.62909" />
+          <WaitWhile Condition="GetQuestStep(65904) == 3" />
+        </If>
+        <If Condition="GetQuestStep(65904) == 4">
+          <GetTo ZoneId="147" XYZ="-267.4754, 82.42139, -177.8135" />
+          <WaitWhile Condition="GetQuestStep(65904) == 4" />
+        </If>
+        <If Condition="GetQuestStep(65904) == 5">
+          <GetTo ZoneId="147" XYZ="-110.3685, 64.86192, -127.2756" />
+          <TalkTo NpcId="1010876" XYZ="-110.3685, 64.86192, -127.2756" QuestId="65904" StepId="5" />
+        </If>
+        <If Condition="GetQuestStep(65904) == 255">
+          <GetTo ZoneId="147" XYZ="-29.95355, 46.99734, 32.54749" />
+          <TurnIn QuestId="65904" NpcId="1006646" XYZ="-29.95355, 46.99734, 32.54749" />
         </If>
       </If>
 
@@ -10760,7 +10760,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       </If>
 
       <!-- Legacy of Allag -->
-      <If Condition="IsQuestCompleted(70058) and not IsQuestCompleted(67245)">
+      <If Condition="IsQuestCompleted(65960) and IsQuestCompleted(70058) and not IsQuestCompleted(67245)">
         <If Condition="not HasQuest(67245)">
           <GetTo Fly="False" ZoneId="156" XYZ="19.23612, 20.33751, -666.5768" />
           <If Condition="IsQuestAcceptQualified(67245)">
