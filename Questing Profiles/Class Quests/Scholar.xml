@@ -224,14 +224,6 @@
 			</If>
 			<If Condition="GetQuestStep(66638) == 1">
 				<Hook Name="HealTonberry" Operation="A" Location="TreeStart" />
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="256.3668, -3.206905, 58.09106" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
@@ -252,7 +244,7 @@
 			</If>
 			<If Condition="GetQuestStep(66638) == 2">
 				<Hook Name="HealTonberry" Operation="R" Location="TreeStart" />
-				<WaitWhile condition="ff14bot.Behavior.CommonBehaviors.IsLoading"/>
+				<WaitWhile condition="ff14bot.Behavior.CommonBehaviors.IsLoading" />
 				<If Condition="not IsTodoChecked(66638, 2, 0)">
 					<GetTo ZoneId="139" XYZ="256.3668, -3.206905, 58.09106" />
 					<TalkTo NpcId="1007838" XYZ="256.3668, -3.206905, 58.09106" QuestId="66638" StepId="2" />
@@ -287,15 +279,7 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67207) == 1">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
-				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
+				<GetTo ZoneId="139" XYZ="209.60985, -3.0873506, 43.812553" />
 				<TalkTo NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" QuestId="67207" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67207) == 2">
@@ -307,14 +291,6 @@
 				<UseObject NpcId="2005519" XYZ="-275.166, 64.25574, -197.3449" Radius="10" QuestId="67207" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(67207) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<TurnIn QuestId="67207" ItemId="2001585" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
 				<AutoInventoryEquip />
@@ -328,40 +304,16 @@
 				<ChangeClass Job="Scholar" />
 			</While>
 			<If Condition="not HasQuest(67208)">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<If Condition="IsQuestAcceptQualified(67208)">
 					<PickupQuest NpcId="1013135" QuestId="67208" XYZ="206.0426, -3.111818, 41.94702" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67208) == 1">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="620.9657, -3.002753, 171.0688" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="620.9657, -3.002753, 171.0688" />
 				<TalkTo NpcId="1013137" XYZ="620.9657, -3.002753, 171.0688" QuestId="67208" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67208) == 2">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="622.9191, -3.067139, 171.6792" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="622.9191, -3.067139, 171.6792" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
@@ -377,14 +329,6 @@
 				</LLSimpleDuty>
 			</If>
 			<If Condition="GetQuestStep(67208) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<TurnIn QuestId="67208" ItemId="2001586" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
 				<AutoInventoryEquip />
@@ -398,14 +342,6 @@
 				<ChangeClass Job="Scholar" />
 			</While>
 			<If Condition="not HasQuest(67209)">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<If Condition="IsQuestAcceptQualified(67209)">
 					<PickupQuest NpcId="1013135" QuestId="67209" XYZ="206.0426, -3.111818, 41.94702" />
@@ -436,14 +372,6 @@
 				<UseObject NpcId="2005531" XYZ="-381.5519, 52.8114, -298.909" Radius="10" QuestId="67209" StepId="5" />
 			</If>
 			<If Condition="GetQuestStep(67209) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<TurnIn QuestId="67209" ItemId="2001587" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
 				<AutoInventoryEquip />
@@ -457,40 +385,16 @@
 				<ChangeClass Job="Scholar" />
 			</While>
 			<If Condition="not HasQuest(67210)">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<If Condition="IsQuestAcceptQualified(67210)">
 					<PickupQuest NpcId="1013135" QuestId="67210" XYZ="206.0426, -3.111818, 41.94702" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67210) == 1">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 				<TalkTo NpcId="1013138" XYZ="404.1962, -2.608213, 212.1156" QuestId="67210" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67210) == 2">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 				<Dismount />
 				<If condition="IsChineseClient()">
@@ -504,14 +408,6 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67210) == 3">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 				<Dismount />
 				<If condition="IsChineseClient()">
@@ -527,26 +423,10 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67210) == 4">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="700.9536, -0.5095394, 133.2875" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="700.9536, -0.5095394, 133.2875" />
 				<EmoteNPC NpcId="1013139" Emote="laugh" XYZ="700.9536, -0.5095394, 133.2875" Radius="10" QuestId="67210" StepId="4" />
 			</If>
 			<If Condition="GetQuestStep(67210) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="404.1962, -2.608213, 212.1156" />
 				<TurnIn QuestId="67210" NpcId="1013138" XYZ="404.1962, -2.608213, 212.1156" />
 				<AutoInventoryEquip />
@@ -560,14 +440,6 @@
 				<ChangeClass Job="Scholar" />
 			</While>
 			<If Condition="not HasQuest(67211)">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<If Condition="IsQuestAcceptQualified(67211)">
 					<PickupQuest NpcId="1013135" QuestId="67211" XYZ="206.0426, -3.111818, 41.94702" />
@@ -591,14 +463,6 @@
 				<UseObject NpcId="2005525" XYZ="446.0059, 140.8254, -749.8741" Radius="10" QuestId="67211" StepId="4" />
 			</If>
 			<If Condition="GetQuestStep(67211) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<TurnIn QuestId="67211" ItemId="2001588" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
 				<AutoInventoryEquip />
@@ -612,14 +476,6 @@
 				<ChangeClass Job="Scholar" />
 			</While>
 			<If Condition="not HasQuest(67212)">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
 				<If Condition="IsQuestAcceptQualified(67212)">
 					<PickupQuest NpcId="1013135" QuestId="67212" XYZ="206.0426, -3.111818, 41.94702" />
@@ -630,26 +486,10 @@
 				<UseObject NpcId="2005528" XYZ="-381.5824, 52.47571, -298.8174" Radius="10" QuestId="67212" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67212) == 2">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="290.1501, 41.27563, -193.8354" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="290.1501, 41.27563, -193.8354" />
 				<UseObject NpcId="2005529" XYZ="290.1501, 41.27563, -193.8354" Radius="10" QuestId="67212" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(67212) == 3">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="405.1117, 4.109557, 81.04065" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="405.1117, 4.109557, 81.04065" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
@@ -681,29 +521,14 @@
 				</LLSimpleDuty>
 			</If>
 			<While Condition="GetQuestStep(67212) == 4">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
+				<StopBot/>
 				<TalkTo NpcId="1013146" XYZ="489.7383, 16.49544, 67.33801" QuestId="67212" StepId="4" />
 				<TalkTo NpcId="1013147" XYZ="487.8461, 16.49544, 68.0094" QuestId="67212" StepId="4" />
 				<TalkTo NpcId="1013198" XYZ="487.48, 16.49544, 70.35925" QuestId="67212" StepId="4" />
 				<TalkTo NpcId="1013148" XYZ="489.6467, 16.49544, 70.573" QuestId="67212" StepId="4" />
 			</While>
 			<If Condition="GetQuestStep(67212) == 255">
-				<If Condition="not IsQuestCompleted(66060)">
-					<If Condition="not IsOnMap(139)">
-						<GetTo ZoneId="139" XYZ="491.4778, 16.49544, 69.16907" />
-					</If>
-					<If Condition="IsOnMap(139) and not (IsOnSubMap(177) or IsOnSubMap(178) or IsOnSubMap(239) or IsOnSubMap(240) or IsOnSubMap(241))">
-						<UseTransport InteractDistance="3.0" NpcId="1003586" XYZ="-342.1226, -1.024988, 111.467" />
-					</If>
-				</If>
 				<GetTo ZoneId="139" XYZ="491.4778, 16.49544, 69.16907" />
 				<TurnIn QuestId="67212" NpcId="1013199" XYZ="491.4778, 16.49544, 69.16907" />
 				<AutoInventoryEquip />
