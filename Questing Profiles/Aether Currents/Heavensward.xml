@@ -729,7 +729,7 @@ Profile and fixes by Angels and DomesticWarlord
 						<GetTo ZoneId="419" XYZ="153.03993, -12.634914, -10.403822" />
 						<UseTransport NpcId="1011211" InteractDistance="3.0" XYZ="149.7367, -12.263968, -7.8584595" />
 					</If>
-					<GetTo ZoneId="419" XYZ="-558.84314,-36.951397,-356.8249" />
+					<GetTo ZoneId="401" XYZ="-558.84314,-36.951397,-356.8249" />
 					<UseObject NpcId="2006234" XYZ="-564.81274, -36.697998, -349.1112" Condition="not IsAetherCurrentCompleted(401,5)" />
 				</If>
 				<If Condition="not IsAetherCurrentCompleted(401,6)">
