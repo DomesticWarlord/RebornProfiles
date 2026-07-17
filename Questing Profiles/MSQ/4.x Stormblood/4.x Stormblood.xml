@@ -2832,7 +2832,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<NoCombatMoveTo XYZ="453.2233, 14.64187, 629.2685" />
 				<NoCombatMoveTo XYZ="452.8729, 14.36033, 659.0134" />
 				<NoCombatMoveTo XYZ="453.808, 14.7482, 688.6241" />
-				<SoEmoteNpc InteractDistance="3.0" NpcIds="1020040, 1020041" Emote="imperialsalute" QuestId="68032" StepId="5">
+				<SoEmoteNpc NpcIds="1020040, 1020041" Emote="imperialsalute" QuestId="68032" StepId="5">
 					<HotSpots>
 						<HotSpot XYZ="436.029, 14.64187, 706.4932" Radius="20" />
 						<HotSpot XYZ="446.6077, 14.62738, 705.314" Radius="20" />
@@ -3006,13 +3006,13 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			<If Condition="GetQuestStep(68036) == 3">
 				<GetTo ZoneId="622" XYZ="571.733, -19.50566, 313.6213" />
 				<If condition="IsChineseClient()">
-					<SoEmoteNpc InteractDistance="3.0" NpcIds="1020281" Emote="s ä½ æ˜¯æ¨¡å„¿éƒ¨çš„å—" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
+					<SoEmoteNpc NpcIds="1020281" Emote="s ä½ æ˜¯æ¨¡å„¿éƒ¨çš„å—" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
 				</If>
 				<If condition="IsGlobalClient()">
-					<SoEmoteNpc InteractDistance="3.0" NpcIds="1020281" Emote="s Mol" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
+					<SoEmoteNpc NpcIds="1020281" Emote="s Mol" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
 				</If>
 				<If condition="IsTCClient()">
-					<SoEmoteNpc InteractDistance="3.0" NpcIds="1020281" Emote="s ä½ æ˜¯æ¨¡å…’æ—çš„å—Ž" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
+					<SoEmoteNpc NpcIds="1020281" Emote="s ä½ æ˜¯æ¨¡å…’æ—çš„å—Ž" XYZ="571.733, -19.50566, 313.6213" QuestId="68036" StepId="3" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(68036) == 255">
@@ -3445,14 +3445,14 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<If condition="not IsOnSubMap(2822)">
 					<TeleportTo AetheryteId="110" Force="True" />
 				</If>
-				<MoveTo ZoneId="622" XYZ="-31.29899, 114.905, -37.57225" />
+				<MoveTo XYZ="-31.29899, 114.905, -37.57225" />
 				<TalkTo NpcId="1019426" XYZ="-31.29899, 114.905, -37.57225" QuestId="68046" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(68046) == 2">
 				<If condition="not IsOnSubMap(2822)">
 					<TeleportTo AetheryteId="110" Force="True" />
 				</If>
-				<MoveTo ZoneId="622" XYZ="-44.26698, 121, 36.83385" />
+				<MoveTo XYZ="-44.26698, 121, 36.83385" />
 				<UseObject NpcIds="1021600,1020691,1021602,1021601" QuestId="68046" StepId="2">
 					<HotSpots>
 						<HotSpot XYZ="-44.26698, 121, 36.83385" Radius="20" />
@@ -3466,14 +3466,14 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<If condition="not IsOnSubMap(2822)">
 					<TeleportTo AetheryteId="110" Force="True" />
 				</If>
-				<MoveTo ZoneId="622" XYZ="-30.99069, 114.905, -37.41487" />
+				<MoveTo XYZ="-30.99069, 114.905, -37.41487" />
 				<TalkTo NpcId="1019426" XYZ="-30.99069, 114.905, -37.41487" QuestId="68046" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(68046) == 4">
 				<If condition="not IsOnSubMap(2822)">
 					<TeleportTo AetheryteId="110" Force="True" />
 				</If>
-				<MoveTo ZoneId="622" XYZ="-28.12519, 114.905, -37.40926" />
+				<MoveTo XYZ="-28.12519, 114.905, -37.40926" />
 				<TalkTo NpcId="1020689" XYZ="-28.12519, 114.905, -37.40926" QuestId="68046" StepId="4" />
 			</If>
 			<If Condition="GetQuestStep(68046) == 255">
@@ -4422,12 +4422,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 			<If Condition="GetQuestStep(68072) == 1 and GetQuestById(68072).GetTodoArgs(1, 0).Item1 == 0">
 				<GetTo ZoneId="620" XYZ="-549.7368, 257.3739, 557.6714" />
-				<UseObject NpcId="2008202" InteractDistance="3.0" XYZ="-549.7368, 257.3739, 557.6714" UseTimes="1" />
+				<UseObject NpcId="2008202" XYZ="-549.7368, 257.3739, 557.6714" UseTimes="1" />
 				<WaitWhile Condition="GetQuestStep(68072) == 1 and GetQuestById(68072).GetTodoArgs(1, 0).Item1 == 0" />
 			</If>
 			<If Condition="GetQuestStep(68072) == 1 and GetQuestById(68072).GetTodoArgs(1, 0).Item1 == 1">
 				<GetTo ZoneId="620" XYZ="-460.9293, 295.5825, 256.0005" QuestId="68072" StepId="1" />
-				<UseObject NpcIds="2008203" InteractDistance="3.0" XYZ="-460.9293, 295.5825, 256.0005" UseTimes="1" />
+				<UseObject NpcIds="2008203" XYZ="-460.9293, 295.5825, 256.0005" UseTimes="1" />
 				<WaitWhile Condition="GetQuestStep(68072) == 1 and GetQuestById(68072).GetTodoArgs(1, 0).Item1 == 1" />
 			</If>
 			<If Condition="GetQuestStep(68072) == 255">
@@ -4576,11 +4576,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 			<If Condition="GetQuestStep(68076) == 1">
 				<GetTo ZoneId="620" XYZ="-75.24231, 262.4093, 661.86" />
-				<UseObject InteractDistance="3.0" QuestId="68076" StepId="1" NpcId="2009007" XYZ="-75.24231, 262.4093, 661.86" />
+				<UseObject QuestId="68076" StepId="1" NpcId="2009007" XYZ="-75.24231, 262.4093, 661.86" />
 			</If>
 			<If Condition="GetQuestStep(68076) == 2">
 				<GetTo ZoneId="620" XYZ="-75.48645, 262.4093, 661.86" />
-				<UseObject InteractDistance="3.0" QuestId="68076" StepId="2" NpcId="2008211" XYZ="-75.48645, 262.4093, 661.86" />
+				<UseObject QuestId="68076" StepId="2" NpcId="2008211" XYZ="-75.48645, 262.4093, 661.86" />
 			</If>
 			<If Condition="GetQuestStep(68076) == 255">
 				<GetTo ZoneId="620" XYZ="-113.4203, 263.7311, 655.7563" />
@@ -4946,7 +4946,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			<If Condition="GetQuestStep(68083) == 2">
 				<!--3-->
 				<GetTo ZoneId="635" XYZ="-52.21874, 0, -22.88535" />
-				<UseObject NpcId="2008216" InteractDistance="3.0" XYZ="-52.21874, 0, -22.88535" QuestId="68083" StepId="2" BlacklistAfter="True" />
+				<UseObject NpcId="2008216" XYZ="-52.21874, 0, -22.88535" QuestId="68083" StepId="2" BlacklistAfter="True" />
 			</If>
 			<If Condition="GetQuestStep(68083) == 255">
 				<GetTo ZoneId="635" XYZ="-53.08181, -0.1084372, -26.39401" />
@@ -5772,11 +5772,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<Snipe NpcId="1024053" XYZ="8.590759, 5.3881354, 282.7954" QuestId="68506" StepId="5" />
 			</If>
 			<If Condition="GetQuestStep(68506) == 6">
-				<GetTo ZoneId="621" XYZ="-3.108308, 3.22073, 251.354" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
+				<GetTo ZoneId="621" XYZ="-3.108308, 3.22073, 251.354" Land="True" />
 				<TalkTo NpcId="1024341" XYZ="-3.524841, 3.174248, 249.3477" QuestId="68506" StepId="6" />
 			</If>
 			<If Condition="GetQuestStep(68506) == 255">
-				<GetTo ZoneId="621" XYZ="-285.47, 11.18326, 190.2811" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
+				<GetTo ZoneId="621" XYZ="-285.47, 11.18326, 190.2811" Land="True" />
 				<TurnIn QuestId="68506" NpcId="1023036" InteractDistance="3.0" XYZ="-285.2369, 11.18324, 188.8303" />
 			</If>
 
@@ -5786,7 +5786,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		<!-- A Blissful Arrival (Level 70) -->
 		<If Condition="IsQuestCompleted(68506) and not IsQuestCompleted(68507) and Core.Player.ClassLevel &gt; 69">
 			<If Condition="not HasQuest(68507)">
-				<GetTo ZoneId="621" XYZ="-285.47, 11.18326, 190.2811" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
+				<GetTo ZoneId="621" XYZ="-285.47, 11.18326, 190.2811" Land="True" />
 				<If Condition="IsQuestAcceptQualified(68507)">
 					<PickupQuest QuestId="68507" NpcId="1024051" InteractDistance="3.0" XYZ="-285.298, 11.18323, 187.0298" />
 				</If>
@@ -5802,7 +5802,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<TalkTo NpcId="1024055" XYZ="525.0781, 70, 574.6699" QuestId="68507" StepId="2" />
 			</If>
 			<If Condition="GetQuestStep(68507) == 255">
-				<GetTo ZoneId="621" XYZ="342.005, 74.00002, 70.64069" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
+				<GetTo ZoneId="621" XYZ="342.005, 74.00002, 70.64069" Land="True" />
 				<TurnIn QuestId="68507" NpcId="1024057" InteractDistance="3.0" XYZ="340.2302, 74.00002, 70.66455" />
 				<Dismount />
 				<WaitTimer WaitTime="2" />
@@ -6099,7 +6099,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 						<FlyTo XYZ="-472.3125, 1.230005, 537.7736" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
 						<UseTransport InteractDistance="3.0" NpcId="1024794" XYZ="-493.9803, 1.301181, 542.9006" />
 					</If>
-					<UseTransport nteractDistance="3.0" NpcId="1024974" XYZ="-10.33038, 0.1999732, 12.8938" />
+					<UseTransport InteractDistance="3.0" NpcId="1024974" XYZ="-10.33038, 0.1999732, 12.8938" />
 				</If>
 				<TalkTo NpcId="1025049" XYZ="-0.01531982, 0.2, -4.837158" QuestId="68562" StepId="7" />
 			</If>
@@ -6154,8 +6154,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 						<HotSpot XYZ="468.9326, 17.90384, 301.3331" Radius="90" />
 					</HotSpots>
 					<TargetMobs>
-						<TargetMob Name="Softshell of the Red" Id="5834" Weight="5000" />
-						<TargetMob Name="Slickshell Captain" Id="6891" Weight="1" />
+						<TargetMob Id="5834" Weight="5000" />
+						<TargetMob Id="6891" Weight="1" />
 					</TargetMobs>
 				</SimpleDuty>
 			</If>
@@ -6213,7 +6213,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 						<FlyTo XYZ="-472.3125, 1.230005, 537.7736" ArrivalTolerance="0.5" AllowedVariance="1.0" Land="True" IgnoreIndoors="True" />
 						<UseTransport InteractDistance="3.0" NpcId="1024794" XYZ="-493.9803, 1.301181, 542.9006" />
 					</If>
-					<UseTransport nteractDistance="3.0" NpcId="1024974" XYZ="-10.33038, 0.1999732, 12.8938" />
+					<UseTransport InteractDistance="3.0" NpcId="1024974" XYZ="-10.33038, 0.1999732, 12.8938" />
 				</If>
 				<If Condition="IsQuestAcceptQualified(68565)">
 					<PickupQuest QuestId="68565" NpcId="1025008" InteractDistance="3.0" XYZ="0.1983643, 0.02109136, -3.097595" />
@@ -6583,7 +6583,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<GetTo ZoneId="156" XYZ="22.35259, 21.25273, -634.3907" />
 					<UseTransport InteractDistance="3.0" NpcId="2002881" XYZ="21.13373, 22.32391, -631.281" />
 				</If>
-				<MoveTo ZoneId="351" XYZ="-5.189492, 0.4746897, 0.3689831" />
+				<MoveTo XYZ="-5.189492, 0.4746897, 0.3689831" />
 				<UserDialog QuestId="68612" StepId="1" IsBotContinueAllowed="True" DialogText="Please complete the solo duty Emissary of the Dawn.\n\nRoleplay as Alphinaud after an airship crash." />
 			</If>
 			<If Condition="GetQuestStep(68612) == 2">
@@ -6780,7 +6780,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					</If>
 				</If>
 				<If Condition="IsQuestAcceptQualified(68682)">
-					<PickupQuest QuestId="68682" NpcId="1025597" InteractDistance="3.0" SelectStringOverride="1" XYZ="0.1983643, 0.02109136, -3.006042" />
+					<PickupQuest QuestId="68682" NpcId="1025597" InteractDistance="3.0" XYZ="0.1983643, 0.02109136, -3.006042" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(68682) == 1">
@@ -7083,7 +7083,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<UseTransport InteractDistance="3.0" NpcId="1026804" XYZ="-524.5594, 8.698304, -15.48798" />
 					<MoveTo XYZ="-472.1855, 107.63, 105.6358" />
 				</If>
-				<UseTransport UseDistance="7.0" NpcId="1026805" XYZ="-477.7753, 107.63, 102.4337" QuestId="68718" StepId="3" />
+				<UseTransport InteractDistance="7.0" NpcId="1026805" XYZ="-477.7753, 107.63, 102.4337" QuestId="68718" StepId="3" />
 			</If>
 			<If Condition="GetQuestStep(68718) == 4">
 				<If Condition="not IsOnMap(829)">
@@ -7111,7 +7111,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<GetTo ZoneId="621" XYZ="-527.3126, 8.692888, -15.60907" />
 					<UseTransport InteractDistance="3.0" NpcId="1026804" XYZ="-524.5594, 8.698304, -15.48798" />
 				</If>
-				<TalkTo NpcId="1026821" DialogOption="1" XYZ="4.226685, 0, 5.111694" QuestId="68718" />
+				<TalkTo NpcId="1026821" XYZ="4.226685, 0, 5.111694" QuestId="68718" />
 			</If>
 			<If Condition="GetQuestStep(68718) == 6">
 				<If Condition="not IsOnMap(829)">

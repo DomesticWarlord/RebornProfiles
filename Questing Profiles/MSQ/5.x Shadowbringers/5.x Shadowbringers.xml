@@ -397,7 +397,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<If Condition="not IsOnMap(820)">
 						<GetTo ZoneId="820" XYZ="12.98615, 5.999998, 33.60206" />
 					</If>
-					<WaitTimer Time="10000" />
+					<WaitTimer WaitTime="10" />
 					<RunCode Name="68822" />
 					<WaitWhile Condition="not GetQuestStep(68822) == 8" />
 				</If>
@@ -1136,7 +1136,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<If Condition="not IsOnMap(819)">
 						<GetTo ZoneId="819" XYZ="-29.38691, -0.65, -50.29358" />
 					</If>
-					<WaitTimer Time="10000" />
+					<WaitTimer WaitTime="10" />
 					<RunCode Name="68839" />
 					<WaitWhile Condition="not GetQuestStep(68839) == 255" />
 				</If>
@@ -1940,7 +1940,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					</If>
 					<If Condition="not WorldManager.HasAetheryteId(132)">
 						<GetTo ZoneId="813" XYZ="685.8023, 13.26635, 217.5488" />
-						<NoCombatMoveTo ZoneId="813" XYZ="751.4609, 21.38111, -2.731445" />
+						<NoCombatMoveTo XYZ="751.4609, 21.38111, -2.731445" />
 						<RunCode Name="68858_Learn_Aetheryte" />
 					</If>
 					<TurnIn QuestId="68858" NpcId="1029167" XYZ="751.4609, 21.38111, -2.731445" />
@@ -3469,7 +3469,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<If Condition="not IsOnMap(815)">
 						<GetTo ZoneId="815" XYZ="-419.2111, 11.97827, 181.4144" />
 					</If>
-					<UseObject ItemId="2002562" NpcIds="2010274,2010275,2010276,2010277,2010279,2010281,2010283" QuestId="69153" StepId="4">
+					<UseItem ItemId="2002562" NpcIds="2010274,2010275,2010276,2010277,2010279,2010281,2010283" QuestId="69153" StepId="4">
 						<HotSpots>
 							<HotSpot XYZ="-419.2111, 11.97827, 181.4144" Radius="10" />
 							<HotSpot XYZ="-503.0747, 10.66602, 191.8516" Radius="10" />
@@ -3479,7 +3479,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 							<HotSpot XYZ="-492.8512, 10.5744, 9.445313" Radius="10" />
 							<HotSpot XYZ="-411.0628, 16.89172, 9.536865" Radius="10" />
 						</HotSpots>
-					</UseObject>
+					</UseItem>
 				</If>
 				<If Condition="GetQuestStep(69153) == 255">
 					<If Condition="not IsOnMap(815)">
@@ -7115,7 +7115,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<LisbethTravel Zone="156" Subzone="943" Position="21.43668, 21.25273, -632.4913" />
 					<UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.13373, 22.32391, -631.281" />
 				</If>
-				<MoveTo ZoneId="351" XYZ="-1.825943, 0, -8.008231" />
+				<MoveTo XYZ="-1.825943, 0, -8.008231" />
 				<If Condition="IsQuestAcceptQualified(69594)">
 					<PickupQuest QuestId="69594" NpcId="1035613" />
 					<LLSmallTalk />
@@ -7345,7 +7345,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<LisbethTravel Zone="156" Subzone="943" Position="21.43668, 21.25273, -632.4913" />
 					<UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.13373, 22.32391, -631.281" />
 				</If>
-				<MoveTo ZoneId="351" XYZ="-1.792886, 0, -6.814459" />
+				<MoveTo XYZ="-1.792886, 0, -6.814459" />
 				<If Condition="IsQuestAcceptQualified(69600)">
 					<PickupQuest QuestId="69600" NpcId="1036400" />
 					<LLSmallTalk />
@@ -7443,7 +7443,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<LisbethTravel Zone="156" Subzone="943" Position="21.43668, 21.25273, -632.4913" />
 					<UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.13373, 22.32391, -631.281" />
 				</If>
-				<MoveTo ZoneId="351" XYZ="-0.9346759, 0, -2.269413" />
+				<MoveTo XYZ="-0.9346759, 0, -2.269413" />
 				<TurnIn QuestId="69602" NpcId="1036444" XYZ="-1.693787, 0, -4.135254" />
 				<LLSmallTalk />
 			</If>
