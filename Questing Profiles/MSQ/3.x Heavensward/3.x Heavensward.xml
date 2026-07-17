@@ -3342,7 +3342,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       <If Condition="GetQuestStep(67695) == 3 and not IsTodoChecked(67695, 3, 0)">
         <GetTo ZoneId="398" XYZ="477.9986, -51.1414, 37.47143" />
         <HandOver ItemId="2001899" QuestId="67695" StepId="3" NpcId="1011916" XYZ="470.0236, -49.89133, 20.37079" />
-        <GetTo ZoneId="398" XYZ="477.9986, -51.1414, 37.47143" />
+        <MoveTo XYZ="477.9986, -51.1414, 37.47143" />
       </If>
       <If Condition="GetQuestStep(67695) == 3 and not IsTodoChecked(67695, 3, 1)">
         <GetTo ZoneId="398" XYZ="535.3016, -51.34064, 65.29333" />
