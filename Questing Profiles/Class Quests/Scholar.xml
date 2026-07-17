@@ -517,11 +517,18 @@
 			</If>
 			<While Condition="GetQuestStep(67212) == 4">
 				<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
-				<StopBot />
-				<TalkTo NpcId="1013146" XYZ="489.7383, 16.49544, 67.33801" QuestId="67212" StepId="4" />
-				<TalkTo NpcId="1013147" XYZ="487.8461, 16.49544, 68.0094" QuestId="67212" StepId="4" />
-				<TalkTo NpcId="1013198" XYZ="487.48, 16.49544, 70.35925" QuestId="67212" StepId="4" />
-				<TalkTo NpcId="1013148" XYZ="489.6467, 16.49544, 70.573" QuestId="67212" StepId="4" />
+				<If Condition="GetQuestStep(67212) == 4 and GetQuestById(67212).QuestI8A == 0">
+					<TalkTo NpcId="1013198" XYZ="487.47998, 16.495436, 70.35925" QuestId="67212" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(67212) == 4 and GetQuestById(67212).QuestI8A == 16">
+					<TalkTo NpcId="1013148" XYZ="489.64673, 16.495436, 70.573" QuestId="67212" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(67212) == 4 and GetQuestById(67212).QuestI8A == 32">
+					<TalkTo NpcId="1013147" XYZ="487.84607, 16.495436, 68.0094" QuestId="67212" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(67212) == 4 and GetQuestById(67212).QuestI8A == 49">
+					<TalkTo NpcId="1013146" XYZ="489.73828, 16.495436, 67.33801" QuestId="67212" StepId="4" />
+				</If>
 			</While>
 			<If Condition="GetQuestStep(67212) == 255">
 				<GetTo ZoneId="139" XYZ="491.4778, 16.49544, 69.16907" />
