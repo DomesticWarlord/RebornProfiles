@@ -1,133 +1,223 @@
-# Main Scenario Quests
+# Panda Farmer WPF Main Scenario Quest Profiles
 
-This folder contains OrderBot scripts for completing the main scenario quests.
+> [!WARNING]
+> **Under Construction**
+>
+> These profiles have not been completely tested and may contain errors, incomplete automation, or other issues. Monitor them while they run and be prepared to complete steps manually or stop the bot if unexpected behavior occurs.
 
-## 2.0-5.2: A Realm Reborn, Heavensward, Stormblood, Shadowbringers
 
-See [y2krazy's][100] and [sodimm's][101] repositories for scripts to complete earlier main scenario quests.
+These OrderBot profiles automate the Final Fantasy XIV Main Scenario Quest line from A Realm Reborn through Dawntrail.
 
-[100]: https://github.com/y2krazy/Rebornbuddy-Profiles "y2krazy's RebornBuddy Profiles"
-[101]: https://github.com/sodimm/RebornBuddy "sodimm's RebornBuddy Profiles"
+## Requirements
 
-## 5.3-5.58: Shadowbringers
+- RebornBuddy with OrderBot
+- PandaFarmerWPF installed in the RebornBuddy **Plugins** folder
+- Other plugins named by a profile, such as Duty Mechanic, SideStep, or Platypus Hooks, when the related feature is enabled
 
-Using OrderBot, run the `[OrderBot] 5.3-5.58 Shadowbringers.xml` script in this folder.
+PandaFarmerWPF **must be installed** because these profiles use OrderBot tags and supporting code supplied by the plugin. An active Panda Farmer subscription is **not required** to load and run these XML profiles manually.
 
-## 6.0 Endwalker
+## Installing PandaFarmerWPF
 
-Using OrderBot, run the `[OrderBot] 6.0 Endwalker.xml` script in this folder.
+1. Close RebornBuddy.
+2. [Download PandaFarmerWPF](https://sts.llamamagic.net/PandaFarmerWPF/PandaFarmerWPF.zip).
+3. Open the downloaded ZIP file.
+4. Extract the **PandaFarmerWPF** folder into RebornBuddy's **Plugins** folder.
+5. Confirm the resulting layout resembles:
 
-## 7.0 Dawntrail (WIP)
+       RebornBuddy/
+       └── Plugins/
+           └── PandaFarmerWPF/
+               ├── PandaFarmerWPF.dll
+               └── ...
 
-![7.0 Dawntrail Progress][300]
+6. Start RebornBuddy.
+7. Open the Plugins window and confirm PandaFarmerWPF is present. Enable it when using plugin-level features such as automatic companion skill assignment.
 
-Scripting Dawntrail is still a work in progress -- see below for current status. Do not expect it to fully complete the MSQ yet, and even "finished" quests may not behave correctly.  Please report bugs on Discord, per the [main README][301].
+Avoid creating an extra nested folder such as **Plugins/PandaFarmerWPF/PandaFarmerWPF/**. RebornBuddy must find the plugin files directly inside the first **PandaFarmerWPF** folder.
 
-<!--
-To update progress bar, change the first number in URL:
-Before: https://progress-bar.dev/62
-After: https://progress-bar.dev/70
--->
-[300]: https://progress-bar.dev/99/?scale=99&title=7.0%20Dawntrail&suffix=/99%20Quests&width=256 "7.0 Dawntrail Progress"
-[301]: ../../README.md "README.md#troubleshooting"
+## Using the Profiles
 
-- [X] Lv. 90 A New World to Explore	
-- [X] Lv. 90 The Nation of Tuliyollal
-- [X] Lv. 90 A City of Stairs
-- [X] Lv. 90 A Saga in Stone
-- [X] Lv. 90 The Rite of Succession
-- [X] Lv. 90 To Kozama'uka
-- [X] Lv. 90 A Festive People
-- [X] Lv. 90 The Feat of Reeds
-- [X] Lv. 90 A Well-mannered Shipwright
-- [X] Lv. 90 The Lifting of Wings
-- [X] Lv. 90 Knowing the Hanuhanu
-- [X] Lv. 90 To Urqopacha
-- [X] Lv. 90 Traders of Happiness
-- [X] Lv. 90 The Feat of Gold
-- [X] Lv. 90 Mablu's Dream
-- [X] Lv. 90 A Premium Deal
-- [X] Lv. 90 Wuk Lamat in the Saddle
-- [X] Lv. 90 Knowing the Pelupelu
-- [X] Lv. 91 The Success of Others
-- [X] Lv. 91 For All Turali
-- [X] Lv. 92 A Leaking Workpot
-- [X] Lv. 92 Lending a Helphand
-- [X] Lv. 92 The Feat of Pots
-- [X] Lv. 92 A Father First
-- [X] Lv. 92 The Shape of Peace
-- [X] Lv. 92 Lost Promise * Probably going to have issues with talking to NPC that move.
-- [X] Lv. 92 A Brother's Duty
-- [X] Lv. 92 Feeding the River
-- [X] Lv. 92 Sibling Rescue
-- [X] Lv. 93 History's Keepers
-- [X] Lv. 93 The Feat of Proof
-- [X] Lv. 93 The High Luminary
-- [X] Lv. 93 An Echo of Madness
-- [X] Lv. 93 Pointing the Way * Probably going to have issues with talking to NPC that move.
-- [X] Lv. 93 The Skyruin
-- [X] Lv. 93 The Feat of Ice
-- [X] Lv. 93 The Promise of Peace
-- [X] Lv. 94 The Leap to Yak T'el
-- [X] Lv. 94 Village of the Hunt
-- [X] Lv. 94 A History of Violence
-- [X] Lv. 94 The Feat of Repast
-- [X] Lv. 94 A Father's Grief
-- [X] Lv. 94 Taking a Stand
-- [X] Lv. 94 Into the Traverse
-- [X] Lv. 94 City of Silence
-- [X] Lv. 94 Blessed Siblings
-- [X] Lv. 94 Scale of Trust
-- [X] Lv. 95 Mamook Speaks
-- [X] Lv. 95 The Feat of the Brotherhood
-- [X] Lv. 95 Road to the Golden City
-- [X] Lv. 95 Dawn of a New Tomorrow
-- [X] Lv. 95 Ever Greater, Ever Brighter
-- [X] Lv. 95 The Long Road to Xak Tural
-- [X] Lv. 95 Saddled Up
-- [X] Lv. 95 Braced for Trouble
-- [X] Lv. 95 Blowing Smoke 
-- [X] Lv. 95 Law of the Land * Might have problems with interacting with the objects
-- [X] Lv. 95 On Track
-- [X] Lv. 96 One with Nature
-- [X] Lv. 96 And the Land Would Tremble
-- [X] Lv. 96 No Time for Tears
-- [X] Lv. 96 Pick up the Pieces
-- [X] Lv. 96 Together as One
-- [X] Lv. 96 In Yyasulani's Shadow
-- [X] Lv. 96 Putting Plans into Locomotion
-- [X] Lv. 96 A Hot Commodity
-- [X] Lv. 97 All Aboard
-- [X] Lv. 97 The Land of Levin
-- [X] Lv. 97 A Royal Welcome
-- [X] Lv. 97 A Day in the Life
-- [X] Lv. 97 On the Cloud
-- [X] Lv. 97 Gone and Forgotten
-- [X] Lv. 97 Embracing Oblivion
-- [X] Lv. 97 Solution Nine
-- [X] Lv. 97 The Queen's Tour
-- [X] Lv. 98 Her People, Her Family
-- [X] Lv. 98 Scales of Blue * Going to have problems talking to NPCs
-- [X] Lv. 98 Gives You Teeth
-- [X] Lv. 98 Little Footfalls
-- [X] Lv. 98 Drowned Vestiges
-- [X] Lv. 98 Memories of a Knight
-- [X] Lv. 98 At a Crossroads
-- [X] Lv. 98 The Protector and the Destroyer
-- [X] Lv. 99 A Comforting Hand
-- [X] Lv. 99 Unto the Summit
-- [X] Lv. 99 The Resilient Son
-- [X] Lv. 99 A New Family
-- [X] Lv. 99 In Pursuit of Sphene
-- [X] Lv. 99 Through the Gate of Gold
-- [X] Lv. 99 Those Who Live Forever
-- [X] Lv. 99 In Serenity and Sorrow
-- [X] Lv. 99 The Land of Dreams
-- [X] Lv. 99 A Knight of Alexandria
-- [X] Lv. 100 The Sanctuary of the Strong
-- [X] Lv. 100 The Taste of Family
-- [X] Lv. 100 Leafing through the Past
-- [X] Lv. 100 An Explorer's Delight
-- [X] Lv. 100 In Search of Discovery
-- [X] Lv. 100 A Journey Never-ending
-- [X] Lv. 100 Dawntrail
+Each expansion is stored in its own numbered folder. Load the XML for the expansion you want through OrderBot. The profile checks quest completion and resumes at the first applicable quest, so it does not need to begin at the expansion's first quest.
+
+Before loading a profile, open the XML in a text editor and review the entities near the top. Boolean options accept **True** or **False**. Keep entity values inside quotation marks.
+
+## User Settings
+
+These entities are intended to be configured by the user.
+
+| Entity | Values | Description |
+| --- | --- | --- |
+| **SkipCutscenes** | True / False | Enables OrderBot's cutscene-skipping setting. Some cutscenes cannot be skipped by the game. |
+| **AutoEquip** | True / False | Enables automatic equipment handling so useful quest rewards and opened coffer gear can be equipped. |
+| **CloseHowTos** | True / False | Automatically closes tutorial, guide, job HUD notice, achievement, and similar informational windows that can obstruct automation. |
+| **EnablePlatypus** | True / False | Enables Platypus Hooks when the profile starts. Leave this False if Platypus Hooks is not installed or needed. |
+| **KillHuntMobs** | True / False | Allows nearby valid Hunting Log targets to be selected and killed while questing. |
+| **BuyGysahlGreens** | True / False | Allows the profile to purchase Gysahl Greens when needed so the companion chocobo can remain available. |
+| **AssignCompanionSkillPoints** | True / False | Spends available companion skill points when the profile contains the companion skill assignment step. PandaFarmerWPF must be enabled for plugin-level automatic assignment. |
+| **CompanionRole** | Defender, Healer, or Attacker | Selects the companion skill tree used by AssignCompanionSkillPoints. |
+| **DiscardInventoryClutter** | True / False | Discards specifically listed low-value quest items. It does not indiscriminately clear the inventory. |
+| **DoClassQuests** | True / False | Runs the current class or job quest helper at supported points in the MSQ. |
+| **UseCarry** | True / False | Enables Panda Farmer Auto Party carry handling for supported duties. The carry character must be configured and ready. |
+| **OnlyNonDutySupport** | True / False | When carry mode is enabled, limits Auto Party use to duties that cannot be completed with Duty Support. |
+| **CarryName** | Character's first name | Identifies the carry character. Enter only the first name, for example Arelia. |
+| **CurrentHook** | True / False | Enables the profile's nearby Aether Current helper hook where that hook is included and used. This is separate from inserting complete Aether Current routes. |
+| **GrandCompanyChoice** | 0, 1, or 2 | ARR only. 0 = Order of the Twin Adder, 1 = Maelstrom, and 2 = Immortal Flames. |
+
+Not every entity is used by every expansion. Shared headers keep settings consistent across the profile set.
+
+## Internal Entities
+
+These aliases represent quest IDs, map IDs, NPC IDs, or destination IDs. They make conditions easier to read and support patch-content maintenance.
+
+Do **not** change these values unless maintaining the profile against a verified game-data change.
+
+| Entity | ID | Purpose |
+| --- | ---: | --- |
+| **TheBackroom** | 1207 | Map ID used for Dawntrail travel logic. |
+| **EarthenSkyHideout** | 1171 | Map ID used for Dawntrail travel logic. |
+| **AlexandriaCrater** | 1334 | Map ID used for Dawntrail travel logic. |
+| **Treno** | 1328 | Map ID used for Dawntrail travel logic. |
+| **ContainmentComplex10_29** | 1299 | Map ID used for late Dawntrail quest travel. |
+| **SeekersofEternity** | 70842 | Quest ID alias for the patch MSQ endpoint. |
+| **PromiseofTomorrow** | 70909 | Quest ID alias for the patch MSQ endpoint. |
+| **WiththeWinds** | 70962 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **ThroughtheThunder** | 70963 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **BeyondtheMountains** | 70964 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **AroundtheCity** | 70965 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **ToWork** | 70966 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **InHerHeart** | 70967 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **TowardTrouble** | 70968 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **WhereWeCallHome** | 70969 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **IntotheMist** | 70970 | Quest ID alias used by the post-Dawntrail quest chain. |
+| **BrotherdDutyDestination** | Profile-defined NPC ID | Selects the applicable destination NPC during the related Dawntrail quest. |
+| **ShadyHoobigo** | 1046659 | NPC ID alias used by Dawntrail quest logic. |
+| **Wawkesa** | 1046654 | NPC ID alias used by Dawntrail quest logic. |
+
+## Free Profile Use and Active Subscriptions
+
+### No Active Subscription
+
+You may install PandaFarmerWPF and manually load these XML profiles in OrderBot without an active Panda Farmer subscription. The plugin installation is still required so RebornBuddy can resolve the Panda Farmer OrderBot tags used by the profiles.
+
+### With an Active Subscription
+
+An active Panda Farmer subscription unlocks the full PandaFarmerWPF application workflow, including:
+
+- Starting supported activities from the translated PandaFarmerWPF interface instead of manually editing and loading XML files
+- Building MSQ profiles from remotely maintained quest sections using selected MSQ settings
+- Duty Leveling with selectable unlocked jobs, early-level Hunting Log and class quest support, stop-at-level handling, and leveling summaries
+- Dungeon Farming with separate dungeon, trial, and raid selection, queue settings, and configurable run counts
+- Miscellaneous profile generation for supported activities such as Aether Currents, Facet quests, role quests, class unlocks, Grand Company ranking, achievements, and other maintained profiles
+- Auto Party carry mode, including cross-world coordination, whitelisting, duty requests, request queues, and carry-session summaries
+- Automatic class/job selection, class quest handling, optional unlock controls where supported, companion skill assignment, and other UI-managed profile options
+- Product-key-validated start buttons, profile-generation status, session caching for remote profile sections, and automatic loading and starting of generated profiles
+
+The exact available activities may change as PandaFarmerWPF and the remote profile collection are updated.
+
+## Troubleshooting
+
+### Panda Farmer tags are unknown
+
+Confirm PandaFarmerWPF is installed directly under **RebornBuddy/Plugins/PandaFarmerWPF**, restart RebornBuddy, and verify that the plugin appears in the Plugins window.
+
+### A profile does not start at the beginning
+
+This is expected. The profiles use completed-quest checks and begin at the first quest applicable to the current character.
+
+### A feature does not run
+
+Confirm its entity is set to True, the supporting plugin is installed when required, and the character meets the quest, level, duty, and unlock requirements.
+
+### A profile stops for manual input
+
+Some solo duties, game prompts, or newly released encounters may intentionally use a user dialog until reliable automation is available.
+
+## Required Manual MSQ Steps
+
+The profiles stop and display a message when a required duty or interaction cannot be completed reliably. The following steps are currently documented as requiring manual attention. See the [Panda Farmer manual steps documentation](https://llamamagic.net/plugins/pandafarmer/#2x-a-realm-reborn-manual-steps) for the maintained online list.
+
+### 2.x: A Realm Reborn
+
+- **You Have Selected Regicide** (level 50): complete the 8-player trial **Thornmarch (Hard)**.
+- **Lord of the Whorl** (level 50): complete the 8-player trial **The Whorleater (Hard)**.
+- **Levin an Impression** (level 50): complete the 8-player trial **The Striking Tree (Hard)**.
+- **The Instruments of Our Deliverance** (level 50): complete the 8-player trial **Akh Afah Amphitheater (Hard)**.
+- **Ifrit Bleeds, We Can Kill It** (level 50): complete the 8-player trial **The Bowl of Embers (Hard)**.
+- **In For Garuda Awakening** (level 50): complete the 8-player trial **The Howling Eye (Hard)**.
+- **In a Titan Spot** (level 50): complete the 8-player trial **The Navel (Hard)**.
+- **An Uninvited Ascian** (level 50): complete the 8-player trial **The Chrysalis**.
+- **The Steps of Faith** (level 50): complete the solo duty.
+- **The Labyrinth of the Ancients** (level 50): complete the 24-player raid **Labyrinth of the Ancients**.
+- **Syrcus Tower** (level 50): complete the 24-player raid **Syrcus Tower**.
+- **The World of Darkness** (level 50): complete the 24-player raid **The World of Darkness**.
+
+### 3.x: Heavensward
+
+- **Lord of the Hive** (level 53): complete the 8-player trial **Thok ast Thok (Hard)**.
+- **Bolt, Chain, and Island** (level 57): complete the 8-player trial **The Limitless Blue (Hard)**.
+- **Heavensward** (level 60): complete the 8-player trial **The Singularity Reactor**.
+- **An End to the Song** (level 60): complete the 8-player trial **The Final Steps of Faith**.
+- **The Beast That Mourned at the Heart of the Mountain** (level 60): complete the 8-player trial **The Navel (Hard)**.
+- **Fly Free, My Pretty** (level 60): complete the solo duty.
+
+### 4.x: Stormblood
+
+- **It's Probably a Trap** (level 61): complete the solo duty.
+- **The Lord of the Revel** (level 63): complete the 8-player trial **The Pool of Tribute**.
+- **In the Footsteps of Bardam the Brave** (level 65): complete the 4-player dungeon **Bardam's Mettle**.
+- **Naadam** (level 66): complete the solo duty.
+- **The Lady of Bliss** (level 67): complete the 8-player trial **Emanation**.
+- **The Resonant** (level 69): complete the solo duty.
+- **Stormblood** (level 70): complete the 8-player trial **The Royal Menagerie**.
+- **The Mad King's Trove** (level 70): swim underwater to unlock the dungeon.
+- **The Primary Agreement** (level 70): complete the 8-player trial **Castrum Fluminis**.
+- **Emissary of the Dawn** (level 70): complete the solo duty.
+- **The Will of the Moon** (level 70): complete the solo duty.
+- **A Requiem for Heroes** (level 70): complete the solo duty.
+
+### 5.x: Shadowbringers
+
+- **Acht-la Ormh Inn** (level 73): complete the 8-player trial **The Dancing Plague**.
+- **Full Steam Ahead** (level 77): complete the solo duty.
+- **Extinguishing the Last Light** (level 79): complete the 8-player trial **The Crown of the Immaculate**.
+- **Shadowbringers** (level 80): complete the 4-player dungeon **Amaurot**.
+- **Shadowbringers** (level 80): complete the 8-player trial **The Dying Gasp**.
+- **A Grand Adventure** (level 80): complete the 4-player dungeon **The Grand Cosmos**.
+- **Vows of Virtue, Deeds of Cruelty** (level 80): complete the solo duty.
+- **The Converging Light** (level 80): complete the 4-player dungeon **The Heroes' Gauntlet**.
+- **Hope's Confluence** (level 80): complete the 8-player trial **The Seat of Sacrifice**.
+- **Like Master, Like Pupil** (level 80): complete the 4-player dungeon **Matoya's Relict**.
+- **The Great Ship Vylbrand** (level 80): complete the solo duty.
+- **The Flames of War** (level 80): complete the 4-player dungeon **Paglth'an**.
+- **Death Unto Dawn** (level 80): complete the solo duty.
+
+### 6.x: Endwalker
+
+- **A Frosty Reception** (level 82): complete the required partial solo duty.
+- **In from the Cold** (level 83): complete the solo duty.
+- **The Martyr** (level 83): complete the 8-player trial **The Dark Inside**.
+- **As the Heavens Burn** (level 88): complete the solo duty.
+- **Her Children, One and All** (level 89): complete the 4-player dungeon **The Aitiascope**.
+- **Her Children, One and All** (level 89): complete the 8-player trial **The Mothercrystal**.
+- **Endwalker** (level 90): complete the 8-player trial **The Final Day**.
+- **Endwalker** (level 90): complete the solo duty.
+- **Alzadaal's Legacy** (level 90): complete the 4-player dungeon **Alzadaal's Legacy**.
+- **The Wind Rises** (level 90): complete the 8-player trial **The Storm's Crown**.
+
+### 7.x: Dawntrail
+
+- **A Father First** (level 92): complete the solo duty and its quick-time event.
+- **The High Luminary** (level 93): complete the 4-player duty **Worqor Zormor**.
+- **Taking a Stand** (level 94): complete the role-playing solo duty as Wuk Lamat.
+- **The Feat of the Brotherhood** (level 95): complete the solo duty.
+- **Road to the Golden City** (level 95): complete the 4-player duty **The Skydeep Cenote**.
+- **All Aboard** (level 97): complete the 4-player duty **Vanguard**.
+- **The Protector and the Destroyer** (level 98): complete the solo duty.
+- **The Resilient Son** (level 99): complete the 4-player duty **Origenics**.
+- **The Resilient Son** (level 99): complete the 8-player trial **Everkeep**.
+- **Dreams of a New Day** (level 100): complete the solo duty.
+- **Dawntrail** (level 100): complete the 4-player duty **Alexandria**.
+- **Dawntrail** (level 100): complete the 8-player trial **The Interphos**.
+
+The profiles include automation for Worqor Zormor, The Skydeep Cenote, Vanguard, Origenics, Everkeep, and Alexandria. Their mechanics are not fully optimized and may not be reliable on non-tank jobs. A tank may queue automatically; other roles may be stopped so the duty can be completed manually before continuing.
+
