@@ -452,16 +452,15 @@
 			<If Condition="GetQuestStep(67211) == 3">
 				<GetTo ZoneId="397" XYZ="546.1356, 217.9083, 768.0627" />
 				<TalkTo NpcId="1011234" XYZ="546.1356, 217.9083, 768.0627" QuestId="67211" StepId="3" />
-				<GetTo ZoneId="397" XYZ="524.9555, 217.9514, 772.96" />
+				<!-- <GetTo ZoneId="397" XYZ="524.9555, 217.9514, 772.96" /> -->
 			</If>
 			<If Condition="GetQuestStep(67211) == 4">
 				<GetTo ZoneId="397" XYZ="446.0059, 140.8254, -749.8741" />
 				<UseObject NpcId="2005525" XYZ="446.0059, 140.8254, -749.8741" Radius="10" QuestId="67211" StepId="4" />
 			</If>
 			<If Condition="GetQuestStep(67211) == 255">
-				<GetTo ZoneId="139" XYZ="206.0426, -3.111818, 41.94702" />
-				<TurnIn QuestId="67211" ItemId="2001588" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
-				<AutoInventoryEquip />
+				<GetTo ZoneId="139" XYZ="209.0211, -3.1167698, 43.696682" />
+				<TurnIn QuestId="67211" NpcId="1013135" XYZ="206.0426, -3.111818, 41.94702" />
 			</If>
 		</If>
 

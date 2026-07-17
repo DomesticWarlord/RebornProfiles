@@ -2863,6 +2863,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1012426" XYZ="23.97186, 38.43, 3.555298" QuestId="67196" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67196) == 3">
+        <If condition="IsOnMap(463)">
+          <UseTransport NpcId="2005337" InteractDistance="3.0" XYZ="7.765594, 38.9395, -50.9989" />
+        </If>
         <GetTo ZoneId="399" XYZ="300.4653, 232.541, 767.8796" />
         <TalkTo NpcId="1012427" XYZ="300.4653, 232.541, 767.8796" QuestId="67196" StepId="3" />
       </If>
