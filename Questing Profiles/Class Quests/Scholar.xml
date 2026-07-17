@@ -314,7 +314,7 @@
 				<TalkTo NpcId="1013137" XYZ="620.9657, -3.002753, 171.0688" QuestId="67208" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67208) == 2">
-				<GetTo ZoneId="139" XYZ="622.9191, -3.067139, 171.6792" />
+				<GetTo ZoneId="139" XYZ="622.6897, -3.0527577, 171.87051" />
 				<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
 					<LeaveParty />
 				</If>
@@ -348,21 +348,17 @@
 				</If>
 			</If>
 			<If Condition="GetQuestStep(67209) == 1">
-				<GetTo ZoneId="180" XYZ="-292.8359, 72.15991, -275.4101" />
-				<UseObject NpcId="2005521" XYZ="-292.8359, 72.15991, -275.4101" Radius="10" QuestId="67209" StepId="1" />
+				<GetTo ZoneId="180" XYZ="-294.35034, 70.33985, -270.53708" />
+				<UseObject NpcId="2005521" XYZ="-292.83594, 72.15991, -275.4101" QuestId="67209" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(67209) == 2">
-				<GetTo ZoneId="180" XYZ="-302.0524, 70.81714, -292.2866" />
-				<UseObject NpcId="2005522" XYZ="-302.0524, 70.81714, -292.2866" Radius="10" QuestId="67209" StepId="2" />
+				<GetTo ZoneId="180" XYZ="-302.47003, 70.10339, -294.85007" />
+				<UseObject NpcId="2005522" XYZ="-302.05237, 70.81714, -292.28656" QuestId="67209" StepId="2" />
 			</If>
-			<While Condition="GetQuestStep(67209) == 3">
-				<GetTo ZoneId="180" XYZ="-357.7619, 65.98193, -314.9161" />
-				<MoveTo Name="Jump" UseMesh="False" XYZ="-363.2792, 65.37646, -310.6395" />
-				<MoveTo Name="Destination" XYZ="-370.0466, 65.69006, -307.7592" />
-				<UseObject NpcId="2005523" XYZ="-370.0466, 65.69006, -307.7592" Radius="10" QuestId="67209" StepId="3" />
-				<MoveTo Name="Jump Spot" XYZ="-369.7447, 65.2212, -305.5788" />
-				<MoveTo Name="Jump" UseMesh="False" XYZ="-375.9419, 51.72994, -302.171" />
-			</While>
+			<If Condition="GetQuestStep(67209) == 3">
+				<GetTo ZoneId="180" XYZ="-365.48862, 65.06236, -306.58606" />
+				<UseObject NpcId="2005523" XYZ="-370.04657, 65.69006, -307.75922" QuestId="67209" StepId="3" />
+			</If>
 			<If Condition="GetQuestStep(67209) == 4">
 				<GetTo ZoneId="180" XYZ="-381.5519, 52.47571, -298.9396" />
 				<UseObject NpcId="2005530" XYZ="-381.5519, 52.47571, -298.9396" Radius="10" QuestId="67209" StepId="4" />
@@ -522,7 +518,7 @@
 			</If>
 			<While Condition="GetQuestStep(67212) == 4">
 				<GetTo ZoneId="139" XYZ="489.7383, 16.49544, 67.33801" />
-				<StopBot/>
+				<StopBot />
 				<TalkTo NpcId="1013146" XYZ="489.7383, 16.49544, 67.33801" QuestId="67212" StepId="4" />
 				<TalkTo NpcId="1013147" XYZ="487.8461, 16.49544, 68.0094" QuestId="67212" StepId="4" />
 				<TalkTo NpcId="1013198" XYZ="487.48, 16.49544, 70.35925" QuestId="67212" StepId="4" />
