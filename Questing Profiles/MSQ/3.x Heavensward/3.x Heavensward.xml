@@ -62,6 +62,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
       </If>
     </If>
 
+    <If Condition="not IsQuestCompleted(65964)">
+      <UserDialog QuestId="65964" StepId="255" IsBotContinueAllowed="False" DialogText="Please complete A Realm Reborn MSQ before attempting to start Heavensward" />
+    </If>
+
     <!-- Coming to Ishgard (Level 50) -->
     <If Condition="IsQuestCompleted(65964) and not IsQuestCompleted(67116) and Core.Player.ClassLevel &gt; 49">
       <If Condition="not HasQuest(67116)">
@@ -4848,8 +4852,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 	        return false;
 			]]>
 		</CodeChunk>
-    <CodeChunk Type="Hook" Name="ClickCurrents">
-<![CDATA[
+		<CodeChunk Type="Hook" Name="ClickCurrents">
+			<![CDATA[
         uint[] npcIds =
         {
             // Heavensward
@@ -4877,6 +4881,35 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             2007978, 2007976, 2007981, 2007984,
             // The Lochs
             2007987, 2007992, 2007994, 2007993,
+
+						// Shadowbringers
+						// Lakeland
+						2010024, 2010028, 2010031, 2010032,
+						// Il Mheg
+						2010056, 2010059, 2010062, 2010063,
+						// Rak'tika Greatwood
+						2010064, 2010066, 2010069, 2010073,
+						// Ahm Araeng
+						2010044, 2010047, 2010050, 2010052,
+						// Kholusia
+						2010034, 2010038, 2010042, 2010041,
+						// The Tempest
+						2010074, 2010076, 2010079, 2010083,
+
+						// Endwalker
+						// Garlemald
+						2012000, 2012001, 2012005, 2012006,
+						// Mare Lamentorum
+						2012010, 2012011, 2012012, 2012013,
+						// Thavnair
+						2011990, 2011991, 2011995, 2011996,
+						// Elpis
+						2012020, 2012021, 2012025, 2012026,
+						// Labyrinthos
+						2011980, 2011981, 2011985, 2011986,
+						// Ultima Thule
+						2012030, 2012031, 2012032, 2012033
+
 
             // Dawntrail
             // Urqopacha
