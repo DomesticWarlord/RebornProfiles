@@ -1057,6 +1057,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67144) and not IsQuestCompleted(67145) and not Core.Player.ClassLevel &gt; 51">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 51" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Where the Chocobos Roam' you need to be at least class level 52" />
     </If>
 
@@ -1242,6 +1243,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67149) and not IsQuestCompleted(67150) and not Core.Player.ClassLevel &gt; 52">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 52" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'A Gnathic Deity' you need to be at least class level 53" />
     </If>
 
@@ -1439,6 +1441,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67154) and not IsQuestCompleted(67155) and not Core.Player.ClassLevel &gt; 53">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 53" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Mountaintop Diplomacy' you need to be at least class level 54" />
     </If>
 
@@ -1916,6 +1919,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67168) and not IsQuestCompleted(67169) and not Core.Player.ClassLevel &gt; 54">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 54" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Ready to Fly' you need to be at least class level 55" />
     </If>
 
@@ -2000,6 +2004,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67171) and not IsQuestCompleted(67172) and not Core.Player.ClassLevel &gt; 55">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 55" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Ready to Fly' you need to be at least class level 55" />
     </If>
 
@@ -2186,6 +2191,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67532) and not IsQuestCompleted(67175) and not Core.Player.ClassLevel &gt; 56">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 56" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Fire and Blood' you need to be at least class level 57" />
     </If>
 
@@ -2634,6 +2640,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67190) and not IsQuestCompleted(67191) and not Core.Player.ClassLevel &gt; 57">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 57" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'A Great New Nation' you need to be at least class level 58" />
     </If>
 
@@ -2787,6 +2794,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67193) and not IsQuestCompleted(67194) and not Core.Player.ClassLevel &gt; 58">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 58" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Leaving Idyllshire' you need to be at least class level 59" />
     </If>
 
@@ -3170,6 +3178,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <If Condition="IsQuestCompleted(67204) and not IsQuestCompleted(67205) and not Core.Player.ClassLevel &gt; 59">
+      <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 59" />
       <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Heavensward' you need to be at least class level 60" />
     </If>
 
