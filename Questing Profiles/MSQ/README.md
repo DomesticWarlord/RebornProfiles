@@ -48,22 +48,27 @@ These entities are intended to be configured by the user.
 | Entity | Values | Description |
 | --- | --- | --- |
 | **SkipCutscenes** | True / False | Enables OrderBot's cutscene-skipping setting. Some cutscenes cannot be skipped by the game. |
-| **AutoEquip** | True / False | Enables automatic equipment handling so useful quest rewards and opened coffer gear can be equipped. |
-| **CloseHowTos** | True / False | Automatically closes tutorial, guide, job HUD notice, achievement, and similar informational windows that can obstruct automation. |
-| **EnablePlatypus** | True / False | Enables Platypus Hooks when the profile starts. Leave this False if Platypus Hooks is not installed or needed. |
+| **AutoEquip** | True / False | Enables automatic equipment handling so useful quest rewards and opened coffer gear can be equipped. Can only equip from Armoury Chest |
+| **CloseHowTos** | True / False | Automatically closes tutorial, guide, job HUD notice, achievement, and similar informational windows that can clog the UI. |
+| **EnablePlatypus** | True / False | Enables Platypus Hooks when the profile starts. Leave this False if Platypus Hooks is not installed or needed. Highly recommended as Platypus is responsible for self repairing as well as releasing upon death. |
 | **KillHuntMobs** | True / False | Allows nearby valid Hunting Log targets to be selected and killed while questing. |
 | **BuyGysahlGreens** | True / False | Allows the profile to purchase Gysahl Greens when needed so the companion chocobo can remain available. |
 | **AssignCompanionSkillPoints** | True / False | Spends available companion skill points when the profile contains the companion skill assignment step. PandaFarmerWPF must be enabled for plugin-level automatic assignment. |
 | **CompanionRole** | Defender, Healer, or Attacker | Selects the companion skill tree used by AssignCompanionSkillPoints. |
 | **DiscardInventoryClutter** | True / False | Discards specifically listed low-value quest items. It does not indiscriminately clear the inventory. |
-| **DoClassQuests** | True / False | Runs the current class or job quest helper at supported points in the MSQ. |
-| **UseCarry** | True / False | Enables Panda Farmer Auto Party carry handling for supported duties. The carry character must be configured and ready. |
-| **OnlyNonDutySupport** | True / False | When carry mode is enabled, limits Auto Party use to duties that cannot be completed with Duty Support. |
-| **CarryName** | Character's first name | Identifies the carry character. Enter only the first name, for example Arelia. |
-| **CurrentHook** | True / False | Enables the profile's nearby Aether Current helper hook where that hook is included and used. This is separate from inserting complete Aether Current routes. |
-| **GrandCompanyChoice** | 0, 1, or 2 | ARR only. 0 = Order of the Twin Adder, 1 = Maelstrom, and 2 = Immortal Flames. |
-
+| **GrandCompanyChoice** | 0, 1, or 2 | This is only present in A Realm Reborn and allows and you to choose which Grand Company to join during the MSQ. 0 = Order of the Twin Adder, 1 = Maelstrom, and 2 = Immortal Flames. |
 Not every entity is used by every expansion. Shared headers keep settings consistent across the profile set.
+
+## Panda Farmer Settings
+
+These settings control Panda Farmer-specific features. **DoClassQuests, UseCarry, OnlyNonDutySupport, and CarryName only apply when using Panda Farmer with an active subscription.** They do not change the behavior of the free, manually loaded quest profile by themselves.
+
+| Entity | Values | Description |
+| --- | --- | --- |
+| **DoClassQuests** | True / False | With an active Panda Farmer subscription, runs the current class or job quest helper at supported points in the MSQ. |
+| **UseCarry** | True / False | With an active Panda Farmer subscription, enables Panda Farmer Auto Party carry handling for supported duties. The carry character must be configured and ready. |
+| **OnlyNonDutySupport** | True / False | With an active Panda Farmer subscription and carry mode enabled, limits Auto Party use to duties that cannot be completed with Duty Support. |
+| **CarryName** | Character's first name | With an active Panda Farmer subscription and carry mode enabled, identifies the carry character. Enter only the first name, for example Arelia. |
 
 ## Internal Entities
 
@@ -220,4 +225,3 @@ The profiles stop and display a message when a required duty or interaction cann
 - **Dawntrail** (level 100): complete the 8-player trial **The Interphos**.
 
 The profiles include automation for Worqor Zormor, The Skydeep Cenote, Vanguard, Origenics, Everkeep, and Alexandria. Their mechanics are not fully optimized and may not be reliable on non-tank jobs. A tank may queue automatically; other roles may be stopped so the duty can be completed manually before continuing.
-
