@@ -3224,6 +3224,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
           <UserDialog QuestId="67205" StepId="5" IsBotContinueAllowed="False" DialogText="Please manually complete the 8 player trial 'The Singularity Reactor.'" />
         </If>
         <If condition="&UseCarry; == True">
+          <If condition="IsOnMap(507) and GameObjectManager.GetObjectByNPCId(2006421)">
+            <UseTransport NpcId="2006421" InteractDistance="3.0" XYZ="-1.02728, 1.594608, 19.72121" />
+          </If>
           <PFWPFAutoParty DutyId="90" ZoneId="432" Trial="False" />
         </If>
       </If>
