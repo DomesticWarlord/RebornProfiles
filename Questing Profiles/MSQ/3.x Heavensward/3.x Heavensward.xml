@@ -2850,8 +2850,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
     <!-- Forbidden Knowledge (Level 59) -->
     <If Condition="IsQuestCompleted(67195) and not IsQuestCompleted(67196) and Core.Player.ClassLevel &gt; 58">
-      <GetTo ZoneId="463" XYZ="17.482552, 38.43, 14.240083" />
       <If Condition="not HasQuest(67196)">
+        <GetTo ZoneId="463" XYZ="17.482552, 38.43, 14.240083" />
         <If Condition="IsQuestAcceptQualified(67196)">
           <PickupQuest NpcId="1012138" QuestId="67196" XYZ="19.27209, 38.43, 15.85406" />
         </If>
