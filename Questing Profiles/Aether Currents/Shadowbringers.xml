@@ -13,6 +13,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(68840)">
       <!-- A Jobb Well Done -->
       <If Condition="not HasQuest(68916) and not IsQuestCompleted(68916)">
+      	<LLToast message="Working on quest 'A Jobb Well Done' to unlock Lakeland Aether Currents" />
         <GetTo ZoneId="819" XYZ="41.78729, 2.232896, 262.3155" />
         <If Condition="IsQuestAcceptQualified(68916)">
           <PickupQuest QuestId="68916" NpcId="1027948" />
@@ -43,6 +44,7 @@ Authors:  Sodimm
       </If>
       <!-- Imperative Repairs -->
       <If Condition="not HasQuest(68920) and not IsQuestCompleted(68920)">
+      	<LLToast message="Working on quest 'Imperative Repairs' to unlock Lakeland Aether Currents" />
         <GetTo ZoneId="813" XYZ="-766.7798, 61.72048, -303.3688" />
         <If Condition="IsQuestAcceptQualified(68920)">
           <PickupQuest QuestId="68920" NpcId="1027382" />
@@ -58,6 +60,7 @@ Authors:  Sodimm
       </If>
       <!-- The Astute Amaro -->
       <If Condition="not HasQuest(68921) and not IsQuestCompleted(68921)">
+      	<LLToast message="Working on quest 'The Astute Amaro' to unlock Lakeland Aether Currents" />
         <GetTo ZoneId="813" XYZ="-675.0093, 51.2151, -219.2736" />
         <If Condition="IsQuestAcceptQualified(68921)">
           <PickupQuest QuestId="68921" NpcId="1031212" />
@@ -82,6 +85,7 @@ Authors:  Sodimm
       </If>
       <!-- An Unreasonable Request -->
       <If Condition="not HasQuest(68922) and not IsQuestCompleted(68922)">
+      	<LLToast message="Working on quest 'An Unreasonable Request' to unlock Lakeland Aether Currents" />
         <GetTo ZoneId="813" XYZ="-699.3442, 61.99376, -350.9773" />
         <If Condition="IsQuestAcceptQualified(68922)">
           <PickupQuest QuestId="68922" NpcId="1027419" />
@@ -131,6 +135,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(68856)">
       <!-- The Forbidden Lran -->
       <If Condition="not HasQuest(68931) and not IsQuestCompleted(68931)">
+      	<LLToast message="Working on quest 'The Forbidden Lran' to unlock Il Mheg Aether Currents" />
         <GetTo ZoneId="816" XYZ="-366.3663, 67.3123, 556.0659" />
         <If Condition="IsQuestAcceptQualified(68931)">
           <PickupQuest QuestId="68931" NpcId="1030266" />
@@ -154,6 +159,7 @@ Authors:  Sodimm
       </If>
       <!-- Delightful Decorations -->
       <If Condition="not HasQuest(68934) and not IsQuestCompleted(68934)">
+      	<LLToast message="Working on quest 'Delightful Decorations' to unlock Il Mheg Aether Currents" />
         <GetTo ZoneId="816" XYZ="-613.0966, 36.36868, -213.4198" />
         <If Condition="IsQuestAcceptQualified(68934)">
           <PickupQuest QuestId="68934" NpcId="1030618" />
@@ -177,6 +183,7 @@ Authors:  Sodimm
       </If>
       <!-- The Path to Popularity -->
       <If Condition="not HasQuest(68940) and not IsQuestCompleted(68940)">
+      	<LLToast message="Working on quest 'The Path to Popularity' to unlock Il Mheg Aether Currents" />
         <GetTo ZoneId="816" XYZ="-287.7688, 40.32404, 445.2542" />
         <If Condition="IsQuestAcceptQualified(68940)">
           <PickupQuest QuestId="68940" NpcId="1030838" />
@@ -200,6 +207,7 @@ Authors:  Sodimm
       </If>
       <!-- A New Amaro -->
       <If Condition="not HasQuest(68963) and not IsQuestCompleted(68963)">
+      	<LLToast message="Working on quest 'A New Amaro' to unlock Il Mheg Aether Currents" />
         <GetTo ZoneId="816" XYZ="441.4835, 89.6209, -654.8467" />
         <If Condition="IsQuestAcceptQualified(68963)">
           <PickupQuest QuestId="68963" NpcId="1027695" />
@@ -247,6 +255,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(68876)">
       <!-- What We Do for Family -->
       <If Condition="IsQuestCompleted(68861) and not HasQuest(68980) and not IsQuestCompleted(68980)">
+      	<LLToast message="Working on quest 'What We Do for Family' to unlock The Rak'tika Greatwood Aether Currents" />
         <GetTo ZoneId="817" XYZ="-128.5743, -17.23699, 314.8941" />
         <If Condition="IsQuestAcceptQualified(68980)">
           <PickupQuest QuestId="68980" NpcId="1029023" />
@@ -269,6 +278,7 @@ Authors:  Sodimm
       </If>
       <!-- The Great Deceiver -->
       <If Condition="IsQuestCompleted(68867) and not HasQuest(69192) and not IsQuestCompleted(69192)">
+      	<LLToast message="Working on quest 'The Great Deceiver' to unlock The Rak'tika Greatwood Aether Currents" />
         <GetTo ZoneId="817" XYZ="-83.88918, -19.01869, 304.3128" />
         <If Condition="IsQuestAcceptQualified(69192)">
           <PickupQuest QuestId="69192" NpcId="1030747" />
@@ -289,6 +299,7 @@ Authors:  Sodimm
       </If>
       <!-- Suit Up -->
       <If Condition="IsQuestCompleted(68870) and not HasQuest(69003) and not IsQuestCompleted(69003)">
+      	<LLToast message="Working on quest 'Suit Up' to unlock The Rak'tika Greatwood Aether Currents" />
         <GetTo ZoneId="817" XYZ="394.206, 20.42252, -180.891" />
         <If Condition="IsQuestAcceptQualified(69003)">
           <PickupQuest QuestId="69003" NpcId="1027736" />
@@ -320,6 +331,7 @@ Authors:  Sodimm
       </If>
       <!-- Stand on Ceremony -->
       <If Condition="IsQuestCompleted(68875) and not HasQuest(69014) and not IsQuestCompleted(69014)">
+      	<LLToast message="Working on quest 'Stand on Ceremony' to unlock The Rak'tika Greatwood Aether Currents" />
         <GetTo ZoneId="817" XYZ="493.2754, -6.555339, -227.5039" />
         <If Condition="IsQuestAcceptQualified(69014)">
           <PickupQuest QuestId="69014" NpcId="1027716" />
@@ -365,6 +377,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(69155)">
       <!-- Work to Live or Live to Work -->
       <If Condition="IsQuestCompleted(68829) and not HasQuest(68911) and not IsQuestCompleted(68911)">
+      	<LLToast message="Working on quest 'Work to Live or Live to Work' to unlock Ahm Araeng Aether Currents" />
         <GetTo ZoneId="815" XYZ="267.3467, 4.0297, -145.4092" />
         <If Condition="IsQuestAcceptQualified(68911)">
           <PickupQuest QuestId="68911" NpcId="1027872" />
@@ -384,6 +397,7 @@ Authors:  Sodimm
       </If>
       <!-- Scavengers Assemble -->
       <If Condition="IsQuestCompleted(69149) and not HasQuest(69039) and not IsQuestCompleted(69039)">
+      	<LLToast message="Working on quest 'Scavengers Assemble' to unlock Ahm Araeng Aether Currents" />
         <GetTo ZoneId="815" XYZ="-424.1465, 31.49794, -225.1674" />
         <If Condition="IsQuestAcceptQualified(69039)">
           <PickupQuest QuestId="69039" NpcId="1030979" />
@@ -411,6 +425,7 @@ Authors:  Sodimm
       </If>
       <!-- Charmless Man -->
       <If Condition="IsQuestCompleted(69151) and not HasQuest(69047) and not IsQuestCompleted(69047)">
+      	<LLToast message="Working on quest 'Charmless Man' to unlock Ahm Araeng Aether Currents" />
         <GetTo ZoneId="815" XYZ="-478.894, 47.78905, -200.6438" />
         <If Condition="IsQuestAcceptQualified(69047)">
           <PickupQuest QuestId="69047" NpcId="1027927" />
@@ -427,6 +442,7 @@ Authors:  Sodimm
       </If>
       <!-- A Vein Pursuit -->
       <If Condition="IsQuestCompleted(69153) and not HasQuest(69061) and not IsQuestCompleted(69061)">
+      	<LLToast message="Working on quest 'A Vein Pursuit' to unlock Ahm Araeng Aether Currents" />
         <GetTo ZoneId="815" XYZ="-552.5444, 50.07417, -168.1087" />
         <If Condition="IsQuestAcceptQualified(69061)">
           <PickupQuest QuestId="69061" NpcId="1030419" />
@@ -467,6 +483,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(69176)">
       <!-- A Plankless Task -->
       <If Condition="IsQuestCompleted(68821) and not HasQuest(68896) and not IsQuestCompleted(68896)">
+      	<LLToast message="Working on quest 'A Plankless Task' to unlock Kholusia Aether Currents" />
         <GetTo ZoneId="814" XYZ="-310.0979, 19.39982, 406.5162" />
         <If Condition="IsQuestAcceptQualified(68896)">
           <PickupQuest QuestId="68896" NpcId="1027452" />
@@ -499,6 +516,7 @@ Authors:  Sodimm
       </If>
       <!-- Village of Woe -->
       <If Condition="IsQuestCompleted(68821) and not HasQuest(68907) and not IsQuestCompleted(68907)">
+      	<LLToast message="Working on quest 'Village of Woe' to unlock Kholusia Aether Currents" />
         <GetTo ZoneId="814" XYZ="-305.9456, 20.95898, 361.1356" />
         <If Condition="IsQuestAcceptQualified(68907)">
           <PickupQuest QuestId="68907" NpcId="1030763" />
@@ -530,6 +548,7 @@ Authors:  Sodimm
       </If>
       <!-- A Disagreeable Dwarf -->
       <If Condition="IsQuestCompleted(69173) and not HasQuest(69092) and not IsQuestCompleted(69092)">
+      	<LLToast message="Working on quest 'A Disagreeable Dwarf' to unlock Kholusia Aether Currents" />
         <GetTo ZoneId="814" XYZ="-447.2847, 417.1024, -610.7085" />
         <If Condition="IsQuestAcceptQualified(69092)">
           <PickupQuest QuestId="69092" NpcId="1030776" />
@@ -551,6 +570,7 @@ Authors:  Sodimm
       </If>
       <!-- Fugitive of Fear -->
       <If Condition="IsQuestCompleted(69176) and not HasQuest(69073) and not IsQuestCompleted(69073)">
+      	<LLToast message="Working on quest 'Fugitive of Fear' to unlock Kholusia Aether Currents" />
         <GetTo ZoneId="814" XYZ="-130.5229, 354.3582, -178.4895" />
         <If Condition="IsQuestAcceptQualified(69073)">
           <PickupQuest QuestId="69073" NpcId="1027956" />
@@ -603,6 +623,7 @@ Authors:  Sodimm
     <If Condition="IsQuestCompleted(69188)">
       <!-- Koal of the Cups -->
       <If Condition="IsQuestCompleted(69184) and not HasQuest(69124) and not IsQuestCompleted(69124)">
+      	<LLToast message="Working on quest 'Koal of the Cups' to unlock The Tempest Aether Currents" />
         <GetTo ZoneId="818" XYZ="534.5916, 353.7596, -240.047" />
         <If Condition="IsQuestAcceptQualified(69124)">
           <PickupQuest QuestId="69124" NpcId="1031015" />
@@ -637,6 +658,7 @@ Authors:  Sodimm
       </If>
       <!-- Responsible Creation -->
       <If Condition="IsQuestCompleted(69188) and not HasQuest(69128) and not IsQuestCompleted(69128)">
+      	<LLToast message="Working on quest 'Responsible Creation' to unlock The Tempest Aether Currents" />
         <GetTo ZoneId="818" XYZ="-388.4057, -260.1766, 312.7331" />
         <If Condition="IsQuestAcceptQualified(69128)">
           <PickupQuest QuestId="69128" NpcId="1027775" />
@@ -663,6 +685,7 @@ Authors:  Sodimm
       </If>
       <!-- Debate and Discourse -->
       <If Condition="IsQuestCompleted(69188) and not HasQuest(69129) and not IsQuestCompleted(69129)">
+      	<LLToast message="Working on quest 'Debate and Discourse' to unlock The Tempest Aether Currents" />
         <GetTo ZoneId="818" XYZ="-709.4703, -245.368, 497.7509" />
         <If Condition="IsQuestAcceptQualified(69129)">
           <PickupQuest QuestId="69129" NpcId="1027778" />
@@ -689,6 +712,7 @@ Authors:  Sodimm
       </If>
       <!-- Community Cohesion -->
       <If Condition="IsQuestCompleted(69188) and not HasQuest(69130) and not IsQuestCompleted(69130)">
+      	<LLToast message="Working on quest 'Community Cohesion' to unlock The Tempest Aether Currents" />
         <GetTo ZoneId="818" XYZ="-590.7681, -266.7698, 338.6785" />
         <If Condition="IsQuestAcceptQualified(69130)">
           <PickupQuest QuestId="69130" NpcId="1030477" />

@@ -15,6 +15,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68026)">
 		<!-- The Price of Betrayal (3) -->
 		<If Condition="IsQuestCompleted(68014) and not HasQuest(68209) and not IsQuestCompleted(68209)">
+			<LLToast message="Working on quest 'The Price of Betrayal' to unlock The Ruby Sea Aether Currents" />
 		  <GetTo ZoneId="613" XYZ="829.1404, 5.923008, 857.9793"/>
 		  <MoveTo ZoneId="613" XYZ="500.3604, 34.0062, 783.7982"/>
 		  <If Condition="IsQuestAcceptQualified(68209)">
@@ -38,6 +39,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Pulling Double Booty (2) -->
 		<If Condition="IsQuestCompleted(68017) and not HasQuest(68223) and not IsQuestCompleted(68223)">
+			<LLToast message="Working on quest 'Pulling Double Booty' to unlock The Ruby Sea Aether Currents" />
 		  <GetTo ZoneId="613" XYZ="98.68376, 2.082913, -614.7886"/>
 		  <If Condition="IsQuestAcceptQualified(68223)">
 			<PickupQuest QuestId="68223" NpcId="1022102" XYZ="98.68376, 2.082913, -614.7886"/>
@@ -63,6 +65,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- The Sword in the Stone (1) -->
 		<If Condition="IsQuestCompleted(68019) and not HasQuest(68229) and not IsQuestCompleted(68229)">
+			<LLToast message="Working on quest 'The Sword in the Stone' to unlock The Ruby Sea Aether Currents" />
 		  <GetTo ZoneId="613" XYZ="565.2492, -61.97559, -146.0982"/>
 		  <If Condition="IsQuestAcceptQualified(68229)">
 			<PickupQuest QuestId="68229" NpcId="1023357" XYZ="565.2492, -61.97559, -146.0982"/>
@@ -101,6 +104,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- The Palace of Lost Souls (0) -->
 		<If Condition="IsQuestCompleted(68021) and not HasQuest(68168) and not IsQuestCompleted(68168)">
+			<LLToast message="Working on quest 'The Palace of Lost Souls' to unlock The Ruby Sea Aether Currents" />
 		  <If Condition="not IsOnSubMap(2772)">
 			<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289"/>
 			<RunCode Name="SuiNoSato"/>
@@ -168,6 +172,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68035)">
 		<!-- Something Smells (3) -->
 		<If Condition="IsQuestCompleted(68029) and not HasQuest(68260) and not IsQuestCompleted(68260)">
+			<LLToast message="Working on quest 'Something Smells' to unlock Yanxia Aether Currents" />
 		  <GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723"/>
 		  <If Condition="IsQuestAcceptQualified(68260)">
 			<PickupQuest QuestId="68260" NpcId="1019314" XYZ="422.55, -0.3000118, -292.1723"/>
@@ -205,6 +210,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Fly, My Pretties (2) -->
 		<If Condition="IsQuestCompleted(68029) and not HasQuest(68264) and not IsQuestCompleted(68264)">
+			<LLToast message="Working on quest 'Fly, My Pretties' to unlock Yanxia Aether Currents" />
 		  <GetTo ZoneId="614" XYZ="452.7337, 58.69245, -186.7468"/>
 		  <If Condition="IsQuestAcceptQualified(68264)">
 			<PickupQuest QuestId="68264" NpcId="1019263" XYZ="452.7337, 58.69245, -186.7468"/>
@@ -250,6 +256,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Whacking Day (1) -->
 		<If Condition="IsQuestCompleted(68030) and not HasQuest(68266) and not IsQuestCompleted(68266)">
+			<LLToast message="Working on quest 'Whacking Day' to unlock Yanxia Aether Currents" />
 		  <GetTo ZoneId="614" XYZ="463.3003, 58.51415, -171.8306"/>
 		  <If Condition="IsQuestAcceptQualified(68266)">
 			<PickupQuest QuestId="68266" NpcId="1019313" XYZ="463.3003, 58.51415, -171.8306"/>
@@ -276,6 +283,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Wolves and Weeds (0) -->
 		<If Condition="IsQuestCompleted(68030) and not HasQuest(68269) and not IsQuestCompleted(68269)">
+			<LLToast message="Working on quest 'Wolves and Weeds' to unlock Yanxia Aether Currents" />
 		  <GetTo ZoneId="614" XYZ="435.0469, 67.97929, -122.4264"/>
 		  <If Condition="IsQuestAcceptQualified(68269)">
 			<PickupQuest QuestId="68269" NpcId="1019316" XYZ="435.0469, 67.97929, -122.4264"/>
@@ -337,6 +345,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68052)">
 		<!-- Words Are Very Unnecessary (3) -->
 		<If Condition="IsQuestCompleted(68037) and not HasQuest(68296) and not IsQuestCompleted(68296)">
+			<LLToast message="Working on quest 'Words Are Very Unnecessary' to unlock The Azim Steppe Aether Currents" />
 		  <GetTo ZoneId="622" XYZ="573.8724, -19.50563, 344.6087"/>
 		  <If Condition="IsQuestAcceptQualified(68296)">
 			<PickupQuest QuestId="68296" NpcId="1019347" XYZ="573.8724, -19.50563, 344.6087"/>
@@ -354,6 +363,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Sheep Snatcher (2) -->
 		<If Condition="IsQuestCompleted(68041) and not HasQuest(68307) and not IsQuestCompleted(68307)">
+			<LLToast message="Working on quest 'Sheep Snatcher' to unlock The Azim Steppe Aether Currents" />
 		  <GetTo ZoneId="622" XYZ="344.6132, 26.26397, -326.2001"/>
 		  <If Condition="IsQuestAcceptQualified(68307)">
 			<PickupQuest QuestId="68307" NpcId="1019405" XYZ="344.6132, 26.26397, -326.2001"/>
@@ -371,6 +381,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Forty Years and Counting (1) -->
 		<If Condition="IsQuestCompleted(68046) and not HasQuest(68318) and not IsQuestCompleted(68318)">
+			<LLToast message="Working on quest 'Forty Years and Counting' to unlock The Azim Steppe Aether Currents" />
 		  <GetTo ZoneId="622" XYZ="78.13956, 114.905, 94.42142"/>
 		  <If Condition="IsQuestAcceptQualified(68318)">
 			<PickupQuest QuestId="68318" NpcId="1023348" XYZ="78.13956, 114.905, 94.42142"/>
@@ -392,6 +403,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Mauci of the Seven Worries (0) -->
 		<If Condition="IsQuestCompleted(68048) and not HasQuest(68327) and not IsQuestCompleted(68327)">
+			<LLToast message="Working on quest 'Mauci of the Seven Worries' to unlock The Azim Steppe Aether Currents" />
 		  <GetTo ZoneId="622" XYZ="-434.7208, 2.565867, 651.0312"/>
 		  <If Condition="IsQuestAcceptQualified(68327)">
 			<PickupQuest QuestId="68327" NpcId="1023193" XYZ="-434.7208, 2.565867, 651.0312"/>
@@ -440,6 +452,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68069)">
 		<!-- Magiteknical Failure (3) -->
 		<If Condition="IsQuestCompleted(67988) and not HasQuest(68175) and not IsQuestCompleted(68175)">
+			<LLToast message="Working on quest 'Magiteknical Failure' to unlock The Fringes Aether Currents" />
 		  <GetTo ZoneId="612" XYZ="-651.0829, 129.9965, -511.4065"/>
 		  <If Condition="IsQuestAcceptQualified(68175)">
 			<PickupQuest QuestId="68175" NpcId="1019517" XYZ="-651.0829, 129.9965, -511.4065"/>
@@ -474,6 +487,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- The Hidden Truth (2) -->
 		<If Condition="IsQuestCompleted(68002) and not HasQuest(68197) and not IsQuestCompleted(68197)">
+			<LLToast message="Working on quest 'The Hidden Truth' to unlock The Fringes Aether Currents" />
 		  <GetTo ZoneId="612" XYZ="-614.6425, 130, -529.069"/>
 		  <If Condition="IsQuestAcceptQualified(68197)">
 			<PickupQuest QuestId="68197" NpcId="1019519" XYZ="-614.6425, 130, -529.069"/>
@@ -504,6 +518,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Eyes Bigger Than Her Stomach (0) -->
 		<If Condition="IsQuestCompleted(68066) and not HasQuest(68357) and not IsQuestCompleted(68357)">
+			<LLToast message="Working on quest 'Eyes Bigger Than Her Stomach' to unlock The Fringes Aether Currents" />
 		  <GetTo ZoneId="612" XYZ="432.6592, 114.4957, 233.5652"/>
 		  <If Condition="IsQuestAcceptQualified(68357)">
 			<PickupQuest QuestId="68357" NpcId="1020807" XYZ="432.6592, 114.4957, 233.5652"/>
@@ -521,6 +536,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Unexpected Guests (1) -->
 		<If Condition="IsQuestCompleted(68067) and not HasQuest(68352) and not IsQuestCompleted(68352)">
+			<LLToast message="Working on quest 'Unexpected Guests' to unlock The Fringes Aether Currents" />
 		  <GetTo ZoneId="612" XYZ="278.9928, 77.0435, -25.51962"/>
 		  <If Condition="IsQuestAcceptQualified(68352)">
 			<PickupQuest QuestId="68352" NpcId="1020821" XYZ="278.9928, 77.0435, -25.51962"/>
@@ -567,6 +583,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68082)">
 		<!-- Saint Sayer -->
 		<If Condition="IsQuestCompleted(68000) and not HasQuest(68191) and not IsQuestCompleted(68191)">
+			<LLToast message="Working on quest 'Saint Sayer' to unlock The Peaks Aether Currents" />
 		  <GetTo ZoneId="620" XYZ="143.7094, 118.1921, -731.4683"/>
 		  <If Condition="IsQuestAcceptQualified(68191)">
 			<PickupQuest QuestId="68191" NpcId="1020841" XYZ="143.7094, 118.1921, -731.4683"/>
@@ -602,6 +619,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Out of Sight -->
 		<If Condition="IsQuestCompleted(68077) and not HasQuest(68378) and not IsQuestCompleted(68378)">
+			<LLToast message="Working on quest 'Out of Sight' to unlock The Peaks Aether Currents" />
 		  <GetTo ZoneId="620" XYZ="-325.3157, 258.9065, 756.8009"/>
 		  <If Condition="IsQuestAcceptQualified(68378)">
 			<PickupQuest QuestId="68378" NpcId="1020873" XYZ="-325.3157, 258.9065, 756.8009"/>
@@ -631,6 +649,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- A Hunger for Trade -->
 		<If Condition="IsQuestCompleted(68079) and not HasQuest(68387) and not IsQuestCompleted(68387)">
+			<LLToast message="Working on quest 'A Hunger for Trade' to unlock The Peaks Aether Currents" />
 		  <GetTo ZoneId="620" XYZ="311.476, 324.3033, 361.2439"/>
 		  <If Condition="IsQuestAcceptQualified(68387)">
 			<PickupQuest QuestId="68387" NpcId="1023167" XYZ="311.476, 324.3033, 361.2439"/>
@@ -656,6 +675,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Closing Up Shop -->
 		<If Condition="IsQuestCompleted(68081) and not HasQuest(68396) and not IsQuestCompleted(68396)">
+			<LLToast message="Working on quest 'Closing Up Shop' to unlock The Peaks Aether Currents" />
 		  <GetTo ZoneId="620" XYZ="283.095, 322.8657, 750.0656"/>
 		  <If Condition="IsQuestAcceptQualified(68396)">
 			<PickupQuest QuestId="68396" NpcId="1020893" XYZ="283.095, 322.8657, 750.0656"/>
@@ -706,6 +726,7 @@ Profile and fixes by Angles
 	<If Condition="IsQuestCompleted(68089)">
 		<!-- It's a Zu Out There -->
 		<If Condition="IsQuestCompleted(68084) and not HasQuest(68413) and not IsQuestCompleted(68413)">
+			<LLToast message="Working on quest 'It's a Zu Out There' to unlock The Lochs Aether Currents" />
 		  <GetTo ZoneId="621" XYZ="-506.7125, 8.7, -40.07228"/>
 		  <If Condition="IsQuestAcceptQualified(68413)">
 			<PickupQuest QuestId="68413" NpcId="1022992" XYZ="-506.7125, 8.7, -40.07228"/>
@@ -723,6 +744,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- A Rite to Rest -->
 		<If Condition="IsQuestCompleted(68084) and not HasQuest(68416) and not IsQuestCompleted(68416)">
+			<LLToast message="Working on quest 'A Rite to Rest' to unlock The Lochs Aether Currents" />
 		  <GetTo ZoneId="621" XYZ="-524.7865, 8.685927, -19.41368"/>
 		  <If Condition="IsQuestAcceptQualified(68416)">
 			<PickupQuest QuestId="68416" NpcId="1022990" XYZ="-524.7865, 8.685927, -19.41368"/>
@@ -749,6 +771,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- If I Were a Fish -->
 		<If Condition="IsQuestCompleted(68087) and not HasQuest(68417) and not IsQuestCompleted(68417)">
+			<LLToast message="Working on quest 'If I Were a Fish' to unlock The Lochs Aether Currents" />
 		  <GetTo ZoneId="621" XYZ="-662.0169, 49.99979, -48.66205"/>
 		  <If Condition="IsQuestAcceptQualified(68417)">
 			<PickupQuest QuestId="68417" NpcId="1022987" XYZ="-662.0169, 49.99979, -48.66205"/>
@@ -774,6 +797,7 @@ Profile and fixes by Angles
 		</If>
 		<!-- Are They Ill Tempered -->
 		<If Condition="IsQuestCompleted(68087) and not HasQuest(68419) and not IsQuestCompleted(68419)">
+			<LLToast message="Working on quest 'Are They Ill Tempered' to unlock The Lochs Aether Currents" />
 		  <GetTo ZoneId="621" XYZ="-539.7319, 7.611982, 52.4417"/>
 		  <If Condition="IsQuestAcceptQualified(68419)">
 			<PickupQuest QuestId="68419" NpcId="1022991" XYZ="-539.7319, 7.611982, 52.4417"/>
