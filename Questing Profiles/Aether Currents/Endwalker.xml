@@ -13,10 +13,6 @@ Author: Angles24, Manta
         <UserDialog DialogText="Please finish the level 83 MSQ quest 'Gateway of the Gods' to unlock Garlemald Flying." IsBotContinueAllowed="True" />
       </If>
 
-      <LogMessage Message="Going to unlock Garlemald Flying." />
-      <LLToast message="Going to unlock Garlemald Flying." />
-
-
       <!-- Best Delivered Cold -->
       <If Condition="IsQuestCompleted(69931) and not IsQuestCompleted(69752)">
         <LLToast message="Working on quest 'Best Delivered Cold' to unlock Garlemald Aether Currents" />
@@ -31,7 +27,7 @@ Author: Angles24, Manta
           <TalkTo NpcId="1040899" XYZ="-233.4478, 22.17031, 443.717" QuestId="69752" StepId="1" />
         </If>
         <If Condition="GetQuestStep(69752) == 2">
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <WaitTimer WaitTime="3" />
           <MoveTo XYZ="-175.2147, 6.432508, 452.7315" />
@@ -47,7 +43,7 @@ Author: Angles24, Manta
           <MoveTo XYZ="144.5514, -18.53606, 534.6923" />
           <WaitTimer WaitTime="3" />
           <MoveTo XYZ="156.6338, -19.72869, 563.5786" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
           <TalkTo NpcId="1040899" XYZ="156.6338, -19.72869, 563.5786" QuestId="69752" StepId="2" />
         </If>
         <If Condition="GetQuestStep(69752) == 255">
@@ -121,7 +117,7 @@ Author: Angles24, Manta
           <TalkTo NpcId="1041754" XYZ="-340.8408, 22, 500.5721" QuestId="70034" StepId="2" />
         </If>
         <If Condition="GetQuestStep(70034) == 3">
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <WaitTimer WaitTime="5" />
           <GetTo ZoneId="958" XYZ="-333.4559, 22.37715, 458.0285" />
@@ -134,7 +130,7 @@ Author: Angles24, Manta
         <If Condition="GetQuestStep(70034) == 255">
           <GetTo ZoneId="958" XYZ="-341.6592, 22, 501.8206" />
           <TurnIn QuestId="70034" NpcId="1041755" XYZ="-340.3525, 22, 502.037" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
         </If>
       </If>
 
@@ -144,7 +140,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'Stranded at the Station' to unlock Garlemald Aether Currents" />
         <If Condition="not HasQuest(70038)">
           <GetTo ZoneId="958" XYZ="-323.7941, 22, 487.199" />
-          <!-- Subzone="3903" Area="Garlemald" -->
           <If Condition="IsQuestAcceptQualified(70038)">
             <PickupQuest QuestId="70038" NpcId="1041765" />
             <LLSmallTalk />
@@ -152,7 +147,6 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(70038) == 1">
           <GetTo ZoneId="958" XYZ="512.7676, -19.82022, -308.2176" />
-          <!-- Subzone="3915" Area="Garlemald" -->
           <TalkTo NpcId="1041766" XYZ="513.6339, -19.82022, -309.1936" QuestId="70038" StepId="1" />
         </If>
         <If Condition="GetQuestStep(70038) == 255">
@@ -167,20 +161,14 @@ Author: Angles24, Manta
         <GetTo ZoneId="958" XYZ="-184.222, 31.9371, 423.606" />
         <UseObject NpcId="2012000" XYZ="-184.222, 31.9371, 423.606" Condition="not IsAetherCurrentCompleted(958, 8)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(958, 7)">
         <GetTo ZoneId="958" XYZ="194.816, -12.8414, 644.311" />
         <UseObject NpcId="2012001" XYZ="194.816, -12.8414, 644.311" Condition="not IsAetherCurrentCompleted(958, 7)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(958, 6)">
         <GetTo ZoneId="958" XYZ="382.184, 25.9005, -482.196" />
         <UseObject NpcId="2012005" XYZ="382.184, 25.9005, -482.196" Condition="not IsAetherCurrentCompleted(958, 6)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(958, 5)">
         <GetTo ZoneId="958" XYZ="-602.03, 34.3171, -325.853" />
         <UseObject NpcId="2012006" XYZ="-602.03, 34.3171, -325.853" Condition="not IsAetherCurrentCompleted(958, 5)" />
@@ -203,7 +191,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'Alluring Allag' to unlock Mare Lamentorum Aether Currents" />
         <If Condition="not HasQuest(69789)">
           <GetTo ZoneId="959" XYZ="-80.53382, -132.7896, -522.0748" />
-          <!-- Subzone="3966" Area=" -->
           <If Condition="IsQuestAcceptQualified(69789)">
             <PickupQuest QuestId="69789" NpcId="1041123" />
             <LLSmallTalk />
@@ -211,40 +198,35 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(69789) == 1">
           <GetTo ZoneId="959" XYZ="536.5048, 132.3637, 233.5986" />
-          <!-- Subzone="3964" Area=" -->
           <TalkTo NpcId="1041127" XYZ="537.3159, 132.4039, 233.814" QuestId="69789" StepId="1" />
         </If>
-        <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 0">
-          <GetTo ZoneId="959" XYZ="700.5245, 134.5686, 230.5932" />
-          <!-- Subzone="3965" Area=" -->
-          <TalkTo NpcId="2012338" XYZ="700.1906, 135.2101, 229.4803" QuestId="69789" StepId="2" />
-          <WaitWhile Condition="not GetQuestStep(69789) == 2 and not GetQuestById(69789).QuestI8A == 12" />
-        </If>
-        <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 17">
-          <GetTo ZoneId="959" XYZ="735.2055, 150.9361, 190.1665" />
-          <!-- Subzone="3965" Area=" -->
-          <UseObject NpcId="1041125" XYZ="735.5, 151.0801, 189.0134" BlacklistAfter="True" UseTimes="1" />
-          <WaitWhile Condition="GetQuestStep(69789) == 2 and not GetQuestById(69789).QuestI8A == 33" />
-        </If>
-        <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 33">
-          <GetTo ZoneId="959" XYZ="664.4351, 128.7616, 187.7081" />
-          <!-- Subzone="3965" Area=" -->
-          <TalkTo NpcId="1041124" XYZ="663.6301, 128.4896, 188.1895" QuestId="69789" StepId="2" />
-          <WaitWhile Condition="not GetQuestStep(69789) == 3" />
+        <If Condition="GetQuestStep(69789) == 2">
+          <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 0">
+            <GetTo ZoneId="959" XYZ="700.5245, 134.5686, 230.5932" />
+            <TalkTo NpcId="2012338" XYZ="700.1906, 135.2101, 229.4803" QuestId="69789" StepId="2" />
+            <WaitWhile Condition="not GetQuestStep(69789) == 2 and not GetQuestById(69789).QuestI8A == 12" />
+          </If>
+          <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 17">
+            <GetTo ZoneId="959" XYZ="735.2055, 150.9361, 190.1665" />
+            <UseObject NpcId="1041125" XYZ="735.5, 151.0801, 189.0134" BlacklistAfter="True" UseTimes="1" />
+            <WaitWhile Condition="GetQuestStep(69789) == 2 and not GetQuestById(69789).QuestI8A == 33" />
+          </If>
+          <If Condition="GetQuestStep(69789) == 2 and GetQuestById(69789).QuestI8A == 33">
+            <GetTo ZoneId="959" XYZ="664.4351, 128.7616, 187.7081" />
+            <TalkTo NpcId="1041124" XYZ="663.6301, 128.4896, 188.1895" QuestId="69789" StepId="2" />
+            <WaitWhile Condition="not GetQuestStep(69789) == 3" />
+          </If>
         </If>
         <If Condition="GetQuestStep(69789) == 3">
           <GetTo ZoneId="959" XYZ="539.0164, 132.4362, 236.2894" />
-          <!-- Subzone="3964" Area=" -->
           <WaitWhile Condition="not GetQuestStep(69789) == 4" />
         </If>
         <If Condition="GetQuestStep(69789) == 4">
           <GetTo ZoneId="959" XYZ="537.7601, 132.3741, 235.9429" />
-          <!-- Subzone="3964" Area=" -->
           <TalkTo NpcId="1041127" XYZ="537.3159, 132.4039, 233.814" QuestId="69789" StepId="4" />
         </If>
         <If Condition="GetQuestStep(69789) == 255">
           <GetTo ZoneId="959" XYZ="-80.21399, -132.7897, -521.5502" />
-          <!-- Subzone="3966" Area="" -->
           <TurnIn ItemId="2003261" QuestId="69789" NpcId="1041123" XYZ="-81.86469, -132.7433, -521.6602" />
           <LLSmallTalk />
         </If>
@@ -288,7 +270,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'Carrots: It's What's for Dinner' to unlock Mare Lamentorum Aether Currents" />
         <If Condition="not HasQuest(69777)">
           <GetTo ZoneId="959" XYZ="-287.4745, -143.5, -521.2815" />
-          <!-- Subzone="3968" Area="" -->
           <If Condition="IsQuestAcceptQualified(69777)">
             <PickupQuest QuestId="69777" NpcId="1039520" />
             <LLSmallTalk />
@@ -296,47 +277,65 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 0">
           <GetTo ZoneId="959" XYZ="-346.2328, -161.8501, -651.5731" />
-          <!-- Subzone="3968" Area="" -->
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-346.2328, -161.8501, -651.5731" End="-344.1151, -160.4042, -654.298" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-344.1151, -160.4042, -654.298" End="-338.9936, -155.9042, -646.7946" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-338.9936, -155.9042, -646.7946" End="-332.1223, -152.9042, -645.6963" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-332.1223, -152.9042, -645.6963" End="-329.6756, -151.2613, -656.1037" />
           <Dismount />
-          <RunCode Name="Carrot_of_happiness" />
-          <!-- <LLSendChat Say="carrot of happiness" NpcId="1041789" XYZ="-329.6756, -151.2613, -656.1037"/> -->
+          <If condition="IsChineseClient()">
+            <EmoteNPC Emote="/s å¼€å¿ƒèƒ¡èåœ" NpcId="1041789" XYZ="-329.6756, -151.2613, -656.1037" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 0" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsTCClient()">
+            <EmoteNPC Emote="/s carrot of happiness" NpcId="1041789" XYZ="-329.6756, -151.2613, -656.1037" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 0" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsGlobalClient()">
+            <EmoteNPC Emote="/s é–‹å¿ƒèƒ¡è˜¿è””" NpcId="1041789" XYZ="-329.6756, -151.2613, -656.1037" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 0" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
           <WaitWhile Condition="GetQuestStep(69777) == 1 and not GetQuestById(69777).QuestI8A == 1" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-329.6756, -151.2613, -656.1037" End="-322.0023, -161.1392, -634.4977" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
         </If>
         <If Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 1">
           <GetTo ZoneId="959" XYZ="-482.0173, -167.5, -545.6169" />
-          <!-- Subzone="3968" Area="" -->
           <Dismount />
-          <RunCode Name="Carrot_of_happiness" />
-          <!-- <LLSendChat Say="carrot of happiness" NpcId="1041790" XYZ="-482.0173, -167.5, -545.6169"/> -->
+          <If condition="IsChineseClient()">
+            <EmoteNPC Emote="/s å¼€å¿ƒèƒ¡èåœ" NpcId="1041790" XYZ="-482.0173, -167.5, -545.6169" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 1" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsTCClient()">
+            <EmoteNPC Emote="/s carrot of happiness" NpcId="1041790" XYZ="-482.0173, -167.5, -545.6169" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 1" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsGlobalClient()">
+            <EmoteNPC Emote="/s é–‹å¿ƒèƒ¡è˜¿è””" NpcId="1041790" XYZ="-482.0173, -167.5, -545.6169" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 1" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
           <WaitWhile Condition="GetQuestStep(69777) == 1 and not GetQuestById(69777).QuestI8A == 2" />
           <WaitTimer WaitTime="10" />
         </If>
         <If Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 2">
           <GetTo ZoneId="959" XYZ="-441.1549, -168, -418.4973" />
           <!-- Subzone="3968" Area="" -->
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-441.1549, -168, -418.4973" End="-432.1943, -162.0541, -409.2291" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-432.1943, -162.0541, -409.2291" End="-425.5305, -159.0541, -409.0136" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-425.5305, -159.0541, -409.0136" End="-409.507, -158.8891, -428.4722" />
           <Dismount />
-          <RunCode Name="Carrot_of_happiness" />
-          <!-- <LLSendChat Say="carrot of happiness" NpcId="1041791" XYZ="-409.507, -158.8891, -428.4722"/> -->
+          <If condition="IsChineseClient()">
+            <EmoteNPC Emote="/s å¼€å¿ƒèƒ¡èåœ" NpcId="1041791" XYZ="-409.507, -158.8891, -428.4722" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 2" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsTCClient()">
+            <EmoteNPC Emote="/s carrot of happiness" NpcId="1041791" XYZ="-409.507, -158.8891, -428.4722" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 2" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsGlobalClient()">
+            <EmoteNPC Emote="/s é–‹å¿ƒèƒ¡è˜¿è””" NpcId="1041791" XYZ="-409.507, -158.8891, -428.4722" Condition="GetQuestStep(69777) == 1 and GetQuestById(69777).QuestI8A == 2" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
           <WaitWhile Condition="not GetQuestStep(69777) == 255" />
           <LLClimbHill Distance="2.5" SpamJump="True" Start="-409.507, -158.8891, -428.4722" End="-393.6332, -168, -430.6089" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
         </If>
         <If Condition="GetQuestStep(69777) == 255">
           <GetTo ZoneId="959" XYZ="-284.5599, -143.5, -520.0661" />
-          <!-- Subzone="3968" Area="" -->
           <TurnIn QuestId="69777" NpcId="1039520" XYZ="-287.8615, -143.5, -520.2869" />
           <LLSmallTalk />
         </If>
@@ -348,7 +347,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'True Carrot Crimes' to unlock Mare Lamentorum Aether Currents" />
         <If Condition="not HasQuest(69776)">
           <GetTo ZoneId="959" XYZ="-302.0262, -144, -491.7879" />
-          <!-- Subzone="3968" Area="" -->
           <If Condition="IsQuestAcceptQualified(69776)">
             <PickupQuest QuestId="69776" NpcId="1037867" />
             <LLSmallTalk />
@@ -356,13 +354,11 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(69776) == 1">
           <GetTo ZoneId="959" XYZ="-558.4612, -168, -475.4071" />
-          <!-- Subzone="3968" Area="" -->
           <TalkTo NpcId="1041132" XYZ="-558.1293, -168, -475.3338" QuestId="69776" StepId="1" />
           <WaitWhile Condition="not GetQuestStep(69776) == 255" />
         </If>
         <If Condition="GetQuestStep(69776) == 255">
           <GetTo ZoneId="959" XYZ="-300.8365, -144, -491.9566" />
-          <!-- Subzone="3968" Area="" -->
           <TurnIn QuestId="69776" NpcId="1037867" XYZ="-301.6251, -144, -491.1422" />
           <LLSmallTalk />
         </If>
@@ -378,7 +374,7 @@ Author: Angles24, Manta
 
       <If Condition="not IsAetherCurrentCompleted(959, 7)">
         <GetTo ZoneId="959" XYZ="-450.3835, -168, -621.6236" />
-        <RunCode name="TurnOffMount" />
+        <BotSettings EnableMount="0" />
         <Dismount />
         <!--<ClimbSpiral
         XYZ="-449.92, -168, -623.87" StepNum="7" StartHeading="2.79" Radians="0.125" StepDistance="6.1" StepHeight="1.468" Timeout="15000" />-->
@@ -388,19 +384,19 @@ Author: Angles24, Manta
         <GetTo ZoneId="959" XYZ="-482.744, -154.954, -595.709" />
         <UseObject NpcId="2012011" XYZ="-482.744, -154.954, -595.709" Condition="not IsAetherCurrentCompleted(959, 7)" />
         <LLClimbHill Distance="2.5" Start="-480.96, -154.95, -601.64" End="-471.15, -168.00, -600.00" SpamJump="true" />
-        <RunCode name="TurnOnMount" />
+        <BotSettings EnableMount="1" />
       </If>
 
 
       <If Condition="not IsAetherCurrentCompleted(959, 6)">
         <GetTo ZoneId="959" XYZ="302.1018, -144, -557.6024" />
-        <RunCode name="TurnOffMount" />
+        <BotSettings EnableMount="0" />
         <Dismount />
         <LLClimbHill Distance="2.5" Start="302.1018, -144, -557.6024" End="319.1552, -156.2334, -574.8775" />
         <LLClimbHill Distance="2.5" Start="313.8791, -156.2261, -589.9079" End="316.401, -154.978, -595.519" />
         <UseObject NpcId="2012012" XYZ="316.401, -154.978, -595.519" Condition="not IsAetherCurrentCompleted(959, 6)" />
         <LLClimbHill Distance="2.5" Start="316.401, -154.978, -595.519" End="340.8135, -168, -607.7444" />
-        <RunCode name="TurnOnMount" />
+        <BotSettings EnableMount="1" />
       </If>
 
 
@@ -470,7 +466,6 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(69793) in [1, 2,]">
           <GetTo ZoneId="957" XYZ="-26.21783, 26.60704, -178.7249" />
-          <!-- Area="Thavnair" -->
           <TalkTo NpcId="1040862" XYZ="-27.02374, 26.58384, -178.6375" QuestId="69793" StepId="1" />
         </If>
         <While Condition="GetQuestStep(69793) == 2">
@@ -478,7 +473,7 @@ Author: Angles24, Manta
           <If Condition="ObjectExistsWithId(1040862) and GameObjectManager.GetObjectByNPCId(1040862).IsTargetable">
             <TalkTo NpcId="1040862" XYZ="-27.02374, 26.58384, -178.6375" QuestId="69793" StepId="2" />
           </If>
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <WaitTimer WaitTime="4" />
           <MoveTo XYZ="13.94738, 25.79158, -183.5201" />
@@ -492,7 +487,7 @@ Author: Angles24, Manta
           <MoveTo XYZ="293.5972, 9.100899, -221.1982" />
           <WaitTimer WaitTime="4" />
           <MoveTo XYZ="334.676, 13.0769, -239.7956" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
           <TalkTo NpcId="2012261" XYZ="334.676, 13.0769, -239.7956" QuestId="69793" StepId="2" />
         </While>
         <If Condition="GetQuestStep(69793) == 255">
@@ -543,7 +538,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'Steppe Child' to unlock Thavnair Aether Currents" />
         <If Condition="not HasQuest(70025)">
           <GetTo ZoneId="957" XYZ="202.4384, 1.769939, 726.8918" />
-          <!-- Subzone="3880" Area="Thavnair (West)" -->
           <If Condition="IsQuestAcceptQualified(70025)">
             <PickupQuest QuestId="70025" NpcId="1041331" />
             <LLSmallTalk />
@@ -551,37 +545,30 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(70025) == 1">
           <GetTo ZoneId="957" XYZ="191.545, 14.11859, 490.847" />
-          <!-- Subzone="3880" Area="Thavnair (West)" -->
           <TalkTo NpcId="1041333" XYZ="190.6919, 14.11859, 489.4635" QuestId="70025" StepId="1" />
         </If>
         <If Condition="GetQuestStep(70025) == 2">
           <GetTo ZoneId="957" XYZ="124.4656, 16.76197, 537.5046" />
-          <!-- Subzone="3879" Area="Thavnair (West)" -->
           <TalkTo NpcId="1041334" XYZ="123.125, 16.52279, 537.8042" QuestId="70025" StepId="2" />
         </If>
         <If Condition="GetQuestStep(70025) == 2">
           <GetTo ZoneId="957" XYZ="166.8809, 41.56153, 409.7892" />
-          <!-- Subzone="3879" Area="Thavnair (West)" -->
           <TalkTo NpcId="1041338" XYZ="167.1626, 41.61481, 409.5369" QuestId="70025" StepId="2" />
         </If>
         <If Condition="GetQuestStep(70025) == 3">
           <GetTo ZoneId="957" XYZ="166.8462, 41.55914, 409.7457" />
-          <!-- Subzone="3879" Area="Thavnair (West)" -->
           <WaitWhile Condition="not GetQuestStep(70025) == 4" />
         </If>
         <If Condition="GetQuestStep(70025) == 4">
           <GetTo ZoneId="957" XYZ="166.6691, 41.55793, 409.3247" />
-          <!-- Subzone="3879" Area="Thavnair (West)" -->
           <TalkTo NpcId="1041338" XYZ="167.1626, 41.61481, 409.5369" QuestId="70025" StepId="4" />
         </If>
         <If Condition="GetQuestStep(70025) == 5">
           <GetTo ZoneId="957" XYZ="123.7382, 16.77437, 536.9589" />
-          <!-- Subzone="3879" Area="Thavnair (West)" -->
           <TalkTo NpcId="1041334" XYZ="123.125, 16.52279, 537.8042" QuestId="70025" StepId="5" />
         </If>
         <If Condition="GetQuestStep(70025) == 255">
           <GetTo ZoneId="957" XYZ="194.0885, 14.1186, 487.1321" />
-          <!-- Subzone="3880" Area="Thavnair (West)" -->
           <TurnIn QuestId="70025" NpcId="1041332" XYZ="194.6898, 14.1186, 485.9845" />
           <LLSmallTalk />
         </If>
@@ -593,21 +580,15 @@ Author: Angles24, Manta
         <GetTo ZoneId="957" XYZ="-176.104, 21.5304, 537.835" />
         <UseObject NpcId="2011990" XYZ="-176.104, 21.5304, 537.835" Condition="not IsAetherCurrentCompleted(957, 8)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(957, 7)">
         <GetTo ZoneId="957" XYZ="-43.1, 99.5, -713.7" />
         <LLClimbHill Distance="2.5" Start="-43.1, 99.5, -713.7" End="-49.2675, 94.0719, -710.757" />
         <UseObject NpcId="2011991" XYZ="-49.2675, 94.0719, -710.757" Condition="not IsAetherCurrentCompleted(957, 7)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(957, 6)">
         <GetTo ZoneId="957" XYZ="118.474, 4.9335, -343.866" />
         <UseObject NpcId="2011995" XYZ="118.474, 4.9335, -343.866" Condition="not IsAetherCurrentCompleted(957, 6)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(957, 5)">
         <GetTo ZoneId="957" XYZ="542.8, 15.1, -149.3" />
         <LLClimbHill Distance="2.5" Start="542.8, 15.1, -149.3" End="550.018, 25.4763, -159.076" />
@@ -631,7 +612,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'Touring Anagnorisis, Part I' to unlock Elpis Aether Currents" />
         <If Condition="not HasQuest(70043)">
           <GetTo ZoneId="961" XYZ="165.1098, 9.457411, 235.0082" />
-          <!-- Subzone="3928" Area="" -->
           <If Condition="IsQuestAcceptQualified(70043)">
             <PickupQuest QuestId="70043" NpcId="1041328" />
             <LLSmallTalk />
@@ -639,38 +619,32 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(70043) == 1">
           <GetTo ZoneId="961" XYZ="233.529, 8.279062, 271.0337" />
-          <!-- Subzone="3928" Area="" -->
           <TalkTo NpcId="1041329" XYZ="233.9971, 8.289929, 270.7103" QuestId="70043" StepId="1" />
         </If>
         <If Condition="GetQuestStep(70043) == 2">
           <GetTo ZoneId="961" XYZ="233.529, 8.279062, 271.0337" />
-          <!-- Subzone="3928" Area="" -->
           <TalkTo NpcId="1041329" XYZ="233.9971, 8.289929, 270.7103" QuestId="70043" StepId="2" />
         </If>
         <If Condition="GetQuestStep(70043) == 3 and GetQuestById(70043).QuestI8A == 0">
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <WaitTimer WaitTime="3" />
           <GetTo ZoneId="961" XYZ="116.2392, 7.385857, 304.5458" />
-          <!-- Subzone="3928" Area="" -->
           <TalkTo NpcId="1037947" XYZ="115.2819, 7.385857, 306.1111" QuestId="70043" StepId="3" />
         </If>
         <If Condition="GetQuestStep(70043) == 3 and GetQuestById(70043).QuestI8A == 17">
           <GetTo ZoneId="961" XYZ="143.2876, 8.043523, 204.1557" />
-          <!-- Subzone="3928" Area="" -->
           <TalkTo NpcId="1037945" XYZ="144.7928, 8.025643, 202.4719" QuestId="70043" StepId="3" />
         </If>
         <If Condition="GetQuestStep(70043) == 3 and GetQuestById(70043).QuestI8A == 33">
           <GetTo ZoneId="961" XYZ="180.5611, 10.38586, 112.5772" />
-          <!-- Subzone="3928" Area="" -->
           <TalkTo NpcId="1037962" XYZ="180.8346, 10.38586, 113.3593" QuestId="70043" StepId="3" />
         </If>
         <If Condition="GetQuestStep(70043) == 255">
           <GetTo ZoneId="961" XYZ="165.2296, 9.457411, 235.5636" />
-          <!-- Subzone="3928" Area="" -->
           <TurnIn QuestId="70043" NpcId="1041328" XYZ="166.3995, 9.457411, 236.3469" />
           <LLSmallTalk />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
         </If>
       </If>
 
@@ -687,7 +661,6 @@ Author: Angles24, Manta
         </If>
         <While Condition="GetQuestStep(69824) == 1">
           <GetTo ZoneId="961" XYZ="-614.5603, -22.39482, 510.7697" />
-          <!-- Subzone="3929" Area="" -->
           <TalkTo InteractDistance="0.5" NpcId="1041141" XYZ="-614.313, -22.39482, 509.7277" UseTimes="1" BlacklistAfter="True" />
           <WaitTimer WaitTime="2" />
           <MoveTo XYZ="-654.0692, -22.39482, 501.2624" Distance="0.5" />
@@ -706,17 +679,14 @@ Author: Angles24, Manta
         </While>
         <If Condition="GetQuestStep(69824) == 2">
           <GetTo ZoneId="961" XYZ="-836.1776, -39.54974, 518.0913" />
-          <!-- Subzone="3928" Area="" -->
           <WaitWhile Condition="not GetQuestStep(69824) == 3" />
         </If>
         <If Condition="GetQuestStep(69824) == 3">
           <GetTo ZoneId="961" XYZ="-821.2098, -38.7635, 506.9723" />
-          <!-- Subzone="3925" Area="" -->
           <TalkTo NpcId="1041137" XYZ="-819.6994, -38.65795, 506.4315" QuestId="69824" StepId="3" />
         </If>
         <If Condition="GetQuestStep(69824) == 255">
           <GetTo ZoneId="961" XYZ="-612.846, -22.39482, 510.5675" />
-          <!-- Subzone="3929" Area="" -->
           <TurnIn QuestId="69824" NpcId="1037969" XYZ="-611.902, -22.39482, 510.4294" />
           <LLSmallTalk />
         </If>
@@ -735,17 +705,14 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(70047) == 1">
           <GetTo ZoneId="961" XYZ="-320.4712, 147.4447, -31.5424" />
-          <!-- Subzone="3934" Area="" -->
           <WaitWhile Condition="not GetQuestStep(70047) == 2" />
         </If>
         <If Condition="GetQuestStep(70047) == 2">
           <GetTo ZoneId="961" XYZ="-316.2496, 147.3616, -28.97072" />
-          <!-- Subzone="3934" Area="" -->
           <TalkTo NpcId="1040888" XYZ="-320.0885, 147.4287, -30.59442" QuestId="70047" StepId="2" />
         </If>
         <If Condition="GetQuestStep(70047) == 255">
           <GetTo ZoneId="961" XYZ="-638.0696, 162.3051, -189.1916" />
-          <!-- Subzone="3938" Area="" -->
           <TurnIn QuestId="70047" NpcId="1041369" XYZ="-639.8566, 162.3041, -189.4714" />
           <LLSmallTalk />
         </If>
@@ -757,7 +724,6 @@ Author: Angles24, Manta
         <LLToast message="Working on quest 'The Perks of Being a Lost Flower' to unlock Elpis Aether Currents" />
         <If Condition="not HasQuest(69849)">
           <GetTo ZoneId="961" XYZ="-483.6748, 141.6104, -98.98308" />
-          <!-- Subzone="3934" Area="" -->
           <If Condition="IsQuestAcceptQualified(69849)">
             <PickupQuest QuestId="69849" NpcId="1041847" />
             <LLSmallTalk />
@@ -765,11 +731,10 @@ Author: Angles24, Manta
         </If>
         <If Condition="GetQuestStep(69849) == 1">
           <GetTo ZoneId="961" XYZ="259.7154, -10.17217, -95.59863" />
-          <!-- Subzone="3925" Area="" -->
           <TalkTo SelectStringOverride="0" NpcId="1041848" XYZ="258.3505, -10.14066, -95.71985" QuestId="69849" StepId="1" />
         </If>
         <If Condition="GetQuestStep(69849) == 2">
-          <RunCode name="TurnOffMount" />
+          <BotSettings EnableMount="0" />
           <Dismount />
           <MoveTo XYZ="239.4212, -10.20134, -103.5353" Distance="0.5" />
           <WaitTimer WaitTime="1" />
@@ -785,11 +750,10 @@ Author: Angles24, Manta
           <WaitTimer WaitTime="1" />
           <MoveTo XYZ="-176.1846, 12.13739, 7.393556 " Distance="0.5" />
           <TalkTo NpcId="1041848" XYZ="-174.6134, 12.11427, 5.885252" QuestId="69849" StepId="2" />
-          <RunCode name="TurnOnMount" />
+          <BotSettings EnableMount="1" />
         </If>
         <If Condition="GetQuestStep(69849) == 255">
           <GetTo ZoneId="961" XYZ="-483.2541, 141.5188, -99.38105" />
-          <!-- Subzone="3934" Area="" -->
           <TurnIn QuestId="69849" NpcId="1041847" XYZ="-484.2146, 141.8679, -97.21527" />
           <LLSmallTalk />
         </If>
@@ -801,14 +765,10 @@ Author: Angles24, Manta
         <GetTo ZoneId="961" XYZ="628.239, 8.31683, 107.902" />
         <UseObject NpcId="2012020" XYZ="628.239, 8.31683, 107.902" Condition="not IsAetherCurrentCompleted(961, 8)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(961, 7)">
         <GetTo ZoneId="961" XYZ="-754.753, -36.0114, 411.134" />
         <UseObject NpcId="2012021" XYZ="-754.753, -36.0114, 411.134" Condition="not IsAetherCurrentCompleted(961, 7)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(961, 6)">
         <GetTo ZoneId="961" XYZ="-482.1349, 157.9294, -365.1474" />
         <!-- Passage to Ethoseletikos Boreas -->
@@ -816,8 +776,6 @@ Author: Angles24, Manta
         <GetTo ZoneId="961" XYZ="-402.921, 327.757, -691.323" />
         <UseObject NpcId="2012025" XYZ="-402.921, 327.757, -691.323" Condition="not IsAetherCurrentCompleted(961, 6)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(961, 5)">
         <GetTo ZoneId="961" XYZ="-555.623, 158.118, 172.429" />
         <UseObject NpcId="2012026" XYZ="-555.623, 158.118, 172.429" Condition="not IsAetherCurrentCompleted(961, 5)" />
@@ -947,20 +905,14 @@ Author: Angles24, Manta
         <GetTo ZoneId="956" XYZ="346.529, 209.352, -767.739" />
         <UseObject NpcId="2011980" XYZ="346.529, 209.352, -767.739" Condition="not IsAetherCurrentCompleted(956, 8)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(956, 7)">
         <GetTo ZoneId="956" XYZ="748.562, 106.712, 66.7589" />
         <UseObject NpcId="2011981" XYZ="748.562, 106.712, 66.7589" Condition="not IsAetherCurrentCompleted(956, 7)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(956, 6)">
         <GetTo ZoneId="956" XYZ="-547.726, -18.0226, 661.873" />
         <UseObject NpcId="2011985" XYZ="-547.726, -18.0226, 661.873" Condition="not IsAetherCurrentCompleted(956, 6)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(956, 5)">
         <GetTo ZoneId="956" XYZ="-141.4134, -25.05096, 713.8115" />
         <LLClimbHill Start="-141.4134, -25.05096, 713.8115" End="-136.0235, -19.54328, 697.3575" Distance="2.5" />
@@ -1088,20 +1040,14 @@ Author: Angles24, Manta
         <GetTo ZoneId="960" XYZ="-333.54, 270.851, -361.487" />
         <UseObject NpcId="2012030" XYZ="-333.54, 270.851, -361.487" Condition="not IsAetherCurrentCompleted(960, 8)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(960, 7)">
         <GetTo ZoneId="960" XYZ="13.118, 275.566, -756.396" />
         <UseObject NpcId="2012031" XYZ="13.118, 275.566, -756.396" Condition="not IsAetherCurrentCompleted(960, 7)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(960, 6)">
         <GetTo ZoneId="960" XYZ="661.785, 439.977, 411.757" />
         <UseObject NpcId="2012032" XYZ="661.785, 439.977, 411.757" Condition="not IsAetherCurrentCompleted(960, 6)" />
       </If>
-
-
       <If Condition="not IsAetherCurrentCompleted(960, 5)">
         <GetTo ZoneId="960" XYZ="539.271, 438.001, 239.404" />
         <UseObject NpcId="2012033" XYZ="539.271, 438.001, 239.404" Condition="not IsAetherCurrentCompleted(960, 5)" />
@@ -1117,40 +1063,5 @@ Author: Angles24, Manta
   </Order>
 
   <CodeChunks>
-    <CodeChunk Name="TurnOffMount">
-      <![CDATA[
-        ff14bot.Settings.CharacterSettings.Instance.UseMount = false;
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="TurnOnMount">
-      <![CDATA[
-        ff14bot.Settings.CharacterSettings.Instance.UseMount = true;
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="Carrot_of_happiness">
-      <![CDATA[
-        await Coroutine.Sleep(3000);
-
-        #if !RB_CN && !RB_TC
-        ChatManager.SendChat("/s carrot of happiness");
-        #endif
-        #if RB_CN
-        ChatManager.SendChat("/s å¼€å¿ƒèƒ¡èåœ");
-        #endif
-        #if RB_TC
-        ChatManager.SendChat("/s é–‹å¿ƒèƒ¡è˜¿è””");
-        #endif
-
-        await Coroutine.Wait(10000, () => Talk.DialogOpen);
-        await Buddy.Coroutines.Coroutine.Sleep(500);
-        while (Talk.DialogOpen)
-        {
-          Talk.Next();
-          await Coroutine.Wait(1000, () => !Talk.DialogOpen);
-          await Coroutine.Wait(1000, () => Talk.DialogOpen);
-          await Coroutine.Yield();
-        }
-      ]]>
-    </CodeChunk>
   </CodeChunks>
 </Profile>
