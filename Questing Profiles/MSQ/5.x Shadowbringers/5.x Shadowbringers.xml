@@ -951,11 +951,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<TurnIn QuestId="68835" NpcId="1029015" XYZ="2.243042, 0, -4.104736" />
 				</If>
 			</If>
-
-			<If Condition="IsQuestCompleted(68835)">
-				<!-- Amh Araeng -->
-			</If>
-
 		</If>
 
 		<!-- The Lightwardens (Level 71) -->
@@ -1879,10 +1874,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<TurnIn QuestId="68856" NpcId="1029583" XYZ="-378.5001, 49.03859, 468.6503" />
 				</If>
 			</If>
-
-			<If Condition="IsQuestCompleted(68856)">
-			</If>
-
 		</If>
 
 		<!-- The Wheel Turns (Level 73) -->
@@ -2840,10 +2831,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<TurnIn QuestId="68876" NpcId="1029557" XYZ="848.7831, -65.42493, -394.6746" />
 				</If>
 			</If>
-
-			<If Condition="IsQuestCompleted(68876)">
-			</If>
-
 		</If>
 
 		<!-- Bearing With It (Level 75) -->
@@ -3254,11 +3241,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<TurnIn QuestId="69148" NpcId="1029637" XYZ="-483.238, 45.47338, -211.3222" />
 				</If>
 			</If>
-
-			<If Condition="IsQuestCompleted(69148)">
-
-			</If>
-
 		</If>
 
 		<!-- On Track (Level 76) -->
@@ -3323,7 +3305,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<AutoInventoryEquip />
 				</If>
 			</If>
-
 		</If>
 
 		<!-- Down for Maintenance (Level 76) -->
@@ -3386,7 +3367,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<AutoInventoryEquip />
 				</If>
 			</If>
-
 		</If>
 
 		<!-- A Convenient Distraction (Level 77) -->
@@ -3488,7 +3468,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<TurnIn ItemId="2002563" QuestId="69153" NpcId="1029759" XYZ="-342.3362, 19.00405, 77.04285" RewardSlot="3" />
 				</If>
 			</If>
-
 		</If>
 
 		<!-- Have a Heart (Level 77) -->
@@ -5613,11 +5592,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<UseInventoryItem ItemIds="27904, 23992" />
 				</If>
 			</If>
-
-			<If Condition="IsQuestCompleted(69190)">
-				<!-- The Tempest -->
-			</If>
-
 		</If>
 
 		<!-- Shaken Resolve (Level 80) -->

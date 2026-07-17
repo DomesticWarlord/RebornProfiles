@@ -848,9 +848,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<GetTo ZoneId="1185" XYZ="-193.6689, 120.795235, -357.33368" />
 				</If>
 				<SimpleDuty InteractNpcId="1046681" XYZ="-194.78143, 120.795235, -359.24316" QuestId="70419" StepId="2">
-					<Hotspots>
-						<Hotspot Radius="90" XYZ="0, 0, 64" name="Name" />
-					</Hotspots>
+					<HotSpots>
+						<HotSpot Radius="90" XYZ="0, 0, 64" name="Name" />
+					</HotSpots>
 					<TargetMobs>
 						<TargetMob Id="12675" Weight="1" />
 					</TargetMobs>
@@ -1683,9 +1683,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<UserDialog DialogText="Please manually complete the solo duty." QuestId="70444" StepId="3" />
 				</If>
 				<SimpleDuty InteractNpcId="1047682" XYZ="353.56665, -113.97447, 597.0397" QuestId="70444" StepId="3">
-					<Hotspots>
-						<Hotspot Radius="90" XYZ="341.6749, -113.97447, 599.0894" name="Name" />
-					</Hotspots>
+					<HotSpots>
+						<HotSpot Radius="90" XYZ="341.6749, -113.97447, 599.0894" name="Name" />
+					</HotSpots>
 					<TargetMobs>
 						<TargetMob Id="12734" Weight="1" /> <!-- Gulool Ja Ja's Glory -->
 						<TargetMob Id="12738" Weight="10" /> <!-- Oath of Fire -->
@@ -2954,11 +2954,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<If condition="IsGlobalClient()">
 					<UserDialog DialogText="Please manually complete the solo duty.\nIn this solo duty you'll want to run forward, talk to a few NPCs and then you'll need to fight two small bosses." QuestId="70478" StepId="2" />
 				</If>
-
 				<SimpleDuty InteractNpcId="1048122" XYZ="647.60803, 145.90308, 679.1333" QuestId="70478" StepId="2">
-					<Hotspots>
-						<Hotspot Radius="90" XYZ="0, 0, 64" name="Name" />
-					</Hotspots>
+					<HotSpots>
+						<HotSpot Radius="90" XYZ="0, 0, 64" name="Name" />
+					</HotSpots>
 					<TargetMobs>
 						<TargetMob Id="12675" Weight="1" /> <!-- Gulool Ja Ja -->
 					</TargetMobs>
