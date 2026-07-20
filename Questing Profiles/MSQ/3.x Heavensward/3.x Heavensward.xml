@@ -4268,15 +4268,12 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         <TalkTo NpcId="1017732" XYZ="-74.99817, 64.60398, -289.5399" QuestId="67880" StepId="2" />
       </If>
       <If Condition="GetQuestStep(67880) == 3">
-        <GetTo ZoneId="180" XYZ="-29.22101, 57.16147, -235.4925" />
-        <TalkTo NpcId="1017733" XYZ="-29.22101, 57.16147, -235.4925" QuestId="67880" StepId="3" />
+        <GetTo ZoneId="180" XYZ="-24.75535, 56.76782, -235.75026" />
+        <TalkTo NpcId="1017733" XYZ="-29.221008, 57.161564, -235.4925" QuestId="67880" StepId="3" />
       </If>
       <If Condition="GetQuestStep(67880) == 4">
-        <GetTo ZoneId="180" XYZ="-107.3809, 72.43208, -284.2345" />
-        <MoveTo UseMesh="False" XYZ="-106.4005, 67.54417, -273.4146" />
+        <GetTo ZoneId="180" XYZ="-105.4552, 67.90736, -277.7295" />
         <TalkTo NpcId="1017734" XYZ="-105.4552, 67.90736, -277.7295" QuestId="67880" StepId="4" />
-        <MoveTo XYZ="-103.7415, 68.16951, -266.313" />
-        <MoveTo UseMesh="False" XYZ="-97.40155, 64.07565, -258.3614" />
       </If>
       <If Condition="GetQuestStep(67880) == 5">
         <GetTo ZoneId="180" XYZ="-39.23096, 64.43301, -226.9474" />
@@ -4852,7 +4849,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 	        return false;
 			]]>
 		</CodeChunk>
-		<CodeChunk Type="Hook" Name="ClickCurrents">
+    <CodeChunk Type="Hook" Name="ClickCurrents">
 			<![CDATA[
         uint[] npcIds =
         {
