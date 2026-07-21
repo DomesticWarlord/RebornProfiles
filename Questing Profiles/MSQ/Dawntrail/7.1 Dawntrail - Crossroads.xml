@@ -297,28 +297,20 @@
           <PickupQuest QuestId="70786" NpcId="1052261" />
         </If>
       </If>
-      <If Condition="GetQuestStep(70786) == 1">
+      <If Condition="HasQuest(70786) and GetQuestStep(70786) &lt; 4">
         <!-- Get To om -->
         <If condition="not IsOnMap(1207)">
           <GetTo ZoneId="1186" XYZ="301.3448, 51.199978, 201.38959" />
           <UseTransport NpcId="1048083" InteractDistance="3.0" XYZ="302.05237, 51.199978, 205.0354" />
         </If>
+      </If>
+      <If Condition="GetQuestStep(70786) == 1">
         <TalkTo NpcId="1052521" XYZ="-1.8463745, -3.4458935E-08, 5.8441772" QuestId="70786" StepId="1" />
       </If>
       <If Condition="GetQuestStep(70786) == 2">
-        <!-- Get To om -->
-        <If condition="not IsOnMap(1207)">
-          <GetTo ZoneId="1186" XYZ="301.3448, 51.199978, 201.38959" />
-          <UseTransport NpcId="1048083" InteractDistance="3.0" XYZ="302.05237, 51.199978, 205.0354" />
-        </If>
         <TalkTo NpcId="1052269" XYZ="-2.456726, -7.2107476E-08, 8.987488" QuestId="70786" StepId="2" />
       </If>
       <If Condition="GetQuestStep(70786) == 3">
-        <!-- Get To om -->
-        <If condition="not IsOnMap(1207)">
-          <GetTo ZoneId="1186" XYZ="301.3448, 51.199978, 201.38959" />
-          <UseTransport NpcId="1048083" InteractDistance="3.0" XYZ="302.05237, 51.199978, 205.0354" />
-        </If>
         <TalkTo NpcId="1052271" XYZ="-0.41204834, -3.9115548E-08, 6.240906" QuestId="70786" StepId="3" />
       </If>
       <If Condition="GetQuestStep(70786) == 4">
