@@ -66,11 +66,11 @@
 				</Grind>
 			</If>
 			<If Condition="not HuntGCEntryCompleted(1,5)">
-				<GetTo ZoneId="139" XYZ="-462.2217, 27.2155, 67.64117" /> <!-- Grinding Area -->
+				<GetTo ZoneId="139" XYZ="-399.11478, 36.640976, 23.805714" />
 				<Grind while="not HuntGCEntryCompleted(1,5)">
 					<GrindArea name="The_Immortal_Flames_Entry_06">
 						<Hotspots>
-							<Hotspot Radius="250" XYZ="-422.3268, 35.46342, 33.16998" name="Kobold Footmen" />
+							<Hotspot Radius="250" XYZ="-399.11478, 36.640976, 23.805714" name="Kobold Footmen" />
 						</Hotspots>
 						<TargetMobs>
 							<TargetMob Id="380" /> <!-- Kobold Footman -->
@@ -81,11 +81,11 @@
 				</Grind>
 			</If>
 			<If Condition="not HuntGCEntryCompleted(1,6)">
-				<GetTo ZoneId="139" XYZ="-462.2217, 27.2155, 67.64117" /> <!-- Grinding Area -->
+				<GetTo ZoneId="139" XYZ="-399.11478, 36.640976, 23.805714" /> <!-- Grinding Area -->
 				<Grind while="not HuntGCEntryCompleted(1,6)">
 					<GrindArea name="The_Immortal_Flames_Entry_07">
 						<Hotspots>
-							<Hotspot Radius="250" XYZ="-422.3268, 35.46342, 33.16998" name="Kobold Pickmen" />
+							<Hotspot Radius="250" XYZ="-399.11478, 36.640976, 23.805714" name="Kobold Pickmen" />
 						</Hotspots>
 						<TargetMobs>
 							<TargetMob Id="370" /> <!-- Kobold Pickman -->
