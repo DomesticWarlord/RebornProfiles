@@ -141,8 +141,12 @@
 				</Grind>
 			</If>
 			<If Condition="not HuntGCEntryCompleted(1,1) or not HuntGCEntryCompleted(1,2) or not HuntGCEntryCompleted(1,3)">
-				<RunCode Name="The_Order_of_the_Twin_Adder_Rank_1" />
-				<StopBot />
+				<If condition="Core.Player.ClassLevel &gt; 59">
+					<LoadPFDungeon ProfileName="Halatali" QueueType="1" />
+				</If>
+				<If condition="Core.Player.ClassLevel &lt; 60">
+					<LoadPFDungeon ProfileName="Halatali" QueueType="2" />
+				</If>
 			</If>
 		</If>
 
@@ -274,8 +278,12 @@
 				</Grind>
 			</If>
 			<If Condition="not HuntGCEntryCompleted(2,3) or not HuntGCEntryCompleted(2,4)">
-				<RunCode Name="The_Order_of_the_Twin_Adder_Rank_2" />
-				<StopBot />
+				<If condition="Core.Player.ClassLevel &gt; 59">
+					<LoadPFDungeon ProfileName="The Sunken Temple of Qarn" QueueType="1" />
+				</If>
+				<If condition="Core.Player.ClassLevel &lt; 60">
+					<LoadPFDungeon ProfileName="The Sunken Temple of Qarn" QueueType="2" />
+				</If>
 			</If>
 		</If>
 
@@ -392,8 +400,12 @@
 				</Grind>
 			</If>
 			<If Condition="not HuntGCEntryCompleted(3,7) or not HuntGCEntryCompleted(3,8) or not HuntGCEntryCompleted(3,9)">
-				<RunCode Name="The_Order_of_the_Twin_Adder_Rank_3" />
-				<StopBot />
+				<If condition="Core.Player.ClassLevel &gt; 59">
+					<LoadPFDungeon ProfileName="The Wanderer's Palace" QueueType="1" />
+				</If>
+				<If condition="Core.Player.ClassLevel &lt; 60">
+					<LoadPFDungeon ProfileName="The Wanderer's Palace" QueueType="2" />
+				</If>
 			</If>
 		</If>
 
