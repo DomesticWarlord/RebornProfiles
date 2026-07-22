@@ -1733,6 +1733,14 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="1189" XYZ="217.09239, -161.3587, 417.37332" />
 				<HandOver ItemId="2003498" NpcId="1047644" XYZ="213.8551, -161.35498, 417.01367" QuestId="70442" StepId="3" />
 			</If>
+			<If Condition="GetQuestStep(70442) == 4">
+				<GetTo ZoneId="1189" XYZ="-11.4954195, -166.08884, 6.4444995" />
+				<UseObject NpcId="2013652" XYZ="-11.306946, -166.15558, 4.3792725" QuestId="70442" StepId="4" />
+			</If>
+			<If Condition="GetQuestStep(70442) == 255">
+				<GetTo ZoneId="1189" XYZ="-11.4954195, -166.08884, 6.4444995" />
+				<TurnIn QuestId="70442" NpcId="1047649" XYZ="-13.382202, -166.21887, 2.1209717" />
+			</If>
 		</If>
 
 		<If Condition="IsQuestCompleted(70442) and Core.Player.ClassLevel &gt; 94">
