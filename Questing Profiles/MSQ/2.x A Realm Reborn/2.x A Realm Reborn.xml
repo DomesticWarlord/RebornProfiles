@@ -425,8 +425,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(65737) and not IsQuestCompleted(65981) and not Core.Me.ClassLevel &gt; 4">
-            <UserDialog IsBotContinueAllowed="True" DialogText="In order to accept 'Chasing Shadows' you need to be at least class level 5" />
+          <If Condition="IsQuestCompleted(65737) and not Core.Me.ClassLevel &gt; 4">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 5" />
           </If>
 
           <!-- Chasing Shadows (Level 5) -->
@@ -564,8 +564,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(69391) and not IsQuestCompleted(65665) and not Core.Me.ClassLevel &gt; 8">
-            <UserDialog IsBotContinueAllowed="True" DialogText="In order to accept 'Spirithold Broken' you need to be at least class level 9" />
+          <If Condition="IsQuestCompleted(69391) and not Core.Me.ClassLevel &gt; 8">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 9" />
           </If>
 
           <!-- Spirithold Broken (Level 9) -->
@@ -627,8 +627,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(69391) and not IsQuestCompleted(65665) and not Core.Me.ClassLevel &gt; 9">
-            <UserDialog IsBotContinueAllowed="True" DialogText="In order to accept 'On to Bentbranch' you need to be at least class level 10" />
+          <If Condition="IsQuestCompleted(69391) and not Core.Me.ClassLevel &gt; 9">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 10" />
           </If>
 
           <!-- On to Bentbranch (Level 10) -->
@@ -834,8 +834,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(65923) and not IsQuestCompleted(65697) and not Core.Me.ClassLevel &gt; 13">
-            <UserDialog IsBotContinueAllowed="True" DialogText="In order to accept 'Leia's Legacy' you need to be at least class level 14" />
+          <If Condition="IsQuestCompleted(65923) and not Core.Me.ClassLevel &gt; 13">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 14" />
           </If>
 
           <!-- Leia's Legacy (Level 14) -->
@@ -1620,7 +1620,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(65856) and not IsQuestCompleted(66159) and not Core.Me.ClassLevel &gt; 9">
+          <If Condition="IsQuestCompleted(65856) and not Core.Me.ClassLevel &gt; 9">
             <Log Message="Running a few hunting logs to get us leveled for the next quest" />
             <If Condition="ClassName == ClassJobType.Gladiator">
               <If condition="not HuntSubEntryCompleted(1, ClassJobType.Gladiator, 0, 0)">
@@ -1709,8 +1709,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(65856) and not IsQuestCompleted(66159) and not Core.Me.ClassLevel &gt; 9">
-            <UserDialog IsBotContinueAllowed="True" DialogText="In order to accept 'Takin' What They're Givin' you need to be at least class level 10" />
+          <If Condition="IsQuestCompleted(65856) and not Core.Me.ClassLevel &gt; 9">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 10" />
           </If>
 
           <!-- Takin' What They're Givin' (Level 10) -->
@@ -2631,8 +2631,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(66004) and not IsQuestCompleted(66005) and not Core.Me.ClassLevel &gt; 8">
-            <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Just Deserts' you need to be at least class level 9" />
+          <If Condition="IsQuestCompleted(66004) and not Core.Me.ClassLevel &gt; 8">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 9" />
           </If>
 
           <!-- Just Deserts (Level 9) -->
@@ -2685,8 +2685,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(66005) and not IsQuestCompleted(65933) and not Core.Me.ClassLevel &gt; 9">
-            <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Sky-high' you need to be at least class level 10" />
+          <If Condition="IsQuestCompleted(66005) and not Core.Me.ClassLevel &gt; 9">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 10" />
           </If>
 
           <!-- Sky-high (Level 10) -->
@@ -2848,8 +2848,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
             </If>
           </If>
 
-          <If Condition="IsQuestCompleted(65949) and not IsQuestCompleted(65950) and not Core.Me.ClassLevel &gt; 13">
-            <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Victory in Peril' you need to be at least class level 14" />
+          <If Condition="IsQuestCompleted(65949) and not Core.Me.ClassLevel &gt; 13">
+            <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 14" />
           </If>
 
           <!-- Victory in Peril (Level 14) -->
@@ -3167,8 +3167,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66212) and not IsQuestCompleted(66213) and not Core.Me.ClassLevel &gt; 15">
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Fire in the Gloom' you need to be at least class level 16" />
+      <If Condition="IsQuestCompleted(66212) and not Core.Me.ClassLevel &gt; 15">
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 16" />
       </If>
 
       <!-- Fire in the Gloom (Level 16) -->
@@ -3355,9 +3355,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66154) and not IsQuestCompleted(66155) and not Core.Me.ClassLevel &gt; 17">
+      <If Condition="IsQuestCompleted(66154) and not Core.Me.ClassLevel &gt; 17">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 17" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'What Poor People Think' you need to be at least class level 18" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 18" />
       </If>
 
       <!-- What Poor People Think (Level 18) -->
@@ -3440,9 +3440,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66156) and not IsQuestCompleted(66157) and not Core.Me.ClassLevel &gt; 18">
+      <If Condition="IsQuestCompleted(66156) and not Core.Me.ClassLevel &gt; 18">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 18" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'For the Children' you need to be at least class level 19" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 19" />
       </If>
 
       <!-- For the Children (Level 19) -->
@@ -4114,9 +4114,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66246) and not IsQuestCompleted(66251) and not Core.Me.ClassLevel &gt; 20">
+      <If Condition="IsQuestCompleted(66246) and not Core.Me.ClassLevel &gt; 20">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 20" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'First Contact' you need to be at least class level 21" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 21" />
       </If>
 
       <!-- First Contact (Level 21) -->
@@ -4286,9 +4286,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66255) and not IsQuestCompleted(66260) and not Core.Me.ClassLevel &gt; 21">
+      <If Condition="IsQuestCompleted(66255) and not Core.Me.ClassLevel &gt; 21">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 21" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Brotherly Love' you need to be at least class level 22" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 22" />
       </If>
 
       <!-- Brotherly Love (Level 22) -->
@@ -4373,9 +4373,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69395) and not IsQuestCompleted(69396) and not Core.Me.ClassLevel &gt; 22">
+      <If Condition="IsQuestCompleted(69395) and not Core.Me.ClassLevel &gt; 22">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 22" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Never Forget' you need to be at least class level 23" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 23" />
       </If>
 
       <!-- Never Forget (Level 23) 5.3 -->
@@ -4555,9 +4555,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69398) and not IsQuestCompleted(66050) and not Core.Me.ClassLevel &gt; 23">
+      <If Condition="IsQuestCompleted(69398) and not Core.Me.ClassLevel &gt; 23">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 23" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Into the Beast's Maw' you need to be at least class level 24" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 24" />
       </If>
 
       <!-- Into the Beast's Maw (Level 24) -->
@@ -4717,9 +4717,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66288) and not IsQuestCompleted(66292) and not Core.Me.ClassLevel &gt; 24">
+      <If Condition="IsQuestCompleted(66288) and not Core.Me.ClassLevel &gt; 24">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 24" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Where There Is Smoke' you need to be at least class level 25" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 25" />
       </If>
 
       <!-- Where There Is Smoke (Level 25) -->
@@ -4825,9 +4825,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66298) and not IsQuestCompleted(66299) and not Core.Me.ClassLevel &gt; 25">
+      <If Condition="IsQuestCompleted(66298) and not Core.Me.ClassLevel &gt; 25">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 25" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Meeting with the Resistance' you need to be at least class level 26" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 26" />
       </If>
 
       <!-- Meeting with the Resistance (Level 26) -->
@@ -4871,9 +4871,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66301) and not IsQuestCompleted(66310) and not Core.Me.ClassLevel &gt; 26">
+      <If Condition="IsQuestCompleted(66301) and not Core.Me.ClassLevel &gt; 26">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 26" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Helping Horn' you need to be at least class level 27" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 27" />
       </If>
 
       <!-- Helping Horn (Level 27) -->
@@ -5140,9 +5140,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69399) and not IsQuestCompleted(69400) and not Core.Me.ClassLevel &gt; 27">
+      <If Condition="IsQuestCompleted(69399) and not Core.Me.ClassLevel &gt; 27">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 27" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Ziz Is So Ridiculous' you need to be at least class level 28" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 28" />
       </If>
 
       <!-- Ziz Is So Ridiculous (Level 28) 5.3 -->
@@ -5307,9 +5307,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66337) and not IsQuestCompleted(66052) and not Core.Me.ClassLevel &gt; 29">
+      <If Condition="IsQuestCompleted(66337) and not Core.Me.ClassLevel &gt; 29">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 29" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Wrath of the Titan' you need to be at least class level 30" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 30" />
       </If>
 
       <!-- Wrath of the Titan (Level 30) -->
@@ -5522,9 +5522,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66356) and not IsQuestCompleted(66357) and not Core.Me.ClassLevel &gt; 30">
+      <If Condition="IsQuestCompleted(66356) and not Core.Me.ClassLevel &gt; 30">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 30" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'The Perfect Prey' you need to be at least class level 31" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 31" />
       </If>
 
       <!-- The Perfect Prey (Level 31) -->
@@ -5624,9 +5624,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66367) and not IsQuestCompleted(66368) and not Core.Me.ClassLevel &gt; 31">
+      <If Condition="IsQuestCompleted(66367) and not Core.Me.ClassLevel &gt; 31">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 31" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'The Things We Do for Cheese' you need to be at least class level 32" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 32" />
       </If>
 
       <!-- The Things We Do for Cheese (Level 32) -->
@@ -5746,9 +5746,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66379) and not IsQuestCompleted(66381) and not Core.Me.ClassLevel &gt; 32">
+      <If Condition="IsQuestCompleted(66379) and not Core.Me.ClassLevel &gt; 32">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 32" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Give a Man a Drink' you need to be at least class level 33" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 33" />
       </If>
 
       <!-- Give a Man a Drink (Level 33) -->
@@ -5960,9 +5960,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66392) and not IsQuestCompleted(66393) and not Core.Me.ClassLevel &gt; 33">
+      <If Condition="IsQuestCompleted(66392) and not Core.Me.ClassLevel &gt; 33">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 33" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Lord of Crags' you need to be at least class level 34" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 34" />
       </If>
 
       <!-- Lord of Crags (Level 34) -->
@@ -6027,9 +6027,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66407) and not IsQuestCompleted(69403) and not Core.Me.ClassLevel &gt; 34">
+      <If Condition="IsQuestCompleted(66407) and not Core.Me.ClassLevel &gt; 34">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 34" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'You Can't Take It with You' you need to be at least class level 35" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 35" />
       </If>
 
       <!-- You Can't Take It with You (Level 35) 5.3 -->
@@ -6154,9 +6154,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66054) and not IsQuestCompleted(66419) and not Core.Me.ClassLevel &gt; 35">
+      <If Condition="IsQuestCompleted(66054) and not Core.Me.ClassLevel &gt; 35">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 35" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'He Who Waited Behind' you need to be at least class level 36" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 36" />
       </If>
 
       <!-- He Who Waited Behind (Level 36) -->
@@ -6305,9 +6305,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66432) and not IsQuestCompleted(66433) and not Core.Me.ClassLevel &gt; 36">
+      <If Condition="IsQuestCompleted(66432) and not Core.Me.ClassLevel &gt; 36">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 36" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'The Talk of Coerthas' you need to be at least class level 37" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 37" />
       </If>
 
       <!-- The Talk of Coerthas (Level 37) -->
@@ -6338,9 +6338,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66433) and not IsQuestCompleted(66446) and not Core.Me.ClassLevel &gt; 37">
+      <If Condition="IsQuestCompleted(66433) and not Core.Me.ClassLevel &gt; 37">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 37" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Road to Redemption' you need to be at least class level 38" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 38" />
       </If>
 
       <!-- Road to Redemption (Level 38) -->
@@ -6488,9 +6488,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69404) and not IsQuestCompleted(66460) and not Core.Me.ClassLevel &gt; 38">
+      <If Condition="IsQuestCompleted(69404) and not Core.Me.ClassLevel &gt; 38">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 38" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Ye of Little Faith' you need to be at least class level 39" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 39" />
       </If>
 
       <!-- Ye of Little Faith (Level 39) -->
@@ -6591,9 +6591,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69405) and not IsQuestCompleted(66474) and not Core.Me.ClassLevel &gt; 39">
+      <If Condition="IsQuestCompleted(69405) and not Core.Me.ClassLevel &gt; 39">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 39" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Influencing Inquisitors' you need to be at least class level 40" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 40" />
       </If>
 
       <!-- Influencing Inquisitors (Level 40) -->
@@ -6724,9 +6724,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66477) and not IsQuestCompleted(66488) and not Core.Me.ClassLevel &gt; 40">
+      <If Condition="IsQuestCompleted(66477) and not Core.Me.ClassLevel &gt; 40">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 40" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'In Pursuit of the Past' you need to be at least class level 41" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 41" />
       </If>
 
       <!-- In Pursuit of the Past (Level 41) -->
@@ -6881,9 +6881,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66495) and not IsQuestCompleted(66496) and not Core.Me.ClassLevel &gt; 41">
+      <If Condition="IsQuestCompleted(66495) and not Core.Me.ClassLevel &gt; 41">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 41" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'It's Probably Not Pirates' you need to be at least class level 42" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 42" />
       </If>
 
       <!-- It's Probably Not Pirates (Level 42) -->
@@ -7064,9 +7064,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66503) and not IsQuestCompleted(69406) and not Core.Me.ClassLevel &gt; 42">
+      <If Condition="IsQuestCompleted(66503) and not Core.Me.ClassLevel &gt; 42">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 42" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'The Curious Case of Giggity' you need to be at least class level 43" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 43" />
       </If>
 
       <!-- The Curious Case of Giggity (Level 43) -->
@@ -7118,9 +7118,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66511) and not IsQuestCompleted(66055) and not Core.Me.ClassLevel &gt; 43">
+      <If Condition="IsQuestCompleted(66511) and not Core.Me.ClassLevel &gt; 43">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 43" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Lady of the Vortex' you need to be at least class level 44" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 44" />
       </If>
 
       <!-- Lady of the Vortex (Level 44) -->
@@ -7409,9 +7409,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66522) and not IsQuestCompleted(66537) and not Core.Me.ClassLevel &gt; 44">
+      <If Condition="IsQuestCompleted(66522) and not Core.Me.ClassLevel &gt; 44">
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 44" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Drowning Out the Voices' you need to be at least class level 45" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 45" />
       </If>
 
       <!-- Drowning Out the Voices (Level 46) -->
@@ -7532,10 +7532,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69407) and not IsQuestCompleted(66540) and not Core.Me.ClassLevel &gt; 45">
+      <If Condition="IsQuestCompleted(69407) and not Core.Me.ClassLevel &gt; 45">
         <PFWPFHuntingLogs />
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 45" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Fool Me Twice' you need to be at least class level 46" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 46" />
       </If>
 
       <!-- Fool Me Twice (Level 46) -->
@@ -7800,11 +7800,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(66058) and not IsQuestCompleted(70057) and not Core.Player.ClassLevel &gt; 48">
+      <If Condition="IsQuestCompleted(66058) and not Core.Player.ClassLevel &gt; 48">
         <Log Message="We're not level 50 yet" />
         <PFWPFHuntingLogs />
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 48" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Operation Archon' you need to be at least class level 49" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 49" />
       </If>
 
       <!-- Operation Archon (Level 49) -->
@@ -7910,14 +7910,14 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
         </If>
       </If>
 
-      <If Condition="IsQuestCompleted(69408) and not IsQuestCompleted(69409) and not Core.Player.ClassLevel &gt; 49">
+      <If Condition="IsQuestCompleted(69408) and not Core.Player.ClassLevel &gt; 49">
         <Log Message="We're not level 50 yet" />
         <PFWPFHuntingLogs />
         <If condition="&DoClassQuests;">
           <PFWPFCurrentClassQuests />
         </If>
         <PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 49" />
-        <UserDialog IsBotContinueAllowed="False" DialogText="In order to accept 'Rock the Castrum' you need to be at least class level 50" />
+        <UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 50" />
       </If>
 
       <If condition="&DoClassQuests;">
