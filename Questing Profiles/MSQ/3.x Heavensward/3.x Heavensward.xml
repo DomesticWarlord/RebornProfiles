@@ -2487,7 +2487,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <!-- A Difference of Opinion (Level 57) -->
-    <If Condition="IsQuestCompleted(67183) and Core.Player.ClassLevel &gt; 56">
+    <If Condition="IsQuestCompleted(67183) and not IsQuestCompleted(67184) and Core.Player.ClassLevel &gt; 56">
       <If Condition="not IsOnMap(401) and not ff14bot.Managers.WorldManager.HasAetheryteId(73)">
         <GetTo ZoneId="419" XYZ="147.3258, -12.63491, -12.40564" />
         <UseTransport InteractDistance="3.0" NpcId="1011212" XYZ="147.3258, -12.63491, -12.40564" />
@@ -2908,7 +2908,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
     </If>
 
     <!-- An Eye for Aether (Level 59) -->
-    <If Condition="IsQuestCompleted(67196) and Core.Player.ClassLevel &gt; 58">
+    <If Condition="IsQuestCompleted(67196) and not IsQuestCompleted(67197) and Core.Player.ClassLevel &gt; 58">
       <If Condition="not HasQuest(67197)">
         <GetTo ZoneId="463" XYZ="19.27209, 38.43, 15.85406" />
         <NoCombatMoveTo XYZ="19.27209, 38.43, 15.85406" />

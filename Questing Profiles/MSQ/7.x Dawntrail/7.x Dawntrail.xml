@@ -744,7 +744,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- The Success of Others (Level 91) -->
-		<If Condition="IsQuestCompleted(70413) and Core.Player.ClassLevel &gt; 90">
+		<If Condition="IsQuestCompleted(70413) and not IsQuestCompleted(70414) and Core.Player.ClassLevel &gt; 90">
 			<If Condition="not HasQuest(70414)">
 				<GetTo ZoneId="1185" XYZ="-31.455248, -10.00001, 142.30771" />
 				<If Condition="IsQuestAcceptQualified(70414)">
@@ -816,7 +816,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- A Leaking Workpot (Level 92) -->
-		<If Condition="IsQuestCompleted(70415) and Core.Player.ClassLevel &gt; 91">
+		<If Condition="IsQuestCompleted(70415) and not IsQuestCompleted(70416) and Core.Player.ClassLevel &gt; 91">
 			<If Condition="not HasQuest(70416)">
 				<GetTo ZoneId="1188" XYZ="577.8559, 119.49004, 150.9423" />
 				<If Condition="IsQuestAcceptQualified(70416)">
@@ -1136,7 +1136,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- History's Keepers (Level 93) -->
-		<If Condition="IsQuestCompleted(70424) and Core.Player.ClassLevel &gt; 92">
+		<If Condition="IsQuestCompleted(70424) and not IsQuestCompleted(70425) and Core.Player.ClassLevel &gt; 92">
 			<If Condition="not HasQuest(70425)">
 				<GetTo ZoneId="1188" XYZ="606.642, 119.490036, 191.0248" />
 				<If Condition="IsQuestAcceptQualified(70425)">
@@ -1426,7 +1426,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- The Leap to Yak T'el (Level 94) -->
-		<If Condition="IsQuestCompleted(70432) and Core.Player.ClassLevel &gt; 93">
+		<If Condition="IsQuestCompleted(70432) and not IsQuestCompleted(70433) and Core.Player.ClassLevel &gt; 93">
 			<If Condition="not HasQuest(70433)">
 				<GetTo ZoneId="1185" XYZ="-160.94722, -14.999357, 203.80309" />
 				<If Condition="IsQuestAcceptQualified(70433)">
@@ -1749,7 +1749,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- Mamook Speaks (Level 95) -->
-		<If Condition="IsQuestCompleted(70442) and Core.Player.ClassLevel &gt; 94">
+		<If Condition="IsQuestCompleted(70442) and not IsQuestCompleted(70443) and Core.Player.ClassLevel &gt; 94">
 			<If Condition="not HasQuest(70443)">
 				<GetTo ZoneId="1189" XYZ="-11.4954195, -166.08884, 6.4444995" />
 				<If Condition="IsQuestAcceptQualified(70443)">
@@ -2144,7 +2144,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- One with Nature (Level 96) -->
-		<If Condition="IsQuestCompleted(70453) and Core.Player.ClassLevel &gt; 95">
+		<If Condition="IsQuestCompleted(70453) and not IsQuestCompleted(70454) and Core.Player.ClassLevel &gt; 95">
 			<If Condition="not HasQuest(70454)">
 				<GetTo ZoneId="1190" XYZ="-351.2959, 18.987192, -104.114365" />
 				<If Condition="IsQuestAcceptQualified(70454)">
@@ -2489,7 +2489,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- All Aboard (Level 97) -->
-		<If Condition="IsQuestCompleted(70461) and Core.Player.ClassLevel &gt; 96">
+		<If Condition="IsQuestCompleted(70461) and not IsQuestCompleted(70462) and Core.Player.ClassLevel &gt; 96">
 			<If Condition="not HasQuest(70462)">
 				<GetTo ZoneId="1190" XYZ="-139.17953, 15.680237, -376.78867" />
 				<If Condition="IsQuestAcceptQualified(70462)">
@@ -2835,7 +2835,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- Her People, Her Family (Level 98) -->
-		<If Condition="IsQuestCompleted(70470) and Core.Player.ClassLevel &gt; 97">
+		<If Condition="IsQuestCompleted(70470) and not IsQuestCompleted(70471) and Core.Player.ClassLevel &gt; 97">
 			<If Condition="not HasQuest(70471)">
 				<GetTo ZoneId="1186" XYZ="-402.69388, 13.999997, 273.7291" />
 				<If Condition="IsQuestAcceptQualified(70471)">
@@ -3131,7 +3131,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- A Comforting Hand (Level 99) -->
-		<If Condition="IsQuestCompleted(70478) and Core.Player.ClassLevel &gt; 98">
+		<If Condition="IsQuestCompleted(70478) and not IsQuestCompleted(70479) and Core.Player.ClassLevel &gt; 98">
 			<If Condition="not HasQuest(70479)">
 				<GetTo ZoneId="1186" XYZ="352.70053, 70.00009, 4.8349557" />
 				<If Condition="IsQuestAcceptQualified(70479)">
@@ -3578,7 +3578,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 		</If>
 
 		<!-- The Sanctuary of the Strong (Level 100) -->
-		<If Condition="IsQuestCompleted(70488) and Core.Player.ClassLevel &gt; 99">
+		<If Condition="IsQuestCompleted(70488) and not IsQuestCompleted(70489) and Core.Player.ClassLevel &gt; 99">
 			<If Condition="not HasQuest(70489)">
 				<GetTo ZoneId="1192" XYZ="749.93243, -12.716528, 217.22226" />
 				<If Condition="IsQuestAcceptQualified(70489)">
