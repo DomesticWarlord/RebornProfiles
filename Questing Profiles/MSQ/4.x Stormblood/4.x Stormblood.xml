@@ -625,7 +625,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68174) and Core.Player.ClassLevel &gt; 60">
+		<If Condition="IsQuestCompleted(68174) and not Core.Player.ClassLevel &gt; 60">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 60" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 60" />
 		</If>
@@ -1128,7 +1128,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68011) and Core.Player.ClassLevel &gt; 61">
+		<If Condition="IsQuestCompleted(68011) and not Core.Player.ClassLevel &gt; 61">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 61" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 62" />
 		</If>
@@ -1538,7 +1538,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68019) and Core.Player.ClassLevel &gt; 62">
+		<If Condition="IsQuestCompleted(68019) and not Core.Player.ClassLevel &gt; 62">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 62" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 63" />
 		</If>
@@ -1919,7 +1919,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68027) and Core.Player.ClassLevel &gt; 63">
+		<If Condition="IsQuestCompleted(68027) and not Core.Player.ClassLevel &gt; 63">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 63" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 64" />
 		</If>
@@ -2410,7 +2410,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68166) and Core.Player.ClassLevel &gt; 64">
+		<If Condition="IsQuestCompleted(68166) and not Core.Player.ClassLevel &gt; 64">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 64" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 65" />
 		</If>
@@ -2715,7 +2715,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68044) and Core.Player.ClassLevel &gt; 65">
+		<If Condition="IsQuestCompleted(68044) and not Core.Player.ClassLevel &gt; 65">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 65" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 66" />
 		</If>
@@ -3164,7 +3164,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68054) and Core.Player.ClassLevel &gt; 66">
+		<If Condition="IsQuestCompleted(68054) and not Core.Player.ClassLevel &gt; 66">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 66" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 67" />
 		</If>
@@ -3732,7 +3732,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68069) and Core.Player.ClassLevel &gt; 67">
+		<If Condition="IsQuestCompleted(68069) and not Core.Player.ClassLevel &gt; 67">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 67" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 68" />
 		</If>
@@ -4099,7 +4099,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<If Condition="IsQuestCompleted(68079) and Core.Player.ClassLevel &gt; 68">
+		<If Condition="IsQuestCompleted(68079) and not Core.Player.ClassLevel &gt; 68">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 68" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 69" />
 		</If>
@@ -4522,7 +4522,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
 		</If>
 
-		<If Condition="IsQuestCompleted(68087) and Core.Player.ClassLevel &gt; 69">
+		<If Condition="IsQuestCompleted(68087) and not Core.Player.ClassLevel &gt; 69">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 69" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 70" />
 		</If>
