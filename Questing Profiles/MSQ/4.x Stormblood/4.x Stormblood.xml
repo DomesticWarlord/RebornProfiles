@@ -1021,7 +1021,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 			<If Condition="GetQuestStep(68009) == 2">
 				<GetTo ZoneId="628" XYZ="143.5123, 14.77572, 90.35785" />
-				<UseInventoryItem ItemId="2002099"/>
+				<UseInventoryItem ItemId="2002099" />
 				<WaitWhile Condition="not GetQuestStep(68009) == 3" />
 			</If>
 			<If Condition="GetQuestStep(68009) == 3">
@@ -1323,6 +1323,14 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="613" XYZ="41.54672, 21.4692, -634.1719" />
 				<TalkTo NpcId="1021513" XYZ="41.54672, 21.4692, -634.1719" QuestId="68217" StepId="1" />
 			</If>
+			<If Condition="GetQuestStep(68217) == 2">
+				<GetTo ZoneId="613" XYZ="87.89002, 5.006782, -863.1832" />
+				<HandOver ItemIds="2002283" InteractDistance="3.0" NpcId="1022959" XYZ="87.89002, 5.006782, -863.1832" QuestId="68217" StepId="2" />
+			</If>
+			<If Condition="GetQuestStep(68217) == 255">
+				<GetTo ZoneId="613" XYZ="84.91299, 41.11266, -716.7828" />
+				<TurnIn QuestId="68217" InteractDistance="3.0" NpcId="1021517" XYZ="84.91299, 41.11266, -716.7828" />
+			</If>
 		</If>
 
 		<!-- The Arrows of Misfortune (Level 62) -->
@@ -1341,7 +1349,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="613" XYZ="-368.3308, 3.370481, -534.3551" />
 				<UseObject NpcIds="1023682" XYZ="-368.3308, 3.370481, -534.3551" QuestId="68489" StepId="2" />
 			</If>
-			<If Condition="HGetQuestStep(68489) == 3">
+			<If Condition="GetQuestStep(68489) == 3">
 				<GetTo ZoneId="613" XYZ="-368.2031, 3.362947, -534.6228" />
 				<UseObject NpcIds="1023682" XYZ="-368.2031, 3.362947, -534.6228" QuestId="68489" StepId="3" />
 			</If>

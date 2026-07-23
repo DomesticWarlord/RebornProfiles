@@ -83,7 +83,7 @@ Profile and fixes by Angles
 					<TalkTo NpcId="1023358" XYZ="608.8949, -2.825304, -91.27941" QuestId="68229" StepId="1" />
 				</If>
 				<If Condition="GetQuestStep(68229) == 2">
-					<StopBot/>
+					<StopBot />
 					<Dismount />
 					<WaitTimer WaitTime="3" />
 					<NoCombatMoveTo XYZ="611.0259, -1.795426, -90.84206" />
@@ -111,69 +111,71 @@ Profile and fixes by Angles
 			</If>
 
 			<!-- The Palace of Lost Souls (0) -->
-			<If Condition="IsQuestCompleted(68021) and not HasQuest(68168) and not IsQuestCompleted(68168)">
+			<If Condition="IsQuestCompleted(68021) and not IsQuestCompleted(68168)">
 				<LLToast message="Working on quest 'The Palace of Lost Souls' to unlock The Ruby Sea Aether Currents" />
-				<If Condition="not IsOnSubMap(2772)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
+				<If Condition="not HasQuest(68168)">
+					<If Condition="not IsOnSubMap(2772)">
+						<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
+						<RunCode Name="SuiNoSato" />
+					</If>
+					<GetTo ZoneId="613" XYZ="-62.79089, -198.9651, -64.34735" />
+					<If Condition="IsQuestAcceptQualified(68168)">
+						<PickupQuest QuestId="68168" NpcId="1023280" XYZ="-63.24492, -198.9927, -65.75132" />
+					</If>
 				</If>
-				<GetTo ZoneId="613" XYZ="-62.79089, -198.9651, -64.34735" />
-				<If Condition="IsQuestAcceptQualified(68168)">
-					<PickupQuest QuestId="68168" NpcId="1023280" XYZ="-63.24492, -198.9927, -65.75132" />
+				<If Condition="GetQuestStep(68168) == 1">
+					<GetTo ZoneId="613" XYZ="-10.84258, -187.0837, -94.69545" />
+					<TalkTo NpcId="1019197" XYZ="-10.84258, -187.0837, -94.69545" QuestId="68168" StepId="1" />
 				</If>
-			</If>
-			<If Condition="HasQuest(68168) and not IsQuestCompleted(68168) and GetQuestStep(68168) == 1">
-				<GetTo ZoneId="613" XYZ="-10.84258, -187.0837, -94.69545" />
-				<TalkTo NpcId="1019197" XYZ="-10.84258, -187.0837, -94.69545" QuestId="68168" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68168) and not IsQuestCompleted(68168) and GetQuestStep(68168) == 2">
-				<If Condition="not IsOnSubMap(2772)">
-					<GetTo ZoneId="613" XYZ="328.7931, -120.3626, -305.2633" />
-					<RunCode Name="SuiNoSato" />
-				</If>
-				<MoveTo XYZ="15.6932, -197.987, -151.7496" />
-				<RunCode Name="ShisuiOfTheVioletTides" />
-				<Dismount />
-				<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68168) and not IsQuestCompleted(68168) and GetQuestStep(68168) == 4">
-				<If Condition="not IsOnSubMap(2778)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
+				<If Condition="GetQuestStep(68168) == 2">
+					<If Condition="not IsOnSubMap(2772)">
+						<GetTo ZoneId="613" XYZ="328.7931, -120.3626, -305.2633" />
+						<RunCode Name="SuiNoSato" />
+					</If>
 					<MoveTo XYZ="15.6932, -197.987, -151.7496" />
 					<RunCode Name="ShisuiOfTheVioletTides" />
+					<Dismount />
+					<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="2" />
 				</If>
-				<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="4" />
+				<If Condition="GetQuestStep(68168) == 4">
+					<If Condition="not IsOnSubMap(2778)">
+						<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
+						<RunCode Name="SuiNoSato" />
+						<MoveTo XYZ="15.6932, -197.987, -151.7496" />
+						<RunCode Name="ShisuiOfTheVioletTides" />
+					</If>
+					<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(68168) == 255">
+					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
+					<RunCode Name="SuiNoSato" />
+					<TurnIn QuestId="68168" NpcId="1023280" XYZ="-63.31102, -198.991, -65.69412" />
+					<LLSmallTalk />
+					<AutoInventoryEquip />
+				</If>
+
+				<If Condition="not IsAetherCurrentCompleted(613,7)">
+					<GetTo ZoneId="613" XYZ="21.078068, 25.111029, -634.7991" />
+					<ClimbHill SpamJump="True" Start="21.00052, 25.11103, -633.582" End="21.28632, 24.00244, -623.621" Distance="2.5" />
+					<UseObject NpcId="2007999" XYZ="21.28632, 24.00244, -623.621" Condition="not IsAetherCurrentCompleted(613,7)" />
+					<MoveTo XYZ="24.872145, 3.1460154, -602.15424" usemesh="false" />
+				</If>
+				<If Condition="not IsAetherCurrentCompleted(613,6)">
+					<GetTo ZoneId="613" XYZ="694.7584, 1.907349, -53.48291" />
+					<UseObject NpcId="2008002" XYZ="694.7584, 1.907349, -53.48291" Condition="not IsAetherCurrentCompleted(613,6)" />
+				</If>
+				<If Condition="not IsAetherCurrentCompleted(613,8)">
+					<GetTo ZoneId="613" XYZ="423.5447, 15.82355, 801.541" />
+					<UseObject NpcId="2007995" XYZ="423.5447, 15.82355, 801.541" Condition="not IsAetherCurrentCompleted(613,8)" />
+				</If>
+				<If Condition="not IsAetherCurrentCompleted(613,5)">
+					<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
+					<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
+					<RunCode Name="IsleOfBekko" />
+					<GetTo ZoneId="613" XYZ="-805.7832, 36.57581, 235.1873" />
+					<UseObject NpcId="2008004" XYZ="-805.7832, 36.57581, 235.1873" Condition="not IsAetherCurrentCompleted(613,5)" />
+				</If>
 			</If>
-			<If Condition="HasQuest(68168) and not IsQuestCompleted(68168) and GetQuestStep(68168) == 255">
-				<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-				<RunCode Name="SuiNoSato" />
-				<TurnIn QuestId="68168" NpcId="1023280" XYZ="-63.31102, -198.991, -65.69412" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
-			<If Condition="not IsAetherCurrentCompleted(613,7)">
-				<GetTo ZoneId="613" XYZ="21.00052, 25.11103, -633.582" />
-				<LLClimbHill Start="21.00052, 25.11103, -633.582" End="21.28632, 24.00244, -623.621" Distance="2.5" />
-				<UseObject NpcId="2007999" XYZ="21.28632, 24.00244, -623.621" Condition="not IsAetherCurrentCompleted(613,7)" />
-				<RunCode Name="2007999" />
-			</If>
-			<If Condition="not IsAetherCurrentCompleted(613,6)">
-				<GetTo ZoneId="613" XYZ="694.7584, 1.907349, -53.48291" />
-				<UseObject NpcId="2008002" XYZ="694.7584, 1.907349, -53.48291" Condition="not IsAetherCurrentCompleted(613,6)" />
-			</If>
-			<If Condition="not IsAetherCurrentCompleted(613,8)">
-				<GetTo ZoneId="613" XYZ="423.5447, 15.82355, 801.541" />
-				<UseObject NpcId="2007995" XYZ="423.5447, 15.82355, 801.541" Condition="not IsAetherCurrentCompleted(613,8)" />
-			</If>
-			<If Condition="not IsAetherCurrentCompleted(613,5)">
-				<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
-				<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
-				<RunCode Name="IsleOfBekko" />
-				<GetTo ZoneId="613" XYZ="-805.7832, 36.57581, 235.1873" />
-				<UseObject NpcId="2008004" XYZ="-805.7832, 36.57581, 235.1873" Condition="not IsAetherCurrentCompleted(613,5)" />
-			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in The Ruby Sea!" />
 
 		</If>
 
@@ -571,6 +573,7 @@ Profile and fixes by Angles
 				<LLSmallTalk />
 				<AutoInventoryEquip />
 			</If>
+
 			<If Condition="not IsAetherCurrentCompleted(612,8)">
 				<GetTo ZoneId="612" XYZ="-487.611, 76.42045, -249.6582" />
 				<UseObject NpcId="2007965" XYZ="-487.611, 76.42045, -249.6582" Condition="not IsAetherCurrentCompleted(612,8)" />
@@ -587,7 +590,8 @@ Profile and fixes by Angles
 				<GetTo ZoneId="612" XYZ="743.0074, 180.9872, -214.0688" />
 				<UseObject NpcId="2007972" XYZ="743.0074, 180.9872, -214.0688" Condition="not IsAetherCurrentCompleted(612,5)" />
 			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in The Fringes!" />
+
+
 		</If>
 
 		<!-- The Peaks -->
@@ -714,6 +718,7 @@ Profile and fixes by Angles
 				<LLSmallTalk />
 				<AutoInventoryEquip />
 			</If>
+
 			<If Condition="not IsAetherCurrentCompleted(620,7)">
 				<GetTo ZoneId="620" XYZ="-271.2597, 157.9156, -280.2625" />
 				<UseObject NpcId="2007978" XYZ="-271.2597, 157.9156, -280.2625" Condition="not IsAetherCurrentCompleted(620,7)" />
@@ -730,7 +735,7 @@ Profile and fixes by Angles
 				<GetTo ZoneId="620" XYZ="146.6239, 303.7307, 460.8071" />
 				<UseObject NpcId="2007984" XYZ="146.6239, 303.7307, 460.8071" Condition="not IsAetherCurrentCompleted(620,5)" />
 			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in The Peaks!" />
+
 		</If>
 
 		<!-- The Lochs -->
