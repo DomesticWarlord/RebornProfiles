@@ -933,6 +933,9 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					</If>
 				</If>
 			</If>
+			<If Condition="GetQuestStep(68005) == 4">
+				<WaitWhile Condition="GetQuestStep(68005) == 4" />
+			</If>
 			<If Condition="GetQuestStep(68005) == 255">
 				<GetTo ZoneId="628" XYZ="-123.0982, -6.999998, -59.63268" />
 				<TurnIn QuestId="68005" InteractDistance="3.0" NpcId="1020454" XYZ="-123.0982, -6.999998, -59.63268" />
@@ -1018,7 +1021,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 			<If Condition="GetQuestStep(68009) == 2">
 				<GetTo ZoneId="628" XYZ="143.5123, 14.77572, 90.35785" />
-				<RunCode Name="68009" />
+				<UseInventoryItem ItemId="2002099"/>
 				<WaitWhile Condition="not GetQuestStep(68009) == 3" />
 			</If>
 			<If Condition="GetQuestStep(68009) == 3">
@@ -4098,6 +4101,7 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 
 			</If>
 		</If>
+
 
 		<If Condition="IsQuestCompleted(68079) and not Core.Player.ClassLevel &gt; 68">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 68" />
