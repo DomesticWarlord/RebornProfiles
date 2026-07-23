@@ -267,42 +267,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-
-		<!-- Magiteknical Failure (3) -->
-		<If Condition="IsQuestCompleted(67988) and not IsQuestCompleted(68175) and Core.Player.ClassLevel &gt; 59">
-			<If Condition="not HasQuest(68175)">
-				<GetTo ZoneId="612" XYZ="-651.0829, 129.9965, -511.4065" />
-				<If Condition="IsQuestAcceptQualified(68175)">
-					<PickupQuest QuestId="68175" NpcId="1019517" XYZ="-651.0829, 129.9965, -511.4065" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68175) == 1">
-				<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-				<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(68175) == 2">
-				<If Condition="not Core.Player.IsMounted">
-					<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-					<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
-
-				</If>
-				<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-449.6657, 105.2192, -402.5377" QuestId="68175" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(68175) == 3">
-				<If Condition="not Core.Player.IsMounted">
-					<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-					<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
-
-				</If>
-				<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-227.9985, 64.92878, -674.7943" QuestId="68175" StepId="3" />
-				<Dismount />
-			</If>
-			<If Condition="GetQuestStep(68175) == 255">
-				<GetTo ZoneId="612" XYZ="-651.3646, 130.0019, -510.5701" />
-				<TurnIn QuestId="68175" NpcId="1019517" XYZ="-651.3646, 130.0019, -510.5701" />
-			</If>
-		</If>
-
 		<!-- Let Fill Your Hearts with Pride (Level 60) -->
 		<If Condition="IsQuestCompleted(67989) and not IsQuestCompleted(67990) and Core.Player.ClassLevel &gt; 59">
 			<If Condition="not HasQuest(67990)">
@@ -365,8 +329,72 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<!-- Hard Country (Level 60) -->
+		<If Condition="IsQuestCompleted(67992) and not IsQuestCompleted(68490) and Core.Player.ClassLevel &gt; 59">
+			<If Condition="not HasQuest(68490)">
+				<GetTo ZoneId="620" XYZ="82.02201, 118.1558, -718.0928" />
+				<If Condition="IsQuestAcceptQualified(68490)">
+					<PickupQuest QuestId="68490" InteractDistance="3.0" NpcId="1020842" XYZ="82.02201, 118.1558, -718.0928" />
+				</If>
+				<If Condition="GetQuestStep(68490) == 1">
+					<If Condition="not IsTodoChecked(68490, 1, 0)">
+						<GetTo ZoneId="620" XYZ="-102.5254, 99.05808, -704.6464" />
+						<Grind While="not IsTodoChecked(68490, 1, 0)">
+							<GrindArea Name="Chapuli">
+								<Hotspots>
+									<Hotspot XYZ="-102.5254, 99.05808, -704.6464" Radius="90" />
+								</Hotspots>
+								<TargetMobs>
+									<TargetMob Id="5700" />
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+					<If Condition="not IsTodoChecked(68490, 1, 1)">
+						<GetTo ZoneId="620" XYZ="-562.6154, 47.85563, -697.9324" />
+						<Grind While="not IsTodoChecked(68490, 1, 1)">
+							<GrindArea Name="Hornbill">
+								<Hotspots>
+									<Hotspot XYZ="-562.6154, 47.85563, -697.9324" Radius="90" />
+								</Hotspots>
+								<TargetMobs>
+									<TargetMob Id="5703" />
+								</TargetMobs>
+							</GrindArea>
+						</Grind>
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68490) == 255">
+					<GetTo ZoneId="620" XYZ="82.92448, 118.1558, -718.1841" />
+					<TurnIn ItemIds="2002391,2002392" QuestId="68490" InteractDistance="3.0" NpcId="1020842" XYZ="82.92448, 118.1558, -718.1841" />
+				</If>
+			</If>
+		</If>
+
+		<!-- Death by a Thousand Rocks (Level 60) -->
+		<If Condition="IsQuestCompleted(67992) and not IsQuestCompleted(68491) and Core.Player.ClassLevel &gt; 59">
+			<If Condition="not HasQuest(68491)">
+				<GetTo ZoneId="620" XYZ="112.8487, 118.1558, -716.1013" />
+				<If Condition="IsQuestAcceptQualified(68491)">
+					<PickupQuest QuestId="68491" InteractDistance="3.0" NpcId="1020848" XYZ="112.8487, 118.1558, -716.1013" />
+				</If>
+				<If Condition="GetQuestStep(68491) == 1">
+					<GetTo ZoneId="620" XYZ="-768.8106, 81.19944, -301.9317" />
+					<TalkTo NpcId="1020857" XYZ="-768.8106, 81.19944, -301.9317" QuestId="68491" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68491) == 2">
+					<GetTo ZoneId="620" XYZ="-764.1213, 81.30538, -297.1656" />
+					<UseObject NpcIds="2008680" XYZ="-764.1213, 81.30538, -297.1656" QuestId="68491" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68491) == 255">
+					<GetTo ZoneId="620" XYZ="112.74, 118.1558, -716.7374" />
+					<TurnIn ItemIds="2002393" QuestId="68491" InteractDistance="3.0" NpcId="1020848" XYZ="112.74, 118.1558, -716.7374" />
+				</If>
+			</If>
+		</If>
+
 		<!-- A Life More Ordinary (Level 60) -->
-		<If Condition="IsQuestCompleted(68490) and not IsQuestCompleted(67993) and Core.Player.ClassLevel &gt; 59">
+		<If Condition="IsQuestCompleted(68490) and IsQuestCompleted(68491) and not IsQuestCompleted(67993) and Core.Player.ClassLevel &gt; 59">
 			<If Condition="not HasQuest(67993)">
 				<GetTo ZoneId="620" XYZ="95.91307, 118.1558, -757.291" />
 				<If Condition="IsQuestAcceptQualified(67993)">
@@ -595,6 +623,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="635" XYZ="152.1991, 13.05877, -92.39618" />
 				<TurnIn ItemIds="2002334" QuestId="68174" InteractDistance="3.0" NpcId="1023638" XYZ="152.1991, 13.05877, -92.39618" />
 			</If>
+		</If>
+
+		<If Condition="IsQuestCompleted(68174) and Core.Player.ClassLevel &gt; 60">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 60" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 60" />
 		</If>
 
 		<!-- Crossing the Velodyna (Level 61) -->
@@ -1095,6 +1128,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<If Condition="IsQuestCompleted(68011) and Core.Player.ClassLevel &gt; 61">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 61" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 62" />
+		</If>
+
 		<!-- Once More, to the Ruby Sea (Level 62) -->
 		<If Condition="IsQuestCompleted(68011) and not IsQuestCompleted(68012) and Core.Player.ClassLevel &gt; 61">
 			<If Condition="not HasQuest(68012)">
@@ -1500,6 +1538,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<If Condition="IsQuestCompleted(68019) and Core.Player.ClassLevel &gt; 62">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 62" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 63" />
+		</If>
+
 		<!-- In Soroban We Trust (Level 63) -->
 		<If Condition="IsQuestCompleted(68019) and not IsQuestCompleted(68020) and Core.Player.ClassLevel &gt; 62">
 			<If Condition="not HasQuest(68020)">
@@ -1876,6 +1919,10 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<If Condition="IsQuestCompleted(68027) and Core.Player.ClassLevel &gt; 63">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 63" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 64" />
+		</If>
 
 		<!-- Life after Doma (Level 64) -->
 		<If Condition="IsQuestCompleted(68027) and not IsQuestCompleted(68028) and Core.Player.ClassLevel &gt; 63">
@@ -2363,6 +2410,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<If Condition="IsQuestCompleted(68166) and Core.Player.ClassLevel &gt; 64">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 64" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 65" />
+		</If>
+
 		<!-- The Search for Lord Hien (Level 65) -->
 		<If Condition="IsQuestCompleted(68166) and not IsQuestCompleted(68036) and Core.Player.ClassLevel &gt; 64">
 			<If Condition="not HasQuest(68036)">
@@ -2661,6 +2713,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="622" XYZ="-39.27767, 122.1, 63.58629" />
 				<TurnIn QuestId="68044" InteractDistance="3.0" NpcId="1019417" XYZ="-39.27767, 122.1, 63.58629" />
 			</If>
+		</If>
+
+		<If Condition="IsQuestCompleted(68044) and Core.Player.ClassLevel &gt; 65">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 65" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 66" />
 		</If>
 
 		<!-- The Labors of Magnai (Level 66) -->
@@ -3105,7 +3162,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<GetTo ZoneId="614" XYZ="173.9905, 5.16971, -417.7367" />
 				<TurnIn QuestId="68054" InteractDistance="3.0" NpcId="1020519" XYZ="173.9905, 5.16971, -417.7367" />
 			</If>
+		</If>
 
+		<If Condition="IsQuestCompleted(68054) and Core.Player.ClassLevel &gt; 66">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 66" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 67" />
 		</If>
 
 		<!-- The Room Where It Happened (Level 67) -->
@@ -3671,6 +3732,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
+		<If Condition="IsQuestCompleted(68069) and Core.Player.ClassLevel &gt; 67">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 67" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 68" />
+		</If>
+
 		<!-- The First of Many (Level 68) -->
 		<If Condition="IsQuestCompleted(68069) and not IsQuestCompleted(68070) and Core.Player.ClassLevel &gt; 67">
 			<If Condition="not HasQuest(68070)">
@@ -4031,6 +4097,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 				<TurnIn QuestId="68387" NpcId="1023167" XYZ="312.1086, 324.3033, 361.0327" />
 
 			</If>
+		</If>
+
+		<If Condition="IsQuestCompleted(68079) and Core.Player.ClassLevel &gt; 68">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 68" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 69" />
 		</If>
 
 		<!-- The Price of Freedom (Level 69) -->
@@ -4449,6 +4520,11 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 
 
+		</If>
+
+		<If Condition="IsQuestCompleted(68087) and Core.Player.ClassLevel &gt; 69">
+			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 69" />
+			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 70" />
 		</If>
 
 		<!-- The Measure of His Reach (Level 70) -->
