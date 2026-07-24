@@ -718,37 +718,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<!-- Saint Sayer -->
-		<If Condition="IsQuestCompleted(68000) and not IsQuestCompleted(68191) and Core.Player.ClassLevel &gt; 60">
-			<If Condition="not HasQuest(68191)">
-				<GetTo ZoneId="620" XYZ="143.7094, 118.1921, -731.4683" />
-				<If Condition="IsQuestAcceptQualified(68191)">
-					<PickupQuest QuestId="68191" NpcId="1020841" XYZ="143.7094, 118.1921, -731.4683" />
-
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68191) == 1">
-				<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
-				<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="1" />
-
-				<WaitWhile Condition="not GetQuestStep(68191) == 2" />
-			</If>
-			<If Condition="GetQuestStep(68191) == 2">
-				<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
-				<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="2" />
-
-			</If>
-			<If Condition="GetQuestStep(68191) == 3">
-				<GetTo ZoneId="620" XYZ="750.3235, 242.4072, -602.1752" />
-				<Grind GrindRef="68191" PostCombatDelay="3.0" While="GetQuestStep(68191) == 3" />
-			</If>
-			<If Condition="GetQuestStep(68191) == 255">
-				<GetTo ZoneId="620" XYZ="16.50958, 118.0358, -776.7533" />
-				<TurnIn ItemId="2002205" QuestId="68191" NpcId="1021752" XYZ="16.50958, 118.0358, -776.7533" />
-
-			</If>
-		</If>
-
 		<!-- Bereft of Hearth and Home (Level 61) -->
 		<If Condition="IsQuestCompleted(68000) and not IsQuestCompleted(68001) and Core.Player.ClassLevel &gt; 60">
 			<If Condition="not HasQuest(68001)">
@@ -796,37 +765,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			<If Condition="GetQuestStep(68002) == 255">
 				<GetTo ZoneId="612" XYZ="-610.993, 130, -501.8076" />
 				<TurnIn QuestId="68002" InteractDistance="3.0" NpcId="1020525" XYZ="-610.993, 130, -501.8076" />
-			</If>
-		</If>
-
-		<!-- The Hidden Truth (2) -->
-		<If Condition="IsQuestCompleted(68002) and not IsQuestCompleted(68197) and Core.Player.ClassLevel &gt; 60">
-			<If Condition="not HasQuest(68197)">
-				<GetTo ZoneId="612" XYZ="-614.6425, 130, -529.069" />
-				<If Condition="IsQuestAcceptQualified(68197)">
-					<PickupQuest QuestId="68197" NpcId="1019519" XYZ="-614.6425, 130, -529.069" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68197) == 1">
-				<GetTo ZoneId="612" XYZ="-643.6338, 130.1764, -537.2782" />
-				<TalkTo NpcId="1023142" XYZ="-643.6338, 130.1764, -537.2782" QuestId="68197" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(68197) == 2">
-				<GetTo ZoneId="612" XYZ="-630.077, 130.2487, -467.1904" />
-				<TalkTo NpcId="1023143" XYZ="-630.077, 130.2487, -467.1904" QuestId="68197" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(68197) == 3">
-				<GetTo ZoneId="612" XYZ="-431.3275, 75.37266, -124.5484" />
-				<TalkTo NpcId="1023147" XYZ="-431.3275, 75.37266, -124.5484" QuestId="68197" StepId="3" />
-				<WaitWhile Condition="not GetQuestStep(68197) == 4" />
-			</If>
-			<If Condition="GetQuestStep(68197) == 4">
-				<GetTo ZoneId="612" XYZ="-430.4238, 75.0555, -120.4959" />
-				<TalkTo NpcId="1023148" XYZ="-430.4238, 75.0555, -120.4959" QuestId="68197" StepId="4" />
-			</If>
-			<If Condition="GetQuestStep(68197) == 255">
-				<GetTo ZoneId="612" XYZ="-430.6048, 75.29801, -123.5903" />
-				<TurnIn QuestId="68197" NpcId="1023147" XYZ="-430.6048, 75.29801, -123.5903" />
 			</If>
 		</If>
 
@@ -933,8 +871,8 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					</If>
 				</If>
 			</If>
-			<If Condition="GetQuestStep(68005) == 4">
-				<WaitWhile Condition="GetQuestStep(68005) == 4" />
+			<If Condition="GetQuestStep(68005) == 5">
+				<WaitWhile Condition="GetQuestStep(68005) == 5" />
 			</If>
 			<If Condition="GetQuestStep(68005) == 255">
 				<GetTo ZoneId="628" XYZ="-123.0982, -6.999998, -59.63268" />
@@ -1204,30 +1142,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<!-- The Price of Betrayal (3) -->
-		<If Condition="IsQuestCompleted(68014) and not IsQuestCompleted(68209) and Core.Player.ClassLevel &gt; 61">
-			<If Condition="not HasQuest(68209)">
-				<GetTo ZoneId="613" XYZ="500.3604, 34.0062, 783.7982" />
-				<If Condition="IsQuestAcceptQualified(68209)">
-					<PickupQuest QuestId="68209" NpcId="1019168" XYZ="500.3604, 34.0062, 783.7982" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68209) == 1">
-				<GetTo ZoneId="613" XYZ="829.1404, 5.923008, 857.9793" />
-				<TalkTo NpcId="1019154" XYZ="829.1404, 5.923008, 857.9793" QuestId="68209" StepId="1" />
-
-			</If>
-			<If Condition="GetQuestStep(68209) == 2">
-				<GetTo ZoneId="613" XYZ="286.7627, -0.4914888, 395.7862" />
-				<TalkTo NpcId="1022745" XYZ="286.7627, -0.4914888, 395.7862" QuestId="68209" StepId="2" />
-				<WaitWhile Condition="not GetQuestStep(68209) == 255" />
-			</If>
-			<If Condition="GetQuestStep(68209) == 255">
-				<GetTo ZoneId="613" XYZ="828.8051, 5.923008, 857.5446" />
-				<TurnIn QuestId="68209" NpcId="1019154" XYZ="828.8051, 5.923008, 857.5446" />
-			</If>
-		</If>
-
 		<!-- To Bend with the Wind (Level 62) -->
 		<If Condition="IsQuestCompleted(68014) and not IsQuestCompleted(68015) and Core.Player.ClassLevel &gt; 61">
 			<If Condition="not HasQuest(68015)">
@@ -1420,32 +1334,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<!-- Pulling Double Booty (62) -->
-		<If Condition="IsQuestCompleted(68017) and not IsQuestCompleted(68223) and Core.Player.ClassLevel &gt; 61">
-			<If Condition="not HasQuest(68223)">
-				<GetTo ZoneId="613" XYZ="98.68376, 2.082913, -614.7886" />
-				<If Condition="IsQuestAcceptQualified(68223)">
-					<PickupQuest QuestId="68223" NpcId="1022102" XYZ="98.68376, 2.082913, -614.7886" />
-				</If>
-			</If>
-			<If Condition="HasQuest(68223) and not IsQuestCompleted(68223) and GetQuestStep(68223) == 1">
-				<GetTo ZoneId="613" XYZ="-47.1007, 2.806094, -634.2139" />
-				<TalkTo NpcId="1022103" XYZ="-47.1007, 2.806094, -634.2139" QuestId="68223" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68223) and not IsQuestCompleted(68223) and GetQuestStep(68223) == 2">
-				<GetTo ZoneId="628" XYZ="133.2922, 12, 69.90587" />
-				<HandOver ItemIds="2002223,2002224" NpcId="1022122" XYZ="133.2922, 12, 69.90587" QuestId="68223" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68223) and not IsQuestCompleted(68223) and GetQuestStep(68223) == 3">
-				<GetTo ZoneId="628" XYZ="-129.3015, -4.999999, 141.4579" />
-				<HandOver ItemIds="2002223,2002224" NpcId="1019049" XYZ="-129.3015, -4.999999, 141.4579" QuestId="68223" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68223) and not IsQuestCompleted(68223) and GetQuestStep(68223) == 255">
-				<GetTo ZoneId="613" XYZ="-47.80473, 2.769715, -634.8738" />
-				<TurnIn QuestId="68223" ItemIds="2002223,2002224" NpcId="1022117" XYZ="-47.80473, 2.769715, -634.8738" />
-			</If>
-		</If>
-
 		<!-- Under the Sea (Level 62) -->
 		<If Condition="IsQuestCompleted(68017) and not IsQuestCompleted(68018) and Core.Player.ClassLevel &gt; 61">
 			<If Condition="not HasQuest(68018)">
@@ -1509,46 +1397,6 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 			</If>
 		</If>
 
-		<!-- The Sword in the Stone (1) -->
-		<If Condition="IsQuestCompleted(68019) and not IsQuestCompleted(68229) and Core.Player.ClassLevel &gt; 61">
-			<If Condition="not HasQuest(68229)">
-				<GetTo ZoneId="613" XYZ="565.2492, -61.97559, -146.0982" />
-				<If Condition="IsQuestAcceptQualified(68229)">
-					<PickupQuest QuestId="68229" NpcId="1023357" XYZ="565.2492, -61.97559, -146.0982" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68229) == 1">
-				<GetTo ZoneId="613" XYZ="608.8949, -2.825304, -91.27941" />
-				<TalkTo NpcId="1023358" XYZ="608.8949, -2.825304, -91.27941" QuestId="68229" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(68229) == 2">
-				<StopBot />
-				<Dismount />
-				<WaitTimer WaitTime="3" />
-				<NoCombatMoveTo XYZ="611.0259, -1.795426, -90.84206" />
-				<NoCombatMoveTo XYZ="612.9421, -1.754529, -92.88273" Distance="0.5" UseMesh="False" />
-				<NoCombatMoveTo XYZ="617.4945, -19.1348, -116.245" Distance="0.25" UseMesh="False" />
-				<Dismount />
-				<WaitTimer WaitTime="3" />
-				<RunCode Name="68229a" />
-				<WaitWhile Condition="not GetQuestStep(68229) == 3" />
-			</If>
-			<If Condition="GetQuestStep(68229) == 3">
-				<NoCombatMoveTo XYZ="616.2009, -29.56922, -131.3559" Distance="0.25" UseMesh="False" />
-				<RunCode Name="68229b" />
-				<NoCombatMoveTo XYZ="601.701, -37.3288, -145.7284" Distance="0.25" UseMesh="False" />
-				<Dismount />
-				<RunCode Name="68229c" />
-				<NoCombatMoveTo XYZ="596.343, -43.55858, -157.2047" Distance="0.5" UseMesh="False" />
-				<NoCombatMoveTo XYZ="567.4005, -62.05959, -145.2847" Distance="1.0" UseMesh="False" />
-				<WaitWhile Condition="not GetQuestStep(68229) == 255" />
-			</If>
-			<If Condition="GetQuestStep(68229) == 255">
-				<GetTo ZoneId="613" XYZ="608.9202, -2.84076, -91.35365" />
-				<TurnIn QuestId="68229" NpcId="1023358" XYZ="608.9202, -2.84076, -91.35365" />
-			</If>
-		</If>
-
 		<If Condition="IsQuestCompleted(68019) and not Core.Player.ClassLevel &gt; 62">
 			<PFWPFDungeonLevel while="not Core.Player.ClassLevel &gt; 62" />
 			<UserDialog IsBotContinueAllowed="False" DialogText="In order to continue Main Story Questing you need to be at least class level 63" />
@@ -1571,186 +1419,80 @@ Authors:  DomesticWarlord, Angels24, Sodimm, y2krazy
 					<GetTo ZoneId="613" XYZ="321.4923, -120.3948, -299.794" />
 					<UseTransport InteractDistance="2.0" NpcId="1021614" XYZ="321.4923, -120.3948, -299.794" />
 				</If>
-				<RunCode Name="68020" />
+				<SwimTo XYZ="15.194894, -197.68484, -143.80421" />
 				<Dismount />
-				<TurnIn QuestId="68020" InteractDistance="3.0" NpcId="1019970" XYZ="19.38696, -197.5218, -143.6913" />
+				<TurnIn QuestId="68020" NpcId="1019970" XYZ="19.424683, -197.53093, -143.93835" />
 			</If>
 		</If>
 
 		<!-- Forever and Ever Apart (Level 63) -->
 		<If Condition="IsQuestCompleted(68020) and not IsQuestCompleted(68021) and Core.Player.ClassLevel &gt; 62">
-			<If Condition="not HasQuest(68021)">
-				<If Condition="not IsOnSubMap(2772) and not IsOnSubMap(2750)">
-					<GetTo ZoneId="613" XYZ="321.4923, -120.3948, -299.794" />
-					<UseTransport InteractDistance="2.0" NpcId="1021614" XYZ="321.4923, -120.3948, -299.794" />
-					<RunCode Name="68020" />
-					<Dismount />
+			<!-- Get to Sui-no-Sato -->
+			<If Condition="not IsOnSubMap(2772)">
+				<If Condition="not IsOnMap(613) or not MovementManager.IsDiving">
+					<GetTo ZoneId="613" XYZ="325.84744, -120.31199, -309.34946" />
+					<LLChangeZone Heading="3.8311565" />
 				</If>
+				<SwimTo XYZ="15.194894, -197.68484, -143.80421" />
+			</If>
+			<If Condition="not HasQuest(68021)">
 				<If Condition="IsQuestAcceptQualified(68021)">
 					<PickupQuest QuestId="68021" InteractDistance="3.0" NpcId="1019970" XYZ="19.38696, -197.5218, -143.6913" />
 				</If>
 			</If>
 			<If Condition="GetQuestStep(68021) == 1">
-				<If Condition="not IsOnSubMap(2772) and not IsOnSubMap(2750)">
-					<GetTo ZoneId="613" XYZ="321.4923, -120.3948, -299.794" />
-					<UseTransport InteractDistance="2.0" NpcId="1021614" XYZ="321.4923, -120.3948, -299.794" />
-					<RunCode Name="68020" />
-					<Dismount />
-				</If>
 				<TalkTo NpcId="1019197" XYZ="-8.819601, -187.0837, -97.10515" QuestId="68021" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(68021) == 255">
-				<If Condition="not IsOnSubMap(2772) and not IsOnSubMap(2750)">
-					<GetTo ZoneId="613" XYZ="321.4923, -120.3948, -299.794" />
-					<UseTransport InteractDistance="2.0" NpcId="1021614" XYZ="321.4923, -120.3948, -299.794" />
-					<RunCode Name="68020" />
-					<Dismount />
-				</If>
 				<TurnIn QuestId="68021" InteractDistance="3.0" NpcId="1019971" XYZ="20.0561, -197.5654, -145.2908" />
 			</If>
 		</If>
 
-		<!-- The Palace of Lost Souls (0) -->
-		<If Condition="IsQuestCompleted(68021) and not IsQuestCompleted(68168)">
-			<If Condition="not HasQuest(68168)">
-				<If Condition="not IsOnSubMap(2772)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
-				</If>
-				<If Condition="IsQuestAcceptQualified(68168)">
-					<MoveTo XYZ="-63.24492, -198.9927, -65.75132" />
-					<PickupQuest QuestId="68168" NpcId="1023280" XYZ="-63.24492, -198.9927, -65.75132" />
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68168) == 1">
-				<If Condition="not IsOnSubMap(2772)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
-				</If>
-				<TalkTo NpcId="1019197" XYZ="-10.84258, -187.0837, -94.69545" QuestId="68168" StepId="1" />
-			</If>
-			<If Condition="GetQuestStep(68168) == 2">
-				<If Condition="not IsOnSubMap(2772)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
-				</If>
-				<MoveTo XYZ="15.6932, -197.987, -151.7496" />
-				<RunCode Name="ShisuiOfTheVioletTides" />
-				<TalkTo NpcId="1023293" XYZ="-955.9929, -899.5684, 757.0262" QuestId="68168" StepId="2" />
-			</If>
-			<If Condition="GetQuestStep(68168) == 3">
-				<If condition="&UseCarry; == False">
-					<UserDialog QuestId="68168" StepId="3" IsBotContinueAllowed="True" DialogText="The dungeon Shisui of the Violet Tides needs to be done to obtain flying in this zone. You can do it now, or hit Continue to come back to it later." />
-				</If>
-				<If condition="&UseCarry; == True">
-					<If condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader">
-						<!-- Aleport -->
-						<TeleportTo AetheryteId="14" />
-						<InviteToParty Name="&CarryName;" />
-						<WaitWhile condition="not PartyManager.IsInParty or not PartyManager.IsPartyLeader" />
-					</If>
-					<If condition="PartyManager.IsInParty or PartyManager.IsPartyLeader">
-						<If condition="not IsOnMap(432)">
-							<PFWPFAutoParty DutyId="235" ZoneId="1121" Trial="False" />
-						</If>
-						<If condition="IsOnMap(432)">
-							<WaitWhile condition="not IsDutyEnded()" />
-							<If condition="IsDutyEnded">
-								<WaitTimer WaitTime="5" />
-								<LLLeaveDuty />
-							</If>
-						</If>
-					</If>
-				</If>
-			</If>
-			<If Condition="GetQuestStep(68168) == 4">
-				<If Condition="not IsOnSubMap(2778)">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
-					<MoveTo XYZ="15.6932, -197.987, -151.7496" />
-					<RunCode Name="ShisuiOfTheVioletTides" />
-				</If>
-				<TalkTo NpcId="1023293" XYZ="-955.6203, -899.6981, 757.6763" QuestId="68168" StepId="4" />
-			</If>
-
-			<If Condition="GetQuestStep(68168) == 255">
-				<!-- Get to Sui-no-Sato -->
-				<If Condition="not IsOnSubMap(2772)">
-					<If Condition="IsOnSubMap(2769)">
-						<If Condition="not IsOnSubMap(2769)">
-							<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
-						</If>
-						<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-						<LLChangeZone Heading="3.818083" />
-					</If>
-					<GetTo ZoneId="613" XYZ="34.43138, -197.2926, -165.2839" />
-					<LLChangeZone Heading="5.37249" />
-				</If>
-				<TurnIn QuestId="68168" NpcId="1023280" XYZ="-62.790894, -198.96509, -64.34735" />
-			</If>
-		</If>
 
 		<!-- In Darkness the Magatama Dreams (Level 63) -->
 		<If Condition="IsQuestCompleted(68021) and not IsQuestCompleted(68022) and Core.Player.ClassLevel &gt; 62">
 			<If Condition="not HasQuest(68022)">
 				<!-- Get to Sui-no-Sato -->
 				<If Condition="not IsOnSubMap(2772)">
-					<If Condition="IsOnSubMap(2769)">
-						<If Condition="not IsOnSubMap(2769)">
-							<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
-						</If>
-						<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-						<LLChangeZone Heading="3.818083" />
+					<If Condition="not IsOnMap(613) or not MovementManager.IsDiving">
+						<GetTo ZoneId="613" XYZ="325.84744, -120.31199, -309.34946" />
+						<LLChangeZone Heading="3.8311565" />
 					</If>
-					<GetTo ZoneId="613" XYZ="34.43138, -197.2926, -165.2839" />
-					<LLChangeZone Heading="5.37249" />
+					<SwimTo XYZ="15.194894, -197.68484, -143.80421" />
 				</If>
 				<If Condition="IsQuestAcceptQualified(68022)">
-					<MoveTo XYZ="20.0561, -197.5654, -145.2908" />
 					<PickupQuest QuestId="68022" InteractDistance="3.0" NpcId="1019971" XYZ="20.0561, -197.5654, -145.2908" />
 				</If>
 			</If>
-			<If Condition="GetQuestStep(68022) == 1">
-				<If Condition="not IsOnSubMap(2750)">
-					<If Condition="not IsOnSubMap(2750)">
+			<If Condition="GetQuestStep(68022) &gt; 1">
+				<If Condition="not MovementManager.IsDiving">
+					<If Condition="not IsOnMap(613) or not IsOnSubMap(2769) and not IsOnSubMap(2772)">
 						<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
 					</If>
-					<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-					<LLChangeZone Heading="3.818083" />
+					<If Condition="IsOnSubMap(2769)">
+						<GetTo ZoneId="613" XYZ="325.84744, -120.31199, -309.34946" />
+						<LLChangeZone Heading="3.8311565" />
+					</If>
+					<If Condition="IsOnSubMap(2772)">
+						<MoveTo XYZ="-90.930756, -198.69087, -72.76254" usemesh="false" />
+						<LLChangeZone Heading="5.2615023" />
+					</If>
 				</If>
-				<GetTo ZoneId="613" XYZ="-227.8907, -178.209, 184.7923" />
+			</If>
+			<If Condition="GetQuestStep(68022) == 1">
+				<SwimTo XYZ="-227.8907, -178.209, 184.7923" />
 				<TalkTo NpcId="1019978" XYZ="-227.8907, -178.209, 184.7923" QuestId="68022" StepId="1" />
 			</If>
 			<If Condition="GetQuestStep(68022) == 2">
-				<If Condition="not IsOnSubMap(2780)">
-					<If Condition="not IsOnSubMap(2750)">
-						<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
-					</If>
-					<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-					<LLChangeZone Heading="3.818083" />
-				</If>
+				<SwimTo XYZ="-227.8907, -178.209, 184.7923" />
 				<RunCode Name="68022b" />
 				<WaitWhile Condition="not GetQuestStep(68022) == 3" />
 			</If>
 			<If Condition="GetQuestStep(68022) == 3">
-				<If Condition="not IsOnSubMap(2780)">
-					<If Condition="not IsOnSubMap(2750)">
-						<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
-					</If>
-					<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-					<LLChangeZone Heading="3.818083" />
-				</If>
 				<UseObject NpcId="2007920" XYZ="-220.7139, -192.9991, 221.7045" QuestId="68022" StepId="3" />
 				<RunCode Name="68022c" />
 			</If>
 			<If Condition="GetQuestStep(68022) == 255">
-				<If Condition="not IsOnSubMap(2780)">
-					<If Condition="not IsOnSubMap(2750)">
-						<TeleportTo Name="Tamamizu" AetheryteId="105" Force="True" />
-					</If>
-					<GetTo ZoneId="613" XYZ="329.5404, -120.3054, -304.4339" />
-					<LLChangeZone Heading="3.818083" />
-				</If>
 				<GetTo ZoneId="613" XYZ="-227.9416, -178.0988, 185.002" />
 				<TurnIn ItemIds="2002095" QuestId="68022" InteractDistance="3.0" NpcId="1019978" XYZ="-227.9416, -178.0988, 185.002" />
 			</If>
