@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Moonfire Faire 2026
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Moonfire Faire 2026</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Earning Your Water Wings -->
+    <If Condition="not IsQuestCompleted(70993) and Core.Player.ClassLevel &gt; 29">
+      <If Condition="not HasQuest(70993)">
+        <GetTo ZoneId="128" XYZ="13.313287, 45.65599, 128.70404" />
+        <If Condition="IsQuestAcceptQualified(70993)">
+          <PickupQuest QuestId="70993" NpcId="1058130" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(70993) == 1">
+        <If condition="not IsOnMap(137)">
+          <TeleportTo Name="Costa del Sol" AetheryteId="11" />
+        </If>
+        <TalkTo NpcId="1058131" XYZ="777.4929, 38.99968, 400.9308" QuestId="70993" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(70993) == 2">
+        <If condition="not IsOnMap(137)">
+          <TeleportTo Name="Costa del Sol" AetheryteId="11" />
+        </If>
+        <UseObject NpcId="2015117" XYZ="680.9325, 9.759541, 275.7112" QuestId="70993" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(70993) == 3">
+        <GetTo ZoneId="137" XYZ="515.0749, 8.850993, 284.25696" />
+        <TalkTo NpcId="1058132" XYZ="508.53735, 9.030732, 283.19214" QuestId="70993" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(70993) == 4">
+        <GetTo ZoneId="137" XYZ="513.42993, 8.8720045, 283.4745" />
+        <TalkTo NpcId="1058134" XYZ="511.3756, 8.901516, 281.66626" QuestId="70993" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(70993) == 5">
+        <GetTo ZoneId="137" XYZ="513.42993, 8.8720045, 283.4745" />
+        <TalkTo NpcId="1058133" XYZ="510.1853, 8.935577, 281.7578" QuestId="70993" StepId="5" />
+        <WaitWhile Condition="GetQuestStep(70993) == 5" />
+      </If>
+      <If Condition="GetQuestStep(70993) == 255">
+        <If condition="not IsOnMap(137)">
+          <TeleportTo Name="Costa del Sol" AetheryteId="11" />
+        </If>
+        <TurnIn QuestId="70993" NpcId="1058136" XYZ="775.0209, 38.99968, 398.2146" />
+      </If>
+      <UseInventoryItem ItemId="52258"/>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
