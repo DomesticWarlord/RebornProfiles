@@ -553,7 +553,7 @@
 		<!-- The Pride of Labyrinthos -->
 		<If Condition="IsQuestCompleted(70351) and not IsQuestCompleted(70352)">
 			<If Condition="not HasQuest(70352)">
-				<GetTo ZoneId="956" XYZ="-53.778904, -29.497334, -63.520332" />
+				<GetTo Fly="False" ZoneId="956" XYZ="-53.778904, -29.497334, -63.520332" />
 				<If Condition="IsQuestAcceptQualified(70352)">
 					<PickupQuest QuestId="70352" NpcId="1046073" />
 				</If>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: The Symphony of Life
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>The Symphony of Life</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- The Symphony of Life -->
+    <If Condition="not IsQuestCompleted(71046) and Core.Player.ClassLevel &gt; 14">
+      <If Condition="not HasQuest(71046)">
+        <GetTo ZoneId="128" XYZ="-7.5233164, 39.99936, 82.28967" />
+        <If Condition="IsQuestAcceptQualified(71046)">
+          <PickupQuest QuestId="71046" NpcId="1059427" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71046) == 1">
+        <GetTo ZoneId="128" XYZ="23.184519, 44.5, 150.9835" />
+        <TalkTo NpcId="1059492" XYZ="27.634033, 44.5, 151.17102" QuestId="71046" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 2">
+        <GetTo ZoneId="128" XYZ="1.1351244, 39.51757, 15.539482" />
+        <TalkTo NpcId="1059428" XYZ="3.0059814, 39.517567, 17.68512" QuestId="71046" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 3">
+        <GetTo ZoneId="128" XYZ="1.0337425, 39.517536, 17.30102" />
+        <TalkTo NpcId="1059428" XYZ="3.0059814, 39.517567, 17.68512" QuestId="71046" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 4">
+        <GetTo ZoneId="128" XYZ="-55.38473, 44.175003, -147.35419" />
+        <TalkTo NpcId="1000947" XYZ="-54.64258, 44.000008, -151.23218" QuestId="71046" StepId="4" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 5">
+        <GetTo ZoneId="128" XYZ="3.0211205, 44.99988, -240.73753" />
+        <TalkTo NpcId="1059431" XYZ="5.508484, 44.999718, -240.86371" QuestId="71046" StepId="5" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 6">
+        <GetTo ZoneId="128" XYZ="33.087708, 44.5, 129.85239" />
+        <UseObject NpcId="2015392" XYZ="33.1801, 44.50001, 131.3202" QuestId="71046" StepId="6" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 7">
+        <GetTo ZoneId="129" XYZ="-185.20482, 4, 181.85754" />
+        <TalkTo NpcId="1059432" XYZ="-187.85382, 3.9999862, 181.38391" QuestId="71046" StepId="7" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 8">
+        <GetTo ZoneId="138" XYZ="264.76447, -25.000439, 247.10957" />
+        <TalkTo NpcId="1059435" XYZ="265.55273, -24.975, 252.09424" QuestId="71046" StepId="8" />
+      </If>
+      <If Condition="GetQuestStep(71046) == 255">
+        <GetTo ZoneId="128" XYZ="1.2649534, 44.499992, 123.03943" />
+        <TurnIn QuestId="71046" NpcId="1059495" XYZ="3.5552979, 44.499996, 125.62744" />
+        <UseInventoryItem ItemId="52279" />
+      </If>
+    </If>
+
+    <!-- Prelude's Call -->
+    <If Condition="IsQuestCompleted(71046) and not IsQuestCompleted(71056)">
+      <If Condition="not HasQuest(71056)">
+        <GetTo ZoneId="128" XYZ="1.49339, 44.499992, 124.998276" />
+        <If Condition="IsQuestAcceptQualified(71056)">
+          <PickupQuest QuestId="71056" NpcId="1059495" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71056) == 255">
+        <GetTo ZoneId="133" XYZ="-49.146175, 6.024193, -103.23367" />
+        <TurnIn QuestId="71056" NpcId="1059619" XYZ="-46.7995, 5.813994, -101.03003" />
+        <UseInventoryItem ItemId="52363" />
+        <UseInventoryItem ItemId="52364" />
+        <UseInventoryItem ItemId="52365" />
+      </If>
+    </If>
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
