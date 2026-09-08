@@ -3,15 +3,6 @@
 Author: Angles24, Manta, DomesticWarlord
 -->
 <!DOCTYPE Profile [
-
-	<!ENTITY LawoftheLand "70452">
-	<!ENTITY OnewithNature "70454">
-	<!ENTITY InYyasulanisShadow "70459">
-	<!ENTITY GoneandForgotten "70467">
-	<!ENTITY MemoriesofaKnight "70476">
-	<!ENTITY InSerenityandSorrow "70486">
-	<!ENTITY AKnightofAlexandria "70488">
-	<!ENTITY LeafingthroughthePast "70491">
 ]>
 <Profile>
 	<Name>Dawntrail Aether Currents</Name>
@@ -537,7 +528,7 @@ Author: Angles24, Manta, DomesticWarlord
 			</If>
 
 			<!-- î‚¾ When the Bill Comes Due -->
-			<If Condition="IsQuestCompleted(&LawoftheLand;) and not IsQuestCompleted(70676)">
+			<If Condition="IsQuestCompleted(70452) and not IsQuestCompleted(70676)">
 				<LLToast message="Working on quest 'When the Bill Comes Due' to unlock Shaaloani Aether Currents" />
 				<If Condition="not HasQuest(70676)">
 					<GetTo ZoneId="1190" XYZ="376.03186, -0.2647332, 437.86014" />
@@ -570,7 +561,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Meeting of the Spirits -->
-			<If Condition="IsQuestCompleted(&LawoftheLand;) and not IsQuestCompleted(70666)">
+			<If Condition="IsQuestCompleted(70452) and not IsQuestCompleted(70666)">
 				<LLToast message="Working on quest 'Meeting of the Spirits' to unlock Shaaloani Aether Currents" />
 				<If Condition="not HasQuest(70666)">
 					<GetTo ZoneId="1190" XYZ="-110.3594, 3.7918262, 319.3572" />
@@ -590,7 +581,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ A Bad Case of the Blue Devils -->
-			<If Condition="IsQuestCompleted(&InYyasulanisShadow;) and not IsQuestCompleted(70680)">
+			<If Condition="IsQuestCompleted(70459) and not IsQuestCompleted(70680)">
 				<LLToast message="Working on quest 'A Bad Case of the Blue Devils' to unlock Shaaloani Aether Currents" />
 				<If Condition="not HasQuest(70680)">
 					<GetTo ZoneId="1190" XYZ="-379.09305, 18.513042, -115.3842" />
@@ -610,7 +601,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Rroneek Seeker -->
-			<If Condition="IsQuestCompleted(&OnewithNature;) and not IsQuestCompleted(70674)">
+			<If Condition="IsQuestCompleted(70454) and not IsQuestCompleted(70674)">
 				<LLToast message="Working on quest 'Rroneek Seeker' to unlock Shaaloani Aether Currents" />
 				<If Condition="not HasQuest(70674)">
 					<GetTo ZoneId="1190" XYZ="289.30957, -15.721843, -479.92322" />
@@ -689,7 +680,7 @@ Author: Angles24, Manta, DomesticWarlord
 			</If>
 
 			<!-- î‚¾ Stressed Testing -->
-			<If Condition="IsQuestCompleted(&GoneandForgotten;) and not IsQuestCompleted(70689)">
+			<If Condition="IsQuestCompleted(70467) and not IsQuestCompleted(70689)">
 				<LLToast message="Working on quest 'Stressed Testing' to unlock Heritage Found Aether Currents" />
 				<If Condition="not HasQuest(70689)">
 					<GetTo ZoneId="1191" XYZ="-180.97563, 30, -599.5557" />
@@ -713,7 +704,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Aunty Knows Best -->
-			<If Condition="IsQuestCompleted(&GoneandForgotten;) and not IsQuestCompleted(70696)">
+			<If Condition="IsQuestCompleted(70467) and not IsQuestCompleted(70696)">
 				<LLToast message="Working on quest 'Aunty Knows Best' to unlock Heritage Found Aether Currents" />
 				<If Condition="not HasQuest(70696)">
 					<GetTo ZoneId="1191" XYZ="-152.67146, 34.94971, -576.9634" />
@@ -737,7 +728,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Phyt for Survival -->
-			<If Condition="IsQuestCompleted(&MemoriesofaKnight;) and not IsQuestCompleted(70692)">
+			<If Condition="IsQuestCompleted(70476) and not IsQuestCompleted(70692)">
 				<LLToast message="Working on quest 'Phyt for Survival' to unlock Heritage Found Aether Currents" />
 				<LLToast message="The escort portion of this ques sometimes messes up and loses the NPC. Watch it." />
 				<If Condition="not HasQuest(70692)">
@@ -772,7 +763,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ He Who Remembers -->
-			<If Condition="IsQuestCompleted(&MemoriesofaKnight;) and not IsQuestCompleted(70695)">
+			<If Condition="IsQuestCompleted(70476) and not IsQuestCompleted(70695)">
 				<LLToast message="Working on quest 'He Who Remembers' to unlock Heritage Found Aether Currents" />
 				<If Condition="not HasQuest(70695)">
 					<GetTo ZoneId="1191" XYZ="-214.80441, 7.49638, 595.8527" />
@@ -851,7 +842,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Perplexing Puzzles, Endless Fun -->
-			<If Condition="(IsQuestCompleted(&AKnightofAlexandria;) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70712)">
+			<If Condition="(IsQuestCompleted(70488) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70712)">
 				<LLToast message="Working on quest 'Perplexing Puzzles, Endless Fun' to unlock Living Memory Aether Currents" />
 				<If Condition="not HasQuest(70712)">
 					<GetTo ZoneId="1192" XYZ="473.76816, -0.035483573, 711.70654" />
@@ -879,7 +870,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Well-wishing at the Wishing Well -->
-			<If Condition="(IsQuestCompleted(&InSerenityandSorrow;) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70710)">
+			<If Condition="(IsQuestCompleted(70486) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70710)">
 				<LLToast message="Working on quest 'Well-wishing at the Wishing Well' to unlock Living Memory Aether Currents" />
 				<If Condition="not HasQuest(70710)">
 					<GetTo ZoneId="1192" XYZ="-630.4926, 2.4387654E-07, 498.8973" />
@@ -907,7 +898,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Blueprint Protocol -->
-			<If Condition="(IsQuestCompleted(&LeafingthroughthePast;) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70715)">
+			<If Condition="(IsQuestCompleted(70491) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70715)">
 				<LLToast message="Working on quest 'Blueprint Protocol' to unlock Living Memory Aether Currents" />
 				<If Condition="not HasQuest(70715)">
 					<GetTo ZoneId="1192" XYZ="536.617, 24.9978, -194.28505" />
@@ -927,7 +918,7 @@ Author: Angles24, Manta, DomesticWarlord
 
 
 			<!-- î‚¾ Volcanic Disruptions -->
-			<If Condition="(IsQuestCompleted(&LeafingthroughthePast;) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70714)">
+			<If Condition="(IsQuestCompleted(70491) and Core.Me.ClassLevel &gt; 89) and not IsQuestCompleted(70714)">
 				<LLToast message="Working on quest 'Volcanic Disruptions' to unlock Living Memory Aether Currents" />
 				<If Condition="not HasQuest(70714)">
 					<GetTo ZoneId="1192" XYZ="631.70233, 24.999489, -281.65497" />

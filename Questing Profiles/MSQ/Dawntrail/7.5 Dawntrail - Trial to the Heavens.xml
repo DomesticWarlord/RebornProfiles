@@ -205,7 +205,7 @@
       <If Condition="HasQuest(71010)">
         <If Condition="not IsOnMap(351)">
           <GetTo ZoneId="156" XYZ="22.21502, 21.252728, -633.3345" />
-          <UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.133728, 22.323914, -631.281"/>
+          <UseTransport NpcId="2002881" InteractDistance="3.0" XYZ="21.133728, 22.323914, -631.281" />
         </If>
       </If>
       <If Condition="GetQuestStep(71010) == 1">
@@ -230,6 +230,129 @@
       </If>
       <If Condition="GetQuestStep(71010) == 255">
         <TurnIn QuestId="71010" NpcId="1058861" XYZ="-0.015319824, 0, -7.2175903" />
+      </If>
+    </If>
+
+    <!-- A Winter's Dream -->
+    <If Condition="IsQuestCompleted(71010) and not IsQuestCompleted(71011)">
+      <If Condition="not HasQuest(71011)">
+        <GetTo ZoneId="351" XYZ="-0.1456037, 0, -4.500327" />
+        <If Condition="IsQuestAcceptQualified(71011)">
+          <PickupQuest QuestId="71011" NpcId="1058995" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71011) == 1">
+        <GetTo ZoneId="418" XYZ="-23.52377, 5.5786076, 48.902004" />
+        <UseObject NpcId="2015322" XYZ="-18.56351, 5.504703, 50.15793" QuestId="71011" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71011) == 2">
+        <GetTo ZoneId="351" XYZ="-0.49355578, 0, -3.502815" />
+        <TalkTo NpcId="1058995" XYZ="-0.015319824, 0, -7.1870728" QuestId="71011" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71011) == 3">
+        <WaitWhile Condition="GetQuestStep(71011) == 3" />
+      </If>
+      <If Condition="GetQuestStep(71011) == 255">
+        <If condition="not IsOnMap(1364)">
+          <If condition="not IsOnSubMap(3573)">
+            <GetTo ZoneId="351" XYZ="-8.433116, 0.009977937, -4.8776464" />
+            <UseTransport NpcId="2011104" InteractDistance="3.0" XYZ="-11.001831, 1.4800415, -6.9733887" />
+          </If>
+          <UseTransport NpcId="2015311" InteractDistance="3.0" XYZ="-52.64546, 3.855009, 6.439231" />
+        </If>
+        <TurnIn QuestId="71011" NpcId="1058862" XYZ="7.2174683, -12.000015, 37.52185" />
+      </If>
+    </If>
+
+    <!-- A Rush of Cold Wind -->
+    <If Condition="IsQuestCompleted(71011) and not IsQuestCompleted(71012)">
+      <If condition="not IsOnMap(1364)">
+        <If condition="not IsOnSubMap(3573)">
+          <GetTo ZoneId="351" XYZ="-8.433116, 0.009977937, -4.8776464" />
+          <UseTransport NpcId="2011104" InteractDistance="3.0" XYZ="-11.001831, 1.4800415, -6.9733887" />
+        </If>
+        <UseTransport NpcId="2015311" InteractDistance="3.0" XYZ="-52.64546, 3.855009, 6.439231" />
+      </If>
+      <If Condition="not HasQuest(71012)">
+        <If Condition="IsQuestAcceptQualified(71012)">
+          <PickupQuest QuestId="71012" NpcId="1058863" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71012) == 1">
+        <UseObject NpcIds="2015323,2015324,2015325" XYZ="15.523828, -12.000016, 28.830353" QuestId="71012" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71012) == 2">
+        <TalkTo NpcId="1058865" XYZ="0.5340576, 0.19999999, -24.79596" QuestId="71012" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71012) == 3">
+        <!-- <UserDialog DialogText="Please manually complete the solo duty" QuestId="71012" StepId="3" /> -->
+        <SimpleDuty InteractNpcId="1058865" XYZ="0.5340576, 0.19999999, -24.79596" QuestId="71012" StepId="3">
+          <HotSpots>
+            <HotSpot Radius="200" XYZ="1.005636, -1.1920929E-07, 0.8624874" />
+            <HotSpot Radius="90" XYZ="0.05377156, -1.1920929E-07, 1.8630508" name="Name" />
+          </HotSpots>
+          <TargetMobs>
+            <TargetMob Id="14745" Weight="1" /> <!-- Thrall Impaler -->
+            <TargetMob Id="14743" Weight="1" /> <!-- Thrall Subjugator -->
+          </TargetMobs>
+        </SimpleDuty>
+      </If>
+      <If Condition="GetQuestStep(71012) == 4">
+        <WaitWhile Condition="GetQuestStep(71012) == 4" />
+      </If>
+      <If Condition="GetQuestStep(71012) == 255">
+        <TurnIn QuestId="71012" NpcId="1058866" XYZ="-1.0529175, -5.9053153E-13, -5.9052734" />
+      </If>
+    </If>
+
+    <!-- The World Locked in Ice-->
+    <If Condition="IsQuestCompleted(71012) and not IsQuestCompleted(71013)">
+      <If condition="not IsOnMap(1364)">
+        <If condition="not IsOnSubMap(3573)">
+          <GetTo ZoneId="351" XYZ="-8.433116, 0.009977937, -4.8776464" />
+          <UseTransport NpcId="2011104" InteractDistance="3.0" XYZ="-11.001831, 1.4800415, -6.9733887" />
+        </If>
+        <UseTransport NpcId="2015311" InteractDistance="3.0" XYZ="-52.64546, 3.855009, 6.439231" />
+      </If>
+      <If Condition="not HasQuest(71013)">
+        <If Condition="IsQuestAcceptQualified(71013)">
+          <PickupQuest QuestId="71013" NpcId="1058868" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71013) == 1">
+        <TalkTo NpcId="1058868" XYZ="-0.015319824, -8.3772735E-13, -8.377258" QuestId="71013" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71013) == 2">
+        <UseItem ItemId="2003824" NpcIds="2015328,2015329,2015330,2015331" XYZ="15.585808, 1.1920929E-07, -11.553945" Radius="200" QuestId="71013" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71013) == 255">
+        <TurnIn QuestId="71013" NpcId="1058877" XYZ="0.3508911, -9.414859E-13, -9.414856" />
+      </If>
+    </If>
+
+    <!-- Windborne -->
+    <If Condition="IsQuestCompleted(71013) and not IsQuestCompleted(71014)">
+      <If Condition="not HasQuest(71014)">
+        <If condition="not IsOnMap(1364)">
+          <If condition="not IsOnSubMap(3573)">
+            <GetTo ZoneId="351" XYZ="-8.433116, 0.009977937, -4.8776464" />
+            <UseTransport NpcId="2011104" InteractDistance="3.0" XYZ="-11.001831, 1.4800415, -6.9733887" />
+          </If>
+          <UseTransport NpcId="2015311" InteractDistance="3.0" XYZ="-52.64546, 3.855009, 6.439231" />
+        </If>
+        <If Condition="IsQuestAcceptQualified(71014)">
+          <PickupQuest QuestId="71014" NpcId="1058879" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71014) == 1">
+        <If condition="IsOnMap(1364)">
+          <UseTransport NpcId="2015312" InteractDistance="3.0" XYZ="6.296, -10.75, 41.80999" />
+        </If>
+        <TalkTo NpcId="1058883" XYZ="-51.926514, 2.0050092, 11.215393" QuestId="71014" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71014) == 255">
+        <GetTo ZoneId="351" XYZ="-2.4611783, 0, -7.013538" />
+        <TurnIn QuestId="71014" NpcId="1058884" XYZ="-0.015319824, 0, -7.2175903" />
       </If>
     </If>
 
