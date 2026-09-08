@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Strangers in the Wood
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+  <Name>Strangers in the Wood</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+    <!-- Strangers in the Wood -->
+    <If Condition="not IsQuestCompleted(71026) and Core.Me.ClassLevel &gt; 49">
+      <If Condition="not HasQuest(71026)">
+        <GetTo ZoneId="132" XYZ="27.293903, -8.200001, 122.14329" />
+        <If Condition="IsQuestAcceptQualified(71026)">
+          <PickupQuest QuestId="71026" NpcId="1059317" />
+        </If>
+      </If>
+      <If Condition="GetQuestStep(71026) == 1">
+        <GetTo ZoneId="148" XYZ="-316.6665, 60.946503, -128.34258" />
+        <UseObject NpcId="2015394" XYZ="-319.487, 60.9465, -128.0951" QuestId="71026" StepId="1" />
+      </If>
+      <If Condition="GetQuestStep(71026) == 2">
+        <GetTo ZoneId="148" XYZ="-306.6867, 63.543114, -252.78801" />
+        <TalkTo NpcId="1059318" XYZ="-302.8459, 63.48398, -257.22137" QuestId="71026" StepId="2" />
+      </If>
+      <If Condition="GetQuestStep(71026) == 3">
+        <GetTo ZoneId="148" XYZ="-306.6867, 63.543114, -252.78801" />
+        <HandOver ItemId="2003830" NpcId="1059320" XYZ="-305.1347, 63.47908, -258.1369" QuestId="71026" StepId="3" />
+      </If>
+      <If Condition="GetQuestStep(71026) == 4">
+        <GetTo ZoneId="148" XYZ="-306.6867, 63.543114, -252.78801" />
+        <EmoteNPC Emote="pet" NpcId="1059320" XYZ="-305.1347, 63.47908, -258.1369" QuestId="71026" StepId="4" BlackListDuration="8" BlackListAfter="True" />
+      </If>
+      <If Condition="GetQuestStep(71026) == 255">
+        <GetTo ZoneId="148" XYZ="-305.9856, 63.514313, -255.20439" />
+        <TurnIn QuestId="71026" NpcId="1059767" XYZ="-302.8459, 63.48398, -257.22137" />
+      </If>
+    </If>
+    <If Condition="IsQuestCompleted(71026)">
+      <UseInventoryItem ItemId="52649" />
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 47470">
+        <EquipWeapon ItemId="47470" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 47472">
+        <EquipWeapon ItemId="47472" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Head].RawItemId != 50727">
+        <EquipItem ItemId="50727" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Body].RawItemId != 50728">
+        <EquipItem ItemId="50728" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Body].RawItemId != 50728">
+        <EquipItem ItemId="50728" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Hands].RawItemId != 50729">
+        <EquipItem ItemId="50729" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Legs].RawItemId != 50730">
+        <EquipItem ItemId="50730" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.Feet].RawItemId != 50731">
+        <EquipItem ItemId="50731" />
+        <WaitTimer WaitTime="2" />
+      </While>
+      <SaveGearset />
+      <UseInventoryItem ItemId="49805" />
+    </If>
+
+
+  </Order>
+  <GrindAreas>
+  </GrindAreas>
+  <CodeChunks>
+  </CodeChunks>
+</Profile>
