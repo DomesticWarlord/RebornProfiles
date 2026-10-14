@@ -588,7 +588,8 @@
 					</Grind>
 				</If>
 				<If condition="not HuntSubEntryCompleted(4, ClassJobType.Lancer, 4, 0)">
-					<!-- The western Upper La Noscea approach collides near (-420,-1,60); use the eastern transition verified by Honor Lost recovery. Keep direct travel when already in Outer La Noscea. -->
+					<!-- TEMPORARY NAVIGATION WORKAROUND: RB-Navigation-UpperLaNoscea-2026-10-14.md in PandaFarmerWPF/docs records the underlying defect (upstream report not yet submitted). Remove this detour only after the original western approach and zone crossing pass upstream regression testing. -->
+          <!-- The western Upper La Noscea approach collides near (-420,-1,60); use the eastern transition verified by Honor Lost recovery. Keep direct travel when already in Outer La Noscea. -->
 					<If Condition="not IsOnMap(180)">
 						<GetTo ZoneId="139" XYZ="285.1358, 42.40051, -200.9558" />
 						<!-- A one-yalm horizontal tolerance still stopped short at (285.895,41.705,-200.380); approach within 0.1 before requesting the destination zone. -->
@@ -743,7 +744,8 @@
 					</Grind>
 				</If>
 				<If condition="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 1, 0)">
-					<GetTo ZoneId="138" xyz="-284.1149, -41.42301, 691.4664" />
+					<!-- TEMPORARY NAVIGATION WORKAROUND (2026-10-14): all four remote nodes reject the original (-284.1149,-41.42301,691.4664) arrival. Use nearby History Repeating approach verified live at11:31 UTC; preserve hunting targets and hotspot. Remove after original destination passes navigation regression; see PandaFarmerWPF/docs/RB-Navigation-WesternLaNoscea-2026-10-14.md. -->
+					<GetTo ZoneId="138" xyz="-307.7592, -41.67242, 695.3993" />
 					<Grind while="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 1, 0)">
 						<GrindArea name="Lancer_5_2">
 							<HotSpots>
