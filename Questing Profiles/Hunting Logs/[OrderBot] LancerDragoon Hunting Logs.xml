@@ -591,8 +591,8 @@
 					<!-- The western Upper La Noscea approach collides near (-420,-1,60); use the eastern transition verified by Honor Lost recovery. Keep direct travel when already in Outer La Noscea. -->
 					<If Condition="not IsOnMap(180)">
 						<GetTo ZoneId="139" XYZ="285.1358, 42.40051, -200.9558" />
-						<!-- GetTo can finish short of the transition; reach the entrance before requesting the destination zone. -->
-						<MoveTo XYZ="285.1358, 42.40051, -200.9558" Distance="1" />
+						<!-- A one-yalm horizontal tolerance still stopped short at (285.895,41.705,-200.380); approach within 0.1 before requesting the destination zone. -->
+						<MoveTo XYZ="285.1358, 42.40051, -200.9558" Distance="0.1" />
 						<GetTo ZoneId="180" XYZ="229.0693, 57.31685, -254.4908" />
 					</If>
 					<GetTo ZoneId="180" xyz="-316.5049, 33.00128, -446.3409" />
