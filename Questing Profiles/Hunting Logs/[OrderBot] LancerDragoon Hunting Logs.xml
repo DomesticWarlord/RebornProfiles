@@ -744,8 +744,8 @@
 					</Grind>
 				</If>
 				<If condition="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 1, 0)">
-					<!-- TEMPORARY NAVIGATION WORKAROUND (2026-10-14): all four remote nodes reject the original (-284.1149,-41.42301,691.4664) arrival. Use nearby History Repeating approach verified live at11:31 UTC; preserve hunting targets and hotspot. Remove after original destination passes navigation regression; see PandaFarmerWPF/docs/RB-Navigation-WesternLaNoscea-2026-10-14.md. -->
-					<GetTo ZoneId="138" xyz="-307.7592, -41.67242, 695.3993" />
+					<!-- Known prerequisite gap: this destination is on the Isles of Umbra. Unlike comparable hunting profiles, this entry lacks ferry access. A nearby island waypoint also fails from the mainland; add verified localized ferry handling before travel. See PandaFarmerWPF/docs/RB-Navigation-WesternLaNoscea-2026-10-14.md. -->
+					<GetTo ZoneId="138" xyz="-284.1149, -41.42301, 691.4664" />
 					<Grind while="not HuntSubEntryCompleted(5, ClassJobType.Lancer, 1, 0)">
 						<GrindArea name="Lancer_5_2">
 							<HotSpots>
