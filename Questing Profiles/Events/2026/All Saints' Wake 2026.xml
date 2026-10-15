@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: All Saints' Wake 2026
+  Authors: DomesticWarlord
+
+-->
+
+<Profile>
+    <Name>All Saints' Wake 2026</Name>
+    <BehaviorDirectory />
+    <Order>
+
+        <!-- We Scare Bears -->
+        <If Condition="not IsQuestCompleted(71003) and Core.Player.ClassLevel &gt; 14">
+            <If Condition="not HasQuest(71003)">
+                <GetTo ZoneId="133" XYZ="-50.444088, 6.4999995, -91.22822" />
+                <If Condition="IsQuestAcceptQualified(71003)">
+                    <PickupQuest QuestId="71003" NpcId="1058681" />
+                </If>
+            </If>
+            <If Condition="GetQuestStep(71003) == 1">
+                <GetTo ZoneId="133" XYZ="-116.81032, 6.5737667, -187.51326" />
+                <TalkTo NpcId="1058682" XYZ="-117.20453, 6.7800403, -189.59338" QuestId="71003" StepId="1" />
+            </If>
+            <If Condition="GetQuestStep(71003) == 2">
+                <If Condition="GetQuestStep(71003) == 2 and GetQuestById(71003).QuestI8A == 0">
+                    <GetTo ZoneId="133" XYZ="-229.06088, 6.690093, -161.20349" />
+                    <TalkTo NpcId="1058683" XYZ="-232.10504, 6.101257, -161.48627" QuestId="71003" StepId="2" />
+                </If>
+                <If Condition="GetQuestStep(71003) == 2 and GetQuestById(71003).QuestI8A == 1">
+                    <GetTo ZoneId="133" XYZ="-164.10175, 7.245969, -84.76852" />
+                    <TalkTo NpcId="1058684" XYZ="-165.91138, 7.3051476, -82.505554" QuestId="71003" StepId="2" />
+                </If>
+            </If>
+            <If Condition="GetQuestStep(71003) == 255">
+                <GetTo ZoneId="133" XYZ="-51.931446, 6.5, -91.8685" />
+                <TurnIn QuestId="71003" NpcId="1058686" XYZ="-51.86548, 6.5, -88.54816" />
+            </If>
+        </If>
+
+        <!-- Grim and Grisly Games -->
+        <If Condition="IsQuestCompleted(71003) and not IsQuestCompleted(71004)">
+            <If Condition="not HasQuest(71004)">
+                <GetTo ZoneId="133" XYZ="-51.898026, 6.4999995, -93.65222" />
+                <If Condition="IsQuestAcceptQualified(71004)">
+                    <PickupQuest QuestId="71004" NpcId="1058686" />
+                </If>
+            </If>
+            <If Condition="GetQuestStep(71004) == 1">
+                <GetTo ZoneId="133" XYZ="-48.32572, 6.0768003, -103.68408" />
+                <TalkTo NpcId="1058689" XYZ="-45.578796, 6.1792364, -104.08179" QuestId="71004" StepId="1" />
+                <WaitWhile condition="not IsOnMap(1369)" />
+            </If>
+            <If Condition="GetQuestStep(71004) &gt; 1 and GetQuestStep(71004) &lt; 255 and not IsOnMap(1369)">
+                <GetTo ZoneId="133" XYZ="-47.487095, 6.126189, -104.14657" />
+                <UseTransport NpcId="1058689" InteractDistance="3.0" XYZ="-45.578796, 6.1792364, -104.08179" />
+            </If>
+            <If Condition="GetQuestStep(71004) == 2">
+                <TalkTo NpcId="1058690" XYZ="-54.8562, 44.378277, -86.22876" QuestId="71004" StepId="2" />
+            </If>
+            <If Condition="GetQuestStep(71004) == 3">
+                <UseItem ItemId="2003819" NpcId="1058691" XYZ="62.271973, 39.282745, -71.732666" QuestId="71004" StepId="3" />
+            </If>
+            <If Condition="GetQuestStep(71004) == 4">
+                <If Condition="GetQuestStep(71004) == 4 and GetQuestById(71004).QuestI8A == 0">
+                    <UseItem ItemId="2003819" NpcId="1058694" XYZ="-9.628479, 30.829128, -16.556091" Condition="GetQuestById(71004).QuestI8A == 0" />
+                </If>
+                <If Condition="GetQuestStep(71004) == 4 and GetQuestById(71004).QuestI8A == 1">
+                    <UseItem ItemId="2003819" NpcId="1058697" XYZ="16.525452, 27.488722, 25.009521" Condition="GetQuestById(71004).QuestI8A == 1" />
+                </If>
+                <If Condition="GetQuestStep(71004) == 4 and GetQuestById(71004).QuestI8A == 2">
+                    <UseItem ItemId="2003819" NpcId="1058696" XYZ="21.62201, 23.458435, 81.74255" Condition="GetQuestById(71004).QuestI8A == 2" />
+                </If>
+                <If Condition="GetQuestStep(71004) == 4 and GetQuestById(71004).QuestI8A == 3">
+                    <UseItem ItemId="2003819" NpcId="1058698" XYZ="-154.16199, 16.604599, 107.133545" Condition="GetQuestById(71004).QuestI8A == 3" />
+                </If>
+                <If Condition="GetQuestStep(71004) == 4 and GetQuestById(71004).QuestI8A == 4">
+                    <UseItem ItemId="2003819" NpcId="1058695" XYZ="-51.56024, 14.663008, -17.135986" Condition="GetQuestById(71004).QuestI8A == 4" />
+                </If>
+            </If>
+            <If Condition="GetQuestStep(71004) == 5">
+                <TalkTo NpcId="1058704" XYZ="-55.61914, 44.37827, -84.85547" QuestId="71004" StepId="5" />
+            </If>
+            <If Condition="GetQuestStep(71004) == 255">
+                <GetTo ZoneId="133" XYZ="-51.249332, 6.5, -90.79108" />
+                <TurnIn QuestId="71004" NpcId="1058686" XYZ="-51.86548, 6.5, -88.54816" />
+            </If>
+        </If>
+
+    </Order>
+    <CodeChunks>
+    </CodeChunks>
+    <GrindAreas />
+</Profile>
