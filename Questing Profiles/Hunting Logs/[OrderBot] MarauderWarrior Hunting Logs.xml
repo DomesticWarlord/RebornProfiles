@@ -537,11 +537,12 @@
                     </Grind>
                 </If>
                 <If condition="not HuntSubEntryCompleted(4, ClassJobType.Marauder, 3, 0)">
-                    <GetTo ZoneId="137" xyz="521.7017, 8.804245, 270.3921" />
+                    <!-- Approach Bloodshore Bells outside the Costa del Sol sanctuary so the combat routine can initiate combat. -->
+                    <GetTo ZoneId="137" xyz="502.2146, 9.806316, 215.61322" />
                     <Grind while="not HuntSubEntryCompleted(4, ClassJobType.Marauder, 3, 0)">
                         <GrindArea name="Marauder_4_5">
                             <HotSpots>
-                                <HotSpot radius="200" xyz="521.7017, 8.804245, 270.3921" name="Marauder_4_5" />
+                                <HotSpot radius="200" xyz="502.2146, 9.806316, 215.61322" name="Marauder_4_5" />
                             </HotSpots>
                             <TargetMobs>
                                 <TargetMob id="361" />

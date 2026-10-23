@@ -8,9 +8,6 @@ Profile and fixes by Angles
 	<KillRadius>90</KillRadius>
 	<Order>
 
-		<RunCode Name="SwitchCombatJob" />
-		<DisablePlugin Name="Enable Flight" />
-
 		<!-- The Ruby Sea -->
 		<If condition="not AetherCurrentManager.IsZoneComplete(613)">
 
@@ -69,268 +66,262 @@ Profile and fixes by Angles
 				</If>
 			</If>
 
-			<!-- The Sword in the Stone (1) -->
+			<!-- The Sword in the Stone -->
 			<If Condition="IsQuestCompleted(68019) and not IsQuestCompleted(68229)">
 				<LLToast message="Working on quest 'The Sword in the Stone' to unlock The Ruby Sea Aether Currents" />
 				<If Condition="not HasQuest(68229)">
 					<GetTo ZoneId="613" XYZ="565.2492, -61.97559, -146.0982" />
-					<If Condition="IsQuestAcceptQualified(68229)">
-						<PickupQuest QuestId="68229" NpcId="1023357" XYZ="565.2492, -61.97559, -146.0982" />
-					</If>
+					<PickupQuest QuestId="68229" NpcId="1023357" XYZ="565.2492, -61.97559, -146.0982" />
 				</If>
 				<If Condition="GetQuestStep(68229) == 1">
 					<GetTo ZoneId="613" XYZ="608.8949, -2.825304, -91.27941" />
 					<TalkTo NpcId="1023358" XYZ="608.8949, -2.825304, -91.27941" QuestId="68229" StepId="1" />
 				</If>
-				<If Condition="GetQuestStep(68229) == 2">
-					<StopBot />
-					<Dismount />
-					<WaitTimer WaitTime="3" />
-					<NoCombatMoveTo XYZ="611.0259, -1.795426, -90.84206" />
-					<NoCombatMoveTo XYZ="612.9421, -1.754529, -92.88273" Distance="0.5" UseMesh="False" />
-					<NoCombatMoveTo XYZ="617.4945, -19.1348, -116.245" Distance="0.25" UseMesh="False" />
-					<Dismount />
-					<WaitTimer WaitTime="3" />
-					<RunCode Name="68229a" />
-					<WaitWhile Condition="not GetQuestStep(68229) == 3" />
-				</If>
-				<If Condition="GetQuestStep(68229) == 3">
-					<NoCombatMoveTo XYZ="616.2009, -29.56922, -131.3559" Distance="0.25" UseMesh="False" />
-					<RunCode Name="68229b" />
-					<NoCombatMoveTo XYZ="601.701, -37.3288, -145.7284" Distance="0.25" UseMesh="False" />
-					<Dismount />
-					<RunCode Name="68229c" />
-					<NoCombatMoveTo XYZ="596.343, -43.55858, -157.2047" Distance="0.5" UseMesh="False" />
-					<NoCombatMoveTo XYZ="567.4005, -62.05959, -145.2847" Distance="1.0" UseMesh="False" />
-					<WaitWhile Condition="not GetQuestStep(68229) == 255" />
-				</If>
+				<While Condition="HasQuest(68229) and (GetQuestStep(68229) == 1 or GetQuestStep(68229) == 2 or GetQuestStep(68229) == 3)">
+					<If Condition="GetQuestStep(68229) == 1">
+						<GetTo ZoneId="613" XYZ="608.8949, -2.825304, -91.27941" />
+						<TalkTo NpcId="1023358" XYZ="608.8949, -2.825304, -91.27941" QuestId="68229" StepId="1" />
+					</If>
+					<If Condition="GetQuestStep(68229) == 2 or GetQuestStep(68229) == 3">
+						<If Condition="Core.Me.Y &lt;= -55">
+							<GetTo ZoneId="613" XYZ="608.8949, -2.825304, -91.27941" />
+						</If>
+						<RunCode Name="SwordStoneTraverse" />
+					</If>
+					<WaitTimer WaitTime="2" />
+				</While>
 				<If Condition="GetQuestStep(68229) == 255">
+					<While Condition="GetQuestStep(68229) == 255 and Core.Me.Y &gt; -55 and Core.Me.Y &lt; -35 and ((Core.Me.X - 600) ** 2 + (Core.Me.Y + 43.9) ** 2 + (Core.Me.Z + 154) ** 2) &lt; 225">
+						<RunCode Name="SwordStoneExit" />
+						<WaitTimer WaitTime="2" />
+					</While>
 					<GetTo ZoneId="613" XYZ="608.9202, -2.84076, -91.35365" />
 					<TurnIn QuestId="68229" NpcId="1023358" XYZ="608.9202, -2.84076, -91.35365" />
 				</If>
 			</If>
 
-			<!-- The Palace of Lost Souls (0) -->
+			<!-- The Palace of Lost Souls -->
 			<If Condition="IsQuestCompleted(68021) and not IsQuestCompleted(68168)">
 				<LLToast message="Working on quest 'The Palace of Lost Souls' to unlock The Ruby Sea Aether Currents" />
+				<If condition="not IsOnMap(613)">
+					<GetTo ZoneId="613" XYZ="325.73398, -120.30606, -309.80252" />
+					<LLChangeZone Heading="3.9105468" />
+				</If>
 				<If Condition="not HasQuest(68168)">
-					<If Condition="not IsOnSubMap(2772)">
-						<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-						<RunCode Name="SuiNoSato" />
-					</If>
-					<GetTo ZoneId="613" XYZ="-62.79089, -198.9651, -64.34735" />
+					<SwimTo XYZ="-63.24492, -198.9927, -65.75132" />
 					<If Condition="IsQuestAcceptQualified(68168)">
 						<PickupQuest QuestId="68168" NpcId="1023280" XYZ="-63.24492, -198.9927, -65.75132" />
 					</If>
 				</If>
 				<If Condition="GetQuestStep(68168) == 1">
-					<GetTo ZoneId="613" XYZ="-10.84258, -187.0837, -94.69545" />
 					<TalkTo NpcId="1019197" XYZ="-10.84258, -187.0837, -94.69545" QuestId="68168" StepId="1" />
 				</If>
 				<If Condition="GetQuestStep(68168) == 2">
-					<If Condition="not IsOnSubMap(2772)">
-						<GetTo ZoneId="613" XYZ="328.7931, -120.3626, -305.2633" />
-						<RunCode Name="SuiNoSato" />
+					<If Condition="IsOnSubMap(2772)"> <!-- Sui-no-Sato -->
+						<GetTo ZoneId="613" XYZ="18.605278, -197.8584, -153.2723" />
+						<LLChangeZone Heading="1.9446582" />
 					</If>
-					<MoveTo XYZ="15.6932, -197.987, -151.7496" />
-					<RunCode Name="ShisuiOfTheVioletTides" />
-					<Dismount />
+					<SwimTo XYZ="-957.8771, -897.8815, 756.8673" />
 					<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="2" />
 				</If>
+				<If Condition="GetQuestStep(68168) == 3">
+					<LoadPFWPFDungeon ProfileName="Shisui of the Violet Tides" QueueType="2" AutoParty="True" />
+					<UserDialog QuestId="68168" StepId="3" IsBotContinueAllowed="True" DialogText="Please complete the 4-player duty Shisui of the Violet Tides." />
+				</If>
 				<If Condition="GetQuestStep(68168) == 4">
-					<If Condition="not IsOnSubMap(2778)">
-						<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-						<RunCode Name="SuiNoSato" />
-						<MoveTo XYZ="15.6932, -197.987, -151.7496" />
-						<RunCode Name="ShisuiOfTheVioletTides" />
-					</If>
+					<SwimTo XYZ="-957.8771, -897.8815, 756.8673" />
 					<TalkTo NpcId="1023293" XYZ="-957.1526, -895.9945, 756.8322" QuestId="68168" StepId="4" />
 				</If>
 				<If Condition="GetQuestStep(68168) == 255">
-					<GetTo ZoneId="613" XYZ="325.959, -120.3188, -308.8289" />
-					<RunCode Name="SuiNoSato" />
+					<SwimTo XYZ="-63.31102, -198.991, -65.69412" />
 					<TurnIn QuestId="68168" NpcId="1023280" XYZ="-63.31102, -198.991, -65.69412" />
-					<LLSmallTalk />
-					<AutoInventoryEquip />
 				</If>
+			</If>
 
-				<If Condition="not IsAetherCurrentCompleted(613,7)">
-					<GetTo ZoneId="613" XYZ="21.078068, 25.111029, -634.7991" />
-					<ClimbHill SpamJump="True" Start="21.00052, 25.11103, -633.582" End="21.28632, 24.00244, -623.621" Distance="2.5" />
-					<UseObject NpcId="2007999" XYZ="21.28632, 24.00244, -623.621" Condition="not IsAetherCurrentCompleted(613,7)" />
-					<MoveTo XYZ="24.872145, 3.1460154, -602.15424" usemesh="false" />
+			<If Condition="not IsAetherCurrentCompleted(613,7)">
+				<GetTo ZoneId="613" XYZ="21.078068, 25.111029, -634.7991" />
+				<ClimbHill SpamJump="True" Start="21.00052, 25.11103, -633.582" End="21.28632, 24.00244, -623.621" Distance="2.5" />
+				<UseObject NpcId="2007999" XYZ="21.28632, 24.00244, -623.621" Condition="not IsAetherCurrentCompleted(613,7)" />
+				<MoveTo XYZ="24.872145, 3.1460154, -602.15424" usemesh="false" />
+			</If>
+			<If Condition="not IsAetherCurrentCompleted(613,6)">
+				<GetTo ZoneId="613" XYZ="694.7584, 1.907349, -53.48291" />
+				<UseObject NpcId="2008002" XYZ="694.7584, 1.907349, -53.48291" Condition="not IsAetherCurrentCompleted(613,6)" />
+			</If>
+			<If Condition="not IsAetherCurrentCompleted(613,8)">
+				<GetTo ZoneId="613" XYZ="423.5447, 15.82355, 801.541" />
+				<UseObject NpcId="2007995" XYZ="423.5447, 15.82355, 801.541" Condition="not IsAetherCurrentCompleted(613,8)" />
+			</If>
+			<If Condition="not IsAetherCurrentCompleted(613,5)">
+				<If condition="not IsOnSubMap(2786)">
+					<If condition="not MovementManager.IsDiving">
+						<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
+						<If condition="not MovementManager.IsDiving">
+							<LLSwimTransition XYZ="-411.5153, -0.599997, 172.7803" Descending="true" />
+						</If>
+					</If>
+					<If condition="not IsOnSubMap(2787)">
+						<SwimTo XYZ="-647.7654, -25.455498, 257.8702" />
+					</If>
+					<SwimTo XYZ="-805.7832, 36.57581, 235.1873" />
 				</If>
-				<If Condition="not IsAetherCurrentCompleted(613,6)">
-					<GetTo ZoneId="613" XYZ="694.7584, 1.907349, -53.48291" />
-					<UseObject NpcId="2008002" XYZ="694.7584, 1.907349, -53.48291" Condition="not IsAetherCurrentCompleted(613,6)" />
-				</If>
-				<If Condition="not IsAetherCurrentCompleted(613,8)">
-					<GetTo ZoneId="613" XYZ="423.5447, 15.82355, 801.541" />
-					<UseObject NpcId="2007995" XYZ="423.5447, 15.82355, 801.541" Condition="not IsAetherCurrentCompleted(613,8)" />
-				</If>
-				<If Condition="not IsAetherCurrentCompleted(613,5)">
-					<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
-					<GetTo ZoneId="613" XYZ="-411.5153, -0.599997, 172.7803" />
-					<RunCode Name="IsleOfBekko" />
-					<GetTo ZoneId="613" XYZ="-805.7832, 36.57581, 235.1873" />
-					<UseObject NpcId="2008004" XYZ="-805.7832, 36.57581, 235.1873" Condition="not IsAetherCurrentCompleted(613,5)" />
-				</If>
+				<UseObject NpcId="2008004" XYZ="-805.7832, 36.57581, 235.1873" Condition="not IsAetherCurrentCompleted(613,5)" />
 			</If>
 
 		</If>
 
 		<!-- Yanxia -->
-		<If Condition="IsQuestCompleted(68035)">
-			<!-- Something Smells (3) -->
-			<If Condition="IsQuestCompleted(68029) and not HasQuest(68260) and not IsQuestCompleted(68260)">
-				<LLToast message="Working on quest 'Something Smells' to unlock Yanxia Aether Currents" />
-				<GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723" />
-				<If Condition="IsQuestAcceptQualified(68260)">
-					<PickupQuest QuestId="68260" NpcId="1019314" XYZ="422.55, -0.3000118, -292.1723" />
+		<If condition="not AetherCurrentManager.IsZoneComplete(614)">
+
+			<If Condition="not IsQuestCompleted(68035)">
+				<UserDialog DialogText="Please finish the level 64 MSQ quest 'All the Little Angels' to unlock Yanxia Flying." IsBotContinueAllowed="True" />
+			</If>
+
+			<!-- Something Smells -->
+			<If Condition="not IsQuestCompleted(68260) and IsQuestCompleted(68029)">
+				<LLToast message="Working on quest 'Something Smells' to unlock Yanxia Aether Currents" />j <If Condition="not HasQuest(68260)">
+					<GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723" />
+					<If Condition="IsQuestAcceptQualified(68260)">
+						<PickupQuest QuestId="68260" NpcId="1019314" XYZ="422.55, -0.3000118, -292.1723" />
+					</If>
+				</If>
+      <If Condition="GetQuestStep(68260) == 1">
+					<If condition="not IsOnMap(614)">
+						<GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723" />
+					</If>
+					<UseItem ItemId="2002241" NpcIds="2008461,2008462,2008463,2008464,2008465,2008466" QuestId="68260" StepId="1">
+						<HotSpots>
+							<HotSpot XYZ="473.6745, 28.62518, -213.2056" Radius="50" />
+							<HotSpot XYZ="568.6186, 43.71805, -144.9701" Radius="50" />
+							<HotSpot XYZ="530.5948, 84.82678, -302.2884" Radius="50" />
+							<HotSpot XYZ="486.4256, 65.75549, -24.494" Radius="50" />
+							<HotSpot XYZ="537.121, 61.16649, -11.21327" Radius="50" />
+							<HotSpot XYZ="382.3456, 41.04817, -30.65896" Radius="50" />
+						</HotSpots>
+					</UseItem>
+				</If>
+      <If Condition="GetQuestStep(68260) == 255">
+					<GetTo ZoneId="614" XYZ="421.8271, -0.3000133, -292.9956" />
+					<TurnIn QuestId="68260" NpcId="1019314" XYZ="421.8271, -0.3000133, -292.9956" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 0">
-				<GetTo ZoneId="614" XYZ="473.6745, 28.62518, -213.2056" />
-				<UseItem ItemId="2002241" NpcId="2008461" XYZ="473.6745, 28.62518, -213.2056" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 0" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 1">
-				<GetTo ZoneId="614" XYZ="568.6186, 43.71805, -144.9701" />
-				<UseItem ItemId="2002241" NpcId="2008462" XYZ="568.6186, 43.71805, -144.9701" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 1" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 2">
-				<GetTo ZoneId="614" XYZ="530.5948, 84.82678, -302.2884" />
-				<UseItem ItemId="2002241" NpcId="2008463" XYZ="530.5948, 84.82678, -302.2884" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 2" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 3">
-				<GetTo ZoneId="614" XYZ="486.4256, 65.75549, -24.494" />
-				<UseItem ItemId="2002241" NpcId="2008466" XYZ="486.4256, 65.75549, -24.494" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 3" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 4">
-				<GetTo ZoneId="614" XYZ="537.121, 61.16649, -11.21327" />
-				<UseItem ItemId="2002241" NpcId="2008464" XYZ="537.121, 61.16649, -11.21327" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 4" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 5">
-				<GetTo ZoneId="614" XYZ="382.3456, 41.04817, -30.65896" />
-				<UseItem ItemId="2002241" NpcId="2008465" XYZ="382.3456, 41.04817, -30.65896" Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 1 and GetQuestById(68260).GetTodoArgs(1, 0).Item1 == 5" />
-			</If>
-			<If Condition="HasQuest(68260) and not IsQuestCompleted(68260) and GetQuestStep(68260) == 255">
-				<GetTo ZoneId="614" XYZ="421.8271, -0.3000133, -292.9956" />
-				<TurnIn QuestId="68260" NpcId="1019314" XYZ="421.8271, -0.3000133, -292.9956" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
-			<!-- Fly, My Pretties (2) -->
-			<If Condition="IsQuestCompleted(68029) and not HasQuest(68264) and not IsQuestCompleted(68264)">
+
+			<!-- Fly, My Pretties -->
+			<If Condition="not IsQuestCompleted(68264) and IsQuestCompleted(68029)">
 				<LLToast message="Working on quest 'Fly, My Pretties' to unlock Yanxia Aether Currents" />
-				<GetTo ZoneId="614" XYZ="452.7337, 58.69245, -186.7468" />
-				<If Condition="IsQuestAcceptQualified(68264)">
-					<PickupQuest QuestId="68264" NpcId="1019263" XYZ="452.7337, 58.69245, -186.7468" />
+				<If Condition="not HasQuest(68264)">
+					<GetTo ZoneId="614" XYZ="452.7337, 58.69245, -186.7468" />
+					<If Condition="IsQuestAcceptQualified(68264)">
+						<PickupQuest QuestId="68264" NpcId="1019263" XYZ="452.7337, 58.69245, -186.7468" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68264) == 1">
+					<GetTo ZoneId="614" XYZ="361.9062, 90.70435, -166.621" />
+					<TalkTo NpcId="1019264" XYZ="361.9062, 90.70435, -166.621" QuestId="68264" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 2">
+					<If condition="not IsOnMap(614)">
+						<GetTo ZoneId="614" XYZ="361.9062, 90.70435, -166.621" />
+					</If>
+					<UseObject NpcIds="2008352,2008353,2008354" XYZ="361.9062, 90.70435, -166.621" Radius="200" QuestId="68264" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 3">
+					<GetTo ZoneId="614" XYZ="362.4651, 90.70435, -163.1638" />
+					<TalkTo NpcId="1019264" XYZ="362.4651, 90.70435, -163.1638" QuestId="68264" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 4">
+					<GetTo ZoneId="614" XYZ="333.7911, 100.9256, -109.2386" />
+					<UseItem ItemId="2002213" NpcId="2008355" XYZ="333.7911, 100.9256, -109.2386" QuestId="68264" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 5">
+					<GetTo ZoneId="614" XYZ="333.7911, 100.9256, -109.2386" />
+					<EmoteNPC NpcId="1022071" Emote="clap" XYZ="333.7911, 100.9256, -109.2386" QuestId="68264" StepId="5" BlackListAfter="True" BlackListDuration="8" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 6">
+					<GetTo ZoneId="614" XYZ="361.8908, 90.70435, -163.9115" />
+					<TalkTo NpcId="1019264" XYZ="361.8908, 90.70435, -163.9115" QuestId="68264" StepId="6" />
+				</If>
+				<If Condition="GetQuestStep(68264) == 255">
+					<GetTo ZoneId="614" XYZ="452.3793, 58.73328, -187.5235" />
+					<TurnIn QuestId="68264" NpcId="1019263" XYZ="452.3793, 58.73328, -187.5235" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 1">
-				<GetTo ZoneId="614" XYZ="361.9062, 90.70435, -166.621" />
-				<TalkTo NpcId="1019264" XYZ="361.9062, 90.70435, -166.621" QuestId="68264" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 0">
-				<GetTo ZoneId="614" XYZ="378.599, 90.70438, -135.6643" />
-				<UseObject NpcId="2008352" XYZ="378.599, 90.70438, -135.6643" Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 0" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 1">
-				<GetTo ZoneId="614" XYZ="351.6993, 97.62133, -135.6582" />
-				<UseObject NpcId="2008353" XYZ="351.6993, 97.62133, -135.6582" Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 1" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 2">
-				<GetTo ZoneId="614" XYZ="369.0254, 97.62137, -103.822" />
-				<UseObject NpcId="2008354" XYZ="369.0254, 97.62137, -103.822" Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 2 and GetQuestById(68264).GetTodoArgs(2, 0).Item1 == 2" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 3">
-				<GetTo ZoneId="614" XYZ="362.4651, 90.70435, -163.1638" />
-				<TalkTo NpcId="1019264" XYZ="362.4651, 90.70435, -163.1638" QuestId="68264" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 4">
-				<GetTo ZoneId="614" XYZ="333.7911, 100.9256, -109.2386" />
-				<UseItem ItemId="2002213" NpcId="2008355" XYZ="333.7911, 100.9256, -109.2386" QuestId="68264" StepId="4" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 5">
-				<GetTo ZoneId="614" XYZ="333.7911, 100.9256, -109.2386" />
-				<LLEmoteNpc NpcId="1022071" Emote="clap" XYZ="333.7911, 100.9256, -109.2386" QuestId="68264" StepId="5" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 6">
-				<GetTo ZoneId="614" XYZ="361.8908, 90.70435, -163.9115" />
-				<TalkTo NpcId="1019264" XYZ="361.8908, 90.70435, -163.9115" QuestId="68264" StepId="6" />
-			</If>
-			<If Condition="HasQuest(68264) and not IsQuestCompleted(68264) and GetQuestStep(68264) == 255">
-				<GetTo ZoneId="614" XYZ="452.3793, 58.73328, -187.5235" />
-				<TurnIn QuestId="68264" NpcId="1019263" XYZ="452.3793, 58.73328, -187.5235" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Whacking Day (1) -->
-			<If Condition="IsQuestCompleted(68030) and not HasQuest(68266) and not IsQuestCompleted(68266)">
+			<If Condition="not IsQuestCompleted(68266) and IsQuestCompleted(68030)">
 				<LLToast message="Working on quest 'Whacking Day' to unlock Yanxia Aether Currents" />
-				<GetTo ZoneId="614" XYZ="463.3003, 58.51415, -171.8306" />
-				<If Condition="IsQuestAcceptQualified(68266)">
-					<PickupQuest QuestId="68266" NpcId="1019313" XYZ="463.3003, 58.51415, -171.8306" />
+				<If Condition="not HasQuest(68266)">
+					<GetTo ZoneId="614" XYZ="463.3003, 58.51415, -171.8306" />
+					<If Condition="IsQuestAcceptQualified(68266)">
+						<PickupQuest QuestId="68266" NpcId="1019313" XYZ="463.3003, 58.51415, -171.8306" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68266) == 1">
+					<GetTo ZoneId="614" XYZ="162.1497, -0.2999607, 211.0351" />
+					<Grind While="GetQuestStep(68266) == 1">
+						<GrindArea name="68266">
+							<Hotspots>
+								<Hotspot XYZ="162.1497, -0.2999607, 211.0351" Radius="90" />
+							</Hotspots>
+							<TargetMobs>
+								<TargetMob Id="5762" />
+							</TargetMobs>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="GetQuestStep(68266) == 255">
+					<GetTo ZoneId="614" XYZ="758.0844, 98.22374, -230.6801" />
+					<TurnIn ItemIds="2002239" QuestId="68266" NpcId="1019295" XYZ="758.0844, 98.22374, -230.6801" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68266) and not IsQuestCompleted(68266) and GetQuestStep(68266) == 1">
-				<GetTo ZoneId="614" XYZ="162.1497, -0.2999607, 211.0351" />
-				<Grind PostCombatDelay="3.0" While="HasQuest(68266) and not IsQuestCompleted(68266) and GetQuestStep(68266) == 1">
-					<Hotspots>
-						<Hotspot XYZ="162.1497, -0.2999607, 211.0351" Radius="90" />
-					</Hotspots>
-					<TargetMobs>
-						<TargetMob Id="5762" />
-					</TargetMobs>
-					<MinLevel />
-					<MaxLevel />
-				</Grind>
-			</If>
-			<If Condition="HasQuest(68266) and not IsQuestCompleted(68266) and GetQuestStep(68266) == 255">
-				<GetTo ZoneId="614" XYZ="758.0844, 98.22374, -230.6801" />
-				<TurnIn ItemIds="2002239" QuestId="68266" NpcId="1019295" XYZ="758.0844, 98.22374, -230.6801" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Wolves and Weeds (0) -->
-			<If Condition="IsQuestCompleted(68030) and not HasQuest(68269) and not IsQuestCompleted(68269)">
+			<If Condition="not IsQuestCompleted(68269) and IsQuestCompleted(68030)">
 				<LLToast message="Working on quest 'Wolves and Weeds' to unlock Yanxia Aether Currents" />
-				<GetTo ZoneId="614" XYZ="435.0469, 67.97929, -122.4264" />
-				<If Condition="IsQuestAcceptQualified(68269)">
-					<PickupQuest QuestId="68269" NpcId="1019316" XYZ="435.0469, 67.97929, -122.4264" />
+				<If Condition="not HasQuest(68269)">
+					<GetTo ZoneId="614" XYZ="435.0469, 67.97929, -122.4264" />
+					<If Condition="IsQuestAcceptQualified(68269)">
+						<PickupQuest QuestId="68269" NpcId="1019316" XYZ="435.0469, 67.97929, -122.4264" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68269) == 1">
+					<GetTo ZoneId="614" XYZ="529.5389, 19.57064, 351.7494" />
+					<TalkTo NpcId="1022457" XYZ="529.5389, 19.57064, 351.7494" QuestId="68269" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 2">
+					<GetTo ZoneId="614" XYZ="212.3311, 7.480262, 499.3141" />
+					<TalkTo NpcId="1022458" XYZ="212.3311, 7.480262, 499.3141" QuestId="68269" StepId="2" />
+					<WaitWhile Condition="not GetQuestStep(68269) == 3" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 3">
+					<GetTo ZoneId="614" XYZ="210.2526, 7.365303, 500.3107" />
+					<UseObject NpcId="2008518" XYZ="210.2526, 7.365303, 500.3107" QuestId="68269" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 4">
+					<GetTo ZoneId="614" XYZ="529.6653, 19.51778, 352.0714" />
+					<HandOver ItemId="2002248" NpcId="1022457" XYZ="529.6653, 19.51778, 352.0714" QuestId="68269" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 5">
+					<If condition="not MovementManager.IsDiving">
+						<GetTo ZoneId="614" XYZ="619.8672, -0.5999999, 559.8383" />
+						<LLSwimTransition XYZ="619.8672, -0.5999999, 559.8383" Descending="true" />
+					</If>
+					<SwimTo XYZ="620.25665, -53.081795, 559.72876" />
+					<UseObject NpcId="2008519" XYZ="619.8672, -48.66101, 559.83826" QuestId="68269" StepId="5" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 6">
+					<If condition="MovementManager.IsDiving">
+						<LLSwimTransition XYZ="620.25665, -24.094128, 559.72876" Ascending="true" />
+					</If>
+					<GetTo ZoneId="614" XYZ="529.7897, 19.59827, 351.7205" />
+					<HandOver ItemId="2002249" NpcId="1022457" XYZ="529.7897, 19.59827, 351.7205" QuestId="68269" StepId="6" />
+				</If>
+				<If Condition="GetQuestStep(68269) == 255">
+					<GetTo ZoneId="614" XYZ="434.9989, 67.98668, -123.4497" />
+					<TurnIn QuestId="68269" NpcId="1019316" XYZ="434.9989, 67.98668, -123.4497" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 1">
-				<GetTo ZoneId="614" XYZ="529.5389, 19.57064, 351.7494" />
-				<TalkTo NpcId="1022457" XYZ="529.5389, 19.57064, 351.7494" QuestId="68269" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 2">
-				<GetTo ZoneId="614" XYZ="212.3311, 7.480262, 499.3141" />
-				<TalkTo NpcId="1022458" XYZ="212.3311, 7.480262, 499.3141" QuestId="68269" StepId="2" />
-				<WaitWhile Condition="HasQuest(68269) and not IsQuestCompleted(68269) and not GetQuestStep(68269) == 3" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 3">
-				<GetTo ZoneId="614" XYZ="210.2526, 7.365303, 500.3107" />
-				<UseObject NpcId="2008518" XYZ="210.2526, 7.365303, 500.3107" QuestId="68269" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 4">
-				<GetTo ZoneId="614" XYZ="529.6653, 19.51778, 352.0714" />
-				<HandOver ItemId="2002248" NpcId="1022457" XYZ="529.6653, 19.51778, 352.0714" QuestId="68269" StepId="4" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 5">
-				<GetTo ZoneId="614" XYZ="619.8672, -0.5999999, 559.8383" />
-				<RunCode Name="68269" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 6">
-				<GetTo ZoneId="614" XYZ="529.7897, 19.59827, 351.7205" />
-				<HandOver ItemId="2002249" NpcId="1022457" XYZ="529.7897, 19.59827, 351.7205" QuestId="68269" StepId="6" />
-			</If>
-			<If Condition="HasQuest(68269) and not IsQuestCompleted(68269) and GetQuestStep(68269) == 255">
-				<GetTo ZoneId="614" XYZ="434.9989, 67.98668, -123.4497" />
-				<TurnIn QuestId="68269" NpcId="1019316" XYZ="434.9989, 67.98668, -123.4497" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<If Condition="not IsAetherCurrentCompleted(614,7)">
 				<GetTo ZoneId="614" XYZ="165.6102, 144.9191, -13.4639" />
 				<UseObject NpcId="2008008" XYZ="165.6102, 144.9191, -13.4639" Condition="not IsAetherCurrentCompleted(614,7)" />
@@ -349,95 +340,111 @@ Profile and fixes by Angles
 				<UseObject NpcId="2008013" XYZ="-89.03793, 9.027429, 562.3278" Condition="not IsAetherCurrentCompleted(614,5)" />
 				<MoveTo XYZ="-75.02338, -0.3, 558.5806" UseMesh="False" Distance="0.5" />
 			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in Yanxia!" />
+
 		</If>
 
 		<!-- The Azim Steppe -->
-		<If Condition="IsQuestCompleted(68052)">
+		<If condition="not AetherCurrentManager.IsZoneComplete(622)">
+
+			<If Condition="not IsQuestCompleted(68052)">
+				<UserDialog DialogText="Please finish the level 64 MSQ quest 'Glory to the Khagan' to unlock Azim Steppe Flying." IsBotContinueAllowed="True" />
+			</If>
+
 			<!-- Words Are Very Unnecessary (3) -->
-			<If Condition="IsQuestCompleted(68037) and not HasQuest(68296) and not IsQuestCompleted(68296)">
+			<If Condition="not IsQuestCompleted(68296) and IsQuestCompleted(68037)">
 				<LLToast message="Working on quest 'Words Are Very Unnecessary' to unlock The Azim Steppe Aether Currents" />
-				<GetTo ZoneId="622" XYZ="573.8724, -19.50563, 344.6087" />
-				<If Condition="IsQuestAcceptQualified(68296)">
-					<PickupQuest QuestId="68296" NpcId="1019347" XYZ="573.8724, -19.50563, 344.6087" />
+
+				<If Condition="not HasQuest(68296)">
+					<GetTo ZoneId="622" XYZ="573.8724, -19.50563, 344.6087" />
+					<If Condition="IsQuestAcceptQualified(68296)">
+						<PickupQuest QuestId="68296" NpcId="1019347" XYZ="573.8724, -19.50563, 344.6087" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68296) == 1">
+					<GetTo ZoneId="622" XYZ="605.0997, -15.02394, 330.256" />
+					<TalkTo NpcId="1022127" XYZ="605.0997, -15.02394, 330.256" QuestId="68296" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68296) == 255">
+					<GetTo ZoneId="622" XYZ="586.4434, -19.50565, 316.261" />
+					<TurnIn QuestId="68296" NpcId="1022128" XYZ="586.4434, -19.50565, 316.261" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68296) and not IsQuestCompleted(68296) and GetQuestStep(68296) == 1">
-				<GetTo ZoneId="622" XYZ="605.0997, -15.02394, 330.256" />
-				<TalkTo NpcId="1022127" XYZ="605.0997, -15.02394, 330.256" QuestId="68296" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68296) and not IsQuestCompleted(68296) and GetQuestStep(68296) == 255">
-				<GetTo ZoneId="622" XYZ="586.4434, -19.50565, 316.261" />
-				<TurnIn QuestId="68296" NpcId="1022128" XYZ="586.4434, -19.50565, 316.261" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Sheep Snatcher (2) -->
-			<If Condition="IsQuestCompleted(68041) and not HasQuest(68307) and not IsQuestCompleted(68307)">
+			<If Condition="not IsQuestCompleted(68307) and IsQuestCompleted(68041)">
 				<LLToast message="Working on quest 'Sheep Snatcher' to unlock The Azim Steppe Aether Currents" />
-				<GetTo ZoneId="622" XYZ="344.6132, 26.26397, -326.2001" />
-				<If Condition="IsQuestAcceptQualified(68307)">
-					<PickupQuest QuestId="68307" NpcId="1019405" XYZ="344.6132, 26.26397, -326.2001" />
+				<If Condition="not HasQuest(68307)">
+					<GetTo ZoneId="622" XYZ="344.6132, 26.26397, -326.2001" />
+					<If Condition="IsQuestAcceptQualified(68307)">
+						<PickupQuest QuestId="68307" NpcId="1019405" XYZ="344.6132, 26.26397, -326.2001" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68307) == 1">
+					<GetTo ZoneId="622" XYZ="-82.11399, 33.525055, -214.06352" />
+					<Snipe NpcId="2008318" XYZ="-83.48212, 33.21875, -210.22363" QuestId="68307" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68307) == 2">
+					<GetTo ZoneId="622" XYZ="-83.79742, 27.63974, -148.4681" />
+					<TalkTo NpcId="1021900" XYZ="-83.79742, 27.63974, -148.4681" QuestId="68307" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68307) == 255">
+					<GetTo ZoneId="622" XYZ="343.7481, 26.26795, -325.4355" />
+					<TurnIn QuestId="68307" ItemId="2002173" NpcId="1019405" XYZ="343.7481, 26.26795, -325.4355" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68307) and not IsQuestCompleted(68307) and GetQuestStep(68307) == 2">
-				<GetTo ZoneId="622" XYZ="-83.79742, 27.63974, -148.4681" />
-				<TalkTo NpcId="1021900" XYZ="-83.79742, 27.63974, -148.4681" QuestId="68307" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68307) and not IsQuestCompleted(68307) and GetQuestStep(68307) == 255">
-				<GetTo ZoneId="622" XYZ="343.7481, 26.26795, -325.4355" />
-				<TurnIn QuestId="68307" ItemId="2002173" NpcId="1019405" XYZ="343.7481, 26.26795, -325.4355" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Forty Years and Counting (1) -->
-			<If Condition="IsQuestCompleted(68046) and not HasQuest(68318) and not IsQuestCompleted(68318)">
+			<If Condition="not IsQuestCompleted(68318) and IsQuestCompleted(68046)">
 				<LLToast message="Working on quest 'Forty Years and Counting' to unlock The Azim Steppe Aether Currents" />
-				<GetTo ZoneId="622" XYZ="78.13956, 114.905, 94.42142" />
-				<If Condition="IsQuestAcceptQualified(68318)">
-					<PickupQuest QuestId="68318" NpcId="1023348" XYZ="78.13956, 114.905, 94.42142" />
+				<If Condition="not HasQuest(68318)">
+					<GetTo ZoneId="622" XYZ="78.13956, 114.905, 94.42142" />
+					<If Condition="IsQuestAcceptQualified(68318)">
+						<PickupQuest QuestId="68318" NpcId="1023348" XYZ="78.13956, 114.905, 94.42142" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68318) == 1">
+					<GetTo ZoneId="622" XYZ="34.20979, 114.905, -39.67915" />
+					<TalkTo NpcId="1019430" XYZ="34.20979, 114.905, -39.67915" QuestId="68318" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68318) == 2">
+					<GetTo ZoneId="622" XYZ="25.26894, 114.905, -43.35295" />
+					<UseObject NpcIds="2008925,2008926,2008927" XYZ="25.17076, 114.905, -49.23971" UseDistance="3" QuestId="68318" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68318) == 255">
+					<GetTo ZoneId="622" XYZ="78.9364, 114.905, 94.25043" />
+					<TurnIn QuestId="68318" ItemId="2002380" NpcId="1023348" XYZ="78.9364, 114.905, 94.25043" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68318) and not IsQuestCompleted(68318) and GetQuestStep(68318) == 1">
-				<GetTo ZoneId="622" XYZ="34.20979, 114.905, -39.67915" />
-				<TalkTo NpcId="1019430" XYZ="34.20979, 114.905, -39.67915" QuestId="68318" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68318) and not IsQuestCompleted(68318) and GetQuestStep(68318) == 2">
-				<GetTo ZoneId="622" XYZ="25.26894, 114.905, -43.35295" />
-				<UseObject NpcIds="2008925,2008926,2008927" XYZ="25.17076, 114.905, -49.23971" UseDistance="3" QuestId="68318" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68318) and not IsQuestCompleted(68318) and GetQuestStep(68318) == 255">
-				<GetTo ZoneId="622" XYZ="78.9364, 114.905, 94.25043" />
-				<TurnIn QuestId="68318" ItemId="2002380" NpcId="1023348" XYZ="78.9364, 114.905, 94.25043" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Mauci of the Seven Worries (0) -->
-			<If Condition="IsQuestCompleted(68048) and not HasQuest(68327) and not IsQuestCompleted(68327)">
+			<If Condition="not IsQuestCompleted(68327) and IsQuestCompleted(68048)">
 				<LLToast message="Working on quest 'Mauci of the Seven Worries' to unlock The Azim Steppe Aether Currents" />
-				<GetTo ZoneId="622" XYZ="-434.7208, 2.565867, 651.0312" />
-				<If Condition="IsQuestAcceptQualified(68327)">
-					<PickupQuest QuestId="68327" NpcId="1023193" XYZ="-434.7208, 2.565867, 651.0312" />
+				<If Condition="not HasQuest(68327)">
+					<GetTo ZoneId="622" XYZ="-434.7208, 2.565867, 651.0312" />
+					<If Condition="IsQuestAcceptQualified(68327)">
+						<PickupQuest QuestId="68327" NpcId="1023193" XYZ="-434.7208, 2.565867, 651.0312" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68327) == 1">
+					<If Condition="GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 0">
+						<GetTo ZoneId="622" XYZ="-471.2832, 2.32407, 615.8964" />
+						<TalkTo NpcId="1019321" XYZ="-471.2832, 2.32407, 615.8964" QuestId="68327" />
+					</If>
+					<If Condition="GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 1">
+						<GetTo ZoneId="622" XYZ="-483.5546, 2.583826, 610.6503" />
+						<TalkTo NpcId="1022222" XYZ="-483.5546, 2.583826, 610.6503" QuestId="68327" />
+					</If>
+					<If Condition="GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 2">
+						<GetTo ZoneId="622" XYZ="-437.4393, 2.268053, 574.5669" />
+						<TalkTo NpcId="1022228" XYZ="-437.4393, 2.268053, 574.5669" QuestId="68327" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68327) == 255">
+					<GetTo ZoneId="622" XYZ="-432.391, 2.668097, 651.086" />
+					<TurnIn QuestId="68327" NpcId="1023193" XYZ="-432.391, 2.668097, 651.086" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68327) and not IsQuestCompleted(68327) and GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 0">
-				<GetTo ZoneId="622" XYZ="-471.2832, 2.32407, 615.8964" />
-				<TalkTo NpcId="1019321" XYZ="-471.2832, 2.32407, 615.8964" QuestId="68327" />
-			</If>
-			<If Condition="HasQuest(68327) and not IsQuestCompleted(68327) and GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 1">
-				<GetTo ZoneId="622" XYZ="-483.5546, 2.583826, 610.6503" />
-				<TalkTo NpcId="1022222" XYZ="-483.5546, 2.583826, 610.6503" QuestId="68327" />
-			</If>
-			<If Condition="HasQuest(68327) and not IsQuestCompleted(68327) and GetQuestStep(68327) == 1 and GetQuestById(68327).GetTodoArgs(1, 0).Item1 == 2">
-				<GetTo ZoneId="622" XYZ="-437.4393, 2.268053, 574.5669" />
-				<TalkTo NpcId="1022228" XYZ="-437.4393, 2.268053, 574.5669" QuestId="68327" />
-			</If>
-			<If Condition="HasQuest(68327) and not IsQuestCompleted(68327) and GetQuestStep(68327) == 255">
-				<GetTo ZoneId="622" XYZ="-432.391, 2.668097, 651.086" />
-				<TurnIn QuestId="68327" NpcId="1023193" XYZ="-432.391, 2.668097, 651.086" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<If Condition="not IsAetherCurrentCompleted(622,8)">
 				<GetTo ZoneId="622" XYZ="570.2753, -19.51636, 438.1627" />
 				<UseObject NpcId="2008015" XYZ="570.2753, -19.51636, 438.1627" Condition="not IsAetherCurrentCompleted(622,8)" />
@@ -456,122 +463,127 @@ Profile and fixes by Angles
 				<GetTo ZoneId="622" XYZ="-693.843, 7.248047, 658.8691" />
 				<UseObject NpcId="2008022" XYZ="-693.843, 7.248047, 658.8691" Condition="not IsAetherCurrentCompleted(622,5)" />
 			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in The Azim Steppe!" />
+
 		</If>
 
 		<!-- The Fringes -->
-		<If Condition="IsQuestCompleted(68069)">
+		<If condition="not AetherCurrentManager.IsZoneComplete(612)">
+
+			<If Condition="not IsQuestCompleted(68069)">
+				<UserDialog DialogText="Please finish the level 64 MSQ quest 'The Silence of the Gods' to unlock Fringes Flying." IsBotContinueAllowed="True" />
+			</If>
+
 			<!-- Magiteknical Failure (3) -->
-			<If Condition="IsQuestCompleted(67988) and not HasQuest(68175) and not IsQuestCompleted(68175)">
+			<If Condition="not IsQuestCompleted(68175) and IsQuestCompleted(67988)">
 				<LLToast message="Working on quest 'Magiteknical Failure' to unlock The Fringes Aether Currents" />
-				<GetTo ZoneId="612" XYZ="-651.0829, 129.9965, -511.4065" />
-				<If Condition="IsQuestAcceptQualified(68175)">
-					<PickupQuest QuestId="68175" NpcId="1019517" XYZ="-651.0829, 129.9965, -511.4065" />
+				<If Condition="not HasQuest(68175)">
+					<GetTo ZoneId="612" XYZ="-651.0829, 129.9965, -511.4065" />
+					<If Condition="IsQuestAcceptQualified(68175)">D <PickupQuest QuestId="68175" NpcId="1019517" XYZ="-651.0829, 129.9965, -511.4065" />
+					</If>
 				</If>
-			</If>
-			<If Condition="HasQuest(68175) and not IsQuestCompleted(68175) and GetQuestStep(68175) == 1">
-				<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-				<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68175) and not IsQuestCompleted(68175) and GetQuestStep(68175) == 2">
-				<If Condition="not Core.Player.IsMounted">
+				<If Condition="GetQuestStep(68175) == 1">
 					<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-					<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
+					<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" StepId="1" />
 				</If>
-				<!--<NoCombatMoveTo
-				XYZ="-449.6657, 105.2192, -402.5377" Distance="1"/>-->
-				<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-449.6657, 105.2192, -402.5377" QuestId="68175" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68175) and not IsQuestCompleted(68175) and GetQuestStep(68175) == 3">
-				<If Condition="not Core.Player.IsMounted">
-					<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
-					<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
+				<If Condition="GetQuestStep(68175) == 2">
+					<If condition="not CurrentMount() == 128">
+						<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
+						<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
+					</If>
+					<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-449.6657, 105.2192, -402.5377" QuestId="68175" StepId="2" />
 				</If>
-				<!--<NoCombatMoveTo
-				XYZ="-227.9985, 64.92878, -674.7943" Distance="1"/>-->
-				<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-227.9985, 64.92878, -674.7943" QuestId="68175" StepId="3" />
-				<Dismount />
+				<If Condition="GetQuestStep(68175) == 3">
+					<If condition="not CurrentMount() == 128">
+						<GetTo ZoneId="612" XYZ="-622.8626, 130, -485.154" />
+						<TalkTo NpcId="1019523" XYZ="-622.8626, 130, -485.154" QuestId="68175" />
+					</If>
+					<LLUseSpell SpellId="8624" NpcId="5866" XYZ="-227.9985, 64.92878, -674.7943" QuestId="68175" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68175) == 255">
+					<If condition="CurrentMount() == 128">
+						<Dismount />
+					</If>
+					<GetTo ZoneId="612" XYZ="-651.3646, 130.0019, -510.5701" />
+					<TurnIn QuestId="68175" NpcId="1019517" XYZ="-651.3646, 130.0019, -510.5701" />
+				</If>
 			</If>
-			<If Condition="HasQuest(68175) and not IsQuestCompleted(68175) and GetQuestStep(68175) == 255">
-				<GetTo ZoneId="612" XYZ="-651.3646, 130.0019, -510.5701" />
-				<TurnIn QuestId="68175" NpcId="1019517" XYZ="-651.3646, 130.0019, -510.5701" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- The Hidden Truth (2) -->
-			<If Condition="IsQuestCompleted(68002) and not HasQuest(68197) and not IsQuestCompleted(68197)">
+			<If Condition="not IsQuestCompleted(68197) and IsQuestCompleted(68002)">
 				<LLToast message="Working on quest 'The Hidden Truth' to unlock The Fringes Aether Currents" />
-				<GetTo ZoneId="612" XYZ="-614.6425, 130, -529.069" />
-				<If Condition="IsQuestAcceptQualified(68197)">
-					<PickupQuest QuestId="68197" NpcId="1019519" XYZ="-614.6425, 130, -529.069" />
+				<If Condition="not HasQuest(68197)">
+					<GetTo ZoneId="612" XYZ="-614.6425, 130, -529.069" />
+					<If Condition="IsQuestAcceptQualified(68197)">
+						<PickupQuest QuestId="68197" NpcId="1019519" XYZ="-614.6425, 130, -529.069" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68197) == 1">
+					<GetTo ZoneId="612" XYZ="-643.6338, 130.1764, -537.2782" />
+					<TalkTo NpcId="1023142" XYZ="-643.6338, 130.1764, -537.2782" QuestId="68197" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68197) == 2">
+					<GetTo ZoneId="612" XYZ="-630.077, 130.2487, -467.1904" />
+					<TalkTo NpcId="1023143" XYZ="-630.077, 130.2487, -467.1904" QuestId="68197" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68197) == 3">
+					<GetTo ZoneId="612" XYZ="-431.3275, 75.37266, -124.5484" />
+					<TalkTo NpcId="1023147" XYZ="-431.3275, 75.37266, -124.5484" QuestId="68197" StepId="3" />
+					<WaitWhile Condition="not GetQuestStep(68197) == 4" />
+				</If>
+				<If Condition="GetQuestStep(68197) == 4">
+					<GetTo ZoneId="612" XYZ="-430.4238, 75.0555, -120.4959" />
+					<TalkTo NpcId="1023148" XYZ="-430.4238, 75.0555, -120.4959" QuestId="68197" StepId="4" />
+				</If>
+				<If Condition="GetQuestStep(68197) == 255">
+					<GetTo ZoneId="612" XYZ="-430.6048, 75.29801, -123.5903" />
+					<TurnIn QuestId="68197" NpcId="1023147" XYZ="-430.6048, 75.29801, -123.5903" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68197) and not IsQuestCompleted(68197) and GetQuestStep(68197) == 1">
-				<GetTo ZoneId="612" XYZ="-643.6338, 130.1764, -537.2782" />
-				<TalkTo NpcId="1023142" XYZ="-643.6338, 130.1764, -537.2782" QuestId="68197" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68197) and not IsQuestCompleted(68197) and GetQuestStep(68197) == 2">
-				<GetTo ZoneId="612" XYZ="-630.077, 130.2487, -467.1904" />
-				<TalkTo NpcId="1023143" XYZ="-630.077, 130.2487, -467.1904" QuestId="68197" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68197) and not IsQuestCompleted(68197) and GetQuestStep(68197) == 3">
-				<GetTo ZoneId="612" XYZ="-431.3275, 75.37266, -124.5484" />
-				<TalkTo NpcId="1023147" XYZ="-431.3275, 75.37266, -124.5484" QuestId="68197" StepId="3" />
-				<WaitWhile Condition="HasQuest(68197) and not IsQuestCompleted(68197) and not GetQuestStep(68197) == 4" />
-			</If>
-			<If Condition="HasQuest(68197) and not IsQuestCompleted(68197) and GetQuestStep(68197) == 4">
-				<GetTo ZoneId="612" XYZ="-430.4238, 75.0555, -120.4959" />
-				<TalkTo NpcId="1023148" XYZ="-430.4238, 75.0555, -120.4959" QuestId="68197" StepId="4" />
-			</If>
-			<If Condition="HasQuest(68197) and not IsQuestCompleted(68197) and GetQuestStep(68197) == 255">
-				<GetTo ZoneId="612" XYZ="-430.6048, 75.29801, -123.5903" />
-				<TurnIn QuestId="68197" NpcId="1023147" XYZ="-430.6048, 75.29801, -123.5903" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Eyes Bigger Than Her Stomach (0) -->
-			<If Condition="IsQuestCompleted(68066) and not HasQuest(68357) and not IsQuestCompleted(68357)">
+			<If Condition="not IsQuestCompleted(68357) and IsQuestCompleted(68066)">
 				<LLToast message="Working on quest 'Eyes Bigger Than Her Stomach' to unlock The Fringes Aether Currents" />
-				<GetTo ZoneId="612" XYZ="432.6592, 114.4957, 233.5652" />
-				<If Condition="IsQuestAcceptQualified(68357)">
-					<PickupQuest QuestId="68357" NpcId="1020807" XYZ="432.6592, 114.4957, 233.5652" />
+				<If Condition="not HasQuest(68357)">
+					<GetTo ZoneId="612" XYZ="432.6592, 114.4957, 233.5652" />
+					<If Condition="IsQuestAcceptQualified(68357)">
+						<PickupQuest QuestId="68357" NpcId="1020807" XYZ="432.6592, 114.4957, 233.5652" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68357) == 1">
+					<GetTo ZoneId="612" XYZ="484.3365, 76.26219, 207.9651" />
+					<UseItem ItemId="2002324" NpcId="5693" XYZ="484.3365, 76.26219, 207.9651" InCombatOnly="True" UseHealthPercent="35" QuestId="68357" StepId="1" Radius="200" />
+				</If>
+				<If Condition="GetQuestStep(68357) == 255">
+					<GetTo ZoneId="612" XYZ="432.8989, 114.5068, 233.9212" />
+					<TurnIn ItemId="2002325" NpcId="1020807" XYZ="432.8989, 114.5068, 233.9212" QuestId="68357" StepId="255" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68357) and not IsQuestCompleted(68357) and GetQuestStep(68357) == 1">
-				<GetTo ZoneId="612" XYZ="484.3365, 76.26219, 207.9651" />
-				<UseItem ItemId="2002324" NpcId="5693" XYZ="484.3365, 76.26219, 207.9651" InCombatOnly="True" UseHealthPercent="25" QuestId="68357" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68357) and not IsQuestCompleted(68357) and GetQuestStep(68357) == 255">
-				<GetTo ZoneId="612" XYZ="432.8989, 114.5068, 233.9212" />
-				<TurnIn ItemId="2002325" NpcId="1020807" XYZ="432.8989, 114.5068, 233.9212" QuestId="68357" StepId="255" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Unexpected Guests (1) -->
-			<If Condition="IsQuestCompleted(68067) and not HasQuest(68352) and not IsQuestCompleted(68352)">
+			<If Condition="not IsQuestCompleted(68352) and IsQuestCompleted(68067)">
 				<LLToast message="Working on quest 'Unexpected Guests' to unlock The Fringes Aether Currents" />
-				<GetTo ZoneId="612" XYZ="278.9928, 77.0435, -25.51962" />
-				<If Condition="IsQuestAcceptQualified(68352)">
-					<PickupQuest QuestId="68352" NpcId="1020821" XYZ="278.9928, 77.0435, -25.51962" />
+				<If Condition="not HasQuest(68352)">
+					<GetTo ZoneId="612" XYZ="278.9928, 77.0435, -25.51962" />
+					<If Condition="IsQuestAcceptQualified(68352)">
+						<PickupQuest QuestId="68352" NpcId="1020821" XYZ="278.9928, 77.0435, -25.51962" />
+					</If>
 				</If>
-			</If>
-			<If Condition="HasQuest(68352) and not IsQuestCompleted(68352) and GetQuestStep(68352) == 1">
-				<GetTo ZoneId="612" XYZ="566.1423, 72.74925, 139.704" />
-				<WaitWhile Condition="HasQuest(68352) and not IsQuestCompleted(68352) and not GetQuestStep(68352) == 2" />
-			</If>
-			<If Condition="HasQuest(68352) and not IsQuestCompleted(68352) and GetQuestStep(68352) == 2">
-				<GetTo ZoneId="612" XYZ="564.9692, 72.52924, 138.4332" />
-				<TalkTo NpcId="1021227" XYZ="564.9692, 72.52924, 138.4332" QuestId="68352" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68352) and not IsQuestCompleted(68352) and GetQuestStep(68352) == 3">
-				<GetTo ZoneId="612" XYZ="609.1068, 49.36193, 325.0978" />
-				<TalkTo NpcId="1021948" XYZ="609.1068, 49.36193, 325.0978" QuestId="68352" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68352) and not IsQuestCompleted(68352) and GetQuestStep(68352) == 255">
-				<GetTo ZoneId="612" XYZ="277.8148, 76.97218, -25.63755" />
-				<TurnIn QuestId="68352" NpcId="1020821" XYZ="277.8148, 76.97218, -25.63755" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
+				<If Condition="GetQuestStep(68352) == 1">
+					<GetTo ZoneId="612" XYZ="566.1423, 72.74925, 139.704" />
+					<WaitWhile Condition="not GetQuestStep(68352) == 2" />
+				</If>
+				<If Condition="GetQuestStep(68352) == 2">
+					<GetTo ZoneId="612" XYZ="564.9692, 72.52924, 138.4332" />
+					<TalkTo NpcId="1021227" XYZ="564.9692, 72.52924, 138.4332" QuestId="68352" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68352) == 3">
+					<GetTo ZoneId="612" XYZ="609.1068, 49.36193, 325.0978" />
+					<TalkTo NpcId="1021948" XYZ="609.1068, 49.36193, 325.0978" QuestId="68352" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68352) == 255">
+					<GetTo ZoneId="612" XYZ="277.8148, 76.97218, -25.63755" />
+					<TurnIn QuestId="68352" NpcId="1020821" XYZ="277.8148, 76.97218, -25.63755" />
+				</If>
 			</If>
 
 			<If Condition="not IsAetherCurrentCompleted(612,8)">
@@ -591,132 +603,143 @@ Profile and fixes by Angles
 				<UseObject NpcId="2007972" XYZ="743.0074, 180.9872, -214.0688" Condition="not IsAetherCurrentCompleted(612,5)" />
 			</If>
 
-
 		</If>
 
 		<!-- The Peaks -->
-		<If Condition="IsQuestCompleted(68082)">
+		<If condition="not AetherCurrentManager.IsZoneComplete(620)">
+
+			<If Condition="not IsQuestCompleted(68082)">
+				<UserDialog DialogText="Please finish the level 69 MSQ quest 'Liberty or Death' to unlock Peaks Flying." IsBotContinueAllowed="True" />
+			</If>
+
 			<!-- Saint Sayer -->
-			<If Condition="IsQuestCompleted(68000) and not HasQuest(68191) and not IsQuestCompleted(68191)">
+			<If Condition="not IsQuestCompleted(68191) and IsQuestCompleted(68000)">
 				<LLToast message="Working on quest 'Saint Sayer' to unlock The Peaks Aether Currents" />
-				<GetTo ZoneId="620" XYZ="143.7094, 118.1921, -731.4683" />
-				<If Condition="IsQuestAcceptQualified(68191)">
-					<PickupQuest QuestId="68191" NpcId="1020841" XYZ="143.7094, 118.1921, -731.4683" />
+				<If Condition="not HasQuest(68191)">
+					<GetTo ZoneId="620" XYZ="143.7094, 118.1921, -731.4683" />
+					<If Condition="IsQuestAcceptQualified(68191)">
+						<PickupQuest QuestId="68191" NpcId="1020841" XYZ="143.7094, 118.1921, -731.4683" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68191) == 1">
+					<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
+					<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="1" />
+					<WaitWhile Condition="not GetQuestStep(68191) == 2" />
+				</If>
+				<If Condition="GetQuestStep(68191) == 2">
+					<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
+					<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68191) == 3">
+					<GetTo ZoneId="620" XYZ="750.3235, 242.4072, -602.1752" />
+					<Grind PostCombatDelay="3.0" While="GetQuestStep(68191) == 3">
+						<GrindArea name="68191">
+							<HotSpots>
+								<HotSpot XYZ="767.7468, 245.4678, -596.8373" Radius="200" />
+							</HotSpots>
+							<TargetMobs>
+								<TargetMob Id="5707" />
+							</TargetMobs>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="GetQuestStep(68191) == 255">
+					<GetTo ZoneId="620" XYZ="16.50958, 118.0358, -776.7533" />
+					<TurnIn ItemId="2002205" QuestId="68191" NpcId="1021752" XYZ="16.50958, 118.0358, -776.7533" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68191) and not IsQuestCompleted(68191) and GetQuestStep(68191) == 1">
-				<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
-				<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="1" />
-				<WaitWhile Condition="HasQuest(68191) and not IsQuestCompleted(68191) and not GetQuestStep(68191) == 2" />
-			</If>
-			<If Condition="HasQuest(68191) and not IsQuestCompleted(68191) and GetQuestStep(68191) == 2">
-				<GetTo ZoneId="620" XYZ="16.62733, 118.0358, -776.3309" />
-				<TalkTo NpcId="1021752" XYZ="16.62733, 118.0358, -776.3309" QuestId="68191" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68191) and not IsQuestCompleted(68191) and GetQuestStep(68191) == 3">
-				<GetTo ZoneId="620" XYZ="750.3235, 242.4072, -602.1752" />
-				<Grind PostCombatDelay="3.0" While="HasQuest(68191) and not IsQuestCompleted(68191) and GetQuestStep(68191) == 3">
-					<Hotspots>
-						<Hotspot XYZ="767.7468, 245.4678, -596.8373" Radius="90" />
-					</Hotspots>
-					<TargetMobs>
-						<TargetMob Id="5707" />
-					</TargetMobs>
-					<MinLevel />
-					<MaxLevel />
-				</Grind>
-			</If>
-			<If Condition="HasQuest(68191) and not IsQuestCompleted(68191) and GetQuestStep(68191) == 255">
-				<GetTo ZoneId="620" XYZ="16.50958, 118.0358, -776.7533" />
-				<TurnIn ItemId="2002205" QuestId="68191" NpcId="1021752" XYZ="16.50958, 118.0358, -776.7533" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Out of Sight -->
-			<If Condition="IsQuestCompleted(68077) and not HasQuest(68378) and not IsQuestCompleted(68378)">
+			<If Condition="not IsQuestCompleted(68378) and IsQuestCompleted(68077)">
 				<LLToast message="Working on quest 'Out of Sight' to unlock The Peaks Aether Currents" />
-				<GetTo ZoneId="620" XYZ="-325.3157, 258.9065, 756.8009" />
-				<If Condition="IsQuestAcceptQualified(68378)">
-					<PickupQuest QuestId="68378" NpcId="1020873" XYZ="-325.3157, 258.9065, 756.8009" />
+				<If Condition="not HasQuest(68378)">
+					<GetTo ZoneId="620" XYZ="-325.3157, 258.9065, 756.8009" />
+					<If Condition="IsQuestAcceptQualified(68378)">
+						<PickupQuest QuestId="68378" NpcId="1020873" XYZ="-325.3157, 258.9065, 756.8009" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68378) == 1">
+					<GetTo ZoneId="620" XYZ="-232.4232, 258.9065, 801.0678" />
+					<TalkTo NpcId="1023258" XYZ="-232.4232, 258.9065, 801.0678" QuestId="68378" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68378) == 2">
+					<If Condition="GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 0">
+						<GetTo ZoneId="620" XYZ="-292.544, 258.9065, 787.586" />
+						<TalkTo NpcId="1023259" XYZ="-292.544, 258.9065, 787.586" QuestId="68378" />
+					</If>
+					<If Condition="GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 1">
+						<GetTo ZoneId="620" XYZ="-238.6893, 257.5265, 742.7803" />
+						<TalkTo NpcId="1020871" XYZ="-238.6893, 257.5265, 742.7803" QuestId="68378" />
+					</If>
+					<If Condition="GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 2">
+						<GetTo ZoneId="620" XYZ="-218.7766, 257.5265, 739.2943" />
+						<TalkTo NpcId="1020870" XYZ="-218.7766, 257.5265, 739.2943" QuestId="68378" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68378) == 255">
+					<GetTo ZoneId="620" XYZ="-232.4997, 258.9065, 801.3919" />
+					<TurnIn QuestId="68378" NpcId="1023258" XYZ="-232.4997, 258.9065, 801.3919" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68378) and not IsQuestCompleted(68378) and GetQuestStep(68378) == 1">
-				<GetTo ZoneId="620" XYZ="-232.4232, 258.9065, 801.0678" />
-				<TalkTo NpcId="1023258" XYZ="-232.4232, 258.9065, 801.0678" QuestId="68378" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68378) and not IsQuestCompleted(68378) and GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 0">
-				<GetTo ZoneId="620" XYZ="-292.544, 258.9065, 787.586" />
-				<TalkTo NpcId="1023259" XYZ="-292.544, 258.9065, 787.586" QuestId="68378" />
-			</If>
-			<If Condition="HasQuest(68378) and not IsQuestCompleted(68378) and GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 1">
-				<GetTo ZoneId="620" XYZ="-238.6893, 257.5265, 742.7803" />
-				<TalkTo NpcId="1020871" XYZ="-238.6893, 257.5265, 742.7803" QuestId="68378" />
-			</If>
-			<If Condition="HasQuest(68378) and not IsQuestCompleted(68378) and GetQuestStep(68378) == 2 and GetQuestById(68378).GetTodoArgs(2, 0).Item1 == 2">
-				<GetTo ZoneId="620" XYZ="-218.7766, 257.5265, 739.2943" />
-				<TalkTo NpcId="1020870" XYZ="-218.7766, 257.5265, 739.2943" QuestId="68378" />
-			</If>
-			<If Condition="HasQuest(68378) and not IsQuestCompleted(68378) and GetQuestStep(68378) == 255">
-				<GetTo ZoneId="620" XYZ="-232.4997, 258.9065, 801.3919" />
-				<TurnIn QuestId="68378" NpcId="1023258" XYZ="-232.4997, 258.9065, 801.3919" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- A Hunger for Trade -->
-			<If Condition="IsQuestCompleted(68079) and not HasQuest(68387) and not IsQuestCompleted(68387)">
+			<If Condition="not IsQuestCompleted(68387) and IsQuestCompleted(68079)">
 				<LLToast message="Working on quest 'A Hunger for Trade' to unlock The Peaks Aether Currents" />
-				<GetTo ZoneId="620" XYZ="311.476, 324.3033, 361.2439" />
-				<If Condition="IsQuestAcceptQualified(68387)">
-					<PickupQuest QuestId="68387" NpcId="1023167" XYZ="311.476, 324.3033, 361.2439" />
+				<If Condition="not HasQuest(68387)">
+					<GetTo ZoneId="620" XYZ="311.476, 324.3033, 361.2439" />
+					<If Condition="IsQuestAcceptQualified(68387)">
+						<PickupQuest QuestId="68387" NpcId="1023167" XYZ="311.476, 324.3033, 361.2439" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68387) == 1">
+					<GetTo ZoneId="620" XYZ="358.6741, 325.3864, 333.4955" />
+					<TalkTo NpcId="1023168" XYZ="358.6741, 325.3864, 333.4955" QuestId="68387" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68387) == 2">
+					<GetTo ZoneId="620" XYZ="-201.2187, 258.9065, 781.106" />
+					<HandOver ItemId="2002310" NpcId="1023169" XYZ="-201.2187, 258.9065, 781.106" QuestId="68387" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68387) == 3">
+					<GetTo ZoneId="620" XYZ="358.4203, 325.3905, 332.8086" />
+					<HandOver ItemId="2002311" NpcId="1023168" XYZ="358.4203, 325.3905, 332.8086" QuestId="68387" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68387) == 255">
+					<GetTo ZoneId="620" XYZ="312.1086, 324.3033, 361.0327" />
+					<TurnIn QuestId="68387" NpcId="1023167" XYZ="312.1086, 324.3033, 361.0327" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68387) and not IsQuestCompleted(68387) and GetQuestStep(68387) == 1">
-				<GetTo ZoneId="620" XYZ="358.6741, 325.3864, 333.4955" />
-				<TalkTo NpcId="1023168" XYZ="358.6741, 325.3864, 333.4955" QuestId="68387" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68387) and not IsQuestCompleted(68387) and GetQuestStep(68387) == 2">
-				<GetTo ZoneId="620" XYZ="-201.2187, 258.9065, 781.106" />
-				<HandOver ItemId="2002310" NpcId="1023169" XYZ="-201.2187, 258.9065, 781.106" QuestId="68387" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68387) and not IsQuestCompleted(68387) and GetQuestStep(68387) == 3">
-				<GetTo ZoneId="620" XYZ="358.4203, 325.3905, 332.8086" />
-				<HandOver ItemId="2002311" NpcId="1023168" XYZ="358.4203, 325.3905, 332.8086" QuestId="68387" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68387) and not IsQuestCompleted(68387) and GetQuestStep(68387) == 255">
-				<GetTo ZoneId="620" XYZ="312.1086, 324.3033, 361.0327" />
-				<TurnIn QuestId="68387" NpcId="1023167" XYZ="312.1086, 324.3033, 361.0327" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Closing Up Shop -->
-			<If Condition="IsQuestCompleted(68081) and not HasQuest(68396) and not IsQuestCompleted(68396)">
+			<If Condition="not IsQuestCompleted(68396) and IsQuestCompleted(68081)">
 				<LLToast message="Working on quest 'Closing Up Shop' to unlock The Peaks Aether Currents" />
-				<GetTo ZoneId="620" XYZ="283.095, 322.8657, 750.0656" />
-				<If Condition="IsQuestAcceptQualified(68396)">
-					<PickupQuest QuestId="68396" NpcId="1020893" XYZ="283.095, 322.8657, 750.0656" />
+				<If Condition="not HasQuest(68396)">
+					<GetTo ZoneId="620" XYZ="283.095, 322.8657, 750.0656" />
+					<If Condition="IsQuestAcceptQualified(68396)">
+						<PickupQuest QuestId="68396" NpcId="1020893" XYZ="283.095, 322.8657, 750.0656" />
+					</If>
 				</If>
-			</If>
-			<If Condition="HasQuest(68396) and not IsQuestCompleted(68396) and GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 0">
-				<GetTo ZoneId="620" XYZ="320.7095, 324.3033, 389.315" />
-				<TalkTo NpcId="1020888" XYZ="320.7095, 324.3033, 389.315" QuestId="68396" />
-			</If>
-			<If Condition="HasQuest(68396) and not IsQuestCompleted(68396) and GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 1">
-				<GetTo ZoneId="620" XYZ="341.7748, 325.546, 360.4334" />
-				<TalkTo NpcId="1020886" XYZ="341.7748, 325.546, 360.4334" QuestId="68396" />
-			</If>
-			<If Condition="HasQuest(68396) and not IsQuestCompleted(68396) and GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 2">
-				<GetTo ZoneId="620" XYZ="336.0619, 324.3016, 330.6689" />
-				<TalkTo NpcId="1020887" XYZ="336.0619, 324.3016, 330.6689" QuestId="68396" />
-			</If>
-			<If Condition="HasQuest(68396) and not IsQuestCompleted(68396) and GetQuestStep(68396) == 2">
-				<GetTo ZoneId="620" XYZ="-217.9739, 257.5265, 738.7597" />
-				<TalkTo NpcId="1020870" XYZ="-217.9739, 257.5265, 738.7597" QuestId="68396" StepId="2" />
-			</If>
-			<If Condition="HasQuest(68396) and not IsQuestCompleted(68396) and GetQuestStep(68396) == 255">
-				<GetTo ZoneId="620" XYZ="283.6925, 322.8716, 750.7115" />
-				<TurnIn QuestId="68396" NpcId="1020893" XYZ="283.6925, 322.8716, 750.7115" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
+				<If Condition="GetQuestStep(68396) == 1">
+					<If Condition="GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 0">
+						<GetTo ZoneId="620" XYZ="320.7095, 324.3033, 389.315" />
+						<TalkTo NpcId="1020888" XYZ="320.7095, 324.3033, 389.315" QuestId="68396" />
+					</If>
+					<If Condition="GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 1">
+						<GetTo ZoneId="620" XYZ="341.7748, 325.546, 360.4334" />
+						<TalkTo NpcId="1020886" XYZ="341.7748, 325.546, 360.4334" QuestId="68396" />
+					</If>
+					<If Condition="GetQuestStep(68396) == 1 and GetQuestById(68396).GetTodoArgs(1, 0).Item1 == 2">
+						<GetTo ZoneId="620" XYZ="336.0619, 324.3016, 330.6689" />
+						<TalkTo NpcId="1020887" XYZ="336.0619, 324.3016, 330.6689" QuestId="68396" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68396) == 2">
+					<GetTo ZoneId="620" XYZ="-217.9739, 257.5265, 738.7597" />
+					<TalkTo NpcId="1020870" XYZ="-217.9739, 257.5265, 738.7597" QuestId="68396" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68396) == 255">
+					<GetTo ZoneId="620" XYZ="283.6925, 322.8716, 750.7115" />
+					<TurnIn QuestId="68396" NpcId="1020893" XYZ="283.6925, 322.8716, 750.7115" />
+				</If>
 			</If>
 
 			<If Condition="not IsAetherCurrentCompleted(620,7)">
@@ -739,96 +762,112 @@ Profile and fixes by Angles
 		</If>
 
 		<!-- The Lochs -->
-		<If Condition="IsQuestCompleted(68089)">
+		<If condition="not AetherCurrentManager.IsZoneComplete(621)">
+
+			<If Condition="not IsQuestCompleted(68089)">
+				<UserDialog DialogText="Please finish the level 70 MSQ quest 'Stormblood' to unlock The Lochs Flying." IsBotContinueAllowed="True" />
+			</If>
+
 			<!-- It's a Zu Out There -->
-			<If Condition="IsQuestCompleted(68084) and not HasQuest(68413) and not IsQuestCompleted(68413)">
+			<If Condition="not IsQuestCompleted(68413) and IsQuestCompleted(68084)">
 				<LLToast message="Working on quest 'It's a Zu Out There' to unlock The Lochs Aether Currents" />
-				<GetTo ZoneId="621" XYZ="-506.7125, 8.7, -40.07228" />
-				<If Condition="IsQuestAcceptQualified(68413)">
-					<PickupQuest QuestId="68413" NpcId="1022992" XYZ="-506.7125, 8.7, -40.07228" />
+				<If Condition="not HasQuest(68413)">
+					<GetTo ZoneId="621" XYZ="-506.7125, 8.7, -40.07228" />
+					<If Condition="IsQuestAcceptQualified(68413)">
+						<PickupQuest QuestId="68413" NpcId="1022992" XYZ="-506.7125, 8.7, -40.07228" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68413) == 1">
+					<GetTo ZoneId="621" XYZ="-258.1663, 98.84189, -488.754" />
+					<WaitWhile Condition="not GetQuestStep(68413) == 255" />
+				</If>
+				<If Condition="GetQuestStep(68413) == 255">
+					<GetTo ZoneId="621" XYZ="-506.307, 8.7, -40.12613" />
+					<TurnIn QuestId="68413" NpcId="1022992" XYZ="-506.307, 8.7, -40.12613" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68413) and not IsQuestCompleted(68413) and GetQuestStep(68413) == 1">
-				<GetTo ZoneId="621" XYZ="-258.1663, 98.84189, -488.754" />
-				<WaitWhile Condition="HasQuest(68413) and not IsQuestCompleted(68413) and not GetQuestStep(68413) == 255" />
-			</If>
-			<If Condition="HasQuest(68413) and not IsQuestCompleted(68413) and GetQuestStep(68413) == 255">
-				<GetTo ZoneId="621" XYZ="-506.307, 8.7, -40.12613" />
-				<TurnIn QuestId="68413" NpcId="1022992" XYZ="-506.307, 8.7, -40.12613" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- A Rite to Rest -->
-			<If Condition="IsQuestCompleted(68084) and not HasQuest(68416) and not IsQuestCompleted(68416)">
+			<If Condition="not IsQuestCompleted(68416) and IsQuestCompleted(68084)">
 				<LLToast message="Working on quest 'A Rite to Rest' to unlock The Lochs Aether Currents" />
-				<GetTo ZoneId="621" XYZ="-524.7865, 8.685927, -19.41368" />
-				<If Condition="IsQuestAcceptQualified(68416)">
-					<PickupQuest QuestId="68416" NpcId="1022990" XYZ="-524.7865, 8.685927, -19.41368" />
+				<If Condition="not HasQuest(68416)">
+					<GetTo ZoneId="621" XYZ="-524.7865, 8.685927, -19.41368" />
+					<If Condition="IsQuestAcceptQualified(68416)">
+						<PickupQuest QuestId="68416" NpcId="1022990" XYZ="-524.7865, 8.685927, -19.41368" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68416) == 1">
+					<GetTo ZoneId="621" XYZ="-473.1273, 87.08347, -722.8254" />
+					<Grind PostCombatDelay="3.0" While="GetQuestStep(68416) == 1">
+						<GrindArea name="68416">
+							<HotSpots>
+								<HotSpot XYZ="-473.1273, 87.08347, -722.8254" Radius="90" />
+							</HotSpots>
+							<TargetMobs>
+								<TargetMob Id="5728" />
+							</TargetMobs>
+						</GrindArea>
+					</Grind>
+				</If>
+				<If Condition="GetQuestStep(68416) == 255">
+					<GetTo ZoneId="621" XYZ="-524.5329, 8.68931, -19.4433" />
+					<TurnIn QuestId="68416" NpcId="1022990" XYZ="-524.5329, 8.68931, -19.4433" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68416) and not IsQuestCompleted(68416) and GetQuestStep(68416) == 1">
-				<GetTo ZoneId="621" XYZ="-473.1273, 87.08347, -722.8254" />
-				<Grind PostCombatDelay="3.0" While="HasQuest(68416) and not IsQuestCompleted(68416) and GetQuestStep(68416) == 1">
-					<Hotspots>
-						<Hotspot XYZ="-473.1273, 87.08347, -722.8254" Radius="90" />
-					</Hotspots>
-					<TargetMobs>
-						<TargetMob Id="5728" />
-					</TargetMobs>
-					<MinLevel />
-					<MaxLevel />
-				</Grind>
-			</If>
-			<If Condition="HasQuest(68416) and not IsQuestCompleted(68416) and GetQuestStep(68416) == 255">
-				<GetTo ZoneId="621" XYZ="-524.5329, 8.68931, -19.4433" />
-				<TurnIn QuestId="68416" NpcId="1022990" XYZ="-524.5329, 8.68931, -19.4433" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- If I Were a Fish -->
-			<If Condition="IsQuestCompleted(68087) and not HasQuest(68417) and not IsQuestCompleted(68417)">
+			<If Condition="not IsQuestCompleted(68417) and IsQuestCompleted(68087)">
 				<LLToast message="Working on quest 'If I Were a Fish' to unlock The Lochs Aether Currents" />
-				<GetTo ZoneId="621" XYZ="-662.0169, 49.99979, -48.66205" />
-				<If Condition="IsQuestAcceptQualified(68417)">
-					<PickupQuest QuestId="68417" NpcId="1022987" XYZ="-662.0169, 49.99979, -48.66205" />
+				<If Condition="not HasQuest(68417)">
+					<GetTo ZoneId="621" XYZ="-662.0169, 49.99979, -48.66205" />
+					<If Condition="IsQuestAcceptQualified(68417)">
+						<PickupQuest QuestId="68417" NpcId="1022987" XYZ="-662.0169, 49.99979, -48.66205" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68417) == 1">
+					<GetTo ZoneId="621" XYZ="-82.7164, 1.120263, -297.6326" />
+					<TalkTo NpcId="1023174" XYZ="-82.7164, 1.120263, -297.6326" QuestId="68417" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68417) == 2">
+					<If condition="not MovementManager.IsDiving">
+						<GetTo ZoneId="621" XYZ="-131.4688, -0.6, -179.2324" />
+						<LLSwimTransition XYZ="-131.4688, -0.6, -179.2324" Descending="true" />
+					</If>
+					<SwimTo XYZ="-54.82515, -339.51923, -104.013115" />
+					<UseObject NpcId="2008779" XYZ="-56.229553, -339.04022, -103.89868" QuestId="68417" StepId="2" />
+				</If>
+				<If Condition="GetQuestStep(68417) == 3">
+					<If condition="MovementManager.IsDiving">
+						<LLSwimTransition XYZ="-129.52158, -25.0001, -179.29291" Ascending="true" />
+					</If>
+					<GetTo ZoneId="621" XYZ="-82.78043, 1.129258, -297.2216" />
+					<HandOver ItemId="2002313" NpcId="1023174" XYZ="-82.78043, 1.129258, -297.2216" QuestId="68417" StepId="3" />
+				</If>
+				<If Condition="GetQuestStep(68417) == 255">
+					<GetTo ZoneId="621" XYZ="-661.8531, 49.9998, -48.9227" />
+					<TurnIn QuestId="68417" NpcId="1022987" XYZ="-661.8531, 49.9998, -48.9227" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68417) and not IsQuestCompleted(68417) and GetQuestStep(68417) == 1">
-				<GetTo ZoneId="621" XYZ="-82.7164, 1.120263, -297.6326" />
-				<TalkTo NpcId="1023174" XYZ="-82.7164, 1.120263, -297.6326" QuestId="68417" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68417) and not IsQuestCompleted(68417) and GetQuestStep(68417) == 2">
-				<GetTo ZoneId="621" XYZ="-131.4688, -0.6, -179.2324" />
-				<RunCode Name="68417" />
-			</If>
-			<If Condition="HasQuest(68417) and not IsQuestCompleted(68417) and GetQuestStep(68417) == 3">
-				<GetTo ZoneId="621" XYZ="-82.78043, 1.129258, -297.2216" />
-				<HandOver ItemId="2002313" NpcId="1023174" XYZ="-82.78043, 1.129258, -297.2216" QuestId="68417" StepId="3" />
-			</If>
-			<If Condition="HasQuest(68417) and not IsQuestCompleted(68417) and GetQuestStep(68417) == 255">
-				<GetTo ZoneId="621" XYZ="-661.8531, 49.9998, -48.9227" />
-				<TurnIn QuestId="68417" NpcId="1022987" XYZ="-661.8531, 49.9998, -48.9227" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<!-- Are They Ill Tempered -->
-			<If Condition="IsQuestCompleted(68087) and not HasQuest(68419) and not IsQuestCompleted(68419)">
+			<If Condition="not IsQuestCompleted(68419) and IsQuestCompleted(68087)">
 				<LLToast message="Working on quest 'Are They Ill Tempered' to unlock The Lochs Aether Currents" />
-				<GetTo ZoneId="621" XYZ="-539.7319, 7.611982, 52.4417" />
-				<If Condition="IsQuestAcceptQualified(68419)">
-					<PickupQuest QuestId="68419" NpcId="1022991" XYZ="-539.7319, 7.611982, 52.4417" />
+				<If Condition="not HasQuest(68419)">
+					<GetTo ZoneId="621" XYZ="-539.7319, 7.611982, 52.4417" />
+					<If Condition="IsQuestAcceptQualified(68419)">
+						<PickupQuest QuestId="68419" NpcId="1022991" XYZ="-539.7319, 7.611982, 52.4417" />
+					</If>
+				</If>
+				<If Condition="GetQuestStep(68419) == 1">
+					<GetTo ZoneId="621" XYZ="-156.9747, 2.799993, 196.0645" />
+					<UseItem ItemId="2002315" NpcId="5719" XYZ="-142.7926, -0.3, 136.9581" Radius="200" InCombatOnly="True" UseHealthPercent="35" QuestId="68419" StepId="1" />
+				</If>
+				<If Condition="GetQuestStep(68419) == 255">
+					<GetTo ZoneId="621" XYZ="-539.7079, 7.611982, 52.32739" />
+					<TurnIn QuestId="68419" ItemId="2002316" NpcId="1022991" XYZ="-539.7079, 7.611982, 52.32739" />
 				</If>
 			</If>
-			<If Condition="HasQuest(68419) and not IsQuestCompleted(68419) and GetQuestStep(68419) == 1">
-				<GetTo ZoneId="621" XYZ="-156.9747, 2.799993, 196.0645" />
-				<UseItem ItemId="2002315" NpcId="5719" XYZ="-142.7926, -0.3, 136.9581" InCombatOnly="True" UseHealthPercent="25" QuestId="68419" StepId="1" />
-			</If>
-			<If Condition="HasQuest(68419) and not IsQuestCompleted(68419) and GetQuestStep(68419) == 255">
-				<GetTo ZoneId="621" XYZ="-539.7079, 7.611982, 52.32739" />
-				<TurnIn QuestId="68419" ItemId="2002316" NpcId="1022991" XYZ="-539.7079, 7.611982, 52.32739" />
-				<LLSmallTalk />
-				<AutoInventoryEquip />
-			</If>
+
 			<If Condition="not IsAetherCurrentCompleted(621,8)">
 				<GetTo ZoneId="621" XYZ="-380.2091, 10.05566, 16.89172" />
 				<UseObject NpcId="2007987" XYZ="-380.2091, 10.05566, 16.89172" Condition="not IsAetherCurrentCompleted(621,8)" />
@@ -845,266 +884,217 @@ Profile and fixes by Angles
 				<GetTo ZoneId="621" XYZ="261.5243, 78.3855, 69.93213" />
 				<UseObject NpcId="2007993" XYZ="261.5243, 78.3855, 69.93213" Condition="not IsAetherCurrentCompleted(621,6)" />
 			</If>
-			<LogMessage Message="You've attuned to the Aether Currents in The Lochs!" />
-		</If>
 
-		<If Condition="HasQuest(68307) and not IsQuestCompleted(68307) and GetQuestStep(68307) == 1">
-			<LisbethTravel Zone="622" Position="-83.96514, 33.66718, -213.9475" />
-			<UserDialog DialogText="Please complete Sheep Snatcher and The Palace of Lost Souls Quest Objective manually." />
-		</If>
-		<If Condition="HasQuest(68168) and not IsQuestCompleted(68168)">
-			<UserDialog DialogText="The Palace of Lost Souls Quest Objective manually." />
 		</If>
 
 	</Order>
 
 	<CodeChunks>
-		<CodeChunk Name="68417">
-		  <![CDATA[
-			MovementManager.StartDescending();
-			while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-			while (!MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			MovementManager.StopDescending();
-
-			if (MovementManager.IsDiving)
-			{
-			  var p1 = new Vector3(-108.7301f, -263.9186f, -157.6365f);
-			  var p2 = new Vector3(-54.30657f, -339.5192f, -102.2504f);
-
-			  if (!Core.Player.IsMounted)  {  await CommonTasks.SummonFlyingMount();  }
-
-			  while (Core.Player.Location.Distance(p1) > 1f)
-			  {
-				Navigator.PlayerMover.MoveTowards(p1);
-				await Coroutine.Yield();
-			  }
-
-			  while (Core.Player.Location.Distance(p2) > 3f)
-			  {
-				Navigator.PlayerMover.MoveTowards(p2);
-				await Coroutine.Yield();
-			  }
-
-			  MovementManager.MoveStop();
-
-			  var obj = GameObjectManager.GetObjectByNPCId(2008779);
-
-			  obj.Interact();
-
-			  while (ConditionParser.GetQuestStep(68417) == 2)
-			  {
-				if (Talk.DialogOpen)  {  Talk.Next();  }
-				await Coroutine.Yield();
-			  }
-
-			  await Coroutine.Sleep(2000);
-
-			  if (!Core.Player.IsMounted)  {  await CommonTasks.SummonFlyingMount();  }
-
-			  while (Core.Player.Location.Distance(p1) > 1f)
-			  {
-				Navigator.PlayerMover.MoveTowards(p1);
-				await Coroutine.Yield();
-			  }
-
-			  MovementManager.MoveStop();
-			  MovementManager.StartAscending();
-			  while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-			  while (MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			  MovementManager.StopAscending();
-			}
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="68269">
-		  <![CDATA[
-			if (MovementManager.IsSwimming)
-			{
-			  MovementManager.StartDescending();
-			  await Coroutine.Wait(10000, () => MovementManager.IsDiving);
-			}
-
-			MovementManager.StopDescending();
-			await Coroutine.Sleep(2000);
-
-			if (MovementManager.IsDiving)
-			{
-			  await CommonTasks.DescendTo(-48.66101f);
-			  GameObjectManager.GetObjectByNPCId(2008519).Interact();
-			  await Coroutine.Wait(10000, ()=> !GameObjectManager.GetObjectByNPCId(2008519).IsVisible);
-			  MovementManager.StartAscending();
-			  await Coroutine.Wait(30000, () => !MovementManager.IsDiving);
-			}
-
-			MovementManager.StopAscending();
-			await Coroutine.Sleep(2000);
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="68229a">
-		  <![CDATA[
-			MovementManager.SetFacing(2.91f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(250);
-			MovementManager.Jump();
-			await Coroutine.Sleep(650);
-			MovementManager.MoveForwardStop();
-			await Coroutine.Sleep(500);
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="68229b">
-		  <![CDATA[
-			MovementManager.SetFacing(4.28f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(250);
-			MovementManager.Jump();
-			await Coroutine.Sleep(650);
-			MovementManager.MoveForwardStop();
-			await Coroutine.Sleep(500);
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="68229c">
-		  <![CDATA[
-			MovementManager.SetFacing(3.5f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(180);
-			MovementManager.Jump();
-			await Coroutine.Sleep(650);
-			MovementManager.MoveForwardStop();
-			await Coroutine.Sleep(500);
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="SuiNoSato">
-		  <![CDATA[
-			var p1 = new Vector3(189.2789f, -97.34477f, -251.9925f);
-			var p2 = new Vector3(33.75797f, -196.0178f, -162.433f);
-
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(4000);
-
-			while (!MovementManager.IsDiving)   {  await Coroutine.Yield();  }
-			while (CommonBehaviors.IsLoading)   {  await Coroutine.Yield();  }
-
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(4000);
-			MovementManager.MoveStop();
-
-			while (Core.Player.Location.Distance(p1) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p1);
-			   await Coroutine.Yield();
-			}
-
-			while (Core.Player.Location.Distance(p2) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p2);
-			   await Coroutine.Yield();
-			}
-
-			MovementManager.SetFacing(5.25f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(6000);
-
-			while (MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="ShisuiOfTheVioletTides">
-		  <![CDATA[
-			var p1 = new Vector3(63.88613f, -121.9711f, 78.7258f);
-			var p2 = new Vector3(-192.6853f, -69.92602f, 331.4522f);
-			var p3 = new Vector3(-471.7803f, -40.43297f, 747.8416f);
-			var p4 = new Vector3(-955.9929f, -899.5684f, 757.0262f);
-
-			MovementManager.SetFacing(2.25f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(6000);
-
-			while (!MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-
-			if (!Core.Player.IsMounted)  {  await CommonTasks.SummonFlyingMount();  }
-
-			while (Core.Player.Location.Distance(p1) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p1);
-			   await Coroutine.Yield();
-			}
-
-			while (Core.Player.Location.Distance(p2) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p2);
-			   await Coroutine.Yield();
-			}
-
-			while (Core.Player.Location.Distance(p3) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p3);
-			   await Coroutine.Yield();
-			}
-
-			while (Core.Player.Location.Distance(p4) > 3f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p4);
-			   await Coroutine.Yield();
-			}
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="2007999">
-		  <![CDATA[
-			MovementManager.SetFacing(6.28f);
-			MovementManager.MoveForwardStart();
-			await Coroutine.Sleep(500);
-			MovementManager.Jump();
-			await Coroutine.Sleep(850);
-			MovementManager.Jump();
-			await Coroutine.Sleep(850);
-			MovementManager.Jump();
-			await Coroutine.Sleep(500);
-			MovementManager.MoveForwardStop();
-			await Coroutine.Sleep(500);
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="IsleOfBekko">
-		  <![CDATA[
-			var p1 = new Vector3(-471.5278f, -94.40621f, 192.5568f);
-			var p2 = new Vector3(-637.3761f, -39.85123f, 263.5708f);
-
-			MovementManager.StartDescending();
-			while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-			while (!MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			MovementManager.StopDescending();
-
-			if (!Core.Player.IsMounted)  {  await CommonTasks.SummonFlyingMount();  }
-
-			while (Core.Player.Location.Distance(p1) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p1);
-			   await Coroutine.Yield();
-			}
-
-			while (Core.Player.Location.Distance(p2) > 2f)
-			{
-			   Navigator.PlayerMover.MoveTowards(p2);
-			   await Coroutine.Yield();
-			}
-
-			MovementManager.MoveStop();
-			MovementManager.StartAscending();
-			while (MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-			while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-			MovementManager.StopAscending();
-		  ]]>
-		</CodeChunk>
-		<CodeChunk Name="SwitchCombatJob">
-            <![CDATA[
-            var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
-            var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
-
-            if (gearSets.Any())
+		        <CodeChunk Name="SwordStoneTraverse"><![CDATA[
+// Quest68229, Ruby Sea: serial walking/jump handoffs keep the mesh out of the
+// gaps. October22 floor survey supplies these takeoffs and landing elevations.
+// LL remains unchanged; its 2D endpoint test is supplemented by stable height.
+// Water recovery belongs to the normal GetTo above, never direct uphill input.
+if (WorldManager.ZoneId != 613 || !QuestLogManager.HasQuest(68229) || Core.Me.Y <= -55 || Core.Me.IsDead || Core.Me.InCombat) return;
+var savedMount = ff14bot.Settings.CharacterSettings.Instance.UseMount;
+ff14bot.Settings.CharacterSettings.Instance.UseMount = false;
+// The approach's service path can still stop input after its arrival. Remove
+// that owner for the entire authored descent, including inter-jump walking.
+var previous = ff14bot.Navigation.Navigator.NavigationProvider;
+var noPath = new ff14bot.Navigation.NullProvider();
+ff14bot.Navigation.Navigator.Clear();
+ff14bot.Navigation.Navigator.NavigationProvider = noPath;
+// Last five grounded approach samples measure current speed, including active buffs.
+var approachSpeeds = new System.Collections.Generic.List<float>();
+Func<Clio.Utilities.Vector3, float, System.Threading.Tasks.Task<bool>> walk = async (point, tolerance) =>
+{
+    var deadline = DateTime.UtcNow.AddSeconds(12);
+    try
+    {
+        while (Core.Me.Location.Distance(point) > tolerance)
+        {
+            if (QuestLogManager.InCutscene || ff14bot.RemoteWindows.Talk.DialogOpen || DateTime.UtcNow > deadline || Core.Me.IsDead || Core.Me.InCombat || WorldManager.ZoneId != 613 || Core.Me.Y < point.Y - 4)
+            { ff14bot.Helpers.Logging.Write("[SwordStone] Walk interrupted at="+Core.Me.Location+" goal="+point); return false; }
+            ff14bot.Navigation.Navigator.PlayerMover.MoveTowards(point);
+            if (MovementManager.Speed > 1f)
             {
-                gearSets.First().Activate();
-                await Coroutine.Sleep(2000);
+                approachSpeeds.Add(MovementManager.Speed);
+                if (approachSpeeds.Count > 5) approachSpeeds.RemoveAt(0);
             }
-            ]]>
-        </CodeChunk>
+            await Coroutine.Yield();
+        }
+        return true;
+    }
+    finally { ff14bot.Navigation.Navigator.PlayerMover.MoveStop(); MovementManager.MoveStop(); }
+};
+// LL owns the actual forward/jump sequence. This wrapper measures a grounded
+// approach and relocates that sequence so faster travel starts farther back.
+// Nothing pulses a second mover while JumpNav.Jump is awaiting its landing.
+Func<Clio.Utilities.Vector3, Clio.Utilities.Vector3, System.Threading.Tasks.Task<bool>> jump = async (start, end) =>
+{
+    var route = new LlamaLibrary.Helpers.JumpNav(start, end);
+    if (route.IsAtEnd() && Math.Abs(Core.Me.Y - end.Y) < 1.5f) return true;
+    var direction = end - start;
+    direction.Y = 0;
+    direction /= direction.Distance(Clio.Utilities.Vector3.Zero);
+    // Collision-only rays ignore invisible event boundaries. A missing floor
+    // refuses the launch; water can never masquerade as the starting shelf.
+    Func<Clio.Utilities.Vector3, Clio.Utilities.Vector3?> floor = point =>
+    {
+        Clio.Utilities.Vector3 hit;
+        return WorldManager.AdvancedRaycast(point + new Clio.Utilities.Vector3(0, 3, 0), point - new Clio.Utilities.Vector3(0, 4, 0),
+            ff14bot.Enums.RaycastFlags.PassthruBoundaries, ff14bot.Enums.RaycastFlags.PassthruBoundaries, out hit) && hit.Y > -50
+            ? (Clio.Utilities.Vector3?)hit : null;
+    };
+    //2.5y of supported approach lets acceleration settle before the median of five samples.
+    var staging = floor(start - direction * 2.5f);
+    if (!staging.HasValue || !await walk(staging.Value, .2f)) return false;
+    approachSpeeds.Clear();
+    if (!await walk(start, .15f) || approachSpeeds.Count < 3) return false;
+    var samples = approachSpeeds.OrderBy(v => v).ToArray();
+    float speed = samples[samples.Length / 2];
+    // Normal6y/s is the tested geometric anchor, not an assumed runtime speed.
+    // Heavy/walking and out-of-range motion wait for a later safe retry rather
+    // than deliberately jumping a gap that cannot be reached at that speed.
+    //5.8 allows base6 measurement noise;8.1 includes verified7.8 Sprint with a small reserve.
+    //A0.8 spread among the last five samples signals acceleration/buff transition.
+    if (speed < 5.8f || speed > 8.1f || samples.Last() - samples.First() > .8f)
+    {
+        ff14bot.Helpers.Logging.Write("[SwordStone] Unstable/impaired approach speed=" + speed + "; launch deferred.");
+        return false;
+    }
+    // The captured6/7.8y/s descents change horizontal reach by about1.1y per
+    // extra y/s. Adjust launch POSITION by that measured response; LL still owns
+    // flight duration. A ballistic height extrapolation overcompensated on the
+    // sloped takeoff and hit the landing's front wall during the Sprint test.
+    // Wait if a known speed buff would end during facing/run-up/flight.
+    if (Core.Me.Auras.Any(a => (a.Id == 50 || a.Id == 1199) && a.TimespanLeft.TotalSeconds < 6))
+    {
+        ff14bot.Helpers.Logging.Write("[SwordStone] Speed buff expiring; launch deferred until speed settles.");
+        return false;
+    }
+    var adjusted = floor(start - direction * ((speed - 6f) * 1.1f));
+    if (!adjusted.HasValue) return false;
+    var launch = adjusted.Value;
+    // Verify the entire offset from the surveyed takeoff and LL's run-up strip.
+    //0.22*speed covers acceleration,200ms run-up and a small input reserve;
+    //2y permits this quest's measured descending rock but rejects its cliff.
+    for (int i = 0; i <= 8; ++i)
+    {
+        var p = start + (launch - start) * (i / 8f);
+        if (!floor(p).HasValue) return false;
+        var support = floor(launch + direction * (speed * .22f * i / 8f));
+        if (!support.HasValue || support.Value.Y < launch.Y - 2f) return false;
+    }
+    if (!await walk(launch, .15f)) return false;
+    // LL waits for any heading change, not alignment; finish facing before its
+    // movement handoff. No fixed heading or character-specific speed is stored.
+    double bearing = Math.Atan2(end.X - Core.Me.X, end.Z - Core.Me.Z);
+    Core.Me.Face(end);
+    if (!await Coroutine.Wait(1200, () => Math.Abs(Math.Atan2(Math.Sin(Core.Me.Heading - bearing), Math.Cos(Core.Me.Heading - bearing))) < .025)) return false;
+    ff14bot.Navigation.Navigator.Clear();
+    route = new LlamaLibrary.Helpers.JumpNav(launch, end);
+    ff14bot.Helpers.Logging.Write("[SwordStone] Jump speed=" + speed + " from=" + Core.Me.Location + " to=" + end);
+    bool result;
+    try { result = await route.Jump(); }
+    finally { MovementManager.MoveStop(); }
+    var foot = Core.Me.Location;
+    await Coroutine.Sleep(200);
+    result = result && route.IsAtEnd() && Math.Abs(Core.Me.Y - end.Y) < 1.5f &&
+        Math.Abs(Core.Me.Y - foot.Y) < .08f && !LlamaLibrary.Helpers.GeneralFunctions.IsJumping;
+    ff14bot.Helpers.Logging.Write("[SwordStone] Landing=" + result + " at=" + Core.Me.Location + " step=" + QuestLogManager.GetQuestStep(68229));
+    return result;
+};
+
+
+try
+{
+    if (Core.Me.IsMounted) await ff14bot.Behavior.CommonTasks.StopAndDismount();
+    // Approach measurement includes current buffs; do not wait for a specific class aura.
+    // A failed step3 attempt can retain its journal step. At the upper slope,
+    // replay the first crossing instead of aiming at the second shelf below it.
+    if (QuestLogManager.GetQuestStep(68229) == 2 || (QuestLogManager.GetQuestStep(68229) == 3 && Core.Me.Y > -25))
+    {
+        // The first slope is continuous rock, so walk its two bends before the gap.
+        if (Core.Me.Y > -10)
+        {
+            if (!await walk(new Clio.Utilities.Vector3(611.0259f, -1.795426f, -90.84206f), .4f)) return;
+            if (!await walk(new Clio.Utilities.Vector3(612.9421f, -1.754529f, -92.88273f), .2f)) return;
+        }
+        if (!await jump(new Clio.Utilities.Vector3(617.265f, -18.794312f, -115.272f), new Clio.Utilities.Vector3(619.56024f, -29.353806f, -125.00472f))) return;
+        // This landing triggers the sword event and temporarily locks movement.
+        // Return to OrderBot for its dialogue/event scheduling before step3;
+        // retaining the RunCode coroutine here stalls the scripted handoff.
+        return;
+    }
+    if (QuestLogManager.GetQuestStep(68229) == 3)
+    {
+        // These separated shelf heights also reconstruct progress after a
+        // manual stop; never walk back toward a higher, already-crossed gap.
+        // The second launch also moves0.45y forward: normal-speed capture clipped the near wall.
+        if (Core.Me.Y > -33 && !await jump(new Clio.Utilities.Vector3(616.7f, -29.447f, -131.125f), new Clio.Utilities.Vector3(608.9372f, -35.343384f, -134.70822f))) return;
+        // Rowan at6y/s undershot the Mira-calibrated takeoff. October22 floor survey and replay verified this later grounded launch.
+        if (Core.Me.Y > -40 && !await jump(new Clio.Utilities.Vector3(601.84f, -36.87f, -145f), new Clio.Utilities.Vector3(600f, -43.9f, -154f))) return;
+        // Normal-speed touchdown reaches the lip; step onto supported rock to enter the objective trigger.
+        if (Core.Me.Y > -48 && Core.Me.Y < -40 && !QuestLogManager.InCutscene && !ff14bot.RemoteWindows.Talk.DialogOpen)
+            await walk(new Clio.Utilities.Vector3(600f, -43.9f, -154f), .2f);
+        // The third landing completes the challenge. Return for the scripted
+        // event before the separate step255 water exit; holding this coroutine
+        // through that event delays the dialogue and completion handoff.
+        return;
+    }
+}
+finally
+{
+    MovementManager.MoveStop();
+    if (ReferenceEquals(ff14bot.Navigation.Navigator.NavigationProvider, noPath))
+        ff14bot.Navigation.Navigator.NavigationProvider = previous;
+    ff14bot.Settings.CharacterSettings.Instance.UseMount = savedMount;
+    ff14bot.Helpers.Logging.Write("[SwordStone] Traversal released at=" + Core.Me.Location + " step=" + QuestLogManager.GetQuestStep(68229));
+}
+
+
+]]></CodeChunk>
+        <CodeChunk Name="SwordStoneExit"><![CDATA[
+if (WorldManager.ZoneId != 613 || QuestLogManager.GetQuestStep(68229) != 255 ||
+    Core.Me.IsDead || Core.Me.InCombat || QuestLogManager.InCutscene || ff14bot.RemoteWindows.Talk.DialogOpen) return;
+var previous = ff14bot.Navigation.Navigator.NavigationProvider;
+var noPath = new ff14bot.Navigation.NullProvider();
+var savedMount = ff14bot.Settings.CharacterSettings.Instance.UseMount;
+ff14bot.Navigation.Navigator.Clear();
+ff14bot.Navigation.Navigator.NavigationProvider = noPath;
+ff14bot.Settings.CharacterSettings.Instance.UseMount = false;
+try
+{
+    // Retain the authored rock edge and water approach. This owner hands back
+    // to GetTo only after releasing direct input; no jump or mesh races it.
+    var points = new[] {
+        new Clio.Utilities.Vector3(596.343f, -43.55858f, -157.2047f),
+        new Clio.Utilities.Vector3(567.4005f, -62.05959f, -145.2847f)
+    };
+    foreach (var point in points)
+    {
+        if (point.Y > -55 && Core.Me.Y < -48) continue;
+        var deadline = DateTime.UtcNow.AddSeconds(15);
+        while (Core.Me.Location.Distance(point) > 1f)
+        {
+            if (Core.Me.IsDead || Core.Me.InCombat || WorldManager.ZoneId != 613 ||
+                QuestLogManager.GetQuestStep(68229) != 255 || DateTime.UtcNow > deadline) return;
+            ff14bot.Navigation.Navigator.PlayerMover.MoveTowards(point);
+            await Coroutine.Yield();
+        }
+    }
+    ff14bot.Helpers.Logging.Write("[SwordStone] Completed challenge water exit reached=" + Core.Me.Location);
+}
+finally
+{
+    ff14bot.Navigation.Navigator.PlayerMover.MoveStop();
+    MovementManager.MoveStop();
+    if (ReferenceEquals(ff14bot.Navigation.Navigator.NavigationProvider, noPath))
+        ff14bot.Navigation.Navigator.NavigationProvider = previous;
+    ff14bot.Settings.CharacterSettings.Instance.UseMount = savedMount;
+}
+
+]]></CodeChunk>
 	</CodeChunks>
 </Profile>
