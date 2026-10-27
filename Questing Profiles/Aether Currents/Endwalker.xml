@@ -14,7 +14,7 @@ Author: Angles24, Manta
       </If>
 
       <!-- Best Delivered Cold -->
-      <If Condition="IsQuestCompleted(69931) and not IsQuestCompleted(69752)">
+      <If Condition="IsQuestCompleted(69929) and not IsQuestCompleted(69752)">
         <LLToast message="Working on quest 'Best Delivered Cold' to unlock Garlemald Aether Currents" />
         <If Condition="not HasQuest(69752)">
           <GetTo ZoneId="958" XYZ="-432.7057, 22.1709, 461.7393" />
@@ -54,7 +54,7 @@ Author: Angles24, Manta
 
 
       <!--  Children Are Our Future -->
-      <If Condition="IsQuestCompleted(69931) and not IsQuestCompleted(69768)">
+      <If Condition="IsQuestCompleted(69929) and not IsQuestCompleted(69768)">
         <LLToast message="Working on quest 'Children Are Our Future' to unlock Garlemald Aether Currents" />
         <If Condition="not HasQuest(69768)">
           <GetTo ZoneId="958" XYZ="497.5773, 10.88766, -417.5886" />
@@ -99,7 +99,7 @@ Author: Angles24, Manta
 
 
       <!-- In Pursuit of Power -->
-      <If Condition="IsQuestCompleted(69931) and not IsQuestCompleted(70034)">
+      <If Condition="IsQuestCompleted(69929) and not IsQuestCompleted(70034)">
         <LLToast message="Working on quest 'In Pursuit of Power' to unlock Garlemald Aether Currents" />
         <If Condition="not HasQuest(70034)">
           <GetTo ZoneId="958" XYZ="-322.2065, 22.02302, 424.7354" />
@@ -136,7 +136,7 @@ Author: Angles24, Manta
 
 
       <!-- Stranded at the Station -->
-      <If Condition="IsQuestCompleted(69931) and not IsQuestCompleted(70038)">
+      <If Condition="IsQuestCompleted(69929) and not IsQuestCompleted(70038)">
         <LLToast message="Working on quest 'Stranded at the Station' to unlock Garlemald Aether Currents" />
         <If Condition="not HasQuest(70038)">
           <GetTo ZoneId="958" XYZ="-323.7941, 22, 487.199" />
@@ -187,7 +187,7 @@ Author: Angles24, Manta
 
 
       <!-- Alluring Allag -->
-      <If Condition="IsQuestCompleted(69943) and not IsQuestCompleted(69789)">
+      <If Condition="IsQuestCompleted(69942) and not IsQuestCompleted(69789)">
         <LLToast message="Working on quest 'Alluring Allag' to unlock Mare Lamentorum Aether Currents" />
         <If Condition="not HasQuest(69789)">
           <GetTo ZoneId="959" XYZ="-80.53382, -132.7896, -522.0748" />

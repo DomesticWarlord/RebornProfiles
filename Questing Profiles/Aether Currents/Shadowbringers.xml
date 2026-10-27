@@ -1,72 +1,80 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
-Profile:  [Orderbot] Shadowbringers Aether Currents
-Authors:  Sodimm
+Profile:  Shadowbringers Aether Currents
+Authors:  DomesticWarlord
 -->
 <Profile>
-  <Name>[Orderbot] Shadowbringers Aether Currents</Name>
+  <Name>Shadowbringers Aether Currents</Name>
   <Order>
 
-    <RunCode Name="SwitchCombatJob" />
-    <DisablePlugin Name="Enable Flight" />
     <!-- Lakeland -->
-    <If Condition="IsQuestCompleted(68840)">
-      <!-- A Jobb Well Done -->
-      <If Condition="not HasQuest(68916) and not IsQuestCompleted(68916)">
-      	<LLToast message="Working on quest 'A Jobb Well Done' to unlock Lakeland Aether Currents" />
-        <GetTo ZoneId="819" XYZ="41.78729, 2.232896, 262.3155" />
-        <If Condition="IsQuestAcceptQualified(68916)">
-          <PickupQuest QuestId="68916" NpcId="1027948" />
-        </If>
+
+    <If condition="not AetherCurrentManager.IsZoneComplete(813)">
+
+      <If Condition="not IsQuestCompleted(68840)">
+        <UserDialog DialogText="Please finish the level 72 MSQ quest 'Logistics of War' to unlock Lakeland Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(68916) &gt; 0">
+
+      <!-- A Jobb Well Done -->
+      <If Condition="IsQuestCompleted(68837) and not IsQuestCompleted(68916)">
+        <LLToast message="Working on quest 'A Jobb Well Done' to unlock Lakeland Aether Currents" />
+        <If Condition="not HasQuest(68916)">
+          <GetTo ZoneId="819" XYZ="41.78729, 2.232896, 262.3155" />
+          <If Condition="IsQuestAcceptQualified(68916)">
+            <PickupQuest QuestId="68916" NpcId="1027948" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(68916) == 1">
           <GetTo ZoneId="813" XYZ="781.7092, 21.41485, -9.937267" />
           <HandOver ItemId="2002848" NpcId="1028280" XYZ="784.0542, 21.41485, -9.414856" QuestId="68916" StepId="1" />
         </If>
         <If Condition="GetQuestStep(68916) == 2">
           <If Condition="GetQuestById(68916).QuestI8A == 0">
-            <HandOver ItemIds="2002849" NpcId="1028279" XYZ="715.053, 21.41357, -26.93219" QuestId="68916" StepId="2" Condition="GetQuestById(68916).QuestI8A == 0" />
+            <HandOver ItemIds="2002849" NpcId="1028279" XYZ="715.053, 21.41357, -26.93219" QuestId="68916" StepId="2" />
           </If>
           <If Condition="GetQuestById(68916).QuestI8A == 1">
-            <HandOver ItemIds="2002849" NpcId="1027339" XYZ="709.6819, 24.19248, 1.815735" QuestId="68916" StepId="2" Condition="GetQuestById(68916).QuestI8A == 1" />
+            <HandOver ItemIds="2002849" NpcId="1027339" XYZ="709.6819, 24.19248, 1.815735" QuestId="68916" StepId="2" />
           </If>
           <If Condition="GetQuestById(68916).QuestI8A == 2">
-            <HandOver ItemIds="2002849" NpcId="1027420" XYZ="702.3879, 21.79854, -81.34589" QuestId="68916" StepId="2" Condition="GetQuestById(68916).QuestI8A == 2" />
+            <HandOver ItemIds="2002849" NpcId="1027420" XYZ="702.3879, 21.79854, -81.34589" QuestId="68916" StepId="2" />
           </If>
           <If Condition="GetQuestById(68916).QuestI8A == 3">
-            <HandOver ItemIds="2002849" NpcId="1027341" XYZ="805.356, 30.86825, 7.980469" QuestId="68916" StepId="2" Condition="GetQuestById(68916).QuestI8A == 3" />
+            <HandOver ItemIds="2002849" NpcId="1027341" XYZ="805.356, 30.86825, 7.980469" QuestId="68916" StepId="2" />
           </If>
         </If>
         <If Condition="GetQuestStep(68916) == 255">
           <TurnIn QuestId="68916" NpcId="1028280" XYZ="784.0542, 21.41485, -9.414856" />
         </If>
       </If>
+
       <!-- Imperative Repairs -->
-      <If Condition="not HasQuest(68920) and not IsQuestCompleted(68920)">
-      	<LLToast message="Working on quest 'Imperative Repairs' to unlock Lakeland Aether Currents" />
-        <GetTo ZoneId="813" XYZ="-766.7798, 61.72048, -303.3688" />
-        <If Condition="IsQuestAcceptQualified(68920)">
-          <PickupQuest QuestId="68920" NpcId="1027382" />
+      <If Condition="IsQuestCompleted(68840) and not IsQuestCompleted(68920)">
+        <LLToast message="Working on quest 'Imperative Repairs' to unlock Lakeland Aether Currents" />
+        <If Condition="not HasQuest(68920)">
+          <GetTo ZoneId="813" XYZ="-766.7798, 61.72048, -303.3688" />
+          <If Condition="IsQuestAcceptQualified(68920)">
+            <PickupQuest QuestId="68920" NpcId="1027382" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68920) &gt; 0">
         <If Condition="GetQuestStep(68920) == 1">
+          <GetTo ZoneId="813" XYZ="-794.7357, 115.1598, -310.3228" />
           <UseItem ItemId="2002831" NpcIds="2010613,2010618,2010619,2010620" XYZ="-794.7357, 115.1598, -310.3228" UseDistance="2" QuestId="68920" StepId="1" />
         </If>
         <If Condition="GetQuestStep(68920) == 255">
+          <GetTo ZoneId="813" XYZ="-765.9266, 61.72048, -304.1886" />
           <TurnIn QuestId="68920" NpcId="1027382" XYZ="-765.9266, 61.72048, -304.1886" />
         </If>
       </If>
+
       <!-- The Astute Amaro -->
-      <If Condition="not HasQuest(68921) and not IsQuestCompleted(68921)">
-      	<LLToast message="Working on quest 'The Astute Amaro' to unlock Lakeland Aether Currents" />
-        <GetTo ZoneId="813" XYZ="-675.0093, 51.2151, -219.2736" />
-        <If Condition="IsQuestAcceptQualified(68921)">
-          <PickupQuest QuestId="68921" NpcId="1031212" />
+      <If Condition="not IsQuestCompleted(68921) and IsQuestCompleted(68840)">
+        <LLToast message="Working on quest 'The Astute Amaro' to unlock Lakeland Aether Currents" />
+        <If Condition="not HasQuest(68921)">
+          <GetTo ZoneId="813" XYZ="-675.0093, 51.2151, -219.2736" />
+          <If Condition="IsQuestAcceptQualified(68921)">
+            <PickupQuest QuestId="68921" NpcId="1031212" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68921) &gt; 0">
         <If Condition="GetQuestStep(68921) == 1">
           <GetTo ZoneId="813" XYZ="-426.4322, 7.907925, -119.4296" />
           <TalkTo NpcId="1031214" XYZ="-425.2232, 7.879167, -120.8362" QuestId="68921" StepId="1" />
@@ -83,20 +91,22 @@ Authors:  Sodimm
           <TurnIn QuestId="68921" NpcId="1031212" XYZ="-673.0907, 51.15794, -219.501" />
         </If>
       </If>
+
       <!-- An Unreasonable Request -->
-      <If Condition="not HasQuest(68922) and not IsQuestCompleted(68922)">
-      	<LLToast message="Working on quest 'An Unreasonable Request' to unlock Lakeland Aether Currents" />
-        <GetTo ZoneId="813" XYZ="-699.3442, 61.99376, -350.9773" />
-        <If Condition="IsQuestAcceptQualified(68922)">
-          <PickupQuest QuestId="68922" NpcId="1027419" />
+      <If Condition="not IsQuestCompleted(68922) and IsQuestCompleted(68840)">
+        <LLToast message="Working on quest 'An Unreasonable Request' to unlock Lakeland Aether Currents" />
+        <If Condition="not HasQuest(68922)">
+          <GetTo ZoneId="813" XYZ="-699.3442, 61.99376, -350.9773" />
+          <If Condition="IsQuestAcceptQualified(68922)">
+            <PickupQuest QuestId="68922" NpcId="1027419" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68922) &gt; 0">
         <If Condition="GetQuestStep(68922) == 1">
           <GetTo ZoneId="813" XYZ="-147.7577, 28.47205, -128.6607" />
           <HandOver ItemId="2002833" NpcId="1027353" XYZ="-146.3188, 28.47206, -128.832" QuestId="68922" StepId="1" />
         </If>
         <If Condition="GetQuestStep(68922) == 2">
+          <GetTo ZoneId="813" XYZ="-147.7577, 28.47205, -128.6607" />
           <If Condition="GetQuestById(68922).GetTodoArgs(2, 0).Item1 == 0">
             <TalkTo NpcId="1028317" XYZ="-157.6409, 49.16856, -137.3465" QuestId="68922" />
           </If>
@@ -108,6 +118,7 @@ Authors:  Sodimm
           </If>
         </If>
         <If Condition="GetQuestStep(68922) == 255">
+          <GetTo ZoneId="813" XYZ="-146.3188, 28.47206, -128.832" />
           <TurnIn QuestId="68922" NpcId="1027353" XYZ="-146.3188, 28.47206, -128.832" />
         </If>
       </If>
@@ -131,17 +142,23 @@ Authors:  Sodimm
       </If>
 
     </If>
+
     <!-- Il Mheg -->
-    <If Condition="IsQuestCompleted(68856)">
-      <!-- The Forbidden Lran -->
-      <If Condition="not HasQuest(68931) and not IsQuestCompleted(68931)">
-      	<LLToast message="Working on quest 'The Forbidden Lran' to unlock Il Mheg Aether Currents" />
-        <GetTo ZoneId="816" XYZ="-366.3663, 67.3123, 556.0659" />
-        <If Condition="IsQuestAcceptQualified(68931)">
-          <PickupQuest QuestId="68931" NpcId="1030266" />
-        </If>
+    <If condition="not AetherCurrentManager.IsZoneComplete(816)">
+
+      <If Condition="not IsQuestCompleted(68856)">
+        <UserDialog DialogText="Please finish the level 73 MSQ quest 'LAcht-la Ormh Inn' to unlock Il Mheg Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(68931) &gt; 0">
+
+      <!-- The Forbidden Lran -->
+      <If Condition="not IsQuestCompleted(68931) and IsQuestCompleted(68856)">
+        <LLToast message="Working on quest 'The Forbidden Lran' to unlock Il Mheg Aether Currents" />
+        <If Condition="not HasQuest(68931)">
+          <GetTo ZoneId="816" XYZ="-366.3663, 67.3123, 556.0659" />
+          <If Condition="IsQuestAcceptQualified(68931)">
+            <PickupQuest QuestId="68931" NpcId="1030266" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(68931) == 1">
           <GetTo ZoneId="816" XYZ="-163.7436, 34.61127, 607.8997" />
           <TalkTo NpcId="1030267" XYZ="-161.3032, 34.21811, 607.3853" QuestId="68931" StepId="1" />
@@ -149,7 +166,13 @@ Authors:  Sodimm
         <If Condition="GetQuestStep(68931) == 2">
           <GetTo ZoneId="816" XYZ="-39.20681, 24.0492, 740.242" />
           <Dismount />
-          <RunCode Name="68931" />
+          <!-- Exact /say keyword (including U+00B7) from quest/033/LucKzc012_03395, TEXT_LUCKZC012_03395_SYSTEM_000_013 (row 56); CN 2026.09.15.0000.0000 and TC 2026.07.22.0000.0000 agree. -->
+          <If condition="IsChineseClient() or IsTCClient()">
+            <EmoteNPC Emote="s 可恩·久付" NpcId="2009997" XYZ="-40.116028, 24.063354, 739.25366" QuestId="68931" StepId="2" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsGlobalClient()">
+            <EmoteNPC Emote="s Kenn Gyuf" NpcId="2009997" XYZ="-40.116028, 24.063354, 739.25366" QuestId="68931" StepId="2" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
           <WaitWhile Condition="not GetQuestStep(68931) == 255" />
         </If>
         <If Condition="GetQuestStep(68931) == 255">
@@ -157,39 +180,65 @@ Authors:  Sodimm
           <TurnIn QuestId="68931" NpcId="1030266" XYZ="-367.6661, 66.86359, 557.1526" />
         </If>
       </If>
+
       <!-- Delightful Decorations -->
-      <If Condition="not HasQuest(68934) and not IsQuestCompleted(68934)">
-      	<LLToast message="Working on quest 'Delightful Decorations' to unlock Il Mheg Aether Currents" />
-        <GetTo ZoneId="816" XYZ="-613.0966, 36.36868, -213.4198" />
-        <If Condition="IsQuestAcceptQualified(68934)">
-          <PickupQuest QuestId="68934" NpcId="1030618" />
+      <If Condition="not IsQuestCompleted(68934) and IsQuestCompleted(68856)">
+        <LLToast message="Working on quest 'Delightful Decorations' to unlock Il Mheg Aether Currents" />
+        <If Condition="not HasQuest(68934)">
+          <GetTo ZoneId="816" XYZ="-613.0966, 36.36868, -213.4198" />
+          <If Condition="IsQuestAcceptQualified(68934)">
+            <PickupQuest QuestId="68934" NpcId="1030618" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68934) &gt; 0">
-        <If Condition="GetQuestStep(68934) == 1">
-          <GetTo ZoneId="816" XYZ="-446.3533, -0.6000298, -221.1962" />
-          <RunCode Name="68934" />
-        </If>
+        <While Condition="GetQuestStep(68934) == 1">
+          <If Condition="not MovementManager.IsDiving">
+            <GetTo ZoneId="816" XYZ="-446.3533, -0.6000298, -221.1962" />
+            <LLSwimTransition XYZ="-446.3533, -0.6000298, -221.1962" Descending="true" />
+          </If>
+          <If Condition="GetQuestById(68934).GetTodoArgs(1, 0).Item1 == 0">
+            <SwimTo XYZ="-456.8055, -41.1446, -231.9912" ArrivalTolerance="1" />
+            <UseObject NpcId="2010160" XYZ="-456.8055, -41.1446, -231.9912" QuestId="68934" StepId="1" UseTimes="1" />
+          </If>
+          <If Condition="GetQuestById(68934).GetTodoArgs(1, 0).Item1 == 1">
+            <SwimTo XYZ="-341.0155, -34.60964, -211.4592" ArrivalTolerance="1" />
+            <UseObject NpcId="2010161" XYZ="-341.0155, -34.60964, -211.4592" QuestId="68934" StepId="1" UseTimes="1" />
+          </If>
+          <If Condition="GetQuestById(68934).GetTodoArgs(1, 0).Item1 == 2">
+            <SwimTo XYZ="-341.7811, -56.98716, -159.9505" ArrivalTolerance="1" />
+            <UseObject NpcId="2010159" XYZ="-341.7811, -56.98716, -159.9505" QuestId="68934" StepId="1" UseTimes="1" />
+          </If>
+          <If Condition="GetQuestById(68934).GetTodoArgs(1, 0).Item1 == 3">
+            <SwimTo XYZ="-347.432, -48.24493, -120.3263" ArrivalTolerance="1" />
+            <UseObject NpcId="2010158" XYZ="-347.432, -48.24493, -120.3263" QuestId="68934" StepId="1" UseTimes="1" />
+          </If>
+          <WaitTimer WaitTime="1" />
+        </While>
         <If Condition="GetQuestStep(68934) == 2">
+          <If Condition="MovementManager.IsDiving">
+            <SwimTo XYZ="-448.9635, -0.4601153, -102.561226" ArrivalTolerance="1" />
+          </If>
           <GetTo ZoneId="816" XYZ="-612.2657, 36.3263, -214.5082" />
           <HandOver ItemId="2002636" NpcId="1030618" XYZ="-613.3975, 36.54754, -215.4117" QuestId="68934" StepId="2" />
         </If>
         <If Condition="GetQuestStep(68934) == 3">
+          <GetTo ZoneId="816" XYZ="-664.0269, 40.66516, -225.0859" />
           <UseItem ItemId="2002637" NpcIds="2010162, 2010163, 2010164" XYZ="-664.0269, 40.66516, -225.0859" BlacklistAfter="True" QuestId="68934" StepId="3" />
         </If>
         <If Condition="GetQuestStep(68934) == 255">
+          <GetTo ZoneId="816" XYZ="-613.3975, 36.54754, -215.4117" />
           <TurnIn QuestId="68934" NpcId="1030618" XYZ="-613.3975, 36.54754, -215.4117" />
         </If>
       </If>
+
       <!-- The Path to Popularity -->
-      <If Condition="not HasQuest(68940) and not IsQuestCompleted(68940)">
-      	<LLToast message="Working on quest 'The Path to Popularity' to unlock Il Mheg Aether Currents" />
-        <GetTo ZoneId="816" XYZ="-287.7688, 40.32404, 445.2542" />
-        <If Condition="IsQuestAcceptQualified(68940)">
-          <PickupQuest QuestId="68940" NpcId="1030838" />
+      <If Condition="not IsQuestCompleted(68940) and IsQuestCompleted(68856)">
+        <LLToast message="Working on quest 'The Path to Popularity' to unlock Il Mheg Aether Currents" />
+        <If Condition="not HasQuest(68940)">
+          <GetTo ZoneId="816" XYZ="-287.7688, 40.32404, 445.2542" />
+          <If Condition="IsQuestAcceptQualified(68940)">
+            <PickupQuest QuestId="68940" NpcId="1030838" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68940) &gt; 0">
         <If Condition="GetQuestStep(68940) == 1">
           <GetTo ZoneId="816" XYZ="-631.447, 35.86156, -228.6249" />
           <UseObject NpcIds="2010362, 2010363, 2010364" XYZ="-621.8815, 37.33875, -234.3328" QuestId="68940" StepId="1" />
@@ -205,15 +254,16 @@ Authors:  Sodimm
           <TurnIn QuestId="68940" NpcId="1030838" XYZ="-285.9083, 40.32404, 444.4188" />
         </If>
       </If>
+
       <!-- A New Amaro -->
-      <If Condition="not HasQuest(68963) and not IsQuestCompleted(68963)">
-      	<LLToast message="Working on quest 'A New Amaro' to unlock Il Mheg Aether Currents" />
-        <GetTo ZoneId="816" XYZ="441.4835, 89.6209, -654.8467" />
-        <If Condition="IsQuestAcceptQualified(68963)">
-          <PickupQuest QuestId="68963" NpcId="1027695" />
+      <If Condition="not IsQuestCompleted(68963) and IsQuestCompleted(68856)">
+        <LLToast message="Working on quest 'A New Amaro' to unlock Il Mheg Aether Currents" />
+        <If Condition="not HasQuest(68963)">
+          <GetTo ZoneId="816" XYZ="441.4835, 89.6209, -654.8467" />
+          <If Condition="IsQuestAcceptQualified(68963)">
+            <PickupQuest QuestId="68963" NpcId="1027695" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68963) &gt; 0">
         <If Condition="GetQuestStep(68963) == 1">
           <GetTo ZoneId="816" XYZ="242.1951, 73.39855, -722.4362" />
           <UseObject NpcId="2010481" XYZ="238.7273, 72.95337, -723.7202" QuestId="68963" StepId="1" />
@@ -231,6 +281,7 @@ Authors:  Sodimm
           <TurnIn QuestId="68963" NpcId="1031025" XYZ="-79.75891, 37.96834, -531.8532" />
         </If>
       </If>
+
       <If Condition="not IsAetherCurrentCompleted(816,8)">
         <GetTo ZoneId="816" XYZ="-230.5139, 3.778076, 162.483" />
         <UseObject NpcId="2010056" XYZ="-231.4336, 4.684509, 160.8147" Condition="not IsAetherCurrentCompleted(816,8)" />
@@ -238,9 +289,10 @@ Authors:  Sodimm
       <If Condition="not IsAetherCurrentCompleted(816,7)">
         <GetTo ZoneId="816" XYZ="32.10767, 102.6907, -854.0199" />
         <Dismount />
-        <RunCode Name="2010059" />
-        <LLClimbHill Start="28.91714, 108.8486, -843.7482" End="13.75066, 112.3887, -848.6344" Distance="2.5" SpamJump="true" />
+        <LLClimbHill Start="32.897343, 107.322395, -839.6844" End="15.321982, 113.341675, -846.9044" Distance="2.5" SpamJump="true" />
+        <MoveTo UseMesh="False" XYZ="12.83276, 110.7346, -851.2551" Distance="1" />
         <UseObject NpcId="2010059" XYZ="12.83276, 110.7346, -851.2551" Condition="not IsAetherCurrentCompleted(816,7)" />
+        <MoveTo UseMesh="False" XYZ="32.10767, 102.6907, -854.0199" />
       </If>
       <If Condition="not IsAetherCurrentCompleted(816,6)">
         <GetTo ZoneId="816" XYZ="429.2396, 89.43923, -769.6451" />
@@ -250,21 +302,33 @@ Authors:  Sodimm
         <GetTo ZoneId="816" XYZ="-9.018127, 89.28052, -247.6693" />
         <UseObject NpcId="2010063" XYZ="-9.018127, 89.28052, -247.6693" Condition="not IsAetherCurrentCompleted(816,5)" />
       </If>
+
     </If>
+
     <!-- The Rak'tika Greatwood -->
-    <If Condition="IsQuestCompleted(68876)">
-      <!-- What We Do for Family -->
-      <If Condition="IsQuestCompleted(68861) and not HasQuest(68980) and not IsQuestCompleted(68980)">
-      	<LLToast message="Working on quest 'What We Do for Family' to unlock The Rak'tika Greatwood Aether Currents" />
-        <GetTo ZoneId="817" XYZ="-128.5743, -17.23699, 314.8941" />
-        <If Condition="IsQuestAcceptQualified(68980)">
-          <PickupQuest QuestId="68980" NpcId="1029023" />
-        </If>
+    <If condition="not AetherCurrentManager.IsZoneComplete(817)">
+
+      <If Condition="not IsQuestCompleted(68876)">
+        <UserDialog DialogText="Please finish the level 75 MSQ quest 'The Burden of Knowledge' to unlock Rak'tika Greatwood Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(68980) &gt; 0">
+
+      <!-- What We Do for Family -->
+      <If Condition="not IsQuestCompleted(68980) and IsQuestCompleted(68861)">
+        <LLToast message="Working on quest 'What We Do for Family' to unlock The Rak'tika Greatwood Aether Currents" />
+        <If Condition="not HasQuest(68980)">
+          <GetTo ZoneId="817" XYZ="-128.5743, -17.23699, 314.8941" />
+          <If Condition="IsQuestAcceptQualified(68980)">
+            <PickupQuest QuestId="68980" NpcId="1029023" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(68980) == 1">
           <GetTo ZoneId="817" XYZ="-303.9355, 8.462777, 712.5338" />
-          <RunCode Name="68980" />
+          <If condition="IsChineseClient() or IsTCClient()">
+            <EmoteNPC Emote="s 野玫瑰" NpcId="1029024" XYZ="-303.9355, 8.462777, 712.5338" QuestId="68980" StepId="1" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
+          <If condition="IsGlobalClient()">
+            <EmoteNPC Emote="s tuktu" NpcId="1029024" XYZ="-303.9355, 8.462777, 712.5338" QuestId="68980" StepId="1" BlacklistDuration="8" BlackListAfter="true" />
+          </If>
           <WaitWhile Condition="not GetQuestStep(68980) == 2" />
         </If>
         <If Condition="GetQuestStep(68980) == 2">
@@ -276,15 +340,16 @@ Authors:  Sodimm
           <TurnIn ItemId="2002519" QuestId="68980" NpcId="1029024" XYZ="-301.5335, 8.681433, 711.2992" />
         </If>
       </If>
+
       <!-- The Great Deceiver -->
-      <If Condition="IsQuestCompleted(68867) and not HasQuest(69192) and not IsQuestCompleted(69192)">
-      	<LLToast message="Working on quest 'The Great Deceiver' to unlock The Rak'tika Greatwood Aether Currents" />
-        <GetTo ZoneId="817" XYZ="-83.88918, -19.01869, 304.3128" />
-        <If Condition="IsQuestAcceptQualified(69192)">
-          <PickupQuest QuestId="69192" NpcId="1030747" />
+      <If Condition="not IsQuestCompleted(69192) and IsQuestCompleted(68867)">
+        <LLToast message="Working on quest 'The Great Deceiver' to unlock The Rak'tika Greatwood Aether Currents" />
+        <If Condition="not HasQuest(69192)">
+          <GetTo ZoneId="817" XYZ="-83.88918, -19.01869, 304.3128" />
+          <If Condition="IsQuestAcceptQualified(69192)">
+            <PickupQuest QuestId="69192" NpcId="1030747" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69192) &gt; 0">
         <If Condition="GetQuestStep(69192) == 1">
           <TalkTo NpcId="1030818" XYZ="-28.64117, -24.63142, 318.9899" QuestId="69192" StepId="1" />
         </If>
@@ -297,15 +362,16 @@ Authors:  Sodimm
           <TurnIn QuestId="69192" NpcId="1030821" XYZ="-524.4679, 0.08425587, 227.0084" />
         </If>
       </If>
+
       <!-- Suit Up -->
-      <If Condition="IsQuestCompleted(68870) and not HasQuest(69003) and not IsQuestCompleted(69003)">
-      	<LLToast message="Working on quest 'Suit Up' to unlock The Rak'tika Greatwood Aether Currents" />
-        <GetTo ZoneId="817" XYZ="394.206, 20.42252, -180.891" />
-        <If Condition="IsQuestAcceptQualified(69003)">
-          <PickupQuest QuestId="69003" NpcId="1027736" />
+      <If Condition="not IsQuestCompleted(69003) and IsQuestCompleted(68870)">
+        <LLToast message="Working on quest 'Suit Up' to unlock The Rak'tika Greatwood Aether Currents" />
+        <If Condition="not HasQuest(69003)">
+          <GetTo ZoneId="817" XYZ="394.206, 20.42252, -180.891" />
+          <If Condition="IsQuestAcceptQualified(69003)">
+            <PickupQuest QuestId="69003" NpcId="1027736" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69003) &gt; 0">
         <If Condition="GetQuestStep(69003) == 1">
           <If Condition="GetQuestById(69003).GetTodoArgs(1, 0).Item1 == 0">
             <GetTo ZoneId="817" XYZ="557.1024, 27.28193, 150.9372" />
@@ -329,22 +395,23 @@ Authors:  Sodimm
           <TurnIn QuestId="69003" NpcId="1027736" XYZ="396.3835, 20.42252, -179.1257" />
         </If>
       </If>
+
       <!-- Stand on Ceremony -->
-      <If Condition="IsQuestCompleted(68875) and not HasQuest(69014) and not IsQuestCompleted(69014)">
-      	<LLToast message="Working on quest 'Stand on Ceremony' to unlock The Rak'tika Greatwood Aether Currents" />
-        <GetTo ZoneId="817" XYZ="493.2754, -6.555339, -227.5039" />
-        <If Condition="IsQuestAcceptQualified(69014)">
-          <PickupQuest QuestId="69014" NpcId="1027716" />
+      <If Condition="not IsQuestCompleted(69014) and IsQuestCompleted(68875)">
+        <LLToast message="Working on quest 'Stand on Ceremony' to unlock The Rak'tika Greatwood Aether Currents" />
+        <If Condition="not HasQuest(69014)">
+          <GetTo ZoneId="817" XYZ="493.2754, -6.555339, -227.5039" />
+          <If Condition="IsQuestAcceptQualified(69014)">
+            <PickupQuest QuestId="69014" NpcId="1027716" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69014) &gt; 0">
         <If Condition="GetQuestStep(69014) == 1">
           <GetTo ZoneId="817" XYZ="167.9489, -20, -468.2461" />
           <TalkTo NpcId="1031001" XYZ="167.7118, -20, -471.0002" QuestId="69014" Step="1" />
         </If>
         <If Condition="GetQuestStep(69014) == 2">
           <MoveTo XYZ="167.8365, -20, -483.4485" Distance="1" />
-          <WaitWhile Condition="HasQuest(69014) and not IsQuestCompleted(69014) and not GetQuestStep(69014) == 3" />
+          <WaitWhile Condition="not GetQuestStep(69014) == 3" />
         </If>
         <If Condition="GetQuestStep(69014) == 3">
           <TalkTo NpcId="1031001" XYZ="167.7118, -20, -471.0002" QuestId="69014" StepId="3" />
@@ -373,17 +440,23 @@ Authors:  Sodimm
       </If>
 
     </If>
+
     <!-- Ahm Araeng -->
-    <If Condition="IsQuestCompleted(69155)">
-      <!-- Work to Live or Live to Work -->
-      <If Condition="IsQuestCompleted(68829) and not HasQuest(68911) and not IsQuestCompleted(68911)">
-      	<LLToast message="Working on quest 'Work to Live or Live to Work' to unlock Ahm Araeng Aether Currents" />
-        <GetTo ZoneId="815" XYZ="267.3467, 4.0297, -145.4092" />
-        <If Condition="IsQuestAcceptQualified(68911)">
-          <PickupQuest QuestId="68911" NpcId="1027872" />
-        </If>
+    <If condition="not AetherCurrentManager.IsZoneComplete(815)">
+
+      <If Condition="not IsQuestCompleted(69155)">
+        <UserDialog DialogText="Please finish the level 77 MSQ quest 'Full Steam Ahead' to unlock Ahm Araeng Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(68911) &gt; 0">
+
+      <!-- Work to Live or Live to Work -->
+      <If Condition="not IsQuestCompleted(68911) and IsQuestCompleted(68829)">
+        <LLToast message="Working on quest 'Work to Live or Live to Work' to unlock Ahm Araeng Aether Currents" />
+        <If Condition="not HasQuest(68911)">
+          <GetTo ZoneId="815" XYZ="267.3467, 4.0297, -145.4092" />
+          <If Condition="IsQuestAcceptQualified(68911)">
+            <PickupQuest QuestId="68911" NpcId="1027872" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(68911) == 1">
           <GetTo ZoneId="815" XYZ="581.0317, -46.61663, -683.5903" />
           <TalkTo NpcId="1030391" XYZ="579.9801, -46.38523, -684.9012" QuestId="68911" StepId="1" />
@@ -395,15 +468,16 @@ Authors:  Sodimm
           <TurnIn ItemId="2002584" QuestId="68911" NpcId="1030391" XYZ="579.9801, -46.38523, -684.9012" />
         </If>
       </If>
+
       <!-- Scavengers Assemble -->
-      <If Condition="IsQuestCompleted(69149) and not HasQuest(69039) and not IsQuestCompleted(69039)">
-      	<LLToast message="Working on quest 'Scavengers Assemble' to unlock Ahm Araeng Aether Currents" />
-        <GetTo ZoneId="815" XYZ="-424.1465, 31.49794, -225.1674" />
-        <If Condition="IsQuestAcceptQualified(69039)">
-          <PickupQuest QuestId="69039" NpcId="1030979" />
+      <If Condition="not IsQuestCompleted(69039) and IsQuestCompleted(69149)">
+        <LLToast message="Working on quest 'Scavengers Assemble' to unlock Ahm Araeng Aether Currents" />
+        <If Condition="not HasQuest(69039)">
+          <GetTo ZoneId="815" XYZ="-424.1465, 31.49794, -225.1674" />
+          <If Condition="IsQuestAcceptQualified(69039)">
+            <PickupQuest QuestId="69039" NpcId="1030979" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69039) &gt; 0">
         <If Condition="GetQuestStep(69039) == 1">
           <GetTo ZoneId="815" XYZ="-52.66523, -17.25763, 36.35574" />
           <WaitWhile Condition="not GetQuestStep(69039) == 2" />
@@ -423,15 +497,16 @@ Authors:  Sodimm
           <TurnIn QuestId="69039" NpcId="1030982" XYZ="13.96191, -47.88784, 169.7871" />
         </If>
       </If>
+
       <!-- Charmless Man -->
-      <If Condition="IsQuestCompleted(69151) and not HasQuest(69047) and not IsQuestCompleted(69047)">
-      	<LLToast message="Working on quest 'Charmless Man' to unlock Ahm Araeng Aether Currents" />
-        <GetTo ZoneId="815" XYZ="-478.894, 47.78905, -200.6438" />
-        <If Condition="IsQuestAcceptQualified(69047)">
-          <PickupQuest QuestId="69047" NpcId="1027927" />
+      <If Condition="not IsQuestCompleted(69047) and IsQuestCompleted(69151)">
+        <LLToast message="Working on quest 'Charmless Man' to unlock Ahm Araeng Aether Currents" />
+        <If Condition="not HasQuest(69047)">
+          <GetTo ZoneId="815" XYZ="-478.894, 47.78905, -200.6438" />
+          <If Condition="IsQuestAcceptQualified(69047)">
+            <PickupQuest QuestId="69047" NpcId="1027927" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69047) &gt; 0">
         <If Condition="GetQuestStep(69047) == 1">
           <HandOver ItemId="2002733" NpcId="1030759" XYZ="-558.9227, 52.40899, -188.7999" QuestId="69047" StepId="1" />
         </If>
@@ -440,15 +515,16 @@ Authors:  Sodimm
           <TurnIn ItemId="2002733" QuestId="69047" NpcId="1030807" XYZ="-336.6903, 19.24816, 75.91357" />
         </If>
       </If>
+
       <!-- A Vein Pursuit -->
-      <If Condition="IsQuestCompleted(69153) and not HasQuest(69061) and not IsQuestCompleted(69061)">
-      	<LLToast message="Working on quest 'A Vein Pursuit' to unlock Ahm Araeng Aether Currents" />
-        <GetTo ZoneId="815" XYZ="-552.5444, 50.07417, -168.1087" />
-        <If Condition="IsQuestAcceptQualified(69061)">
-          <PickupQuest QuestId="69061" NpcId="1030419" />
+      <If Condition="not IsQuestCompleted(69061) and IsQuestCompleted(69153)">
+        <LLToast message="Working on quest 'A Vein Pursuit' to unlock Ahm Araeng Aether Currents" />
+        <If Condition="not HasQuest(69061)">
+          <GetTo ZoneId="815" XYZ="-552.5444, 50.07417, -168.1087" />
+          <If Condition="IsQuestAcceptQualified(69061)">
+            <PickupQuest QuestId="69061" NpcId="1030419" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69061) &gt; 0">
         <If Condition="GetQuestStep(69061) == 1">
           <TalkTo NpcId="1030720" XYZ="-464.6525, 45.50817, -270.4662" QuestId="69061" StepId="1" />
         </If>
@@ -479,28 +555,34 @@ Authors:  Sodimm
       </If>
 
     </If>
+
     <!-- Kholusia -->
-    <If Condition="IsQuestCompleted(69176)">
-      <!-- A Plankless Task -->
-      <If Condition="IsQuestCompleted(68821) and not HasQuest(68896) and not IsQuestCompleted(68896)">
-      	<LLToast message="Working on quest 'A Plankless Task' to unlock Kholusia Aether Currents" />
-        <GetTo ZoneId="814" XYZ="-310.0979, 19.39982, 406.5162" />
-        <If Condition="IsQuestAcceptQualified(68896)">
-          <PickupQuest QuestId="68896" NpcId="1027452" />
-        </If>
+    <If condition="not AetherCurrentManager.IsZoneComplete(814)">
+
+      <If Condition="not IsQuestCompleted(69176)">
+        <UserDialog DialogText="Please finish the level 78 MSQ quest 'Rich Veins of Hope' to unlock Kholusia Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(68896) &gt; 0">
+
+      <!-- A Plankless Task -->
+      <If Condition="not IsQuestCompleted(68896) and IsQuestCompleted(68821)">
+        <LLToast message="Working on quest 'A Plankless Task' to unlock Kholusia Aether Currents" />
+        <If Condition="not HasQuest(68896)">
+          <GetTo ZoneId="814" XYZ="-310.0979, 19.39982, 406.5162" />
+          <If Condition="IsQuestAcceptQualified(68896)">
+            <PickupQuest QuestId="68896" NpcId="1027452" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(68896) == 1">
           <GetTo ZoneId="814" XYZ="-450.7294, 8.987022, 536.5689" />
           <MoveTo XYZ="-446.2806, 7.657999, 536.1563" Distance="1" UseMesh="False" />
-          <TalkTo NpcId="1030741" XYZ="-446.2806, 7.657999, 536.1563" Distance="4.5f" QuestId="68896" StepId="1" />
+          <TalkTo NpcId="1030741" XYZ="-446.2806, 7.657999, 536.1563" QuestId="68896" StepId="1" />
         </If>
         <If Condition="GetQuestStep(68896) == 2">
           <If Condition="not IsOnMap(814)">
             <GetTo ZoneId="814" XYZ="-450.7294, 8.987022, 536.5689" />
             <MoveTo XYZ="-446.2806, 7.657999, 536.1563" Distance="1" UseMesh="False" />
           </If>
-          <RunCode Name="68896" />
+          <ClimbHill Start="-446.91245, 7.657998, 534.645" End="-443.59457, 8.339892, 533.04974" />
           <UseItem ItemId="2002688" NpcIds="2010260,2010261,2010286,2010287,2010288,2010289" XYZ="-442.9236, 8.895996, 538.6892" QuestId="68896" StepId="2" />
         </If>
         <If Condition="GetQuestStep(68896) == 3">
@@ -514,18 +596,19 @@ Authors:  Sodimm
           <TurnIn QuestId="68896" NpcId="1027452" XYZ="-310.6279, 19.40518, 405.2948" />
         </If>
       </If>
+
       <!-- Village of Woe -->
-      <If Condition="IsQuestCompleted(68821) and not HasQuest(68907) and not IsQuestCompleted(68907)">
-      	<LLToast message="Working on quest 'Village of Woe' to unlock Kholusia Aether Currents" />
-        <GetTo ZoneId="814" XYZ="-305.9456, 20.95898, 361.1356" />
-        <If Condition="IsQuestAcceptQualified(68907)">
-          <PickupQuest QuestId="68907" NpcId="1030763" />
+      <If Condition="not IsQuestCompleted(68907) and IsQuestCompleted(68821)">
+        <LLToast message="Working on quest 'Village of Woe' to unlock Kholusia Aether Currents" />
+        <If Condition="not HasQuest(68907)">
+          <GetTo ZoneId="814" XYZ="-305.9456, 20.95898, 361.1356" />
+          <If Condition="IsQuestAcceptQualified(68907)">
+            <PickupQuest QuestId="68907" NpcId="1030763" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(68907) &gt; 0">
         <If Condition="GetQuestStep(68907) == 1">
           <GetTo ZoneId="814" XYZ="-226.4287, 21.59275, 297.8407" />
-          <WaitWhile Condition="HasQuest(68907) and not IsQuestCompleted(68907) and not GetQuestStep(68907) == 2" />
+          <WaitWhile Condition="not GetQuestStep(68907) == 2" />
         </If>
         <If Condition="GetQuestStep(68907) == 2">
           <If Condition="not IsOnMap(814)">
@@ -546,37 +629,43 @@ Authors:  Sodimm
           <TurnIn QuestId="68907" NpcId="1030766" XYZ="-284.2299, 35.37314, 204.6692" />
         </If>
       </If>
+
       <!-- A Disagreeable Dwarf -->
-      <If Condition="IsQuestCompleted(69173) and not HasQuest(69092) and not IsQuestCompleted(69092)">
-      	<LLToast message="Working on quest 'A Disagreeable Dwarf' to unlock Kholusia Aether Currents" />
-        <GetTo ZoneId="814" XYZ="-447.2847, 417.1024, -610.7085" />
-        <If Condition="IsQuestAcceptQualified(69092)">
-          <PickupQuest QuestId="69092" NpcId="1030776" />
+      <If Condition="not IsQuestCompleted(69092) and IsQuestCompleted(69173)">
+        <LLToast message="Working on quest 'A Disagreeable Dwarf' to unlock Kholusia Aether Currents" />
+        <If Condition="not HasQuest(69092)">
+          <GetTo ZoneId="814" XYZ="-447.2847, 417.1024, -610.7085" />
+          <If Condition="IsQuestAcceptQualified(69092)">
+            <PickupQuest QuestId="69092" NpcId="1030776" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69092) &gt; 0">
         <If Condition="GetQuestStep(69092) == 1">
+          <GetTo ZoneId="814" XYZ="-429.3126, 417.298, -677.2107" />
           <TalkTo NpcId="1030778" XYZ="-429.3126, 417.298, -677.2107" QuestId="69092" StepId="1" />
         </If>
         <If Condition="GetQuestStep(69092) == 2">
+          <GetTo ZoneId="814" XYZ="-436.4844, 417.2195, -641.3824" />
           <TalkTo NpcId="1030779" XYZ="-436.4844, 417.2195, -641.3824" QuestId="69092" StepId="2" />
         </If>
         <If Condition="GetQuestStep(69092) == 3">
+          <GetTo ZoneId="814" XYZ="-493.2479, 417.1531, -610.9866" />
           <TalkTo NpcId="1030780" XYZ="-493.2479, 417.1531, -610.9866" QuestId="69092" StepId="3" />
         </If>
         <If Condition="GetQuestStep(69092) == 255">
+          <GetTo ZoneId="814" XYZ="-396.6888, 417.5182, -657.9232" />
           <TurnIn ItemId="2002701" QuestId="69092" NpcId="1030800" XYZ="-396.6888, 417.5182, -657.9232" />
         </If>
       </If>
+
       <!-- Fugitive of Fear -->
-      <If Condition="IsQuestCompleted(69176) and not HasQuest(69073) and not IsQuestCompleted(69073)">
-      	<LLToast message="Working on quest 'Fugitive of Fear' to unlock Kholusia Aether Currents" />
-        <GetTo ZoneId="814" XYZ="-130.5229, 354.3582, -178.4895" />
-        <If Condition="IsQuestAcceptQualified(69073)">
-          <PickupQuest QuestId="69073" NpcId="1027956" />
+      <If Condition="not IsQuestCompleted(69073) and IsQuestCompleted(69176)">
+        <LLToast message="Working on quest 'Fugitive of Fear' to unlock Kholusia Aether Currents" />
+        <If Condition="not HasQuest(69073)">
+          <GetTo ZoneId="814" XYZ="-130.5229, 354.3582, -178.4895" />
+          <If Condition="IsQuestAcceptQualified(69073)">
+            <PickupQuest QuestId="69073" NpcId="1027956" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69073) &gt; 0">
         <If Condition="GetQuestStep(69073) == 1">
           <GetTo ZoneId="814" XYZ="-515.1837, 334.1159, -7.864386" />
           <TalkTo NpcId="1030748" XYZ="-514.8852, 334.116, -9.262268" QuestId="69073" StepId="1" />
@@ -591,7 +680,7 @@ Authors:  Sodimm
           <If Condition="not IsOnMap(814)">
             <GetTo ZoneId="814" XYZ="-506.4615, 333.0726, -112.5898" />
           </If>
-          <RunCode Name="69073" />
+          <EmoteNPC Emote="soothe" NpcId="1030749" XYZ="-506.4615, 333.0726, -112.5898" condition="not ff14bot.RemoteWindows.SelectString.IsOpen" BlacklistDuration="20" BlackListAfter="true" />
           <TalkTo NpcId="1030749" XYZ="-504.5701, 332.9331, -112.0775" QuestId="69073" StepId="3" />
         </If>
         <If Condition="GetQuestStep(69073) == 255">
@@ -619,17 +708,23 @@ Authors:  Sodimm
       </If>
 
     </If>
+
     <!-- The Tempest -->
-    <If Condition="IsQuestCompleted(69188)">
-      <!-- Koal of the Cups -->
-      <If Condition="IsQuestCompleted(69184) and not HasQuest(69124) and not IsQuestCompleted(69124)">
-      	<LLToast message="Working on quest 'Koal of the Cups' to unlock The Tempest Aether Currents" />
-        <GetTo ZoneId="818" XYZ="534.5916, 353.7596, -240.047" />
-        <If Condition="IsQuestAcceptQualified(69124)">
-          <PickupQuest QuestId="69124" NpcId="1031015" />
-        </If>
+    <If condition="not AetherCurrentManager.IsZoneComplete(818)">
+
+      <If Condition="not IsQuestCompleted(69188)">
+        <UserDialog DialogText="Please finish the level 80 MSQ quest 'The End of a World' to unlock The Tempest Flying." IsBotContinueAllowed="True" />
       </If>
-      <If Condition="GetQuestStep(69124) &gt; 0">
+
+      <!-- Koal of the Cups -->
+      <If Condition="not IsQuestCompleted(69124) and IsQuestCompleted(69184)">
+        <LLToast message="Working on quest 'Koal of the Cups' to unlock The Tempest Aether Currents" />
+        <If Condition="not HasQuest(69124)">
+          <GetTo ZoneId="818" XYZ="534.5916, 353.7596, -240.047" />
+          <If Condition="IsQuestAcceptQualified(69124)">
+            <PickupQuest QuestId="69124" NpcId="1031015" />
+          </If>
+        </If>
         <If Condition="GetQuestStep(69124) == 1">
           <GetTo ZoneId="818" XYZ="347.3562, 342.7529, -309.7823" />
           <TalkTo NpcId="1031016" XYZ="344.0452, 342.6954, -310.5364" QuestId="69124" StepId="1" />
@@ -637,11 +732,11 @@ Authors:  Sodimm
         <If Condition="GetQuestStep(69124) == 2">
           <If Condition="GetQuestById(69124).QuestI8A == 0">
             <GetTo ZoneId="818" XYZ="340.9324, 342.6719, -310.4753" />
-            <TalkTo NpcId="2010463" SelectStringOverride="1" XYZ="340.9324, 342.6719, -310.4753" QuestId="69124" StepId="2" Condition="GetQuestById(69124).QuestI8A == 0" />
+            <TalkTo NpcId="2010463" SelectStringOverride="1" XYZ="340.9324, 342.6719, -310.4753" QuestId="69124" StepId="2" />
           </If>
           <If Condition="GetQuestById(69124).QuestI8A == 16">
             <GetTo ZoneId="818" XYZ="341.5426, 342.7634, -308.7053" />
-            <TalkTo NpcId="2010464" SelectStringOverride="1" XYZ="341.5426, 342.7634, -308.7053" QuestId="69124" StepId="2" Condition="GetQuestById(69124).QuestI8A == 16" />
+            <TalkTo NpcId="2010464" SelectStringOverride="1" XYZ="341.5426, 342.7634, -308.7053" QuestId="69124" StepId="2" />
           </If>
         </If>
         <If Condition="GetQuestStep(69124) == 3">
@@ -656,22 +751,26 @@ Authors:  Sodimm
           <TurnIn QuestId="69124" NpcId="1031019" XYZ="505.8823, 371.189, -342.7939" />
         </If>
       </If>
+
       <!-- Responsible Creation -->
-      <If Condition="IsQuestCompleted(69188) and not HasQuest(69128) and not IsQuestCompleted(69128)">
-      	<LLToast message="Working on quest 'Responsible Creation' to unlock The Tempest Aether Currents" />
-        <GetTo ZoneId="818" XYZ="-388.4057, -260.1766, 312.7331" />
-        <If Condition="IsQuestAcceptQualified(69128)">
-          <PickupQuest QuestId="69128" NpcId="1027775" />
+      <If Condition="not IsQuestCompleted(69128) and IsQuestCompleted(69188)">
+        <LLToast message="Working on quest 'Responsible Creation' to unlock The Tempest Aether Currents" />
+        <If Condition="not HasQuest(69128)">
+          <GetTo ZoneId="818" XYZ="-388.4057, -260.1766, 312.7331" />
+          <If Condition="IsQuestAcceptQualified(69128)">
+            <PickupQuest QuestId="69128" NpcId="1027775" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69128) &gt; 0">
         <If Condition="GetQuestStep(69128) == 1">
+          <GetTo ZoneId="818" XYZ="-410.1778, -260.1766, 256.092" />
           <TalkTo NpcId="1030473" XYZ="-410.1778, -260.1766, 256.092" QuestId="69128" StepId="1" />
         </If>
         <If Condition="GetQuestStep(69128) == 2">
+          <GetTo ZoneId="818" XYZ="-365.5909, -260.1766, 276.9359" />
           <TalkTo NpcId="1027774" XYZ="-365.5909, -260.1766, 276.9359" QuestId="69128" StepId="2" />
         </If>
         <If Condition="GetQuestStep(69128) == 3">
+          <GetTo ZoneId="818" XYZ="-390.9209, -260.1766, 284.9316" />
           <TalkTo NpcId="1030474" XYZ="-390.9209, -260.1766, 284.9316" QuestId="69128" StepId="3" />
         </If>
         <If Condition="GetQuestStep(69128) == 4">
@@ -683,23 +782,26 @@ Authors:  Sodimm
           <TurnIn QuestId="69128" NpcId="1030474" XYZ="-390.9209, -260.1766, 284.9316" />
         </If>
       </If>
+
       <!-- Debate and Discourse -->
-      <If Condition="IsQuestCompleted(69188) and not HasQuest(69129) and not IsQuestCompleted(69129)">
-      	<LLToast message="Working on quest 'Debate and Discourse' to unlock The Tempest Aether Currents" />
-        <GetTo ZoneId="818" XYZ="-709.4703, -245.368, 497.7509" />
-        <If Condition="IsQuestAcceptQualified(69129)">
-          <PickupQuest QuestId="69129" NpcId="1027778" />
+      <If Condition="not IsQuestCompleted(69129) and IsQuestCompleted(69188)">
+        <LLToast message="Working on quest 'Debate and Discourse' to unlock The Tempest Aether Currents" />
+        <If Condition="not HasQuest(69129)">
+          <GetTo ZoneId="818" XYZ="-709.4703, -245.368, 497.7509" />
+          <If Condition="IsQuestAcceptQualified(69129)">
+            <PickupQuest QuestId="69129" NpcId="1027778" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69129) &gt; 0">
         <If Condition="GetQuestStep(69129) == 1">
           <GetTo ZoneId="818" XYZ="-628.6682, -250.756, 547.2688" />
           <TalkTo NpcId="1030475" XYZ="-627.7715, -250.756, 550.6523" QuestId="69129" StepId="1" />
         </If>
         <If Condition="GetQuestStep(69129) == 2">
+          <GetTo ZoneId="818" XYZ="-627.7715, -250.756, 550.6523" />
           <TalkTo NpcId="1030475" XYZ="-627.7715, -250.756, 550.6523" QuestId="69129" StepId="2" />
         </If>
         <If Condition="GetQuestStep(69129) == 3">
+          <GetTo ZoneId="818" XYZ="-627.7715, -250.756, 550.6523" />
           <TalkTo NpcId="1030475" XYZ="-627.7715, -250.756, 550.6523" QuestId="69129" StepId="3" />
         </If>
         <If Condition="GetQuestStep(69129) == 4">
@@ -710,15 +812,16 @@ Authors:  Sodimm
           <TurnIn QuestId="69129" NpcId="1027778" XYZ="-713.283, -245.368, 498.4968" />
         </If>
       </If>
+
       <!-- Community Cohesion -->
-      <If Condition="IsQuestCompleted(69188) and not HasQuest(69130) and not IsQuestCompleted(69130)">
-      	<LLToast message="Working on quest 'Community Cohesion' to unlock The Tempest Aether Currents" />
-        <GetTo ZoneId="818" XYZ="-590.7681, -266.7698, 338.6785" />
-        <If Condition="IsQuestAcceptQualified(69130)">
-          <PickupQuest QuestId="69130" NpcId="1030477" />
+      <If Condition="not IsQuestCompleted(69130) and IsQuestCompleted(69188)">
+        <LLToast message="Working on quest 'Community Cohesion' to unlock The Tempest Aether Currents" />
+        <If Condition="not HasQuest(69130)">
+          <GetTo ZoneId="818" XYZ="-590.7681, -266.7698, 338.6785" />
+          <If Condition="IsQuestAcceptQualified(69130)">
+            <PickupQuest QuestId="69130" NpcId="1030477" />
+          </If>
         </If>
-      </If>
-      <If Condition="GetQuestStep(69130) &gt; 0">
         <If Condition="GetQuestStep(69130) == 1">
           <GetTo ZoneId="818" XYZ="-650.8147, -250.756, 472.0215" />
           <TalkTo NpcId="1030478" XYZ="-654.3527, -250.896, 475.7609" QuestId="69130" StepId="1" />
@@ -760,132 +863,5 @@ Authors:  Sodimm
 
   </Order>
   <CodeChunks>
-    <CodeChunk Name="68931">
-      <![CDATA[
-        if (Core.Me.IsMounted)  { ActionManager.Dismount();  }
-        await Coroutine.Sleep(1000);
-        #if !RB_CN
-        ChatManager.SendChat("/s Kenn Gyuf");
-        #endif
-        #if RB_CN
-        ChatManager.SendChat("/s å¯æ©Â·ä¹…ä»˜");
-        #endif
-        await Coroutine.Sleep(1);
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="68934">
-      <![CDATA[
-        MovementManager.StartDescending();
-        while (!MovementManager.IsDiving)  {  await Coroutine.Yield();  }
-        while (CommonBehaviors.IsLoading)  {  await Coroutine.Yield();  }
-        MovementManager.StopDescending();
-        await Coroutine.Sleep(1000);
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="2010042">
-      <![CDATA[
-        var loc = new Vector3(-62.15416f, 344.1438f, -19.85907f);
-
-        Navigator.PlayerMover.MoveTowards(loc);
-        while (Core.Me.Location.Distance2D(loc) > 1) {  await Coroutine.Yield();  }
-        Navigator.PlayerMover.MoveStop();
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="2010059">
-      <![CDATA[
-        var loc1 = new Vector3(32.0717f, 107.1496f, -842.3032f);
-        var loc2 = new Vector3(28.05852f, 108.9457f, -844.0242f);
-        var loc3 = new Vector3(23.85528f, 110.3985f, -847.0648f);
-        var loc4 = new Vector3(21.35537f, 111.4771f, -847.0903f);
-        var loc5 = new Vector3(15.94584f, 113.1476f, -847.0067f);
-        var loc6 = new Vector3(13.3604f, 111.163f, -850.3327f);
-
-        Navigator.PlayerMover.MoveTowards(loc1);
-        while (Core.Me.Location.Distance2D(loc1) > 0.5f) {  await Coroutine.Yield();  }
-        Navigator.PlayerMover.MoveStop();
-
-        Navigator.PlayerMover.MoveTowards(loc2);
-        MovementManager.Jump();
-        while (Core.Me.Location.Distance2D(loc2) > 1) {  await Coroutine.Yield();  }
-
-        Navigator.PlayerMover.MoveTowards(loc3);
-        MovementManager.Jump();
-        while (Core.Me.Location.Distance2D(loc3) > 2) {  await Coroutine.Yield();  }
-
-        Navigator.PlayerMover.MoveTowards(loc4);
-        MovementManager.Jump();
-        while (Core.Me.Location.Distance2D(loc4) > 2) {  await Coroutine.Yield();  }
-
-        Navigator.PlayerMover.MoveTowards(loc5);
-        await Coroutine.Sleep(500);
-        MovementManager.Jump();
-        while (Core.Me.Location.Distance2D(loc5) > 0.5f) {  await Coroutine.Yield();  }
-
-        Navigator.PlayerMover.MoveTowards(loc6);
-        while (Core.Me.Location.Distance2D(loc6) > 1) {  await Coroutine.Yield();  }
-        Navigator.PlayerMover.MoveStop();
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="68980">
-      <![CDATA[
-        if (Core.Me.IsMounted)  {  ActionManager.Dismount();  }
-
-        var target = GameObjectManager.GetObjectByNPCId(1029024);
-
-        await Coroutine.Sleep(1000);
-
-        #if !RB_CN
-        ChatManager.SendChat("/s tuktu");
-        #endif
-        #if RB_CN
-        ChatManager.SendChat("/s é‡ŽçŽ«ç‘°");
-        #endif
-
-        while (ConditionParser.GetQuestStep(68980) == 1)
-        {
-          if (Talk.DialogOpen)  {  Talk.Next();  }
-          await Coroutine.Yield();
-        }
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="68896">
-      <![CDATA[
-        MovementManager.SetFacing(1.565889f);
-        MovementManager.MoveForwardStart();
-        await Coroutine.Sleep(500);
-        MovementManager.Jump();
-        await Coroutine.Sleep(500);
-        Navigator.PlayerMover.MoveStop();
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="69073">
-      <![CDATA[
-        GameObject _target = GameObjectManager.GetObjectByNPCId(1030749);
-
-        await Coroutine.Sleep(1000);
-
-        _target.Target();
-
-        ChatManager.SendChat("/soothe");
-
-        while (ConditionParser.GetQuestStep(69073) == 3)
-        {
-          if (SelectString.IsOpen) {  SelectString.ClickSlot(1);  }
-          if (Talk.DialogOpen)  {  Talk.Next();  }
-          await Coroutine.Yield();
-        }
-      ]]>
-    </CodeChunk>
-    <CodeChunk Name="SwitchCombatJob">
-          <![CDATA[
-          var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
-          var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
-          if (gearSets.Any())
-          {
-              gearSets.First().Activate();
-              await Coroutine.Sleep(2000);
-          }
-        ]]>
-    </CodeChunk>
   </CodeChunks>
 </Profile>

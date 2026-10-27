@@ -5,20 +5,12 @@ Profile and fixes by Angels and DomesticWarlord
 -->
 <!DOCTYPE Profile [
 
-	<!-- Panda Farmer specific settings -->
-
-	<!ENTITY DoClassQuests "False"> <!-- Use PandaFarmer to do Class quests? -->
-	<!ENTITY UseCarry "False">
-	<!ENTITY OnlyNonDutySupport "False"> <!-- Set this to true to use Auto Party only on duties that don't have Duty Support -->
-	<!ENTITY CarryName "FillMeIn"> <!-- For privacy only put the first name of the carry character here -->
-	<!ENTITY CurrentHook "False">
 ]>
 <Profile>
 	<Name>Heavensward Aether Currents All</Name>
 	<KillRadius>90</KillRadius>
 	<Order>
 
-		<RunCode Name="SwitchCombatJob" />
 		<DisablePlugin Name="Enable Flight" />
 
 		<!-- Coerthas Western Highlands Aether Currents -->
@@ -27,8 +19,6 @@ Profile and fixes by Angels and DomesticWarlord
 			<If Condition="not IsQuestCompleted(67144)">
 				<UserDialog DialogText="Please finish the level 51 MSQ quest 'Purple Flame, Purple Flame' to unlock Coerthas Western Highlands Flying." IsBotContinueAllowed="True" />
 			</If>
-
-			<If Condition="IsQuestCompleted(67144)">
 
 				<!-- Bridge Over Frozen Water -->
 				<If Condition="IsQuestCompleted(67134) and not IsQuestCompleted(67280) and Core.Player.ClassLevel &gt; 49">
@@ -171,12 +161,7 @@ Profile and fixes by Angels and DomesticWarlord
 					<GetTo ZoneId="397" XYZ="-660.1511, 135.5153, -376.6384" />
 					<UseObject NpcId="2006190" XYZ="-660.1511, 135.5153, -376.6384" Condition="not IsAetherCurrentCompleted(397,5)" />
 				</If>
-			</If>
 
-		</If>
-
-		<If condition="not AetherCurrentManager.IsZoneComplete(397)">
-			<LogMessage Message="You've attuned to the Aether Currents in Coerthas Western Highlands!" />
 		</If>
 
 		<!-- The Dravanian Forelands Aether Currents-->
@@ -185,8 +170,6 @@ Profile and fixes by Angels and DomesticWarlord
 			<If Condition="not IsQuestCompleted(67153)">
 				<UserDialog DialogText="Please finish the level 53 MSQ quest 'Mourn in Passing' to unlock The Dravanian Forelands Aether Currents." IsBotContinueAllowed="True" />
 			</If>
-
-			<If Condition="IsQuestCompleted(67153)">
 
 				<!-- Some Bad News -->
 				<If Condition="IsQuestCompleted(67145) and not IsQuestCompleted(67307) and Core.Player.ClassLevel &gt; 51">
@@ -378,11 +361,7 @@ Profile and fixes by Angels and DomesticWarlord
 					<GetTo ZoneId="398" XYZ="-480.2778, -5.996826, -425.2842" />
 					<UseObject NpcId="2006201" XYZ="-480.2778, -5.996826, -425.2842" Condition="not IsAetherCurrentCompleted(398,6)" />
 				</If>
-			</If>
-		</If>
 
-		<If condition="AetherCurrentManager.IsZoneComplete(398)">
-			<LogMessage Message="You've attuned to the Aether Currents in The Dravanian Forelands!" />
 		</If>
 
 		<!-- Churning Mists -->
@@ -392,7 +371,6 @@ Profile and fixes by Angels and DomesticWarlord
 				<UserDialog DialogText="Please finish the level 55 MSQ quest 'Into the Aery' to unlock Churning Mists Aether Currents." IsBotContinueAllowed="True" />
 			</If>
 
-			<If Condition="IsQuestCompleted(67170)">
 
 				<!-- The Bathing Bully -->
 				<If Condition="IsQuestCompleted(67156) and not IsQuestCompleted(67355) and Core.Player.ClassLevel &gt; 53">
@@ -546,17 +524,11 @@ Profile and fixes by Angels and DomesticWarlord
 					<GetTo ZoneId="400" XYZ="-775.2651, 123.7354, 243.7018" />
 					<UseObject NpcId="2006218" XYZ="-775.2651, 123.7354, 243.7018" Condition="not IsAetherCurrentCompleted(400,6)" />
 				</If>
-			</If>
-		</If>
 
-		<If condition="AetherCurrentManager.IsZoneComplete(400)">
-			<LogMessage Message="You've attuned to the Aether Currents in Churning Mists!" />
-		</If>
+			</If>
 
 		<!-- The Sea of Clouds Aether Currents-->
 		<If condition="not AetherCurrentManager.IsZoneComplete(401)">
-
-			<If Condition="IsQuestCompleted(67183)">
 
 				<If Condition="not IsQuestCompleted(67183)">
 					<UserDialog DialogText="Please finish the level 57 MSQ quest 'Bolt, Chain, and Island' to unlock The Sea of Clouds Aether Currents." IsBotContinueAllowed="True" />
@@ -730,12 +702,8 @@ Profile and fixes by Angels and DomesticWarlord
 					<GetTo ZoneId="401" XYZ="-180.3159, -14.96918, -543.1144" />
 					<UseObject NpcId="2006231" XYZ="-180.3159, -14.96918, -543.1144" Condition="not IsAetherCurrentCompleted(401,6)" />
 				</If>
-			</If>
-		</If>
 
-		<If condition="AetherCurrentManager.IsZoneComplete(401)">
-			<LogMessage Message="You've attuned to the Aether Currents in The Sea of Clouds!" />
-		</If>
+			</If>
 
 		<!-- The Dravanian Hinterlands Aether Currents-->
 		<If condition="not AetherCurrentManager.IsZoneComplete(399)">
@@ -743,8 +711,6 @@ Profile and fixes by Angels and DomesticWarlord
 			<If Condition="not IsQuestCompleted(67196)">
 				<UserDialog DialogText="Please finish the level 59 MSQ quest 'Forbiden Knowledge' to unlock The Dravanian Hinterlands Aether Currents." IsBotContinueAllowed="True" />
 			</If>
-
-			<If Condition="IsQuestCompleted(67196)">
 
 				<!-- Louder than Words -->
 				<If Condition="IsQuestCompleted(67191) and not IsQuestCompleted(67472) and Core.Player.ClassLevel &gt; 57">
@@ -920,16 +886,7 @@ Profile and fixes by Angels and DomesticWarlord
 					<GetTo ZoneId="399" XYZ="-455.1003, 139.208, 671.3817" />
 					<UseObject NpcId="2006214" XYZ="-455.1003, 139.208, 671.3817" Condition="not IsAetherCurrentCompleted(399,5)" />
 				</If>
-			</If>
 
-		</If>
-
-		<If condition="AetherCurrentManager.IsZoneComplete(399)">
-			<LogMessage Message="You've attuned to the Aether Currents in The Dravanian Hinterlands!" />
-		</If>
-
-		<If Condition="not IsQuestCompleted(67647)">
-			<UserDialog DialogText="Please manually complete the Lvl. 51 Duty Dusk Vigil. You can do this quickly on a Max level Character Unsynced./n/nRestart the bot once done!" />
 		</If>
 
 		<If Condition="AetherCurrentManager.IsZoneComplete(397) and AetherCurrentManager.IsZoneComplete(398) and AetherCurrentManager.IsZoneComplete(399) and AetherCurrentManager.IsZoneComplete(400) and AetherCurrentManager.IsZoneComplete(401)">
@@ -939,61 +896,5 @@ Profile and fixes by Angels and DomesticWarlord
 	</Order>
 
 	<CodeChunks>
-		<CodeChunk Name="MoveForwardStart">
-			<![CDATA[
-	        await Buddy.Coroutines.Coroutine.Sleep(500);
-	        ff14bot.Managers.MovementManager.MoveStop();
-	        await Buddy.Coroutines.Coroutine.Sleep(2000);
-	        ff14bot.Managers.MovementManager.MoveStop();
-	        await Buddy.Coroutines.Coroutine.Sleep(500);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="FlyingtheNest">
-			<![CDATA[
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-        #if !RB_CN && !RB_TC
-		ff14bot.Managers.ChatManager.SendChat("/s Wake up!");
-        #endif
-        #if RB_CN
-		ff14bot.Managers.ChatManager.SendChat("/s èµ·æ¥");
-        #endif
-        #if RB_TC
-		ff14bot.Managers.ChatManager.SendChat("/s èµ·ä¾†");
-        #endif
-				await Buddy.Coroutines.Coroutine.Sleep(10000);
-				ff14bot.RemoteWindows.Talk.Next();
-				await Buddy.Coroutines.Coroutine.Sleep(10000);
-				ff14bot.RemoteWindows.Talk.Next();
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-				ff14bot.RemoteWindows.Talk.Next();
-				await Buddy.Coroutines.Coroutine.Sleep(5000);
-				ff14bot.RemoteWindows.Talk.Next();
-				await Buddy.Coroutines.Coroutine.Sleep(2000);
-				if (ff14bot.RemoteWindows.JournalResult.IsOpen)
-				ff14bot.RemoteWindows.JournalResult.Complete();
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="AetherCurrent5.2">
-			<![CDATA[
-				await Buddy.Coroutines.Coroutine.Sleep(500);
-				MovementManager.SetFacing(5.956687f);
-				MovementManager.MoveForwardStart();
-				await Buddy.Coroutines.Coroutine.Sleep(500);
-				MovementManager.Jump();
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
-			]]>
-		</CodeChunk>
-		<CodeChunk Name="SwitchCombatJob">
-            <![CDATA[
-            var Combat = Enumerable.Range(8, 11).Append(0).Append(36);
-            var gearSets = GearsetManager.GearSets.Where(i => i.InUse && !Combat.Contains((int)i.Class)).ToList().OrderByDescending(i=> i.Gear.First().Item.ItemLevel);
-
-            if (gearSets.Any())
-            {
-                gearSets.First().Activate();
-                await Coroutine.Sleep(2000);
-            }
-            ]]>
-        </CodeChunk>
 	</CodeChunks>
 </Profile>

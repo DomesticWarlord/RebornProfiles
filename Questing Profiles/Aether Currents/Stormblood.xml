@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-Code used from Sodimm
-Profile and fixes by Angles
+Profile:  Stormblood Aether Currents
+Authors:  DomesticWarlord
 -->
 <Profile>
-	<Name>Stormblood Aether Currents All</Name>
+	<Name>Stormblood Aether Currents</Name>
 	<KillRadius>90</KillRadius>
 	<Order>
 
@@ -179,13 +179,14 @@ Profile and fixes by Angles
 
 			<!-- Something Smells -->
 			<If Condition="not IsQuestCompleted(68260) and IsQuestCompleted(68029)">
-				<LLToast message="Working on quest 'Something Smells' to unlock Yanxia Aether Currents" />j <If Condition="not HasQuest(68260)">
+				<LLToast message="Working on quest 'Something Smells' to unlock Yanxia Aether Currents" />
+				<If Condition="not HasQuest(68260)">
 					<GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723" />
 					<If Condition="IsQuestAcceptQualified(68260)">
 						<PickupQuest QuestId="68260" NpcId="1019314" XYZ="422.55, -0.3000118, -292.1723" />
 					</If>
 				</If>
-      <If Condition="GetQuestStep(68260) == 1">
+				<If Condition="GetQuestStep(68260) == 1">
 					<If condition="not IsOnMap(614)">
 						<GetTo ZoneId="614" XYZ="422.55, -0.3000118, -292.1723" />
 					</If>
@@ -200,7 +201,7 @@ Profile and fixes by Angles
 						</HotSpots>
 					</UseItem>
 				</If>
-      <If Condition="GetQuestStep(68260) == 255">
+				<If Condition="GetQuestStep(68260) == 255">
 					<GetTo ZoneId="614" XYZ="421.8271, -0.3000133, -292.9956" />
 					<TurnIn QuestId="68260" NpcId="1019314" XYZ="421.8271, -0.3000133, -292.9956" />
 				</If>
@@ -353,7 +354,6 @@ Profile and fixes by Angles
 			<!-- Words Are Very Unnecessary (3) -->
 			<If Condition="not IsQuestCompleted(68296) and IsQuestCompleted(68037)">
 				<LLToast message="Working on quest 'Words Are Very Unnecessary' to unlock The Azim Steppe Aether Currents" />
-
 				<If Condition="not HasQuest(68296)">
 					<GetTo ZoneId="622" XYZ="573.8724, -19.50563, 344.6087" />
 					<If Condition="IsQuestAcceptQualified(68296)">
@@ -890,7 +890,7 @@ Profile and fixes by Angles
 	</Order>
 
 	<CodeChunks>
-		        <CodeChunk Name="SwordStoneTraverse"><![CDATA[
+		<CodeChunk Name="SwordStoneTraverse"><![CDATA[
 // Quest68229, Ruby Sea: serial walking/jump handoffs keep the mesh out of the
 // gaps. October22 floor survey supplies these takeoffs and landing elevations.
 // LL remains unchanged; its 2D endpoint test is supplemented by stable height.
@@ -1055,7 +1055,7 @@ finally
 
 
 ]]></CodeChunk>
-        <CodeChunk Name="SwordStoneExit"><![CDATA[
+		<CodeChunk Name="SwordStoneExit"><![CDATA[
 if (WorldManager.ZoneId != 613 || QuestLogManager.GetQuestStep(68229) != 255 ||
     Core.Me.IsDead || Core.Me.InCombat || QuestLogManager.InCutscene || ff14bot.RemoteWindows.Talk.DialogOpen) return;
 var previous = ff14bot.Navigation.Navigator.NavigationProvider;
