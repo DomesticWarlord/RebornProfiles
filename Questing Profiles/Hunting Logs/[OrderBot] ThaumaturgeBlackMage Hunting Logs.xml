@@ -723,6 +723,11 @@
                     </Grind>
                 </If>
                 <If condition="not HuntSubEntryCompleted(5, ClassJobType.Thaumaturge, 1, 0)">
+                    <!-- Mainland navigation cannot reach the Isles of Umbra. Take the ferry first; the existing Panda tag reads NPC-owned Warp 131134 text and verifies island arrival. -->
+                    <If condition="not IsOnSubMap(230) and not IsOnSubMap(173) and not IsOnSubMap(461) and not IsOnSubMap(228)">
+                        <GetTo ZoneId="138" XYZ="317.4333, -36.325, 352.8649" />
+                        <PFWPFQuestMenu NpcId="1003584" TextRow="131134" />
+                    </If>
                     <GetTo ZoneId="138" xyz="-284.1149, -41.42301, 691.4664" />
                     <Grind while="not HuntSubEntryCompleted(5, ClassJobType.Thaumaturge, 1, 0)">
                         <GrindArea name="Thaumaturge_5_2">
